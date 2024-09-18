@@ -1,34 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using ZiTyLot.DAO;
+using ZiTyLot.Helper;
+
 namespace ZiTyLot.BUS
 {
-    using System;
-    using System.Collections.Generic;
-    using ZiTyLot.DAO;
-    public class MyBus
+    public class MyBUS
     {
-        private readonly MyDao _myDao;
+        private readonly MyDAO myDao;
 
-        public MyBus()
+        // Dependency Injection for MyDAO
+        public MyBUS()
         {
-            _myDao = new MyDao();
+            this.myDao = new MyDAO();
         }
 
-        public int GetTotalRecordCount(Dictionary<string, object> filters = null)
+        // Hàm lấy tất cả các bản ghi với filters (không phân trang và sắp xếp)
+        public List<MyDTO> GetAll(List<FilterCondition> filters = null)
         {
             try
             {
-                return _myDao.GetTotalRecordCount(filters);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("An error occurred while fetching the total record count.", ex);
-            }
-        }
-
-        public List<MyDto> GetAll(int pageNumber, int pageSize, string sortBy = null, string sortOrder = null, Dictionary<string, object> filters = null)
-        {
-            try
-            {
-                return _myDao.GetAll(pageNumber, pageSize, sortBy, sortOrder, filters);
+                return myDao.GetAll(filters);
             }
             catch (Exception ex)
             {
@@ -36,11 +28,27 @@ namespace ZiTyLot.BUS
             }
         }
 
-        public MyDto GetById(int id)
+        // Hàm trả về đối tượng Page<MyDTO> với kết quả phân trang
+        public Page<MyDTO> GetAllPagination(Pageable pageable, List<FilterCondition> filters = null)
         {
             try
             {
-                return _myDao.GetById(id);
+                return myDao.GetAllPagination(pageable, filters);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred while fetching the paginated data.", ex);
+            }
+        }
+
+        // Hàm lấy bản ghi theo ID
+        public MyDTO GetById(int id)
+        {
+            EnsureRecordExists(id); // Kiểm tra sự tồn tại của bản ghi
+
+            try
+            {
+                return myDao.GetById(id);
             }
             catch (Exception ex)
             {
@@ -48,12 +56,14 @@ namespace ZiTyLot.BUS
             }
         }
 
-        public void Add(MyDto item)
+        // Hàm thêm bản ghi mới
+        public void Add(MyDTO item)
         {
+            Validate(item); // Kiểm tra tính hợp lệ của dữ liệu
+
             try
             {
-                Validate(item);
-                _myDao.Add(item);
+                myDao.Add(item);
             }
             catch (Exception ex)
             {
@@ -61,12 +71,16 @@ namespace ZiTyLot.BUS
             }
         }
 
-        public void Update(MyDto item)
+        // Hàm cập nhật bản ghi
+        public void Update(MyDTO item)
         {
+            EnsureRecordExists(item.Id); // Kiểm tra sự tồn tại của bản ghi
+
+            Validate(item); // Kiểm tra tính hợp lệ của dữ liệu
+
             try
             {
-                Validate(item);
-                _myDao.Update(item);
+                myDao.Update(item);
             }
             catch (Exception ex)
             {
@@ -74,11 +88,14 @@ namespace ZiTyLot.BUS
             }
         }
 
+        // Hàm xóa bản ghi theo ID
         public void Delete(int id)
         {
+            EnsureRecordExists(id); // Kiểm tra sự tồn tại của bản ghi
+
             try
             {
-                _myDao.Delete(id);
+                myDao.Delete(id);
             }
             catch (Exception ex)
             {
@@ -86,15 +103,25 @@ namespace ZiTyLot.BUS
             }
         }
 
-        private void Validate(MyDto item)
+        // Hàm kiểm tra tính hợp lệ của bản ghi
+        private void Validate(MyDTO item)
         {
             if (string.IsNullOrWhiteSpace(item.Name))
             {
-                throw new ArgumentException("Name cannot be null or empty.");
+                throw new ArgumentException("Name cannot be null or empty.", nameof(item.Name));
             }
 
             // Add other validation rules as needed
         }
-    }
 
+        // Kiểm tra sự tồn tại của bản ghi
+        private void EnsureRecordExists(int id)
+        {
+            var existingItem = myDao.GetById(id);
+            if (existingItem == null)
+            {
+                throw new KeyNotFoundException($"Record with ID {id} not found.");
+            }
+        }
+    }
 }

@@ -1,8 +1,9 @@
+using MySql.Data.MySqlClient;
+using System;
+using System.Configuration;
 namespace ZiTyLot.Config
 {
-    using MySql.Data.MySqlClient;
-    using System;
-    using System.Configuration;
+   
 
     public static class DBConfig
     {
@@ -15,9 +16,7 @@ namespace ZiTyLot.Config
                 throw new InvalidOperationException("Database connection string is not set properly in the app.config.");
             }
 
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            connection.Open(); // Attempt to open the connection to verify it
-            return connection;
+            return new MySqlConnection(connectionString);
         }
     }
 }

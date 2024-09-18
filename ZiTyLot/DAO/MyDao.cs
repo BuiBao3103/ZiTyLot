@@ -1,50 +1,51 @@
-
-
+﻿using System.Collections.Generic;
+using ZiTyLot.Helper;
 namespace ZiTyLot.DAO
 {
-    using System.Collections.Generic;
-    public class MyDao
+    public class MyDAO
     {
-        private readonly DaoFactory<MyDto> _daoFactory;
+        private readonly FactoryDAO<MyDTO> daoFactory;
 
-        public MyDao()
+        public MyDAO()
         {
-            _daoFactory = new DaoFactory<MyDto>("MyTable");
+            daoFactory = new FactoryDAO<MyDTO>("mys");
         }
 
-        public int GetTotalRecordCount(Dictionary<string, object> filters = null)
+        // Hàm lấy tất cả các bản ghi với điều kiện filters, không có phân trang hoặc sắp xếp
+        public List<MyDTO> GetAll(List<FilterCondition> filters = null)
         {
-            return _daoFactory.GetTotalRecordCount(filters);
+            return daoFactory.GetAll(filters); // Sử dụng hàm GetAll từ FactoryDAO không phân trang
         }
 
-        public List<MyDto> GetAll(int pageNumber, int pageSize, string sortBy = null, string sortOrder = null, Dictionary<string, object> filters = null)
+        // Hàm trả về đối tượng Page<MyDTO> cho kết quả phân trang và sắp xếp
+        public Page<MyDTO> GetAllPagination(Pageable pageable, List<FilterCondition> filters = null)
         {
-            return _daoFactory.GetPaginatedData(pageNumber, pageSize, sortBy, sortOrder, filters);
+            // Sử dụng phương thức GetAllPagination từ FactoryDAO để lấy kết quả phân trang
+            return daoFactory.GetAllPagination(pageable, filters);
         }
 
-        public MyDto GetById(int id)
+        // Hàm lấy bản ghi theo ID
+        public MyDTO GetById(int id)
         {
-            return _daoFactory.GetById(id);
+            return daoFactory.GetById(id);
         }
 
-        public void Add(MyDto item)
+        // Hàm thêm bản ghi mới
+        public void Add(MyDTO item)
         {
-            _daoFactory.Add(item);
+            daoFactory.Add(item);
         }
 
-        public void Update(MyDto item)
+        // Hàm cập nhật bản ghi
+        public void Update(MyDTO item)
         {
-            _daoFactory.Update(item);
+            daoFactory.Update(item);
         }
 
+        // Hàm xóa bản ghi theo ID
         public void Delete(int id)
         {
-            _daoFactory.Delete(id);
-        }
-
-        public int CalculateTotalPages(int totalRecords, int pageSize)
-        {
-            return _daoFactory.CalculateTotalPages(totalRecords, pageSize);
+            daoFactory.Delete(id);
         }
     }
 }

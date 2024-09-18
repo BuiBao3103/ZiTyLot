@@ -1,15 +1,14 @@
-     # Visual Studio
-     .vs/
-     *.user
-     *.suo
-     *.userosscache
-     *.sln.docstates
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
 
-     # Build results
-     [Bb]in/
-     [Oo]bj/
+# Build results
+[Bb]in/
+[Oo]bj/
 
-     # Configuration files
-     appsettings.json
-     appsettings.*.json
-     
+# Configuration files
+appsettings.json
+appsettings.*.json
