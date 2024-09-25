@@ -7,20 +7,18 @@ namespace ZiTyLot.BUS
 {
     public class ABUS : IBUS<A>
     {
-        private readonly ADAO myDao;
+        private readonly ADAO aDao;
 
-        // Dependency Injection for MyDAO
         public ABUS()
         {
-            this.myDao = new ADAO();
+            this.aDao = new ADAO();
         }
 
-        // Hàm lấy tất cả các bản ghi với filters (không phân trang và sắp xếp)
         public List<A> GetAll(List<FilterCondition> filters = null)
         {
             try
             {
-                return myDao.GetAll(filters);
+                return aDao.GetAll(filters);
             }
             catch (Exception ex)
             {
@@ -33,7 +31,7 @@ namespace ZiTyLot.BUS
         {
             try
             {
-                return myDao.GetAllPagination(pageable, filters);
+                return aDao.GetAllPagination(pageable, filters);
             }
             catch (Exception ex)
             {
@@ -48,7 +46,7 @@ namespace ZiTyLot.BUS
 
             try
             {
-                return myDao.GetById(id);
+                return aDao.GetById(id);
             }
             catch (Exception ex)
             {
@@ -63,7 +61,7 @@ namespace ZiTyLot.BUS
 
             try
             {
-                myDao.Add(item);
+                aDao.Add(item);
             }
             catch (Exception ex)
             {
@@ -80,7 +78,7 @@ namespace ZiTyLot.BUS
 
             try
             {
-                myDao.Update(item);
+                aDao.Update(item);
             }
             catch (Exception ex)
             {
@@ -95,7 +93,7 @@ namespace ZiTyLot.BUS
 
             try
             {
-                myDao.Delete(id);
+                aDao.Delete(id);
             }
             catch (Exception ex)
             {
@@ -117,7 +115,7 @@ namespace ZiTyLot.BUS
         // Kiểm tra sự tồn tại của bản ghi
         private void EnsureRecordExists(int id)
         {
-            var existingItem = myDao.GetById(id);
+            var existingItem = aDao.GetById(id);
             if (existingItem == null)
             {
                 throw new KeyNotFoundException($"Record with ID {id} not found.");

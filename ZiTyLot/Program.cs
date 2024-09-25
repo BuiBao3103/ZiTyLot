@@ -36,11 +36,11 @@ namespace ZiTyLot
 
             // Example usage of BUS
             //Example.GetAllRecords();
-            //Example.GetPaginatedRecords();
+            Example.GetPaginatedRecords();
             //Example.getById();
             //Example.AddRecord();
             //Example.UpdateRecord();
-            Example.DeleteRecord();
+            //Example.DeleteRecord();
 
         }
     }
@@ -137,7 +137,8 @@ namespace ZiTyLot
                 {
                     new FilterCondition { Column = "Name", Operator = ComparisonOperator.Like, Value = "" }
                 };
-                Pageable pageable = new Pageable { PageNumber = 1, PageSize = 2, SortBy = "id", SortOrder = "DESC" };
+                Pageable pageable = new Pageable { PageNumber = 2, PageSize = 2, SortBy = "", SortOrder = "DESC" };
+                //Page<A> page = myBus.GetAllPagination(pageable);
                 Page<A> page = myBus.GetAllPagination(pageable, filters);
                 Console.WriteLine("Paginated Records:");
                 foreach (var item in page.Content)
