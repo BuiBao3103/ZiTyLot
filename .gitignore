@@ -135,3 +135,5 @@ _NCrunch*
 App.config
 
 .vs
+
+./bin
