@@ -103,7 +103,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\ABUS.cs" />
+    <Compile Include="BUS\BBUS.cs" />
     <Compile Include="BUS\IBUS.cs" />
+    <Compile Include="DAO\BDAO.cs" />
     <Compile Include="DAO\FactoryDAO.cs" />
     <Compile Include="DAO\ADAO.cs" />
     <Compile Include="Config\DBConfig.cs" />

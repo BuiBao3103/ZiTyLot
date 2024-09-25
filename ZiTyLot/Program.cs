@@ -36,25 +36,52 @@ namespace ZiTyLot
 
             // Example usage of BUS
             //Example.GetAllRecords();
-            Example.GetPaginatedRecords();
+            //Example.GetPaginatedRecords();
             //Example.getById();
             //Example.AddRecord();
             //Example.UpdateRecord();
             //Example.DeleteRecord();
+            Example.Populate();
 
         }
     }
     public class Example
     {
-        private static ABUS myBus = new ABUS();
+        private static ABUS aBus = new ABUS();
+        private static BBUS bBus = new BBUS();
 
+        public static void Populate()
+        {
+            try
+            {
+                Console.WriteLine("Class A:");
+                A a = aBus.GetById(1);
+                Console.WriteLine("Before populate:");
+                Console.WriteLine(a);
+                Console.WriteLine("After populate:");
+                a = aBus.PopulateBs(a);
+                Console.WriteLine(a);
 
+                Console.WriteLine("Class B:");
+                B b = bBus.GetById(1);
+                Console.WriteLine("Before populate:");
+                Console.WriteLine(b);
+                Console.WriteLine("After populate:");
+                b = bBus.PopulationA(b);
+                Console.WriteLine(b);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while populating data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         public static void AddRecord()
         {
             try
             {
                 A newItem = new A { Name = "New Item" };
-                myBus.Add(newItem);
+                aBus.Add(newItem);
                 Console.WriteLine(newItem);
                 Console.WriteLine("Record added successfully.");
             }
@@ -69,9 +96,9 @@ namespace ZiTyLot
             try
             {
                 int idForUpdate = 3;
-                A existMy = myBus.GetById(idForUpdate);
+                A existMy = aBus.GetById(idForUpdate);
                 existMy.Name = "Updated Item";
-                myBus.Update(existMy);
+                aBus.Update(existMy);
                 Console.WriteLine("Record updated successfully.");
             }
             catch (Exception ex)
@@ -86,7 +113,7 @@ namespace ZiTyLot
             try
             {
                 int idToDelete = 2;
-                myBus.Delete(idToDelete);
+                aBus.Delete(idToDelete);
                 Console.WriteLine("Record deleted successfully.");
             }
             catch (Exception ex)
@@ -102,8 +129,8 @@ namespace ZiTyLot
             {
                 // Get all records
                 Console.WriteLine("Get All");
-                List<A> allItems = myBus.GetAll();
-                Console.WriteLine("All Records:");
+                List<A> allItems = aBus.GetAll();
+                Console.WriteLine("All Records before populate:");
                 foreach (var item in allItems)
                 {
                     Console.WriteLine(item);
@@ -112,10 +139,10 @@ namespace ZiTyLot
                 Console.WriteLine("Get All with filter");
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition { Column = "name", Operator = ComparisonOperator.Like, Value = "Item" },
-                    new FilterCondition { Column = "id", Operator = ComparisonOperator.GreaterThan, Value = "1" }
+                    new FilterCondition("name", ComparisonOperator.Like, "Item"),
+                    new FilterCondition("id", ComparisonOperator.GreaterThan, "1")
                 };
-                List<A> filteredItems = myBus.GetAll(filters);
+                List<A> filteredItems = aBus.GetAll(filters);
                 Console.WriteLine("Filtered Records:");
                 foreach (var item in filteredItems)
                 {
@@ -135,11 +162,11 @@ namespace ZiTyLot
             {
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition { Column = "Name", Operator = ComparisonOperator.Like, Value = "" }
+                   new FilterCondition("Name", ComparisonOperator.Like, "")
                 };
                 Pageable pageable = new Pageable { PageNumber = 2, PageSize = 2, SortBy = "", SortOrder = "DESC" };
-                //Page<A> page = myBus.GetAllPagination(pageable);
-                Page<A> page = myBus.GetAllPagination(pageable, filters);
+                //Page<A> page = aBus.GetAllPagination(pageable);
+                Page<A> page = aBus.GetAllPagination(pageable, filters);
                 Console.WriteLine("Paginated Records:");
                 foreach (var item in page.Content)
                 {
@@ -160,7 +187,7 @@ namespace ZiTyLot
             try
             {
                 int id = 1;
-                A item = myBus.GetById(id);
+                A item = aBus.GetById(id);
                 Console.WriteLine("Record by ID:");
                 Console.WriteLine(item);
             }

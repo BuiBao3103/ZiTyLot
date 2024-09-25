@@ -8,10 +8,12 @@ namespace ZiTyLot.BUS
     public class ABUS : IBUS<A>
     {
         private readonly ADAO aDao;
+        private readonly BDAO bDao;
 
         public ABUS()
         {
             this.aDao = new ADAO();
+            this.bDao = new BDAO();
         }
 
         public List<A> GetAll(List<FilterCondition> filters = null)
@@ -120,6 +122,16 @@ namespace ZiTyLot.BUS
             {
                 throw new KeyNotFoundException($"Record with ID {id} not found.");
             }
+        }
+        public A PopulateBs(A a)
+        {
+            List<FilterCondition> filters = new List<FilterCondition>
+            {
+                new FilterCondition("a_id", ComparisonOperator.Equals, a.Id)
+            };
+            List<B> bs = bDao.GetAll(filters);
+            a.Bs = bs;
+            return a;
         }
     }
 }

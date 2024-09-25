@@ -9,7 +9,7 @@ namespace ZiTyLot.DAO
 
         public ADAO()
         {
-            daoFactory = new FactoryDAO<A>("a_entitys");
+            daoFactory = new FactoryDAO<A>("a");
         }
 
         public List<A> GetAll(List<FilterCondition> filters = null)

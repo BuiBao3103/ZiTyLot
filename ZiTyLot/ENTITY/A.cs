@@ -13,7 +13,7 @@ namespace ZiTyLot.ENTITY
 
         public override string ToString()
         {
-            return $"A: {Id} - {Name}";
+           return $"Id: {Id}, Name: {Name}, Bs: [{string.Join("; ", Bs)}]";
         }
     }
 
