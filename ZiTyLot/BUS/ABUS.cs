@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using ZiTyLot.DAO;
 using ZiTyLot.Helper;
-using ZiTyLot.ENTITY;
 namespace ZiTyLot.BUS
 {
     public class ABUS : IBUS<A>

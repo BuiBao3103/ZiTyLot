@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Windows.Forms;
-using ZiTyLot.Config;
-using ZiTyLot.BUS;
 using System.Collections.Generic;
-using ZiTyLot.Helper;
+using System.Windows.Forms;
+using ZiTyLot.BUS;
+using ZiTyLot.Config;
 using ZiTyLot.ENTITY;
+using ZiTyLot.Helper;
 
 namespace ZiTyLot
 {
@@ -36,7 +36,7 @@ namespace ZiTyLot
 
             // Example usage of BUS
             //Example.GetAllRecords();
-            Example.GetPaginatedRecords();
+            //Example.GetPaginatedRecords();
             //Example.getById();
             //Example.AddRecord();
             //Example.UpdateRecord();

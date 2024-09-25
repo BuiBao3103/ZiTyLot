@@ -108,8 +108,25 @@
     <Compile Include="DAO\ADAO.cs" />
     <Compile Include="Config\DBConfig.cs" />
     <Compile Include="DAO\IDAO.cs" />
-    <Compile Include="ENTITY\A.cs" />
-    <Compile Include="ENTITY\B.cs" />
+    <Compile Include="ENTITY\Account.cs" />
+    <Compile Include="ENTITY\Bill.cs" />
+    <Compile Include="ENTITY\Card.cs" />
+    <Compile Include="ENTITY\CardStatus.cs" />
+    <Compile Include="ENTITY\Function.cs" />
+    <Compile Include="ENTITY\Image.cs" />
+    <Compile Include="ENTITY\ImageType.cs" />
+    <Compile Include="ENTITY\Issue.cs" />
+    <Compile Include="ENTITY\LostHistory.cs" />
+    <Compile Include="ENTITY\ParkingLot.cs" />
+    <Compile Include="ENTITY\ParkingLotType.cs" />
+    <Compile Include="ENTITY\Resident.cs" />
+    <Compile Include="ENTITY\ResidentPrice.cs" />
+    <Compile Include="ENTITY\Role.cs" />
+    <Compile Include="ENTITY\RoleFunction.cs" />
+    <Compile Include="ENTITY\Session.cs" />
+    <Compile Include="ENTITY\Slot.cs" />
+    <Compile Include="ENTITY\VehicleType.cs" />
+    <Compile Include="ENTITY\VisitorPrice.cs" />
     <Compile Include="Helper\FilterCondition.cs" />
     <Compile Include="Helper\Page.cs" />
     <Compile Include="Helper\Pageable.cs" />
@@ -124,9 +141,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="App.config">
-      <SubType>Component</SubType>
-    </None>
+    <None Include="App.config" />
     <None Include="App.Designer.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
