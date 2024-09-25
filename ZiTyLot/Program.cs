@@ -4,6 +4,7 @@ using ZiTyLot.Config;
 using ZiTyLot.BUS;
 using System.Collections.Generic;
 using ZiTyLot.Helper;
+using ZiTyLot.ENTITY;
 
 namespace ZiTyLot
 {
@@ -33,25 +34,26 @@ namespace ZiTyLot
             // Start the main form of the application
             //Application.Run(new Login());
 
-            // Example usage of MyBUS
+            // Example usage of BUS
             //Example.GetAllRecords();
             //Example.GetPaginatedRecords();
+            //Example.getById();
             //Example.AddRecord();
             //Example.UpdateRecord();
-            //Example.DeleteRecord();
+            Example.DeleteRecord();
 
         }
     }
     public class Example
     {
-        private static MyBUS myBus = new MyBUS();
+        private static ABUS myBus = new ABUS();
 
 
         public static void AddRecord()
         {
             try
             {
-                MyDTO newItem = new MyDTO { Name = "New Item" };
+                A newItem = new A { Name = "New Item" };
                 myBus.Add(newItem);
                 Console.WriteLine(newItem);
                 Console.WriteLine("Record added successfully.");
@@ -67,14 +69,14 @@ namespace ZiTyLot
             try
             {
                 int idForUpdate = 3;
-                MyDTO existMy = myBus.GetById(idForUpdate);
+                A existMy = myBus.GetById(idForUpdate);
                 existMy.Name = "Updated Item";
                 myBus.Update(existMy);
                 Console.WriteLine("Record updated successfully.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred while adding record: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An error occurred while update record: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -83,13 +85,13 @@ namespace ZiTyLot
         {
             try
             {
-                int idToDelete = 1;
+                int idToDelete = 2;
                 myBus.Delete(idToDelete);
                 Console.WriteLine("Record deleted successfully.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred while adding record: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An error occurred while deleting record: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -100,7 +102,7 @@ namespace ZiTyLot
             {
                 // Get all records
                 Console.WriteLine("Get All");
-                List<MyDTO> allItems = myBus.GetAll();
+                List<A> allItems = myBus.GetAll();
                 Console.WriteLine("All Records:");
                 foreach (var item in allItems)
                 {
@@ -113,7 +115,7 @@ namespace ZiTyLot
                     new FilterCondition { Column = "name", Operator = ComparisonOperator.Like, Value = "Item" },
                     new FilterCondition { Column = "id", Operator = ComparisonOperator.GreaterThan, Value = "1" }
                 };
-                List<MyDTO> filteredItems = myBus.GetAll(filters);
+                List<A> filteredItems = myBus.GetAll(filters);
                 Console.WriteLine("Filtered Records:");
                 foreach (var item in filteredItems)
                 {
@@ -122,7 +124,8 @@ namespace ZiTyLot
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred while adding record: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An error occurred while fetching record: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -134,8 +137,8 @@ namespace ZiTyLot
                 {
                     new FilterCondition { Column = "Name", Operator = ComparisonOperator.Like, Value = "" }
                 };
-                Pageable pageable = new Pageable { PageNumber = 2, PageSize = 2, SortBy = "id", SortOrder = "DESC" };
-                Page<MyDTO> page = myBus.GetAllPagination(pageable, filters);
+                Pageable pageable = new Pageable { PageNumber = 1, PageSize = 2, SortBy = "id", SortOrder = "DESC" };
+                Page<A> page = myBus.GetAllPagination(pageable, filters);
                 Console.WriteLine("Paginated Records:");
                 foreach (var item in page.Content)
                 {
@@ -147,7 +150,22 @@ namespace ZiTyLot
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred while adding record: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An error occurred while fetching record: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public static void getById()
+        {
+            try
+            {
+                int id = 1;
+                A item = myBus.GetById(id);
+                Console.WriteLine("Record by ID:");
+                Console.WriteLine(item);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while fetching record: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

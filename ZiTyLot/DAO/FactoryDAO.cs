@@ -52,6 +52,13 @@ namespace ZiTyLot.DAO
                                 var item = new T();
                                 foreach (var prop in typeof(T).GetProperties())
                                 {
+                                    // Skip properties that are collections or entity classes
+                                    if ((typeof(System.Collections.IEnumerable).IsAssignableFrom(prop.PropertyType) && prop.PropertyType != typeof(string)) ||
+                                        prop.PropertyType.Namespace == "ZiTyLot.ENTITY")
+                                    {
+                                        continue;
+                                    }
+
                                     if (!reader.IsDBNull(reader.GetOrdinal(prop.Name)))
                                     {
                                         prop.SetValue(item, reader[prop.Name]);
@@ -65,6 +72,7 @@ namespace ZiTyLot.DAO
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 throw new Exception("An error occurred while fetching all records.", ex);
             }
 
@@ -81,7 +89,7 @@ namespace ZiTyLot.DAO
                 {
                     connection.Open();
 
-                    // Query để lấy tổng số phần tử (totalElements)
+                    // Query to get total elements
                     var countQuery = new StringBuilder($"SELECT COUNT(*) FROM {tableName} WHERE 1=1");
                     if (filters != null)
                     {
@@ -104,7 +112,7 @@ namespace ZiTyLot.DAO
                         totalElements = Convert.ToInt32(countCommand.ExecuteScalar());
                     }
 
-                    // Query để lấy dữ liệu phân trang
+                    // Query to get paginated data
                     var dataQuery = new StringBuilder($"SELECT * FROM {tableName} WHERE 1=1");
 
                     if (filters != null)
@@ -143,6 +151,13 @@ namespace ZiTyLot.DAO
                                 var item = new T();
                                 foreach (var prop in typeof(T).GetProperties())
                                 {
+                                    // Skip properties that are collections or entity classes
+                                    if ((typeof(System.Collections.IEnumerable).IsAssignableFrom(prop.PropertyType) && prop.PropertyType != typeof(string)) ||
+                                        prop.PropertyType.Namespace == "ZiTyLot.ENTITY")
+                                    {
+                                        continue;
+                                    }
+
                                     if (!reader.IsDBNull(reader.GetOrdinal(prop.Name)))
                                     {
                                         prop.SetValue(item, reader[prop.Name]);
@@ -158,6 +173,7 @@ namespace ZiTyLot.DAO
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 throw new Exception("An error occurred while fetching paginated data.", ex);
             }
         }
@@ -197,7 +213,6 @@ namespace ZiTyLot.DAO
                     break;
             }
         }
-
         public T GetById(int id)
         {
             try
@@ -218,6 +233,12 @@ namespace ZiTyLot.DAO
                                 var item = new T();
                                 foreach (var prop in typeof(T).GetProperties())
                                 {
+                                    // Skip properties that are collections or entity classes
+                                    if ((typeof(System.Collections.IEnumerable).IsAssignableFrom(prop.PropertyType) && prop.PropertyType != typeof(string)) ||
+                                        prop.PropertyType.Namespace == "ZiTyLot.ENTITY")
+                                    {
+                                        continue;
+                                    }
                                     if (!reader.IsDBNull(reader.GetOrdinal(prop.Name)))
                                     {
                                         prop.SetValue(item, reader[prop.Name]);
@@ -232,6 +253,7 @@ namespace ZiTyLot.DAO
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 throw new Exception("An error occurred while fetching the record by ID.", ex);
             }
         }
@@ -246,16 +268,24 @@ namespace ZiTyLot.DAO
                     var query = new StringBuilder($"INSERT INTO {tableName} (");
 
                     var properties = typeof(T).GetProperties();
+                    var validProperties = new List<string>();
+
                     foreach (var prop in properties)
                     {
+                        if ((typeof(System.Collections.IEnumerable).IsAssignableFrom(prop.PropertyType) && prop.PropertyType != typeof(string)) ||
+                                    prop.PropertyType.Namespace == "ZiTyLot.ENTITY")
+                        {
+                            continue;
+                        }
                         query.Append($"{prop.Name},");
+                        validProperties.Add(prop.Name);
                     }
                     query.Length--; // Remove the last comma
                     query.Append(") VALUES (");
 
-                    foreach (var prop in properties)
+                    foreach (var propName in validProperties)
                     {
-                        query.Append($"@{prop.Name},");
+                        query.Append($"@{propName},");
                     }
                     query.Length--; // Remove the last comma
                     query.Append(")");
@@ -264,6 +294,11 @@ namespace ZiTyLot.DAO
                     {
                         foreach (var prop in properties)
                         {
+                            if ((typeof(System.Collections.IEnumerable).IsAssignableFrom(prop.PropertyType) && prop.PropertyType != typeof(string)) ||
+                                        prop.PropertyType.Namespace == "ZiTyLot.ENTITY")
+                            {
+                                continue;
+                            }
                             command.Parameters.AddWithValue($"@{prop.Name}", prop.GetValue(item) ?? DBNull.Value);
                         }
 
@@ -273,6 +308,7 @@ namespace ZiTyLot.DAO
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 throw new Exception("An error occurred while adding the record.", ex);
             }
         }
@@ -291,6 +327,11 @@ namespace ZiTyLot.DAO
                     {
                         if (prop.Name != "Id")
                         {
+                            if ((typeof(System.Collections.IEnumerable).IsAssignableFrom(prop.PropertyType) && prop.PropertyType != typeof(string)) ||
+                                        prop.PropertyType.Namespace == "ZiTyLot.ENTITY")
+                            {
+                                continue;
+                            }
                             query.Append($"{prop.Name} = @{prop.Name},");
                         }
                     }
@@ -301,15 +342,34 @@ namespace ZiTyLot.DAO
                     {
                         foreach (var prop in properties)
                         {
-                            command.Parameters.AddWithValue($"@{prop.Name}", prop.GetValue(item) ?? DBNull.Value);
+                            if (prop.Name != "Id")
+                            {
+                                if ((typeof(System.Collections.IEnumerable).IsAssignableFrom(prop.PropertyType) && prop.PropertyType != typeof(string)) ||
+                                            prop.PropertyType.Namespace == "ZiTyLot.ENTITY")
+                                {
+                                    continue;
+                                }
+                                command.Parameters.AddWithValue($"@{prop.Name}", prop.GetValue(item) ?? DBNull.Value);
+                            }
                         }
 
+                        // Ensure the Id parameter is added only once
+                        var idProperty = typeof(T).GetProperty("Id");
+                        if (idProperty != null)
+                        {
+                            command.Parameters.AddWithValue("@Id", idProperty.GetValue(item));
+                        }
+                        else
+                        {
+                            throw new Exception("The entity does not have an Id property.");
+                        }
                         command.ExecuteNonQuery();
                     }
                 }
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 throw new Exception("An error occurred while updating the record.", ex);
             }
         }
@@ -332,6 +392,7 @@ namespace ZiTyLot.DAO
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 throw new Exception("An error occurred while deleting the record.", ex);
             }
         }

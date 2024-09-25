@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using ZiTyLot.DAO;
 using ZiTyLot.Helper;
-
+using ZiTyLot.ENTITY;
 namespace ZiTyLot.BUS
 {
-    public class MyBUS
+    public class ABUS : IBUS<A>
     {
-        private readonly MyDAO myDao;
+        private readonly ADAO myDao;
 
         // Dependency Injection for MyDAO
-        public MyBUS()
+        public ABUS()
         {
-            this.myDao = new MyDAO();
+            this.myDao = new ADAO();
         }
 
         // Hàm lấy tất cả các bản ghi với filters (không phân trang và sắp xếp)
-        public List<MyDTO> GetAll(List<FilterCondition> filters = null)
+        public List<A> GetAll(List<FilterCondition> filters = null)
         {
             try
             {
@@ -29,7 +29,7 @@ namespace ZiTyLot.BUS
         }
 
         // Hàm trả về đối tượng Page<MyDTO> với kết quả phân trang
-        public Page<MyDTO> GetAllPagination(Pageable pageable, List<FilterCondition> filters = null)
+        public Page<A> GetAllPagination(Pageable pageable, List<FilterCondition> filters = null)
         {
             try
             {
@@ -42,7 +42,7 @@ namespace ZiTyLot.BUS
         }
 
         // Hàm lấy bản ghi theo ID
-        public MyDTO GetById(int id)
+        public A GetById(int id)
         {
             EnsureRecordExists(id); // Kiểm tra sự tồn tại của bản ghi
 
@@ -57,7 +57,7 @@ namespace ZiTyLot.BUS
         }
 
         // Hàm thêm bản ghi mới
-        public void Add(MyDTO item)
+        public void Add(A item)
         {
             Validate(item); // Kiểm tra tính hợp lệ của dữ liệu
 
@@ -72,7 +72,7 @@ namespace ZiTyLot.BUS
         }
 
         // Hàm cập nhật bản ghi
-        public void Update(MyDTO item)
+        public void Update(A item)
         {
             EnsureRecordExists(item.Id); // Kiểm tra sự tồn tại của bản ghi
 
@@ -104,7 +104,7 @@ namespace ZiTyLot.BUS
         }
 
         // Hàm kiểm tra tính hợp lệ của bản ghi
-        private void Validate(MyDTO item)
+        private void Validate(A item)
         {
             if (string.IsNullOrWhiteSpace(item.Name))
             {
