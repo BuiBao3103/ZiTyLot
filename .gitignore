@@ -387,3 +387,7 @@ InteropTests/NativeTests/out
 **/ScratchProjectWithInternals/
 
 App.config
+
+# Bỏ qua toàn bộ thư mục obj và bin
+bin/
+obj/
