@@ -32,10 +32,10 @@ namespace ZiTyLot.ENTITY
         public DateTime Created_at { get => created_at; set => created_at = value; }
         public DateTime? Updated_at { get => updated_at; set => updated_at = value; }
         public DateTime? Deleted_at { get => deleted_at; set => deleted_at = value; }
-        public int Resident_card_id { get => resident_card_id; set => resident_card_id = value; }
-        public int Bill_id { get => bill_id; set => bill_id = value; }
-        public int Parking_lot_id { get => parking_lot_id; set => parking_lot_id = value; }
-        public int Slot_id { get => slot_id; set => slot_id = value; }
+        public int? Resident_card_id { get => resident_card_id; set => resident_card_id = value; }
+        public int? Bill_id { get => bill_id; set => bill_id = value; }
+        public int? Parking_lot_id { get => parking_lot_id; set => parking_lot_id = value; }
+        public int? Slot_id { get => slot_id; set => slot_id = value; }
         public Bill Bill { get => bill; set => bill = value; }
         public ParkingLot Parking_lot { get => parking_lot; set => parking_lot = value; }
         public Slot Slot { get => slot; set => slot = value; }

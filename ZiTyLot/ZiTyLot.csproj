@@ -105,6 +105,10 @@
     <Compile Include="BUS\ABUS.cs" />
     <Compile Include="BUS\BBUS.cs" />
     <Compile Include="BUS\IBUS.cs" />
+    <Compile Include="Constants\Enum\ATypeEnum.cs" />
+    <Compile Include="Constants\Enum\CardTypeEnum.cs" />
+    <Compile Include="Constants\Enum\FeeTypeEnum.cs" />
+    <Compile Include="Constants\Enum\SlotStatusEnum.cs" />
     <Compile Include="DAO\BDAO.cs" />
     <Compile Include="DAO\FactoryDAO.cs" />
     <Compile Include="DAO\ADAO.cs" />

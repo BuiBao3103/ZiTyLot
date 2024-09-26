@@ -5,7 +5,7 @@ using ZiTyLot.BUS;
 using System.Collections.Generic;
 using ZiTyLot.Helper;
 using ZiTyLot.ENTITY;
-
+using ZiTyLot.Constants.Enum;
 namespace ZiTyLot
 {
     internal static class Program
@@ -40,8 +40,8 @@ namespace ZiTyLot
             //Example.getById();
             //Example.AddRecord();
             //Example.UpdateRecord();
-            //Example.DeleteRecord();
-            Example.Populate();
+            Example.DeleteRecord();
+
 
         }
     }
@@ -80,7 +80,7 @@ namespace ZiTyLot
         {
             try
             {
-                A newItem = new A { Name = "New Item" };
+                A newItem = new A { Name = "New Item", Type = ATypeEnum.EMPTY };
                 aBus.Add(newItem);
                 Console.WriteLine(newItem);
                 Console.WriteLine("Record added successfully.");
@@ -95,9 +95,10 @@ namespace ZiTyLot
         {
             try
             {
-                int idForUpdate = 3;
+                int idForUpdate = 5;
                 A existMy = aBus.GetById(idForUpdate);
-                existMy.Name = "Updated Item";
+                existMy.Name = "Updated Item"; 
+                existMy.Type = ATypeEnum.IN_USE;
                 aBus.Update(existMy);
                 Console.WriteLine("Record updated successfully.");
             }
@@ -112,7 +113,7 @@ namespace ZiTyLot
         {
             try
             {
-                int idToDelete = 2;
+                int idToDelete = 5;
                 aBus.Delete(idToDelete);
                 Console.WriteLine("Record deleted successfully.");
             }
@@ -164,7 +165,7 @@ namespace ZiTyLot
                 {
                    new FilterCondition("Name", ComparisonOperator.Like, "")
                 };
-                Pageable pageable = new Pageable { PageNumber = 2, PageSize = 2, SortBy = "", SortOrder = "DESC" };
+                Pageable pageable = new Pageable { PageNumber = 1, PageSize = 2, SortBy = "", SortOrder = "DESC" };
                 //Page<A> page = aBus.GetAllPagination(pageable);
                 Page<A> page = aBus.GetAllPagination(pageable, filters);
                 Console.WriteLine("Paginated Records:");
@@ -186,7 +187,7 @@ namespace ZiTyLot
         {
             try
             {
-                int id = 1;
+                int id = 3;
                 A item = aBus.GetById(id);
                 Console.WriteLine("Record by ID:");
                 Console.WriteLine(item);

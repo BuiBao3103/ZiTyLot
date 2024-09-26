@@ -1,4 +1,4 @@
-﻿namespace ZiTyLot.ENTITY
+﻿namespace ZiTyLot.Constants.Enum
 {
     public enum ImageTypeEnum
     {

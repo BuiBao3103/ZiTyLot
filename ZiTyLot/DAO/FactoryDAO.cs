@@ -58,10 +58,16 @@ namespace ZiTyLot.DAO
                                     {
                                         continue;
                                     }
-
                                     if (!reader.IsDBNull(reader.GetOrdinal(prop.Name)))
                                     {
-                                        prop.SetValue(item, reader[prop.Name]);
+                                        if (prop.PropertyType.IsEnum)
+                                        {
+                                            prop.SetValue(item, Enum.Parse(prop.PropertyType, reader[prop.Name].ToString()));
+                                        }
+                                        else
+                                        {
+                                            prop.SetValue(item, reader[prop.Name]);
+                                        }
                                     }
                                 }
                                 list.Add(item);
@@ -160,7 +166,14 @@ namespace ZiTyLot.DAO
 
                                     if (!reader.IsDBNull(reader.GetOrdinal(prop.Name)))
                                     {
-                                        prop.SetValue(item, reader[prop.Name]);
+                                        if (prop.PropertyType.IsEnum)
+                                        {
+                                            prop.SetValue(item, Enum.Parse(prop.PropertyType, reader[prop.Name].ToString()));
+                                        }
+                                        else
+                                        {
+                                            prop.SetValue(item, reader[prop.Name]);
+                                        }
                                     }
                                 }
                                 list.Add(item);
@@ -241,7 +254,14 @@ namespace ZiTyLot.DAO
                                     }
                                     if (!reader.IsDBNull(reader.GetOrdinal(prop.Name)))
                                     {
-                                        prop.SetValue(item, reader[prop.Name]);
+                                        if (prop.PropertyType.IsEnum)
+                                        {
+                                            prop.SetValue(item, Enum.Parse(prop.PropertyType, reader[prop.Name].ToString()));
+                                        }
+                                        else
+                                        {
+                                            prop.SetValue(item, reader[prop.Name]);
+                                        }
                                     }
                                 }
                                 return item;
@@ -299,7 +319,25 @@ namespace ZiTyLot.DAO
                             {
                                 continue;
                             }
-                            command.Parameters.AddWithValue($"@{prop.Name}", prop.GetValue(item) ?? DBNull.Value);
+
+                            var value = prop.GetValue(item) ?? DBNull.Value;
+
+                            if (prop.PropertyType.IsEnum && value != DBNull.Value)
+                            {
+                                value = value.ToString(); // Convert enum to string
+                            }
+
+                            // Log the property name and value
+                            Console.WriteLine($"Property: {prop.Name}, Value: {value}");
+
+                            command.Parameters.AddWithValue($"@{prop.Name}", value);
+                        }
+
+                        // Log the final SQL command
+                        Console.WriteLine($"SQL Command: {command.CommandText}");
+                        foreach (MySqlParameter param in command.Parameters)
+                        {
+                            Console.WriteLine($"Parameter: {param.ParameterName}, Value: {param.Value}");
                         }
 
                         command.ExecuteNonQuery();
@@ -312,6 +350,9 @@ namespace ZiTyLot.DAO
                 throw new Exception("An error occurred while adding the record.", ex);
             }
         }
+
+
+
 
         public void Update(T item)
         {
@@ -349,7 +390,15 @@ namespace ZiTyLot.DAO
                                 {
                                     continue;
                                 }
-                                command.Parameters.AddWithValue($"@{prop.Name}", prop.GetValue(item) ?? DBNull.Value);
+
+                                var value = prop.GetValue(item) ?? DBNull.Value;
+
+                                if (prop.PropertyType.IsEnum && value != DBNull.Value)
+                                {
+                                    value = value.ToString(); // Convert enum to string
+                                }
+
+                                command.Parameters.AddWithValue($"@{prop.Name}", value);
                             }
                         }
 
