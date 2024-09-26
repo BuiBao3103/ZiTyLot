@@ -404,3 +404,35 @@ App.config
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio
+
+# Bỏ qua các file cache của .NET
+*.dtbcache.json
+*.cache
+*.dll
+*.exe
+*.pdb
+*.obj
+*.log
+*.vs
+*.userosscache
+*.suo
+*.ipch
+*.aps
+*.ilk
+*.user
+*.pri
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
+
+# Bỏ qua thư mục bin và obj
+bin/
+obj/
+
+# Bỏ qua các file và thư mục ẩn
+.vs/
+.vscode/
+
+# Bỏ qua các file build
+Build/
