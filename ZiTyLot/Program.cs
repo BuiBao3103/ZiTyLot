@@ -40,7 +40,7 @@ namespace ZiTyLot
             //Example.getById();
             //Example.AddRecord();
             //Example.UpdateRecord();
-            Example.DeleteRecord();
+            //Example.DeleteRecord();
 
 
         }

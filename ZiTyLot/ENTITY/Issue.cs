@@ -13,6 +13,7 @@ namespace ZiTyLot.ENTITY
         private DateTime created_at;
         private DateTime? updated_at;
         private DateTime? deleted_at;
+
         private int? resident_card_id;
         private int? bill_id;
         private int? parking_lot_id;

@@ -1,4 +1,5 @@
 ﻿using System;
+using ZiTyLot.Constants.Enum;
 
 namespace ZiTyLot.ENTITY
 {
@@ -6,7 +7,7 @@ namespace ZiTyLot.ENTITY
     {
         //attributes
         private int id;
-        private string fee_type;
+        private FeeTypeEnum fee_type;
         private double? day_fee;
         private double? night_fee;
         private int? hours_per_turn;
@@ -17,13 +18,14 @@ namespace ZiTyLot.ENTITY
         private DateTime created_at;
         private DateTime? updated_at;
         private DateTime? deleted_at;
-        private int vehicle_type_id;
+
+        private int? vehicle_type_id;
 
         //relationships
         private VehicleType vehicle_type = null;
 
         public int Id { get => id; set => id = value; }
-        public string Fee_type { get => fee_type; set => fee_type = value; }
+        public FeeTypeEnum Fee_type { get => fee_type; set => fee_type = value; }
         public double? Day_fee { get => day_fee; set => day_fee = value; }
         public double? Night_fee { get => night_fee; set => night_fee = value; }
         public int? Hours_per_turn { get => hours_per_turn; set => hours_per_turn = value; }
@@ -34,7 +36,7 @@ namespace ZiTyLot.ENTITY
         public DateTime Created_at { get => created_at; set => created_at = value; }
         public DateTime? Updated_at { get => updated_at; set => updated_at = value; }
         public DateTime? Deleted_at { get => deleted_at; set => deleted_at = value; }
-        public int Vehicle_type_id { get => vehicle_type_id; set => vehicle_type_id = value; }
+        public int? Vehicle_type_id { get => vehicle_type_id; set => vehicle_type_id = value; }
         public VehicleType Vehicle_type { get => vehicle_type; set => vehicle_type = value; }
     }
 }

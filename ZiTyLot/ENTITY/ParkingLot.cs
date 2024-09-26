@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ZiTyLot.Constants.Enum;
 
 namespace ZiTyLot.ENTITY
 {
@@ -8,7 +9,7 @@ namespace ZiTyLot.ENTITY
         //attributes
         private string id;
         private int total_slot;
-        private string type;
+        private ParkingLotTypeEnum type;
         private DateTime created_at;
         private DateTime? updated_at;
         private DateTime? deleted_at;
@@ -19,7 +20,7 @@ namespace ZiTyLot.ENTITY
 
         public string Id { get => id; set => id = value; }
         public int Total_slot { get => total_slot; set => total_slot = value; }
-        public string Type { get => type; set => type = value; }
+        public ParkingLotTypeEnum Type { get => type; set => type = value; }
         public DateTime Created_at { get => created_at; set => created_at = value; }
         public DateTime? Updated_at { get => updated_at; set => updated_at = value; }
         public DateTime? Deleted_at { get => deleted_at; set => deleted_at = value; }

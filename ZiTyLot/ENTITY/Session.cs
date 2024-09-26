@@ -5,6 +5,7 @@ namespace ZiTyLot.ENTITY
 {
     public class Session
     {
+        //attributes
         private int id;
         private string license_plate;
         private DateTime checkin_time;
@@ -13,7 +14,10 @@ namespace ZiTyLot.ENTITY
         private DateTime created_at;
         private DateTime? updated_at;
         private DateTime? deleted_at;
-        private int card_id;
+
+        private int? card_id;
+
+        //relationships
         private Card card = null;
         private ICollection<Image> images = new List<Image>();
 
@@ -25,7 +29,7 @@ namespace ZiTyLot.ENTITY
         public DateTime Created_at { get => created_at; set => created_at = value; }
         public DateTime? Updated_at { get => updated_at; set => updated_at = value; }
         public DateTime? Deleted_at { get => deleted_at; set => deleted_at = value; }
-        public int Card_id { get => card_id; set => card_id = value; }
+        public int? Card_id { get => card_id; set => card_id = value; }
         public Card Card { get => card; set => card = value; }
         public ICollection<Image> Images { get => images; set => images = value; }
     }
