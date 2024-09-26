@@ -41,6 +41,7 @@ namespace ZiTyLot
             //Example.AddRecord();
             //Example.UpdateRecord();
             //Example.DeleteRecord();
+            //Example.Populate();
 
 
         }
@@ -80,7 +81,7 @@ namespace ZiTyLot
         {
             try
             {
-                A newItem = new A { Name = "New Item", Type = ATypeEnum.EMPTY };
+                A newItem = new A { Name = "", Type = ATypeEnum.EMPTY };
                 aBus.Add(newItem);
                 Console.WriteLine(newItem);
                 Console.WriteLine("Record added successfully.");
@@ -111,9 +112,10 @@ namespace ZiTyLot
 
         public static void DeleteRecord()
         {
+            //Code in UI
             try
             {
-                int idToDelete = 3;
+                int idToDelete = 1;
                 aBus.Delete(idToDelete);
                 Console.WriteLine("Record deleted successfully.");
             }

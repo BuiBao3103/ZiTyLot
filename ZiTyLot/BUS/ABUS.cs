@@ -24,7 +24,7 @@ namespace ZiTyLot.BUS
             }
             catch (Exception ex)
             {
-                throw new Exception("An error occurred while fetching the data.", ex);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -37,7 +37,7 @@ namespace ZiTyLot.BUS
             }
             catch (Exception ex)
             {
-                throw new Exception("An error occurred while fetching the paginated data.", ex);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -52,7 +52,7 @@ namespace ZiTyLot.BUS
             }
             catch (Exception ex)
             {
-                throw new Exception("An error occurred while fetching the record by ID.", ex);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -67,7 +67,7 @@ namespace ZiTyLot.BUS
             }
             catch (Exception ex)
             {
-                throw new Exception("An error occurred while adding the record.", ex);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -84,7 +84,7 @@ namespace ZiTyLot.BUS
             }
             catch (Exception ex)
             {
-                throw new Exception("An error occurred while updating the record.", ex);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -99,7 +99,7 @@ namespace ZiTyLot.BUS
             }
             catch (Exception ex)
             {
-                throw new Exception("An error occurred while deleting the record.", ex);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -125,13 +125,21 @@ namespace ZiTyLot.BUS
         }
         public A PopulateBs(A a)
         {
-            List<FilterCondition> filters = new List<FilterCondition>
+            try
             {
-                new FilterCondition("a_id", ComparisonOperator.Equals, a.Id)
-            };
-            List<B> bs = bDao.GetAll(filters);
-            a.Bs = bs;
-            return a;
+                List<FilterCondition> filters = new List<FilterCondition>
+                {
+                    new FilterCondition("a_id", ComparisonOperator.Equals, a.Id)
+                };
+                List<B> bs = bDao.GetAll(filters);
+                a.Bs = bs;
+                return a;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
         }
     }
 }

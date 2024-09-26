@@ -80,7 +80,7 @@ namespace ZiTyLot.DAO
             catch (Exception ex)
             {
                 // Throw a new exception with a custom message if an error occurs
-                throw new Exception("An error occurred while fetching all records.", ex);
+                throw new Exception(ex.Message);
             }
 
             // Return the list of results
@@ -171,7 +171,7 @@ namespace ZiTyLot.DAO
             catch (Exception ex)
             {
                 // Throw a new exception with a custom message if an error occurs
-                throw new Exception("An error occurred while fetching paginated data.", ex);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -221,7 +221,7 @@ namespace ZiTyLot.DAO
             catch (Exception ex)
             {
                 // Throw a new exception with a custom message if an error occurs
-                throw new Exception("An error occurred while fetching the record by ID.", ex);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -286,7 +286,7 @@ namespace ZiTyLot.DAO
             catch (Exception ex)
             {
                 // Throw a new exception with a custom message if an error occurs
-                throw new Exception("An error occurred while adding the record.", ex);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -353,7 +353,7 @@ namespace ZiTyLot.DAO
             catch (Exception ex)
             {
                 // Throw a new exception with a custom message if an error occurs
-                throw new Exception("An error occurred while updating the record.", ex);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -382,8 +382,7 @@ namespace ZiTyLot.DAO
             }
             catch (Exception ex)
             {
-                // Throw a new exception with a custom message if an error occurs
-                throw new Exception("An error occurred while deleting the record.", ex);
+                throw new Exception(ex.Message);
             }
         }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using ZiTyLot.Helper;
 using ZiTyLot.ENTITY;
+using System;
 namespace ZiTyLot.DAO
 {
     public class ADAO : IDAO<A>
@@ -14,32 +15,75 @@ namespace ZiTyLot.DAO
 
         public List<A> GetAll(List<FilterCondition> filters = null)
         {
-            return daoFactory.GetAll(filters);
+            try
+            {
+                return daoFactory.GetAll(filters);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public Page<A> GetAllPagination(Pageable pageable, List<FilterCondition> filters = null)
         {
-            return daoFactory.GetAllPagination(pageable, filters);
+            try
+            {
+                return daoFactory.GetAllPagination(pageable, filters);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public A GetById(int id)
         {
-            return daoFactory.GetById(id);
+            try
+            {
+                return daoFactory.GetById(id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public void Add(A item)
         {
-            daoFactory.Add(item);
+            try
+            {
+                daoFactory.Add(item);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public void Update(A item)
         {
-            daoFactory.Update(item);
+            try
+            {
+                daoFactory.Update(item);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public void Delete(int id)
         {
-            daoFactory.Delete(id);
+            try
+            {
+                daoFactory.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }
