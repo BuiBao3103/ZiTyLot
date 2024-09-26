@@ -436,3 +436,10 @@ obj/
 
 # Bỏ qua các file build
 Build/
+
+# Bỏ qua toàn bộ thư mục bin và obj
+bin/
+obj/
+
+# Bỏ qua file cụ thể
+DesignTimeResolveAssemblyReferencesInput.cache
