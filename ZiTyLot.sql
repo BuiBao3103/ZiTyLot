@@ -64,6 +64,7 @@ CREATE TABLE `parking_lots` (
 
 CREATE TABLE `slots` (
   `id` varchar(20) PRIMARY KEY,
+  `status` ENUM ('IN_USE', 'EMPTY', 'MAINTENANCE'),
   `created_at` datetime NOT NULL,
   `updated_at` datetime,
   `deleted_at` datetime,
