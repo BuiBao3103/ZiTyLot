@@ -37,8 +37,8 @@ CREATE TABLE `accounts` (
 
 CREATE TABLE `bills` (
   `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `total_price` double,
-  `issue_quatity` int,
+  `total_fee` double,
+  `issue_quantity` int,
   `created_at` datetime NOT NULL,
   `updated_at` datetime,
   `deleted_at` datetime,
@@ -60,7 +60,7 @@ CREATE TABLE `residents` (
 CREATE TABLE `parking_lots` (
   `id` varchar(20) PRIMARY KEY,
   `total_slot` integer,
-  `parking_lot_type` ENUM ('TWO_WHEELER', 'FOUR_WHEELER'),
+  `type` ENUM ('TWO_WHEELER', 'FOUR_WHEELER'),
   `created_at` datetime NOT NULL,
   `updated_at` datetime,
   `deleted_at` datetime
@@ -78,31 +78,42 @@ CREATE TABLE `issues` (
   `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `start_date` datetime NOT NULL,
   `end_date` datetime NOT NULL,
-  `vehicle_plate` varchar(255),
-  `price` double,
-  `card_id` integer,
-  `parking_lot_id` varchar(20),
-  `slot_id` varchar(20),
+  `license_plate` varchar(255),
+  `fee` double,
   `created_at` datetime NOT NULL,
   `updated_at` datetime,
   `deleted_at` datetime,
-  `bill_id` integer
+  `resident_card_id` integer,
+  `bill_id` integer,
+  `parking_lot_id` varchar(20),
+  `slot_id` varchar(20)
 );
 
 CREATE TABLE `cards` (
   `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `rfid` varchar(255) UNIQUE NOT NULL,
-  `status` ENUM ('EMPTY'),
+  `status` ENUM ('EMPTY', 'ACTIVE', 'BLOCKED', 'LOST'),
+  `card_type` ENUM ('RESIDENT', 'VISITOR'),
   `created_at` datetime NOT NULL,
   `updated_at` datetime,
   `deleted_at` datetime,
   `vehicle_type_id` integer
 );
 
+CREATE TABLE `resident_cards` (
+  `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `due_date` datetime,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime,
+  `deleted_at` datetime,
+  `card_id` integer,
+  `resident_id` integer
+);
+
 CREATE TABLE `lost_history` (
   `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `time_loss` datetime NOT NULL,
-  `vehicle_plate` varchar(255) NOT NULL,
+  `license_plate` varchar(255) NOT NULL,
   `owner_name` varchar(255),
   `owner_identification_card` varchar(20),
   `created_at` datetime NOT NULL,
@@ -119,23 +130,26 @@ CREATE TABLE `vehicle_types` (
   `deleted_at` datetime
 );
 
-CREATE TABLE `resident_prices` (
+CREATE TABLE `resident_fees` (
   `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `month` integer,
-  `price` double,
+  `fee` double,
   `created_at` datetime NOT NULL,
   `updated_at` datetime,
   `deleted_at` datetime,
   `vehicle_type_id` int
 );
 
-CREATE TABLE `visitor_prices` (
+CREATE TABLE `visitor_fees` (
   `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `parking_lot_fees` double,
-  `isday` bool,
-  `hours_per_visit` double,
-  `first_n_hours` double,
-  `additional_hours` double,
+  `fee_type` ENUM ('TURN', 'HOUR_PER_TURN', 'FIRST_N_AND_NEXT_n_HOUR'),
+  `day_fee` double,
+  `night_fee` double,
+  `hours_per_turn` double,
+  `n_hour` integer,
+  `m_hour` integer,
+  `first_n_hours_fee` double,
+  `additional_m_hours_fee` double,
   `created_at` datetime NOT NULL,
   `updated_at` datetime,
   `deleted_at` datetime,
@@ -144,10 +158,10 @@ CREATE TABLE `visitor_prices` (
 
 CREATE TABLE `sessions` (
   `id` integer PRIMARY KEY NOT NULL,
-  `vehicle_plate` varchar(20) NOT NULL,
+  `license_plate` varchar(20) NOT NULL,
   `checkin_time` datetime,
   `checkout_time` datetime,
-  `price` double,
+  `fee` double,
   `created_at` datetime NOT NULL,
   `updated_at` datetime,
   `deleted_at` datetime,
@@ -180,13 +194,13 @@ ALTER TABLE `slots` ADD FOREIGN KEY (`parking_lot_id`) REFERENCES `parking_lots`
 
 ALTER TABLE `issues` ADD FOREIGN KEY (`parking_lot_id`) REFERENCES `parking_lots` (`id`);
 
-ALTER TABLE `issues` ADD FOREIGN KEY (`card_id`) REFERENCES `cards` (`id`);
+ALTER TABLE `issues` ADD FOREIGN KEY (`resident_card_id`) REFERENCES `resident_cards` (`id`);
 
 ALTER TABLE `cards` ADD FOREIGN KEY (`vehicle_type_id`) REFERENCES `vehicle_types` (`id`);
 
-ALTER TABLE `resident_prices` ADD FOREIGN KEY (`vehicle_type_id`) REFERENCES `vehicle_types` (`id`);
+ALTER TABLE `resident_fees` ADD FOREIGN KEY (`vehicle_type_id`) REFERENCES `vehicle_types` (`id`);
 
-ALTER TABLE `visitor_prices` ADD FOREIGN KEY (`vehicle_type_id`) REFERENCES `vehicle_types` (`id`);
+ALTER TABLE `visitor_fees` ADD FOREIGN KEY (`vehicle_type_id`) REFERENCES `vehicle_types` (`id`);
 
 ALTER TABLE `sessions` ADD FOREIGN KEY (`card_id`) REFERENCES `cards` (`id`);
 
@@ -195,3 +209,7 @@ ALTER TABLE `lost_history` ADD FOREIGN KEY (`card_id`) REFERENCES `cards` (`id`)
 ALTER TABLE `images` ADD FOREIGN KEY (`session_id`) REFERENCES `sessions` (`id`);
 
 ALTER TABLE `accounts` ADD FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`);
+
+ALTER TABLE `resident_cards` ADD FOREIGN KEY (`card_id`) REFERENCES `cards` (`id`);
+
+ALTER TABLE `resident_cards` ADD FOREIGN KEY (`resident_id`) REFERENCES `residents` (`id`);
