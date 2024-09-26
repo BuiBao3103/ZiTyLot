@@ -15,13 +15,9 @@ CREATE TABLE `functions` (
 );
 
 CREATE TABLE `role_functions` (
-  `id` integer NOT NULL AUTO_INCREMENT,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime,
-  `deleted_at` datetime,
   `role_id` integer,
   `function_id` integer,
-  PRIMARY KEY (`id`, `role_id`, `function_id`)
+  PRIMARY KEY (`role_id`, `function_id`)
 );
 
 CREATE TABLE `accounts` (
@@ -142,7 +138,7 @@ CREATE TABLE `resident_fees` (
 
 CREATE TABLE `visitor_fees` (
   `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `fee_type` ENUM ('TURN', 'HOUR_PER_TURN', 'FIRST_N_AND_NEXT_n_HOUR'),
+  `fee_type` ENUM ('TURN', 'HOUR_PER_TURN', 'FIRST_N_AND_NEXT_M_HOUR'),
   `day_fee` double,
   `night_fee` double,
   `hours_per_turn` double,
