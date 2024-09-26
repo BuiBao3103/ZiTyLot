@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ZiTyLot.ENTITY
+﻿namespace ZiTyLot.ENTITY
 {
     public class B
     {
@@ -19,4 +13,3 @@ namespace ZiTyLot.ENTITY
         public A A { get => a; set => a = value; }
     }
 }
-

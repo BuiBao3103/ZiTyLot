@@ -10,6 +10,8 @@ namespace ZiTyLot.ENTITY
         private DateTime deleted_at;
         private Role role;
         private Function function;
+        private int role_id;
+        private int function_id;
 
         public int Id { get => id; set => id = value; }
         public DateTime CreatedAt { get => created_at; set => created_at = value; }
@@ -17,6 +19,8 @@ namespace ZiTyLot.ENTITY
         public DateTime DeletedAt { get => deleted_at; set => deleted_at = value; }
         public Role Role { get => role; set => role = value; }
         public Function Function { get => function; set => function = value; }
+        public int RoleId { get => role_id; set => role_id = value; }
+        public int FunctionId { get => function_id; set => function_id = value; }
 
     }
 }

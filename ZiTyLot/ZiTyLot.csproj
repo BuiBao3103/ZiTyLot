@@ -108,7 +108,9 @@
     <Compile Include="DAO\ADAO.cs" />
     <Compile Include="Config\DBConfig.cs" />
     <Compile Include="DAO\IDAO.cs" />
+    <Compile Include="ENTITY\A.cs" />
     <Compile Include="ENTITY\Account.cs" />
+    <Compile Include="ENTITY\B.cs" />
     <Compile Include="ENTITY\Bill.cs" />
     <Compile Include="ENTITY\Card.cs" />
     <Compile Include="ENTITY\CardStatus.cs" />

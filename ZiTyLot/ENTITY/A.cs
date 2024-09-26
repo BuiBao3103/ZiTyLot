@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 namespace ZiTyLot.ENTITY
 {
     public class A
@@ -18,4 +17,3 @@ namespace ZiTyLot.ENTITY
     }
 
 }
-    

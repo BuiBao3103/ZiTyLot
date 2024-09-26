@@ -11,8 +11,8 @@ namespace ZiTyLot.ENTITY
         private DateTime checkout_time;
         private double price;
         private DateTime created_at;
-        private DateTime updated_at;
-        private DateTime deleted_at;
+        private DateTime? updated_at;
+        private DateTime? deleted_at;
         private Card card;
         private ICollection<Image> images = new List<Image>();
 
@@ -22,8 +22,8 @@ namespace ZiTyLot.ENTITY
         public DateTime CheckoutTime { get => checkout_time; set => checkout_time = value; }
         public double Price { get => price; set => price = value; }
         public DateTime CreatedAt { get => created_at; set => created_at = value; }
-        public DateTime UpdatedAt { get => updated_at; set => updated_at = value; }
-        public DateTime DeletedAt { get => deleted_at; set => deleted_at = value; }
+        public DateTime? UpdatedAt { get => updated_at; set => updated_at = value; }
+        public DateTime? DeletedAt { get => deleted_at; set => deleted_at = value; }
         public Card Card { get => card; set => card = value; }
         public ICollection<Image> Images { get => images; set => images = value; }
     }
