@@ -1,6 +1,6 @@
 ﻿namespace ZiTyLot.ENTITY
 {
-    public enum CardStatus
+    public enum CardStatusEnum
     {
         EMPTY,
     }

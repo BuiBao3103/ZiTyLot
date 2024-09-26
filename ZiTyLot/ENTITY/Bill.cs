@@ -5,20 +5,23 @@ namespace ZiTyLot.ENTITY
 {
     public class Bill
     {
+        //attributes
         private int id;
-        private double total_price;
+        private double total_fee;
         private int issue_quantity;
         private DateTime created_at;
         private DateTime? updated_at;
         private DateTime? deleted_at;
         private int account_id;
         private int resident_id;
-        private Account account;
-        private Resident resident;
+
+        //relationships
+        private Account account = null;
+        private Resident resident = null;
         private ICollection<Issue> issues = new List<Issue>();
 
         public int Id { get => id; set => id = value; }
-        public double Total_price { get => total_price; set => total_price = value; }
+        public double Total_fee { get => total_fee; set => total_fee = value; }
         public int Issue_quantity { get => issue_quantity; set => issue_quantity = value; }
         public DateTime Created_at { get => created_at; set => created_at = value; }
         public DateTime? Updated_at { get => updated_at; set => updated_at = value; }

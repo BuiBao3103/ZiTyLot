@@ -1,6 +1,6 @@
 ﻿namespace ZiTyLot.ENTITY
 {
-    public enum ParkingLotType
+    public enum ParkingLotTypeEnum
     {
         TWO_WHEELER,
         FOUR_WHEELER

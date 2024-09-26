@@ -46,7 +46,13 @@ namespace ZiTyLot.BUS
 
         public B GetById(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return bDAO.GetById(id);
+            }catch(Exception ex)
+            {
+                throw new Exception("An error occurred while fetching the data.", ex);
+            }
         }
 
         public void Update(B item)

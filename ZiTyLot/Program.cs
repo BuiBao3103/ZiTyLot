@@ -41,7 +41,7 @@ namespace ZiTyLot
             //Example.AddRecord();
             //Example.UpdateRecord();
             //Example.DeleteRecord();
-            //Example.Populate();
+            Example.Populate();
 
         }
     }

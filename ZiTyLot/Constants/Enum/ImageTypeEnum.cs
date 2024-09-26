@@ -1,6 +1,6 @@
 ﻿namespace ZiTyLot.ENTITY
 {
-    public enum ImageType
+    public enum ImageTypeEnum
     {
         FRONT,
         BACK

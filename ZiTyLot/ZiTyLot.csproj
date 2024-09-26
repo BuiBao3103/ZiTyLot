@@ -115,22 +115,23 @@
     <Compile Include="ENTITY\B.cs" />
     <Compile Include="ENTITY\Bill.cs" />
     <Compile Include="ENTITY\Card.cs" />
-    <Compile Include="ENTITY\CardStatus.cs" />
+    <Compile Include="Constants\Enum\CardStatusEnum.cs" />
     <Compile Include="ENTITY\Function.cs" />
     <Compile Include="ENTITY\Image.cs" />
-    <Compile Include="ENTITY\ImageType.cs" />
+    <Compile Include="Constants\Enum\ImageTypeEnum.cs" />
     <Compile Include="ENTITY\Issue.cs" />
     <Compile Include="ENTITY\LostHistory.cs" />
     <Compile Include="ENTITY\ParkingLot.cs" />
-    <Compile Include="ENTITY\ParkingLotType.cs" />
+    <Compile Include="Constants\Enum\ParkingLotTypeEnum.cs" />
     <Compile Include="ENTITY\Resident.cs" />
-    <Compile Include="ENTITY\ResidentPrice.cs" />
+    <Compile Include="ENTITY\ResidentCard.cs" />
+    <Compile Include="ENTITY\ResidentFee.cs" />
     <Compile Include="ENTITY\Role.cs" />
     <Compile Include="ENTITY\RoleFunction.cs" />
     <Compile Include="ENTITY\Session.cs" />
     <Compile Include="ENTITY\Slot.cs" />
     <Compile Include="ENTITY\VehicleType.cs" />
-    <Compile Include="ENTITY\VisitorPrice.cs" />
+    <Compile Include="ENTITY\VisitorFee.cs" />
     <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
