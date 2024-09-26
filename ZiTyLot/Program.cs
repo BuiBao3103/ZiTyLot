@@ -95,7 +95,7 @@ namespace ZiTyLot
         {
             try
             {
-                int idForUpdate = 5;
+                int idForUpdate = 1;
                 A existMy = aBus.GetById(idForUpdate);
                 existMy.Name = "Updated Item"; 
                 existMy.Type = ATypeEnum.IN_USE;
@@ -113,7 +113,7 @@ namespace ZiTyLot
         {
             try
             {
-                int idToDelete = 5;
+                int idToDelete = 3;
                 aBus.Delete(idToDelete);
                 Console.WriteLine("Record deleted successfully.");
             }

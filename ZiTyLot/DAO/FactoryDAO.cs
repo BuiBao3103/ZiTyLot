@@ -18,15 +18,20 @@ namespace ZiTyLot.DAO
 
         public List<T> GetAll(List<FilterCondition> filters = null)
         {
+            // Initialize a list to hold the results
             var list = new List<T>();
 
             try
             {
+                // Establish a connection to the database
                 using (var connection = DBConfig.GetConnection())
                 {
-                    connection.Open();
+                    connection.Open(); // Open the connection
+
+                    // Start building the SQL query
                     var query = new StringBuilder($"SELECT * FROM {tableName} WHERE 1=1");
 
+                    // Append filter conditions to the query if any filters are provided
                     if (filters != null)
                     {
                         foreach (var filter in filters)
@@ -35,8 +40,10 @@ namespace ZiTyLot.DAO
                         }
                     }
 
+                    // Create a MySqlCommand with the constructed query
                     using (var command = new MySqlCommand(query.ToString(), connection))
                     {
+                        // Add parameters for the filter conditions to the command
                         if (filters != null)
                         {
                             foreach (var filter in filters)
@@ -45,31 +52,25 @@ namespace ZiTyLot.DAO
                             }
                         }
 
+                        // Execute the query and read the results
                         using (var reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
+                                // Create a new instance of T for each record
                                 var item = new T();
+
+                                // Set the properties of the instance based on the data from the reader
                                 foreach (var prop in typeof(T).GetProperties())
                                 {
-                                    // Skip properties that are collections or entity classes
-                                    if ((typeof(System.Collections.IEnumerable).IsAssignableFrom(prop.PropertyType) && prop.PropertyType != typeof(string)) ||
-                                        prop.PropertyType.Namespace == "ZiTyLot.ENTITY")
-                                    {
-                                        continue;
-                                    }
+                                    if (ShouldSkipProperty(prop)) continue;
+
                                     if (!reader.IsDBNull(reader.GetOrdinal(prop.Name)))
                                     {
-                                        if (prop.PropertyType.IsEnum)
-                                        {
-                                            prop.SetValue(item, Enum.Parse(prop.PropertyType, reader[prop.Name].ToString()));
-                                        }
-                                        else
-                                        {
-                                            prop.SetValue(item, reader[prop.Name]);
-                                        }
+                                        SetPropertyValue(item, prop, reader[prop.Name]);
                                     }
                                 }
+                                // Add the populated instance to the list
                                 list.Add(item);
                             }
                         }
@@ -78,49 +79,32 @@ namespace ZiTyLot.DAO
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                // Throw a new exception with a custom message if an error occurs
                 throw new Exception("An error occurred while fetching all records.", ex);
             }
 
+            // Return the list of results
             return list;
         }
 
         public Page<T> GetAllPagination(Pageable pageable, List<FilterCondition> filters = null)
         {
-            int totalElements;
+            int totalElements; // Variable to store the total number of elements
 
             try
             {
+                // Establish a connection to the database
                 using (var connection = DBConfig.GetConnection())
                 {
-                    connection.Open();
+                    connection.Open(); // Open the connection
 
-                    // Query to get total elements
-                    var countQuery = new StringBuilder($"SELECT COUNT(*) FROM {tableName} WHERE 1=1");
-                    if (filters != null)
-                    {
-                        foreach (var filter in filters)
-                        {
-                            countQuery.Append(GetFilterConditionSql(filter));
-                        }
-                    }
+                    // Get the total number of elements that match the filters
+                    totalElements = GetTotalElements(connection, filters);
 
-                    using (var countCommand = new MySqlCommand(countQuery.ToString(), connection))
-                    {
-                        if (filters != null)
-                        {
-                            foreach (var filter in filters)
-                            {
-                                AddFilterConditionParameters(countCommand, filter);
-                            }
-                        }
-
-                        totalElements = Convert.ToInt32(countCommand.ExecuteScalar());
-                    }
-
-                    // Query to get paginated data
+                    // Start building the SQL query for fetching data
                     var dataQuery = new StringBuilder($"SELECT * FROM {tableName} WHERE 1=1");
 
+                    // Append filter conditions to the query if any filters are provided
                     if (filters != null)
                     {
                         foreach (var filter in filters)
@@ -129,15 +113,19 @@ namespace ZiTyLot.DAO
                         }
                     }
 
+                    // Append sorting information to the query if provided
                     if (!string.IsNullOrEmpty(pageable.SortBy))
                     {
                         dataQuery.Append($" ORDER BY {pageable.SortBy} {pageable.SortOrder}");
                     }
 
+                    // Append pagination information to the query
                     dataQuery.Append($" LIMIT @PageSize OFFSET @Offset");
 
+                    // Create a MySqlCommand with the constructed query
                     using (var command = new MySqlCommand(dataQuery.ToString(), connection))
                     {
+                        // Add parameters for the filter conditions to the command
                         if (filters != null)
                         {
                             foreach (var filter in filters)
@@ -146,53 +134,262 @@ namespace ZiTyLot.DAO
                             }
                         }
 
+                        // Add pagination parameters to the command
                         command.Parameters.AddWithValue("@Offset", pageable.Offset());
                         command.Parameters.AddWithValue("@PageSize", pageable.PageSize);
 
-                        var list = new List<T>();
+                        var list = new List<T>(); // Initialize a list to hold the results
+
+                        // Execute the query and read the results
                         using (var reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
+                                // Create a new instance of T for each record
                                 var item = new T();
+
+                                // Set the properties of the instance based on the data from the reader
                                 foreach (var prop in typeof(T).GetProperties())
                                 {
-                                    // Skip properties that are collections or entity classes
-                                    if ((typeof(System.Collections.IEnumerable).IsAssignableFrom(prop.PropertyType) && prop.PropertyType != typeof(string)) ||
-                                        prop.PropertyType.Namespace == "ZiTyLot.ENTITY")
-                                    {
-                                        continue;
-                                    }
+                                    if (ShouldSkipProperty(prop)) continue;
 
                                     if (!reader.IsDBNull(reader.GetOrdinal(prop.Name)))
                                     {
-                                        if (prop.PropertyType.IsEnum)
-                                        {
-                                            prop.SetValue(item, Enum.Parse(prop.PropertyType, reader[prop.Name].ToString()));
-                                        }
-                                        else
-                                        {
-                                            prop.SetValue(item, reader[prop.Name]);
-                                        }
+                                        SetPropertyValue(item, prop, reader[prop.Name]);
                                     }
                                 }
+                                // Add the populated instance to the list
                                 list.Add(item);
                             }
                         }
 
+                        // Return a new Page object containing the results, total elements, and pagination information
                         return new Page<T>(list, totalElements, pageable);
                     }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                // Throw a new exception with a custom message if an error occurs
                 throw new Exception("An error occurred while fetching paginated data.", ex);
+            }
+        }
+
+
+        public T GetById(int id)
+        {
+            try
+            {
+                // Establish a connection to the database
+                using (var connection = DBConfig.GetConnection())
+                {
+                    connection.Open(); // Open the connection
+
+                    // Define the SQL query to fetch the record by ID
+                    var query = $"SELECT * FROM {tableName} WHERE Id = @Id";
+
+                    // Create a MySqlCommand with the query
+                    using (var command = new MySqlCommand(query, connection))
+                    {
+                        // Add the ID parameter to the command
+                        command.Parameters.AddWithValue("@Id", id);
+
+                        // Execute the query and read the results
+                        using (var reader = command.ExecuteReader())
+                        {
+                            if (reader.Read()) // If a record is found
+                            {
+                                var item = new T(); // Create a new instance of T
+
+                                // Set the properties of the instance based on the data from the reader
+                                foreach (var prop in typeof(T).GetProperties())
+                                {
+                                    if (ShouldSkipProperty(prop)) continue; // Skip properties that should be ignored
+
+                                    if (!reader.IsDBNull(reader.GetOrdinal(prop.Name))) // Check if the column value is not null
+                                    {
+                                        SetPropertyValue(item, prop, reader[prop.Name]); // Set the property value
+                                    }
+                                }
+                                return item; // Return the populated instance
+                            }
+                        }
+                    }
+                }
+                return default; // Return the default value if no record is found
+            }
+            catch (Exception ex)
+            {
+                // Throw a new exception with a custom message if an error occurs
+                throw new Exception("An error occurred while fetching the record by ID.", ex);
+            }
+        }
+
+
+        public void Add(T item)
+        {
+            try
+            {
+                // Establish a connection to the database
+                using (var connection = DBConfig.GetConnection())
+                {
+                    connection.Open(); // Open the connection
+
+                    // Start building the SQL query for inserting data
+                    var query = new StringBuilder($"INSERT INTO {tableName} (");
+
+                    // Get the properties of the type T
+                    var properties = typeof(T).GetProperties();
+                    var validProperties = new List<string>(); // List to hold valid property names
+
+                    // Append property names to the query
+                    foreach (var prop in properties)
+                    {
+                        if (ShouldSkipProperty(prop)) continue; // Skip properties that should be ignored
+
+                        query.Append($"{prop.Name},");
+                        validProperties.Add(prop.Name); // Add valid property names to the list
+                    }
+                    query.Length--; // Remove the last comma
+                    query.Append(") VALUES (");
+
+                    // Append parameter placeholders to the query
+                    foreach (var propName in validProperties)
+                    {
+                        query.Append($"@{propName},");
+                    }
+                    query.Length--; // Remove the last comma
+                    query.Append(")");
+
+                    // Create a MySqlCommand with the constructed query
+                    using (var command = new MySqlCommand(query.ToString(), connection))
+                    {
+                        // Add parameters for each property to the command
+                        foreach (var prop in properties)
+                        {
+                            if (ShouldSkipProperty(prop)) continue; // Skip properties that should be ignored
+
+                            var value = prop.GetValue(item) ?? DBNull.Value; // Get the property value or set to DBNull if null
+
+                            if (prop.PropertyType.IsEnum && value != DBNull.Value)
+                            {
+                                value = value.ToString(); // Convert enum to string
+                            }
+
+                            command.Parameters.AddWithValue($"@{prop.Name}", value); // Add the parameter to the command
+                        }
+
+                        command.ExecuteNonQuery(); // Execute the query
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Throw a new exception with a custom message if an error occurs
+                throw new Exception("An error occurred while adding the record.", ex);
+            }
+        }
+
+        public void Update(T item)
+        {
+            try
+            {
+                // Establish a connection to the database
+                using (var connection = DBConfig.GetConnection())
+                {
+                    connection.Open(); // Open the connection
+
+                    // Start building the SQL query for updating data
+                    var query = new StringBuilder($"UPDATE {tableName} SET ");
+
+                    // Get the properties of the type T
+                    var properties = typeof(T).GetProperties();
+
+                    // Append property names and their parameter placeholders to the query
+                    foreach (var prop in properties)
+                    {
+                        if (prop.Name != "Id" && !ShouldSkipProperty(prop)) // Skip the Id property and properties that should be ignored
+                        {
+                            query.Append($"{prop.Name} = @{prop.Name},");
+                        }
+                    }
+                    query.Length--; // Remove the last comma
+                    query.Append(" WHERE Id = @Id"); // Append the WHERE clause to update the record by Id
+
+                    // Create a MySqlCommand with the constructed query
+                    using (var command = new MySqlCommand(query.ToString(), connection))
+                    {
+                        // Add parameters for each property to the command
+                        foreach (var prop in properties)
+                        {
+                            if (prop.Name != "Id" && !ShouldSkipProperty(prop)) // Skip the Id property and properties that should be ignored
+                            {
+                                var value = prop.GetValue(item) ?? DBNull.Value; // Get the property value or set to DBNull if null
+
+                                if (prop.PropertyType.IsEnum && value != DBNull.Value)
+                                {
+                                    value = value.ToString(); // Convert enum to string
+                                }
+
+                                command.Parameters.AddWithValue($"@{prop.Name}", value); // Add the parameter to the command
+                            }
+                        }
+
+                        // Add the Id parameter to the command
+                        var idProperty = typeof(T).GetProperty("Id");
+                        if (idProperty != null)
+                        {
+                            command.Parameters.AddWithValue("@Id", idProperty.GetValue(item));
+                        }
+                        else
+                        {
+                            throw new Exception("The entity does not have an Id property."); // Throw an exception if the Id property is not found
+                        }
+
+                        command.ExecuteNonQuery(); // Execute the query
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Throw a new exception with a custom message if an error occurs
+                throw new Exception("An error occurred while updating the record.", ex);
+            }
+        }
+
+        public void Delete(int id)
+        {
+            try
+            {
+                // Establish a connection to the database
+                using (var connection = DBConfig.GetConnection())
+                {
+                    connection.Open(); // Open the connection
+
+                    // Define the SQL query to delete the record by ID
+                    var query = $"DELETE FROM {tableName} WHERE Id = @Id";
+
+                    // Create a MySqlCommand with the query
+                    using (var command = new MySqlCommand(query, connection))
+                    {
+                        // Add the ID parameter to the command
+                        command.Parameters.AddWithValue("@Id", id);
+
+                        // Execute the query
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Throw a new exception with a custom message if an error occurs
+                throw new Exception("An error occurred while deleting the record.", ex);
             }
         }
 
         private string GetFilterConditionSql(FilterCondition filter)
         {
+            // Generate the SQL condition based on the filter's operator
             switch (filter.Operator)
             {
                 case ComparisonOperator.Equals:
@@ -208,7 +405,7 @@ namespace ZiTyLot.DAO
                 case ComparisonOperator.Like:
                     return $" AND {filter.Column} LIKE @{filter.Column}";
                 case ComparisonOperator.In:
-                    return $" AND {filter.Column} IN ({filter.Value})"; // Value should be a comma-separated list of values for IN operator
+                    return $" AND {filter.Column} IN ({filter.Value})";
                 default:
                     throw new NotSupportedException($"Operator {filter.Operator} is not supported.");
             }
@@ -216,233 +413,59 @@ namespace ZiTyLot.DAO
 
         private void AddFilterConditionParameters(MySqlCommand command, FilterCondition filter)
         {
-            switch (filter.Operator)
-            {
-                case ComparisonOperator.Like:
-                    command.Parameters.AddWithValue($"@{filter.Column}", $"%{filter.Value}%");
-                    break;
-                default:
-                    command.Parameters.AddWithValue($"@{filter.Column}", filter.Value);
-                    break;
-            }
+            // Add the filter condition parameter to the command
+            var parameterValue = filter.Operator == ComparisonOperator.Like ? $"%{filter.Value}%" : filter.Value;
+            command.Parameters.AddWithValue($"@{filter.Column}", parameterValue);
         }
-        public T GetById(int id)
+
+        private bool ShouldSkipProperty(System.Reflection.PropertyInfo prop)
         {
-            try
+            // Determine if the property should be skipped based on its type
+            return (typeof(System.Collections.IEnumerable).IsAssignableFrom(prop.PropertyType) && prop.PropertyType != typeof(string)) ||
+                   prop.PropertyType.Namespace == "ZiTyLot.ENTITY";
+        }
+
+        private void SetPropertyValue(T item, System.Reflection.PropertyInfo prop, object value)
+        {
+            // Set the property value, converting enums if necessary
+            if (prop.PropertyType.IsEnum)
             {
-                using (var connection = DBConfig.GetConnection())
-                {
-                    connection.Open();
-                    var query = $"SELECT * FROM {tableName} WHERE Id = @Id";
-
-                    using (var command = new MySqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@Id", id);
-
-                        using (var reader = command.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                var item = new T();
-                                foreach (var prop in typeof(T).GetProperties())
-                                {
-                                    // Skip properties that are collections or entity classes
-                                    if ((typeof(System.Collections.IEnumerable).IsAssignableFrom(prop.PropertyType) && prop.PropertyType != typeof(string)) ||
-                                        prop.PropertyType.Namespace == "ZiTyLot.ENTITY")
-                                    {
-                                        continue;
-                                    }
-                                    if (!reader.IsDBNull(reader.GetOrdinal(prop.Name)))
-                                    {
-                                        if (prop.PropertyType.IsEnum)
-                                        {
-                                            prop.SetValue(item, Enum.Parse(prop.PropertyType, reader[prop.Name].ToString()));
-                                        }
-                                        else
-                                        {
-                                            prop.SetValue(item, reader[prop.Name]);
-                                        }
-                                    }
-                                }
-                                return item;
-                            }
-                        }
-                    }
-                }
-                return default;
+                prop.SetValue(item, Enum.Parse(prop.PropertyType, value.ToString()));
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine(ex.Message);
-                throw new Exception("An error occurred while fetching the record by ID.", ex);
+                prop.SetValue(item, value);
             }
         }
 
-        public void Add(T item)
+        private int GetTotalElements(MySqlConnection connection, List<FilterCondition> filters)
         {
-            try
+            // Start building the SQL query to count the total elements
+            var countQuery = new StringBuilder($"SELECT COUNT(*) FROM {tableName} WHERE 1=1");
+
+            // Append filter conditions to the query if any filters are provided
+            if (filters != null)
             {
-                using (var connection = DBConfig.GetConnection())
+                foreach (var filter in filters)
                 {
-                    connection.Open();
-                    var query = new StringBuilder($"INSERT INTO {tableName} (");
-
-                    var properties = typeof(T).GetProperties();
-                    var validProperties = new List<string>();
-
-                    foreach (var prop in properties)
-                    {
-                        if ((typeof(System.Collections.IEnumerable).IsAssignableFrom(prop.PropertyType) && prop.PropertyType != typeof(string)) ||
-                                    prop.PropertyType.Namespace == "ZiTyLot.ENTITY")
-                        {
-                            continue;
-                        }
-                        query.Append($"{prop.Name},");
-                        validProperties.Add(prop.Name);
-                    }
-                    query.Length--; // Remove the last comma
-                    query.Append(") VALUES (");
-
-                    foreach (var propName in validProperties)
-                    {
-                        query.Append($"@{propName},");
-                    }
-                    query.Length--; // Remove the last comma
-                    query.Append(")");
-
-                    using (var command = new MySqlCommand(query.ToString(), connection))
-                    {
-                        foreach (var prop in properties)
-                        {
-                            if ((typeof(System.Collections.IEnumerable).IsAssignableFrom(prop.PropertyType) && prop.PropertyType != typeof(string)) ||
-                                        prop.PropertyType.Namespace == "ZiTyLot.ENTITY")
-                            {
-                                continue;
-                            }
-
-                            var value = prop.GetValue(item) ?? DBNull.Value;
-
-                            if (prop.PropertyType.IsEnum && value != DBNull.Value)
-                            {
-                                value = value.ToString(); // Convert enum to string
-                            }
-
-                            // Log the property name and value
-                            Console.WriteLine($"Property: {prop.Name}, Value: {value}");
-
-                            command.Parameters.AddWithValue($"@{prop.Name}", value);
-                        }
-
-                        // Log the final SQL command
-                        Console.WriteLine($"SQL Command: {command.CommandText}");
-                        foreach (MySqlParameter param in command.Parameters)
-                        {
-                            Console.WriteLine($"Parameter: {param.ParameterName}, Value: {param.Value}");
-                        }
-
-                        command.ExecuteNonQuery();
-                    }
+                    countQuery.Append(GetFilterConditionSql(filter));
                 }
             }
-            catch (Exception ex)
+
+            // Create a MySqlCommand with the constructed query
+            using (var countCommand = new MySqlCommand(countQuery.ToString(), connection))
             {
-                Console.WriteLine(ex.Message);
-                throw new Exception("An error occurred while adding the record.", ex);
-            }
-        }
-
-
-
-
-        public void Update(T item)
-        {
-            try
-            {
-                using (var connection = DBConfig.GetConnection())
+                // Add parameters for the filter conditions to the command
+                if (filters != null)
                 {
-                    connection.Open();
-                    var query = new StringBuilder($"UPDATE {tableName} SET ");
-
-                    var properties = typeof(T).GetProperties();
-                    foreach (var prop in properties)
+                    foreach (var filter in filters)
                     {
-                        if (prop.Name != "Id")
-                        {
-                            if ((typeof(System.Collections.IEnumerable).IsAssignableFrom(prop.PropertyType) && prop.PropertyType != typeof(string)) ||
-                                        prop.PropertyType.Namespace == "ZiTyLot.ENTITY")
-                            {
-                                continue;
-                            }
-                            query.Append($"{prop.Name} = @{prop.Name},");
-                        }
-                    }
-                    query.Length--; // Remove the last comma
-                    query.Append(" WHERE Id = @Id");
-
-                    using (var command = new MySqlCommand(query.ToString(), connection))
-                    {
-                        foreach (var prop in properties)
-                        {
-                            if (prop.Name != "Id")
-                            {
-                                if ((typeof(System.Collections.IEnumerable).IsAssignableFrom(prop.PropertyType) && prop.PropertyType != typeof(string)) ||
-                                            prop.PropertyType.Namespace == "ZiTyLot.ENTITY")
-                                {
-                                    continue;
-                                }
-
-                                var value = prop.GetValue(item) ?? DBNull.Value;
-
-                                if (prop.PropertyType.IsEnum && value != DBNull.Value)
-                                {
-                                    value = value.ToString(); // Convert enum to string
-                                }
-
-                                command.Parameters.AddWithValue($"@{prop.Name}", value);
-                            }
-                        }
-
-                        // Ensure the Id parameter is added only once
-                        var idProperty = typeof(T).GetProperty("Id");
-                        if (idProperty != null)
-                        {
-                            command.Parameters.AddWithValue("@Id", idProperty.GetValue(item));
-                        }
-                        else
-                        {
-                            throw new Exception("The entity does not have an Id property.");
-                        }
-                        command.ExecuteNonQuery();
+                        AddFilterConditionParameters(countCommand, filter);
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                throw new Exception("An error occurred while updating the record.", ex);
-            }
-        }
 
-        public void Delete(int id)
-        {
-            try
-            {
-                using (var connection = DBConfig.GetConnection())
-                {
-                    connection.Open();
-                    var query = $"DELETE FROM {tableName} WHERE Id = @Id";
-
-                    using (var command = new MySqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@Id", id);
-                        command.ExecuteNonQuery();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                throw new Exception("An error occurred while deleting the record.", ex);
+                // Execute the query and return the total count
+                return Convert.ToInt32(countCommand.ExecuteScalar());
             }
         }
     }
