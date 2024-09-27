@@ -26,6 +26,7 @@ namespace ZiTyLot.GUI
         public Login()
         {
             InitializeComponent();
+            this.CenterToScreen();
             this.ActiveControl = inputUsername;
             this.pnlInputUsername.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnlInputUsername.Width, pnlInputUsername.Height, 5, 5));
             this.pnlInputPassword.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnlInputPassword.Width, pnlInputPassword.Height, 5, 5));
