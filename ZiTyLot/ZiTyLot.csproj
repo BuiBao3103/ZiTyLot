@@ -177,6 +177,7 @@
   <ItemGroup>
     <Content Include="GUI\assets\hero-image.jpg" />
     <Content Include="GUI\assets\logo.jpg" />
+    <Content Include="GUI\assets\ZityLot-Logo-120x60px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
