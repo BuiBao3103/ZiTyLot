@@ -126,3 +126,6 @@ C:\Users\ASUS\Documents\School\HK1 Nam 4\C#\ZiTyLot\ZiTyLot\bin\Debug\System.Run
 C:\Users\ASUS\Documents\School\HK1 Nam 4\C#\ZiTyLot\ZiTyLot\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\ASUS\Documents\School\HK1 Nam 4\C#\ZiTyLot\ZiTyLot\obj\Debug\ZiTyLot.csproj.Up2Date
 C:\Users\BaoBui\Desktop\CSharp\ZiTyLot\ZiTyLot\obj\Debug\ZiTyLot.GUI.Login.resources
+C:\Users\ASUS\Documents\School\HK1 Nam 4\C#\ZiTyLot\ZiTyLot\obj\Debug\ZiTyLot.GUI.Home.resources
+C:\Users\ASUS\Documents\School\HK1 Nam 4\C#\ZiTyLot\ZiTyLot\obj\Debug\ZiTyLot.GUI.Panel1.resources
+C:\Users\ASUS\Documents\School\HK1 Nam 4\C#\ZiTyLot\ZiTyLot\obj\Debug\ZiTyLot.GUI.Panel2.resources

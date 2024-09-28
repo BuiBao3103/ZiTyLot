@@ -137,19 +137,46 @@
     <Compile Include="ENTITY\Slot.cs" />
     <Compile Include="ENTITY\VehicleType.cs" />
     <Compile Include="ENTITY\VisitorFee.cs" />
+    <Compile Include="GUI\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Panel1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Panel1.Designer.cs">
+      <DependentUpon>Panel1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Panel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Panel2.Designer.cs">
+      <DependentUpon>Panel2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\FilterCondition.cs" />
     <Compile Include="Helper\Page.cs" />
     <Compile Include="Helper\Pageable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Panel1.resx">
+      <DependentUpon>Panel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Panel2.resx">
+      <DependentUpon>Panel2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -178,6 +205,7 @@
     <Content Include="GUI\assets\hero-image.jpg" />
     <Content Include="GUI\assets\logo.jpg" />
     <Content Include="GUI\assets\ZityLot-Logo-120x60px.ico" />
+    <Content Include="GUI\assets\scan.png" />
     <Content Include="GUI\assets\ZityLot-Logo-120x60px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
