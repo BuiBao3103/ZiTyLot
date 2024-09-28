@@ -125,3 +125,4 @@ C:\Users\ASUS\Documents\School\HK1 Nam 4\C#\ZiTyLot\ZiTyLot\bin\Debug\System.Num
 C:\Users\ASUS\Documents\School\HK1 Nam 4\C#\ZiTyLot\ZiTyLot\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\ASUS\Documents\School\HK1 Nam 4\C#\ZiTyLot\ZiTyLot\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\ASUS\Documents\School\HK1 Nam 4\C#\ZiTyLot\ZiTyLot\obj\Debug\ZiTyLot.csproj.Up2Date
+C:\Users\BaoBui\Desktop\CSharp\ZiTyLot\ZiTyLot\obj\Debug\ZiTyLot.GUI.Login.resources

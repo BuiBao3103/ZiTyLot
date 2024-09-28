@@ -95,5 +95,10 @@ namespace ZiTyLot.GUI
         {
 
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
