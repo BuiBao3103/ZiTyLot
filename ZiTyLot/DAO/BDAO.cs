@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using ZiTyLot.ENTITY;
 using ZiTyLot.Helper;
+using ZiTyLot.Constants;
 
 namespace ZiTyLot.DAO
 {
@@ -10,7 +11,7 @@ namespace ZiTyLot.DAO
         private readonly FactoryDAO<B> daoFactory;
         public BDAO()
         {
-            daoFactory = new FactoryDAO<B>("b");
+            daoFactory = new FactoryDAO<B>(DatabaseName.B);
         }
         public void Add(B item)
         {

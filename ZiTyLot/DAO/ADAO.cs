@@ -2,6 +2,7 @@
 using ZiTyLot.Helper;
 using ZiTyLot.ENTITY;
 using System;
+using ZiTyLot.Constants;
 namespace ZiTyLot.DAO
 {
     public class ADAO : IDAO<A>
@@ -10,7 +11,7 @@ namespace ZiTyLot.DAO
 
         public ADAO()
         {
-            daoFactory = new FactoryDAO<A>("a");
+            daoFactory = new FactoryDAO<A>(DatabaseName.A);
         }
 
         public List<A> GetAll(List<FilterCondition> filters = null)
