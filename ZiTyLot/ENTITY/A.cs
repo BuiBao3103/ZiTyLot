@@ -7,12 +7,12 @@ namespace ZiTyLot.ENTITY
     {
         private int id;
         private string name;
-        private ATypeEnum type;
+        private AType type;
         private ICollection<B> bs = new List<B>();
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public ICollection<B> Bs { get => bs; set => bs = value; }
-        public ATypeEnum Type { get => type; set => type = value; }
+        public AType Type { get => type; set => type = value; }
 
         public override string ToString()
         {

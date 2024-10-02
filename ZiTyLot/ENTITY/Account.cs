@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ZiTyLot.Constants.Enum;
 
 namespace ZiTyLot.ENTITY
 {
@@ -10,6 +11,10 @@ namespace ZiTyLot.ENTITY
         private string username;
         private string password;
         private string full_name;
+        private AccountGender gender;
+        private string national_id;
+        private string phone;
+        private string email;
         private DateTime created_at;
         private DateTime? updated_at;
         private DateTime? deleted_at;
@@ -30,5 +35,9 @@ namespace ZiTyLot.ENTITY
         public int? Role_id { get => role_id; set => role_id = value; }
         public Role Role { get => role; set => role = value; }
         public ICollection<Bill> Bills { get => bills; set => bills = value; }
+        public AccountGender Gender { get => gender; set => gender = value; }
+        public string National_id { get => national_id; set => national_id = value; }
+        public string Phone { get => phone; set => phone = value; }
+        public string Email { get => email; set => email = value; }
     }
 }

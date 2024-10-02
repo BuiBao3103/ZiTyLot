@@ -7,7 +7,7 @@ namespace ZiTyLot.ENTITY
     {
         //attributes
         private int id;
-        private FeeTypeEnum fee_type;
+        private FeeType fee_type;
         private double? day_fee;
         private double? night_fee;
         private int? hours_per_turn;
@@ -25,7 +25,7 @@ namespace ZiTyLot.ENTITY
         private VehicleType vehicle_type = null;
 
         public int Id { get => id; set => id = value; }
-        public FeeTypeEnum Fee_type { get => fee_type; set => fee_type = value; }
+        public FeeType Fee_type { get => fee_type; set => fee_type = value; }
         public double? Day_fee { get => day_fee; set => day_fee = value; }
         public double? Night_fee { get => night_fee; set => night_fee = value; }
         public int? Hours_per_turn { get => hours_per_turn; set => hours_per_turn = value; }

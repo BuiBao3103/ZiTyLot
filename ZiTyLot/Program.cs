@@ -83,7 +83,7 @@ namespace ZiTyLot
         {
             try
             {
-                A newItem = new A { Name = "", Type = ATypeEnum.EMPTY };
+                A newItem = new A { Name = "", Type = AType.EMPTY };
                 aBus.Add(newItem);
                 Console.WriteLine(newItem);
                 Console.WriteLine("Record added successfully.");
@@ -101,7 +101,7 @@ namespace ZiTyLot
                 int idForUpdate = 1;
                 A existMy = aBus.GetById(idForUpdate);
                 existMy.Name = "Updated Item"; 
-                existMy.Type = ATypeEnum.IN_USE;
+                existMy.Type = AType.IN_USE;
                 aBus.Update(existMy);
                 Console.WriteLine("Record updated successfully.");
             }

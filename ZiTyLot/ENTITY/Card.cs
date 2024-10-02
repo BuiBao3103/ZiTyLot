@@ -9,8 +9,8 @@ namespace ZiTyLot.ENTITY
         //attributes
         private int id;
         private string rfid;
-        private CardStatusEnum status;
-        private CardTypeEnum type;
+        private CardStatus status;
+        private CardType type;
         private DateTime created_at;
         private DateTime? updated_at;
         private DateTime? deleted_at;
@@ -26,8 +26,8 @@ namespace ZiTyLot.ENTITY
 
         public int Id { get => id; set => id = value; }
         public string Rfid { get => rfid; set => rfid = value; }
-        public CardStatusEnum Status { get => status; set => status = value; }
-        public CardTypeEnum Type { get => type; set => type = value; }
+        public CardStatus Status { get => status; set => status = value; }
+        public CardType Type { get => type; set => type = value; }
         public DateTime Created_at { get => created_at; set => created_at = value; }
         public DateTime? Updated_at { get => updated_at; set => updated_at = value; }
         public DateTime? Deleted_at { get => deleted_at; set => deleted_at = value; }
