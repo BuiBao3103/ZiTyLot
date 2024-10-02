@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ZiTyLot.Constants.Enum;
 
 namespace ZiTyLot.ENTITY
 {
@@ -11,6 +12,7 @@ namespace ZiTyLot.ENTITY
         private DateTime checkin_time;
         private DateTime checkout_time;
         private double fee;
+        private SessionType type;
         private DateTime created_at;
         private DateTime? updated_at;
         private DateTime? deleted_at;
@@ -32,5 +34,6 @@ namespace ZiTyLot.ENTITY
         public int? Card_id { get => card_id; set => card_id = value; }
         public Card Card { get => card; set => card = value; }
         public ICollection<Image> Images { get => images; set => images = value; }
+        public SessionType Type { get => type; set => type = value; }
     }
 }

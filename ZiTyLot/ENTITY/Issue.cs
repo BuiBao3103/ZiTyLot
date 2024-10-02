@@ -14,16 +14,18 @@ namespace ZiTyLot.ENTITY
         private DateTime? updated_at;
         private DateTime? deleted_at;
 
-        private int? resident_card_id;
         private int? bill_id;
+        private int? vehicle_type_id;
         private int? parking_lot_id;
         private int? slot_id;
+        private int? card_id;
 
         //relationships
-        private ResidentCard resident_card = null;
         private Bill bill = null;
+        private VehicleType vehicle_type = null;
         private ParkingLot parking_lot = null;
         private Slot slot = null;
+        private Card card = null;
 
         public int Id { get => id; set => id = value; }
         public DateTime Start_date { get => start_date; set => start_date = value; }
@@ -33,13 +35,15 @@ namespace ZiTyLot.ENTITY
         public DateTime Created_at { get => created_at; set => created_at = value; }
         public DateTime? Updated_at { get => updated_at; set => updated_at = value; }
         public DateTime? Deleted_at { get => deleted_at; set => deleted_at = value; }
-        public int? Resident_card_id { get => resident_card_id; set => resident_card_id = value; }
         public int? Bill_id { get => bill_id; set => bill_id = value; }
+        public int? Vehicle_type_id { get => vehicle_type_id; set => vehicle_type_id = value; }
         public int? Parking_lot_id { get => parking_lot_id; set => parking_lot_id = value; }
         public int? Slot_id { get => slot_id; set => slot_id = value; }
+        public int? Card_id { get => card_id; set => card_id = value; }
         public Bill Bill { get => bill; set => bill = value; }
+        public VehicleType Vehicle_type { get => vehicle_type; set => vehicle_type = value; }
         public ParkingLot Parking_lot { get => parking_lot; set => parking_lot = value; }
         public Slot Slot { get => slot; set => slot = value; }
-        internal ResidentCard Resident_card { get => resident_card; set => resident_card = value; }
+        public Card Card { get => card; set => card = value; }
     }
 }
