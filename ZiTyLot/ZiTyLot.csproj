@@ -104,18 +104,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\ABUS.cs" />
+    <Compile Include="BUS\AccountBUS.cs" />
     <Compile Include="BUS\BBUS.cs" />
+    <Compile Include="BUS\BillBUS.cs" />
+    <Compile Include="BUS\FunctionBUS.cs" />
     <Compile Include="BUS\IBUS.cs" />
+    <Compile Include="BUS\ParkingLotBUS.cs" />
+    <Compile Include="BUS\ResidentBUS.cs" />
+    <Compile Include="BUS\RoleBUS.cs" />
+    <Compile Include="BUS\SlotBUS.cs" />
     <Compile Include="Constants\DatabaseName.cs" />
     <Compile Include="Constants\Enum\ATypeEnum.cs" />
     <Compile Include="Constants\Enum\CardTypeEnum.cs" />
     <Compile Include="Constants\Enum\FeeTypeEnum.cs" />
     <Compile Include="Constants\Enum\SlotStatusEnum.cs" />
+    <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\BDAO.cs" />
+    <Compile Include="DAO\BillDAO.cs" />
     <Compile Include="DAO\FactoryDAO.cs" />
     <Compile Include="DAO\ADAO.cs" />
     <Compile Include="Config\DBConfig.cs" />
+    <Compile Include="DAO\FunctionDAO.cs" />
     <Compile Include="DAO\IDAO.cs" />
+    <Compile Include="DAO\ParkingLotDAO.cs" />
+    <Compile Include="DAO\ResidentDAO.cs" />
+    <Compile Include="DAO\RoleDAO.cs" />
+    <Compile Include="DAO\RoleFunctionDAO.cs" />
+    <Compile Include="DAO\SlotDAO.cs" />
     <Compile Include="ENTITY\A.cs" />
     <Compile Include="ENTITY\Account.cs" />
     <Compile Include="ENTITY\B.cs" />

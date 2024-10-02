@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Windows.Forms;
-using ZiTyLot.Config;
-using ZiTyLot.BUS;
 using System.Collections.Generic;
-using ZiTyLot.Helper;
-using ZiTyLot.ENTITY;
+using System.Windows.Forms;
+using ZiTyLot.BUS;
+using ZiTyLot.Config;
 using ZiTyLot.Constants.Enum;
-using ZiTyLot.GUI;
+using ZiTyLot.ENTITY;
+using ZiTyLot.Helper;
 namespace ZiTyLot
 {
     internal static class Program
@@ -16,7 +15,7 @@ namespace ZiTyLot
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Home());
+            //Application.Run(new Home());
 
             // Attempt to connect to the database and fetch data using MyDao
             try
@@ -43,7 +42,7 @@ namespace ZiTyLot
             //Example.AddRecord();
             //Example.UpdateRecord();
             //Example.DeleteRecord();
-            Example.Populate();
+            //Example.Populate();
 
 
         }
@@ -100,7 +99,7 @@ namespace ZiTyLot
             {
                 int idForUpdate = 1;
                 A existMy = aBus.GetById(idForUpdate);
-                existMy.Name = "Updated Item"; 
+                existMy.Name = "Updated Item";
                 existMy.Type = ATypeEnum.IN_USE;
                 aBus.Update(existMy);
                 Console.WriteLine("Record updated successfully.");
