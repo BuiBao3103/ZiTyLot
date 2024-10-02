@@ -176,7 +176,7 @@ namespace ZiTyLot.DAO
         }
 
 
-        public T GetById(int id)
+        public T GetById(object id)
         {
             try
             {
@@ -357,7 +357,7 @@ namespace ZiTyLot.DAO
             }
         }
 
-        public void Delete(int id)
+        public void Delete(object id)
         {
             try
             {

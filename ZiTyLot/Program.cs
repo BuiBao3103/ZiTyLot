@@ -41,7 +41,7 @@ namespace ZiTyLot
             //Example.GetPaginatedRecords();
             //Example.getById();
             //Example.AddRecord();
-            Example.UpdateRecord();
+            //Example.UpdateRecord();
             //Example.DeleteRecord();
             //Example.Populate();
 
@@ -193,8 +193,12 @@ namespace ZiTyLot
         {
             try
             {
-                int id = 3;
-                A item = aBus.GetById(id);
+                //int id = 4;
+                //A item = aBus.GetById(id);
+                //Console.WriteLine("Record by ID:");
+                //Console.WriteLine(item);
+                int id = 1;
+                B item = bBus.GetById(id);
                 Console.WriteLine("Record by ID:");
                 Console.WriteLine(item);
             }
