@@ -16,7 +16,7 @@ namespace ZiTyLot
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Home());
+            //Application.Run(new Home());
 
             // Attempt to connect to the database and fetch data using MyDao
             try
@@ -41,9 +41,9 @@ namespace ZiTyLot
             //Example.GetPaginatedRecords();
             //Example.getById();
             //Example.AddRecord();
-            //Example.UpdateRecord();
+            Example.UpdateRecord();
             //Example.DeleteRecord();
-            Example.Populate();
+            //Example.Populate();
 
 
         }
@@ -98,12 +98,14 @@ namespace ZiTyLot
         {
             try
             {
-                int idForUpdate = 1;
+                int idForUpdate = 4;
                 A existMy = aBus.GetById(idForUpdate);
-                existMy.Name = "Updated Item"; 
-                existMy.Type = AType.IN_USE;
+                existMy.Name = "Updated Item";
+                existMy.Type = AType.EMPTY;
                 aBus.Update(existMy);
                 Console.WriteLine("Record updated successfully.");
+                A updatedItem = aBus.GetById(idForUpdate);
+                Console.WriteLine(updatedItem);
             }
             catch (Exception ex)
             {
