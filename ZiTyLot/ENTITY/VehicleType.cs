@@ -9,6 +9,7 @@ namespace ZiTyLot.ENTITY
         private int id;
         private string name;
         private bool has_slot;
+        private bool has_vehicle_plate;
         private DateTime created_at;
         private DateTime? updated_at;
         private DateTime? deleted_at;
@@ -29,5 +30,6 @@ namespace ZiTyLot.ENTITY
         public VisitorFee Visitor_fee { get => visitor_fee; set => visitor_fee = value; }
         public bool Has_slot { get => has_slot; set => has_slot = value; }
         public ICollection<Issue> Issues { get => issues; set => issues = value; }
+        public bool Has_vehicle_plate { get => has_vehicle_plate; set => has_vehicle_plate = value; }
     }
 }
