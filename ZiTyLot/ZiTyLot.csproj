@@ -138,6 +138,7 @@
     <Compile Include="ENTITY\Slot.cs" />
     <Compile Include="ENTITY\VehicleType.cs" />
     <Compile Include="ENTITY\VisitorFee.cs" />
+    <Compile Include="GUI\component-extensions\RoundedBorder.cs" />
     <Compile Include="GUI\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,17 +151,17 @@
     <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Panel1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Panel1.Designer.cs">
-      <DependentUpon>Panel1.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Panel2.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\Panel2.Designer.cs">
       <DependentUpon>Panel2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\SessionScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\SessionScreen.Designer.cs">
+      <DependentUpon>SessionScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\FilterCondition.cs" />
     <Compile Include="Helper\Page.cs" />
@@ -173,11 +174,11 @@
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Panel1.resx">
-      <DependentUpon>Panel1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Panel2.resx">
       <DependentUpon>Panel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\SessionScreen.resx">
+      <DependentUpon>SessionScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -205,9 +206,13 @@
   <ItemGroup>
     <Content Include="GUI\assets\hero-image.jpg" />
     <Content Include="GUI\assets\logo.jpg" />
+    <Content Include="GUI\assets\search.png" />
     <Content Include="GUI\assets\ZityLot-Logo-120x60px.ico" />
     <Content Include="GUI\assets\scan.png" />
     <Content Include="GUI\assets\ZityLot-Logo-120x60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GUI\components\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
