@@ -104,8 +104,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\ABUS.cs" />
+    <Compile Include="BUS\AccountBUS.cs" />
     <Compile Include="BUS\BBUS.cs" />
+    <Compile Include="BUS\BillBUS.cs" />
+    <Compile Include="BUS\FunctionBUS.cs" />
     <Compile Include="BUS\IBUS.cs" />
+    <Compile Include="BUS\ParkingLotBUS.cs" />
+    <Compile Include="BUS\ResidentBUS.cs" />
+    <Compile Include="BUS\RoleBUS.cs" />
+    <Compile Include="BUS\SlotBUS.cs" />
+    <Compile Include="BUS\CardBUS.cs" />
+    <Compile Include="BUS\IBUS.cs" />
+    <Compile Include="BUS\ImageBUS.cs" />
+    <Compile Include="BUS\IssueBUS.cs" />
+    <Compile Include="BUS\LostHistoryBUS.cs" />
+    <Compile Include="BUS\ResidentCardBUS.cs" />
+    <Compile Include="BUS\ResidentFeeBUS.cs" />
+    <Compile Include="BUS\SessionBUS.cs" />
+    <Compile Include="BUS\VehicleTypeBUS.cs" />
+    <Compile Include="BUS\VisitorFeeBUS.cs" />
     <Compile Include="Constants\DatabaseName.cs" />
     <Compile Include="Constants\Enum\AccountGender.cs" />
     <Compile Include="Constants\Enum\AType.cs" />
@@ -118,11 +135,32 @@
     <Compile Include="Constants\Enum\ParkingLotUserType.cs" />
     <Compile Include="Constants\Enum\SessionType.cs" />
     <Compile Include="Constants\Enum\SlotStatus.cs" />
+    <Compile Include="Constants\Enum\ATypeEnum.cs" />
+    <Compile Include="Constants\Enum\CardTypeEnum.cs" />
+    <Compile Include="Constants\Enum\FeeTypeEnum.cs" />
+    <Compile Include="Constants\Enum\SlotStatusEnum.cs" />
+    <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\BDAO.cs" />
+    <Compile Include="DAO\BillDAO.cs" />
+    <Compile Include="DAO\CardDAO.cs" />
     <Compile Include="DAO\FactoryDAO.cs" />
     <Compile Include="DAO\ADAO.cs" />
     <Compile Include="Config\DBConfig.cs" />
+    <Compile Include="DAO\FunctionDAO.cs" />
     <Compile Include="DAO\IDAO.cs" />
+    <Compile Include="DAO\ParkingLotDAO.cs" />
+    <Compile Include="DAO\ResidentDAO.cs" />
+    <Compile Include="DAO\RoleDAO.cs" />
+    <Compile Include="DAO\RoleFunctionDAO.cs" />
+    <Compile Include="DAO\SlotDAO.cs" />
+    <Compile Include="DAO\ImageDAO.cs" />
+    <Compile Include="DAO\IssueDAO.cs" />
+    <Compile Include="DAO\LostHistoryDAO.cs" />
+    <Compile Include="DAO\ResidentCardDAO.cs" />
+    <Compile Include="DAO\ResidentFeeDAO.cs" />
+    <Compile Include="DAO\SessionDAO.cs" />
+    <Compile Include="DAO\VehicleTypeDAO.cs" />
+    <Compile Include="DAO\VisitorFeeDAO.cs" />
     <Compile Include="ENTITY\A.cs" />
     <Compile Include="ENTITY\Account.cs" />
     <Compile Include="ENTITY\B.cs" />
@@ -141,6 +179,7 @@
     <Compile Include="ENTITY\Slot.cs" />
     <Compile Include="ENTITY\VehicleType.cs" />
     <Compile Include="ENTITY\VisitorFee.cs" />
+    <Compile Include="GUI\component-extensions\RoundedBorder.cs" />
     <Compile Include="GUI\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,17 +192,17 @@
     <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Panel1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Panel1.Designer.cs">
-      <DependentUpon>Panel1.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Panel2.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\Panel2.Designer.cs">
       <DependentUpon>Panel2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\SessionScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\SessionScreen.Designer.cs">
+      <DependentUpon>SessionScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\FilterCondition.cs" />
     <Compile Include="Helper\Page.cs" />
@@ -176,11 +215,11 @@
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Panel1.resx">
-      <DependentUpon>Panel1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Panel2.resx">
       <DependentUpon>Panel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\SessionScreen.resx">
+      <DependentUpon>SessionScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -208,9 +247,13 @@
   <ItemGroup>
     <Content Include="GUI\assets\hero-image.jpg" />
     <Content Include="GUI\assets\logo.jpg" />
+    <Content Include="GUI\assets\search.png" />
     <Content Include="GUI\assets\ZityLot-Logo-120x60px.ico" />
     <Content Include="GUI\assets\scan.png" />
     <Content Include="GUI\assets\ZityLot-Logo-120x60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GUI\components\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

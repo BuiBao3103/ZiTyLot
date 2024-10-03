@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZiTyLot.GUI.component_extensions;
 
 namespace ZiTyLot.GUI
 {
@@ -18,23 +19,12 @@ namespace ZiTyLot.GUI
             InitializeComponent();
             this.CenterToScreen();
         }
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-    (
-        int nLeft,
-        int nTop,
-        int nRight,
-        int nBottom,
-        int nWidth,
-        int nHeight
-    );
-
         private void AddMenuToSidebar()
         {
             // Create a dictionary to map buttons to their respective panels
             var panelMapping = new Dictionary<string, UserControl>
             {
-                { "Home", new Panel1() },
+                { "Home", new SessionScreen() },
                 { "EmployeeManagement", new Panel2() },
             };
 
@@ -58,7 +48,7 @@ namespace ZiTyLot.GUI
                 button.BackColor = Color.White;
                 button.ForeColor = Color.Black;
                 button.Dock = DockStyle.Top;
-                button.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, sidebar.Width - 10, 45, 5, 5));
+                button.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, sidebar.Width - 10, 45, 5, 5));
                 button.Font = new Font("Microsoft Sans Serif", 10, Font.Style & ~FontStyle.Bold);
                 button.TextImageRelation = TextImageRelation.ImageBeforeText;
                 button.ImageAlign = ContentAlignment.MiddleLeft;

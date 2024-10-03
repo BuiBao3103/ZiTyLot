@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Windows.Forms;
-using ZiTyLot.Config;
-using ZiTyLot.BUS;
 using System.Collections.Generic;
-using ZiTyLot.Helper;
-using ZiTyLot.ENTITY;
+using System.Windows.Forms;
+using ZiTyLot.BUS;
+using ZiTyLot.Config;
 using ZiTyLot.Constants.Enum;
-using ZiTyLot.GUI;
+using ZiTyLot.ENTITY;
+using ZiTyLot.Helper;
 namespace ZiTyLot
 {
     internal static class Program
@@ -101,7 +100,7 @@ namespace ZiTyLot
                 int idForUpdate = 4;
                 A existMy = aBus.GetById(idForUpdate);
                 existMy.Name = "Updated Item";
-                existMy.Type = AType.EMPTY;
+                existMy.Type = ATypeEnum.IN_USE;
                 aBus.Update(existMy);
                 Console.WriteLine("Record updated successfully.");
                 A updatedItem = aBus.GetById(idForUpdate);

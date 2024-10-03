@@ -8,29 +8,20 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZiTyLot.GUI.component_extensions;
 
 namespace ZiTyLot.GUI
 {
     public partial class Login : Form
     {
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-    (
-        int nLeft,
-        int nTop,
-        int nRight,
-        int nBottom,
-        int nWidth,
-        int nHeight
-    );
         public Login()
         {
             InitializeComponent();
             this.CenterToScreen();
             this.ActiveControl = inputUsername;
-            this.pnlInputUsername.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnlInputUsername.Width, pnlInputUsername.Height, 5, 5));
-            this.pnlInputPassword.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnlInputPassword.Width, pnlInputPassword.Height, 5, 5));
-            this.btnDangNhap.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnDangNhap.Width, btnDangNhap.Height, 5, 5));
+            this.pnlInputUsername.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlInputUsername.Width, pnlInputUsername.Height, 5, 5));
+            this.pnlInputPassword.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlInputPassword.Width, pnlInputPassword.Height, 5, 5));
+            this.btnDangNhap.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnDangNhap.Width, btnDangNhap.Height, 5, 5));
         }
 
         private void cbHienMatKhau_CheckedChanged(object sender, EventArgs e)
@@ -47,12 +38,12 @@ namespace ZiTyLot.GUI
 
         private void pictureBox2_Resize(object sender, EventArgs e)
         {
-            this.rightImage.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, rightImage.Width, rightImage.Height, 5, 5));
+            this.rightImage.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, rightImage.Width, rightImage.Height, 5, 5));
         }
 
         private void pictureBox2_Paint(object sender, PaintEventArgs e)
         {
-            this.rightImage.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, rightImage.Width, rightImage.Height, 5, 5));
+            this.rightImage.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, rightImage.Width, rightImage.Height, 5, 5));
         }
 
         private void inputUsername_Enter(object sender, EventArgs e)
