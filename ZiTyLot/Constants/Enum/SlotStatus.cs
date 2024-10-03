@@ -1,6 +1,6 @@
 ﻿namespace ZiTyLot.Constants.Enum
 {
-    public enum SlotStatusEnum
+    public enum SlotStatus
     {
         IN_USE,
         EMPTY,

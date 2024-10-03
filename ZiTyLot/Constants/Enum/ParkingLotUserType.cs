@@ -1,6 +1,6 @@
 ﻿namespace ZiTyLot.Constants.Enum
 {
-    public enum CardTypeEnum
+    public enum ParkingLotUserType
     {
         RESIDENT,
         VISITOR

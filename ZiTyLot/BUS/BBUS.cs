@@ -22,7 +22,7 @@ namespace ZiTyLot.BUS
             throw new NotImplementedException();
         }
 
-        public void Delete(int id)
+        public void Delete(object id)
         {
             throw new NotImplementedException();
         }
@@ -44,7 +44,7 @@ namespace ZiTyLot.BUS
             throw new NotImplementedException();
         }
 
-        public B GetById(int id)
+        public B GetById(object id)
         {
             try
             {

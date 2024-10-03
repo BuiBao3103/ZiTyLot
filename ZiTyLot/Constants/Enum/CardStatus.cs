@@ -1,6 +1,6 @@
 ﻿namespace ZiTyLot.Constants.Enum
 {
-    public enum CardStatusEnum
+    public enum CardStatus
     {
         EMPTY,
         ACTIVE,

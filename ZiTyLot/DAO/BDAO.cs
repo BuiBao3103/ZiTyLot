@@ -18,7 +18,7 @@ namespace ZiTyLot.DAO
             daoFactory.Add(item);
         }
 
-        public void Delete(int id)
+        public void Delete(object id)
         {
             daoFactory.Delete(id);
         }
@@ -33,7 +33,7 @@ namespace ZiTyLot.DAO
             return daoFactory.GetAllPagination(pageable, filters);
         }
 
-        public B GetById(int id)
+        public B GetById(object id)
         {
             return daoFactory.GetById(id);
         }

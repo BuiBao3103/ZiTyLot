@@ -42,7 +42,7 @@ namespace ZiTyLot.BUS
         }
 
         // Hàm lấy bản ghi theo ID
-        public A GetById(int id)
+        public A GetById(object id)
         {
             EnsureRecordExists(id); // Kiểm tra sự tồn tại của bản ghi
 
@@ -89,7 +89,7 @@ namespace ZiTyLot.BUS
         }
 
         // Hàm xóa bản ghi theo ID
-        public void Delete(int id)
+        public void Delete(object id)
         {
             EnsureRecordExists(id); // Kiểm tra sự tồn tại của bản ghi
 
@@ -115,7 +115,7 @@ namespace ZiTyLot.BUS
         }
 
         // Kiểm tra sự tồn tại của bản ghi
-        private void EnsureRecordExists(int id)
+        private void EnsureRecordExists(object id)
         {
             var existingItem = aDao.GetById(id);
             if (existingItem == null)

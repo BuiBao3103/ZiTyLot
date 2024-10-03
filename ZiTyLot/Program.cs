@@ -82,7 +82,7 @@ namespace ZiTyLot
         {
             try
             {
-                A newItem = new A { Name = "", Type = ATypeEnum.EMPTY };
+                A newItem = new A { Name = "", Type = AType.EMPTY };
                 aBus.Add(newItem);
                 Console.WriteLine(newItem);
                 Console.WriteLine("Record added successfully.");
@@ -97,12 +97,14 @@ namespace ZiTyLot
         {
             try
             {
-                int idForUpdate = 1;
+                int idForUpdate = 4;
                 A existMy = aBus.GetById(idForUpdate);
                 existMy.Name = "Updated Item";
                 existMy.Type = ATypeEnum.IN_USE;
                 aBus.Update(existMy);
                 Console.WriteLine("Record updated successfully.");
+                A updatedItem = aBus.GetById(idForUpdate);
+                Console.WriteLine(updatedItem);
             }
             catch (Exception ex)
             {
@@ -190,8 +192,12 @@ namespace ZiTyLot
         {
             try
             {
-                int id = 3;
-                A item = aBus.GetById(id);
+                //int id = 4;
+                //A item = aBus.GetById(id);
+                //Console.WriteLine("Record by ID:");
+                //Console.WriteLine(item);
+                int id = 1;
+                B item = bBus.GetById(id);
                 Console.WriteLine("Record by ID:");
                 Console.WriteLine(item);
             }

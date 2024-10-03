@@ -1,6 +1,6 @@
 ﻿namespace ZiTyLot.Constants.Enum
 {
-    public enum ParkingLotTypeEnum
+    public enum ParkingLotType
     {
         TWO_WHEELER,
         FOUR_WHEELER
