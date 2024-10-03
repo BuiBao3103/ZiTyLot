@@ -15,7 +15,6 @@ namespace ZiTyLot.BUS
         private readonly VehicleTypeDAO vehicleTypeDAO;
         private readonly SessionDAO sessionDAO;
         private readonly LostHistoryDAO lostHistoryDAO;
-        private readonly ResidentCardDAO residentCardDAO;
 
         public CardBUS()
         {
@@ -23,7 +22,6 @@ namespace ZiTyLot.BUS
             this.vehicleTypeDAO = new VehicleTypeDAO();
             this.sessionDAO = new SessionDAO();
             this.lostHistoryDAO = new LostHistoryDAO();
-            this.residentCardDAO = new ResidentCardDAO();
         }
 
         public void Add(Card item)
@@ -39,7 +37,7 @@ namespace ZiTyLot.BUS
             }
         }
 
-        public void Delete(int id)
+        public void Delete(object id)
         {
             EnsureRecordExists(id);
             try
@@ -76,7 +74,7 @@ namespace ZiTyLot.BUS
             }
         }
 
-        public Card GetById(int id)
+        public Card GetById(object id)
         {
             EnsureRecordExists(id);
             try
@@ -114,7 +112,7 @@ namespace ZiTyLot.BUS
             // Add other validation rules as needed
         }
 
-        private void EnsureRecordExists(int id)
+        private void EnsureRecordExists(object id)
         {
             var existingItem = cardDAO.GetById(id);
             if (existingItem == null)
@@ -147,24 +145,6 @@ namespace ZiTyLot.BUS
                 };
                 List<LostHistory> lostHistories = lostHistoryDAO.GetAll(filters);
                 item.Lost_histories = lostHistories;
-                return item;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-        public Card PopulateResidentCard(Card item)
-        {
-            try
-            {
-                List<FilterCondition> filters = new List<FilterCondition>
-                {
-                    new FilterCondition("card_id", ComparisonOperator.Equals, item.Id)
-                };
-                List<ResidentCard> residentCards = residentCardDAO.GetAll(filters);
-                item.Resident_card = residentCards[0];
                 return item;
             }
             catch (Exception ex)

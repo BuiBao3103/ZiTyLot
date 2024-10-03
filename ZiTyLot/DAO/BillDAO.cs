@@ -40,7 +40,7 @@ namespace ZiTyLot.DAO
             }
         }
 
-        public Bill GetById(int id)
+        public Bill GetById(object id)
         {
             try
             {
@@ -76,7 +76,7 @@ namespace ZiTyLot.DAO
             }
         }
 
-        public void Delete(int id)
+        public void Delete(object id)
         {
             try
             {

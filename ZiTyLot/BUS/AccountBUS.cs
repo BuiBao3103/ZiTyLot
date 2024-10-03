@@ -29,7 +29,7 @@ namespace ZiTyLot.BUS
             }
         }
 
-        public void Delete(int id)
+        public void Delete(object id)
         {
             EnsureRecordExists(id); // Kiểm tra sự tồn tại của bản ghi
 
@@ -67,7 +67,7 @@ namespace ZiTyLot.BUS
             }
         }
 
-        public Account GetById(int id)
+        public Account GetById(object id)
         {
             try
             {
@@ -105,7 +105,7 @@ namespace ZiTyLot.BUS
         }
 
         // Kiểm tra sự tồn tại của bản ghi
-        private void EnsureRecordExists(int id)
+        private void EnsureRecordExists(object id)
         {
             var existingItem = accountDao.GetById(id);
             if (existingItem == null)

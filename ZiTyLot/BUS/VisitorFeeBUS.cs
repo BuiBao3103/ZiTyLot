@@ -33,7 +33,7 @@ namespace ZiTyLot.BUS
             }
         }
 
-        public void Delete(int id)
+        public void Delete(object id)
         {
             EnsureRecordExists(id);
             try
@@ -70,7 +70,7 @@ namespace ZiTyLot.BUS
             }
         }
 
-        public VisitorFee GetById(int id)
+        public VisitorFee GetById(object id)
         {
             EnsureRecordExists(id);
             try
@@ -108,7 +108,7 @@ namespace ZiTyLot.BUS
             // Add other validation rules as needed
         }
 
-        private void EnsureRecordExists(int id)
+        private void EnsureRecordExists(object id)
         {
             var existingItem = visitorFeeDAO.GetById(id);
             if (existingItem == null)

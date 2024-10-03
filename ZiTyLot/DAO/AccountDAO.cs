@@ -40,7 +40,7 @@ namespace ZiTyLot.DAO
             }
         }
 
-        public Account GetById(int id)
+        public Account GetById(object id)
         {
             try
             {
@@ -76,7 +76,7 @@ namespace ZiTyLot.DAO
             }
         }
 
-        public void Delete(int id)
+        public void Delete(object id)
         {
             try
             {

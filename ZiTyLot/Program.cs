@@ -100,7 +100,7 @@ namespace ZiTyLot
                 int idForUpdate = 4;
                 A existMy = aBus.GetById(idForUpdate);
                 existMy.Name = "Updated Item";
-                existMy.Type = ATypeEnum.IN_USE;
+                existMy.Type = AType.IN_USE;
                 aBus.Update(existMy);
                 Console.WriteLine("Record updated successfully.");
                 A updatedItem = aBus.GetById(idForUpdate);

@@ -118,7 +118,6 @@
     <Compile Include="BUS\ImageBUS.cs" />
     <Compile Include="BUS\IssueBUS.cs" />
     <Compile Include="BUS\LostHistoryBUS.cs" />
-    <Compile Include="BUS\ResidentCardBUS.cs" />
     <Compile Include="BUS\ResidentFeeBUS.cs" />
     <Compile Include="BUS\SessionBUS.cs" />
     <Compile Include="BUS\VehicleTypeBUS.cs" />
@@ -135,10 +134,6 @@
     <Compile Include="Constants\Enum\ParkingLotUserType.cs" />
     <Compile Include="Constants\Enum\SessionType.cs" />
     <Compile Include="Constants\Enum\SlotStatus.cs" />
-    <Compile Include="Constants\Enum\ATypeEnum.cs" />
-    <Compile Include="Constants\Enum\CardTypeEnum.cs" />
-    <Compile Include="Constants\Enum\FeeTypeEnum.cs" />
-    <Compile Include="Constants\Enum\SlotStatusEnum.cs" />
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\BDAO.cs" />
     <Compile Include="DAO\BillDAO.cs" />
@@ -156,7 +151,6 @@
     <Compile Include="DAO\ImageDAO.cs" />
     <Compile Include="DAO\IssueDAO.cs" />
     <Compile Include="DAO\LostHistoryDAO.cs" />
-    <Compile Include="DAO\ResidentCardDAO.cs" />
     <Compile Include="DAO\ResidentFeeDAO.cs" />
     <Compile Include="DAO\SessionDAO.cs" />
     <Compile Include="DAO\VehicleTypeDAO.cs" />

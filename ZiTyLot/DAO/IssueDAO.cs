@@ -23,7 +23,7 @@ namespace ZiTyLot.DAO
             factoryDAO.Add(item);
         }
 
-        public void Delete(int id)
+        public void Delete(object id)
         {
             factoryDAO.Delete(id);
         }
@@ -38,7 +38,7 @@ namespace ZiTyLot.DAO
             return factoryDAO.GetAllPagination(pageable, filters);
         }
 
-        public Issue GetById(int id)
+        public Issue GetById(object id)
         {
             return factoryDAO.GetById(id);
         }

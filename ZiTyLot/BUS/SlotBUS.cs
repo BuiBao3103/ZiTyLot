@@ -31,7 +31,7 @@ namespace ZiTyLot.BUS
             }
         }
 
-        public void Delete(int id)
+        public void Delete(object id)
         {
             // EnsureRecordExists(id); // Kiểm tra sự tồn tại của bản ghi
 
@@ -69,7 +69,7 @@ namespace ZiTyLot.BUS
             }
         }
 
-        public Slot GetById(int id)
+        public Slot GetById(object id)
         {
             try
             {

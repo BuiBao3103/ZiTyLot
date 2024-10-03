@@ -41,7 +41,7 @@ namespace ZiTyLot.DAO
             }
         }
 
-        public Function GetById(int id)
+        public Function GetById(object id)
         {
             try
             {
@@ -77,7 +77,7 @@ namespace ZiTyLot.DAO
             }
         }
 
-        public void Delete(int id)
+        public void Delete(object id)
         {
             try
             {

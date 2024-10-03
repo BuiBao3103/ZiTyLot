@@ -12,12 +12,10 @@ namespace ZiTyLot.BUS
     internal class IssueBUS : IBUS<Issue>
     {
         private readonly IssueDAO issueDAO;
-        private readonly ResidentCardDAO residentCardDAO;
 
         public IssueBUS()
         {
             this.issueDAO = new IssueDAO();
-            this.residentCardDAO = new ResidentCardDAO();
         }
 
         public void Add(Issue item)
@@ -33,7 +31,7 @@ namespace ZiTyLot.BUS
             }
         }
 
-        public void Delete(int id)
+        public void Delete(object id)
         {
             EnsureRecordExists(id);
             try
@@ -70,7 +68,7 @@ namespace ZiTyLot.BUS
             }
         }
 
-        public Issue GetById(int id)
+        public Issue GetById(object id)
         {
             EnsureRecordExists(id);
             try
@@ -108,7 +106,7 @@ namespace ZiTyLot.BUS
             // Add other validation rules as needed
         }
 
-        private void EnsureRecordExists(int id)
+        private void EnsureRecordExists(object id)
         {
             var existingItem = issueDAO.GetById(id);
             if (existingItem == null)
@@ -117,28 +115,6 @@ namespace ZiTyLot.BUS
             }
         }
 
-        public Issue PopulateResidentCard(Issue item)
-        {
-            try
-            {
-                if (item.Resident_card_id.HasValue)
-                {
-                    ResidentCard residentCard = residentCardDAO.GetById(item.Resident_card_id.Value);
-                    item.Resident_card = residentCard;
-                    return item;
-                }
-                else
-                {
-                    throw new KeyNotFoundException($"ResidentCardID is null, no record to search.");
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-        //
         public Issue PopulateBill(Issue item)
         {
             try
