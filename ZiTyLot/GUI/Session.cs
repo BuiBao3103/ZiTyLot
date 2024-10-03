@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ZiTyLot.GUI
 {
-    public partial class Panel1 : UserControl
+    public partial class Session : UserControl
     {
-        public Panel1()
+        public Session()
         {
             InitializeComponent();
         }

@@ -12,5 +12,13 @@
         public const string Slot = "slots";
         public const string Bill = "bills";
         public const string Resident = "residents";
+        public const string VehicleType = "vehicle_types";
+        public const string VisitorFee = "visitor_fees";
+        public const string ResidentFee = "resident_fees";
+        public const string Card = "cards";
+        public const string Session = "sessions";
+        public const string Image = "images";
+        public const string LostHistory = "lost_history";
+        public const string Issue = "issues";
     }
 }

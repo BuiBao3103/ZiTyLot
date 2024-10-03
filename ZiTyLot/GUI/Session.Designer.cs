@@ -1,6 +1,6 @@
 ﻿namespace ZiTyLot.GUI
 {
-    partial class Panel1
+    partial class Session
     {
         /// <summary> 
         /// Required designer variable.
