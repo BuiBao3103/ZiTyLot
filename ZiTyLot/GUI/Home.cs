@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.GUI.component_extensions;
+using ZiTyLot.GUI.Screens;
 
 namespace ZiTyLot.GUI
 {
@@ -26,13 +27,21 @@ namespace ZiTyLot.GUI
             {
                 { "Home", new SessionScreen() },
                 { "EmployeeManagement", new Panel2() },
+                { "InvoiceManagement", new InvoiceScreen() },
+                { "BManagement", new BScreen() },
+
+
             };
 
             // Array of menu items with names and texts
             var menuItems = new[]
             {
-    new { Name = "Home", Text = "Trang chủ" },
-    new { Name = "EmployeeManagement", Text = "Quản lý nhân viên" },
+                new { Name = "Home", Text = "Trang chủ" },
+                new { Name = "EmployeeManagement", Text = "Quản lý nhân viên" },
+                new { Name = "InvoiceManagement", Text = "Quản lý hóa đơn" },
+                new { Name = "BManagement", Text = "Quản lý B" },
+
+
 };
 
             // Iterate over the menu items
