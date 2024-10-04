@@ -192,6 +192,18 @@
     <Compile Include="GUI\Panel2.Designer.cs">
       <DependentUpon>Panel2.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Screens\BScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\BScreen.Designer.cs">
+      <DependentUpon>BScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\InvoiceScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\InvoiceScreen.Designer.cs">
+      <DependentUpon>InvoiceScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Screens\SessionScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -211,6 +223,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Panel2.resx">
       <DependentUpon>Panel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\BScreen.resx">
+      <DependentUpon>BScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\InvoiceScreen.resx">
+      <DependentUpon>InvoiceScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\SessionScreen.resx">
       <DependentUpon>SessionScreen.cs</DependentUpon>

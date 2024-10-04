@@ -6,6 +6,7 @@ using ZiTyLot.Config;
 using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
 using ZiTyLot.Helper;
+using ZiTyLot.GUI;
 namespace ZiTyLot
 {
     internal static class Program
@@ -15,7 +16,7 @@ namespace ZiTyLot
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Home());
+            Application.Run(new Home());
 
             // Attempt to connect to the database and fetch data using MyDao
             try

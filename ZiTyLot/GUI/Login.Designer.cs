@@ -85,7 +85,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panel1.Padding = new System.Windows.Forms.Padding(10);
             this.panel1.Size = new System.Drawing.Size(396, 444);
             this.panel1.TabIndex = 0;
             // 
@@ -104,7 +104,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox1.Image = global::ZiTyLot.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(107, 67);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -122,7 +122,7 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(10, 83);
             this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panel3.Padding = new System.Windows.Forms.Padding(10);
             this.panel3.Size = new System.Drawing.Size(376, 351);
             this.panel3.TabIndex = 1;
             // 
@@ -283,7 +283,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(405, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panel2.Padding = new System.Windows.Forms.Padding(10);
             this.panel2.Size = new System.Drawing.Size(396, 444);
             this.panel2.TabIndex = 2;
             // 
@@ -294,7 +294,7 @@
             this.rightImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rightImage.Location = new System.Drawing.Point(10, 10);
             this.rightImage.Name = "rightImage";
-            this.rightImage.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.rightImage.Padding = new System.Windows.Forms.Padding(10);
             this.rightImage.Size = new System.Drawing.Size(376, 424);
             this.rightImage.TabIndex = 1;
             this.rightImage.TabStop = false;

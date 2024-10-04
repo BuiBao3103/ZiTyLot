@@ -45,5 +45,10 @@ namespace ZiTyLot.GUI
         {
 
         }
+
+        private void SessionScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
