@@ -267,6 +267,33 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="GUI\assets\hero-image.jpg" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Active-Active.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Active.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_All-Active.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_All.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_CheckIn-Active.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_CheckIn.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_CheckOut-Active.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_CheckOut.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Close.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Delete.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Edit.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Empty-Active.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Empty.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Female-Active.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Female.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Filter.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Lock-Active.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Lock.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Lost-Active.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Lost.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Magnifying.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Male-Active.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Male.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Plus-Black.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Plus.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Setting.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_View.png" />
     <Content Include="GUI\assets\logo.jpg" />
     <Content Include="GUI\assets\search.png" />
     <Content Include="GUI\assets\ZityLot-Logo-120x60px.ico" />
