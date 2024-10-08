@@ -28,7 +28,8 @@ namespace ZiTyLot.GUI
                 { "Home", new SessionScreen() },
                 { "EmployeeManagement", new Panel2() },
                 { "InvoiceManagement", new InvoiceScreen() },
-                { "BManagement", new BScreen() },
+                { "BManagement", new ExampleScreen() },
+
 
 
             };
@@ -36,6 +37,15 @@ namespace ZiTyLot.GUI
             // Array of menu items with names and texts
             var menuItems = new[]
             {
+                //new { Name = "RoleManagement", Text = "Role" },
+                //new { Name = "AccountManagement", Text = "Account" },
+                //new { Name = "BillManagement", Text = "Bill" },
+                //new { Name = "ResidentManagement", Text = "Resident" },
+                //new { Name = "CardManagement", Text = "Card" },
+                //new { Name = "SessionManagement", Text = "Session" },
+                //new { Name = "AreaManagement", Text = "Area" },
+                //new { Name = "Scanning", Text = "Scanning" },
+                //new { Name = "Dashboard", Text = "Dashboard" },
                 new { Name = "Home", Text = "Trang chủ" },
                 new { Name = "EmployeeManagement", Text = "Quản lý nhân viên" },
                 new { Name = "InvoiceManagement", Text = "Quản lý hóa đơn" },
