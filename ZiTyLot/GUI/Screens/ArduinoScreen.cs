@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ZiTyLot.Helper;
 using ZiTyLot.Constants;
 using System.IO.Ports;
+using System.Media;
 namespace ZiTyLot.GUI.Screens
 {
     public partial class ArduinoScreen : UserControl
@@ -25,6 +26,11 @@ namespace ZiTyLot.GUI.Screens
 
         private void btnQuet_Click(object sender, EventArgs e)
         {
+            using (SoundPlayer player = new SoundPlayer("../../Resource/enter.wav"))
+            {
+                player.Play();
+            }
+            System.Threading.Thread.Sleep(1000);
             Arduino.DoAction(serialPort, ArduinoAction.RED_OFF);
             Arduino.DoAction(serialPort, ArduinoAction.GREEN_ON);
             Arduino.DoAction(serialPort, ArduinoAction.BARIE_OPEN);
