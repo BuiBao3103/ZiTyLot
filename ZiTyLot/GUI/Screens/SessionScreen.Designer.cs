@@ -67,9 +67,10 @@
             this.sessionTopPnl.Controls.Add(this.filterRadio);
             this.sessionTopPnl.Dock = System.Windows.Forms.DockStyle.Top;
             this.sessionTopPnl.Location = new System.Drawing.Point(0, 0);
+            this.sessionTopPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sessionTopPnl.Name = "sessionTopPnl";
-            this.sessionTopPnl.Padding = new System.Windows.Forms.Padding(10);
-            this.sessionTopPnl.Size = new System.Drawing.Size(962, 54);
+            this.sessionTopPnl.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.sessionTopPnl.Size = new System.Drawing.Size(1283, 66);
             this.sessionTopPnl.TabIndex = 0;
             this.sessionTopPnl.Resize += new System.EventHandler(this.sessionTopPnl_Resize);
             // 
@@ -80,9 +81,10 @@
             this.searchPnl.Controls.Add(this.panel1);
             this.searchPnl.Controls.Add(this.pictureBox1);
             this.searchPnl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.searchPnl.Location = new System.Drawing.Point(724, 10);
+            this.searchPnl.Location = new System.Drawing.Point(967, 12);
+            this.searchPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.searchPnl.Name = "searchPnl";
-            this.searchPnl.Size = new System.Drawing.Size(228, 34);
+            this.searchPnl.Size = new System.Drawing.Size(303, 42);
             this.searchPnl.TabIndex = 6;
             // 
             // panel1
@@ -90,9 +92,10 @@
             this.panel1.Controls.Add(this.inputSearch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(5, 8, 5, 5);
-            this.panel1.Size = new System.Drawing.Size(186, 32);
+            this.panel1.Padding = new System.Windows.Forms.Padding(7, 10, 7, 6);
+            this.panel1.Size = new System.Drawing.Size(248, 40);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
@@ -101,9 +104,10 @@
             this.inputSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.inputSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.inputSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputSearch.Location = new System.Drawing.Point(5, 8);
+            this.inputSearch.Location = new System.Drawing.Point(7, 10);
+            this.inputSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.inputSearch.Name = "inputSearch";
-            this.inputSearch.Size = new System.Drawing.Size(176, 17);
+            this.inputSearch.Size = new System.Drawing.Size(234, 22);
             this.inputSearch.TabIndex = 0;
             // 
             // pictureBox1
@@ -111,9 +115,10 @@
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Window;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox1.Image = global::ZiTyLot.Properties.Resources.search;
-            this.pictureBox1.Location = new System.Drawing.Point(192, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(256, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 32);
+            this.pictureBox1.Size = new System.Drawing.Size(45, 40);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -124,10 +129,11 @@
             this.filterRadio.Controls.Add(this.checkInFilter);
             this.filterRadio.Controls.Add(this.allFilter);
             this.filterRadio.Dock = System.Windows.Forms.DockStyle.Left;
-            this.filterRadio.Location = new System.Drawing.Point(10, 10);
+            this.filterRadio.Location = new System.Drawing.Point(13, 12);
+            this.filterRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.filterRadio.Name = "filterRadio";
-            this.filterRadio.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.filterRadio.Size = new System.Drawing.Size(268, 34);
+            this.filterRadio.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.filterRadio.Size = new System.Drawing.Size(357, 42);
             this.filterRadio.TabIndex = 7;
             // 
             // checkOutFilter
@@ -138,10 +144,10 @@
             this.checkOutFilter.Dock = System.Windows.Forms.DockStyle.Left;
             this.checkOutFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkOutFilter.Image = global::ZiTyLot.Properties.Resources.scan;
-            this.checkOutFilter.Location = new System.Drawing.Point(157, 0);
-            this.checkOutFilter.Margin = new System.Windows.Forms.Padding(10);
+            this.checkOutFilter.Location = new System.Drawing.Point(183, 0);
+            this.checkOutFilter.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.checkOutFilter.Name = "checkOutFilter";
-            this.checkOutFilter.Size = new System.Drawing.Size(110, 34);
+            this.checkOutFilter.Size = new System.Drawing.Size(129, 42);
             this.checkOutFilter.TabIndex = 5;
             this.checkOutFilter.TabStop = true;
             this.checkOutFilter.Text = "Check out";
@@ -157,10 +163,10 @@
             this.checkInFilter.Dock = System.Windows.Forms.DockStyle.Left;
             this.checkInFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkInFilter.Image = global::ZiTyLot.Properties.Resources.scan;
-            this.checkInFilter.Location = new System.Drawing.Point(57, 0);
-            this.checkInFilter.Margin = new System.Windows.Forms.Padding(10);
+            this.checkInFilter.Location = new System.Drawing.Point(65, 0);
+            this.checkInFilter.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.checkInFilter.Name = "checkInFilter";
-            this.checkInFilter.Size = new System.Drawing.Size(100, 34);
+            this.checkInFilter.Size = new System.Drawing.Size(118, 42);
             this.checkInFilter.TabIndex = 4;
             this.checkInFilter.TabStop = true;
             this.checkInFilter.Text = "Check in";
@@ -177,9 +183,9 @@
             this.allFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.allFilter.Image = global::ZiTyLot.Properties.Resources.scan;
             this.allFilter.Location = new System.Drawing.Point(0, 0);
-            this.allFilter.Margin = new System.Windows.Forms.Padding(10);
+            this.allFilter.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.allFilter.Name = "allFilter";
-            this.allFilter.Size = new System.Drawing.Size(57, 34);
+            this.allFilter.Size = new System.Drawing.Size(65, 42);
             this.allFilter.TabIndex = 3;
             this.allFilter.TabStop = true;
             this.allFilter.Text = "All";
@@ -191,9 +197,10 @@
             // 
             this.separator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.separator.Dock = System.Windows.Forms.DockStyle.Top;
-            this.separator.Location = new System.Drawing.Point(0, 54);
+            this.separator.Location = new System.Drawing.Point(0, 66);
+            this.separator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(962, 5);
+            this.separator.Size = new System.Drawing.Size(1283, 6);
             this.separator.TabIndex = 1;
             // 
             // main
@@ -203,9 +210,10 @@
             this.main.Controls.Add(this.separator);
             this.main.Controls.Add(this.sessionTopPnl);
             this.main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.main.Location = new System.Drawing.Point(15, 15);
+            this.main.Location = new System.Drawing.Point(20, 18);
+            this.main.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.main.Name = "main";
-            this.main.Size = new System.Drawing.Size(962, 636);
+            this.main.Size = new System.Drawing.Size(1283, 784);
             this.main.TabIndex = 0;
             this.main.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -214,10 +222,11 @@
             this.sessionBottomPnl.BackColor = System.Drawing.Color.White;
             this.sessionBottomPnl.Controls.Add(this.table);
             this.sessionBottomPnl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sessionBottomPnl.Location = new System.Drawing.Point(0, 59);
+            this.sessionBottomPnl.Location = new System.Drawing.Point(0, 72);
+            this.sessionBottomPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sessionBottomPnl.Name = "sessionBottomPnl";
-            this.sessionBottomPnl.Padding = new System.Windows.Forms.Padding(10);
-            this.sessionBottomPnl.Size = new System.Drawing.Size(962, 577);
+            this.sessionBottomPnl.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.sessionBottomPnl.Size = new System.Drawing.Size(1283, 712);
             this.sessionBottomPnl.TabIndex = 2;
             // 
             // table
@@ -247,17 +256,20 @@
             this.totalPrice,
             this.detailButtonCol});
             this.table.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.table.Location = new System.Drawing.Point(10, 10);
+            this.table.Location = new System.Drawing.Point(13, 12);
+            this.table.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.table.Name = "table";
             this.table.ReadOnly = true;
+            this.table.RowHeadersWidth = 51;
             this.table.RowTemplate.Height = 30;
-            this.table.Size = new System.Drawing.Size(942, 557);
+            this.table.Size = new System.Drawing.Size(1257, 688);
             this.table.TabIndex = 0;
             this.table.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // id
             // 
             this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
             this.id.Name = "id";
             this.id.ReadOnly = true;
             this.id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -276,6 +288,7 @@
             // 
             this.plate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.plate.HeaderText = "Plate";
+            this.plate.MinimumWidth = 6;
             this.plate.Name = "plate";
             this.plate.ReadOnly = true;
             // 
@@ -283,6 +296,7 @@
             // 
             this.checkIn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.checkIn.HeaderText = "Check in time";
+            this.checkIn.MinimumWidth = 6;
             this.checkIn.Name = "checkIn";
             this.checkIn.ReadOnly = true;
             // 
@@ -290,6 +304,7 @@
             // 
             this.checkOut.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.checkOut.HeaderText = "Check out time";
+            this.checkOut.MinimumWidth = 6;
             this.checkOut.Name = "checkOut";
             this.checkOut.ReadOnly = true;
             // 
@@ -319,13 +334,14 @@
             // 
             // SessionScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.Controls.Add(this.main);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SessionScreen";
-            this.Padding = new System.Windows.Forms.Padding(15);
-            this.Size = new System.Drawing.Size(992, 666);
+            this.Padding = new System.Windows.Forms.Padding(20, 18, 20, 18);
+            this.Size = new System.Drawing.Size(1323, 820);
             this.Load += new System.EventHandler(this.SessionScreen_Load);
             this.sessionTopPnl.ResumeLayout(false);
             this.searchPnl.ResumeLayout(false);
