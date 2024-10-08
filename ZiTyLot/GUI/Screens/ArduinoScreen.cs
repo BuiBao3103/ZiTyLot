@@ -1,27 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using ZiTyLot.Helper;
-using ZiTyLot.Constants;
 using System.IO.Ports;
+using System.Linq;
 using System.Media;
+using System.Windows.Forms;
+using ZiTyLot.Constants;
+using ZiTyLot.Helper;
+
 namespace ZiTyLot.GUI.Screens
 {
     public partial class ArduinoScreen : UserControl
     {
-        private readonly SerialPort serialPort;
+        private SerialPort serialPort;
+
         public ArduinoScreen()
         {
             InitializeComponent();
-            serialPort = Arduino.Connect("COM5");
-            Arduino.DoAction(serialPort, ArduinoAction.RED_ON);
-            Arduino.DoAction(serialPort, ArduinoAction.BARIE_CLOSE);
+            close.Enabled = false;
+            open.Enabled = false;
+        }
+
+        private void ArduinoScreen_Load(object sender, EventArgs e)
+        {
+
+            string[] ports = SerialPort.GetPortNames();
+            cbPort.Items.AddRange(ports);
+            if (ports.Length > 0)
+            {
+                cbPort.SelectedIndex = 0;
+            }
         }
 
         private void btnQuet_Click(object sender, EventArgs e)
@@ -30,15 +36,28 @@ namespace ZiTyLot.GUI.Screens
             {
                 player.Play();
             }
-            System.Threading.Thread.Sleep(1000);
             Arduino.DoAction(serialPort, ArduinoAction.RED_OFF);
             Arduino.DoAction(serialPort, ArduinoAction.GREEN_ON);
             Arduino.DoAction(serialPort, ArduinoAction.BARIE_OPEN);
+            close.Enabled = true;
+            open.Enabled = false;
         }
 
-        private void ArduinoScreen_Load(object sender, EventArgs e)
+        private void Connect_Click(object sender, EventArgs e)
         {
-
+            if (cbPort.SelectedItem != null)
+            {
+                string selectedPort = cbPort.SelectedItem.ToString();
+                serialPort = Arduino.Connect(selectedPort);
+                Arduino.DoAction(serialPort, ArduinoAction.RED_ON);
+                Arduino.DoAction(serialPort, ArduinoAction.BARIE_CLOSE);
+                MessageBox.Show("Connected to " + selectedPort);
+                open.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Please select a COM port.");
+            }
         }
 
         private void close_Click(object sender, EventArgs e)
@@ -46,6 +65,8 @@ namespace ZiTyLot.GUI.Screens
             Arduino.DoAction(serialPort, ArduinoAction.GREEN_OFF);
             Arduino.DoAction(serialPort, ArduinoAction.BARIE_CLOSE);
             Arduino.DoAction(serialPort, ArduinoAction.RED_ON);
+            close.Enabled = false;
+            open.Enabled = true;
         }
     }
 }
