@@ -10,11 +10,15 @@ namespace ZiTyLot.BUS
     {
         private readonly BillDAO billDao;
         private readonly ResidentDAO residentDAO;
+        private readonly AccountDAO accountDAO;
+        private readonly IssueDAO issueDAO;
 
         public BillBUS()
         {
             this.billDao = new BillDAO();
             this.residentDAO = new ResidentDAO();
+            this.accountDAO = new AccountDAO();
+            this.issueDAO = new IssueDAO();
         }
 
         public void Add(Bill item)
@@ -117,11 +121,66 @@ namespace ZiTyLot.BUS
             }
         }
 
-        public Bill PopulationResident(Bill bill)
+        // Population
+
+        public Bill PopulateResident(Bill item)
         {
-            //Resident resident = residentDAO.GetById(bill.Resident_id);
-            //bill.Resident = resident;
-            return bill;
+            try
+            {
+                if (item.Resident_id.HasValue)
+                {
+                    Resident resident = residentDAO.GetById(item.Resident_id.Value);
+                    item.Resident = resident;
+                    return item;
+                }
+                else
+                {
+                    throw new KeyNotFoundException($"ResidentID is null, no record to search.");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Bill PopulateAccount(Bill item)
+        {
+            try
+            {
+                if (item.Account_id.HasValue)
+                {
+                    Account account = accountDAO.GetById(item.Account_id.Value);
+                    item.Account = account;
+                    return item;
+                }
+                else
+                {
+                    throw new KeyNotFoundException($"AccountID is null, no record to search.");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Bill PopulateIssues(Bill item)
+        {
+            try
+            {
+                List<FilterCondition> filters = new List<FilterCondition>
+                {
+                    new FilterCondition("bill_id", ComparisonOperator.Equals, item.Id)
+                };
+                List<Issue> issues = issueDAO.GetAll(filters);
+                item.Issues = issues;
+                return item;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

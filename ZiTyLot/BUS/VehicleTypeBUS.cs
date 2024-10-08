@@ -15,6 +15,7 @@ namespace ZiTyLot.BUS
         private readonly VisitorFeeDAO visitorFeeDAO;
         private readonly ResidentFeeDAO residentFeeDAO;
         private readonly CardDAO cardDAO;
+        private readonly IssueDAO issueDAO;
 
         public VehicleTypeBUS()
         {
@@ -22,6 +23,7 @@ namespace ZiTyLot.BUS
             this.visitorFeeDAO = new VisitorFeeDAO();
             this.residentFeeDAO = new ResidentFeeDAO();
             this.cardDAO = new CardDAO();
+            this.issueDAO = new IssueDAO();
         }
 
         public void Add(VehicleType item)
@@ -121,6 +123,8 @@ namespace ZiTyLot.BUS
             }
         }
 
+        // Population
+
         public VehicleType PopulateVisitorFee(VehicleType item)
         {
             try
@@ -167,6 +171,24 @@ namespace ZiTyLot.BUS
                 };
                 List<ResidentFee> residentFees = residentFeeDAO.GetAll(filters);
                 item.Resident_fees = residentFees;
+                return item;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public VehicleType PopulateIssues(VehicleType item)
+        {
+            try
+            {
+                List<FilterCondition> filters = new List<FilterCondition>
+                {
+                    new FilterCondition("vehicle_type_id", ComparisonOperator.Equals, item.Id)
+                };
+                List<Issue> issues = issueDAO.GetAll(filters);
+                item.Issues = issues;
                 return item;
             }
             catch (Exception ex)

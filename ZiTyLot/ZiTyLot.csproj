@@ -112,6 +112,7 @@
     <Compile Include="BUS\ParkingLotBUS.cs" />
     <Compile Include="BUS\ResidentBUS.cs" />
     <Compile Include="BUS\RoleBUS.cs" />
+    <Compile Include="BUS\RoleFunctionBUS.cs" />
     <Compile Include="BUS\SlotBUS.cs" />
     <Compile Include="BUS\CardBUS.cs" />
     <Compile Include="BUS\IBUS.cs" />

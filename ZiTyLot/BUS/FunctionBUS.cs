@@ -117,23 +117,51 @@ namespace ZiTyLot.BUS
             }
         }
 
-        //public Function PopulateRoleFunctions(Function func)
-        //{
-        //    try
-        //    {
-        //        List<FilterCondition> filters = new List<FilterCondition>
-        //        {
-        //            new FilterCondition("function_id", ComparisonOperator.Equals, func.Id)
-        //        };
-        //        List<RoleFunction> role_functions = roleFunctionDao.GetAll(filters);
-        //        func.Role_functions = role_functions;
-        //        return func;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
+        // Population
 
-        //}
+        public Function PopulateRoleFunctions(Function item)
+        {
+            try
+            {
+                List<FilterCondition> filters = new List<FilterCondition>
+                {
+                    new FilterCondition("function_id", ComparisonOperator.Equals, item.Id)
+                };
+                List<RoleFunction> roleFunctions = roleFunctionDao.GetAll(filters);
+                item.Role_functions = roleFunctions;
+                return item;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        // Population many to many
+        public Function PopulateRoles(Function item)
+        {
+            try
+            {
+                RoleFunctionBUS roleFunctionBUS = new RoleFunctionBUS();
+                List<FilterCondition> filters = new List<FilterCondition>
+                {
+                    new FilterCondition("function_id", ComparisonOperator.Equals, item.Id)
+                };
+                List<RoleFunction> roleFunctions = roleFunctionDao.GetAll(filters);
+                List<Role> roles = new List<Role>();
+                RoleFunction roleFunctionTmp = new RoleFunction();
+                foreach (RoleFunction roleFunction in roleFunctions)
+                {
+                    roleFunctionTmp = roleFunctionBUS.PopulateRole(roleFunction);
+                    roles.Add(roleFunctionTmp.Role);
+                }
+                item.Roles = roles;
+                return item;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
