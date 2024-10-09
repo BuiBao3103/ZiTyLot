@@ -206,11 +206,11 @@
     <Compile Include="GUI\Panel2.Designer.cs">
       <DependentUpon>Panel2.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\ArduinoScreen.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="GUI\ArduinoRFIDReader.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\ArduinoScreen.Designer.cs">
-      <DependentUpon>ArduinoScreen.cs</DependentUpon>
+    <Compile Include="GUI\ArduinoRFIDReader.Designer.cs">
+      <DependentUpon>ArduinoRFIDReader.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\ExampleScreen.cs">
       <SubType>UserControl</SubType>
@@ -234,6 +234,7 @@
     <Compile Include="Helper\FilterCondition.cs" />
     <Compile Include="Helper\Page.cs" />
     <Compile Include="Helper\Pageable.cs" />
+    <Compile Include="Helper\RFIDReader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\Home.resx">
@@ -245,8 +246,8 @@
     <EmbeddedResource Include="GUI\Panel2.resx">
       <DependentUpon>Panel2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\ArduinoScreen.resx">
-      <DependentUpon>ArduinoScreen.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\ArduinoRFIDReader.resx">
+      <DependentUpon>ArduinoRFIDReader.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\ExampleScreen.resx">
       <DependentUpon>ExampleScreen.cs</DependentUpon>
