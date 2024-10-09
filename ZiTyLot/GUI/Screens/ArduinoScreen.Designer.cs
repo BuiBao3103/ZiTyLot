@@ -33,6 +33,7 @@
             this.cbPort = new Sunny.UI.UIComboBox();
             this.Connect = new Sunny.UI.UIButton();
             this.Port = new Sunny.UI.UILabel();
+            this.btnDisconnect = new Sunny.UI.UIButton();
             this.SuspendLayout();
             // 
             // open
@@ -102,11 +103,25 @@
             this.Port.TabIndex = 5;
             this.Port.Text = "Port:";
             // 
+            // btnDisconnect
+            // 
+            this.btnDisconnect.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDisconnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnDisconnect.Location = new System.Drawing.Point(407, 252);
+            this.btnDisconnect.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnDisconnect.Name = "btnDisconnect";
+            this.btnDisconnect.Size = new System.Drawing.Size(150, 35);
+            this.btnDisconnect.TabIndex = 6;
+            this.btnDisconnect.Text = "Disconnect";
+            this.btnDisconnect.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnDisconnect.Click += new System.EventHandler(this.btnDisconnect_Click);
+            // 
             // ArduinoScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnDisconnect);
             this.Controls.Add(this.Port);
             this.Controls.Add(this.Connect);
             this.Controls.Add(this.cbPort);
@@ -126,5 +141,6 @@
         private Sunny.UI.UIComboBox cbPort;
         private Sunny.UI.UIButton Connect;
         private Sunny.UI.UILabel Port;
+        private Sunny.UI.UIButton btnDisconnect;
     }
 }

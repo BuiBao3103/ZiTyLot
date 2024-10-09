@@ -17,6 +17,7 @@ namespace ZiTyLot.GUI.Screens
             InitializeComponent();
             close.Enabled = false;
             open.Enabled = false;
+            btnDisconnect.Enabled = false;
         }
 
         private void ArduinoScreen_Load(object sender, EventArgs e)
@@ -45,6 +46,8 @@ namespace ZiTyLot.GUI.Screens
                 serialPort = Arduino.Connect(selectedPort);
                 MessageBox.Show("Connected to " + selectedPort);
                 open.Enabled = true;
+                btnDisconnect.Enabled = true;
+                Connect.Enabled = false;
             }
             else
             {
@@ -57,6 +60,19 @@ namespace ZiTyLot.GUI.Screens
             Arduino.CloseBarrier(serialPort);
             close.Enabled = false;
             open.Enabled = true;
+        }
+
+        private void btnDisconnect_Click(object sender, EventArgs e)
+        {
+            if (serialPort != null)
+            {
+                Arduino.Disconnect(serialPort);
+                MessageBox.Show("Disconnected");
+                open.Enabled = false;
+                close.Enabled = false;
+                Connect.Enabled = true;
+                btnDisconnect.Enabled = false;
+            }
         }
     }
 }
