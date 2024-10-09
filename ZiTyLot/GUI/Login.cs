@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZiTyLot.BUS;
 using ZiTyLot.GUI.component_extensions;
-
+using ZiTyLot.GUI;
+using System.Diagnostics;
 namespace ZiTyLot.GUI
 {
     public partial class Login : Form
     {
+        AuthManager authManager = new AuthManager();
         public Login()
         {
             InitializeComponent();
@@ -21,7 +17,7 @@ namespace ZiTyLot.GUI
             this.ActiveControl = inputUsername;
             this.pnlInputUsername.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlInputUsername.Width, pnlInputUsername.Height, 5, 5));
             this.pnlInputPassword.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlInputPassword.Width, pnlInputPassword.Height, 5, 5));
-            this.btnDangNhap.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnDangNhap.Width, btnDangNhap.Height, 5, 5));
+            this.btnSignin.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnSignin.Width, btnSignin.Height, 5, 5));
         }
 
         private void cbHienMatKhau_CheckedChanged(object sender, EventArgs e)
@@ -83,14 +79,24 @@ namespace ZiTyLot.GUI
             }
         }
 
-        private void btnDangNhap_Click(object sender, EventArgs e)
+        private void Login_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void Login_Load(object sender, EventArgs e)
+        private void btnSignin_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                authManager.Login(inputUsername.Text, inputPassword.Text);
+               
+                this.Hide();
+                new Home().Show();
+            }catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

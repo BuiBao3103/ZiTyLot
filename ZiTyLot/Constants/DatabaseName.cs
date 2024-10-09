@@ -6,7 +6,7 @@
         public const string B = "b";
         public const string Function = "functions";
         public const string Role = "roles";
-        public const string RoleFunction = "role_function";
+        public const string RoleFunction = "role_functions";
         public const string Account = "accounts";
         public const string ParkingLot = "parking_lots";
         public const string Slot = "slots";

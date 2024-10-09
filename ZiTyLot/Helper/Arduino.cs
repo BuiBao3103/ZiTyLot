@@ -18,6 +18,9 @@ namespace ZiTyLot.Helper
         public static void Disconnect(SerialPort serialPort)
         {
             if (serialPort == null) return;
+            serialPort.WriteLine(ArduinoAction.RED_OFF);
+            serialPort.WriteLine(ArduinoAction.GREEN_OFF);
+            serialPort.WriteLine(ArduinoAction.BARIE_CLOSE);
             serialPort.Close();
         }
 
