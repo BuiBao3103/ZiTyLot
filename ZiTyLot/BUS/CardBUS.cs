@@ -208,5 +208,18 @@ namespace ZiTyLot.BUS
                 throw new Exception(ex.Message);
             }
         }
+
+        public void ExportCardsToExcel(string filePath)
+        {
+            try
+            {
+                List<Card> cards = GetAll();
+                ExcelHelper.ExportToExcel(cards, filePath);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
