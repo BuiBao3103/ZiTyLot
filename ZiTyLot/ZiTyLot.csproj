@@ -123,6 +123,7 @@
     <Compile Include="BUS\ParkingLotBUS.cs" />
     <Compile Include="BUS\ResidentBUS.cs" />
     <Compile Include="BUS\RoleBUS.cs" />
+    <Compile Include="BUS\RoleFunctionBUS.cs" />
     <Compile Include="BUS\SlotBUS.cs" />
     <Compile Include="BUS\CardBUS.cs" />
     <Compile Include="BUS\IBUS.cs" />
@@ -133,6 +134,7 @@
     <Compile Include="BUS\SessionBUS.cs" />
     <Compile Include="BUS\VehicleTypeBUS.cs" />
     <Compile Include="BUS\VisitorFeeBUS.cs" />
+    <Compile Include="Constants\ArduinoAction.cs" />
     <Compile Include="Constants\DatabaseName.cs" />
     <Compile Include="Constants\Enum\AccountGender.cs" />
     <Compile Include="Constants\Enum\AType.cs" />
@@ -203,6 +205,12 @@
     <Compile Include="GUI\Panel2.Designer.cs">
       <DependentUpon>Panel2.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Screens\ArduinoScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\ArduinoScreen.Designer.cs">
+      <DependentUpon>ArduinoScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Screens\ExampleScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -221,6 +229,7 @@
     <Compile Include="GUI\Screens\SessionScreen.Designer.cs">
       <DependentUpon>SessionScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\Arduino.cs" />
     <Compile Include="Helper\FilterCondition.cs" />
     <Compile Include="Helper\Page.cs" />
     <Compile Include="Helper\Pageable.cs" />
@@ -234,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Panel2.resx">
       <DependentUpon>Panel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\ArduinoScreen.resx">
+      <DependentUpon>ArduinoScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\ExampleScreen.resx">
       <DependentUpon>ExampleScreen.cs</DependentUpon>
@@ -321,6 +333,7 @@
     <Content Include="GUI\assets\ZityLot-Logo-120x60px.ico" />
     <Content Include="GUI\assets\scan.png" />
     <Content Include="GUI\assets\ZityLot-Logo-120x60px.png" />
+    <Content Include="Resource\enter.wav" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\components\" />

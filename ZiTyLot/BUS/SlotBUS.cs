@@ -10,11 +10,13 @@ namespace ZiTyLot.BUS
     {
         private readonly SlotDAO slotDao;
         private readonly ParkingLotDAO parkingLotDAO;
+        private readonly IssueDAO issueDAO;
 
         public SlotBUS()
         {
             this.slotDao = new SlotDAO();
             this.parkingLotDAO = new ParkingLotDAO();
+            this.issueDAO = new IssueDAO();
         }
 
         public void Add(Slot item)
@@ -110,18 +112,45 @@ namespace ZiTyLot.BUS
         // Kiểm tra sự tồn tại của bản ghi
         private void EnsureRecordExists(string id)
         {
-            //var existingItem = slotDao.GetById(id);
-            //if (existingItem == null)
-            //{
-            //    throw new KeyNotFoundException($"Record with ID {id} not found.");
-            //}
+            var existingItem = slotDao.GetById(id);
+            if (existingItem == null)
+            {
+                throw new KeyNotFoundException($"Record with ID {id} not found.");
+            }
         }
 
-        public Slot PopulationParkingLot(Slot slot)
+        // Population
+
+        public Slot PopulationParkingLot(Slot item)
         {
-            //A a = aDAO.GetById(b.A_id);
-            //b.A = a;
-            return slot;
+            try
+            {
+                ParkingLot parkingLot = parkingLotDAO.GetById(item.Parking_lot_id);
+                item.Parking_lot = parkingLot;
+                return item;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Slot PopulateIssues(Slot item)
+        {
+            try
+            {
+                List<FilterCondition> filters = new List<FilterCondition>
+                {
+                    new FilterCondition("slot_id", ComparisonOperator.Equals, item.Id)
+                };
+                List<Issue> issues = issueDAO.GetAll(filters);
+                item.Issues = issues;
+                return item;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

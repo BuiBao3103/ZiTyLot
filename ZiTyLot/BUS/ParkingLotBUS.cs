@@ -10,11 +10,13 @@ namespace ZiTyLot.BUS
     {
         private readonly ParkingLotDAO parkinglotDao;
         private readonly SlotDAO slotDAO;
+        private readonly IssueDAO issueDAO;
 
         public ParkingLotBUS()
         {
             this.parkinglotDao = new ParkingLotDAO();
             this.slotDAO = new SlotDAO();
+            this.issueDAO = new IssueDAO();
         }
 
         public void Add(ParkingLot item)
@@ -110,12 +112,14 @@ namespace ZiTyLot.BUS
         // Kiểm tra sự tồn tại của bản ghi
         private void EnsureRecordExists(string id)
         {
-            //var existingItem = parkinglotDao.GetById(id);
-            //if (existingItem == null)
-            //{
-            //    throw new KeyNotFoundException($"Record with ID {id} not found.");
-            //}
+            var existingItem = parkinglotDao.GetById(id);
+            if (existingItem == null)
+            {
+                throw new KeyNotFoundException($"Record with ID {id} not found.");
+            }
         }
+
+        // Population
 
         public ParkingLot PopulateSlots(ParkingLot parkingLot)
         {
@@ -123,7 +127,7 @@ namespace ZiTyLot.BUS
             {
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition("parkingLot_id", ComparisonOperator.Equals, parkingLot.Id)
+                    new FilterCondition("parking_lot_id", ComparisonOperator.Equals, parkingLot.Id)
                 };
                 List<Slot> slots = slotDAO.GetAll(filters);
                 parkingLot.Slots = slots;
@@ -133,7 +137,24 @@ namespace ZiTyLot.BUS
             {
                 throw new Exception(ex.Message);
             }
+        }
 
+        public ParkingLot PopulateIssues(ParkingLot parkingLot)
+        {
+            try
+            {
+                List<FilterCondition> filters = new List<FilterCondition>
+                {
+                    new FilterCondition("parking_lot_id", ComparisonOperator.Equals, parkingLot.Id)
+                };
+                List<Issue> issues = issueDAO.GetAll(filters);
+                parkingLot.Issues = issues;
+                return parkingLot;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

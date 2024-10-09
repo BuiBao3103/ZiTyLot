@@ -12,10 +12,20 @@ namespace ZiTyLot.BUS
     internal class IssueBUS : IBUS<Issue>
     {
         private readonly IssueDAO issueDAO;
+        private readonly BillDAO billDAO;
+        private readonly ParkingLotDAO parkingLotDAO;
+        private readonly SlotDAO slotDAO;
+        private readonly VehicleTypeDAO vehicleTypeDAO;
+        private readonly CardDAO cardDAO;
 
         public IssueBUS()
         {
             this.issueDAO = new IssueDAO();
+            this.billDAO = new BillDAO();
+            this.parkingLotDAO = new ParkingLotDAO();
+            this.slotDAO = new SlotDAO();
+            this.vehicleTypeDAO = new VehicleTypeDAO();
+            this.cardDAO = new CardDAO();
         }
 
         public void Add(Issue item)
@@ -115,13 +125,15 @@ namespace ZiTyLot.BUS
             }
         }
 
+        // Population
+
         public Issue PopulateBill(Issue item)
         {
             try
             {
                 if (item.Bill_id.HasValue)
                 {
-                    Bill bill = null;
+                    Bill bill = billDAO.GetById(item.Bill_id.Value);
                     item.Bill = bill;
                     return item;
                 }
@@ -136,14 +148,13 @@ namespace ZiTyLot.BUS
             }
         }
 
-        //
         public Issue PopulateParkingLot(Issue item)
         {
             try
             {
                 if (item.Parking_lot_id.HasValue)
                 {
-                    ParkingLot parkingLot = null;
+                    ParkingLot parkingLot = parkingLotDAO.GetById(item.Parking_lot_id.Value);
                     item.Parking_lot = parkingLot;
                     return item;
                 }
@@ -158,20 +169,61 @@ namespace ZiTyLot.BUS
             }
         }
 
-        //
         public Issue PopulateSlot(Issue item)
         {
             try
             {
                 if (item.Slot_id.HasValue)
                 {
-                    Slot slot = null;
+                    Slot slot = slotDAO.GetById(item.Slot_id.Value);
                     item.Slot = slot;
                     return item;
                 }
                 else
                 {
                     throw new KeyNotFoundException($"SlotID is null, no record to search.");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Issue PopulateVehicleType(Issue item)
+        {
+            try
+            {
+                if (item.Vehicle_type_id.HasValue)
+                {
+                    VehicleType vehicleType = vehicleTypeDAO.GetById(item.Vehicle_type_id.Value);
+                    item.Vehicle_type = vehicleType;
+                    return item;
+                }
+                else
+                {
+                    throw new KeyNotFoundException($"VehicleTypeID is null, no record to search.");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Issue PopulateCard(Issue item)
+        {
+            try
+            {
+                if (item.Card_id.HasValue)
+                {
+                    Card card = cardDAO.GetById(item.Card_id.Value);
+                    item.Card = card;
+                    return item;
+                }
+                else
+                {
+                    throw new KeyNotFoundException($"CardID is null, no record to search.");
                 }
             }
             catch (Exception ex)

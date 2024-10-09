@@ -15,6 +15,8 @@ namespace ZiTyLot.BUS
         private readonly VehicleTypeDAO vehicleTypeDAO;
         private readonly SessionDAO sessionDAO;
         private readonly LostHistoryDAO lostHistoryDAO;
+        private readonly ResidentDAO residentDAO;
+        private readonly IssueDAO issueDAO;
 
         public CardBUS()
         {
@@ -22,6 +24,8 @@ namespace ZiTyLot.BUS
             this.vehicleTypeDAO = new VehicleTypeDAO();
             this.sessionDAO = new SessionDAO();
             this.lostHistoryDAO = new LostHistoryDAO();
+            this.residentDAO = new ResidentDAO();
+            this.issueDAO = new IssueDAO();
         }
 
         public void Add(Card item)
@@ -121,6 +125,8 @@ namespace ZiTyLot.BUS
             }
         }
 
+        // Population
+
         public Card PopulateVehicleType(Card item)
         {
             try
@@ -163,6 +169,38 @@ namespace ZiTyLot.BUS
                 };
                 List<Session> sessions = sessionDAO.GetAll(filters);
                 item.Sessions = sessions;
+                return item;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Card PopulateResident(Card item)
+        {
+            try
+            {
+                Resident resident = residentDAO.GetById(item.Resident_id);
+                item.Resident = resident;
+                return item;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Card PopulateIssues(Card item)
+        {
+            try
+            {
+                List<FilterCondition> filters = new List<FilterCondition>
+                {
+                    new FilterCondition("card_id", ComparisonOperator.Equals, item.Id)
+                };
+                List<Issue> issues = issueDAO.GetAll(filters);
+                item.Issues = issues;
                 return item;
             }
             catch (Exception ex)
