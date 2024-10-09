@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
@@ -106,7 +107,26 @@ namespace ZiTyLot.GUI
 
         private void btnImport_Click(object sender, EventArgs e)
         {
+            try
+            {
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    openFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx|Excel Files (*.xls)|*.xls";
+                    openFileDialog.Title = "Select an Excel File";
 
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string filePath = openFileDialog.FileName;
+                        cardBus.ImportCardsFromExcel(filePath);
+                        MessageBox.Show("Import successful");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+                MessageBox.Show("Error during import: " + ex.Message);
+            }
         }
     }
 }

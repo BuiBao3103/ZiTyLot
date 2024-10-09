@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -215,6 +216,26 @@ namespace ZiTyLot.BUS
             {
                 List<Card> cards = GetAll();
                 ExcelHelper.ExportToExcel(cards, filePath);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void ImportCardsFromExcel(string filePath)
+        {
+            try
+            {
+                var items = ExcelHelper.ImportFromExcel<Card>(filePath);
+                //validate here
+
+                //add to database
+                foreach (var item in items)
+                {
+                    cardDAO.Add(item);
+                    Debug.WriteLine(item.Vehicle_type_id);
+                }
             }
             catch (Exception ex)
             {
