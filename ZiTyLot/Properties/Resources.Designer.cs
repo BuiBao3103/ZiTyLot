@@ -173,6 +173,16 @@ namespace ZiTyLot.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Next {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Next", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icon_18x18px_Plus {
             get {
                 object obj = ResourceManager.GetObject("Icon-18x18px_Plus", resourceCulture);
@@ -186,6 +196,16 @@ namespace ZiTyLot.Properties {
         internal static System.Drawing.Bitmap Icon_18x18px_Plus_Black {
             get {
                 object obj = ResourceManager.GetObject("Icon-18x18px_Plus-Black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Previous {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Previous", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

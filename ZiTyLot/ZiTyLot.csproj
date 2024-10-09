@@ -306,8 +306,10 @@
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Magnifying.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Male-Active.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Male.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Next.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Plus-Black.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Plus.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Previous.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Setting.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_View.png" />
     <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Account-Active.png" />
