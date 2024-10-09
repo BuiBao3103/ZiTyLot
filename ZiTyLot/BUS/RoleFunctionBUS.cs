@@ -1,31 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using ZiTyLot.DAO;
 using ZiTyLot.ENTITY;
 using ZiTyLot.Helper;
 
 namespace ZiTyLot.BUS
 {
-    public class AccountBUS : IBUS<Account>
+    internal class RoleFunctionBUS : IDAO<RoleFunction>
     {
-        private readonly AccountDAO accountDao;
+        private readonly RoleFunctionDAO roleFunctionDAO;
         private readonly RoleDAO roleDAO;
-        private readonly BillDAO billDAO;
+        private readonly FunctionDAO functionDAO;
 
-        public AccountBUS()
+        public RoleFunctionBUS()
         {
-            this.accountDao = new AccountDAO();
+            this.roleFunctionDAO = new RoleFunctionDAO();
             this.roleDAO = new RoleDAO();
-            this.billDAO = new BillDAO();
+            this.functionDAO = new FunctionDAO();
         }
 
-        public void Add(Account item)
+        public void Add(RoleFunction item)
         {
             Validate(item); // Kiểm tra tính hợp lệ của dữ liệu
 
             try
             {
-                accountDao.Add(item);
+                roleFunctionDAO.Add(item);
             }
             catch (Exception ex)
             {
@@ -33,13 +36,14 @@ namespace ZiTyLot.BUS
             }
         }
 
+        //
         public void Delete(object id)
         {
             EnsureRecordExists(id); // Kiểm tra sự tồn tại của bản ghi
 
             try
             {
-                accountDao.Delete(id);
+                roleFunctionDAO.Delete(id);
             }
             catch (Exception ex)
             {
@@ -47,11 +51,11 @@ namespace ZiTyLot.BUS
             }
         }
 
-        public List<Account> GetAll(List<FilterCondition> filters = null)
+        public List<RoleFunction> GetAll(List<FilterCondition> filters = null)
         {
             try
             {
-                return accountDao.GetAll(filters);
+                return roleFunctionDAO.GetAll(filters);
             }
             catch (Exception ex)
             {
@@ -59,11 +63,11 @@ namespace ZiTyLot.BUS
             }
         }
 
-        public Page<Account> GetAllPagination(Pageable pageable, List<FilterCondition> filters = null)
+        public Page<RoleFunction> GetAllPagination(Pageable pageable, List<FilterCondition> filters = null)
         {
             try
             {
-                return accountDao.GetAllPagination(pageable, filters);
+                return roleFunctionDAO.GetAllPagination(pageable, filters);
             }
             catch (Exception ex)
             {
@@ -71,11 +75,12 @@ namespace ZiTyLot.BUS
             }
         }
 
-        public Account GetById(object id)
+        //
+        public RoleFunction GetById(object id)
         {
             try
             {
-                return accountDao.GetById(id);
+                return roleFunctionDAO.GetById(id);
             }
             catch (Exception ex)
             {
@@ -83,15 +88,15 @@ namespace ZiTyLot.BUS
             }
         }
 
-        public void Update(Account item)
+        //
+        public void Update(RoleFunction item)
         {
-            EnsureRecordExists(item.Id); // Kiểm tra sự tồn tại của bản ghi
-
+            EnsureRecordExists(item); // Kiểm tra sự tồn tại của bản ghi
             Validate(item); // Kiểm tra tính hợp lệ của dữ liệu
 
             try
             {
-                accountDao.Update(item);
+                roleFunctionDAO.Update(item);
             }
             catch (Exception ex)
             {
@@ -99,28 +104,30 @@ namespace ZiTyLot.BUS
             }
         }
 
-        private void Validate(Account item)
+        //
+        private void Validate(RoleFunction item)
         {
             // username not null or empty
-            if (string.IsNullOrWhiteSpace(item.Username))
-            {
-                throw new ArgumentException("Username cannot be null or empty.", nameof(item.Username));
-            }
+            //if (string.IsNullOrWhiteSpace(item.Username))
+            //{
+            //    throw new ArgumentException("Username cannot be null or empty.", nameof(item.Username));
+            //}
         }
 
+        //
         // Kiểm tra sự tồn tại của bản ghi
-        private void EnsureRecordExists(object id)
+        private void EnsureRecordExists(object item)
         {
-            var existingItem = accountDao.GetById(id);
-            if (existingItem == null)
-            {
-                throw new KeyNotFoundException($"Record with ID {id} not found.");
-            }
+            //var existingItem = roleFunctionDAO.GetById(id);
+            //if (existingItem == null)
+            //{
+            //    throw new KeyNotFoundException($"Record with ID {id} not found.");
+            //}
         }
 
         // Population
 
-        public Account PopulateRole(Account item)
+        public RoleFunction PopulateRole(RoleFunction item)
         {
             try
             {
@@ -141,17 +148,20 @@ namespace ZiTyLot.BUS
             }
         }
 
-        public Account PopulateBills(Account item)
+        public RoleFunction PopulateFunction(RoleFunction item)
         {
             try
             {
-                List<FilterCondition> filters = new List<FilterCondition>
+                if (item.Function_id.HasValue)
                 {
-                    new FilterCondition("account_id", ComparisonOperator.Equals, item.Id)
-                };
-                List<Bill> bills = billDAO.GetAll(filters);
-                item.Bills = bills;
-                return item;
+                    Function function = functionDAO.GetById(item.Function_id.Value);
+                    item.Function = function;
+                    return item;
+                }
+                else
+                {
+                    throw new KeyNotFoundException($"FunctionID is null, no record to search.");
+                }
             }
             catch (Exception ex)
             {

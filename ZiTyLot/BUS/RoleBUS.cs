@@ -9,10 +9,14 @@ namespace ZiTyLot.BUS
     public class RoleBUS : IBUS<Role>
     {
         private readonly RoleDAO roleDao;
+        private readonly RoleFunctionDAO roleFunctionDAO;
+        private readonly AccountDAO accountDAO;
 
         public RoleBUS()
         {
             this.roleDao = new RoleDAO();
+            this.roleFunctionDAO = new RoleFunctionDAO();
+            this.accountDAO = new AccountDAO();
         }
 
         public void Add(Role item)
@@ -112,6 +116,71 @@ namespace ZiTyLot.BUS
             if (existingItem == null)
             {
                 throw new KeyNotFoundException($"Record with ID {id} not found.");
+            }
+        }
+
+        // Population
+
+        public Role PopulateRoleFunctions(Role item)
+        {
+            try
+            {
+                List<FilterCondition> filters = new List<FilterCondition>
+                {
+                    new FilterCondition("role_id", ComparisonOperator.Equals, item.Id)
+                };
+                List<RoleFunction> roleFunctions = roleFunctionDAO.GetAll(filters);
+                item.Role_functions = roleFunctions;
+                return item;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Role PopulateAccounts(Role item)
+        {
+            try
+            {
+                List<FilterCondition> filters = new List<FilterCondition>
+                {
+                    new FilterCondition("role_id", ComparisonOperator.Equals, item.Id)
+                };
+                List<Account> accounts = accountDAO.GetAll(filters);
+                item.Accounts = accounts;
+                return item;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        // Population many to many
+        public Role PopulateFunctions(Role item)
+        {
+            try
+            {
+                RoleFunctionBUS roleFunctionBUS = new RoleFunctionBUS();
+                List<FilterCondition> filters = new List<FilterCondition>
+                {
+                    new FilterCondition("role_id", ComparisonOperator.Equals, item.Id)
+                };
+                List<RoleFunction> roleFunctions = roleFunctionDAO.GetAll(filters);
+                List<Function> functions = new List<Function>();
+                RoleFunction roleFunctionTmp = new RoleFunction();
+                foreach (RoleFunction roleFunction in roleFunctions)
+                {
+                    roleFunctionTmp = roleFunctionBUS.PopulateFunction(roleFunction);
+                    functions.Add(roleFunctionTmp.Function);
+                }
+                item.Functions = functions;
+                return item;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
     }

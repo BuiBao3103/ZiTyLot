@@ -117,6 +117,8 @@ namespace ZiTyLot.BUS
             }
         }
 
+        // Population
+
         public Image PopulateSession(Image item)
         {
             try

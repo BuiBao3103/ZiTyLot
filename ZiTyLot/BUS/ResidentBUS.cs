@@ -10,11 +10,13 @@ namespace ZiTyLot.BUS
     {
         private readonly ResidentDAO residentDao;
         private readonly BillDAO billDAO;
+        private readonly CardDAO cardDAO;
 
         public ResidentBUS()
         {
             this.residentDao = new ResidentDAO();
             this.billDAO = new BillDAO();
+            this.cardDAO = new CardDAO();
         }
 
         public void Add(Resident item)
@@ -117,7 +119,9 @@ namespace ZiTyLot.BUS
             }
         }
 
-        public Resident PopulateSlots(Resident resident)
+        // Population
+
+        public Resident PopulateBills(Resident resident)
         {
             try
             {
@@ -127,6 +131,25 @@ namespace ZiTyLot.BUS
                 };
                 List<Bill> bills = billDAO.GetAll(filters);
                 resident.Bills = bills;
+                return resident;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+        }
+
+        public Resident PopulateCards(Resident resident)
+        {
+            try
+            {
+                List<FilterCondition> filters = new List<FilterCondition>
+                {
+                    new FilterCondition("resident_id", ComparisonOperator.Equals, resident.Id)
+                };
+                List<Card> cards = cardDAO.GetAll(filters);
+                resident.Cards = cards;
                 return resident;
             }
             catch (Exception ex)

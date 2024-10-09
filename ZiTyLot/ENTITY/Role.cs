@@ -16,6 +16,9 @@ namespace ZiTyLot.ENTITY
         private ICollection<RoleFunction> role_functions = new List<RoleFunction>();
         private ICollection<Account> accounts = new List<Account>();
 
+        //relationship many to many
+        private ICollection<Function> functions = new List<Function>();
+
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public DateTime Created_at { get => created_at; set => created_at = value; }
@@ -23,5 +26,6 @@ namespace ZiTyLot.ENTITY
         public DateTime? Deleted_at { get => deleted_at; set => deleted_at = value; }
         public ICollection<RoleFunction> Role_functions { get => role_functions; set => role_functions = value; }
         public ICollection<Account> Accounts { get => accounts; set => accounts = value; }
+        public ICollection<Function> Functions { get => functions; set => functions = value; }
     }
 }
