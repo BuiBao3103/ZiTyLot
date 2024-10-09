@@ -386,6 +386,35 @@ namespace ZiTyLot.DAO
             }
         }
 
+        public void SoftDelete (object id)
+        {
+            try
+            {
+                // Establish a connection to the database
+                using (var connection = DBConfig.GetConnection())
+                {
+                    connection.Open(); // Open the connection
+
+                    // Define the SQL query to soft delete the record by ID
+                    var query = $"UPDATE {tableName} SET Delete_at = NOW() WHERE Id = @Id";
+
+                    // Create a MySqlCommand with the query
+                    using (var command = new MySqlCommand(query, connection))
+                    {
+                        // Add the ID parameter to the command
+                        command.Parameters.AddWithValue("@Id", id);
+
+                        // Execute the query
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         private string GetFilterConditionSql(FilterCondition filter)
         {
             // Generate the SQL condition based on the filter's operator
