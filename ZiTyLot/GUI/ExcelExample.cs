@@ -5,10 +5,10 @@ using ZiTyLot.BUS;
 
 namespace ZiTyLot.GUI
 {
-    public partial class Excel : Form
+    public partial class ExcelExample : Form
     {
         private readonly CardBUS cardBus;
-        public Excel()
+        public ExcelExample()
         {
             cardBus = new CardBUS();
             InitializeComponent();
@@ -45,7 +45,16 @@ namespace ZiTyLot.GUI
                     try
                     {
                         File.Copy(sourceFilePath, selectedFileName, true);
-                        MessageBox.Show("Download successful: " + selectedFileName);
+                        DialogResult result = MessageBox.Show("Download successful: " + selectedFileName + "\nDo you want to open the file?",
+                                                               "Download Complete",
+                                                               MessageBoxButtons.YesNo,
+                                                               MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            // Mở file
+                            System.Diagnostics.Process.Start(selectedFileName);
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -93,6 +102,11 @@ namespace ZiTyLot.GUI
             {
                 MessageBox.Show("Error during export: " + ex.Message);
             }
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

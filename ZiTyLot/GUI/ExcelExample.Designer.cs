@@ -1,6 +1,6 @@
 ﻿namespace ZiTyLot.GUI
 {
-    partial class Excel
+    partial class ExcelExample
     {
         /// <summary>
         /// Required designer variable.
@@ -31,6 +31,7 @@
             this.btnDownload = new Sunny.UI.UIButton();
             this.cbTemplate = new Sunny.UI.UIComboBox();
             this.btnExport = new Sunny.UI.UIButton();
+            this.btnImport = new Sunny.UI.UIButton();
             this.SuspendLayout();
             // 
             // btnDownload
@@ -78,15 +79,29 @@
             this.btnExport.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
-            // Excel
+            // btnImport
+            // 
+            this.btnImport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnImport.Location = new System.Drawing.Point(36, 216);
+            this.btnImport.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(142, 35);
+            this.btnImport.TabIndex = 3;
+            this.btnImport.Text = "Import Cards";
+            this.btnImport.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // ExcelExample
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnImport);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.cbTemplate);
             this.Controls.Add(this.btnDownload);
-            this.Name = "Excel";
+            this.Name = "ExcelExample";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Excel";
             this.Load += new System.EventHandler(this.Excel_Load);
@@ -99,5 +114,6 @@
         private Sunny.UI.UIButton btnDownload;
         private Sunny.UI.UIComboBox cbTemplate;
         private Sunny.UI.UIButton btnExport;
+        private Sunny.UI.UIButton btnImport;
     }
 }
