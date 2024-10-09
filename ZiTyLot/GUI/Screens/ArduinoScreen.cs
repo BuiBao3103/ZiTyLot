@@ -32,13 +32,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void btnQuet_Click(object sender, EventArgs e)
         {
-            using (SoundPlayer player = new SoundPlayer("../../Resource/enter.wav"))
-            {
-                player.Play();
-            }
-            Arduino.DoAction(serialPort, ArduinoAction.RED_OFF);
-            Arduino.DoAction(serialPort, ArduinoAction.GREEN_ON);
-            Arduino.DoAction(serialPort, ArduinoAction.BARIE_OPEN);
+            Arduino.OpenBarrier(serialPort);
             close.Enabled = true;
             open.Enabled = false;
         }
@@ -49,8 +43,6 @@ namespace ZiTyLot.GUI.Screens
             {
                 string selectedPort = cbPort.SelectedItem.ToString();
                 serialPort = Arduino.Connect(selectedPort);
-                Arduino.DoAction(serialPort, ArduinoAction.RED_ON);
-                Arduino.DoAction(serialPort, ArduinoAction.BARIE_CLOSE);
                 MessageBox.Show("Connected to " + selectedPort);
                 open.Enabled = true;
             }
@@ -62,9 +54,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void close_Click(object sender, EventArgs e)
         {
-            Arduino.DoAction(serialPort, ArduinoAction.GREEN_OFF);
-            Arduino.DoAction(serialPort, ArduinoAction.BARIE_CLOSE);
-            Arduino.DoAction(serialPort, ArduinoAction.RED_ON);
+            Arduino.CloseBarrier(serialPort);
             close.Enabled = false;
             open.Enabled = true;
         }
