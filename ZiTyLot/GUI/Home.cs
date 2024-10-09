@@ -29,7 +29,6 @@ namespace ZiTyLot.GUI
                 { "EmployeeManagement", new Panel2() },
                 { "InvoiceManagement", new InvoiceScreen() },
                 { "BManagement", new ExampleScreen() },
-                { "Arduino", new ArduinoScreen() }
 
             };
 
@@ -49,7 +48,6 @@ namespace ZiTyLot.GUI
                 new { Name = "EmployeeManagement", Text = "Quản lý nhân viên" },
                 new { Name = "InvoiceManagement", Text = "Quản lý hóa đơn" },
                 new { Name = "BManagement", Text = "Quản lý B" },
-                new { Name = "Arduino", Text = "Arduino" }
 
 
 };

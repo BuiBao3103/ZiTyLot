@@ -1,6 +1,6 @@
 ﻿namespace ZiTyLot.GUI.Screens
 {
-    partial class ArduinoScreen
+    partial class ArduinoRFIDReader
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,48 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.open = new Sunny.UI.UIButton();
-            this.close = new Sunny.UI.UIButton();
             this.cbPort = new Sunny.UI.UIComboBox();
-            this.Connect = new Sunny.UI.UIButton();
+            this.btnConnect = new Sunny.UI.UIButton();
             this.Port = new Sunny.UI.UILabel();
             this.btnDisconnect = new Sunny.UI.UIButton();
+            this.lbRFID = new Sunny.UI.UILabel();
             this.SuspendLayout();
-            // 
-            // open
-            // 
-            this.open.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.open.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.open.Location = new System.Drawing.Point(49, 108);
-            this.open.MinimumSize = new System.Drawing.Size(1, 1);
-            this.open.Name = "open";
-            this.open.Size = new System.Drawing.Size(189, 35);
-            this.open.TabIndex = 0;
-            this.open.Text = "open";
-            this.open.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.open.Click += new System.EventHandler(this.btnQuet_Click);
-            // 
-            // close
-            // 
-            this.close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.close.Location = new System.Drawing.Point(49, 190);
-            this.close.MinimumSize = new System.Drawing.Size(1, 1);
-            this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(189, 35);
-            this.close.TabIndex = 2;
-            this.close.Text = "close";
-            this.close.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.close.Click += new System.EventHandler(this.close_Click);
             // 
             // cbPort
             // 
             this.cbPort.DataSource = null;
+            this.cbPort.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbPort.FillColor = System.Drawing.Color.White;
             this.cbPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cbPort.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.cbPort.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.cbPort.Location = new System.Drawing.Point(407, 114);
+            this.cbPort.Location = new System.Drawing.Point(38, 67);
             this.cbPort.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbPort.MinimumSize = new System.Drawing.Size(63, 0);
             this.cbPort.Name = "cbPort";
@@ -80,24 +54,24 @@
             this.cbPort.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cbPort.Watermark = "";
             // 
-            // Connect
+            // btnConnect
             // 
-            this.Connect.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Connect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.Connect.Location = new System.Drawing.Point(407, 190);
-            this.Connect.MinimumSize = new System.Drawing.Size(1, 1);
-            this.Connect.Name = "Connect";
-            this.Connect.Size = new System.Drawing.Size(150, 35);
-            this.Connect.TabIndex = 4;
-            this.Connect.Text = "Connect";
-            this.Connect.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.Connect.Click += new System.EventHandler(this.Connect_Click);
+            this.btnConnect.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnConnect.Location = new System.Drawing.Point(38, 143);
+            this.btnConnect.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(150, 35);
+            this.btnConnect.TabIndex = 4;
+            this.btnConnect.Text = "Connect";
+            this.btnConnect.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnConnect.Click += new System.EventHandler(this.Connect_Click);
             // 
             // Port
             // 
             this.Port.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Port.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.Port.Location = new System.Drawing.Point(402, 86);
+            this.Port.Location = new System.Drawing.Point(33, 39);
             this.Port.Name = "Port";
             this.Port.Size = new System.Drawing.Size(100, 23);
             this.Port.TabIndex = 5;
@@ -106,8 +80,9 @@
             // btnDisconnect
             // 
             this.btnDisconnect.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDisconnect.Enabled = false;
             this.btnDisconnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnDisconnect.Location = new System.Drawing.Point(407, 252);
+            this.btnDisconnect.Location = new System.Drawing.Point(38, 205);
             this.btnDisconnect.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnDisconnect.Name = "btnDisconnect";
             this.btnDisconnect.Size = new System.Drawing.Size(150, 35);
@@ -116,31 +91,39 @@
             this.btnDisconnect.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.btnDisconnect.Click += new System.EventHandler(this.btnDisconnect_Click);
             // 
-            // ArduinoScreen
+            // lbRFID
+            // 
+            this.lbRFID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbRFID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lbRFID.Location = new System.Drawing.Point(295, 128);
+            this.lbRFID.Name = "lbRFID";
+            this.lbRFID.Size = new System.Drawing.Size(189, 23);
+            this.lbRFID.TabIndex = 7;
+            this.lbRFID.Text = "RFID: ";
+            // 
+            // ArduinoRFIDReader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(615, 319);
+            this.Controls.Add(this.lbRFID);
             this.Controls.Add(this.btnDisconnect);
             this.Controls.Add(this.Port);
-            this.Controls.Add(this.Connect);
+            this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.cbPort);
-            this.Controls.Add(this.close);
-            this.Controls.Add(this.open);
-            this.Name = "ArduinoScreen";
-            this.Size = new System.Drawing.Size(633, 366);
+            this.Name = "ArduinoRFIDReader";
             this.Load += new System.EventHandler(this.ArduinoScreen_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ArduinoRFIDReader_KeyPress);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Sunny.UI.UIButton open;
-        private Sunny.UI.UIButton close;
         private Sunny.UI.UIComboBox cbPort;
-        private Sunny.UI.UIButton Connect;
+        private Sunny.UI.UIButton btnConnect;
         private Sunny.UI.UILabel Port;
         private Sunny.UI.UIButton btnDisconnect;
+        private Sunny.UI.UILabel lbRFID;
     }
 }
