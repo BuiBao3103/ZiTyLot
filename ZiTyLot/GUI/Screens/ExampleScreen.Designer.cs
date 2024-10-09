@@ -32,6 +32,7 @@ namespace ZiTyLot.GUI.Screens
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.TopPnl = new System.Windows.Forms.Panel();
             this.tabpanePnl = new System.Windows.Forms.Panel();
@@ -49,19 +50,17 @@ namespace ZiTyLot.GUI.Screens
             this.separator = new System.Windows.Forms.Panel();
             this.BottomPnl = new System.Windows.Forms.Panel();
             this.table = new System.Windows.Forms.DataGridView();
+            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.example1Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.example2Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.example3Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.example4Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.example5Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.viewCol = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.editCol = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.deleteCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.plate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checkIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checkOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detailButtonCol = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.viewAction = new System.Windows.Forms.DataGridViewImageColumn();
-            this.editAction = new System.Windows.Forms.DataGridViewImageColumn();
-            this.deleteAction = new System.Windows.Forms.DataGridViewImageColumn();
             this.TopPnl.SuspendLayout();
             this.tabpanePnl.SuspendLayout();
             this.searchPnl.SuspendLayout();
@@ -371,39 +370,126 @@ namespace ZiTyLot.GUI.Screens
             // table
             // 
             this.table.AllowUserToDeleteRows = false;
+            this.table.AllowUserToResizeColumns = false;
+            this.table.AllowUserToResizeRows = false;
             this.table.BackgroundColor = System.Drawing.Color.White;
             this.table.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.table.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.table.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.table.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.table.ColumnHeadersHeight = 34;
             this.table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.type,
-            this.plate,
-            this.checkIn,
-            this.checkOut,
-            this.totalTime,
-            this.totalPrice,
-            this.detailButtonCol,
-            this.viewAction,
-            this.editAction,
-            this.deleteAction});
+            this.idCol,
+            this.example1Col,
+            this.example2Col,
+            this.example3Col,
+            this.example4Col,
+            this.example5Col,
+            this.viewCol,
+            this.editCol,
+            this.deleteCol});
+            this.table.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.table.DefaultCellStyle = dataGridViewCellStyle2;
             this.table.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.table.GridColor = System.Drawing.Color.White;
             this.table.Location = new System.Drawing.Point(10, 10);
+            this.table.Margin = new System.Windows.Forms.Padding(0);
             this.table.Name = "table";
             this.table.ReadOnly = true;
+            this.table.RowHeadersVisible = false;
+            this.table.RowHeadersWidth = 30;
             this.table.RowTemplate.Height = 30;
             this.table.Size = new System.Drawing.Size(1131, 427);
-            this.table.TabIndex = 0;
-           
+            this.table.TabIndex = 1;
+            // 
+            // idCol
+            // 
+            this.idCol.HeaderText = "ID";
+            this.idCol.Name = "idCol";
+            this.idCol.ReadOnly = true;
+            this.idCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.idCol.Width = 30;
+            // 
+            // example1Col
+            // 
+            this.example1Col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.example1Col.HeaderText = "Example 1";
+            this.example1Col.MinimumWidth = 80;
+            this.example1Col.Name = "example1Col";
+            this.example1Col.ReadOnly = true;
+            this.example1Col.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // example2Col
+            // 
+            this.example2Col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.example2Col.HeaderText = "Example 2";
+            this.example2Col.Name = "example2Col";
+            this.example2Col.ReadOnly = true;
+            // 
+            // example3Col
+            // 
+            this.example3Col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.example3Col.HeaderText = "Example 3";
+            this.example3Col.Name = "example3Col";
+            this.example3Col.ReadOnly = true;
+            // 
+            // example4Col
+            // 
+            this.example4Col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.example4Col.HeaderText = "Example 4";
+            this.example4Col.Name = "example4Col";
+            this.example4Col.ReadOnly = true;
+            // 
+            // example5Col
+            // 
+            this.example5Col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.example5Col.HeaderText = "Example 5";
+            this.example5Col.MinimumWidth = 100;
+            this.example5Col.Name = "example5Col";
+            this.example5Col.ReadOnly = true;
+            // 
+            // viewCol
+            // 
+            this.viewCol.HeaderText = "";
+            this.viewCol.Name = "viewCol";
+            this.viewCol.ReadOnly = true;
+            this.viewCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.viewCol.Text = "View";
+            this.viewCol.Width = 30;
+            // 
+            // editCol
+            // 
+            this.editCol.HeaderText = "";
+            this.editCol.Name = "editCol";
+            this.editCol.ReadOnly = true;
+            this.editCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.editCol.Text = "Edit";
+            this.editCol.Width = 30;
+            // 
+            // deleteCol
+            // 
+            this.deleteCol.HeaderText = "";
+            this.deleteCol.Name = "deleteCol";
+            this.deleteCol.ReadOnly = true;
+            this.deleteCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.deleteCol.Text = "Delete";
+            this.deleteCol.Width = 30;
             // 
             // panel2
             // 
@@ -424,99 +510,6 @@ namespace ZiTyLot.GUI.Screens
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(110, 34);
             this.panel5.TabIndex = 0;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.id.Width = 30;
-            // 
-            // type
-            // 
-            this.type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.type.HeaderText = "Type";
-            this.type.MinimumWidth = 80;
-            this.type.Name = "type";
-            this.type.ReadOnly = true;
-            this.type.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // plate
-            // 
-            this.plate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.plate.HeaderText = "Plate";
-            this.plate.Name = "plate";
-            this.plate.ReadOnly = true;
-            // 
-            // checkIn
-            // 
-            this.checkIn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.checkIn.HeaderText = "Check in time";
-            this.checkIn.Name = "checkIn";
-            this.checkIn.ReadOnly = true;
-            // 
-            // checkOut
-            // 
-            this.checkOut.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.checkOut.HeaderText = "Check out time";
-            this.checkOut.Name = "checkOut";
-            this.checkOut.ReadOnly = true;
-            // 
-            // totalTime
-            // 
-            this.totalTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.totalTime.HeaderText = "Total time";
-            this.totalTime.MinimumWidth = 100;
-            this.totalTime.Name = "totalTime";
-            this.totalTime.ReadOnly = true;
-            // 
-            // totalPrice
-            // 
-            this.totalPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.totalPrice.HeaderText = "Total Price";
-            this.totalPrice.MinimumWidth = 100;
-            this.totalPrice.Name = "totalPrice";
-            this.totalPrice.ReadOnly = true;
-            // 
-            // detailButtonCol
-            // 
-            this.detailButtonCol.HeaderText = "Action";
-            this.detailButtonCol.MinimumWidth = 50;
-            this.detailButtonCol.Name = "detailButtonCol";
-            this.detailButtonCol.ReadOnly = true;
-            this.detailButtonCol.Width = 80;
-            // 
-            // viewAction
-            // 
-            this.viewAction.HeaderText = "";
-            this.viewAction.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_View;
-            this.viewAction.Name = "viewAction";
-            this.viewAction.ReadOnly = true;
-            // 
-            // editAction
-            // 
-            this.editAction.HeaderText = "";
-            this.editAction.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Edit;
-            this.editAction.Name = "editAction";
-            this.editAction.ReadOnly = true;
-            // 
-            // deleteAction
-            // 
-            this.deleteAction.HeaderText = "";
-            this.deleteAction.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Delete;
-            this.deleteAction.Name = "deleteAction";
-            this.deleteAction.ReadOnly = true;
-            // Assuming your image resources are correctly set
-            this.viewAction.ImageLayout = DataGridViewImageCellLayout.Zoom; // Adjusts the image layout
-            this.editAction.ImageLayout = DataGridViewImageCellLayout.Zoom; // Adjusts the image layout
-            this.deleteAction.ImageLayout = DataGridViewImageCellLayout.Zoom; // Adjusts the image layout
-
-            // If images are still not showing, try this after adding rows to the DataGridView
-            this.table.Rows.Add(1, "Type1", "ABC123", "10:00 AM", "2:00 PM", "4 hours", "$20", null, null, null);
-            this.table.Rows[0].Cells["viewAction"].Value = global::ZiTyLot.Properties.Resources.Icon_18x18px_View;
-            this.table.Rows[0].Cells["editAction"].Value = global::ZiTyLot.Properties.Resources.Icon_18x18px_Edit;
-            this.table.Rows[0].Cells["deleteAction"].Value = global::ZiTyLot.Properties.Resources.Icon_18x18px_Delete;
             // 
             // ExampleScreen
             // 
@@ -558,22 +551,20 @@ namespace ZiTyLot.GUI.Screens
         private System.Windows.Forms.Panel buttonsPnl;
         private System.Windows.Forms.Panel separator;
         private System.Windows.Forms.Panel BottomPnl;
-        private System.Windows.Forms.DataGridView table;
         private System.Windows.Forms.Panel panel2;
         private Sunny.UI.UISymbolButton addBtn;
         private System.Windows.Forms.Panel panel5;
         private Sunny.UI.UIPanel filterPnl;
         private Sunny.UI.UIComboBox filterCb;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn plate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn checkIn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn checkOut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalPrice;
-        private System.Windows.Forms.DataGridViewButtonColumn detailButtonCol;
-        private System.Windows.Forms.DataGridViewImageColumn viewAction;
-        private System.Windows.Forms.DataGridViewImageColumn editAction;
-        private System.Windows.Forms.DataGridViewImageColumn deleteAction;
+        private DataGridView table;
+        private DataGridViewTextBoxColumn idCol;
+        private DataGridViewTextBoxColumn example1Col;
+        private DataGridViewTextBoxColumn example2Col;
+        private DataGridViewTextBoxColumn example3Col;
+        private DataGridViewTextBoxColumn example4Col;
+        private DataGridViewTextBoxColumn example5Col;
+        private DataGridViewButtonColumn viewCol;
+        private DataGridViewButtonColumn editCol;
+        private DataGridViewButtonColumn deleteCol;
     }
 }
