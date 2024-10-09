@@ -139,8 +139,8 @@
   <data name="Icon-18x18px_CheckIn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_CheckIn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="scan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\GUI\assets\scan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icon-18x18px_Previous" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Previous.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -150,6 +150,9 @@
   </data>
   <data name="Icon-18x18px_CheckIn-Active" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_CheckIn-Active.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon-18x18px_Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icon-18x18px_Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,10 +169,13 @@
   <data name="hero-image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\hero-image.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="scan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\GUI\assets\scan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Icon-18x18px_Magnifying" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Magnifying.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon-18x18px_Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icon-18x18px_Next" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Next.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
