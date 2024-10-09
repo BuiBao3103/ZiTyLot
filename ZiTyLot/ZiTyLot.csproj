@@ -188,6 +188,12 @@
     <Compile Include="ENTITY\VehicleType.cs" />
     <Compile Include="ENTITY\VisitorFee.cs" />
     <Compile Include="GUI\component-extensions\RoundedBorder.cs" />
+    <Compile Include="GUI\Excel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Excel.Designer.cs">
+      <DependentUpon>Excel.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +243,9 @@
     <Compile Include="Helper\RFIDReader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\Excel.resx">
+      <DependentUpon>Excel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,6 +289,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resource\Excel-templates\Template_1.xlsx" />
+    <None Include="Resource\Excel-templates\Template_2.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="GUI\assets\hero-image.jpg" />
