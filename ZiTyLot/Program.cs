@@ -16,7 +16,7 @@ namespace ZiTyLot
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Home());
+            Application.Run(new ExcelExample());
 
             // Attempt to connect to the database and fetch data using MyDao
             try
