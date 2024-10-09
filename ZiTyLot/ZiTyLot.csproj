@@ -116,6 +116,7 @@
   <ItemGroup>
     <Compile Include="BUS\ABUS.cs" />
     <Compile Include="BUS\AccountBUS.cs" />
+    <Compile Include="BUS\AuthManager.cs" />
     <Compile Include="BUS\BBUS.cs" />
     <Compile Include="BUS\BillBUS.cs" />
     <Compile Include="BUS\FunctionBUS.cs" />
