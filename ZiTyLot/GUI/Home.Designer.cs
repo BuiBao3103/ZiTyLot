@@ -86,14 +86,14 @@
             this.pnlCardLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCardLayout.Location = new System.Drawing.Point(245, 0);
             this.pnlCardLayout.Name = "pnlCardLayout";
-            this.pnlCardLayout.Size = new System.Drawing.Size(854, 633);
+            this.pnlCardLayout.Size = new System.Drawing.Size(924, 633);
             this.pnlCardLayout.TabIndex = 1;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1099, 633);
+            this.ClientSize = new System.Drawing.Size(1169, 633);
             this.Controls.Add(this.pnlCardLayout);
             this.Controls.Add(this.sidebar);
             this.Name = "Home";

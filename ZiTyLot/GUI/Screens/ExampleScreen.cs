@@ -24,9 +24,9 @@ namespace ZiTyLot.GUI.Screens
             BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
 
             addBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, addBtn.Width, addBtn.Height, 10, 10));
-            allBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, allBtn.Width, allBtn.Height, 24,24));
-            checkInBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, checkInBtn.Width, checkInBtn.Height, 24,24));
-            checkOutBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, checkOutBtn.Width, checkOutBtn.Height, 24,24));
+            allBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, allBtn.Width, allBtn.Height, 10,10));
+            checkInBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, checkInBtn.Width, checkInBtn.Height, 10, 10));
+            checkOutBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, checkOutBtn.Width, checkOutBtn.Height, 10, 10));
             //searchPnl.Size = new System.Drawing.Size(TopPnl.Width-500, 34);
 
             allBtn.Checked = true;
@@ -159,6 +159,16 @@ namespace ZiTyLot.GUI.Screens
                 checkOutBtn.ForeColor = Color.FromArgb(160, 160, 160);  
                 checkOutBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_CheckOut;  
             }
+        }
+
+        private void uiRadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void allBtn_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
