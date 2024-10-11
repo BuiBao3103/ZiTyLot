@@ -15,8 +15,8 @@ namespace ZiTyLot.ENTITY
         private DateTime? updated_at;
         private DateTime? deleted_at;
 
-        private int vehicle_type_id;
-        private int resident_id;
+        private int? vehicle_type_id;
+        private int? resident_id;
 
         //relationships
         private VehicleType vehicle_type = null;
@@ -32,8 +32,8 @@ namespace ZiTyLot.ENTITY
         public DateTime Created_at { get => created_at; set => created_at = value; }
         public DateTime? Updated_at { get => updated_at; set => updated_at = value; }
         public DateTime? Deleted_at { get => deleted_at; set => deleted_at = value; }
-        public int Vehicle_type_id { get => vehicle_type_id; set => vehicle_type_id = value; }
-        public int Resident_id { get => resident_id; set => resident_id = value; }
+        public int? Vehicle_type_id { get => vehicle_type_id; set => vehicle_type_id = value; }
+        public int? Resident_id { get => resident_id; set => resident_id = value; }
         public VehicleType Vehicle_type { get => vehicle_type; set => vehicle_type = value; }
         public Resident Resident { get => resident; set => resident = value; }
         public ICollection<Issue> Issues { get => issues; set => issues = value; }
