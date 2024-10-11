@@ -31,8 +31,8 @@
             this.sidebar = new System.Windows.Forms.Panel();
             this.sidebarBottom = new System.Windows.Forms.Panel();
             this.sidebarTop = new System.Windows.Forms.Panel();
-            this.pnlCardLayout = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlCardLayout = new System.Windows.Forms.Panel();
             this.sidebar.SuspendLayout();
             this.sidebarTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,15 +69,6 @@
             this.sidebarTop.Size = new System.Drawing.Size(245, 149);
             this.sidebarTop.TabIndex = 0;
             // 
-            // pnlCardLayout
-            // 
-            this.pnlCardLayout.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.pnlCardLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCardLayout.Location = new System.Drawing.Point(245, 0);
-            this.pnlCardLayout.Name = "pnlCardLayout";
-            this.pnlCardLayout.Size = new System.Drawing.Size(854, 633);
-            this.pnlCardLayout.TabIndex = 1;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -88,6 +79,15 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // pnlCardLayout
+            // 
+            this.pnlCardLayout.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.pnlCardLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCardLayout.Location = new System.Drawing.Point(245, 0);
+            this.pnlCardLayout.Name = "pnlCardLayout";
+            this.pnlCardLayout.Size = new System.Drawing.Size(854, 633);
+            this.pnlCardLayout.TabIndex = 1;
             // 
             // Home
             // 

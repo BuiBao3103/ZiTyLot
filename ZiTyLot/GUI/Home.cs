@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sunny.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,70 +20,111 @@ namespace ZiTyLot.GUI
         {
             InitializeComponent();
             this.CenterToScreen();
+
         }
         private void AddMenuToSidebar()
         {
             // Create a dictionary to map buttons to their respective panels
             var panelMapping = new Dictionary<string, UserControl>
             {
-                { "Home", new SessionScreen() },
-                { "EmployeeManagement", new Panel2() },
-                { "InvoiceManagement", new InvoiceScreen() },
-                { "BManagement", new ExampleScreen() },
-
+                { "Home", new ExampleScreen() },
+                //{ "EmployeeManagement", new Panel2() },
+                { "AccountManagement", new AccountScreen() },
+                { "BillManagement", new BillScreen() },
+                { "ResidentManagement", new ResidentScreen() },
+                { "SessionManagement", new SessionScreen() },
+                { "RoleManagement", new RoleScreen() },
+                { "CardManagement", new CardScreen() },
+                { "PriceManagement", new PriceScreen() },
+                { "AreaManagement", new AreaScreen() },
+                { "Scanning", new ScanningScreen() },
+                //{ "Setting", new SettingScreen() },
             };
 
             // Array of menu items with names and texts
             var menuItems = new[]
             {
-                //new { Name = "RoleManagement", Text = "Role" },
-                //new { Name = "AccountManagement", Text = "Account" },
-                //new { Name = "BillManagement", Text = "Bill" },
-                //new { Name = "ResidentManagement", Text = "Resident" },
-                //new { Name = "CardManagement", Text = "Card" },
-                //new { Name = "SessionManagement", Text = "Session" },
-                //new { Name = "AreaManagement", Text = "Area" },
-                //new { Name = "Scanning", Text = "Scanning" },
+                //new { Name = "Setting", Text = "Setting"},
+                new { Name = "PriceManagement", Text = "Price" },
+                new { Name = "RoleManagement", Text = "Role" },
+                new { Name = "AccountManagement", Text = "Account" },
+                new { Name = "BillManagement", Text = "Bill" },
+                new { Name = "CardManagement", Text = "Card" },
+                new { Name = "ResidentManagement", Text = "Resident" },
+                new { Name = "AreaManagement", Text = "Area" },
+                new { Name = "SessionManagement", Text = "Session" },
+                new { Name = "Scanning", Text = "Scanning" },
                 //new { Name = "Dashboard", Text = "Dashboard" },
-                new { Name = "Home", Text = "Trang chủ" },
-                new { Name = "EmployeeManagement", Text = "Quản lý nhân viên" },
-                new { Name = "InvoiceManagement", Text = "Quản lý hóa đơn" },
-                new { Name = "BManagement", Text = "Quản lý B" },
+                new { Name = "Home", Text = "Example" },
+                //new { Name = "EmployeeManagement", Text = "Panel2" },
+            };
+            var menuIcon = new[]
+            {   
+                new { Name = "Home", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Price},
+                new { Name = "PriceManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Price},
+                new { Name = "RoleManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Role},
+                new { Name = "AccountManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Account},
+                new { Name = "BillManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Bill},
+                new { Name = "CardManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Card},
+                new { Name = "ResidentManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Resident},
+                new { Name = "AreaManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Area},
+                new { Name = "SessionManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Session},
+                new { Name = "Scanning", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Scanning},
+                //new { Name = "Setting", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Setting},
+            };
 
-
-};
+            var menuIconActive = new[]
+            {
+                new { Name = "Home", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Price_Active},
+                new { Name = "PriceManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Price_Active},
+                new { Name = "RoleManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Role_Active},
+                new { Name = "AccountManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Account_Active},
+                new { Name = "BillManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Bill_Active},
+                new { Name = "CardManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Card_Active},
+                new { Name = "ResidentManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Resident_Active},
+                new { Name = "AreaManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Area_Active},
+                new { Name = "SessionManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Session_Active},
+                new { Name = "Scanning", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Scanning_Active},
+                //new { Name = "Setting", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Setting_Active},
+            };
 
             // Iterate over the menu items
             foreach (var item in menuItems)
             {
                 Button button = new Button();
                 button.Name = item.Name;
-                button.Text = item.Text.ToUpper(); ;
+                button.Text = item.Text.ToString();
                 button.FlatStyle = FlatStyle.Flat;
                 button.FlatAppearance.BorderSize = 0;
                 button.Size = new Size(sidebar.Width - 10, 45);
-                button.Image = ZiTyLot.Properties.Resources.scan;
+                button.Image = menuIcon.Where(x => x.Name == item.Name).FirstOrDefault().Icon;
                 button.BackColor = Color.White;
                 button.ForeColor = Color.Black;
                 button.Dock = DockStyle.Top;
-                button.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, sidebar.Width - 10, 45, 5, 5));
-                button.Font = new Font("Microsoft Sans Serif", 10, Font.Style & ~FontStyle.Bold);
-                button.TextImageRelation = TextImageRelation.ImageBeforeText;
+                button.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, sidebar.Width - 10, 45, 14, 14));
+                button.Font = new Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+                // Image on the left, text in the middle
                 button.ImageAlign = ContentAlignment.MiddleLeft;
-                button.TextAlign = ContentAlignment.MiddleRight;
+                button.TextAlign = ContentAlignment.MiddleCenter; // Change this to MiddleLeft for better control
+
+                // Use Padding to move text and adjust space between image and text
+                button.Padding = new Padding(20, 0, 0, 0); // Move text away from the image with left padding
 
                 // Attach click event
                 button.Click += (sender, e) =>
                 {
                     LoadForm(panelMapping[item.Name]);
                     button.ForeColor = Color.White;
-                    button.BackColor = Color.FromArgb(240, 118, 43);
+                    button.BackColor = Color.FromArgb(240, 118, 54);
+                    button.Image = menuIconActive.Where(x => x.Name == button.Name).FirstOrDefault().Icon;
                     foreach (Button btn in sidebarBottom.Controls)
                     {
                         if (btn != button)
                         {
                             btn.BackColor = Color.White;
                             btn.ForeColor = Color.Black;
+                            btn.Image = menuIcon.Where(x => x.Name == btn.Name).FirstOrDefault()?.Icon;
                         }
                     }
                 };

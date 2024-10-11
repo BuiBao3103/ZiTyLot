@@ -212,23 +212,65 @@
     <Compile Include="GUI\ArduinoRFIDReader.Designer.cs">
       <DependentUpon>ArduinoRFIDReader.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\ExampleScreen.cs">
+    <Compile Include="GUI\Screens\AreaScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\ExampleScreen.Designer.cs">
-      <DependentUpon>ExampleScreen.cs</DependentUpon>
+    <Compile Include="GUI\Screens\AreaScreen.Designer.cs">
+      <DependentUpon>AreaScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\InvoiceScreen.cs">
+    <Compile Include="GUI\Screens\ScanningScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\InvoiceScreen.Designer.cs">
-      <DependentUpon>InvoiceScreen.cs</DependentUpon>
+    <Compile Include="GUI\Screens\ScanningScreen.Designer.cs">
+      <DependentUpon>ScanningScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\PriceScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\PriceScreen.Designer.cs">
+      <DependentUpon>PriceScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\CardScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\CardScreen.Designer.cs">
+      <DependentUpon>CardScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\RoleScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\RoleScreen.Designer.cs">
+      <DependentUpon>RoleScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\BillScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\BillScreen.Designer.cs">
+      <DependentUpon>BillScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\AccountScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\AccountScreen.Designer.cs">
+      <DependentUpon>AccountScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\SessionScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\Screens\SessionScreen.Designer.cs">
       <DependentUpon>SessionScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\ResidentScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\ResidentScreen.Designer.cs">
+      <DependentUpon>ResidentScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\ExampleScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\ExampleScreen.Designer.cs">
+      <DependentUpon>ExampleScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\Arduino.cs" />
     <Compile Include="Helper\FilterCondition.cs" />
@@ -249,14 +291,35 @@
     <EmbeddedResource Include="GUI\ArduinoRFIDReader.resx">
       <DependentUpon>ArduinoRFIDReader.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\ExampleScreen.resx">
-      <DependentUpon>ExampleScreen.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Screens\AreaScreen.resx">
+      <DependentUpon>AreaScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\InvoiceScreen.resx">
-      <DependentUpon>InvoiceScreen.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Screens\ScanningScreen.resx">
+      <DependentUpon>ScanningScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\PriceScreen.resx">
+      <DependentUpon>PriceScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\CardScreen.resx">
+      <DependentUpon>CardScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\RoleScreen.resx">
+      <DependentUpon>RoleScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\BillScreen.resx">
+      <DependentUpon>BillScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\AccountScreen.resx">
+      <DependentUpon>AccountScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\SessionScreen.resx">
       <DependentUpon>SessionScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\ResidentScreen.resx">
+      <DependentUpon>ResidentScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\ExampleScreen.resx">
+      <DependentUpon>ExampleScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -289,16 +352,20 @@
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_All.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_CheckIn-Active.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_CheckIn.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_CheckInCamera.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_CheckOut-Active.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_CheckOut.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_CheckOutCamera.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Close.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Delete.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Edit.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Empty-Active.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Empty.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Export.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Female-Active.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Female.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Filter.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Import.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Lock-Active.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Lock.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Lost-Active.png" />
@@ -310,8 +377,12 @@
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Plus-Black.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Plus.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Previous.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Resident-Active.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Resident.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Setting.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_View.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Visitor.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Vistor-Active.png" />
     <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Account-Active.png" />
     <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Account.png" />
     <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Area-Active.png" />
@@ -322,6 +393,8 @@
     <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Card.png" />
     <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Dashboard-Active.png" />
     <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Dashboard.png" />
+    <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Logout-Active.png" />
+    <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Logout.png" />
     <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Price-Active.png" />
     <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Price.png" />
     <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Resident-Active.png" />
@@ -337,6 +410,7 @@
     <Content Include="GUI\assets\ZityLot-Logo-120x60px.ico" />
     <Content Include="GUI\assets\scan.png" />
     <Content Include="GUI\assets\ZityLot-Logo-120x60px.png" />
+    <None Include="Resources\Icon-24x24px_Logout-Active.png" />
     <Content Include="Resource\enter.wav" />
   </ItemGroup>
   <ItemGroup>

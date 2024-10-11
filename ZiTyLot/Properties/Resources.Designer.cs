@@ -73,6 +73,26 @@ namespace ZiTyLot.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Active {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Active_Active {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Active-Active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icon_18x18px_All {
             get {
                 object obj = ResourceManager.GetObject("Icon-18x18px_All", resourceCulture);
@@ -113,6 +133,26 @@ namespace ZiTyLot.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_CheckIn_Active1 {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_CheckIn-Active1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_CheckInCamera {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_CheckInCamera", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icon_18x18px_CheckOut {
             get {
                 object obj = ResourceManager.GetObject("Icon-18x18px_CheckOut", resourceCulture);
@@ -126,6 +166,16 @@ namespace ZiTyLot.Properties {
         internal static System.Drawing.Bitmap Icon_18x18px_CheckOut_Active {
             get {
                 object obj = ResourceManager.GetObject("Icon-18x18px_CheckOut-Active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_CheckOut_Active1 {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_CheckOut-Active1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,6 +203,56 @@ namespace ZiTyLot.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Empty {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Empty", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Empty_Active {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Empty-Active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Export {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Export", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Female {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Female", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Female_Active {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Female-Active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icon_18x18px_Filter {
             get {
                 object obj = ResourceManager.GetObject("Icon-18x18px_Filter", resourceCulture);
@@ -163,9 +263,79 @@ namespace ZiTyLot.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Import {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Import", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Lock {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Lock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Lock_Active {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Lock-Active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Lost {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Lost", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Lost_Active {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Lost-Active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icon_18x18px_Magnifying {
             get {
                 object obj = ResourceManager.GetObject("Icon-18x18px_Magnifying", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Male {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Male", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Male_Active {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Male-Active", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +383,279 @@ namespace ZiTyLot.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Resident {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Resident", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Resident_Active {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Resident-Active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icon_18x18px_View {
             get {
                 object obj = ResourceManager.GetObject("Icon-18x18px_View", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Visitor {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Visitor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Vistor_Active {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Vistor-Active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Vistor_Active1 {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Vistor-Active1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_Account {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_Account", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_Account_Active {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_Account-Active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_Area {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_Area", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_Area_Active {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_Area-Active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_Bill {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_Bill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_Bill_Active {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_Bill-Active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_Card {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_Card", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_Card_Active {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_Card-Active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_Dashboard {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_Dashboard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_Dashboard_Active {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_Dashboard-Active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_Logout {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_Logout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_Logout_Active {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_Logout-Active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_Price {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_Price", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_Price_Active {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_Price-Active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_Resident {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_Resident", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_Resident_Active {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_Resident-Active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_Role {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_Role", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_Role_Active {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_Role-Active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_Scanning {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_Scanning", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_Scanning_Active {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_Scanning-Active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_Session {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_Session", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_Session_Active {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_Session-Active", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
