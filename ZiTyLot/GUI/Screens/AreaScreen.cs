@@ -24,9 +24,9 @@ namespace ZiTyLot.GUI.Screens
             BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
 
             addBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, addBtn.Width, addBtn.Height, 10, 10));
-            allBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, allBtn.Width, allBtn.Height, 24,24));
-            residentBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, residentBtn.Width, residentBtn.Height, 24,24));
-            vistorBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, vistorBtn.Width, vistorBtn.Height, 24,24));
+            allBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, allBtn.Width, allBtn.Height, 10,10));
+            residentBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, residentBtn.Width, residentBtn.Height, 10,10));
+            vistorBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, vistorBtn.Width, vistorBtn.Height, 10,10));
 
             allBtn.Checked = true;
             this.allBtn.CheckedChanged += new System.EventHandler(this.allFilter_CheckedChanged);

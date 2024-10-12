@@ -24,11 +24,11 @@ namespace ZiTyLot.GUI.Screens
             BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
 
             addBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, addBtn.Width, addBtn.Height, 10, 10));
-            allBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, allBtn.Width, allBtn.Height, 24,24));
-            activeBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, activeBtn.Width, activeBtn.Height, 24,24));
-            emptyBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, emptyBtn.Width, emptyBtn.Height, 24, 24));
-            lockedBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, lockedBtn.Width, lockedBtn.Height, 24, 24));
-            lostBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, lostBtn.Width, lostBtn.Height, 24, 24));
+            allBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, allBtn.Width, allBtn.Height, 10,10));
+            activeBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, activeBtn.Width, activeBtn.Height, 10,10));
+            emptyBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, emptyBtn.Width, emptyBtn.Height, 10,10));
+            lockedBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, lockedBtn.Width, lockedBtn.Height, 10,10));
+            lostBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, lostBtn.Width, lostBtn.Height, 10,10));
 
             allBtn.Checked = true;
 
@@ -200,6 +200,11 @@ namespace ZiTyLot.GUI.Screens
         }
 
         private void downloadTemplateMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logOutMenuItem_Click(object sender, EventArgs e)
         {
 
         }

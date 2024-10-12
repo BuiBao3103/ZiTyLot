@@ -20,6 +20,7 @@ namespace ZiTyLot.GUI
         {
             InitializeComponent();
             this.CenterToScreen();
+            pictureBox2.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pictureBox2.Width, pictureBox2.Height, 10,10));
 
         }
         private void AddMenuToSidebar()
@@ -118,7 +119,7 @@ namespace ZiTyLot.GUI
                     button.ForeColor = Color.White;
                     button.BackColor = Color.FromArgb(240, 118, 54);
                     button.Image = menuIconActive.Where(x => x.Name == button.Name).FirstOrDefault().Icon;
-                    foreach (Button btn in sidebarBottom.Controls)
+                    foreach (Button btn in sidebarMid.Controls)
                     {
                         if (btn != button)
                         {
@@ -129,7 +130,7 @@ namespace ZiTyLot.GUI
                     }
                 };
                 // Add the button to the sidebar
-                sidebarBottom.Controls.Add(button);
+                sidebarMid.Controls.Add(button);
             }
 
         }
@@ -150,6 +151,11 @@ namespace ZiTyLot.GUI
         private void Home_Load(object sender, EventArgs e)
         {
             AddMenuToSidebar();
+        }
+
+        private void settingBtn_Click(object sender, EventArgs e)
+        {
+           settingMenu.Show(settingBtn, new Point(35, settingBtn.Height-55));
         }
     }
 }

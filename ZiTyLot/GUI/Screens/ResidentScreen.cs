@@ -24,9 +24,9 @@ namespace ZiTyLot.GUI.Screens
             BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
 
             addBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, addBtn.Width, addBtn.Height, 10, 10));
-            allBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, allBtn.Width, allBtn.Height, 24,24));
-            maleBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, maleBtn.Width, maleBtn.Height, 24,24));
-            femaleBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, femaleBtn.Width, femaleBtn.Height, 24,24));
+            allBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, allBtn.Width, allBtn.Height, 10,10));
+            maleBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, maleBtn.Width, maleBtn.Height, 10,10));
+            femaleBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, femaleBtn.Width, femaleBtn.Height, 10,10));
 
             allBtn.Checked = true;
             this.table.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
