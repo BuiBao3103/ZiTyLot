@@ -144,6 +144,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <Compile Include="BUS\ABUS.cs" />
     <Compile Include="BUS\AccountBUS.cs" />
     <Compile Include="BUS\AuthManager.cs" />
@@ -371,7 +372,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="App.config" />
     <None Include="App.Designer.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

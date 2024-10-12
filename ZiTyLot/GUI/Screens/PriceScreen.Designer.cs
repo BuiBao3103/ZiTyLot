@@ -40,8 +40,6 @@ namespace ZiTyLot.GUI.Screens
             this.separator = new System.Windows.Forms.Panel();
             this.BottomPnl = new System.Windows.Forms.Panel();
             this.table = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hasplateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +47,8 @@ namespace ZiTyLot.GUI.Screens
             this.viewCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.editCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.deleteCol = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.TopPnl.SuspendLayout();
             this.buttonsPnl.SuspendLayout();
             this.BottomPnl.SuspendLayout();
@@ -72,11 +72,11 @@ namespace ZiTyLot.GUI.Screens
             // 
             this.buttonsPnl.Controls.Add(this.addBtn);
             this.buttonsPnl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonsPnl.Location = new System.Drawing.Point(881, 10);
+            this.buttonsPnl.Location = new System.Drawing.Point(803, 10);
             this.buttonsPnl.Margin = new System.Windows.Forms.Padding(0);
             this.buttonsPnl.Name = "buttonsPnl";
             this.buttonsPnl.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonsPnl.Size = new System.Drawing.Size(260, 34);
+            this.buttonsPnl.Size = new System.Drawing.Size(338, 34);
             this.buttonsPnl.TabIndex = 7;
             // 
             // addBtn
@@ -89,19 +89,18 @@ namespace ZiTyLot.GUI.Screens
             this.addBtn.Font = new System.Drawing.Font("Helvetica Rounded", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Plus;
             this.addBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addBtn.Location = new System.Drawing.Point(70, 0);
+            this.addBtn.Location = new System.Drawing.Point(148, 0);
             this.addBtn.Margin = new System.Windows.Forms.Padding(0);
             this.addBtn.MinimumSize = new System.Drawing.Size(1, 1);
             this.addBtn.Name = "addBtn";
             this.addBtn.Padding = new System.Windows.Forms.Padding(10, 0, 6, 0);
-            this.addBtn.Radius = 12;
+            this.addBtn.Radius = 10;
             this.addBtn.RectColor = System.Drawing.Color.White;
             this.addBtn.RectDisableColor = System.Drawing.Color.White;
             this.addBtn.RectHoverColor = System.Drawing.Color.White;
             this.addBtn.RectPressColor = System.Drawing.Color.White;
             this.addBtn.RectSelectedColor = System.Drawing.Color.White;
             this.addBtn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.addBtn.RectSize = 2;
             this.addBtn.Size = new System.Drawing.Size(190, 34);
             this.addBtn.TabIndex = 3;
             this.addBtn.Text = "New vehical/price";
@@ -179,26 +178,6 @@ namespace ZiTyLot.GUI.Screens
             this.table.Size = new System.Drawing.Size(1131, 502);
             this.table.TabIndex = 1;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.BottomPnl);
-            this.panel2.Controls.Add(this.separator);
-            this.panel2.Controls.Add(this.TopPnl);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(10, 10);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1151, 580);
-            this.panel2.TabIndex = 2;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(110, 34);
-            this.panel5.TabIndex = 0;
-            // 
             // idCol
             // 
             this.idCol.HeaderText = "ID";
@@ -258,6 +237,26 @@ namespace ZiTyLot.GUI.Screens
             this.deleteCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.deleteCol.Text = "Delete";
             this.deleteCol.Width = 30;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.BottomPnl);
+            this.panel2.Controls.Add(this.separator);
+            this.panel2.Controls.Add(this.TopPnl);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(10, 10);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1151, 580);
+            this.panel2.TabIndex = 2;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(110, 34);
+            this.panel5.TabIndex = 0;
             // 
             // PriceScreen
             // 

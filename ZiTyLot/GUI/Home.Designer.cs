@@ -45,7 +45,7 @@
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(245, 633);
+            this.sidebar.Size = new System.Drawing.Size(245, 861);
             this.sidebar.TabIndex = 0;
             // 
             // sidebarBottom
@@ -55,7 +55,7 @@
             this.sidebarBottom.Location = new System.Drawing.Point(0, 149);
             this.sidebarBottom.Name = "sidebarBottom";
             this.sidebarBottom.Padding = new System.Windows.Forms.Padding(5);
-            this.sidebarBottom.Size = new System.Drawing.Size(245, 484);
+            this.sidebarBottom.Size = new System.Drawing.Size(245, 712);
             this.sidebarBottom.TabIndex = 1;
             // 
             // sidebarTop
@@ -82,20 +82,21 @@
             // 
             // pnlCardLayout
             // 
-            this.pnlCardLayout.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.pnlCardLayout.BackColor = System.Drawing.Color.Transparent;
             this.pnlCardLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCardLayout.Location = new System.Drawing.Point(245, 0);
             this.pnlCardLayout.Name = "pnlCardLayout";
-            this.pnlCardLayout.Size = new System.Drawing.Size(924, 633);
+            this.pnlCardLayout.Size = new System.Drawing.Size(1339, 861);
             this.pnlCardLayout.TabIndex = 1;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1169, 633);
+            this.ClientSize = new System.Drawing.Size(1584, 861);
             this.Controls.Add(this.pnlCardLayout);
             this.Controls.Add(this.sidebar);
+            this.MinimumSize = new System.Drawing.Size(1600, 900);
             this.Name = "Home";
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Home_Load);

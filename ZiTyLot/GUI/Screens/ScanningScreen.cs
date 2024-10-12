@@ -16,7 +16,25 @@ namespace ZiTyLot.GUI.Screens
         public ScanningScreen()
         {
             InitializeComponent();
-            uiPanel1.Location = new System.Drawing.Point(this.panel2.Width / 2 - 150, this.panel2.Height / 2);
+            AdjustPanelPosition();
+        }
+        private void AdjustPanelPosition()
+        {
+            var screenBounds = Screen.FromControl(this).WorkingArea;
+
+            if (screenBounds.Width <= 1600)
+            {
+                // For smaller screens, position uiPanel1 accordingly
+                uiPanel1.Location = new System.Drawing.Point(this.panel2.Width / 4, 0);
+            }
+            else
+            {
+                uiPanel1.Location = new System.Drawing.Point(this.panel2.Width / 2 - uiPanel1.Width / 2, this.panel2.Height / 2 - uiPanel1.Height / 2);
+            }
+        }
+        private void ScanningScreen_Resize(object sender, EventArgs e)
+        {
+            AdjustPanelPosition();
         }
 
         private void ScanningScreen_Load(object sender, EventArgs e)

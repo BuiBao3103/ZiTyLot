@@ -188,5 +188,20 @@ namespace ZiTyLot.GUI.Screens
                 lockedBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Lock;
             }
         }
+
+        private void excelMenu_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void uiButton1_Click(object sender, EventArgs e)
+        {
+            excelMenu.Show(excelBtn, new Point(-100, excelBtn.Height + 10));
+        }
+
+        private void downloadTemplateMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
