@@ -2,7 +2,7 @@
 
 namespace ZiTyLot.GUI.Screens
 {
-    partial class BillScreen
+    partial class BillControl
     {
         /// <summary> 
         /// Required designer variable.

@@ -11,20 +11,20 @@ using ZiTyLot.GUI.component_extensions;
 
 namespace ZiTyLot.GUI.Screens
 {
-    public partial class PriceScreen : UserControl
+    public partial class RoleControl : UserControl
     {
-        public PriceScreen()
+        public RoleControl()
         {
             InitializeComponent();
         }
 
-        private void PriceScreen_Load(object sender, EventArgs e)
+        private void RoleScreen_Load(object sender, EventArgs e)
         {
             TopPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, TopPnl.Width, TopPnl.Height, 10, 10));
             BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
 
             addBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, addBtn.Width, addBtn.Height, 10, 10));
-
+            
             this.table.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
             this.table.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
             this.table.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
@@ -34,7 +34,7 @@ namespace ZiTyLot.GUI.Screens
         {
             Rectangle firstHeaderCellRect = this.table.GetCellDisplayRectangle(this.table.Columns["viewCol"].Index, -1, true);
             Rectangle lastHeaderCellRect = this.table.GetCellDisplayRectangle(this.table.Columns["deleteCol"].Index, -1, true);
-            Rectangle mergedHeaderRect = new Rectangle(firstHeaderCellRect.X, firstHeaderCellRect.Y,lastHeaderCellRect.X + lastHeaderCellRect.Width - firstHeaderCellRect.X, firstHeaderCellRect.Height);
+            Rectangle mergedHeaderRect = new Rectangle(firstHeaderCellRect.X, firstHeaderCellRect.Y, lastHeaderCellRect.X + lastHeaderCellRect.Width - firstHeaderCellRect.X, firstHeaderCellRect.Height);
             e.Graphics.FillRectangle(new SolidBrush(Color.White), mergedHeaderRect);
             TextRenderer.DrawText(e.Graphics, "Action", this.table.ColumnHeadersDefaultCellStyle.Font,
                 mergedHeaderRect, this.table.ColumnHeadersDefaultCellStyle.ForeColor,
@@ -51,18 +51,18 @@ namespace ZiTyLot.GUI.Screens
                 Image icon = null;
                 if (e.ColumnIndex == table.Columns["viewCol"].Index)
                 {
-                    icon = Properties.Resources.Icon_18x18px_View;  
+                    icon = Properties.Resources.Icon_18x18px_View;
                 }
                 else if (e.ColumnIndex == table.Columns["editCol"].Index)
                 {
-                    icon = Properties.Resources.Icon_18x18px_Edit;  
+                    icon = Properties.Resources.Icon_18x18px_Edit;
                 }
                 else if (e.ColumnIndex == table.Columns["deleteCol"].Index)
                 {
-                    icon = Properties.Resources.Icon_18x18px_Delete;  
+                    icon = Properties.Resources.Icon_18x18px_Delete;
                 }
-                int iconWidth = 16;  
-                int iconHeight = 16; 
+                int iconWidth = 16;
+                int iconHeight = 16;
                 int x = e.CellBounds.Left + (e.CellBounds.Width - iconWidth) / 2;
                 int y = e.CellBounds.Top + (e.CellBounds.Height - iconHeight) / 2;
                 if (icon != null)
@@ -102,5 +102,6 @@ namespace ZiTyLot.GUI.Screens
             BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
         }
 
+       
     }
 }

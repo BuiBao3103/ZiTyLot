@@ -249,59 +249,71 @@
     <Compile Include="GUI\ArduinoRFIDReader.Designer.cs">
       <DependentUpon>ArduinoRFIDReader.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\AreaScreen.cs">
+    <Compile Include="GUI\Screens\Area\AreaControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\AreaScreen.Designer.cs">
-      <DependentUpon>AreaScreen.cs</DependentUpon>
+    <Compile Include="GUI\Screens\Area\AreaControl.Designer.cs">
+      <DependentUpon>AreaControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\ScanningScreen.cs">
+    <Compile Include="GUI\Screens\Scanning\CheckInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\Scanning\CheckInForm.Designer.cs">
+      <DependentUpon>CheckInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\Scanning\CheckOutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\Scanning\CheckOutForm.Designer.cs">
+      <DependentUpon>CheckOutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\Scanning\ScanningControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\ScanningScreen.Designer.cs">
-      <DependentUpon>ScanningScreen.cs</DependentUpon>
+    <Compile Include="GUI\Screens\Scanning\ScanningControl.Designer.cs">
+      <DependentUpon>ScanningControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\PriceScreen.cs">
+    <Compile Include="GUI\Screens\Price\PriceControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\PriceScreen.Designer.cs">
-      <DependentUpon>PriceScreen.cs</DependentUpon>
+    <Compile Include="GUI\Screens\Price\PriceControl.Designer.cs">
+      <DependentUpon>PriceControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\CardScreen.cs">
+    <Compile Include="GUI\Screens\Card\CardControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\CardScreen.Designer.cs">
-      <DependentUpon>CardScreen.cs</DependentUpon>
+    <Compile Include="GUI\Screens\Card\CardControl.Designer.cs">
+      <DependentUpon>CardControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\RoleScreen.cs">
+    <Compile Include="GUI\Screens\Role\RoleControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\RoleScreen.Designer.cs">
-      <DependentUpon>RoleScreen.cs</DependentUpon>
+    <Compile Include="GUI\Screens\Role\RoleControl.Designer.cs">
+      <DependentUpon>RoleControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\BillScreen.cs">
+    <Compile Include="GUI\Screens\Bill\BillControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\BillScreen.Designer.cs">
-      <DependentUpon>BillScreen.cs</DependentUpon>
+    <Compile Include="GUI\Screens\Bill\BillControl.Designer.cs">
+      <DependentUpon>BillControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\AccountScreen.cs">
+    <Compile Include="GUI\Screens\Account\AccountControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\AccountScreen.Designer.cs">
-      <DependentUpon>AccountScreen.cs</DependentUpon>
+    <Compile Include="GUI\Screens\Account\AccountControl.Designer.cs">
+      <DependentUpon>AccountControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\SessionScreen.cs">
+    <Compile Include="GUI\Screens\Session\SessionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\SessionScreen.Designer.cs">
-      <DependentUpon>SessionScreen.cs</DependentUpon>
+    <Compile Include="GUI\Screens\Session\SessionControl.Designer.cs">
+      <DependentUpon>SessionControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\ResidentScreen.cs">
+    <Compile Include="GUI\Screens\Resident\ResidentControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\ResidentScreen.Designer.cs">
-      <DependentUpon>ResidentScreen.cs</DependentUpon>
+    <Compile Include="GUI\Screens\Resident\ResidentControl.Designer.cs">
+      <DependentUpon>ResidentControl.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\ExampleScreen.cs">
       <SubType>UserControl</SubType>
@@ -332,32 +344,35 @@
     <EmbeddedResource Include="GUI\ArduinoRFIDReader.resx">
       <DependentUpon>ArduinoRFIDReader.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\AreaScreen.resx">
-      <DependentUpon>AreaScreen.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Screens\Area\AreaControl.resx">
+      <DependentUpon>AreaControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\ScanningScreen.resx">
-      <DependentUpon>ScanningScreen.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Screens\Scanning\CheckInForm.resx">
+      <DependentUpon>CheckInForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\PriceScreen.resx">
-      <DependentUpon>PriceScreen.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Screens\Scanning\ScanningControl.resx">
+      <DependentUpon>ScanningControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\CardScreen.resx">
-      <DependentUpon>CardScreen.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Screens\Price\PriceControl.resx">
+      <DependentUpon>PriceControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\RoleScreen.resx">
-      <DependentUpon>RoleScreen.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Screens\Card\CardControl.resx">
+      <DependentUpon>CardControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\BillScreen.resx">
-      <DependentUpon>BillScreen.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Screens\Role\RoleControl.resx">
+      <DependentUpon>RoleControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\AccountScreen.resx">
-      <DependentUpon>AccountScreen.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Screens\Bill\BillControl.resx">
+      <DependentUpon>BillControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\SessionScreen.resx">
-      <DependentUpon>SessionScreen.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Screens\Account\AccountControl.resx">
+      <DependentUpon>AccountControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\ResidentScreen.resx">
-      <DependentUpon>ResidentScreen.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Screens\Session\SessionControl.resx">
+      <DependentUpon>SessionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\Resident\ResidentControl.resx">
+      <DependentUpon>ResidentControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\ExampleScreen.resx">
       <DependentUpon>ExampleScreen.cs</DependentUpon>

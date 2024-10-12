@@ -8,15 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.GUI.component_extensions;
+using ZiTyLot.GUI.Screens.Scanning;
 
 namespace ZiTyLot.GUI.Screens
 {
-    public partial class ScanningScreen : UserControl
+    public partial class ScanningControl : UserControl
     {
-        public ScanningScreen()
+        public ScanningControl()
         {
             InitializeComponent();
             AdjustPanelPosition();
+            checkinBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, checkinBtn.Width, checkinBtn.Height, 10, 10));
+            checkoutBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, checkoutBtn.Width, checkoutBtn.Height, 10, 10));
+
         }
         private void AdjustPanelPosition()
         {
@@ -40,6 +44,23 @@ namespace ZiTyLot.GUI.Screens
         private void ScanningScreen_Load(object sender, EventArgs e)
         {
             //TopPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, TopPnl.Width, TopPnl.Height, 10, 10
+        }
+
+        private void checkinBtn_Click(object sender, EventArgs e)
+        {
+            CheckInForm checkInForm = new CheckInForm();
+            checkInForm.WindowState = FormWindowState.Maximized;
+            checkInForm.MaximizeBox = false;
+            checkInForm.Show();
+        }
+
+
+        private void checkoutBtn_Click(object sender, EventArgs e)
+        {
+            CheckOutForm checkOutForm = new CheckOutForm();
+            checkOutForm.WindowState = FormWindowState.Maximized;
+            checkOutForm.MaximizeBox = false;
+            checkOutForm.Show();
         }
 
     }

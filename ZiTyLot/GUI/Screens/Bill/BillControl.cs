@@ -11,14 +11,14 @@ using ZiTyLot.GUI.component_extensions;
 
 namespace ZiTyLot.GUI.Screens
 {
-    public partial class AccountScreen : UserControl
+    public partial class BillControl : UserControl
     {
-        public AccountScreen()
+        public BillControl()
         {
             InitializeComponent();
         }
 
-        private void AccountScreen_Load(object sender, EventArgs e)
+        private void BillScreen_Load(object sender, EventArgs e)
         {
             TopPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, TopPnl.Width, TopPnl.Height, 10, 10));
             BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
@@ -44,7 +44,6 @@ namespace ZiTyLot.GUI.Screens
         private void table_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if ((e.ColumnIndex == table.Columns["viewCol"].Index ||
-                 e.ColumnIndex == table.Columns["editCol"].Index ||
                  e.ColumnIndex == table.Columns["deleteCol"].Index) && e.RowIndex >= 0)
             {
                 e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
@@ -53,10 +52,10 @@ namespace ZiTyLot.GUI.Screens
                 {
                     icon = Properties.Resources.Icon_18x18px_View;  
                 }
-                else if (e.ColumnIndex == table.Columns["editCol"].Index)
-                {
-                    icon = Properties.Resources.Icon_18x18px_Edit;  
-                }
+                //else if (e.ColumnIndex == table.Columns["editCol"].Index)
+                //{
+                //    icon = Properties.Resources.Icon_18x18px_Edit;  
+                //}
                 else if (e.ColumnIndex == table.Columns["deleteCol"].Index)
                 {
                     icon = Properties.Resources.Icon_18x18px_Delete;  
@@ -81,10 +80,10 @@ namespace ZiTyLot.GUI.Screens
                 {
                     MessageBox.Show("View button clicked for row " + e.RowIndex);
                 }
-                else if (e.ColumnIndex == table.Columns["editCol"].Index)
-                {
-                    MessageBox.Show("Edit button clicked for row " + e.RowIndex);
-                }
+                //else if (e.ColumnIndex == table.Columns["editCol"].Index)
+                //{
+                //    MessageBox.Show("Edit button clicked for row " + e.RowIndex);
+                //}
                 else if (e.ColumnIndex == table.Columns["deleteCol"].Index)
                 {
                     MessageBox.Show("Delete button clicked for row " + e.RowIndex);

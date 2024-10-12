@@ -30,15 +30,15 @@ namespace ZiTyLot.GUI
             {
                 { "Home", new ExampleScreen() },
                 //{ "EmployeeManagement", new Panel2() },
-                { "AccountManagement", new AccountScreen() },
-                { "BillManagement", new BillScreen() },
-                { "ResidentManagement", new ResidentScreen() },
-                { "SessionManagement", new SessionScreen() },
-                { "RoleManagement", new RoleScreen() },
-                { "CardManagement", new CardScreen() },
-                { "PriceManagement", new PriceScreen() },
-                { "AreaManagement", new AreaScreen() },
-                { "Scanning", new ScanningScreen() },
+                { "AccountManagement", new AccountControl() },
+                { "BillManagement", new BillControl() },
+                { "ResidentManagement", new ResidentControl() },
+                { "SessionManagement", new SessionControl() },
+                { "RoleManagement", new RoleControl() },
+                { "CardManagement", new CardControl() },
+                { "PriceManagement", new PriceControl() },
+                { "AreaManagement", new AreaControl() },
+                { "Scanning", new ScanningControl() },
                 //{ "Setting", new SettingScreen() },
             };
 
@@ -56,12 +56,12 @@ namespace ZiTyLot.GUI
                 new { Name = "SessionManagement", Text = "Session" },
                 new { Name = "Scanning", Text = "Scanning" },
                 //new { Name = "Dashboard", Text = "Dashboard" },
-                new { Name = "Home", Text = "Example" },
+                //new { Name = "Home", Text = "Example" },
                 //new { Name = "EmployeeManagement", Text = "Panel2" },
             };
             var menuIcon = new[]
             {   
-                new { Name = "Home", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Price},
+                //new { Name = "Home", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Price},
                 new { Name = "PriceManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Price},
                 new { Name = "RoleManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Role},
                 new { Name = "AccountManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Account},
@@ -76,7 +76,7 @@ namespace ZiTyLot.GUI
 
             var menuIconActive = new[]
             {
-                new { Name = "Home", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Price_Active},
+                //new { Name = "Home", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Price_Active},
                 new { Name = "PriceManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Price_Active},
                 new { Name = "RoleManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Role_Active},
                 new { Name = "AccountManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Account_Active},
@@ -151,6 +151,15 @@ namespace ZiTyLot.GUI
         private void Home_Load(object sender, EventArgs e)
         {
             AddMenuToSidebar();
+            LoadForm(new ScanningControl());
+
+            // Optionally, trigger the Scanning button click for visual highlighting
+            var scanningButton = sidebarMid.Controls.OfType<Button>()
+                                    .FirstOrDefault(btn => btn.Name == "Scanning");
+            if (scanningButton != null)
+            {
+                scanningButton.PerformClick();  // Simulate button click
+            }
         }
 
         private void settingBtn_Click(object sender, EventArgs e)

@@ -11,9 +11,9 @@ using ZiTyLot.GUI.component_extensions;
 
 namespace ZiTyLot.GUI.Screens
 {
-    public partial class SessionScreen : UserControl
+    public partial class SessionControl : UserControl
     {
-        public SessionScreen()
+        public SessionControl()
         {
             InitializeComponent();
         }

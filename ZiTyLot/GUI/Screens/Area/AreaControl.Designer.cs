@@ -2,7 +2,7 @@
 
 namespace ZiTyLot.GUI.Screens
 {
-    partial class ResidentScreen
+    partial class AreaControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -31,30 +31,17 @@ namespace ZiTyLot.GUI.Screens
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.TopPnl = new System.Windows.Forms.Panel();
             this.tabpanePnl = new System.Windows.Forms.Panel();
-            this.femaleBtn = new System.Windows.Forms.RadioButton();
-            this.maleBtn = new System.Windows.Forms.RadioButton();
+            this.vistorBtn = new System.Windows.Forms.RadioButton();
+            this.residentBtn = new System.Windows.Forms.RadioButton();
             this.allBtn = new System.Windows.Forms.RadioButton();
             this.separator = new System.Windows.Forms.Panel();
             this.BottomPnl = new System.Windows.Forms.Panel();
-            this.table = new System.Windows.Forms.DataGridView();
-            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fullnameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apartmentCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genderCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.viewCol = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.editCol = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.deleteCol = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.PaginationPnl = new System.Windows.Forms.Panel();
-            this.ItemPerPagePnl = new System.Windows.Forms.Panel();
-            this.uiPanel2 = new Sunny.UI.UIPanel();
-            this.numberofitemsCb = new Sunny.UI.UIComboBox();
             this.PageNumberPnl = new System.Windows.Forms.Panel();
             this.nextPnl = new System.Windows.Forms.Panel();
             this.nextBtn = new Sunny.UI.UISymbolButton();
@@ -63,6 +50,17 @@ namespace ZiTyLot.GUI.Screens
             this.currentpageTb = new Sunny.UI.UITextBox();
             this.previousPnl = new System.Windows.Forms.Panel();
             this.previousBtn = new Sunny.UI.UISymbolButton();
+            this.table = new System.Windows.Forms.DataGridView();
+            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalslotCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remainslotCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.viewCol = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.editCol = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.deleteCol = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.uiPanel1 = new Sunny.UI.UIPanel();
             this.searchPnl = new Sunny.UI.UIPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -71,23 +69,26 @@ namespace ZiTyLot.GUI.Screens
             this.filterCb = new Sunny.UI.UIComboBox();
             this.buttonsPnl = new System.Windows.Forms.Panel();
             this.addBtn = new Sunny.UI.UISymbolButton();
+            this.ItemPerPagePnl = new System.Windows.Forms.Panel();
+            this.uiPanel2 = new Sunny.UI.UIPanel();
+            this.numberofitemsCb = new Sunny.UI.UIComboBox();
             this.TopPnl.SuspendLayout();
             this.tabpanePnl.SuspendLayout();
             this.BottomPnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
-            this.panel2.SuspendLayout();
             this.PaginationPnl.SuspendLayout();
-            this.ItemPerPagePnl.SuspendLayout();
-            this.uiPanel2.SuspendLayout();
             this.PageNumberPnl.SuspendLayout();
             this.nextPnl.SuspendLayout();
             this.currentpagePnl.SuspendLayout();
             this.previousPnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
+            this.panel2.SuspendLayout();
             this.uiPanel1.SuspendLayout();
             this.searchPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.filterPnl.SuspendLayout();
             this.buttonsPnl.SuspendLayout();
+            this.ItemPerPagePnl.SuspendLayout();
+            this.uiPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // TopPnl
@@ -105,70 +106,70 @@ namespace ZiTyLot.GUI.Screens
             // 
             // tabpanePnl
             // 
-            this.tabpanePnl.Controls.Add(this.femaleBtn);
-            this.tabpanePnl.Controls.Add(this.maleBtn);
+            this.tabpanePnl.Controls.Add(this.vistorBtn);
+            this.tabpanePnl.Controls.Add(this.residentBtn);
             this.tabpanePnl.Controls.Add(this.allBtn);
             this.tabpanePnl.Dock = System.Windows.Forms.DockStyle.Left;
             this.tabpanePnl.Location = new System.Drawing.Point(10, 10);
             this.tabpanePnl.Name = "tabpanePnl";
-            this.tabpanePnl.Size = new System.Drawing.Size(491, 34);
+            this.tabpanePnl.Size = new System.Drawing.Size(369, 34);
             this.tabpanePnl.TabIndex = 8;
             // 
-            // femaleBtn
+            // vistorBtn
             // 
-            this.femaleBtn.Appearance = System.Windows.Forms.Appearance.Button;
-            this.femaleBtn.AutoSize = true;
-            this.femaleBtn.BackColor = System.Drawing.Color.White;
-            this.femaleBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.femaleBtn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.femaleBtn.FlatAppearance.BorderSize = 0;
-            this.femaleBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.femaleBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.femaleBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.femaleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.femaleBtn.Font = new System.Drawing.Font("Helvetica Rounded", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.femaleBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.femaleBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Female;
-            this.femaleBtn.Location = new System.Drawing.Point(220, 0);
-            this.femaleBtn.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.femaleBtn.MinimumSize = new System.Drawing.Size(110, 34);
-            this.femaleBtn.Name = "femaleBtn";
-            this.femaleBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.femaleBtn.Size = new System.Drawing.Size(110, 34);
-            this.femaleBtn.TabIndex = 5;
-            this.femaleBtn.Text = "Female";
-            this.femaleBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.femaleBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.femaleBtn.UseVisualStyleBackColor = false;
-            this.femaleBtn.CheckedChanged += new System.EventHandler(this.femaleFilter_CheckedChanged);
+            this.vistorBtn.Appearance = System.Windows.Forms.Appearance.Button;
+            this.vistorBtn.AutoSize = true;
+            this.vistorBtn.BackColor = System.Drawing.Color.White;
+            this.vistorBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vistorBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.vistorBtn.FlatAppearance.BorderSize = 0;
+            this.vistorBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.vistorBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.vistorBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.vistorBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vistorBtn.Font = new System.Drawing.Font("Helvetica Rounded", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistorBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.vistorBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Visitor;
+            this.vistorBtn.Location = new System.Drawing.Point(228, 0);
+            this.vistorBtn.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.vistorBtn.MinimumSize = new System.Drawing.Size(110, 34);
+            this.vistorBtn.Name = "vistorBtn";
+            this.vistorBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.vistorBtn.Size = new System.Drawing.Size(128, 34);
+            this.vistorBtn.TabIndex = 5;
+            this.vistorBtn.TabStop = true;
+            this.vistorBtn.Text = "Check out";
+            this.vistorBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.vistorBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.vistorBtn.UseVisualStyleBackColor = false;
             // 
-            // maleBtn
+            // residentBtn
             // 
-            this.maleBtn.Appearance = System.Windows.Forms.Appearance.Button;
-            this.maleBtn.AutoSize = true;
-            this.maleBtn.BackColor = System.Drawing.Color.White;
-            this.maleBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.maleBtn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.maleBtn.FlatAppearance.BorderSize = 0;
-            this.maleBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.maleBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.maleBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.maleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.maleBtn.Font = new System.Drawing.Font("Helvetica Rounded", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maleBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.maleBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Male;
-            this.maleBtn.Location = new System.Drawing.Point(110, 0);
-            this.maleBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.maleBtn.MinimumSize = new System.Drawing.Size(110, 34);
-            this.maleBtn.Name = "maleBtn";
-            this.maleBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.maleBtn.Size = new System.Drawing.Size(110, 34);
-            this.maleBtn.TabIndex = 4;
-            this.maleBtn.Text = "Male";
-            this.maleBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.maleBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.maleBtn.UseVisualStyleBackColor = false;
-            this.maleBtn.CheckedChanged += new System.EventHandler(this.maleFilter_CheckedChanged);
+            this.residentBtn.Appearance = System.Windows.Forms.Appearance.Button;
+            this.residentBtn.AutoSize = true;
+            this.residentBtn.BackColor = System.Drawing.Color.White;
+            this.residentBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.residentBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.residentBtn.FlatAppearance.BorderSize = 0;
+            this.residentBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.residentBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.residentBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.residentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.residentBtn.Font = new System.Drawing.Font("Helvetica Rounded", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.residentBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.residentBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Resident;
+            this.residentBtn.Location = new System.Drawing.Point(110, 0);
+            this.residentBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.residentBtn.MinimumSize = new System.Drawing.Size(110, 34);
+            this.residentBtn.Name = "residentBtn";
+            this.residentBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.residentBtn.Size = new System.Drawing.Size(118, 34);
+            this.residentBtn.TabIndex = 4;
+            this.residentBtn.TabStop = true;
+            this.residentBtn.Text = "Resident";
+            this.residentBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.residentBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.residentBtn.UseVisualStyleBackColor = false;
             // 
             // allBtn
             // 
@@ -176,7 +177,6 @@ namespace ZiTyLot.GUI.Screens
             this.allBtn.AutoSize = true;
             this.allBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.allBtn.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.allBtn.Checked = true;
             this.allBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.allBtn.Dock = System.Windows.Forms.DockStyle.Left;
             this.allBtn.FlatAppearance.BorderSize = 0;
@@ -198,7 +198,6 @@ namespace ZiTyLot.GUI.Screens
             this.allBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.allBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.allBtn.UseVisualStyleBackColor = false;
-            this.allBtn.CheckedChanged += new System.EventHandler(this.allFilter_CheckedChanged);
             // 
             // separator
             // 
@@ -223,133 +222,6 @@ namespace ZiTyLot.GUI.Screens
             this.BottomPnl.TabIndex = 3;
             this.BottomPnl.Resize += new System.EventHandler(this.BottomPnl_Resize);
             // 
-            // table
-            // 
-            this.table.AllowUserToDeleteRows = false;
-            this.table.AllowUserToResizeColumns = false;
-            this.table.AllowUserToResizeRows = false;
-            this.table.BackgroundColor = System.Drawing.Color.White;
-            this.table.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.table.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.table.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.table.ColumnHeadersHeight = 34;
-            this.table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idCol,
-            this.fullnameCol,
-            this.apartmentCol,
-            this.genderCol,
-            this.viewCol,
-            this.editCol,
-            this.deleteCol});
-            this.table.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.table.DefaultCellStyle = dataGridViewCellStyle2;
-            this.table.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.table.GridColor = System.Drawing.Color.White;
-            this.table.Location = new System.Drawing.Point(10, 10);
-            this.table.Margin = new System.Windows.Forms.Padding(0);
-            this.table.Name = "table";
-            this.table.ReadOnly = true;
-            this.table.RowHeadersVisible = false;
-            this.table.RowHeadersWidth = 30;
-            this.table.RowTemplate.Height = 30;
-            this.table.Size = new System.Drawing.Size(1131, 502);
-            this.table.TabIndex = 1;
-            // 
-            // idCol
-            // 
-            this.idCol.HeaderText = "ID";
-            this.idCol.Name = "idCol";
-            this.idCol.ReadOnly = true;
-            this.idCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.idCol.Width = 30;
-            // 
-            // fullnameCol
-            // 
-            this.fullnameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.fullnameCol.HeaderText = "Full name";
-            this.fullnameCol.MinimumWidth = 80;
-            this.fullnameCol.Name = "fullnameCol";
-            this.fullnameCol.ReadOnly = true;
-            this.fullnameCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // apartmentCol
-            // 
-            this.apartmentCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.apartmentCol.HeaderText = "Apartment";
-            this.apartmentCol.Name = "apartmentCol";
-            this.apartmentCol.ReadOnly = true;
-            // 
-            // genderCol
-            // 
-            this.genderCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.genderCol.HeaderText = "Gender";
-            this.genderCol.Name = "genderCol";
-            this.genderCol.ReadOnly = true;
-            // 
-            // viewCol
-            // 
-            this.viewCol.HeaderText = "";
-            this.viewCol.Name = "viewCol";
-            this.viewCol.ReadOnly = true;
-            this.viewCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.viewCol.Text = "View";
-            this.viewCol.Width = 30;
-            // 
-            // editCol
-            // 
-            this.editCol.HeaderText = "";
-            this.editCol.Name = "editCol";
-            this.editCol.ReadOnly = true;
-            this.editCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.editCol.Text = "Edit";
-            this.editCol.Width = 30;
-            // 
-            // deleteCol
-            // 
-            this.deleteCol.HeaderText = "";
-            this.deleteCol.Name = "deleteCol";
-            this.deleteCol.ReadOnly = true;
-            this.deleteCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.deleteCol.Text = "Delete";
-            this.deleteCol.Width = 30;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.BottomPnl);
-            this.panel2.Controls.Add(this.separator);
-            this.panel2.Controls.Add(this.TopPnl);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(10, 10);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1151, 580);
-            this.panel2.TabIndex = 2;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(110, 34);
-            this.panel5.TabIndex = 0;
-            // 
             // PaginationPnl
             // 
             this.PaginationPnl.BackColor = System.Drawing.Color.White;
@@ -360,79 +232,8 @@ namespace ZiTyLot.GUI.Screens
             this.PaginationPnl.Name = "PaginationPnl";
             this.PaginationPnl.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.PaginationPnl.Size = new System.Drawing.Size(1131, 50);
-            this.PaginationPnl.TabIndex = 3;
-            // 
-            // ItemPerPagePnl
-            // 
-            this.ItemPerPagePnl.Controls.Add(this.uiPanel2);
-            this.ItemPerPagePnl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ItemPerPagePnl.Location = new System.Drawing.Point(0, 5);
-            this.ItemPerPagePnl.Name = "ItemPerPagePnl";
-            this.ItemPerPagePnl.Size = new System.Drawing.Size(140, 40);
-            this.ItemPerPagePnl.TabIndex = 2;
-            // 
-            // uiPanel2
-            // 
-            this.uiPanel2.Controls.Add(this.numberofitemsCb);
-            this.uiPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel2.FillColor = System.Drawing.Color.White;
-            this.uiPanel2.FillColor2 = System.Drawing.Color.White;
-            this.uiPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiPanel2.Location = new System.Drawing.Point(0, 0);
-            this.uiPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel2.Name = "uiPanel2";
-            this.uiPanel2.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.uiPanel2.Radius = 10;
-            this.uiPanel2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiPanel2.RectDisableColor = System.Drawing.Color.White;
-            this.uiPanel2.RectSize = 2;
-            this.uiPanel2.Size = new System.Drawing.Size(140, 40);
-            this.uiPanel2.TabIndex = 2;
-            this.uiPanel2.Text = null;
-            this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // numberofitemsCb
-            // 
-            this.numberofitemsCb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.numberofitemsCb.DataSource = null;
-            this.numberofitemsCb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numberofitemsCb.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
-            this.numberofitemsCb.DropDownWidth = 100;
-            this.numberofitemsCb.FillColor = System.Drawing.Color.White;
-            this.numberofitemsCb.FillColor2 = System.Drawing.Color.White;
-            this.numberofitemsCb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numberofitemsCb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.numberofitemsCb.ItemHeight = 24;
-            this.numberofitemsCb.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(235)))), ((int)(((byte)(212)))));
-            this.numberofitemsCb.ItemRectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.numberofitemsCb.Items.AddRange(new object[] {
-            "All",
-            "Hello",
-            "Hi"});
-            this.numberofitemsCb.ItemSelectBackColor = System.Drawing.Color.White;
-            this.numberofitemsCb.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.numberofitemsCb.Location = new System.Drawing.Point(10, 0);
-            this.numberofitemsCb.Margin = new System.Windows.Forms.Padding(0);
-            this.numberofitemsCb.MinimumSize = new System.Drawing.Size(63, 0);
-            this.numberofitemsCb.Name = "numberofitemsCb";
-            this.numberofitemsCb.Padding = new System.Windows.Forms.Padding(4, 0, 30, 2);
-            this.numberofitemsCb.Radius = 0;
-            this.numberofitemsCb.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.numberofitemsCb.RectSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Top | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.numberofitemsCb.RectSize = 2;
-            this.numberofitemsCb.ScrollBarBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
-            this.numberofitemsCb.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.numberofitemsCb.ScrollBarStyleInherited = false;
-            this.numberofitemsCb.Size = new System.Drawing.Size(120, 40);
-            this.numberofitemsCb.Style = Sunny.UI.UIStyle.Custom;
-            this.numberofitemsCb.SymbolDropDown = 560247;
-            this.numberofitemsCb.SymbolNormal = 557682;
-            this.numberofitemsCb.SymbolSize = 24;
-            this.numberofitemsCb.TabIndex = 1;
-            this.numberofitemsCb.Text = "25 items";
-            this.numberofitemsCb.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.numberofitemsCb.Watermark = "";
+            this.PaginationPnl.TabIndex = 2;
+            this.PaginationPnl.Tag = "";
             // 
             // PageNumberPnl
             // 
@@ -565,6 +366,141 @@ namespace ZiTyLot.GUI.Screens
             this.previousBtn.TabIndex = 4;
             this.previousBtn.TipsFont = new System.Drawing.Font("Helvetica Rounded", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // table
+            // 
+            this.table.AllowUserToDeleteRows = false;
+            this.table.AllowUserToResizeColumns = false;
+            this.table.AllowUserToResizeRows = false;
+            this.table.BackgroundColor = System.Drawing.Color.White;
+            this.table.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.table.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.table.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.table.ColumnHeadersHeight = 34;
+            this.table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idCol,
+            this.nameCol,
+            this.totalslotCol,
+            this.remainslotCol,
+            this.statusCol,
+            this.viewCol,
+            this.editCol,
+            this.deleteCol});
+            this.table.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.table.DefaultCellStyle = dataGridViewCellStyle4;
+            this.table.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.table.GridColor = System.Drawing.Color.White;
+            this.table.Location = new System.Drawing.Point(10, 10);
+            this.table.Margin = new System.Windows.Forms.Padding(0);
+            this.table.Name = "table";
+            this.table.ReadOnly = true;
+            this.table.RowHeadersVisible = false;
+            this.table.RowHeadersWidth = 30;
+            this.table.RowTemplate.Height = 30;
+            this.table.Size = new System.Drawing.Size(1131, 502);
+            this.table.TabIndex = 1;
+            // 
+            // idCol
+            // 
+            this.idCol.HeaderText = "ID";
+            this.idCol.Name = "idCol";
+            this.idCol.ReadOnly = true;
+            this.idCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.idCol.Width = 30;
+            // 
+            // nameCol
+            // 
+            this.nameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameCol.HeaderText = "Name";
+            this.nameCol.MinimumWidth = 80;
+            this.nameCol.Name = "nameCol";
+            this.nameCol.ReadOnly = true;
+            this.nameCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // totalslotCol
+            // 
+            this.totalslotCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.totalslotCol.HeaderText = "Total slot";
+            this.totalslotCol.Name = "totalslotCol";
+            this.totalslotCol.ReadOnly = true;
+            // 
+            // remainslotCol
+            // 
+            this.remainslotCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.remainslotCol.HeaderText = "Remain slot";
+            this.remainslotCol.Name = "remainslotCol";
+            this.remainslotCol.ReadOnly = true;
+            // 
+            // statusCol
+            // 
+            this.statusCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.statusCol.HeaderText = "Status";
+            this.statusCol.Name = "statusCol";
+            this.statusCol.ReadOnly = true;
+            // 
+            // viewCol
+            // 
+            this.viewCol.HeaderText = "";
+            this.viewCol.Name = "viewCol";
+            this.viewCol.ReadOnly = true;
+            this.viewCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.viewCol.Text = "View";
+            this.viewCol.Width = 30;
+            // 
+            // editCol
+            // 
+            this.editCol.HeaderText = "";
+            this.editCol.Name = "editCol";
+            this.editCol.ReadOnly = true;
+            this.editCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.editCol.Text = "Edit";
+            this.editCol.Width = 30;
+            // 
+            // deleteCol
+            // 
+            this.deleteCol.HeaderText = "";
+            this.deleteCol.Name = "deleteCol";
+            this.deleteCol.ReadOnly = true;
+            this.deleteCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.deleteCol.Text = "Delete";
+            this.deleteCol.Width = 30;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.BottomPnl);
+            this.panel2.Controls.Add(this.separator);
+            this.panel2.Controls.Add(this.TopPnl);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(10, 10);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1151, 580);
+            this.panel2.TabIndex = 2;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(110, 34);
+            this.panel5.TabIndex = 0;
+            // 
             // uiPanel1
             // 
             this.uiPanel1.Controls.Add(this.searchPnl);
@@ -574,12 +510,12 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel1.FillColor = System.Drawing.Color.White;
             this.uiPanel1.FillColor2 = System.Drawing.Color.White;
             this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel1.Location = new System.Drawing.Point(611, 10);
+            this.uiPanel1.Location = new System.Drawing.Point(631, 10);
             this.uiPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel1.Name = "uiPanel1";
             this.uiPanel1.RectColor = System.Drawing.Color.White;
-            this.uiPanel1.Size = new System.Drawing.Size(530, 34);
+            this.uiPanel1.Size = new System.Drawing.Size(510, 34);
             this.uiPanel1.TabIndex = 9;
             this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -707,7 +643,7 @@ namespace ZiTyLot.GUI.Screens
             this.buttonsPnl.Location = new System.Drawing.Point(380, 0);
             this.buttonsPnl.Name = "buttonsPnl";
             this.buttonsPnl.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonsPnl.Size = new System.Drawing.Size(150, 34);
+            this.buttonsPnl.Size = new System.Drawing.Size(130, 34);
             this.buttonsPnl.TabIndex = 7;
             // 
             // addBtn
@@ -724,7 +660,7 @@ namespace ZiTyLot.GUI.Screens
             this.addBtn.Margin = new System.Windows.Forms.Padding(0);
             this.addBtn.MinimumSize = new System.Drawing.Size(1, 1);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Padding = new System.Windows.Forms.Padding(6, 0, 2, 0);
+            this.addBtn.Padding = new System.Windows.Forms.Padding(8, 0, 6, 0);
             this.addBtn.Radius = 10;
             this.addBtn.RectColor = System.Drawing.Color.White;
             this.addBtn.RectDisableColor = System.Drawing.Color.White;
@@ -732,42 +668,114 @@ namespace ZiTyLot.GUI.Screens
             this.addBtn.RectPressColor = System.Drawing.Color.White;
             this.addBtn.RectSelectedColor = System.Drawing.Color.White;
             this.addBtn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.addBtn.Size = new System.Drawing.Size(140, 34);
+            this.addBtn.Size = new System.Drawing.Size(120, 34);
             this.addBtn.TabIndex = 3;
-            this.addBtn.Text = "New resident";
+            this.addBtn.Text = "New area";
             this.addBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.addBtn.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // ResidentScreen
+            // ItemPerPagePnl
+            // 
+            this.ItemPerPagePnl.Controls.Add(this.uiPanel2);
+            this.ItemPerPagePnl.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ItemPerPagePnl.Location = new System.Drawing.Point(0, 5);
+            this.ItemPerPagePnl.Name = "ItemPerPagePnl";
+            this.ItemPerPagePnl.Size = new System.Drawing.Size(140, 40);
+            this.ItemPerPagePnl.TabIndex = 2;
+            // 
+            // uiPanel2
+            // 
+            this.uiPanel2.Controls.Add(this.numberofitemsCb);
+            this.uiPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel2.FillColor = System.Drawing.Color.White;
+            this.uiPanel2.FillColor2 = System.Drawing.Color.White;
+            this.uiPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiPanel2.Location = new System.Drawing.Point(0, 0);
+            this.uiPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel2.Name = "uiPanel2";
+            this.uiPanel2.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.uiPanel2.Radius = 10;
+            this.uiPanel2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiPanel2.RectDisableColor = System.Drawing.Color.White;
+            this.uiPanel2.RectSize = 2;
+            this.uiPanel2.Size = new System.Drawing.Size(140, 40);
+            this.uiPanel2.TabIndex = 2;
+            this.uiPanel2.Text = null;
+            this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // numberofitemsCb
+            // 
+            this.numberofitemsCb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.numberofitemsCb.DataSource = null;
+            this.numberofitemsCb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numberofitemsCb.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.numberofitemsCb.DropDownWidth = 100;
+            this.numberofitemsCb.FillColor = System.Drawing.Color.White;
+            this.numberofitemsCb.FillColor2 = System.Drawing.Color.White;
+            this.numberofitemsCb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numberofitemsCb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.numberofitemsCb.ItemHeight = 24;
+            this.numberofitemsCb.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(235)))), ((int)(((byte)(212)))));
+            this.numberofitemsCb.ItemRectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.numberofitemsCb.Items.AddRange(new object[] {
+            "All",
+            "Hello",
+            "Hi"});
+            this.numberofitemsCb.ItemSelectBackColor = System.Drawing.Color.White;
+            this.numberofitemsCb.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.numberofitemsCb.Location = new System.Drawing.Point(10, 0);
+            this.numberofitemsCb.Margin = new System.Windows.Forms.Padding(0);
+            this.numberofitemsCb.MinimumSize = new System.Drawing.Size(63, 0);
+            this.numberofitemsCb.Name = "numberofitemsCb";
+            this.numberofitemsCb.Padding = new System.Windows.Forms.Padding(4, 0, 30, 2);
+            this.numberofitemsCb.Radius = 0;
+            this.numberofitemsCb.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.numberofitemsCb.RectSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Top | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.numberofitemsCb.RectSize = 2;
+            this.numberofitemsCb.ScrollBarBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
+            this.numberofitemsCb.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.numberofitemsCb.ScrollBarStyleInherited = false;
+            this.numberofitemsCb.Size = new System.Drawing.Size(120, 40);
+            this.numberofitemsCb.Style = Sunny.UI.UIStyle.Custom;
+            this.numberofitemsCb.SymbolDropDown = 560247;
+            this.numberofitemsCb.SymbolNormal = 557682;
+            this.numberofitemsCb.SymbolSize = 24;
+            this.numberofitemsCb.TabIndex = 1;
+            this.numberofitemsCb.Text = "25 items";
+            this.numberofitemsCb.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.numberofitemsCb.Watermark = "";
+            // 
+            // AreaScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.Name = "ResidentScreen";
+            this.Name = "AreaScreen";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(1171, 600);
-            this.Load += new System.EventHandler(this.ResidentScreen_Load);
+            this.Load += new System.EventHandler(this.AreaScreen_Load);
             this.TopPnl.ResumeLayout(false);
             this.tabpanePnl.ResumeLayout(false);
             this.tabpanePnl.PerformLayout();
             this.BottomPnl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.PaginationPnl.ResumeLayout(false);
-            this.ItemPerPagePnl.ResumeLayout(false);
-            this.uiPanel2.ResumeLayout(false);
             this.PageNumberPnl.ResumeLayout(false);
             this.nextPnl.ResumeLayout(false);
             this.currentpagePnl.ResumeLayout(false);
             this.currentpagePnl.PerformLayout();
             this.previousPnl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.uiPanel1.ResumeLayout(false);
             this.searchPnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.filterPnl.ResumeLayout(false);
             this.buttonsPnl.ResumeLayout(false);
+            this.ItemPerPagePnl.ResumeLayout(false);
+            this.uiPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -776,25 +784,15 @@ namespace ZiTyLot.GUI.Screens
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel TopPnl;
         private System.Windows.Forms.Panel tabpanePnl;
-        private System.Windows.Forms.RadioButton femaleBtn;
-        private System.Windows.Forms.RadioButton maleBtn;
+        private System.Windows.Forms.RadioButton vistorBtn;
+        private System.Windows.Forms.RadioButton residentBtn;
         private System.Windows.Forms.RadioButton allBtn;
         private System.Windows.Forms.Panel separator;
         private System.Windows.Forms.Panel BottomPnl;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
         private DataGridView table;
-        private DataGridViewTextBoxColumn idCol;
-        private DataGridViewTextBoxColumn fullnameCol;
-        private DataGridViewTextBoxColumn apartmentCol;
-        private DataGridViewTextBoxColumn genderCol;
-        private DataGridViewButtonColumn viewCol;
-        private DataGridViewButtonColumn editCol;
-        private DataGridViewButtonColumn deleteCol;
         private Panel PaginationPnl;
-        private Panel ItemPerPagePnl;
-        private Sunny.UI.UIPanel uiPanel2;
-        private Sunny.UI.UIComboBox numberofitemsCb;
         private Panel PageNumberPnl;
         private Panel nextPnl;
         private Sunny.UI.UISymbolButton nextBtn;
@@ -803,6 +801,14 @@ namespace ZiTyLot.GUI.Screens
         private Sunny.UI.UITextBox currentpageTb;
         private Panel previousPnl;
         private Sunny.UI.UISymbolButton previousBtn;
+        private DataGridViewTextBoxColumn idCol;
+        private DataGridViewTextBoxColumn nameCol;
+        private DataGridViewTextBoxColumn totalslotCol;
+        private DataGridViewTextBoxColumn remainslotCol;
+        private DataGridViewTextBoxColumn statusCol;
+        private DataGridViewButtonColumn viewCol;
+        private DataGridViewButtonColumn editCol;
+        private DataGridViewButtonColumn deleteCol;
         private Sunny.UI.UIPanel uiPanel1;
         private Sunny.UI.UIPanel searchPnl;
         private PictureBox pictureBox2;
@@ -811,5 +817,8 @@ namespace ZiTyLot.GUI.Screens
         private Sunny.UI.UIComboBox filterCb;
         private Panel buttonsPnl;
         private Sunny.UI.UISymbolButton addBtn;
+        private Panel ItemPerPagePnl;
+        private Sunny.UI.UIPanel uiPanel2;
+        private Sunny.UI.UIComboBox numberofitemsCb;
     }
 }

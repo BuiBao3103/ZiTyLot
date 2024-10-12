@@ -2,7 +2,7 @@
 
 namespace ZiTyLot.GUI.Screens
 {
-    partial class SessionScreen
+    partial class SessionControl
     {
         /// <summary> 
         /// Required designer variable.

@@ -2,7 +2,7 @@
 
 namespace ZiTyLot.GUI.Screens
 {
-    partial class RoleScreen
+    partial class RoleControl
     {
         /// <summary> 
         /// Required designer variable.

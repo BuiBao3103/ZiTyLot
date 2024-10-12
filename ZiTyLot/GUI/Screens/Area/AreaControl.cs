@@ -11,9 +11,9 @@ using ZiTyLot.GUI.component_extensions;
 
 namespace ZiTyLot.GUI.Screens
 {
-    public partial class AreaScreen : UserControl
+    public partial class AreaControl : UserControl
     {
-        public AreaScreen()
+        public AreaControl()
         {
             InitializeComponent();
         }

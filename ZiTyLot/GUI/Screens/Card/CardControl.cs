@@ -11,9 +11,9 @@ using ZiTyLot.GUI.component_extensions;
 
 namespace ZiTyLot.GUI.Screens
 {
-    public partial class CardScreen : UserControl
+    public partial class CardControl : UserControl
     {
-        public CardScreen()
+        public CardControl()
         {
             InitializeComponent();
         }

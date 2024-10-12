@@ -231,7 +231,7 @@
             this.settingMenu.Name = "settingMenu";
             this.settingMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.settingMenu.ShowImageMargin = false;
-            this.settingMenu.Size = new System.Drawing.Size(182, 74);
+            this.settingMenu.Size = new System.Drawing.Size(182, 52);
             // 
             // logOutMenuItem
             // 
@@ -256,7 +256,7 @@
             this.Controls.Add(this.sidebar);
             this.MinimumSize = new System.Drawing.Size(1600, 900);
             this.Name = "Home";
-            this.Text = "Home";
+            this.Text = "Zitylot";
             this.Load += new System.EventHandler(this.Home_Load);
             this.sidebar.ResumeLayout(false);
             this.sidebarTop.ResumeLayout(false);

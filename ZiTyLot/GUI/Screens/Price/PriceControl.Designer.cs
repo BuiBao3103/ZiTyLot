@@ -2,7 +2,7 @@
 
 namespace ZiTyLot.GUI.Screens
 {
-    partial class PriceScreen
+    partial class PriceControl
     {
         /// <summary> 
         /// Required designer variable.
