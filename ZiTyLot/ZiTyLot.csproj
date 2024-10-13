@@ -470,6 +470,7 @@
     <None Include="Resources\Screenshot 2024-08-30 230542.png" />
     <None Include="Resources\Screenshot 2024-08-30 101445.png" />
     <None Include="Resources\Screenshot 2024-10-11 121017.png" />
+    <Content Include="Resource\AmongUs.wav" />
     <Content Include="Resource\enter.wav" />
   </ItemGroup>
   <ItemGroup>

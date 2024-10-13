@@ -1,4 +1,5 @@
-﻿using System.IO.Ports;
+﻿using System;
+using System.IO.Ports;
 using System.Media;
 using ZiTyLot.Constants;
 
@@ -27,10 +28,23 @@ namespace ZiTyLot.Helper
         public static void OpenBarrier(SerialPort serialPort)
         {
             if (serialPort == null) return;
-            using (SoundPlayer player = new SoundPlayer("../../Resource/enter.wav"))
+            int random = new Random().Next(1, 5);
+            if (random == 1)
             {
-                player.Play();
+                using (SoundPlayer player = new SoundPlayer("../../Resource/AmongUs.wav"))
+                {
+                    player.Play();
+                }
             }
+            else
+            {
+                using (SoundPlayer player = new SoundPlayer("../../Resource/enter.wav"))
+                {
+                    player.Play();
+                }
+            }
+            System.Threading.Thread.Sleep(1000);
+           
             serialPort.WriteLine(ArduinoAction.RED_OFF);
             serialPort.WriteLine(ArduinoAction.GREEN_ON);
             serialPort.WriteLine(ArduinoAction.BARIE_OPEN);
