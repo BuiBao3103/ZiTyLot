@@ -58,8 +58,8 @@ namespace ZiTyLot.GUI.Screens
         private void checkoutBtn_Click(object sender, EventArgs e)
         {
             CheckOutForm checkOutForm = new CheckOutForm();
-            checkOutForm.WindowState = FormWindowState.Maximized;
-            checkOutForm.MaximizeBox = false;
+            //checkOutForm.WindowState = FormWindowState.Maximized;
+            //checkOutForm.MaximizeBox = false;
             checkOutForm.Show();
         }
 

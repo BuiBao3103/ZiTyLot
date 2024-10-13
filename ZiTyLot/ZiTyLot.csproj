@@ -467,6 +467,9 @@
     <Content Include="GUI\assets\scan.png" />
     <Content Include="GUI\assets\ZityLot-Logo-120x60px.png" />
     <None Include="Resources\Icon-24x24px_Logout-Active.png" />
+    <None Include="Resources\Screenshot 2024-08-30 230542.png" />
+    <None Include="Resources\Screenshot 2024-08-30 101445.png" />
+    <None Include="Resources\Screenshot 2024-10-11 121017.png" />
     <Content Include="Resource\enter.wav" />
   </ItemGroup>
   <ItemGroup>
