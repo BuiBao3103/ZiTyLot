@@ -5,7 +5,7 @@ namespace ZiTyLot.Helper
     public class Pageable
     {
         private int pageNumber = 1; // Đặt giá trị mặc định
-        private int pageSize = 10;   // Đặt giá trị mặc định
+        private int pageSize = 25;   // Đặt giá trị mặc định
         private string sortBy = string.Empty; // Giá trị mặc định là chuỗi rỗng
         private string sortOrder = "ASC";      // Giá trị mặc định là "ASC"
 
