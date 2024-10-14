@@ -7,15 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZiTyLot.BUS;
+using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
+using ZiTyLot.Helper;
 
 namespace ZiTyLot.GUI.Screens
 {
     public partial class CardControl : UserControl
     {
+        CardBUS cardBUS = new CardBUS();
+        Pageable pagebale = new Pageable();
+        List<FilterCondition> filterConditions = new List<FilterCondition>();
+        Page<Card> page;
+
         public CardControl()
         {
             InitializeComponent();
+            numberofitemsCb.SelectedIndex = 0;
+            page = cardBUS.GetAllPagination(pagebale, filterConditions);
+            currentpageTb.Text = "1";
+            label1.Text = "/" + page.TotalPages;
+            LoadPageToTable();
         }
 
         private void CardScreen_Load(object sender, EventArgs e)
@@ -55,7 +68,7 @@ namespace ZiTyLot.GUI.Screens
                  e.ColumnIndex == table.Columns["deleteCol"].Index) && e.RowIndex >= 0)
             {
                 e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
-                Image icon = null;
+                System.Drawing.Image icon = null;
                 if (e.ColumnIndex == table.Columns["viewCol"].Index)
                 {
                     icon = Properties.Resources.Icon_18x18px_View;  
@@ -207,6 +220,56 @@ namespace ZiTyLot.GUI.Screens
         private void logOutMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void LoadPageToTable()
+        {
+            table.Rows.Clear();
+            foreach (Card card in page.Content)
+            {
+                table.Rows.Add(card.Id, card.Rfid, card.Type, card.Status);
+            }
+        }
+
+        private void table_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String selectedValue = numberofitemsCb.SelectedItem.ToString();
+            int pageSize = int.Parse(selectedValue.Split(' ')[0]);
+            pagebale.PageSize = pageSize;
+            pagebale.PageNumber = 1;
+            page = cardBUS.GetAllPagination(pagebale,filterConditions);
+            currentpageTb.Text = "1";
+            label1.Text = "/" + page.TotalPages;
+            LoadPageToTable();
+        }
+
+        private void changePage(int pageNumber)
+        {
+            if (pageNumber < 1 || pageNumber > page.TotalPages) 
+            {
+                return;
+            }
+            pagebale.PageNumber = pageNumber;
+            page = cardBUS.GetAllPagination(pagebale, filterConditions);
+            currentpageTb.Text = pageNumber.ToString();
+            LoadPageToTable() ;
+        }
+
+        private void previousBtn_Click(object sender, EventArgs e)
+        {
+            int currentPage = int.Parse(currentpageTb.Text);
+            changePage(currentPage-1);
+        }
+
+        private void nextBtn_Click(object sender, EventArgs e)
+        {
+            int currentPage = int.Parse(currentpageTb.Text);
+            changePage((currentPage + 1));  
         }
     }
 }

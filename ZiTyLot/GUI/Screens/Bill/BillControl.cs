@@ -7,15 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZiTyLot.BUS;
+using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
+using ZiTyLot.Helper;
 
 namespace ZiTyLot.GUI.Screens
 {
     public partial class BillControl : UserControl
     {
+        BillBUS billBUS = new BillBUS();
+        Pageable pageable = new Pageable();
+        List<FilterCondition> filterCondition;
+        Page<Bill> page;
         public BillControl()
         {
             InitializeComponent();
+            numberofitemsCb.SelectedIndex = 0;
+            page = billBUS.GetAllPagination(pageable,filterCondition);
+            currentpageTb.Text = "1";
+            label1.Text = "/" + page.TotalPages;
+            loadPageToTable();
         }
 
         private void BillScreen_Load(object sender, EventArgs e)
@@ -47,7 +59,7 @@ namespace ZiTyLot.GUI.Screens
                  e.ColumnIndex == table.Columns["deleteCol"].Index) && e.RowIndex >= 0)
             {
                 e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
-                Image icon = null;
+                System.Drawing.Image icon = null;
                 if (e.ColumnIndex == table.Columns["viewCol"].Index)
                 {
                     icon = Properties.Resources.Icon_18x18px_View;  
@@ -101,6 +113,51 @@ namespace ZiTyLot.GUI.Screens
             BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
         }
 
-       
+        private void loadPageToTable()
+        {
+            table.Rows.Clear();
+
+            foreach(Bill bill in page.Content)
+            {
+           
+                table.Rows.Add(bill.Id, billBUS.PopulateResident(bill).Resident.Full_name, billBUS.PopulateResident(bill).Resident.Apartment_id, bill.Issue_quantity, bill.Total_fee.ToString());
+            }
+        }
+
+        private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String selectedValue = numberofitemsCb.SelectedItem.ToString();
+            int pageSize = int.Parse(selectedValue.Split(' ')[0]);
+            pageable.PageNumber = 1;
+            pageable.PageSize = pageSize;
+            page = billBUS.GetAllPagination(pageable,filterCondition);
+            currentpageTb.Text = "1";
+            label1.Text = "/" + page.TotalPages;
+            loadPageToTable();
+        }
+
+        private void changePage(int pageNumber)
+        {
+            if (pageNumber < 1 || pageNumber > page.TotalPages)
+            {
+                return;
+            }
+            pageable.PageNumber = pageNumber;
+            page = billBUS.GetAllPagination(pageable,filterCondition);
+            loadPageToTable();
+            currentpageTb.Text = pageNumber.ToString();
+        }
+
+        private void previousBtn_Click(object sender, EventArgs e)
+        {
+            int currentPage = int.Parse(currentpageTb.Text);
+            changePage(currentPage-1);
+        }
+
+        private void nextBtn_Click(object sender, EventArgs e)
+        {
+            int currentPage = int.Parse(currentpageTb.Text);
+            changePage(currentPage + 1);
+        }
     }
 }

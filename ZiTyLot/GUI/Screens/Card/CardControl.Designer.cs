@@ -105,9 +105,10 @@ namespace ZiTyLot.GUI.Screens
             this.TopPnl.Controls.Add(this.tabpanePnl);
             this.TopPnl.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopPnl.Location = new System.Drawing.Point(0, 0);
+            this.TopPnl.Margin = new System.Windows.Forms.Padding(4);
             this.TopPnl.Name = "TopPnl";
-            this.TopPnl.Padding = new System.Windows.Forms.Padding(10);
-            this.TopPnl.Size = new System.Drawing.Size(1093, 54);
+            this.TopPnl.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.TopPnl.Size = new System.Drawing.Size(1458, 66);
             this.TopPnl.TabIndex = 1;
             this.TopPnl.Resize += new System.EventHandler(this.TopPnl_Resize);
             // 
@@ -120,12 +121,12 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel1.FillColor = System.Drawing.Color.White;
             this.uiPanel1.FillColor2 = System.Drawing.Color.White;
             this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel1.Location = new System.Drawing.Point(553, 10);
+            this.uiPanel1.Location = new System.Drawing.Point(738, 12);
             this.uiPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel1.Name = "uiPanel1";
             this.uiPanel1.RectColor = System.Drawing.Color.White;
-            this.uiPanel1.Size = new System.Drawing.Size(530, 34);
+            this.uiPanel1.Size = new System.Drawing.Size(707, 42);
             this.uiPanel1.TabIndex = 10;
             this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -144,7 +145,7 @@ namespace ZiTyLot.GUI.Screens
             this.searchPnl.Radius = 10;
             this.searchPnl.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.searchPnl.RectSize = 2;
-            this.searchPnl.Size = new System.Drawing.Size(250, 34);
+            this.searchPnl.Size = new System.Drawing.Size(250, 42);
             this.searchPnl.TabIndex = 1;
             this.searchPnl.Text = null;
             this.searchPnl.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -155,7 +156,7 @@ namespace ZiTyLot.GUI.Screens
             this.pictureBox2.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Magnifying;
             this.pictureBox2.Location = new System.Drawing.Point(217, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(28, 24);
+            this.pictureBox2.Size = new System.Drawing.Size(28, 32);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -178,7 +179,7 @@ namespace ZiTyLot.GUI.Screens
             this.searchTb.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.searchTb.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.searchTb.ShowText = false;
-            this.searchTb.Size = new System.Drawing.Size(218, 24);
+            this.searchTb.Size = new System.Drawing.Size(218, 26);
             this.searchTb.TabIndex = 0;
             this.searchTb.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.searchTb.Watermark = "";
@@ -190,7 +191,7 @@ namespace ZiTyLot.GUI.Screens
             this.filterPnl.FillColor = System.Drawing.Color.White;
             this.filterPnl.FillColor2 = System.Drawing.Color.White;
             this.filterPnl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filterPnl.Location = new System.Drawing.Point(260, 0);
+            this.filterPnl.Location = new System.Drawing.Point(437, 0);
             this.filterPnl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.filterPnl.MinimumSize = new System.Drawing.Size(1, 1);
             this.filterPnl.Name = "filterPnl";
@@ -199,7 +200,7 @@ namespace ZiTyLot.GUI.Screens
             this.filterPnl.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.filterPnl.RectDisableColor = System.Drawing.Color.White;
             this.filterPnl.RectSize = 2;
-            this.filterPnl.Size = new System.Drawing.Size(120, 34);
+            this.filterPnl.Size = new System.Drawing.Size(120, 42);
             this.filterPnl.TabIndex = 1;
             this.filterPnl.Text = null;
             this.filterPnl.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -236,7 +237,7 @@ namespace ZiTyLot.GUI.Screens
             this.filterCb.ScrollBarBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
             this.filterCb.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.filterCb.ScrollBarStyleInherited = false;
-            this.filterCb.Size = new System.Drawing.Size(100, 34);
+            this.filterCb.Size = new System.Drawing.Size(100, 42);
             this.filterCb.Style = Sunny.UI.UIStyle.Custom;
             this.filterCb.SymbolDropDown = 560247;
             this.filterCb.SymbolNormal = 557682;
@@ -251,10 +252,10 @@ namespace ZiTyLot.GUI.Screens
             this.buttonsPnl.Controls.Add(this.excelBtn);
             this.buttonsPnl.Controls.Add(this.addBtn);
             this.buttonsPnl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonsPnl.Location = new System.Drawing.Point(380, 0);
+            this.buttonsPnl.Location = new System.Drawing.Point(557, 0);
             this.buttonsPnl.Name = "buttonsPnl";
             this.buttonsPnl.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonsPnl.Size = new System.Drawing.Size(150, 34);
+            this.buttonsPnl.Size = new System.Drawing.Size(150, 42);
             this.buttonsPnl.TabIndex = 7;
             // 
             // excelBtn
@@ -276,7 +277,7 @@ namespace ZiTyLot.GUI.Screens
             this.excelBtn.RectPressColor = System.Drawing.Color.White;
             this.excelBtn.RectSelectedColor = System.Drawing.Color.White;
             this.excelBtn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.excelBtn.Size = new System.Drawing.Size(13, 34);
+            this.excelBtn.Size = new System.Drawing.Size(13, 42);
             this.excelBtn.TabIndex = 4;
             this.excelBtn.Text = "⋮";
             this.excelBtn.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -304,7 +305,7 @@ namespace ZiTyLot.GUI.Screens
             this.addBtn.RectPressColor = System.Drawing.Color.White;
             this.addBtn.RectSelectedColor = System.Drawing.Color.White;
             this.addBtn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.addBtn.Size = new System.Drawing.Size(120, 34);
+            this.addBtn.Size = new System.Drawing.Size(120, 42);
             this.addBtn.TabIndex = 3;
             this.addBtn.Text = "New card";
             this.addBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -318,9 +319,10 @@ namespace ZiTyLot.GUI.Screens
             this.tabpanePnl.Controls.Add(this.activeBtn);
             this.tabpanePnl.Controls.Add(this.allBtn);
             this.tabpanePnl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tabpanePnl.Location = new System.Drawing.Point(10, 10);
+            this.tabpanePnl.Location = new System.Drawing.Point(13, 12);
+            this.tabpanePnl.Margin = new System.Windows.Forms.Padding(4);
             this.tabpanePnl.Name = "tabpanePnl";
-            this.tabpanePnl.Size = new System.Drawing.Size(560, 34);
+            this.tabpanePnl.Size = new System.Drawing.Size(747, 42);
             this.tabpanePnl.TabIndex = 8;
             // 
             // lostBtn
@@ -335,15 +337,15 @@ namespace ZiTyLot.GUI.Screens
             this.lostBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.lostBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.lostBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lostBtn.Font = new System.Drawing.Font("Helvetica Rounded", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lostBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lostBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.lostBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Lost;
-            this.lostBtn.Location = new System.Drawing.Point(440, 0);
-            this.lostBtn.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.lostBtn.MinimumSize = new System.Drawing.Size(110, 34);
+            this.lostBtn.Location = new System.Drawing.Point(588, 0);
+            this.lostBtn.Margin = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.lostBtn.MinimumSize = new System.Drawing.Size(147, 42);
             this.lostBtn.Name = "lostBtn";
-            this.lostBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.lostBtn.Size = new System.Drawing.Size(110, 34);
+            this.lostBtn.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.lostBtn.Size = new System.Drawing.Size(147, 42);
             this.lostBtn.TabIndex = 6;
             this.lostBtn.Text = "Lost";
             this.lostBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -363,15 +365,15 @@ namespace ZiTyLot.GUI.Screens
             this.lockedBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.lockedBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.lockedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lockedBtn.Font = new System.Drawing.Font("Helvetica Rounded", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lockedBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lockedBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.lockedBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Lock;
-            this.lockedBtn.Location = new System.Drawing.Point(330, 0);
-            this.lockedBtn.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.lockedBtn.MinimumSize = new System.Drawing.Size(110, 34);
+            this.lockedBtn.Location = new System.Drawing.Point(441, 0);
+            this.lockedBtn.Margin = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.lockedBtn.MinimumSize = new System.Drawing.Size(147, 42);
             this.lockedBtn.Name = "lockedBtn";
-            this.lockedBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.lockedBtn.Size = new System.Drawing.Size(110, 34);
+            this.lockedBtn.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.lockedBtn.Size = new System.Drawing.Size(147, 42);
             this.lockedBtn.TabIndex = 7;
             this.lockedBtn.Text = "Locked";
             this.lockedBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -391,15 +393,15 @@ namespace ZiTyLot.GUI.Screens
             this.emptyBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.emptyBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.emptyBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.emptyBtn.Font = new System.Drawing.Font("Helvetica Rounded", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emptyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emptyBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.emptyBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Empty;
-            this.emptyBtn.Location = new System.Drawing.Point(220, 0);
-            this.emptyBtn.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.emptyBtn.MinimumSize = new System.Drawing.Size(110, 34);
+            this.emptyBtn.Location = new System.Drawing.Point(294, 0);
+            this.emptyBtn.Margin = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.emptyBtn.MinimumSize = new System.Drawing.Size(147, 42);
             this.emptyBtn.Name = "emptyBtn";
-            this.emptyBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.emptyBtn.Size = new System.Drawing.Size(110, 34);
+            this.emptyBtn.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.emptyBtn.Size = new System.Drawing.Size(147, 42);
             this.emptyBtn.TabIndex = 5;
             this.emptyBtn.Text = "Empty";
             this.emptyBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -419,15 +421,15 @@ namespace ZiTyLot.GUI.Screens
             this.activeBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.activeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.activeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.activeBtn.Font = new System.Drawing.Font("Helvetica Rounded", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.activeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.activeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.activeBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Active;
-            this.activeBtn.Location = new System.Drawing.Point(110, 0);
+            this.activeBtn.Location = new System.Drawing.Point(147, 0);
             this.activeBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.activeBtn.MinimumSize = new System.Drawing.Size(110, 34);
+            this.activeBtn.MinimumSize = new System.Drawing.Size(147, 42);
             this.activeBtn.Name = "activeBtn";
-            this.activeBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.activeBtn.Size = new System.Drawing.Size(110, 34);
+            this.activeBtn.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.activeBtn.Size = new System.Drawing.Size(147, 42);
             this.activeBtn.TabIndex = 4;
             this.activeBtn.Text = "Active";
             this.activeBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -449,14 +451,14 @@ namespace ZiTyLot.GUI.Screens
             this.allBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.allBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.allBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.allBtn.Font = new System.Drawing.Font("Helvetica Rounded", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.allBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.allBtn.ForeColor = System.Drawing.Color.White;
             this.allBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_All_Active;
             this.allBtn.Location = new System.Drawing.Point(0, 0);
             this.allBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.allBtn.MinimumSize = new System.Drawing.Size(110, 34);
+            this.allBtn.MinimumSize = new System.Drawing.Size(147, 42);
             this.allBtn.Name = "allBtn";
-            this.allBtn.Size = new System.Drawing.Size(110, 34);
+            this.allBtn.Size = new System.Drawing.Size(147, 42);
             this.allBtn.TabIndex = 3;
             this.allBtn.TabStop = true;
             this.allBtn.Text = "  All";
@@ -468,10 +470,11 @@ namespace ZiTyLot.GUI.Screens
             // separator
             // 
             this.separator.Dock = System.Windows.Forms.DockStyle.Top;
-            this.separator.Location = new System.Drawing.Point(0, 54);
-            this.separator.MaximumSize = new System.Drawing.Size(1620, 4);
+            this.separator.Location = new System.Drawing.Point(0, 66);
+            this.separator.Margin = new System.Windows.Forms.Padding(4);
+            this.separator.MaximumSize = new System.Drawing.Size(2160, 5);
             this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(1093, 4);
+            this.separator.Size = new System.Drawing.Size(1458, 5);
             this.separator.TabIndex = 2;
             // 
             // BottomPnl
@@ -480,11 +483,11 @@ namespace ZiTyLot.GUI.Screens
             this.BottomPnl.Controls.Add(this.PaginationPnl);
             this.BottomPnl.Controls.Add(this.table);
             this.BottomPnl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BottomPnl.Location = new System.Drawing.Point(0, 58);
+            this.BottomPnl.Location = new System.Drawing.Point(0, 71);
             this.BottomPnl.Margin = new System.Windows.Forms.Padding(0);
             this.BottomPnl.Name = "BottomPnl";
-            this.BottomPnl.Padding = new System.Windows.Forms.Padding(10);
-            this.BottomPnl.Size = new System.Drawing.Size(1093, 522);
+            this.BottomPnl.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.BottomPnl.Size = new System.Drawing.Size(1458, 643);
             this.BottomPnl.TabIndex = 3;
             this.BottomPnl.Resize += new System.EventHandler(this.BottomPnl_Resize);
             // 
@@ -494,19 +497,21 @@ namespace ZiTyLot.GUI.Screens
             this.PaginationPnl.Controls.Add(this.ItemPerPagePnl);
             this.PaginationPnl.Controls.Add(this.PageNumberPnl);
             this.PaginationPnl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PaginationPnl.Location = new System.Drawing.Point(10, 462);
+            this.PaginationPnl.Location = new System.Drawing.Point(13, 569);
+            this.PaginationPnl.Margin = new System.Windows.Forms.Padding(4);
             this.PaginationPnl.Name = "PaginationPnl";
-            this.PaginationPnl.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.PaginationPnl.Size = new System.Drawing.Size(1073, 50);
+            this.PaginationPnl.Padding = new System.Windows.Forms.Padding(0, 6, 0, 6);
+            this.PaginationPnl.Size = new System.Drawing.Size(1432, 62);
             this.PaginationPnl.TabIndex = 3;
             // 
             // ItemPerPagePnl
             // 
             this.ItemPerPagePnl.Controls.Add(this.uiPanel2);
             this.ItemPerPagePnl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ItemPerPagePnl.Location = new System.Drawing.Point(0, 5);
+            this.ItemPerPagePnl.Location = new System.Drawing.Point(0, 6);
+            this.ItemPerPagePnl.Margin = new System.Windows.Forms.Padding(4);
             this.ItemPerPagePnl.Name = "ItemPerPagePnl";
-            this.ItemPerPagePnl.Size = new System.Drawing.Size(140, 40);
+            this.ItemPerPagePnl.Size = new System.Drawing.Size(187, 50);
             this.ItemPerPagePnl.TabIndex = 2;
             // 
             // uiPanel2
@@ -517,15 +522,15 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel2.FillColor2 = System.Drawing.Color.White;
             this.uiPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiPanel2.Location = new System.Drawing.Point(0, 0);
-            this.uiPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel2.Name = "uiPanel2";
-            this.uiPanel2.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.uiPanel2.Padding = new System.Windows.Forms.Padding(13, 0, 13, 0);
             this.uiPanel2.Radius = 10;
             this.uiPanel2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiPanel2.RectDisableColor = System.Drawing.Color.White;
             this.uiPanel2.RectSize = 2;
-            this.uiPanel2.Size = new System.Drawing.Size(140, 40);
+            this.uiPanel2.Size = new System.Drawing.Size(187, 50);
             this.uiPanel2.TabIndex = 2;
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -545,12 +550,13 @@ namespace ZiTyLot.GUI.Screens
             this.numberofitemsCb.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(235)))), ((int)(((byte)(212)))));
             this.numberofitemsCb.ItemRectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.numberofitemsCb.Items.AddRange(new object[] {
-            "All",
-            "Hello",
-            "Hi"});
+            "20 items",
+            "35 items",
+            "50 items",
+            "75 items"});
             this.numberofitemsCb.ItemSelectBackColor = System.Drawing.Color.White;
             this.numberofitemsCb.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.numberofitemsCb.Location = new System.Drawing.Point(10, 0);
+            this.numberofitemsCb.Location = new System.Drawing.Point(13, 0);
             this.numberofitemsCb.Margin = new System.Windows.Forms.Padding(0);
             this.numberofitemsCb.MinimumSize = new System.Drawing.Size(63, 0);
             this.numberofitemsCb.Name = "numberofitemsCb";
@@ -562,7 +568,7 @@ namespace ZiTyLot.GUI.Screens
             this.numberofitemsCb.ScrollBarBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
             this.numberofitemsCb.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.numberofitemsCb.ScrollBarStyleInherited = false;
-            this.numberofitemsCb.Size = new System.Drawing.Size(120, 40);
+            this.numberofitemsCb.Size = new System.Drawing.Size(161, 50);
             this.numberofitemsCb.Style = Sunny.UI.UIStyle.Custom;
             this.numberofitemsCb.SymbolDropDown = 560247;
             this.numberofitemsCb.SymbolNormal = 557682;
@@ -571,6 +577,7 @@ namespace ZiTyLot.GUI.Screens
             this.numberofitemsCb.Text = "25 items";
             this.numberofitemsCb.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.numberofitemsCb.Watermark = "";
+            this.numberofitemsCb.SelectedIndexChanged += new System.EventHandler(this.numberofitemsCb_SelectedIndexChanged);
             // 
             // PageNumberPnl
             // 
@@ -578,19 +585,21 @@ namespace ZiTyLot.GUI.Screens
             this.PageNumberPnl.Controls.Add(this.currentpagePnl);
             this.PageNumberPnl.Controls.Add(this.previousPnl);
             this.PageNumberPnl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PageNumberPnl.Location = new System.Drawing.Point(905, 5);
+            this.PageNumberPnl.Location = new System.Drawing.Point(1208, 6);
+            this.PageNumberPnl.Margin = new System.Windows.Forms.Padding(4);
             this.PageNumberPnl.Name = "PageNumberPnl";
-            this.PageNumberPnl.Size = new System.Drawing.Size(168, 40);
+            this.PageNumberPnl.Size = new System.Drawing.Size(224, 50);
             this.PageNumberPnl.TabIndex = 1;
             // 
             // nextPnl
             // 
             this.nextPnl.Controls.Add(this.nextBtn);
             this.nextPnl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.nextPnl.Location = new System.Drawing.Point(126, 0);
+            this.nextPnl.Location = new System.Drawing.Point(168, 0);
+            this.nextPnl.Margin = new System.Windows.Forms.Padding(4);
             this.nextPnl.Name = "nextPnl";
-            this.nextPnl.Padding = new System.Windows.Forms.Padding(3);
-            this.nextPnl.Size = new System.Drawing.Size(40, 40);
+            this.nextPnl.Padding = new System.Windows.Forms.Padding(4);
+            this.nextPnl.Size = new System.Drawing.Size(53, 50);
             this.nextPnl.TabIndex = 1;
             // 
             // nextBtn
@@ -600,13 +609,13 @@ namespace ZiTyLot.GUI.Screens
             this.nextBtn.FillColor = System.Drawing.SystemColors.ControlLight;
             this.nextBtn.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
             this.nextBtn.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.nextBtn.Font = new System.Drawing.Font("Helvetica Rounded", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nextBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Next;
-            this.nextBtn.Location = new System.Drawing.Point(3, 3);
+            this.nextBtn.Location = new System.Drawing.Point(4, 4);
             this.nextBtn.Margin = new System.Windows.Forms.Padding(0);
             this.nextBtn.MinimumSize = new System.Drawing.Size(1, 1);
             this.nextBtn.Name = "nextBtn";
-            this.nextBtn.Padding = new System.Windows.Forms.Padding(20, 0, 22, 0);
+            this.nextBtn.Padding = new System.Windows.Forms.Padding(27, 0, 29, 0);
             this.nextBtn.Radius = 4;
             this.nextBtn.RectColor = System.Drawing.Color.White;
             this.nextBtn.RectDisableColor = System.Drawing.Color.White;
@@ -615,30 +624,33 @@ namespace ZiTyLot.GUI.Screens
             this.nextBtn.RectSelectedColor = System.Drawing.Color.White;
             this.nextBtn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.nextBtn.RectSize = 2;
-            this.nextBtn.Size = new System.Drawing.Size(34, 34);
+            this.nextBtn.Size = new System.Drawing.Size(45, 42);
             this.nextBtn.TabIndex = 4;
-            this.nextBtn.TipsFont = new System.Drawing.Font("Helvetica Rounded", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextBtn.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextBtn.Click += new System.EventHandler(this.nextBtn_Click);
             // 
             // currentpagePnl
             // 
             this.currentpagePnl.Controls.Add(this.label1);
             this.currentpagePnl.Controls.Add(this.currentpageTb);
             this.currentpagePnl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.currentpagePnl.Location = new System.Drawing.Point(40, 0);
+            this.currentpagePnl.Location = new System.Drawing.Point(53, 0);
+            this.currentpagePnl.Margin = new System.Windows.Forms.Padding(4);
             this.currentpagePnl.Name = "currentpagePnl";
-            this.currentpagePnl.Padding = new System.Windows.Forms.Padding(3);
-            this.currentpagePnl.Size = new System.Drawing.Size(86, 40);
+            this.currentpagePnl.Padding = new System.Windows.Forms.Padding(4);
+            this.currentpagePnl.Size = new System.Drawing.Size(115, 50);
             this.currentpagePnl.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label1.Font = new System.Drawing.Font("Helvetica Rounded", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(41, 3);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(56, 4);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
-            this.label1.Size = new System.Drawing.Size(42, 33);
+            this.label1.Padding = new System.Windows.Forms.Padding(0, 9, 0, 9);
+            this.label1.Size = new System.Drawing.Size(55, 43);
             this.label1.TabIndex = 3;
             this.label1.Text = "/100";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -648,20 +660,20 @@ namespace ZiTyLot.GUI.Screens
             this.currentpageTb.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.currentpageTb.Dock = System.Windows.Forms.DockStyle.Left;
             this.currentpageTb.DoubleValue = 1D;
-            this.currentpageTb.Font = new System.Drawing.Font("Helvetica Rounded", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentpageTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentpageTb.IntValue = 1;
-            this.currentpageTb.Location = new System.Drawing.Point(3, 3);
-            this.currentpageTb.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.currentpageTb.MinimumSize = new System.Drawing.Size(1, 16);
+            this.currentpageTb.Location = new System.Drawing.Point(4, 4);
+            this.currentpageTb.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.currentpageTb.MinimumSize = new System.Drawing.Size(1, 20);
             this.currentpageTb.Name = "currentpageTb";
-            this.currentpageTb.Padding = new System.Windows.Forms.Padding(5);
+            this.currentpageTb.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.currentpageTb.Radius = 1;
             this.currentpageTb.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
             this.currentpageTb.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.currentpageTb.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom;
             this.currentpageTb.RectSize = 2;
             this.currentpageTb.ShowText = false;
-            this.currentpageTb.Size = new System.Drawing.Size(34, 34);
+            this.currentpageTb.Size = new System.Drawing.Size(45, 42);
             this.currentpageTb.TabIndex = 0;
             this.currentpageTb.Text = "01";
             this.currentpageTb.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -672,9 +684,10 @@ namespace ZiTyLot.GUI.Screens
             this.previousPnl.Controls.Add(this.previousBtn);
             this.previousPnl.Dock = System.Windows.Forms.DockStyle.Left;
             this.previousPnl.Location = new System.Drawing.Point(0, 0);
+            this.previousPnl.Margin = new System.Windows.Forms.Padding(4);
             this.previousPnl.Name = "previousPnl";
-            this.previousPnl.Padding = new System.Windows.Forms.Padding(3);
-            this.previousPnl.Size = new System.Drawing.Size(40, 40);
+            this.previousPnl.Padding = new System.Windows.Forms.Padding(4);
+            this.previousPnl.Size = new System.Drawing.Size(53, 50);
             this.previousPnl.TabIndex = 0;
             // 
             // previousBtn
@@ -684,13 +697,13 @@ namespace ZiTyLot.GUI.Screens
             this.previousBtn.FillColor = System.Drawing.SystemColors.ControlLight;
             this.previousBtn.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
             this.previousBtn.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.previousBtn.Font = new System.Drawing.Font("Helvetica Rounded", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.previousBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Previous;
-            this.previousBtn.Location = new System.Drawing.Point(3, 3);
+            this.previousBtn.Location = new System.Drawing.Point(4, 4);
             this.previousBtn.Margin = new System.Windows.Forms.Padding(0);
             this.previousBtn.MinimumSize = new System.Drawing.Size(1, 1);
             this.previousBtn.Name = "previousBtn";
-            this.previousBtn.Padding = new System.Windows.Forms.Padding(20, 0, 22, 0);
+            this.previousBtn.Padding = new System.Windows.Forms.Padding(27, 0, 29, 0);
             this.previousBtn.Radius = 4;
             this.previousBtn.RectColor = System.Drawing.Color.White;
             this.previousBtn.RectDisableColor = System.Drawing.Color.White;
@@ -699,9 +712,10 @@ namespace ZiTyLot.GUI.Screens
             this.previousBtn.RectSelectedColor = System.Drawing.Color.White;
             this.previousBtn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.previousBtn.RectSize = 2;
-            this.previousBtn.Size = new System.Drawing.Size(34, 34);
+            this.previousBtn.Size = new System.Drawing.Size(45, 42);
             this.previousBtn.TabIndex = 4;
-            this.previousBtn.TipsFont = new System.Drawing.Font("Helvetica Rounded", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.previousBtn.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.previousBtn.Click += new System.EventHandler(this.previousBtn_Click);
             // 
             // table
             // 
@@ -714,7 +728,7 @@ namespace ZiTyLot.GUI.Screens
             this.table.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
@@ -733,7 +747,7 @@ namespace ZiTyLot.GUI.Screens
             this.table.Cursor = System.Windows.Forms.Cursors.Default;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -742,19 +756,21 @@ namespace ZiTyLot.GUI.Screens
             this.table.DefaultCellStyle = dataGridViewCellStyle2;
             this.table.Dock = System.Windows.Forms.DockStyle.Fill;
             this.table.GridColor = System.Drawing.Color.White;
-            this.table.Location = new System.Drawing.Point(10, 10);
+            this.table.Location = new System.Drawing.Point(13, 12);
             this.table.Margin = new System.Windows.Forms.Padding(0);
             this.table.Name = "table";
             this.table.ReadOnly = true;
             this.table.RowHeadersVisible = false;
             this.table.RowHeadersWidth = 30;
             this.table.RowTemplate.Height = 30;
-            this.table.Size = new System.Drawing.Size(1073, 502);
+            this.table.Size = new System.Drawing.Size(1432, 619);
             this.table.TabIndex = 1;
+            this.table.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellContentClick);
             // 
             // idCol
             // 
             this.idCol.HeaderText = "ID";
+            this.idCol.MinimumWidth = 6;
             this.idCol.Name = "idCol";
             this.idCol.ReadOnly = true;
             this.idCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -773,6 +789,7 @@ namespace ZiTyLot.GUI.Screens
             // 
             this.typeCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.typeCol.HeaderText = "Type";
+            this.typeCol.MinimumWidth = 6;
             this.typeCol.Name = "typeCol";
             this.typeCol.ReadOnly = true;
             // 
@@ -780,12 +797,14 @@ namespace ZiTyLot.GUI.Screens
             // 
             this.statusCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.statusCol.HeaderText = "Status";
+            this.statusCol.MinimumWidth = 6;
             this.statusCol.Name = "statusCol";
             this.statusCol.ReadOnly = true;
             // 
             // viewCol
             // 
             this.viewCol.HeaderText = "";
+            this.viewCol.MinimumWidth = 6;
             this.viewCol.Name = "viewCol";
             this.viewCol.ReadOnly = true;
             this.viewCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -795,6 +814,7 @@ namespace ZiTyLot.GUI.Screens
             // editCol
             // 
             this.editCol.HeaderText = "";
+            this.editCol.MinimumWidth = 6;
             this.editCol.Name = "editCol";
             this.editCol.ReadOnly = true;
             this.editCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -804,6 +824,7 @@ namespace ZiTyLot.GUI.Screens
             // deleteCol
             // 
             this.deleteCol.HeaderText = "";
+            this.deleteCol.MinimumWidth = 6;
             this.deleteCol.Name = "deleteCol";
             this.deleteCol.ReadOnly = true;
             this.deleteCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -816,9 +837,10 @@ namespace ZiTyLot.GUI.Screens
             this.panel2.Controls.Add(this.separator);
             this.panel2.Controls.Add(this.TopPnl);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(10, 10);
+            this.panel2.Location = new System.Drawing.Point(13, 12);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1093, 580);
+            this.panel2.Size = new System.Drawing.Size(1458, 714);
             this.panel2.TabIndex = 2;
             // 
             // panel5
@@ -834,6 +856,7 @@ namespace ZiTyLot.GUI.Screens
             // 
             this.excelMenu.BackColor = System.Drawing.Color.WhiteSmoke;
             this.excelMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.excelMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.excelMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.importMenuItem,
             this.exportMenuItem,
@@ -841,13 +864,13 @@ namespace ZiTyLot.GUI.Screens
             this.excelMenu.Name = "settingMenu";
             this.excelMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.excelMenu.ShowImageMargin = false;
-            this.excelMenu.Size = new System.Drawing.Size(156, 98);
+            this.excelMenu.Size = new System.Drawing.Size(147, 94);
             // 
             // importMenuItem
             // 
             this.importMenuItem.BackColor = System.Drawing.Color.White;
             this.importMenuItem.Name = "importMenuItem";
-            this.importMenuItem.Size = new System.Drawing.Size(155, 24);
+            this.importMenuItem.Size = new System.Drawing.Size(146, 30);
             this.importMenuItem.Text = "Import";
             this.importMenuItem.Click += new System.EventHandler(this.logOutMenuItem_Click);
             // 
@@ -855,25 +878,26 @@ namespace ZiTyLot.GUI.Screens
             // 
             this.exportMenuItem.BackColor = System.Drawing.Color.White;
             this.exportMenuItem.Name = "exportMenuItem";
-            this.exportMenuItem.Size = new System.Drawing.Size(155, 24);
+            this.exportMenuItem.Size = new System.Drawing.Size(146, 30);
             this.exportMenuItem.Text = "Export";
             // 
             // downloadMenuItem
             // 
             this.downloadMenuItem.Name = "downloadMenuItem";
-            this.downloadMenuItem.Size = new System.Drawing.Size(155, 24);
+            this.downloadMenuItem.Size = new System.Drawing.Size(146, 30);
             this.downloadMenuItem.Text = "Download";
             // 
-            // CardScreen
+            // CardControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.Name = "CardScreen";
-            this.Padding = new System.Windows.Forms.Padding(10);
-            this.Size = new System.Drawing.Size(1113, 600);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "CardControl";
+            this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.Size = new System.Drawing.Size(1484, 738);
             this.Load += new System.EventHandler(this.CardScreen_Load);
             this.TopPnl.ResumeLayout(false);
             this.uiPanel1.ResumeLayout(false);
