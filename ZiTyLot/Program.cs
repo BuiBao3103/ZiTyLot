@@ -17,7 +17,7 @@ namespace ZiTyLot
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ArduinoRFIDReader());
+            Application.Run(new Home());
 
             // Attempt to connect to the database and fetch data using MyDao
             try
