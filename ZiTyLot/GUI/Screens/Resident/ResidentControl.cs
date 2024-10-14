@@ -25,10 +25,10 @@ namespace ZiTyLot.GUI.Screens
         public ResidentControl()
         {
             InitializeComponent();
-            numberofitemsCb.SelectedIndex = 0; 
+            cbNumberofitem.SelectedIndex = 0; 
             page = residentBUS.GetAllPagination(pageable, filters);
-            currentpageTb.Text = "1"; 
-            label1.Text = "/" + page.TotalPages;
+            tbCurrentpage.Text = "1"; 
+            lbTotalpage.Text = "/" + page.TotalPages;
             LoadPageToTable();
         }
 
@@ -67,7 +67,7 @@ namespace ZiTyLot.GUI.Screens
                 {
                     e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
                 }
-                Image icon = null;
+                System.Drawing.Image icon = null;
                 if (e.ColumnIndex == tableResident.Columns["colView"].Index)
                 {
                     icon = Properties.Resources.Icon_18x18px_View;
@@ -121,75 +121,25 @@ namespace ZiTyLot.GUI.Screens
             BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
         }
 
-        // All Filter CheckedChanged event handler
-        private void allFilter_CheckedChanged(object sender, EventArgs e)
-        {
-            if (allBtn.Checked)
-            {
-                allBtn.BackColor = Color.FromArgb(240, 118, 54);
-                allBtn.ForeColor = Color.White;
-                allBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_All_Active;
-            }
-            else
-            {
-                allBtn.BackColor = Color.White;
-                allBtn.ForeColor = Color.FromArgb(160, 160, 160);
-                allBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_All;
-            }
-        }
-
-        // male Filter CheckedChanged event handler
-        private void maleFilter_CheckedChanged(object sender, EventArgs e)
-        {
-            if (maleBtn.Checked)
-            {
-                maleBtn.BackColor = Color.FromArgb(240, 118, 54);
-                maleBtn.ForeColor = Color.White;
-                maleBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Male_Active;
-            }
-            else
-            {
-                maleBtn.BackColor = Color.White;
-                maleBtn.ForeColor = Color.FromArgb(160, 160, 160);
-                maleBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Male;
-            }
-        }
-
-        // female Filter CheckedChanged event handler
-        private void femaleFilter_CheckedChanged(object sender, EventArgs e)
-        {
-            if (femaleBtn.Checked)
-            {
-                femaleBtn.BackColor = Color.FromArgb(240, 118, 54);
-                femaleBtn.ForeColor = Color.White;
-                femaleBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Female_Active;
-            }
-            else
-            {
-                femaleBtn.BackColor = Color.White;
-                femaleBtn.ForeColor = Color.FromArgb(160, 160, 160);
-                femaleBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Female;
-            }
-        }
 
         private void LoadPageToTable()
         {
-            table.Rows.Clear();
+            tableResident.Rows.Clear();
             foreach (Resident resident in page.Content)
             {
-                table.Rows.Add(resident.Id, resident.Full_name, resident.Apartment_id, resident.Email);
+                tableResident.Rows.Add(resident.Id, resident.Full_name, resident.Apartment_id, resident.Email);
             }
         }
 
         private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedValue = numberofitemsCb.SelectedItem.ToString();
+            string selectedValue = cbNumberofitem.SelectedItem.ToString();
             int pageSize = int.Parse(selectedValue.Split(' ')[0]);
             pageable.PageNumber = 1;
             pageable.PageSize = pageSize;
             page = residentBUS.GetAllPagination(pageable, filters);
-            currentpageTb.Text = "1";
-            label1.Text = "/" + page.TotalPages;
+            tbCurrentpage.Text = "1";
+            lbTotalpage.Text = "/" + page.TotalPages;
             LoadPageToTable();
         }
 
@@ -202,12 +152,12 @@ namespace ZiTyLot.GUI.Screens
             pageable.PageNumber = pageNumber;
             page = residentBUS.GetAllPagination(pageable, filters);
             LoadPageToTable();
-            currentpageTb.Text = pageNumber.ToString();
+            tbCurrentpage.Text = pageNumber.ToString();
         }
 
         private void previousBtn_Click(object sender, EventArgs e)
         {
-            int currentPage = int.Parse(currentpageTb.Text);
+            int currentPage = int.Parse(tbCurrentpage.Text);
             if (currentPage > 1)
             {
                 ChangePage(currentPage - 1);
@@ -216,7 +166,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void nextBtn_Click(object sender, EventArgs e)
         {
-            int currentPage = int.Parse(currentpageTb.Text);
+            int currentPage = int.Parse(tbCurrentpage.Text);
             if (currentPage < page.TotalPages)
             {
                 ChangePage(currentPage + 1);
