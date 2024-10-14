@@ -7,15 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZiTyLot.BUS;
+using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
 
 namespace ZiTyLot.GUI.Screens
 {
     public partial class PriceControl : UserControl
     {
+        VehicleTypeBUS vehicleTypeBUS = new VehicleTypeBUS();
+        List<FilterCondition> filters = new List<FilterCondition>();
+        List<VehicleType> vehicleTypes;
+
         public PriceControl()
         {
             InitializeComponent();
+            LoadPageToTable();
         }
 
         private void PriceScreen_Load(object sender, EventArgs e)
@@ -48,7 +55,7 @@ namespace ZiTyLot.GUI.Screens
                  e.ColumnIndex == table.Columns["deleteCol"].Index) && e.RowIndex >= 0)
             {
                 e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
-                Image icon = null;
+                System.Drawing.Image icon = null;
                 if (e.ColumnIndex == table.Columns["viewCol"].Index)
                 {
                     icon = Properties.Resources.Icon_18x18px_View;  
@@ -102,5 +109,19 @@ namespace ZiTyLot.GUI.Screens
             BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
         }
 
+        private void LoadPageToTable()
+        {
+            vehicleTypes = vehicleTypeBUS.GetAll(filters);
+            table.Rows.Clear();
+            foreach (VehicleType vehicleType in vehicleTypes)
+            {
+                table.Rows.Add(vehicleType.Id, vehicleType.Name, Has(vehicleType.Has_vehicle_plate), Has(vehicleType.Has_slot));
+            }
+        }
+
+        private string Has(bool has)
+        {
+            return has ? "Yes" : "No";
+        }
     }
 }

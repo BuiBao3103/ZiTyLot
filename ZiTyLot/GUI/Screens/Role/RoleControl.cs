@@ -7,15 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZiTyLot.BUS;
+using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
+using ZiTyLot.Helper;
 
 namespace ZiTyLot.GUI.Screens
 {
     public partial class RoleControl : UserControl
     {
+        RoleBUS roleBUS = new RoleBUS();
+        List<FilterCondition> filters = new List<FilterCondition>();
+        List<Role> roles;
+
         public RoleControl()
         {
             InitializeComponent();
+            LoadPageToTable();
         }
 
         private void RoleScreen_Load(object sender, EventArgs e)
@@ -48,7 +56,7 @@ namespace ZiTyLot.GUI.Screens
                  e.ColumnIndex == table.Columns["deleteCol"].Index) && e.RowIndex >= 0)
             {
                 e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
-                Image icon = null;
+                System.Drawing.Image icon = null;
                 if (e.ColumnIndex == table.Columns["viewCol"].Index)
                 {
                     icon = Properties.Resources.Icon_18x18px_View;
@@ -102,6 +110,14 @@ namespace ZiTyLot.GUI.Screens
             BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
         }
 
-       
+        private void LoadPageToTable()
+        {
+            roles = roleBUS.GetAll(filters);
+            table.Rows.Clear();
+            foreach (Role role in roles)
+            {
+                table.Rows.Add(role.Id, role.Name, "");
+            }
+        }
     }
 }

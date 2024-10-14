@@ -7,15 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZiTyLot.BUS;
+using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
+using ZiTyLot.Helper;
 
 namespace ZiTyLot.GUI.Screens
 {
     public partial class AccountControl : UserControl
     {
+        AccountBUS accountBUS = new AccountBUS();
+        Pageable pageable = new Pageable();
+        List<FilterCondition> filters = new List<FilterCondition>();
+        Page<Account> page;
+
         public AccountControl()
         {
             InitializeComponent();
+            numberofitemsCb.SelectedIndex = 0;
+            LoadPageToTable("1");
         }
 
         private void AccountScreen_Load(object sender, EventArgs e)
@@ -48,7 +58,7 @@ namespace ZiTyLot.GUI.Screens
                  e.ColumnIndex == table.Columns["deleteCol"].Index) && e.RowIndex >= 0)
             {
                 e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
-                Image icon = null;
+                System.Drawing.Image icon = null;
                 if (e.ColumnIndex == table.Columns["viewCol"].Index)
                 {
                     icon = Properties.Resources.Icon_18x18px_View;  
@@ -102,6 +112,46 @@ namespace ZiTyLot.GUI.Screens
             BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
         }
 
-       
+        private void LoadPageToTable(string currentPage)
+        {
+            page = accountBUS.GetAllPagination(pageable, filters);
+            currentpageTb.Text = currentPage;
+            label1.Text = "/" + page.TotalPages;
+            table.Rows.Clear();
+            foreach (Account account in page.Content)
+            {
+                table.Rows.Add(account.Id, account.Full_name, account.Username, accountBUS.PopulateRole(account).Role.Name);
+            }
+        }
+
+        private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedValue = numberofitemsCb.SelectedText;
+            int pageSize = int.Parse(selectedValue.Split(' ')[0]);
+            pageable.PageNumber = 1;
+            pageable.PageSize = pageSize;
+            LoadPageToTable("1");
+        }
+
+        private void nextBtn_Click(object sender, EventArgs e)
+        {
+            int currentPage = int.Parse(currentpageTb.Text);
+            ChangePage(currentPage + 1);
+        }
+
+        private void previousBtn_Click(object sender, EventArgs e)
+        {
+            int currentPage = int.Parse(currentpageTb.Text);
+            ChangePage(currentPage - 1);
+        }
+
+        private void ChangePage(int pageNumber)
+        {
+            if (pageNumber >= 1 && pageNumber <= page.TotalPages)
+            {
+                pageable.PageNumber = pageNumber;
+                LoadPageToTable(pageNumber.ToString());
+            }
+        }
     }
 }
