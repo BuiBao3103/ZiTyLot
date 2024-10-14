@@ -34,8 +34,8 @@ namespace ZiTyLot.GUI.Screens
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.uiPanel1 = new Sunny.UI.UIPanel();
-            this.checkoutBtn = new Sunny.UI.UIHeaderButton();
-            this.checkinBtn = new Sunny.UI.UIHeaderButton();
+            this.btnCheckIn = new Sunny.UI.UIHeaderButton();
+            this.btnCheckOut = new Sunny.UI.UIHeaderButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.uiPanel1.SuspendLayout();
@@ -53,8 +53,8 @@ namespace ZiTyLot.GUI.Screens
             // 
             // uiPanel1
             // 
-            this.uiPanel1.Controls.Add(this.checkoutBtn);
-            this.uiPanel1.Controls.Add(this.checkinBtn);
+            this.uiPanel1.Controls.Add(this.btnCheckIn);
+            this.uiPanel1.Controls.Add(this.btnCheckOut);
             this.uiPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.uiPanel1.Location = new System.Drawing.Point(10, 10);
@@ -67,73 +67,73 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // checkoutBtn
+            // btnCheckIn
             // 
-            this.checkoutBtn.CircleColor = System.Drawing.Color.White;
-            this.checkoutBtn.CircleHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.checkoutBtn.CircleSize = 100;
-            this.checkoutBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.checkoutBtn.FillColor = System.Drawing.Color.White;
-            this.checkoutBtn.FillDisableColor = System.Drawing.Color.White;
-            this.checkoutBtn.FillHoverColor = System.Drawing.Color.White;
-            this.checkoutBtn.FillPressColor = System.Drawing.Color.White;
-            this.checkoutBtn.FillSelectedColor = System.Drawing.Color.White;
-            this.checkoutBtn.Font = new System.Drawing.Font("Helvetica Rounded", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkoutBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.checkoutBtn.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.checkoutBtn.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.checkoutBtn.Location = new System.Drawing.Point(316, 0);
-            this.checkoutBtn.MinimumSize = new System.Drawing.Size(1, 1);
-            this.checkoutBtn.Name = "checkoutBtn";
-            this.checkoutBtn.Padding = new System.Windows.Forms.Padding(50);
-            this.checkoutBtn.Radius = 14;
-            this.checkoutBtn.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
-            this.checkoutBtn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.checkoutBtn.RectSize = 2;
-            this.checkoutBtn.Size = new System.Drawing.Size(250, 250);
-            this.checkoutBtn.Symbol = 361579;
-            this.checkoutBtn.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.checkoutBtn.SymbolOffset = new System.Drawing.Point(-4, 0);
-            this.checkoutBtn.SymbolSize = 72;
-            this.checkoutBtn.TabIndex = 1;
-            this.checkoutBtn.Text = "Check Out";
-            this.checkoutBtn.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.checkoutBtn.TipsForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.checkoutBtn.Click += new System.EventHandler(this.checkoutBtn_Click);
+            this.btnCheckIn.CircleColor = System.Drawing.Color.White;
+            this.btnCheckIn.CircleHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCheckIn.CircleSize = 100;
+            this.btnCheckIn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnCheckIn.FillColor = System.Drawing.Color.White;
+            this.btnCheckIn.FillDisableColor = System.Drawing.Color.White;
+            this.btnCheckIn.FillHoverColor = System.Drawing.Color.White;
+            this.btnCheckIn.FillPressColor = System.Drawing.Color.White;
+            this.btnCheckIn.FillSelectedColor = System.Drawing.Color.White;
+            this.btnCheckIn.Font = new System.Drawing.Font("Helvetica Rounded", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCheckIn.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCheckIn.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCheckIn.Location = new System.Drawing.Point(316, 0);
+            this.btnCheckIn.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnCheckIn.Name = "btnCheckIn";
+            this.btnCheckIn.Padding = new System.Windows.Forms.Padding(50);
+            this.btnCheckIn.Radius = 14;
+            this.btnCheckIn.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
+            this.btnCheckIn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnCheckIn.RectSize = 2;
+            this.btnCheckIn.Size = new System.Drawing.Size(250, 250);
+            this.btnCheckIn.Symbol = 361579;
+            this.btnCheckIn.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCheckIn.SymbolOffset = new System.Drawing.Point(-4, 0);
+            this.btnCheckIn.SymbolSize = 72;
+            this.btnCheckIn.TabIndex = 1;
+            this.btnCheckIn.Text = "Check Out";
+            this.btnCheckIn.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnCheckIn.TipsForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCheckIn.Click += new System.EventHandler(this.checkoutBtn_Click);
             // 
-            // checkinBtn
+            // btnCheckOut
             // 
-            this.checkinBtn.CircleColor = System.Drawing.Color.White;
-            this.checkinBtn.CircleHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.checkinBtn.CircleSize = 100;
-            this.checkinBtn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.checkinBtn.FillColor = System.Drawing.Color.White;
-            this.checkinBtn.FillDisableColor = System.Drawing.Color.White;
-            this.checkinBtn.FillHoverColor = System.Drawing.Color.White;
-            this.checkinBtn.FillPressColor = System.Drawing.Color.White;
-            this.checkinBtn.FillSelectedColor = System.Drawing.Color.White;
-            this.checkinBtn.Font = new System.Drawing.Font("Helvetica Rounded", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkinBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.checkinBtn.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.checkinBtn.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.checkinBtn.Location = new System.Drawing.Point(0, 0);
-            this.checkinBtn.MinimumSize = new System.Drawing.Size(1, 1);
-            this.checkinBtn.Name = "checkinBtn";
-            this.checkinBtn.Padding = new System.Windows.Forms.Padding(50);
-            this.checkinBtn.Radius = 14;
-            this.checkinBtn.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
-            this.checkinBtn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.checkinBtn.RectSize = 2;
-            this.checkinBtn.Size = new System.Drawing.Size(250, 250);
-            this.checkinBtn.Symbol = 361584;
-            this.checkinBtn.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.checkinBtn.SymbolOffset = new System.Drawing.Point(-10, 0);
-            this.checkinBtn.SymbolSize = 72;
-            this.checkinBtn.TabIndex = 0;
-            this.checkinBtn.Text = "Check in";
-            this.checkinBtn.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.checkinBtn.TipsForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.checkinBtn.Click += new System.EventHandler(this.checkinBtn_Click);
+            this.btnCheckOut.CircleColor = System.Drawing.Color.White;
+            this.btnCheckOut.CircleHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCheckOut.CircleSize = 100;
+            this.btnCheckOut.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnCheckOut.FillColor = System.Drawing.Color.White;
+            this.btnCheckOut.FillDisableColor = System.Drawing.Color.White;
+            this.btnCheckOut.FillHoverColor = System.Drawing.Color.White;
+            this.btnCheckOut.FillPressColor = System.Drawing.Color.White;
+            this.btnCheckOut.FillSelectedColor = System.Drawing.Color.White;
+            this.btnCheckOut.Font = new System.Drawing.Font("Helvetica Rounded", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCheckOut.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCheckOut.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCheckOut.Location = new System.Drawing.Point(0, 0);
+            this.btnCheckOut.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Padding = new System.Windows.Forms.Padding(50);
+            this.btnCheckOut.Radius = 14;
+            this.btnCheckOut.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
+            this.btnCheckOut.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnCheckOut.RectSize = 2;
+            this.btnCheckOut.Size = new System.Drawing.Size(250, 250);
+            this.btnCheckOut.Symbol = 361584;
+            this.btnCheckOut.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCheckOut.SymbolOffset = new System.Drawing.Point(-10, 0);
+            this.btnCheckOut.SymbolSize = 72;
+            this.btnCheckOut.TabIndex = 0;
+            this.btnCheckOut.Text = "Check in";
+            this.btnCheckOut.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnCheckOut.TipsForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCheckOut.Click += new System.EventHandler(this.checkinBtn_Click);
             // 
             // panel5
             // 
@@ -167,7 +167,7 @@ namespace ZiTyLot.GUI.Screens
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
         private Sunny.UI.UIPanel uiPanel1;
-        private Sunny.UI.UIHeaderButton checkinBtn;
-        private Sunny.UI.UIHeaderButton checkoutBtn;
+        private Sunny.UI.UIHeaderButton btnCheckOut;
+        private Sunny.UI.UIHeaderButton btnCheckIn;
     }
 }
