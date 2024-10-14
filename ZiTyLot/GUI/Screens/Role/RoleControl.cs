@@ -20,44 +20,49 @@ namespace ZiTyLot.GUI.Screens
 
         private void RoleScreen_Load(object sender, EventArgs e)
         {
-            TopPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, TopPnl.Width, TopPnl.Height, 10, 10));
-            BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
-
-            addBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, addBtn.Width, addBtn.Height, 10, 10));
-            
-            this.table.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
-            this.table.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
-            this.table.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
+            pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
+            pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
+            btnAdd.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnAdd.Width, btnAdd.Height, 10, 10));
+            this.tableRole.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
+            this.tableRole.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
+            this.tableRole.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
         }
         // Paint the header cell
         private void table_Paint(object sender, PaintEventArgs e)
         {
-            Rectangle firstHeaderCellRect = this.table.GetCellDisplayRectangle(this.table.Columns["viewCol"].Index, -1, true);
-            Rectangle lastHeaderCellRect = this.table.GetCellDisplayRectangle(this.table.Columns["deleteCol"].Index, -1, true);
+            Rectangle firstHeaderCellRect = this.tableRole.GetCellDisplayRectangle(this.tableRole.Columns["colView"].Index, -1, true);
+            Rectangle lastHeaderCellRect = this.tableRole.GetCellDisplayRectangle(this.tableRole.Columns["colDelete"].Index, -1, true);
             Rectangle mergedHeaderRect = new Rectangle(firstHeaderCellRect.X, firstHeaderCellRect.Y, lastHeaderCellRect.X + lastHeaderCellRect.Width - firstHeaderCellRect.X, firstHeaderCellRect.Height);
             e.Graphics.FillRectangle(new SolidBrush(Color.White), mergedHeaderRect);
-            TextRenderer.DrawText(e.Graphics, "Action", this.table.ColumnHeadersDefaultCellStyle.Font,
-                mergedHeaderRect, this.table.ColumnHeadersDefaultCellStyle.ForeColor,
+            TextRenderer.DrawText(e.Graphics, "Action", this.tableRole.ColumnHeadersDefaultCellStyle.Font,
+                mergedHeaderRect, this.tableRole.ColumnHeadersDefaultCellStyle.ForeColor,
                 TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
         }
         // Paint the cell
         private void table_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if ((e.ColumnIndex == table.Columns["viewCol"].Index ||
-                 e.ColumnIndex == table.Columns["editCol"].Index ||
-                 e.ColumnIndex == table.Columns["deleteCol"].Index) && e.RowIndex >= 0)
+            if ((e.ColumnIndex == tableRole.Columns["colView"].Index ||
+                 e.ColumnIndex == tableRole.Columns["colEdit"].Index ||
+                 e.ColumnIndex == tableRole.Columns["colDelete"].Index) && e.RowIndex >= 0)
             {
-                e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
+                if (e.RowIndex % 2 == 0)
+                {
+                    e.Graphics.FillRectangle(new SolidBrush(Color.WhiteSmoke), e.CellBounds);
+                }
+                else
+                {
+                    e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
+                }
                 Image icon = null;
-                if (e.ColumnIndex == table.Columns["viewCol"].Index)
+                if (e.ColumnIndex == tableRole.Columns["colView"].Index)
                 {
                     icon = Properties.Resources.Icon_18x18px_View;
                 }
-                else if (e.ColumnIndex == table.Columns["editCol"].Index)
+                else if (e.ColumnIndex == tableRole.Columns["colEdit"].Index)
                 {
                     icon = Properties.Resources.Icon_18x18px_Edit;
                 }
-                else if (e.ColumnIndex == table.Columns["deleteCol"].Index)
+                else if (e.ColumnIndex == tableRole.Columns["colDelete"].Index)
                 {
                     icon = Properties.Resources.Icon_18x18px_Delete;
                 }
@@ -77,15 +82,15 @@ namespace ZiTyLot.GUI.Screens
         {
             if (e.RowIndex >= 0)
             {
-                if (e.ColumnIndex == table.Columns["viewCol"].Index)
+                if (e.ColumnIndex == tableRole.Columns["colView"].Index)
                 {
                     MessageBox.Show("View button clicked for row " + e.RowIndex);
                 }
-                else if (e.ColumnIndex == table.Columns["editCol"].Index)
+                else if (e.ColumnIndex == tableRole.Columns["colEdit"].Index)
                 {
                     MessageBox.Show("Edit button clicked for row " + e.RowIndex);
                 }
-                else if (e.ColumnIndex == table.Columns["deleteCol"].Index)
+                else if (e.ColumnIndex == tableRole.Columns["colDelete"].Index)
                 {
                     MessageBox.Show("Delete button clicked for row " + e.RowIndex);
                 }
@@ -94,12 +99,12 @@ namespace ZiTyLot.GUI.Screens
 
         private void TopPnl_Resize(object sender, EventArgs e)
         {
-            TopPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, TopPnl.Width, TopPnl.Height, 10, 10));
+            pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
         }
 
         private void BottomPnl_Resize(object sender, EventArgs e)
         {
-            BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
+            pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
         }
 
        

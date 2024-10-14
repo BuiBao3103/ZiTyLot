@@ -31,48 +31,158 @@ namespace ZiTyLot.GUI.Screens
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.TopPnl = new System.Windows.Forms.Panel();
+            this.pnlTop = new System.Windows.Forms.Panel();
+            this.uiPanel1 = new Sunny.UI.UIPanel();
+            this.pnlButton = new System.Windows.Forms.Panel();
+            this.btnAdd = new Sunny.UI.UISymbolButton();
+            this.pnlSearch = new Sunny.UI.UIPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.tbSearch = new Sunny.UI.UITextBox();
             this.separator = new System.Windows.Forms.Panel();
-            this.BottomPnl = new System.Windows.Forms.Panel();
-            this.table = new System.Windows.Forms.DataGridView();
-            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.viewCol = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.editCol = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.deleteCol = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.pnlBottom = new System.Windows.Forms.Panel();
+            this.tableRole = new System.Windows.Forms.DataGridView();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colView = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.uiPanel1 = new Sunny.UI.UIPanel();
-            this.searchPnl = new Sunny.UI.UIPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.searchTb = new Sunny.UI.UITextBox();
-            this.buttonsPnl = new System.Windows.Forms.Panel();
-            this.addBtn = new Sunny.UI.UISymbolButton();
-            this.TopPnl.SuspendLayout();
-            this.BottomPnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.pnlTop.SuspendLayout();
             this.uiPanel1.SuspendLayout();
-            this.searchPnl.SuspendLayout();
+            this.pnlButton.SuspendLayout();
+            this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.buttonsPnl.SuspendLayout();
+            this.pnlBottom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableRole)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // TopPnl
+            // pnlTop
             // 
-            this.TopPnl.BackColor = System.Drawing.Color.White;
-            this.TopPnl.Controls.Add(this.uiPanel1);
-            this.TopPnl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TopPnl.Location = new System.Drawing.Point(0, 0);
-            this.TopPnl.Name = "TopPnl";
-            this.TopPnl.Padding = new System.Windows.Forms.Padding(10);
-            this.TopPnl.Size = new System.Drawing.Size(1151, 54);
-            this.TopPnl.TabIndex = 1;
-            this.TopPnl.Resize += new System.EventHandler(this.TopPnl_Resize);
+            this.pnlTop.BackColor = System.Drawing.Color.White;
+            this.pnlTop.Controls.Add(this.uiPanel1);
+            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Padding = new System.Windows.Forms.Padding(10);
+            this.pnlTop.Size = new System.Drawing.Size(1151, 54);
+            this.pnlTop.TabIndex = 1;
+            this.pnlTop.Resize += new System.EventHandler(this.TopPnl_Resize);
+            // 
+            // uiPanel1
+            // 
+            this.uiPanel1.Controls.Add(this.pnlButton);
+            this.uiPanel1.Controls.Add(this.pnlSearch);
+            this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.uiPanel1.FillColor = System.Drawing.Color.White;
+            this.uiPanel1.FillColor2 = System.Drawing.Color.White;
+            this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel1.Location = new System.Drawing.Point(761, 10);
+            this.uiPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel1.Name = "uiPanel1";
+            this.uiPanel1.RectColor = System.Drawing.Color.White;
+            this.uiPanel1.Size = new System.Drawing.Size(380, 34);
+            this.uiPanel1.TabIndex = 5;
+            this.uiPanel1.Text = null;
+            this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlButton
+            // 
+            this.pnlButton.Controls.Add(this.btnAdd);
+            this.pnlButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlButton.Location = new System.Drawing.Point(250, 0);
+            this.pnlButton.Name = "pnlButton";
+            this.pnlButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.pnlButton.Size = new System.Drawing.Size(130, 34);
+            this.pnlButton.TabIndex = 8;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnAdd.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnAdd.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Plus;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(10, 0);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAdd.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Padding = new System.Windows.Forms.Padding(14, 0, 8, 0);
+            this.btnAdd.Radius = 10;
+            this.btnAdd.RectColor = System.Drawing.Color.White;
+            this.btnAdd.RectDisableColor = System.Drawing.Color.White;
+            this.btnAdd.RectHoverColor = System.Drawing.Color.White;
+            this.btnAdd.RectPressColor = System.Drawing.Color.White;
+            this.btnAdd.RectSelectedColor = System.Drawing.Color.White;
+            this.btnAdd.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnAdd.Size = new System.Drawing.Size(120, 34);
+            this.btnAdd.TabIndex = 3;
+            this.btnAdd.Text = "New role";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // pnlSearch
+            // 
+            this.pnlSearch.Controls.Add(this.pictureBox2);
+            this.pnlSearch.Controls.Add(this.tbSearch);
+            this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlSearch.Location = new System.Drawing.Point(0, 0);
+            this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlSearch.MinimumSize = new System.Drawing.Size(1, 1);
+            this.pnlSearch.Name = "pnlSearch";
+            this.pnlSearch.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlSearch.Radius = 10;
+            this.pnlSearch.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.pnlSearch.RectSize = 2;
+            this.pnlSearch.Size = new System.Drawing.Size(250, 34);
+            this.pnlSearch.TabIndex = 1;
+            this.pnlSearch.Text = null;
+            this.pnlSearch.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox2.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Magnifying;
+            this.pictureBox2.Location = new System.Drawing.Point(217, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(28, 24);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.tbSearch.IconSize = 18;
+            this.tbSearch.Location = new System.Drawing.Point(5, 5);
+            this.tbSearch.Margin = new System.Windows.Forms.Padding(0);
+            this.tbSearch.MaximumSize = new System.Drawing.Size(350, 26);
+            this.tbSearch.MinimumSize = new System.Drawing.Size(1, 16);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.tbSearch.Radius = 14;
+            this.tbSearch.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.tbSearch.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.tbSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbSearch.ShowText = false;
+            this.tbSearch.Size = new System.Drawing.Size(218, 24);
+            this.tbSearch.TabIndex = 0;
+            this.tbSearch.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tbSearch.Watermark = "";
             // 
             // separator
             // 
@@ -83,123 +193,131 @@ namespace ZiTyLot.GUI.Screens
             this.separator.Size = new System.Drawing.Size(1151, 4);
             this.separator.TabIndex = 2;
             // 
-            // BottomPnl
+            // pnlBottom
             // 
-            this.BottomPnl.BackColor = System.Drawing.Color.White;
-            this.BottomPnl.Controls.Add(this.table);
-            this.BottomPnl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BottomPnl.Location = new System.Drawing.Point(0, 58);
-            this.BottomPnl.Margin = new System.Windows.Forms.Padding(0);
-            this.BottomPnl.Name = "BottomPnl";
-            this.BottomPnl.Padding = new System.Windows.Forms.Padding(10);
-            this.BottomPnl.Size = new System.Drawing.Size(1151, 522);
-            this.BottomPnl.TabIndex = 3;
-            this.BottomPnl.Resize += new System.EventHandler(this.BottomPnl_Resize);
+            this.pnlBottom.BackColor = System.Drawing.Color.White;
+            this.pnlBottom.Controls.Add(this.tableRole);
+            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBottom.Location = new System.Drawing.Point(0, 58);
+            this.pnlBottom.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlBottom.Name = "pnlBottom";
+            this.pnlBottom.Padding = new System.Windows.Forms.Padding(10);
+            this.pnlBottom.Size = new System.Drawing.Size(1151, 522);
+            this.pnlBottom.TabIndex = 3;
+            this.pnlBottom.Resize += new System.EventHandler(this.BottomPnl_Resize);
             // 
-            // table
+            // tableRole
             // 
-            this.table.AllowUserToDeleteRows = false;
-            this.table.AllowUserToResizeColumns = false;
-            this.table.AllowUserToResizeRows = false;
-            this.table.BackgroundColor = System.Drawing.Color.White;
-            this.table.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.table.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.table.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.table.ColumnHeadersHeight = 34;
-            this.table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idCol,
-            this.nameCol,
-            this.descriptionCol,
-            this.viewCol,
-            this.editCol,
-            this.deleteCol});
-            this.table.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.table.DefaultCellStyle = dataGridViewCellStyle6;
-            this.table.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.table.GridColor = System.Drawing.Color.White;
-            this.table.Location = new System.Drawing.Point(10, 10);
-            this.table.Margin = new System.Windows.Forms.Padding(0);
-            this.table.Name = "table";
-            this.table.ReadOnly = true;
-            this.table.RowHeadersVisible = false;
-            this.table.RowHeadersWidth = 30;
-            this.table.RowTemplate.Height = 30;
-            this.table.Size = new System.Drawing.Size(1131, 502);
-            this.table.TabIndex = 1;
+            this.tableRole.AllowUserToDeleteRows = false;
+            this.tableRole.AllowUserToResizeColumns = false;
+            this.tableRole.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Helvetica", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.tableRole.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tableRole.BackgroundColor = System.Drawing.Color.White;
+            this.tableRole.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tableRole.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.tableRole.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableRole.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tableRole.ColumnHeadersHeight = 34;
+            this.tableRole.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colId,
+            this.colName,
+            this.colDescription,
+            this.colView,
+            this.colEdit,
+            this.colDelete});
+            this.tableRole.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableRole.DefaultCellStyle = dataGridViewCellStyle3;
+            this.tableRole.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableRole.GridColor = System.Drawing.Color.White;
+            this.tableRole.Location = new System.Drawing.Point(10, 10);
+            this.tableRole.Margin = new System.Windows.Forms.Padding(0);
+            this.tableRole.Name = "tableRole";
+            this.tableRole.ReadOnly = true;
+            this.tableRole.RowHeadersVisible = false;
+            this.tableRole.RowHeadersWidth = 30;
+            this.tableRole.RowTemplate.Height = 30;
+            this.tableRole.Size = new System.Drawing.Size(1131, 502);
+            this.tableRole.TabIndex = 1;
             // 
-            // idCol
+            // colId
             // 
-            this.idCol.HeaderText = "ID";
-            this.idCol.Name = "idCol";
-            this.idCol.ReadOnly = true;
-            this.idCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.idCol.Width = 30;
+            this.colId.HeaderText = "ID";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colId.Width = 30;
             // 
-            // nameCol
+            // colName
             // 
-            this.nameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameCol.HeaderText = "Name";
-            this.nameCol.MinimumWidth = 80;
-            this.nameCol.Name = "nameCol";
-            this.nameCol.ReadOnly = true;
-            this.nameCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colName.HeaderText = "Name";
+            this.colName.MinimumWidth = 80;
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // descriptionCol
+            // colDescription
             // 
-            this.descriptionCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descriptionCol.HeaderText = "Description";
-            this.descriptionCol.Name = "descriptionCol";
-            this.descriptionCol.ReadOnly = true;
+            this.colDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDescription.HeaderText = "Description";
+            this.colDescription.Name = "colDescription";
+            this.colDescription.ReadOnly = true;
             // 
-            // viewCol
+            // colView
             // 
-            this.viewCol.HeaderText = "";
-            this.viewCol.Name = "viewCol";
-            this.viewCol.ReadOnly = true;
-            this.viewCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.viewCol.Text = "View";
-            this.viewCol.Width = 30;
+            this.colView.HeaderText = "";
+            this.colView.Name = "colView";
+            this.colView.ReadOnly = true;
+            this.colView.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colView.Text = "View";
+            this.colView.Width = 30;
             // 
-            // editCol
+            // colEdit
             // 
-            this.editCol.HeaderText = "";
-            this.editCol.Name = "editCol";
-            this.editCol.ReadOnly = true;
-            this.editCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.editCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.editCol.Width = 30;
+            this.colEdit.HeaderText = "";
+            this.colEdit.Name = "colEdit";
+            this.colEdit.ReadOnly = true;
+            this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colEdit.Width = 30;
             // 
-            // deleteCol
+            // colDelete
             // 
-            this.deleteCol.HeaderText = "";
-            this.deleteCol.Name = "deleteCol";
-            this.deleteCol.ReadOnly = true;
-            this.deleteCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.deleteCol.Text = "Delete";
-            this.deleteCol.Width = 30;
+            this.colDelete.HeaderText = "";
+            this.colDelete.Name = "colDelete";
+            this.colDelete.ReadOnly = true;
+            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colDelete.Text = "Delete";
+            this.colDelete.Width = 30;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.BottomPnl);
+            this.panel2.Controls.Add(this.pnlBottom);
             this.panel2.Controls.Add(this.separator);
-            this.panel2.Controls.Add(this.TopPnl);
+            this.panel2.Controls.Add(this.pnlTop);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(10, 10);
             this.panel2.Name = "panel2";
@@ -215,157 +333,48 @@ namespace ZiTyLot.GUI.Screens
             this.panel5.Size = new System.Drawing.Size(110, 34);
             this.panel5.TabIndex = 0;
             // 
-            // uiPanel1
-            // 
-            this.uiPanel1.Controls.Add(this.buttonsPnl);
-            this.uiPanel1.Controls.Add(this.searchPnl);
-            this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.uiPanel1.FillColor = System.Drawing.Color.White;
-            this.uiPanel1.FillColor2 = System.Drawing.Color.White;
-            this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel1.Location = new System.Drawing.Point(761, 10);
-            this.uiPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel1.Name = "uiPanel1";
-            this.uiPanel1.RectColor = System.Drawing.Color.White;
-            this.uiPanel1.Size = new System.Drawing.Size(380, 34);
-            this.uiPanel1.TabIndex = 5;
-            this.uiPanel1.Text = null;
-            this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // searchPnl
-            // 
-            this.searchPnl.Controls.Add(this.pictureBox2);
-            this.searchPnl.Controls.Add(this.searchTb);
-            this.searchPnl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.searchPnl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchPnl.Location = new System.Drawing.Point(0, 0);
-            this.searchPnl.Margin = new System.Windows.Forms.Padding(0);
-            this.searchPnl.MinimumSize = new System.Drawing.Size(1, 1);
-            this.searchPnl.Name = "searchPnl";
-            this.searchPnl.Padding = new System.Windows.Forms.Padding(5);
-            this.searchPnl.Radius = 10;
-            this.searchPnl.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.searchPnl.RectSize = 2;
-            this.searchPnl.Size = new System.Drawing.Size(250, 34);
-            this.searchPnl.TabIndex = 1;
-            this.searchPnl.Text = null;
-            this.searchPnl.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Magnifying;
-            this.pictureBox2.Location = new System.Drawing.Point(217, 5);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(28, 24);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // searchTb
-            // 
-            this.searchTb.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.searchTb.Dock = System.Windows.Forms.DockStyle.Left;
-            this.searchTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.searchTb.IconSize = 18;
-            this.searchTb.Location = new System.Drawing.Point(5, 5);
-            this.searchTb.Margin = new System.Windows.Forms.Padding(0);
-            this.searchTb.MaximumSize = new System.Drawing.Size(350, 26);
-            this.searchTb.MinimumSize = new System.Drawing.Size(1, 16);
-            this.searchTb.Name = "searchTb";
-            this.searchTb.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.searchTb.Radius = 14;
-            this.searchTb.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.searchTb.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.searchTb.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.searchTb.ShowText = false;
-            this.searchTb.Size = new System.Drawing.Size(218, 24);
-            this.searchTb.TabIndex = 0;
-            this.searchTb.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.searchTb.Watermark = "";
-            // 
-            // buttonsPnl
-            // 
-            this.buttonsPnl.Controls.Add(this.addBtn);
-            this.buttonsPnl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonsPnl.Location = new System.Drawing.Point(250, 0);
-            this.buttonsPnl.Name = "buttonsPnl";
-            this.buttonsPnl.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonsPnl.Size = new System.Drawing.Size(130, 34);
-            this.buttonsPnl.TabIndex = 8;
-            // 
-            // addBtn
-            // 
-            this.addBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.addBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.addBtn.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.addBtn.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Plus;
-            this.addBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addBtn.Location = new System.Drawing.Point(10, 0);
-            this.addBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.addBtn.MinimumSize = new System.Drawing.Size(1, 1);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Padding = new System.Windows.Forms.Padding(14, 0, 8, 0);
-            this.addBtn.Radius = 10;
-            this.addBtn.RectColor = System.Drawing.Color.White;
-            this.addBtn.RectDisableColor = System.Drawing.Color.White;
-            this.addBtn.RectHoverColor = System.Drawing.Color.White;
-            this.addBtn.RectPressColor = System.Drawing.Color.White;
-            this.addBtn.RectSelectedColor = System.Drawing.Color.White;
-            this.addBtn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.addBtn.Size = new System.Drawing.Size(120, 34);
-            this.addBtn.TabIndex = 3;
-            this.addBtn.Text = "New role";
-            this.addBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.addBtn.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // RoleScreen
+            // RoleControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.Name = "RoleScreen";
+            this.Name = "RoleControl";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(1171, 600);
             this.Load += new System.EventHandler(this.RoleScreen_Load);
-            this.TopPnl.ResumeLayout(false);
-            this.BottomPnl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
-            this.panel2.ResumeLayout(false);
+            this.pnlTop.ResumeLayout(false);
             this.uiPanel1.ResumeLayout(false);
-            this.searchPnl.ResumeLayout(false);
+            this.pnlButton.ResumeLayout(false);
+            this.pnlSearch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.buttonsPnl.ResumeLayout(false);
+            this.pnlBottom.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tableRole)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Panel TopPnl;
+        private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Panel separator;
-        private System.Windows.Forms.Panel BottomPnl;
+        private System.Windows.Forms.Panel pnlBottom;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
-        private DataGridView table;
-        private DataGridViewTextBoxColumn idCol;
-        private DataGridViewTextBoxColumn nameCol;
-        private DataGridViewTextBoxColumn descriptionCol;
-        private DataGridViewButtonColumn viewCol;
-        private DataGridViewButtonColumn editCol;
-        private DataGridViewButtonColumn deleteCol;
+        private DataGridView tableRole;
+        private DataGridViewTextBoxColumn colId;
+        private DataGridViewTextBoxColumn colName;
+        private DataGridViewTextBoxColumn colDescription;
+        private DataGridViewButtonColumn colView;
+        private DataGridViewButtonColumn colEdit;
+        private DataGridViewButtonColumn colDelete;
         private Sunny.UI.UIPanel uiPanel1;
-        private Sunny.UI.UIPanel searchPnl;
+        private Sunny.UI.UIPanel pnlSearch;
         private PictureBox pictureBox2;
-        private Sunny.UI.UITextBox searchTb;
-        private Panel buttonsPnl;
-        private Sunny.UI.UISymbolButton addBtn;
+        private Sunny.UI.UITextBox tbSearch;
+        private Panel pnlButton;
+        private Sunny.UI.UISymbolButton btnAdd;
     }
 }
