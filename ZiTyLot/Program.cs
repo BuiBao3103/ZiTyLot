@@ -7,6 +7,7 @@ using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
 using ZiTyLot.Helper;
 using ZiTyLot.GUI;
+using ZiTyLot.GUI.Screens;
 namespace ZiTyLot
 {
     internal static class Program
