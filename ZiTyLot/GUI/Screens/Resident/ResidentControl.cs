@@ -20,53 +20,54 @@ namespace ZiTyLot.GUI.Screens
 
         private void ResidentScreen_Load(object sender, EventArgs e)
         {
-            TopPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, TopPnl.Width, TopPnl.Height, 10, 10));
+            pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
             BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
-
-            addBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, addBtn.Width, addBtn.Height, 10, 10));
-            allBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, allBtn.Width, allBtn.Height, 10,10));
-            maleBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, maleBtn.Width, maleBtn.Height, 10,10));
-            femaleBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, femaleBtn.Width, femaleBtn.Height, 10,10));
-
-            allBtn.Checked = true;
-            this.table.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
-            this.table.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
-            this.table.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
+            btnAdd.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnAdd.Width, btnAdd.Height, 10, 10));
+            this.tableResident.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
+            this.tableResident.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
+            this.tableResident.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
         }
         // Paint the header cell
         private void table_Paint(object sender, PaintEventArgs e)
         {
-            Rectangle firstHeaderCellRect = this.table.GetCellDisplayRectangle(this.table.Columns["viewCol"].Index, -1, true);
-            Rectangle lastHeaderCellRect = this.table.GetCellDisplayRectangle(this.table.Columns["deleteCol"].Index, -1, true);
+            Rectangle firstHeaderCellRect = this.tableResident.GetCellDisplayRectangle(this.tableResident.Columns["colView"].Index, -1, true);
+            Rectangle lastHeaderCellRect = this.tableResident.GetCellDisplayRectangle(this.tableResident.Columns["colDelete"].Index, -1, true);
             Rectangle mergedHeaderRect = new Rectangle(firstHeaderCellRect.X, firstHeaderCellRect.Y,lastHeaderCellRect.X + lastHeaderCellRect.Width - firstHeaderCellRect.X, firstHeaderCellRect.Height);
             e.Graphics.FillRectangle(new SolidBrush(Color.White), mergedHeaderRect);
-            TextRenderer.DrawText(e.Graphics, "Action", this.table.ColumnHeadersDefaultCellStyle.Font,
-                mergedHeaderRect, this.table.ColumnHeadersDefaultCellStyle.ForeColor,
+            TextRenderer.DrawText(e.Graphics, "Action", this.tableResident.ColumnHeadersDefaultCellStyle.Font,
+                mergedHeaderRect, this.tableResident.ColumnHeadersDefaultCellStyle.ForeColor,
                 TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
         }
         // Paint the cell
         private void table_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if ((e.ColumnIndex == table.Columns["viewCol"].Index ||
-                 e.ColumnIndex == table.Columns["editCol"].Index ||
-                 e.ColumnIndex == table.Columns["deleteCol"].Index) && e.RowIndex >= 0)
+            if ((e.ColumnIndex == tableResident.Columns["colView"].Index ||
+                 e.ColumnIndex == tableResident.Columns["colEdit"].Index ||
+                 e.ColumnIndex == tableResident.Columns["colDelete"].Index) && e.RowIndex >= 0)
             {
-                e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
+                if (e.RowIndex % 2 == 0)
+                {
+                    e.Graphics.FillRectangle(new SolidBrush(Color.WhiteSmoke), e.CellBounds);
+                }
+                else
+                {
+                    e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
+                }
                 Image icon = null;
-                if (e.ColumnIndex == table.Columns["viewCol"].Index)
+                if (e.ColumnIndex == tableResident.Columns["colView"].Index)
                 {
-                    icon = Properties.Resources.Icon_18x18px_View;  
+                    icon = Properties.Resources.Icon_18x18px_View;
                 }
-                else if (e.ColumnIndex == table.Columns["editCol"].Index)
+                else if (e.ColumnIndex == tableResident.Columns["colEdit"].Index)
                 {
-                    icon = Properties.Resources.Icon_18x18px_Edit;  
+                    icon = Properties.Resources.Icon_18x18px_Edit;
                 }
-                else if (e.ColumnIndex == table.Columns["deleteCol"].Index)
+                else if (e.ColumnIndex == tableResident.Columns["colDelete"].Index)
                 {
-                    icon = Properties.Resources.Icon_18x18px_Delete;  
+                    icon = Properties.Resources.Icon_18x18px_Delete;
                 }
-                int iconWidth = 16;  
-                int iconHeight = 16; 
+                int iconWidth = 16;
+                int iconHeight = 16;
                 int x = e.CellBounds.Left + (e.CellBounds.Width - iconWidth) / 2;
                 int y = e.CellBounds.Top + (e.CellBounds.Height - iconHeight) / 2;
                 if (icon != null)
@@ -81,15 +82,15 @@ namespace ZiTyLot.GUI.Screens
         {
             if (e.RowIndex >= 0)
             {
-                if (e.ColumnIndex == table.Columns["viewCol"].Index)
+                if (e.ColumnIndex == tableResident.Columns["colView"].Index)
                 {
                     MessageBox.Show("View button clicked for row " + e.RowIndex);
                 }
-                else if (e.ColumnIndex == table.Columns["editCol"].Index)
+                else if (e.ColumnIndex == tableResident.Columns["colEdit"].Index)
                 {
                     MessageBox.Show("Edit button clicked for row " + e.RowIndex);
                 }
-                else if (e.ColumnIndex == table.Columns["deleteCol"].Index)
+                else if (e.ColumnIndex == tableResident.Columns["colDelete"].Index)
                 {
                     MessageBox.Show("Delete button clicked for row " + e.RowIndex);
                 }
@@ -98,7 +99,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void TopPnl_Resize(object sender, EventArgs e)
         {
-            TopPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, TopPnl.Width, TopPnl.Height, 10, 10));
+            pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
         }
 
         private void BottomPnl_Resize(object sender, EventArgs e)
@@ -106,55 +107,6 @@ namespace ZiTyLot.GUI.Screens
             BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
         }
 
-        // All Filter CheckedChanged event handler
-        private void allFilter_CheckedChanged(object sender, EventArgs e)
-        {
-            if (allBtn.Checked)
-            {
-                allBtn.BackColor = Color.FromArgb(240, 118, 54);  
-                allBtn.ForeColor = Color.White;  
-                allBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_All_Active;  
-            }
-            else
-            {
-                allBtn.BackColor = Color.White;  
-                allBtn.ForeColor = Color.FromArgb(160, 160, 160); 
-                allBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_All; 
-            }
-        }
-
-        // male Filter CheckedChanged event handler
-        private void maleFilter_CheckedChanged(object sender, EventArgs e)
-        {
-            if (maleBtn.Checked)
-            {
-                maleBtn.BackColor = Color.FromArgb(240, 118, 54); 
-                maleBtn.ForeColor = Color.White;  
-                maleBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Male_Active;  
-            }
-            else
-            {
-                maleBtn.BackColor = Color.White;  
-                maleBtn.ForeColor = Color.FromArgb(160, 160, 160);  
-                maleBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Male;  
-            }
-        }
-
-        // female Filter CheckedChanged event handler
-        private void femaleFilter_CheckedChanged(object sender, EventArgs e)
-        {
-            if (femaleBtn.Checked)
-            {
-                femaleBtn.BackColor = Color.FromArgb(240, 118, 54);  
-                femaleBtn.ForeColor = Color.White;  
-                femaleBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Female_Active; 
-            }
-            else
-            {
-                femaleBtn.BackColor = Color.White;  
-                femaleBtn.ForeColor = Color.FromArgb(160, 160, 160);  
-                femaleBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Female;  
-            }
-        }
+        
     }
 }
