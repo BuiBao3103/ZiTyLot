@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.ENTITY;
@@ -19,15 +14,15 @@ namespace ZiTyLot.GUI.Screens
 
         ResidentBUS residentBUS = new ResidentBUS();
         Pageable pageable = new Pageable();
-        List<FilterCondition> filters= new List<FilterCondition>();
+        List<FilterCondition> filters = new List<FilterCondition>();
         Page<Resident> page;
 
         public ResidentControl()
         {
             InitializeComponent();
-            numberofitemsCb.SelectedIndex = 0; 
+            numberofitemsCb.SelectedIndex = 0;
             page = residentBUS.GetAllPagination(pageable, filters);
-            currentpageTb.Text = "1"; 
+            currentpageTb.Text = "1";
             label1.Text = "/" + page.TotalPages;
             LoadPageToTable();
         }

@@ -1,32 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZiTyLot.BUS;
+using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
+using ZiTyLot.Helper;
 
 namespace ZiTyLot.GUI.Screens
 {
     public partial class AreaControl : UserControl
     {
+        ParkingLotBUS parkingLotBUS = new ParkingLotBUS();
+        Pageable pageable = new Pageable();
+        List<FilterCondition> filters = new List<FilterCondition>();
+        Page<ParkingLot> page;
         public AreaControl()
         {
             InitializeComponent();
+            numberofitemsCb.SelectedIndex = 0;
+            page = parkingLotBUS.GetAllPagination(pageable, filters);
+            currentpageTb.Text = "1";
+            label1.Text = "/" + page.TotalPages;
+            LoadPageToTable();
         }
 
+        // load data to table
+        private void LoadPageToTable()
+        {
+            table.Rows.Clear();
+            foreach (ParkingLot parkingLot in page.Content)
+            {
+                // calculate the remaining number of slots
+                table.Rows.Add(parkingLot.Id, parkingLot.Parking_lot_type, parkingLot.Total_slot, parkingLot.Status);
+            }
+        }
         private void AreaScreen_Load(object sender, EventArgs e)
         {
             TopPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, TopPnl.Width, TopPnl.Height, 10, 10));
             BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
 
             addBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, addBtn.Width, addBtn.Height, 10, 10));
-            allBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, allBtn.Width, allBtn.Height, 10,10));
-            residentBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, residentBtn.Width, residentBtn.Height, 10,10));
-            vistorBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, vistorBtn.Width, vistorBtn.Height, 10,10));
+            allBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, allBtn.Width, allBtn.Height, 10, 10));
+            residentBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, residentBtn.Width, residentBtn.Height, 10, 10));
+            vistorBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, vistorBtn.Width, vistorBtn.Height, 10, 10));
 
             allBtn.Checked = true;
             this.allBtn.CheckedChanged += new System.EventHandler(this.allFilter_CheckedChanged);
@@ -41,7 +58,7 @@ namespace ZiTyLot.GUI.Screens
         {
             Rectangle firstHeaderCellRect = this.table.GetCellDisplayRectangle(this.table.Columns["viewCol"].Index, -1, true);
             Rectangle lastHeaderCellRect = this.table.GetCellDisplayRectangle(this.table.Columns["deleteCol"].Index, -1, true);
-            Rectangle mergedHeaderRect = new Rectangle(firstHeaderCellRect.X, firstHeaderCellRect.Y,lastHeaderCellRect.X + lastHeaderCellRect.Width - firstHeaderCellRect.X, firstHeaderCellRect.Height);
+            Rectangle mergedHeaderRect = new Rectangle(firstHeaderCellRect.X, firstHeaderCellRect.Y, lastHeaderCellRect.X + lastHeaderCellRect.Width - firstHeaderCellRect.X, firstHeaderCellRect.Height);
             e.Graphics.FillRectangle(new SolidBrush(Color.White), mergedHeaderRect);
             TextRenderer.DrawText(e.Graphics, "Action", this.table.ColumnHeadersDefaultCellStyle.Font,
                 mergedHeaderRect, this.table.ColumnHeadersDefaultCellStyle.ForeColor,
@@ -55,21 +72,21 @@ namespace ZiTyLot.GUI.Screens
                  e.ColumnIndex == table.Columns["deleteCol"].Index) && e.RowIndex >= 0)
             {
                 e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
-                Image icon = null;
+                System.Drawing.Image icon = null;
                 if (e.ColumnIndex == table.Columns["viewCol"].Index)
                 {
-                    icon = Properties.Resources.Icon_18x18px_View;  
+                    icon = Properties.Resources.Icon_18x18px_View;
                 }
                 else if (e.ColumnIndex == table.Columns["editCol"].Index)
                 {
-                    icon = Properties.Resources.Icon_18x18px_Edit;  
+                    icon = Properties.Resources.Icon_18x18px_Edit;
                 }
                 else if (e.ColumnIndex == table.Columns["deleteCol"].Index)
                 {
-                    icon = Properties.Resources.Icon_18x18px_Delete;  
+                    icon = Properties.Resources.Icon_18x18px_Delete;
                 }
-                int iconWidth = 16;  
-                int iconHeight = 16; 
+                int iconWidth = 16;
+                int iconHeight = 16;
                 int x = e.CellBounds.Left + (e.CellBounds.Width - iconWidth) / 2;
                 int y = e.CellBounds.Top + (e.CellBounds.Height - iconHeight) / 2;
                 if (icon != null)
@@ -114,15 +131,15 @@ namespace ZiTyLot.GUI.Screens
         {
             if (allBtn.Checked)
             {
-                allBtn.BackColor = Color.FromArgb(240, 118, 54);  
-                allBtn.ForeColor = Color.White;  
-                allBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_All_Active;  
+                allBtn.BackColor = Color.FromArgb(240, 118, 54);
+                allBtn.ForeColor = Color.White;
+                allBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_All_Active;
             }
             else
             {
-                allBtn.BackColor = Color.White;  
-                allBtn.ForeColor = Color.FromArgb(160, 160, 160); 
-                allBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_All; 
+                allBtn.BackColor = Color.White;
+                allBtn.ForeColor = Color.FromArgb(160, 160, 160);
+                allBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_All;
             }
         }
         // CheckIn Filter CheckedChanged event handler
@@ -130,15 +147,15 @@ namespace ZiTyLot.GUI.Screens
         {
             if (residentBtn.Checked)
             {
-                residentBtn.BackColor = Color.FromArgb(240, 118, 54); 
-                residentBtn.ForeColor = Color.White;  
-                residentBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Resident_Active;  
+                residentBtn.BackColor = Color.FromArgb(240, 118, 54);
+                residentBtn.ForeColor = Color.White;
+                residentBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Resident_Active;
             }
             else
             {
-                residentBtn.BackColor = Color.White;  
-                residentBtn.ForeColor = Color.FromArgb(160, 160, 160);  
-                residentBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Resident;  
+                residentBtn.BackColor = Color.White;
+                residentBtn.ForeColor = Color.FromArgb(160, 160, 160);
+                residentBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Resident;
             }
         }
 
@@ -147,15 +164,56 @@ namespace ZiTyLot.GUI.Screens
         {
             if (vistorBtn.Checked)
             {
-                vistorBtn.BackColor = Color.FromArgb(240, 118, 54);  
-                vistorBtn.ForeColor = Color.White;  
-                vistorBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Vistor_Active; 
+                vistorBtn.BackColor = Color.FromArgb(240, 118, 54);
+                vistorBtn.ForeColor = Color.White;
+                vistorBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Vistor_Active;
             }
             else
             {
-                vistorBtn.BackColor = Color.White;  
-                vistorBtn.ForeColor = Color.FromArgb(160, 160, 160);  
-                vistorBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Visitor;  
+                vistorBtn.BackColor = Color.White;
+                vistorBtn.ForeColor = Color.FromArgb(160, 160, 160);
+                vistorBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Visitor;
+            }
+        }
+
+        private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedValue = numberofitemsCb.SelectedItem.ToString();
+            int pageSize = int.Parse(selectedValue.Split(' ')[0]);
+            pageable.PageNumber = 1;
+            pageable.PageSize = pageSize;
+            page = parkingLotBUS.GetAllPagination(pageable, filters);
+            currentpageTb.Text = "1";
+            label1.Text = "/" + page.TotalPages;
+            LoadPageToTable();
+        }
+
+        private void ChangePage(int pageNumber)
+        {
+            if (pageNumber < 1 || pageNumber > page.TotalPages)
+            {
+                return;
+            }
+            pageable.PageNumber = pageNumber;
+            page = parkingLotBUS.GetAllPagination(pageable, filters);
+            LoadPageToTable();
+            currentpageTb.Text = pageNumber.ToString();
+        }
+        private void nextBtn_Click(object sender, EventArgs e)
+        {
+            int currentPage = int.Parse(currentpageTb.Text);
+            if (currentPage < page.TotalPages)
+            {
+                ChangePage(currentPage + 1);
+            }
+        }
+
+        private void previousBtn_Click(object sender, EventArgs e)
+        {
+            int currentPage = int.Parse(currentpageTb.Text);
+            if (currentPage > 1)
+            {
+                ChangePage(currentPage - 1);
             }
         }
     }
