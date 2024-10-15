@@ -350,6 +350,9 @@
     <EmbeddedResource Include="GUI\Screens\Scanning\CheckInForm.resx">
       <DependentUpon>CheckInForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\Scanning\CheckOutForm.resx">
+      <DependentUpon>CheckOutForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\Scanning\ScanningControl.resx">
       <DependentUpon>ScanningControl.cs</DependentUpon>
     </EmbeddedResource>
