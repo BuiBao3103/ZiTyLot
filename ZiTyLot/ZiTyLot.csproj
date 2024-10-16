@@ -144,7 +144,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <Compile Include="BUS\ABUS.cs" />
     <Compile Include="BUS\AccountBUS.cs" />
     <Compile Include="BUS\AuthManager.cs" />
@@ -255,6 +254,18 @@
     <Compile Include="GUI\Screens\Area\AreaControl.Designer.cs">
       <DependentUpon>AreaControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Screens\Bill\BillDetailControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\Bill\BillDetailControl.Designer.cs">
+      <DependentUpon>BillDetailControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\IssueDetailRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\IssueDetailRow.Designer.cs">
+      <DependentUpon>IssueDetailRow.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Screens\Scanning\CheckInForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -347,6 +358,12 @@
     <EmbeddedResource Include="GUI\Screens\Area\AreaControl.resx">
       <DependentUpon>AreaControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\Bill\BillDetailControl.resx">
+      <DependentUpon>BillDetailControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\IssueDetailRow.resx">
+      <DependentUpon>IssueDetailRow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\Scanning\CheckInForm.resx">
       <DependentUpon>CheckInForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -390,6 +407,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="App.config" />
     <None Include="App.Designer.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
