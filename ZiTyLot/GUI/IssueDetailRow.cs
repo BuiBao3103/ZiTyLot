@@ -16,5 +16,10 @@ namespace ZiTyLot.GUI.Screens.Bill
         {
             InitializeComponent();
         }
+
+        private void uiPanel1_Resize(object sender, EventArgs e)
+        {
+
+        }
     }
 }

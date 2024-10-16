@@ -28,19 +28,18 @@ namespace ZiTyLot.GUI.Screens.Bill
             IssueDetailRow newRow = new IssueDetailRow();
             newRow.Dock = DockStyle.Top;
             pnlIssueTable.Controls.Add(newRow);
-            newRow.Width = pnlIssueTable.Width - 40;
             if (pnlBillDetail.RowStyles[1].Height < 240)
                 pnlBillDetail.RowStyles[1].Height += 120;
 
         }
-        private void pnlIssueTable_Resize(object sender, EventArgs e)
+
+        private void pnlIssueTable_SizeChanged(object sender, EventArgs e)
         {
             foreach (Control control in pnlIssueTable.Controls)
             {
-                control.Width = pnlIssueTable.Width - 40; // Adjust width based on panel size
+                control.Width = pnlIssueTable.Width - 40;
+                Console.WriteLine(control.Name + " " + control.Width);// Adjust width based on panel size
             }
         }
-
-
     }
 }
