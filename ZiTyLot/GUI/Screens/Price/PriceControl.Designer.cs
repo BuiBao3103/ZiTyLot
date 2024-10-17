@@ -36,6 +36,9 @@ namespace ZiTyLot.GUI.Screens
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.pnlSearch = new Sunny.UI.UIPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.tbSearch = new Sunny.UI.UITextBox();
             this.pnlButton = new System.Windows.Forms.Panel();
             this.btnAdd = new Sunny.UI.UISymbolButton();
             this.separator = new System.Windows.Forms.Panel();
@@ -50,16 +53,13 @@ namespace ZiTyLot.GUI.Screens
             this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pnlSearch = new Sunny.UI.UIPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.tbSearch = new Sunny.UI.UITextBox();
             this.pnlTop.SuspendLayout();
+            this.pnlSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlButton.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableVehicalPrice)).BeginInit();
             this.panel2.SuspendLayout();
-            this.pnlSearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -74,6 +74,59 @@ namespace ZiTyLot.GUI.Screens
             this.pnlTop.Size = new System.Drawing.Size(1151, 54);
             this.pnlTop.TabIndex = 1;
             this.pnlTop.Resize += new System.EventHandler(this.TopPnl_Resize);
+            // 
+            // pnlSearch
+            // 
+            this.pnlSearch.Controls.Add(this.pictureBox2);
+            this.pnlSearch.Controls.Add(this.tbSearch);
+            this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlSearch.Location = new System.Drawing.Point(691, 10);
+            this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlSearch.MinimumSize = new System.Drawing.Size(1, 1);
+            this.pnlSearch.Name = "pnlSearch";
+            this.pnlSearch.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlSearch.Radius = 10;
+            this.pnlSearch.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.pnlSearch.RectSize = 2;
+            this.pnlSearch.Size = new System.Drawing.Size(250, 34);
+            this.pnlSearch.TabIndex = 8;
+            this.pnlSearch.Text = null;
+            this.pnlSearch.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox2.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Magnifying;
+            this.pictureBox2.Location = new System.Drawing.Point(217, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(28, 24);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.tbSearch.IconSize = 18;
+            this.tbSearch.Location = new System.Drawing.Point(5, 5);
+            this.tbSearch.Margin = new System.Windows.Forms.Padding(0);
+            this.tbSearch.MaximumSize = new System.Drawing.Size(350, 26);
+            this.tbSearch.MinimumSize = new System.Drawing.Size(1, 16);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.tbSearch.Radius = 14;
+            this.tbSearch.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.tbSearch.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.tbSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbSearch.ShowText = false;
+            this.tbSearch.Size = new System.Drawing.Size(218, 24);
+            this.tbSearch.TabIndex = 0;
+            this.tbSearch.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tbSearch.Watermark = "";
             // 
             // pnlButton
             // 
@@ -108,6 +161,7 @@ namespace ZiTyLot.GUI.Screens
             this.btnAdd.RectPressColor = System.Drawing.Color.White;
             this.btnAdd.RectSelectedColor = System.Drawing.Color.White;
             this.btnAdd.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnAdd.RectSize = 2;
             this.btnAdd.Size = new System.Drawing.Size(190, 34);
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "New vehical/price";
@@ -175,7 +229,7 @@ namespace ZiTyLot.GUI.Screens
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Helvetica", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -273,59 +327,6 @@ namespace ZiTyLot.GUI.Screens
             this.panel5.Size = new System.Drawing.Size(110, 34);
             this.panel5.TabIndex = 0;
             // 
-            // pnlSearch
-            // 
-            this.pnlSearch.Controls.Add(this.pictureBox2);
-            this.pnlSearch.Controls.Add(this.tbSearch);
-            this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlSearch.Location = new System.Drawing.Point(691, 10);
-            this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlSearch.MinimumSize = new System.Drawing.Size(1, 1);
-            this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlSearch.Radius = 10;
-            this.pnlSearch.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.pnlSearch.RectSize = 2;
-            this.pnlSearch.Size = new System.Drawing.Size(250, 34);
-            this.pnlSearch.TabIndex = 8;
-            this.pnlSearch.Text = null;
-            this.pnlSearch.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Magnifying;
-            this.pictureBox2.Location = new System.Drawing.Point(217, 5);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(28, 24);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // tbSearch
-            // 
-            this.tbSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbSearch.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.tbSearch.IconSize = 18;
-            this.tbSearch.Location = new System.Drawing.Point(5, 5);
-            this.tbSearch.Margin = new System.Windows.Forms.Padding(0);
-            this.tbSearch.MaximumSize = new System.Drawing.Size(350, 26);
-            this.tbSearch.MinimumSize = new System.Drawing.Size(1, 16);
-            this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.tbSearch.Radius = 14;
-            this.tbSearch.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.tbSearch.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.tbSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbSearch.ShowText = false;
-            this.tbSearch.Size = new System.Drawing.Size(218, 24);
-            this.tbSearch.TabIndex = 0;
-            this.tbSearch.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tbSearch.Watermark = "";
-            // 
             // PriceControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,12 +339,12 @@ namespace ZiTyLot.GUI.Screens
             this.Size = new System.Drawing.Size(1171, 600);
             this.Load += new System.EventHandler(this.PriceScreen_Load);
             this.pnlTop.ResumeLayout(false);
+            this.pnlSearch.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlButton.ResumeLayout(false);
             this.pnlBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tableVehicalPrice)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.pnlSearch.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

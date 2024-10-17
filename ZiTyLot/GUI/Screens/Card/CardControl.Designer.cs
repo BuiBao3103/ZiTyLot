@@ -53,6 +53,18 @@ namespace ZiTyLot.GUI.Screens
             this.btnAll = new System.Windows.Forms.RadioButton();
             this.separator = new System.Windows.Forms.Panel();
             this.pnlBottom = new System.Windows.Forms.Panel();
+            this.pnlPagination = new System.Windows.Forms.Panel();
+            this.pnlLeft = new System.Windows.Forms.Panel();
+            this.uiPanel2 = new Sunny.UI.UIPanel();
+            this.cbNumberofitem = new Sunny.UI.UIComboBox();
+            this.pnlRight = new System.Windows.Forms.Panel();
+            this.pnlNext = new System.Windows.Forms.Panel();
+            this.btnNext = new Sunny.UI.UISymbolButton();
+            this.pnlCurrentPage = new System.Windows.Forms.Panel();
+            this.lbTotalpage = new System.Windows.Forms.Label();
+            this.tbCurrentpage = new Sunny.UI.UITextBox();
+            this.pnlPrevious = new System.Windows.Forms.Panel();
+            this.btnPrevious = new Sunny.UI.UISymbolButton();
             this.tableCard = new System.Windows.Forms.DataGridView();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRfid = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,18 +79,6 @@ namespace ZiTyLot.GUI.Screens
             this.menuItemImport = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemExport = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemDownload = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlPagination = new System.Windows.Forms.Panel();
-            this.pnlLeft = new System.Windows.Forms.Panel();
-            this.uiPanel2 = new Sunny.UI.UIPanel();
-            this.cbNumberofitem = new Sunny.UI.UIComboBox();
-            this.pnlRight = new System.Windows.Forms.Panel();
-            this.pnlNext = new System.Windows.Forms.Panel();
-            this.btnNext = new Sunny.UI.UISymbolButton();
-            this.pnlCurrentPage = new System.Windows.Forms.Panel();
-            this.lbTotalpage = new System.Windows.Forms.Label();
-            this.tbCurrentpage = new Sunny.UI.UITextBox();
-            this.pnlPrevious = new System.Windows.Forms.Panel();
-            this.btnPrevious = new Sunny.UI.UISymbolButton();
             this.pnlTop.SuspendLayout();
             this.uiPanel1.SuspendLayout();
             this.pnlSearch.SuspendLayout();
@@ -87,9 +87,6 @@ namespace ZiTyLot.GUI.Screens
             this.pnlButton.SuspendLayout();
             this.pnlTabpane.SuspendLayout();
             this.pnlBottom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tableCard)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.menuMore.SuspendLayout();
             this.pnlPagination.SuspendLayout();
             this.pnlLeft.SuspendLayout();
             this.uiPanel2.SuspendLayout();
@@ -97,6 +94,9 @@ namespace ZiTyLot.GUI.Screens
             this.pnlNext.SuspendLayout();
             this.pnlCurrentPage.SuspendLayout();
             this.pnlPrevious.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableCard)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.menuMore.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -305,6 +305,7 @@ namespace ZiTyLot.GUI.Screens
             this.btnAdd.RectPressColor = System.Drawing.Color.White;
             this.btnAdd.RectSelectedColor = System.Drawing.Color.White;
             this.btnAdd.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnAdd.RectSize = 2;
             this.btnAdd.Size = new System.Drawing.Size(120, 34);
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "New card";
@@ -488,175 +489,6 @@ namespace ZiTyLot.GUI.Screens
             this.pnlBottom.Size = new System.Drawing.Size(1093, 522);
             this.pnlBottom.TabIndex = 3;
             this.pnlBottom.Resize += new System.EventHandler(this.BottomPnl_Resize);
-            // 
-            // tableCard
-            // 
-            this.tableCard.AllowUserToDeleteRows = false;
-            this.tableCard.AllowUserToResizeColumns = false;
-            this.tableCard.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Helvetica", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tableCard.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.tableCard.BackgroundColor = System.Drawing.Color.White;
-            this.tableCard.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tableCard.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.tableCard.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableCard.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.tableCard.ColumnHeadersHeight = 34;
-            this.tableCard.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colId,
-            this.colRfid,
-            this.colType,
-            this.colStatus,
-            this.colView,
-            this.colEdit,
-            this.colDelete});
-            this.tableCard.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Helvetica", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableCard.DefaultCellStyle = dataGridViewCellStyle3;
-            this.tableCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableCard.GridColor = System.Drawing.Color.White;
-            this.tableCard.Location = new System.Drawing.Point(10, 10);
-            this.tableCard.Margin = new System.Windows.Forms.Padding(0);
-            this.tableCard.Name = "tableCard";
-            this.tableCard.ReadOnly = true;
-            this.tableCard.RowHeadersVisible = false;
-            this.tableCard.RowHeadersWidth = 30;
-            this.tableCard.RowTemplate.Height = 30;
-            this.tableCard.Size = new System.Drawing.Size(1073, 502);
-            this.tableCard.TabIndex = 1;
-            // 
-            // colId
-            // 
-            this.colId.HeaderText = "ID";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colId.Width = 30;
-            // 
-            // colRfid
-            // 
-            this.colRfid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRfid.HeaderText = "RFID";
-            this.colRfid.MinimumWidth = 80;
-            this.colRfid.Name = "colRfid";
-            this.colRfid.ReadOnly = true;
-            this.colRfid.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colType
-            // 
-            this.colType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colType.HeaderText = "Type";
-            this.colType.Name = "colType";
-            this.colType.ReadOnly = true;
-            // 
-            // colStatus
-            // 
-            this.colStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colStatus.HeaderText = "Status";
-            this.colStatus.Name = "colStatus";
-            this.colStatus.ReadOnly = true;
-            // 
-            // colView
-            // 
-            this.colView.HeaderText = "";
-            this.colView.Name = "colView";
-            this.colView.ReadOnly = true;
-            this.colView.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colView.Text = "View";
-            this.colView.Width = 30;
-            // 
-            // colEdit
-            // 
-            this.colEdit.HeaderText = "";
-            this.colEdit.Name = "colEdit";
-            this.colEdit.ReadOnly = true;
-            this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colEdit.Text = "Edit";
-            this.colEdit.Width = 30;
-            // 
-            // colDelete
-            // 
-            this.colDelete.HeaderText = "";
-            this.colDelete.Name = "colDelete";
-            this.colDelete.ReadOnly = true;
-            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colDelete.Text = "Delete";
-            this.colDelete.Width = 30;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.pnlBottom);
-            this.panel2.Controls.Add(this.separator);
-            this.panel2.Controls.Add(this.pnlTop);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(10, 10);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1093, 580);
-            this.panel2.TabIndex = 2;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(110, 34);
-            this.panel5.TabIndex = 0;
-            // 
-            // menuMore
-            // 
-            this.menuMore.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.menuMore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.menuMore.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuItemImport,
-            this.menuItemExport,
-            this.menuItemDownload});
-            this.menuMore.Name = "settingMenu";
-            this.menuMore.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuMore.ShowImageMargin = false;
-            this.menuMore.Size = new System.Drawing.Size(125, 76);
-            // 
-            // menuItemImport
-            // 
-            this.menuItemImport.BackColor = System.Drawing.Color.White;
-            this.menuItemImport.Name = "menuItemImport";
-            this.menuItemImport.Size = new System.Drawing.Size(124, 24);
-            this.menuItemImport.Text = "Import";
-            this.menuItemImport.Click += new System.EventHandler(this.logOutMenuItem_Click);
-            // 
-            // menuItemExport
-            // 
-            this.menuItemExport.BackColor = System.Drawing.Color.White;
-            this.menuItemExport.Name = "menuItemExport";
-            this.menuItemExport.Size = new System.Drawing.Size(124, 24);
-            this.menuItemExport.Text = "Export";
-            // 
-            // menuItemDownload
-            // 
-            this.menuItemDownload.Name = "menuItemDownload";
-            this.menuItemDownload.Size = new System.Drawing.Size(124, 24);
-            this.menuItemDownload.Text = "Download";
             // 
             // pnlPagination
             // 
@@ -874,6 +706,175 @@ namespace ZiTyLot.GUI.Screens
             this.btnPrevious.TabIndex = 4;
             this.btnPrevious.TipsFont = new System.Drawing.Font("Helvetica Rounded", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // tableCard
+            // 
+            this.tableCard.AllowUserToDeleteRows = false;
+            this.tableCard.AllowUserToResizeColumns = false;
+            this.tableCard.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Helvetica", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tableCard.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tableCard.BackgroundColor = System.Drawing.Color.White;
+            this.tableCard.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tableCard.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.tableCard.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableCard.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tableCard.ColumnHeadersHeight = 34;
+            this.tableCard.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colId,
+            this.colRfid,
+            this.colType,
+            this.colStatus,
+            this.colView,
+            this.colEdit,
+            this.colDelete});
+            this.tableCard.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Helvetica", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableCard.DefaultCellStyle = dataGridViewCellStyle3;
+            this.tableCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableCard.GridColor = System.Drawing.Color.White;
+            this.tableCard.Location = new System.Drawing.Point(10, 10);
+            this.tableCard.Margin = new System.Windows.Forms.Padding(0);
+            this.tableCard.Name = "tableCard";
+            this.tableCard.ReadOnly = true;
+            this.tableCard.RowHeadersVisible = false;
+            this.tableCard.RowHeadersWidth = 30;
+            this.tableCard.RowTemplate.Height = 30;
+            this.tableCard.Size = new System.Drawing.Size(1073, 502);
+            this.tableCard.TabIndex = 1;
+            // 
+            // colId
+            // 
+            this.colId.HeaderText = "ID";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colId.Width = 30;
+            // 
+            // colRfid
+            // 
+            this.colRfid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRfid.HeaderText = "RFID";
+            this.colRfid.MinimumWidth = 80;
+            this.colRfid.Name = "colRfid";
+            this.colRfid.ReadOnly = true;
+            this.colRfid.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colType
+            // 
+            this.colType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colType.HeaderText = "Type";
+            this.colType.Name = "colType";
+            this.colType.ReadOnly = true;
+            // 
+            // colStatus
+            // 
+            this.colStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
+            // 
+            // colView
+            // 
+            this.colView.HeaderText = "";
+            this.colView.Name = "colView";
+            this.colView.ReadOnly = true;
+            this.colView.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colView.Text = "View";
+            this.colView.Width = 30;
+            // 
+            // colEdit
+            // 
+            this.colEdit.HeaderText = "";
+            this.colEdit.Name = "colEdit";
+            this.colEdit.ReadOnly = true;
+            this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEdit.Text = "Edit";
+            this.colEdit.Width = 30;
+            // 
+            // colDelete
+            // 
+            this.colDelete.HeaderText = "";
+            this.colDelete.Name = "colDelete";
+            this.colDelete.ReadOnly = true;
+            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colDelete.Text = "Delete";
+            this.colDelete.Width = 30;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.pnlBottom);
+            this.panel2.Controls.Add(this.separator);
+            this.panel2.Controls.Add(this.pnlTop);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(10, 10);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1093, 580);
+            this.panel2.TabIndex = 2;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(110, 34);
+            this.panel5.TabIndex = 0;
+            // 
+            // menuMore
+            // 
+            this.menuMore.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.menuMore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.menuMore.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItemImport,
+            this.menuItemExport,
+            this.menuItemDownload});
+            this.menuMore.Name = "settingMenu";
+            this.menuMore.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuMore.ShowImageMargin = false;
+            this.menuMore.Size = new System.Drawing.Size(125, 76);
+            // 
+            // menuItemImport
+            // 
+            this.menuItemImport.BackColor = System.Drawing.Color.White;
+            this.menuItemImport.Name = "menuItemImport";
+            this.menuItemImport.Size = new System.Drawing.Size(124, 24);
+            this.menuItemImport.Text = "Import";
+            this.menuItemImport.Click += new System.EventHandler(this.logOutMenuItem_Click);
+            // 
+            // menuItemExport
+            // 
+            this.menuItemExport.BackColor = System.Drawing.Color.White;
+            this.menuItemExport.Name = "menuItemExport";
+            this.menuItemExport.Size = new System.Drawing.Size(124, 24);
+            this.menuItemExport.Text = "Export";
+            // 
+            // menuItemDownload
+            // 
+            this.menuItemDownload.Name = "menuItemDownload";
+            this.menuItemDownload.Size = new System.Drawing.Size(124, 24);
+            this.menuItemDownload.Text = "Download";
+            // 
             // CardControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -894,9 +895,6 @@ namespace ZiTyLot.GUI.Screens
             this.pnlTabpane.ResumeLayout(false);
             this.pnlTabpane.PerformLayout();
             this.pnlBottom.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tableCard)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.menuMore.ResumeLayout(false);
             this.pnlPagination.ResumeLayout(false);
             this.pnlLeft.ResumeLayout(false);
             this.uiPanel2.ResumeLayout(false);
@@ -905,6 +903,9 @@ namespace ZiTyLot.GUI.Screens
             this.pnlCurrentPage.ResumeLayout(false);
             this.pnlCurrentPage.PerformLayout();
             this.pnlPrevious.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tableCard)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.menuMore.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
