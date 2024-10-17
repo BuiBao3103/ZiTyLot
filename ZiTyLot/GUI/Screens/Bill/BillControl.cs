@@ -11,6 +11,7 @@ using ZiTyLot.BUS;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.Helper;
+using ZiTyLot.GUI.Screens.Bill;
 
 namespace ZiTyLot.GUI.Screens
 {
@@ -32,48 +33,50 @@ namespace ZiTyLot.GUI.Screens
 
         private void BillScreen_Load(object sender, EventArgs e)
         {
-            TopPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, TopPnl.Width, TopPnl.Height, 10, 10));
-            BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
+            pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
+            pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
 
-            addBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, addBtn.Width, addBtn.Height, 10, 10));
-            
-            this.table.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
-            this.table.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
-            this.table.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
+            btnAdd.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnAdd.Width, btnAdd.Height, 10, 10));
+
+            this.tableBill.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
+            this.tableBill.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
+            this.tableBill.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
         }
         // Paint the header cell
         private void table_Paint(object sender, PaintEventArgs e)
         {
-            Rectangle firstHeaderCellRect = this.table.GetCellDisplayRectangle(this.table.Columns["viewCol"].Index, -1, true);
-            Rectangle lastHeaderCellRect = this.table.GetCellDisplayRectangle(this.table.Columns["deleteCol"].Index, -1, true);
-            Rectangle mergedHeaderRect = new Rectangle(firstHeaderCellRect.X, firstHeaderCellRect.Y,lastHeaderCellRect.X + lastHeaderCellRect.Width - firstHeaderCellRect.X, firstHeaderCellRect.Height);
+            Rectangle firstHeaderCellRect = this.tableBill.GetCellDisplayRectangle(this.tableBill.Columns["colView"].Index, -1, true);
+            Rectangle lastHeaderCellRect = this.tableBill.GetCellDisplayRectangle(this.tableBill.Columns["colDelete"].Index, -1, true);
+            Rectangle mergedHeaderRect = new Rectangle(firstHeaderCellRect.X, firstHeaderCellRect.Y, lastHeaderCellRect.X + lastHeaderCellRect.Width - firstHeaderCellRect.X, firstHeaderCellRect.Height);
             e.Graphics.FillRectangle(new SolidBrush(Color.White), mergedHeaderRect);
-            TextRenderer.DrawText(e.Graphics, "Action", this.table.ColumnHeadersDefaultCellStyle.Font,
-                mergedHeaderRect, this.table.ColumnHeadersDefaultCellStyle.ForeColor,
+            TextRenderer.DrawText(e.Graphics, "Action", this.tableBill.ColumnHeadersDefaultCellStyle.Font,
+                mergedHeaderRect, this.tableBill.ColumnHeadersDefaultCellStyle.ForeColor,
                 TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
         }
-        // Paint the cell
-        private void table_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+       private void table_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if ((e.ColumnIndex == table.Columns["viewCol"].Index ||
-                 e.ColumnIndex == table.Columns["deleteCol"].Index) && e.RowIndex >= 0)
+            if ((e.ColumnIndex == tableBill.Columns["colView"].Index ||
+                 e.ColumnIndex == tableBill.Columns["colDelete"].Index) && e.RowIndex >= 0)
             {
-                e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
-                System.Drawing.Image icon = null;
-                if (e.ColumnIndex == table.Columns["viewCol"].Index)
+                if (e.RowIndex % 2 == 0)
                 {
-                    icon = Properties.Resources.Icon_18x18px_View;  
+                    e.Graphics.FillRectangle(new SolidBrush(Color.WhiteSmoke), e.CellBounds);
                 }
-                //else if (e.ColumnIndex == table.Columns["editCol"].Index)
-                //{
-                //    icon = Properties.Resources.Icon_18x18px_Edit;  
-                //}
-                else if (e.ColumnIndex == table.Columns["deleteCol"].Index)
+                else
                 {
-                    icon = Properties.Resources.Icon_18x18px_Delete;  
+                    e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
                 }
-                int iconWidth = 16;  
-                int iconHeight = 16; 
+                Image icon = null;
+                if (e.ColumnIndex == tableBill.Columns["colView"].Index)
+                {
+                    icon = Properties.Resources.Icon_18x18px_View;
+                }
+                else if (e.ColumnIndex == tableBill.Columns["colDelete"].Index)
+                {
+                    icon = Properties.Resources.Icon_18x18px_Delete;
+                }
+                int iconWidth = 16;
+                int iconHeight = 16;
                 int x = e.CellBounds.Left + (e.CellBounds.Width - iconWidth) / 2;
                 int y = e.CellBounds.Top + (e.CellBounds.Height - iconHeight) / 2;
                 if (icon != null)
@@ -88,15 +91,11 @@ namespace ZiTyLot.GUI.Screens
         {
             if (e.RowIndex >= 0)
             {
-                if (e.ColumnIndex == table.Columns["viewCol"].Index)
+                if (e.ColumnIndex == tableBill.Columns["colView"].Index)
                 {
                     MessageBox.Show("View button clicked for row " + e.RowIndex);
                 }
-                //else if (e.ColumnIndex == table.Columns["editCol"].Index)
-                //{
-                //    MessageBox.Show("Edit button clicked for row " + e.RowIndex);
-                //}
-                else if (e.ColumnIndex == table.Columns["deleteCol"].Index)
+                else if (e.ColumnIndex == tableBill.Columns["colDelete"].Index)
                 {
                     MessageBox.Show("Delete button clicked for row " + e.RowIndex);
                 }
@@ -105,12 +104,20 @@ namespace ZiTyLot.GUI.Screens
 
         private void TopPnl_Resize(object sender, EventArgs e)
         {
-            TopPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, TopPnl.Width, TopPnl.Height, 10, 10));
+            pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
         }
 
         private void BottomPnl_Resize(object sender, EventArgs e)
         {
-            BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
+            pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            //this.Parent.Controls.Clear();
+            //BillDetailControl billDetailControl = new BillDetailControl();
+            //this.Parent.Controls.Add(billDetailControl);
+            //billDetailControl.BringToFront();
         }
 
         private void loadPageToTable()

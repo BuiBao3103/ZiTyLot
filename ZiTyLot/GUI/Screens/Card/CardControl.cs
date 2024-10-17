@@ -33,56 +33,63 @@ namespace ZiTyLot.GUI.Screens
 
         private void CardScreen_Load(object sender, EventArgs e)
         {
-            TopPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, TopPnl.Width, TopPnl.Height, 10, 10));
-            BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
+            pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
+            pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
 
-            addBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, addBtn.Width, addBtn.Height, 10, 10));
-            allBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, allBtn.Width, allBtn.Height, 10,10));
-            activeBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, activeBtn.Width, activeBtn.Height, 10,10));
-            emptyBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, emptyBtn.Width, emptyBtn.Height, 10,10));
-            lockedBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, lockedBtn.Width, lockedBtn.Height, 10,10));
-            lostBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, lostBtn.Width, lostBtn.Height, 10,10));
+            btnAdd.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnAdd.Width, btnAdd.Height, 10, 10));
+            btnAll.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnAll.Width, btnAll.Height, 10,10));
+            btnActive.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnActive.Width, btnActive.Height, 10,10));
+            btnEmpty.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnEmpty.Width, btnEmpty.Height, 10,10));
+            btnLocked.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnLocked.Width, btnLocked.Height, 10,10));
+            btnLost.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnLost.Width, btnLost.Height, 10,10));
 
-            allBtn.Checked = true;
+            btnAll.Checked = true;
 
-            this.table.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
-            this.table.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
-            this.table.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
+            this.tableCard.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
+            this.tableCard.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
+            this.tableCard.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
         }
         // Paint the header cell
         private void table_Paint(object sender, PaintEventArgs e)
         {
-            Rectangle firstHeaderCellRect = this.table.GetCellDisplayRectangle(this.table.Columns["viewCol"].Index, -1, true);
-            Rectangle lastHeaderCellRect = this.table.GetCellDisplayRectangle(this.table.Columns["deleteCol"].Index, -1, true);
+            Rectangle firstHeaderCellRect = this.tableCard.GetCellDisplayRectangle(this.tableCard.Columns["colView"].Index, -1, true);
+            Rectangle lastHeaderCellRect = this.tableCard.GetCellDisplayRectangle(this.tableCard.Columns["colDelete"].Index, -1, true);
             Rectangle mergedHeaderRect = new Rectangle(firstHeaderCellRect.X, firstHeaderCellRect.Y,lastHeaderCellRect.X + lastHeaderCellRect.Width - firstHeaderCellRect.X, firstHeaderCellRect.Height);
             e.Graphics.FillRectangle(new SolidBrush(Color.White), mergedHeaderRect);
-            TextRenderer.DrawText(e.Graphics, "Action", this.table.ColumnHeadersDefaultCellStyle.Font,
-                mergedHeaderRect, this.table.ColumnHeadersDefaultCellStyle.ForeColor,
+            TextRenderer.DrawText(e.Graphics, "Action", this.tableCard.ColumnHeadersDefaultCellStyle.Font,
+                mergedHeaderRect, this.tableCard.ColumnHeadersDefaultCellStyle.ForeColor,
                 TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
         }
         // Paint the cell
         private void table_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if ((e.ColumnIndex == table.Columns["viewCol"].Index ||
-                 e.ColumnIndex == table.Columns["editCol"].Index ||
-                 e.ColumnIndex == table.Columns["deleteCol"].Index) && e.RowIndex >= 0)
+            if ((e.ColumnIndex == tableCard.Columns["colView"].Index ||
+                 e.ColumnIndex == tableCard.Columns["colEdit"].Index ||
+                 e.ColumnIndex == tableCard.Columns["colDelete"].Index) && e.RowIndex >= 0)
             {
-                e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
-                System.Drawing.Image icon = null;
-                if (e.ColumnIndex == table.Columns["viewCol"].Index)
+                if (e.RowIndex % 2 == 0)
                 {
-                    icon = Properties.Resources.Icon_18x18px_View;  
+                    e.Graphics.FillRectangle(new SolidBrush(Color.WhiteSmoke), e.CellBounds);
                 }
-                else if (e.ColumnIndex == table.Columns["editCol"].Index)
+                else
                 {
-                    icon = Properties.Resources.Icon_18x18px_Edit;  
+                    e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
                 }
-                else if (e.ColumnIndex == table.Columns["deleteCol"].Index)
+                Image icon = null;
+                if (e.ColumnIndex == tableCard.Columns["colView"].Index)
                 {
-                    icon = Properties.Resources.Icon_18x18px_Delete;  
+                    icon = Properties.Resources.Icon_18x18px_View;
                 }
-                int iconWidth = 16;  
-                int iconHeight = 16; 
+                else if (e.ColumnIndex == tableCard.Columns["colEdit"].Index)
+                {
+                    icon = Properties.Resources.Icon_18x18px_Edit;
+                }
+                else if (e.ColumnIndex == tableCard.Columns["colDelete"].Index)
+                {
+                    icon = Properties.Resources.Icon_18x18px_Delete;
+                }
+                int iconWidth = 16;
+                int iconHeight = 16;
                 int x = e.CellBounds.Left + (e.CellBounds.Width - iconWidth) / 2;
                 int y = e.CellBounds.Top + (e.CellBounds.Height - iconHeight) / 2;
                 if (icon != null)
@@ -97,15 +104,15 @@ namespace ZiTyLot.GUI.Screens
         {
             if (e.RowIndex >= 0)
             {
-                if (e.ColumnIndex == table.Columns["viewCol"].Index)
+                if (e.ColumnIndex == tableCard.Columns["colView"].Index)
                 {
                     MessageBox.Show("View button clicked for row " + e.RowIndex);
                 }
-                else if (e.ColumnIndex == table.Columns["editCol"].Index)
+                else if (e.ColumnIndex == tableCard.Columns["colEdit"].Index)
                 {
                     MessageBox.Show("Edit button clicked for row " + e.RowIndex);
                 }
-                else if (e.ColumnIndex == table.Columns["deleteCol"].Index)
+                else if (e.ColumnIndex == tableCard.Columns["colDelete"].Index)
                 {
                     MessageBox.Show("Delete button clicked for row " + e.RowIndex);
                 }
@@ -114,91 +121,91 @@ namespace ZiTyLot.GUI.Screens
 
         private void TopPnl_Resize(object sender, EventArgs e)
         {
-            TopPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, TopPnl.Width, TopPnl.Height, 10, 10));
+            pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
         }
 
         private void BottomPnl_Resize(object sender, EventArgs e)
         {
-            BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
+            pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
         }
 
         // All Filter CheckedChanged event handler
         private void allFilter_CheckedChanged(object sender, EventArgs e)
         {
-            if (allBtn.Checked)
+            if (btnAll.Checked)
             {
-                allBtn.BackColor = Color.FromArgb(240, 118, 54);  
-                allBtn.ForeColor = Color.White;  
-                allBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_All_Active;  
+                btnAll.BackColor = Color.FromArgb(240, 118, 54);  
+                btnAll.ForeColor = Color.White;  
+                btnAll.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_All_Active;  
             }
             else
             {
-                allBtn.BackColor = Color.White;  
-                allBtn.ForeColor = Color.FromArgb(160, 160, 160); 
-                allBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_All; 
+                btnAll.BackColor = Color.White;  
+                btnAll.ForeColor = Color.FromArgb(160, 160, 160); 
+                btnAll.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_All; 
             }
         }
         // CheckIn Filter CheckedChanged event handler
         private void activeFilter_CheckedChanged(object sender, EventArgs e)
         {
-            if (activeBtn.Checked)
+            if (btnActive.Checked)
             {
-                activeBtn.BackColor = Color.FromArgb(240, 118, 54); 
-                activeBtn.ForeColor = Color.White;  
-                activeBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Active_Active;  
+                btnActive.BackColor = Color.FromArgb(240, 118, 54); 
+                btnActive.ForeColor = Color.White;  
+                btnActive.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Active_Active;  
             }
             else
             {
-                activeBtn.BackColor = Color.White;  
-                activeBtn.ForeColor = Color.FromArgb(160, 160, 160);  
-                activeBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Active;  
+                btnActive.BackColor = Color.White;  
+                btnActive.ForeColor = Color.FromArgb(160, 160, 160);  
+                btnActive.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Active;  
             }
         }
 
         // CheckOut Filter CheckedChanged event handler
         private void emptyFilter_CheckedChanged(object sender, EventArgs e)
         {
-            if (emptyBtn.Checked)
+            if (btnEmpty.Checked)
             {
-                emptyBtn.BackColor = Color.FromArgb(240, 118, 54);  
-                emptyBtn.ForeColor = Color.White;  
-                emptyBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Empty_Active; 
+                btnEmpty.BackColor = Color.FromArgb(240, 118, 54);  
+                btnEmpty.ForeColor = Color.White;  
+                btnEmpty.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Empty_Active; 
             }
             else
             {
-                emptyBtn.BackColor = Color.White;  
-                emptyBtn.ForeColor = Color.FromArgb(160, 160, 160);  
-                emptyBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Empty;  
+                btnEmpty.BackColor = Color.White;  
+                btnEmpty.ForeColor = Color.FromArgb(160, 160, 160);  
+                btnEmpty.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Empty;  
             }
         }
         private void lostFilter_CheckedChanged(object sender, EventArgs e)
         {
-            if (lostBtn.Checked)
+            if (btnLost.Checked)
             {
-                lostBtn.BackColor = Color.FromArgb(240, 118, 54);
-                lostBtn.ForeColor = Color.White;
-                lostBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Lost_Active;
+                btnLost.BackColor = Color.FromArgb(240, 118, 54);
+                btnLost.ForeColor = Color.White;
+                btnLost.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Lost_Active;
             }
             else
             {
-                lostBtn.BackColor = Color.White;
-                lostBtn.ForeColor = Color.FromArgb(160, 160, 160);
-                lostBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Lost;
+                btnLost.BackColor = Color.White;
+                btnLost.ForeColor = Color.FromArgb(160, 160, 160);
+                btnLost.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Lost;
             }
         }
         private void lockedFilter_CheckedChanged(object sender, EventArgs e)
         {
-            if (lockedBtn.Checked)
+            if (btnLocked.Checked)
             {
-                lockedBtn.BackColor = Color.FromArgb(240, 118, 54);
-                lockedBtn.ForeColor = Color.White;
-                lockedBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Lock_Active;
+                btnLocked.BackColor = Color.FromArgb(240, 118, 54);
+                btnLocked.ForeColor = Color.White;
+                btnLocked.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Lock_Active;
             }
             else
             {
-                lockedBtn.BackColor = Color.White;
-                lockedBtn.ForeColor = Color.FromArgb(160, 160, 160);
-                lockedBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Lock;
+                btnLocked.BackColor = Color.White;
+                btnLocked.ForeColor = Color.FromArgb(160, 160, 160);
+                btnLocked.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Lock;
             }
         }
 
@@ -209,7 +216,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void uiButton1_Click(object sender, EventArgs e)
         {
-            excelMenu.Show(excelBtn, new Point(-100, excelBtn.Height + 10));
+            menuMore.Show(btnMore, new Point(-100, btnMore.Height + 10));
         }
 
         private void downloadTemplateMenuItem_Click(object sender, EventArgs e)

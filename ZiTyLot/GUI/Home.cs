@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens;
+using ZiTyLot.GUI.Screens.Bill;
 
 namespace ZiTyLot.GUI
 {
@@ -39,6 +40,7 @@ namespace ZiTyLot.GUI
                 { "PriceManagement", new PriceControl() },
                 { "AreaManagement", new AreaControl() },
                 { "Scanning", new ScanningControl() },
+                { "BillDetails", new BillDetailControl()},
                 //{ "Setting", new SettingScreen() },
             };
 
@@ -55,6 +57,7 @@ namespace ZiTyLot.GUI
                 new { Name = "AreaManagement", Text = "Area" },
                 new { Name = "SessionManagement", Text = "Session" },
                 new { Name = "Scanning", Text = "Scanning" },
+                new { Name = "BillDetails", Text = "Bill Details" },
                 //new { Name = "Dashboard", Text = "Dashboard" },
                 //new { Name = "Home", Text = "Example" },
                 //new { Name = "EmployeeManagement", Text = "Panel2" },
@@ -71,6 +74,8 @@ namespace ZiTyLot.GUI
                 new { Name = "AreaManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Area},
                 new { Name = "SessionManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Session},
                 new { Name = "Scanning", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Scanning},
+                new { Name = "BillDetails", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Scanning},
+
                 //new { Name = "Setting", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Setting},
             };
 
@@ -86,6 +91,8 @@ namespace ZiTyLot.GUI
                 new { Name = "AreaManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Area_Active},
                 new { Name = "SessionManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Session_Active},
                 new { Name = "Scanning", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Scanning_Active},
+                new { Name = "BillDetails", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Scanning_Active},
+
                 //new { Name = "Setting", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Setting_Active},
             };
 

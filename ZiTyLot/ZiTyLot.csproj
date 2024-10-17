@@ -144,7 +144,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <Compile Include="BUS\ABUS.cs" />
     <Compile Include="BUS\AccountBUS.cs" />
     <Compile Include="BUS\AuthManager.cs" />
@@ -249,11 +248,47 @@
     <Compile Include="GUI\ArduinoRFIDReader.Designer.cs">
       <DependentUpon>ArduinoRFIDReader.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Screens\Account\AccountDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\Account\AccountDetailForm.Designer.cs">
+      <DependentUpon>AccountDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Screens\Area\AreaControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\Screens\Area\AreaControl.Designer.cs">
       <DependentUpon>AreaControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\Bill\BillDetailControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\Bill\BillDetailControl.Designer.cs">
+      <DependentUpon>BillDetailControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\IssueDetailRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\IssueDetailRow.Designer.cs">
+      <DependentUpon>IssueDetailRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\Bill\IssueDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\Bill\IssueDetailForm.Designer.cs">
+      <DependentUpon>IssueDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\ResidentScr\ResidentDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\ResidentScr\ResidentDetailForm.Designer.cs">
+      <DependentUpon>ResidentDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\Role\RoleDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\Role\RoleDetailForm.Designer.cs">
+      <DependentUpon>RoleDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\Scanning\CheckInForm.cs">
       <SubType>Form</SubType>
@@ -303,16 +338,22 @@
     <Compile Include="GUI\Screens\Account\AccountControl.Designer.cs">
       <DependentUpon>AccountControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Screens\Session\SessionDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\Session\SessionDetailForm.Designer.cs">
+      <DependentUpon>SessionDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Screens\Session\SessionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\Screens\Session\SessionControl.Designer.cs">
       <DependentUpon>SessionControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\Resident\ResidentControl.cs">
+    <Compile Include="GUI\Screens\ResidentScr\ResidentControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\Resident\ResidentControl.Designer.cs">
+    <Compile Include="GUI\Screens\ResidentScr\ResidentControl.Designer.cs">
       <DependentUpon>ResidentControl.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\ExampleScreen.cs">
@@ -344,11 +385,32 @@
     <EmbeddedResource Include="GUI\ArduinoRFIDReader.resx">
       <DependentUpon>ArduinoRFIDReader.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\Account\AccountDetailForm.resx">
+      <DependentUpon>AccountDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\Area\AreaControl.resx">
       <DependentUpon>AreaControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\Bill\BillDetailControl.resx">
+      <DependentUpon>BillDetailControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\IssueDetailRow.resx">
+      <DependentUpon>IssueDetailRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\Bill\IssueDetailForm.resx">
+      <DependentUpon>IssueDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\ResidentScr\ResidentDetailForm.resx">
+      <DependentUpon>ResidentDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\Role\RoleDetailForm.resx">
+      <DependentUpon>RoleDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\Scanning\CheckInForm.resx">
       <DependentUpon>CheckInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\Scanning\CheckOutForm.resx">
+      <DependentUpon>CheckOutForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\Scanning\ScanningControl.resx">
       <DependentUpon>ScanningControl.cs</DependentUpon>
@@ -368,10 +430,13 @@
     <EmbeddedResource Include="GUI\Screens\Account\AccountControl.resx">
       <DependentUpon>AccountControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\Session\SessionDetailForm.resx">
+      <DependentUpon>SessionDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\Session\SessionControl.resx">
       <DependentUpon>SessionControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\Resident\ResidentControl.resx">
+    <EmbeddedResource Include="GUI\Screens\ResidentScr\ResidentControl.resx">
       <DependentUpon>ResidentControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\ExampleScreen.resx">
@@ -387,6 +452,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="App.config" />
     <None Include="App.Designer.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

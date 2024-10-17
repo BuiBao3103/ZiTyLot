@@ -18,8 +18,8 @@ namespace ZiTyLot.GUI.Screens
         {
             InitializeComponent();
             AdjustPanelPosition();
-            checkinBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, checkinBtn.Width, checkinBtn.Height, 10, 10));
-            checkoutBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, checkoutBtn.Width, checkoutBtn.Height, 10, 10));
+            btnCheckOut.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnCheckOut.Width, btnCheckOut.Height, 10, 10));
+            btnCheckIn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnCheckIn.Width, btnCheckIn.Height, 10, 10));
 
         }
         private void AdjustPanelPosition()
@@ -49,8 +49,8 @@ namespace ZiTyLot.GUI.Screens
         private void checkinBtn_Click(object sender, EventArgs e)
         {
             CheckInForm checkInForm = new CheckInForm();
-            checkInForm.WindowState = FormWindowState.Maximized;
-            checkInForm.MaximizeBox = false;
+            //checkInForm.WindowState = FormWindowState.Maximized;
+            //checkInForm.MaximizeBox = false;
             checkInForm.Show();
         }
 

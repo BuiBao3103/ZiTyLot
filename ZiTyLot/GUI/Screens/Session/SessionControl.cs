@@ -20,24 +20,31 @@ namespace ZiTyLot.GUI.Screens
 
         private void SessionScreen_Load(object sender, EventArgs e)
         {
-            TopPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, TopPnl.Width, TopPnl.Height, 10, 10));
-            BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
-            allBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, allBtn.Width, allBtn.Height, 10,10));
-            checkInBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, checkInBtn.Width, checkInBtn.Height, 10,10));
-            checkOutBtn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, checkOutBtn.Width, checkOutBtn.Height, 10,10));
-            allBtn.Checked = true;
-            this.allBtn.CheckedChanged += new System.EventHandler(this.allFilter_CheckedChanged);
-            this.checkInBtn.CheckedChanged += new System.EventHandler(this.checkInFilter_CheckedChanged);
-            this.checkOutBtn.CheckedChanged += new System.EventHandler(this.checkOutFilter_CheckedChanged);
-            this.table.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
-            this.table.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
+            pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
+            pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
+            btnAll.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnAll.Width, btnAll.Height, 10,10));
+            btnCheckIn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnCheckIn.Width, btnCheckIn.Height, 10,10));
+            btnCheckOut.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnCheckOut.Width, btnCheckOut.Height, 10,10));
+            btnAll.Checked = true;
+            this.btnAll.CheckedChanged += new System.EventHandler(this.allFilter_CheckedChanged);
+            this.btnCheckIn.CheckedChanged += new System.EventHandler(this.checkInFilter_CheckedChanged);
+            this.btnCheckOut.CheckedChanged += new System.EventHandler(this.checkOutFilter_CheckedChanged);
+            this.tableSession.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
+            this.tableSession.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
         }
         // Paint the cell
         private void table_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if (e.ColumnIndex == table.Columns["actionCol"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == tableSession.Columns["colView"].Index && e.RowIndex >= 0)
             {
-                e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
+                if (e.RowIndex % 2 == 0)
+                {
+                    e.Graphics.FillRectangle(new SolidBrush(Color.WhiteSmoke), e.CellBounds);
+                }
+                else
+                {
+                    e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
+                }
                 Image icon = null;
                 icon = Properties.Resources.Icon_18x18px_View;
                 int iconWidth = 16;  
@@ -51,12 +58,13 @@ namespace ZiTyLot.GUI.Screens
                 e.Handled = true;
             }
         }
+
         // Cell click event handler
         private void table_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                if (e.ColumnIndex == table.Columns["actionCol"].Index)
+                if (e.ColumnIndex == tableSession.Columns["colView"].Index)
                 {
                     MessageBox.Show("View button clicked for row " + e.RowIndex);
                 }
@@ -65,61 +73,61 @@ namespace ZiTyLot.GUI.Screens
 
         private void TopPnl_Resize(object sender, EventArgs e)
         {
-            TopPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, TopPnl.Width, TopPnl.Height, 10, 10));
+            pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
         }
 
         private void BottomPnl_Resize(object sender, EventArgs e)
         {
-            BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
+            pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
         }
 
         // All Filter CheckedChanged event handler
         private void allFilter_CheckedChanged(object sender, EventArgs e)
         {
-            if (allBtn.Checked)
+            if (btnAll.Checked)
             {
-                allBtn.BackColor = Color.FromArgb(240, 118, 54);  
-                allBtn.ForeColor = Color.White;  
-                allBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_All_Active;  
+                btnAll.BackColor = Color.FromArgb(240, 118, 54);  
+                btnAll.ForeColor = Color.White;  
+                btnAll.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_All_Active;  
             }
             else
             {
-                allBtn.BackColor = Color.White;  
-                allBtn.ForeColor = Color.FromArgb(160, 160, 160); 
-                allBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_All; 
+                btnAll.BackColor = Color.White;  
+                btnAll.ForeColor = Color.FromArgb(160, 160, 160); 
+                btnAll.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_All; 
             }
         }
         // CheckIn Filter CheckedChanged event handler
         private void checkInFilter_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkInBtn.Checked)
+            if (btnCheckIn.Checked)
             {
-                checkInBtn.BackColor = Color.FromArgb(240, 118, 54); 
-                checkInBtn.ForeColor = Color.White;  
-                checkInBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_CheckIn_Active;  
+                btnCheckIn.BackColor = Color.FromArgb(240, 118, 54); 
+                btnCheckIn.ForeColor = Color.White;  
+                btnCheckIn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_CheckIn_Active;  
             }
             else
             {
-                checkInBtn.BackColor = Color.White;  
-                checkInBtn.ForeColor = Color.FromArgb(160, 160, 160);  
-                checkInBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_CheckIn;  
+                btnCheckIn.BackColor = Color.White;  
+                btnCheckIn.ForeColor = Color.FromArgb(160, 160, 160);  
+                btnCheckIn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_CheckIn;  
             }
         }
 
         // CheckOut Filter CheckedChanged event handler
         private void checkOutFilter_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkOutBtn.Checked)
+            if (btnCheckOut.Checked)
             {
-                checkOutBtn.BackColor = Color.FromArgb(240, 118, 54);  
-                checkOutBtn.ForeColor = Color.White;  
-                checkOutBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_CheckOut_Active; 
+                btnCheckOut.BackColor = Color.FromArgb(240, 118, 54);  
+                btnCheckOut.ForeColor = Color.White;  
+                btnCheckOut.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_CheckOut_Active; 
             }
             else
             {
-                checkOutBtn.BackColor = Color.White;  
-                checkOutBtn.ForeColor = Color.FromArgb(160, 160, 160);  
-                checkOutBtn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_CheckOut;  
+                btnCheckOut.BackColor = Color.White;  
+                btnCheckOut.ForeColor = Color.FromArgb(160, 160, 160);  
+                btnCheckOut.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_CheckOut;  
             }
         }
     }
