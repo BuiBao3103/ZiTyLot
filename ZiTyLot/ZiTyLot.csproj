@@ -260,22 +260,28 @@
     <Compile Include="GUI\Screens\Area\AreaControl.Designer.cs">
       <DependentUpon>AreaControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\Bill\BillDetailControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Screens\Bill\BillDetailControl.Designer.cs">
-      <DependentUpon>BillDetailControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\IssueDetailRow.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\IssueDetailRow.Designer.cs">
       <DependentUpon>IssueDetailRow.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\Bill\IssueDetailForm.cs">
+    <Compile Include="GUI\Screens\BillScr\BillControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\BillScr\BillControl.Designer.cs">
+      <DependentUpon>BillControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\BillScr\BillDetailControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\BillScr\BillDetailControl.Designer.cs">
+      <DependentUpon>BillDetailControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\BillScr\IssueDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\Bill\IssueDetailForm.Designer.cs">
+    <Compile Include="GUI\Screens\BillScr\IssueDetailForm.Designer.cs">
       <DependentUpon>IssueDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\ResidentScr\ResidentDetailForm.cs">
@@ -314,10 +320,10 @@
     <Compile Include="GUI\Screens\Price\PriceControl.Designer.cs">
       <DependentUpon>PriceControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\Card\CardControl.cs">
+    <Compile Include="GUI\Screens\CardScr\CardControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\Card\CardControl.Designer.cs">
+    <Compile Include="GUI\Screens\CardScr\CardControl.Designer.cs">
       <DependentUpon>CardControl.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\Role\RoleControl.cs">
@@ -325,12 +331,6 @@
     </Compile>
     <Compile Include="GUI\Screens\Role\RoleControl.Designer.cs">
       <DependentUpon>RoleControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Screens\Bill\BillControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Screens\Bill\BillControl.Designer.cs">
-      <DependentUpon>BillControl.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\Account\AccountControl.cs">
       <SubType>UserControl</SubType>
@@ -391,13 +391,16 @@
     <EmbeddedResource Include="GUI\Screens\Area\AreaControl.resx">
       <DependentUpon>AreaControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\Bill\BillDetailControl.resx">
-      <DependentUpon>BillDetailControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\IssueDetailRow.resx">
       <DependentUpon>IssueDetailRow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\Bill\IssueDetailForm.resx">
+    <EmbeddedResource Include="GUI\Screens\BillScr\BillControl.resx">
+      <DependentUpon>BillControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\BillScr\BillDetailControl.resx">
+      <DependentUpon>BillDetailControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\BillScr\IssueDetailForm.resx">
       <DependentUpon>IssueDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\ResidentScr\ResidentDetailForm.resx">
@@ -418,14 +421,11 @@
     <EmbeddedResource Include="GUI\Screens\Price\PriceControl.resx">
       <DependentUpon>PriceControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\Card\CardControl.resx">
+    <EmbeddedResource Include="GUI\Screens\CardScr\CardControl.resx">
       <DependentUpon>CardControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\Role\RoleControl.resx">
       <DependentUpon>RoleControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\Bill\BillControl.resx">
-      <DependentUpon>BillControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\Account\AccountControl.resx">
       <DependentUpon>AccountControl.cs</DependentUpon>

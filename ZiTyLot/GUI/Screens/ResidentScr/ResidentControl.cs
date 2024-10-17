@@ -122,7 +122,7 @@ namespace ZiTyLot.GUI.Screens
         private void LoadPageToTable()
         {
             tableResident.Rows.Clear();
-            foreach (ZiTyLot.ENTITY.Resident resident in page.Content)
+            foreach (Resident resident in page.Content)
             {
                 tableResident.Rows.Add(resident.Id, resident.Full_name, resident.Apartment_id, resident.Email);
             }

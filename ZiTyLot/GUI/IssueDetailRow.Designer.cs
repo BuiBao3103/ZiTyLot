@@ -1,4 +1,4 @@
-﻿namespace ZiTyLot.GUI.Screens.Bill
+﻿namespace ZiTyLot.GUI.Screens.BillScr
 {
     partial class IssueDetailRow
     {

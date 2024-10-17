@@ -1,4 +1,4 @@
-﻿namespace ZiTyLot.GUI.Screens.Bill
+﻿namespace ZiTyLot.GUI.Screens.BillScr
 {
     partial class IssueDetailForm
     {
@@ -229,7 +229,7 @@
             this.dtpToDate.Controls.Add(this.dateTimePicker2);
             this.dtpToDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpToDate.FillColor = System.Drawing.Color.White;
-            this.dtpToDate.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpToDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpToDate.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.dtpToDate.Location = new System.Drawing.Point(0, 0);
             this.dtpToDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -247,7 +247,7 @@
             this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePicker2.Location = new System.Drawing.Point(4, 32);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(331, 27);
+            this.dateTimePicker2.Size = new System.Drawing.Size(331, 26);
             this.dateTimePicker2.TabIndex = 1;
             // 
             // uiPanel9
@@ -272,7 +272,7 @@
             this.uiGroupBox8.Controls.Add(this.dtpFromDate);
             this.uiGroupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox8.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox8.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox8.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.uiGroupBox8.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -290,7 +290,7 @@
             this.dtpFromDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpFromDate.Location = new System.Drawing.Point(4, 32);
             this.dtpFromDate.Name = "dtpFromDate";
-            this.dtpFromDate.Size = new System.Drawing.Size(331, 27);
+            this.dtpFromDate.Size = new System.Drawing.Size(331, 26);
             this.dtpFromDate.TabIndex = 0;
             // 
             // uiPanel8
@@ -315,7 +315,7 @@
             this.uiGroupBox7.Controls.Add(this.cbSlot);
             this.uiGroupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox7.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox7.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox7.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.uiGroupBox7.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -333,7 +333,7 @@
             this.cbSlot.DataSource = null;
             this.cbSlot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbSlot.FillColor = System.Drawing.Color.White;
-            this.cbSlot.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSlot.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSlot.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.cbSlot.Items.AddRange(new object[] {
             "1",
@@ -384,7 +384,7 @@
             this.uiGroupBox6.Controls.Add(this.cbArea);
             this.uiGroupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox6.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox6.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox6.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.uiGroupBox6.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -402,7 +402,7 @@
             this.cbArea.DataSource = null;
             this.cbArea.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbArea.FillColor = System.Drawing.Color.White;
-            this.cbArea.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbArea.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbArea.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.cbArea.Items.AddRange(new object[] {
             "A1",
@@ -452,7 +452,7 @@
             this.uiGroupBox5.Controls.Add(this.tbTotal);
             this.uiGroupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox5.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox5.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox5.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.uiGroupBox5.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -469,7 +469,7 @@
             // 
             this.tbTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbTotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbTotal.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTotal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTotal.Location = new System.Drawing.Point(8, 32);
             this.tbTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbTotal.MinimumSize = new System.Drawing.Size(1, 16);
@@ -506,7 +506,7 @@
             this.uiGroupBox4.Controls.Add(this.cbMonth);
             this.uiGroupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox4.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox4.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox4.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.uiGroupBox4.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -524,7 +524,7 @@
             this.cbMonth.DataSource = null;
             this.cbMonth.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbMonth.FillColor = System.Drawing.Color.White;
-            this.cbMonth.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMonth.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMonth.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.cbMonth.Items.AddRange(new object[] {
             "1 month",
@@ -570,7 +570,7 @@
             this.uiGroupBox3.Controls.Add(this.cbVehical);
             this.uiGroupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox3.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox3.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox3.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.uiGroupBox3.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -588,7 +588,7 @@
             this.cbVehical.DataSource = null;
             this.cbVehical.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbVehical.FillColor = System.Drawing.Color.White;
-            this.cbVehical.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbVehical.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbVehical.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.cbVehical.Items.AddRange(new object[] {
             "Bike",
@@ -634,7 +634,7 @@
             this.uiGroupBox1.Controls.Add(this.tbPlate);
             this.uiGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox1.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox1.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox1.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.uiGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -651,7 +651,7 @@
             // 
             this.tbPlate.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbPlate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbPlate.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPlate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPlate.Location = new System.Drawing.Point(8, 32);
             this.tbPlate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbPlate.MinimumSize = new System.Drawing.Size(1, 16);
@@ -686,7 +686,7 @@
             // uiLabel1
             // 
             this.uiLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel1.Font = new System.Drawing.Font("Helvetica", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLabel1.Location = new System.Drawing.Point(0, 0);
             this.uiLabel1.Name = "uiLabel1";

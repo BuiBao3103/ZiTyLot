@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySqlX.XDevAPI.Relational;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,17 +8,71 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZiTyLot.BUS;
+using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
+using ZiTyLot.Helper;
 
 namespace ZiTyLot.GUI.Screens
 {
     public partial class CardControl : UserControl
     {
+        CardBUS cardBUS = new CardBUS();
+        Pageable pagebale = new Pageable();
+        List<FilterCondition> filterConditions = new List<FilterCondition>();
+        Page<Card> page;
         public CardControl()
         {
             InitializeComponent();
+            cbNumberofitem.SelectedIndex = 0;
+            page = cardBUS.GetAllPagination(pagebale, filterConditions);
+            tbCurrentpage.Text = "1";
+            lbTotalpage.Text = "/" + page.TotalPages;
+            LoadPageToTable();
         }
-
+        private void LoadPageToTable()
+        {
+            tableCard.Rows.Clear();
+            foreach (Card card in page.Content)
+            {
+                tableCard.Rows.Add(card.Id, card.Rfid, card.Type, card.Status);
+            }
+        }
+        private void table_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+        private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String selectedValue = cbNumberofitem.SelectedItem.ToString();
+            int pageSize = int.Parse(selectedValue.Split(' ')[0]);
+            pagebale.PageSize = pageSize;
+            pagebale.PageNumber = 1;
+            page = cardBUS.GetAllPagination(pagebale, filterConditions);
+            tbCurrentpage.Text = "1";
+            lbTotalpage.Text = "/" + page.TotalPages;
+            LoadPageToTable();
+        }
+        private void changePage(int pageNumber)
+        {
+            if (pageNumber < 1 || pageNumber > page.TotalPages)
+            {
+                return;
+            }
+            pagebale.PageNumber = pageNumber;
+            page = cardBUS.GetAllPagination(pagebale, filterConditions);
+            tbCurrentpage.Text = pageNumber.ToString();
+            LoadPageToTable();
+        }
+        private void previousBtn_Click(object sender, EventArgs e)
+        {
+            int currentPage = int.Parse(tbCurrentpage.Text);
+            changePage(currentPage - 1);
+        }
+        private void nextBtn_Click(object sender, EventArgs e)
+        {
+            int currentPage = int.Parse(tbCurrentpage.Text);
+            changePage((currentPage + 1));
+        }
         private void CardScreen_Load(object sender, EventArgs e)
         {
             pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
@@ -62,7 +117,7 @@ namespace ZiTyLot.GUI.Screens
                 {
                     e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
                 }
-                Image icon = null;
+                System.Drawing.Image icon = null;
                 if (e.ColumnIndex == tableCard.Columns["colView"].Index)
                 {
                     icon = Properties.Resources.Icon_18x18px_View;

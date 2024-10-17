@@ -1,4 +1,4 @@
-﻿namespace ZiTyLot.GUI.Screens.Bill
+﻿namespace ZiTyLot.GUI.Screens.BillScr
 {
     partial class BillDetailControl
     {
@@ -294,7 +294,7 @@
             // lbTax
             // 
             this.lbTax.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbTax.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTax.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTax.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.lbTax.Location = new System.Drawing.Point(0, 0);
             this.lbTax.Name = "lbTax";
@@ -323,7 +323,7 @@
             // uiLabel9
             // 
             this.uiLabel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel9.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel9.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.uiLabel9.Location = new System.Drawing.Point(0, 0);
             this.uiLabel9.Name = "uiLabel9";
@@ -352,7 +352,7 @@
             // lbSubtotal
             // 
             this.lbSubtotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbSubtotal.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSubtotal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSubtotal.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.lbSubtotal.Location = new System.Drawing.Point(0, 0);
             this.lbSubtotal.Name = "lbSubtotal";
@@ -381,7 +381,7 @@
             // uiLabel7
             // 
             this.uiLabel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel7.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel7.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.uiLabel7.Location = new System.Drawing.Point(0, 0);
             this.uiLabel7.Name = "uiLabel7";
@@ -410,7 +410,7 @@
             // lbQuanity
             // 
             this.lbQuanity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbQuanity.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuanity.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbQuanity.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.lbQuanity.Location = new System.Drawing.Point(0, 0);
             this.lbQuanity.Name = "lbQuanity";
@@ -439,7 +439,7 @@
             // uiLabel5
             // 
             this.uiLabel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel5.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel5.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.uiLabel5.Location = new System.Drawing.Point(0, 0);
             this.uiLabel5.Name = "uiLabel5";
@@ -505,7 +505,7 @@
             // lbTotal
             // 
             this.lbTotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbTotal.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotal.ForeColor = System.Drawing.Color.Black;
             this.lbTotal.Location = new System.Drawing.Point(0, 0);
             this.lbTotal.Name = "lbTotal";
@@ -534,7 +534,7 @@
             // uiLabel16
             // 
             this.uiLabel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel16.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel16.ForeColor = System.Drawing.Color.Black;
             this.uiLabel16.Location = new System.Drawing.Point(0, 0);
             this.uiLabel16.Name = "uiLabel16";
@@ -1270,7 +1270,7 @@
             // lbBillId
             // 
             this.lbBillId.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbBillId.Font = new System.Drawing.Font("Helvetica", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBillId.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBillId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.lbBillId.Location = new System.Drawing.Point(5, 5);
             this.lbBillId.Margin = new System.Windows.Forms.Padding(0);

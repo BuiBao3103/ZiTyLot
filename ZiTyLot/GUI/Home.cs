@@ -1,17 +1,12 @@
-﻿using Sunny.UI;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens;
-using ZiTyLot.GUI.Screens.Bill;
+using ZiTyLot.GUI.Screens.BillScr;
 
 namespace ZiTyLot.GUI
 {
