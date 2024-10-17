@@ -38,27 +38,16 @@ namespace ZiTyLot.GUI.Screens
             this.pnlTop = new System.Windows.Forms.Panel();
             this.uiPanel1 = new Sunny.UI.UIPanel();
             this.pnlSearch = new Sunny.UI.UIPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tbSearch = new Sunny.UI.UITextBox();
             this.pnlFilter = new Sunny.UI.UIPanel();
             this.cbFilter = new Sunny.UI.UIComboBox();
             this.pnlTabpane = new System.Windows.Forms.Panel();
-            this.separator = new System.Windows.Forms.Panel();
-            this.pnlBottom = new System.Windows.Forms.Panel();
-            this.tableSession = new System.Windows.Forms.DataGridView();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPlate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCheckInTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCheckOutTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colView = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnCheckOut = new System.Windows.Forms.RadioButton();
             this.btnCheckIn = new System.Windows.Forms.RadioButton();
             this.btnAll = new System.Windows.Forms.RadioButton();
+            this.separator = new System.Windows.Forms.Panel();
+            this.pnlBottom = new System.Windows.Forms.Panel();
             this.pnlPagination = new System.Windows.Forms.Panel();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.uiPanel2 = new Sunny.UI.UIPanel();
@@ -71,15 +60,24 @@ namespace ZiTyLot.GUI.Screens
             this.tbCurrentpage = new Sunny.UI.UITextBox();
             this.pnlPrevious = new System.Windows.Forms.Panel();
             this.btnPrevious = new Sunny.UI.UISymbolButton();
+            this.tableSession = new System.Windows.Forms.DataGridView();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPlate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCheckInTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCheckOutTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colView = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.pnlTop.SuspendLayout();
             this.uiPanel1.SuspendLayout();
             this.pnlSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlFilter.SuspendLayout();
             this.pnlTabpane.SuspendLayout();
             this.pnlBottom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tableSession)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlPagination.SuspendLayout();
             this.pnlLeft.SuspendLayout();
             this.uiPanel2.SuspendLayout();
@@ -87,6 +85,8 @@ namespace ZiTyLot.GUI.Screens
             this.pnlNext.SuspendLayout();
             this.pnlCurrentPage.SuspendLayout();
             this.pnlPrevious.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableSession)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -138,6 +138,17 @@ namespace ZiTyLot.GUI.Screens
             this.pnlSearch.TabIndex = 1;
             this.pnlSearch.Text = null;
             this.pnlSearch.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox2.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Magnifying;
+            this.pictureBox2.Location = new System.Drawing.Point(217, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(28, 24);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // tbSearch
             // 
@@ -236,180 +247,6 @@ namespace ZiTyLot.GUI.Screens
             this.pnlTabpane.Size = new System.Drawing.Size(491, 34);
             this.pnlTabpane.TabIndex = 8;
             // 
-            // separator
-            // 
-            this.separator.Dock = System.Windows.Forms.DockStyle.Top;
-            this.separator.Location = new System.Drawing.Point(0, 54);
-            this.separator.MaximumSize = new System.Drawing.Size(1620, 4);
-            this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(1151, 4);
-            this.separator.TabIndex = 2;
-            // 
-            // pnlBottom
-            // 
-            this.pnlBottom.BackColor = System.Drawing.Color.White;
-            this.pnlBottom.Controls.Add(this.pnlPagination);
-            this.pnlBottom.Controls.Add(this.tableSession);
-            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 58);
-            this.pnlBottom.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlBottom.Size = new System.Drawing.Size(1151, 522);
-            this.pnlBottom.TabIndex = 3;
-            this.pnlBottom.Resize += new System.EventHandler(this.BottomPnl_Resize);
-            // 
-            // tableSession
-            // 
-            this.tableSession.AllowUserToDeleteRows = false;
-            this.tableSession.AllowUserToResizeColumns = false;
-            this.tableSession.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Helvetica", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.tableSession.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.tableSession.BackgroundColor = System.Drawing.Color.White;
-            this.tableSession.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tableSession.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.tableSession.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableSession.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.tableSession.ColumnHeadersHeight = 34;
-            this.tableSession.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colId,
-            this.colType,
-            this.colPlate,
-            this.colCheckInTime,
-            this.colCheckOutTime,
-            this.colTotalTime,
-            this.colTotalPrice,
-            this.colView});
-            this.tableSession.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableSession.DefaultCellStyle = dataGridViewCellStyle3;
-            this.tableSession.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableSession.GridColor = System.Drawing.Color.White;
-            this.tableSession.Location = new System.Drawing.Point(10, 10);
-            this.tableSession.Margin = new System.Windows.Forms.Padding(0);
-            this.tableSession.Name = "tableSession";
-            this.tableSession.ReadOnly = true;
-            this.tableSession.RowHeadersVisible = false;
-            this.tableSession.RowHeadersWidth = 30;
-            this.tableSession.RowTemplate.Height = 30;
-            this.tableSession.Size = new System.Drawing.Size(1131, 502);
-            this.tableSession.TabIndex = 1;
-            // 
-            // colId
-            // 
-            this.colId.HeaderText = "ID";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colId.Width = 30;
-            // 
-            // colType
-            // 
-            this.colType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colType.HeaderText = "Type";
-            this.colType.MinimumWidth = 80;
-            this.colType.Name = "colType";
-            this.colType.ReadOnly = true;
-            this.colType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colPlate
-            // 
-            this.colPlate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colPlate.HeaderText = "Plate";
-            this.colPlate.Name = "colPlate";
-            this.colPlate.ReadOnly = true;
-            // 
-            // colCheckInTime
-            // 
-            this.colCheckInTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colCheckInTime.HeaderText = "Check in Time";
-            this.colCheckInTime.Name = "colCheckInTime";
-            this.colCheckInTime.ReadOnly = true;
-            // 
-            // colCheckOutTime
-            // 
-            this.colCheckOutTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colCheckOutTime.HeaderText = "Check out Time";
-            this.colCheckOutTime.Name = "colCheckOutTime";
-            this.colCheckOutTime.ReadOnly = true;
-            // 
-            // colTotalTime
-            // 
-            this.colTotalTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colTotalTime.HeaderText = "Total Time";
-            this.colTotalTime.MinimumWidth = 100;
-            this.colTotalTime.Name = "colTotalTime";
-            this.colTotalTime.ReadOnly = true;
-            // 
-            // colTotalPrice
-            // 
-            this.colTotalPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colTotalPrice.HeaderText = "Total Price";
-            this.colTotalPrice.Name = "colTotalPrice";
-            this.colTotalPrice.ReadOnly = true;
-            // 
-            // colView
-            // 
-            this.colView.HeaderText = "Action";
-            this.colView.Name = "colView";
-            this.colView.ReadOnly = true;
-            this.colView.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colView.Text = "View";
-            this.colView.Width = 90;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.pnlBottom);
-            this.panel2.Controls.Add(this.separator);
-            this.panel2.Controls.Add(this.pnlTop);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(10, 10);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1151, 580);
-            this.panel2.TabIndex = 2;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(110, 34);
-            this.panel5.TabIndex = 0;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Magnifying;
-            this.pictureBox2.Location = new System.Drawing.Point(217, 5);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(28, 24);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
             // btnCheckOut
             // 
             this.btnCheckOut.Appearance = System.Windows.Forms.Appearance.Button;
@@ -493,6 +330,29 @@ namespace ZiTyLot.GUI.Screens
             this.btnAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAll.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAll.UseVisualStyleBackColor = false;
+            // 
+            // separator
+            // 
+            this.separator.Dock = System.Windows.Forms.DockStyle.Top;
+            this.separator.Location = new System.Drawing.Point(0, 54);
+            this.separator.MaximumSize = new System.Drawing.Size(1620, 4);
+            this.separator.Name = "separator";
+            this.separator.Size = new System.Drawing.Size(1151, 4);
+            this.separator.TabIndex = 2;
+            // 
+            // pnlBottom
+            // 
+            this.pnlBottom.BackColor = System.Drawing.Color.White;
+            this.pnlBottom.Controls.Add(this.pnlPagination);
+            this.pnlBottom.Controls.Add(this.tableSession);
+            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBottom.Location = new System.Drawing.Point(0, 58);
+            this.pnlBottom.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlBottom.Name = "pnlBottom";
+            this.pnlBottom.Padding = new System.Windows.Forms.Padding(10);
+            this.pnlBottom.Size = new System.Drawing.Size(1151, 522);
+            this.pnlBottom.TabIndex = 3;
+            this.pnlBottom.Resize += new System.EventHandler(this.BottomPnl_Resize);
             // 
             // pnlPagination
             // 
@@ -710,6 +570,146 @@ namespace ZiTyLot.GUI.Screens
             this.btnPrevious.TabIndex = 4;
             this.btnPrevious.TipsFont = new System.Drawing.Font("Helvetica Rounded", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // tableSession
+            // 
+            this.tableSession.AllowUserToDeleteRows = false;
+            this.tableSession.AllowUserToResizeColumns = false;
+            this.tableSession.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Helvetica", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.tableSession.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tableSession.BackgroundColor = System.Drawing.Color.White;
+            this.tableSession.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tableSession.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.tableSession.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableSession.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tableSession.ColumnHeadersHeight = 34;
+            this.tableSession.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colId,
+            this.colType,
+            this.colPlate,
+            this.colCheckInTime,
+            this.colCheckOutTime,
+            this.colTotalTime,
+            this.colTotalPrice,
+            this.colView});
+            this.tableSession.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableSession.DefaultCellStyle = dataGridViewCellStyle3;
+            this.tableSession.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableSession.GridColor = System.Drawing.Color.White;
+            this.tableSession.Location = new System.Drawing.Point(10, 10);
+            this.tableSession.Margin = new System.Windows.Forms.Padding(0);
+            this.tableSession.Name = "tableSession";
+            this.tableSession.ReadOnly = true;
+            this.tableSession.RowHeadersVisible = false;
+            this.tableSession.RowHeadersWidth = 30;
+            this.tableSession.RowTemplate.Height = 30;
+            this.tableSession.Size = new System.Drawing.Size(1131, 502);
+            this.tableSession.TabIndex = 1;
+            // 
+            // colId
+            // 
+            this.colId.HeaderText = "ID";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colId.Width = 30;
+            // 
+            // colType
+            // 
+            this.colType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colType.HeaderText = "Type";
+            this.colType.MinimumWidth = 80;
+            this.colType.Name = "colType";
+            this.colType.ReadOnly = true;
+            this.colType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colPlate
+            // 
+            this.colPlate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colPlate.HeaderText = "Plate";
+            this.colPlate.Name = "colPlate";
+            this.colPlate.ReadOnly = true;
+            // 
+            // colCheckInTime
+            // 
+            this.colCheckInTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colCheckInTime.HeaderText = "Check in Time";
+            this.colCheckInTime.Name = "colCheckInTime";
+            this.colCheckInTime.ReadOnly = true;
+            // 
+            // colCheckOutTime
+            // 
+            this.colCheckOutTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colCheckOutTime.HeaderText = "Check out Time";
+            this.colCheckOutTime.Name = "colCheckOutTime";
+            this.colCheckOutTime.ReadOnly = true;
+            // 
+            // colTotalTime
+            // 
+            this.colTotalTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTotalTime.HeaderText = "Total Time";
+            this.colTotalTime.MinimumWidth = 100;
+            this.colTotalTime.Name = "colTotalTime";
+            this.colTotalTime.ReadOnly = true;
+            // 
+            // colTotalPrice
+            // 
+            this.colTotalPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTotalPrice.HeaderText = "Total Price";
+            this.colTotalPrice.Name = "colTotalPrice";
+            this.colTotalPrice.ReadOnly = true;
+            // 
+            // colView
+            // 
+            this.colView.HeaderText = "Action";
+            this.colView.Name = "colView";
+            this.colView.ReadOnly = true;
+            this.colView.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colView.Text = "View";
+            this.colView.Width = 90;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.pnlBottom);
+            this.panel2.Controls.Add(this.separator);
+            this.panel2.Controls.Add(this.pnlTop);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(10, 10);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1151, 580);
+            this.panel2.TabIndex = 2;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(110, 34);
+            this.panel5.TabIndex = 0;
+            // 
             // SessionControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -724,13 +724,11 @@ namespace ZiTyLot.GUI.Screens
             this.pnlTop.ResumeLayout(false);
             this.uiPanel1.ResumeLayout(false);
             this.pnlSearch.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlFilter.ResumeLayout(false);
             this.pnlTabpane.ResumeLayout(false);
             this.pnlTabpane.PerformLayout();
             this.pnlBottom.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tableSession)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlPagination.ResumeLayout(false);
             this.pnlLeft.ResumeLayout(false);
             this.uiPanel2.ResumeLayout(false);
@@ -739,6 +737,8 @@ namespace ZiTyLot.GUI.Screens
             this.pnlCurrentPage.ResumeLayout(false);
             this.pnlCurrentPage.PerformLayout();
             this.pnlPrevious.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tableSession)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
