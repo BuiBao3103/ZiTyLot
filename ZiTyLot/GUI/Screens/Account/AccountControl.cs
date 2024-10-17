@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.GUI.component_extensions;
+using ZiTyLot.GUI.Screens.Account;
 
 namespace ZiTyLot.GUI.Screens
 {
@@ -109,6 +110,10 @@ namespace ZiTyLot.GUI.Screens
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
         }
 
-       
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            AccountDetailForm accountDetailForm = new AccountDetailForm();
+            accountDetailForm.Show();
+        }
     }
 }
