@@ -1,4 +1,4 @@
-﻿namespace ZiTyLot.GUI.Screens.Scanning
+﻿namespace ZiTyLot.GUI.Screens.ScanningScr
 {
     partial class CheckOutForm
     {

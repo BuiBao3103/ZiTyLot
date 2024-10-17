@@ -248,16 +248,16 @@
     <Compile Include="GUI\ArduinoRFIDReader.Designer.cs">
       <DependentUpon>ArduinoRFIDReader.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\Account\AccountDetailForm.cs">
+    <Compile Include="GUI\Screens\AccountScr\AccountDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\Account\AccountDetailForm.Designer.cs">
+    <Compile Include="GUI\Screens\AccountScr\AccountDetailForm.Designer.cs">
       <DependentUpon>AccountDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\Area\AreaControl.cs">
+    <Compile Include="GUI\Screens\AreaScr\AreaControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\Area\AreaControl.Designer.cs">
+    <Compile Include="GUI\Screens\AreaScr\AreaControl.Designer.cs">
       <DependentUpon>AreaControl.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\IssueDetailRow.cs">
@@ -290,34 +290,34 @@
     <Compile Include="GUI\Screens\ResidentScr\ResidentDetailForm.Designer.cs">
       <DependentUpon>ResidentDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\Role\RoleDetailForm.cs">
+    <Compile Include="GUI\Screens\RoleScr\RoleDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\Role\RoleDetailForm.Designer.cs">
+    <Compile Include="GUI\Screens\RoleScr\RoleDetailForm.Designer.cs">
       <DependentUpon>RoleDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\Scanning\CheckInForm.cs">
+    <Compile Include="GUI\Screens\ScanningScr\CheckInForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\Scanning\CheckInForm.Designer.cs">
+    <Compile Include="GUI\Screens\ScanningScr\CheckInForm.Designer.cs">
       <DependentUpon>CheckInForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\Scanning\CheckOutForm.cs">
+    <Compile Include="GUI\Screens\ScanningScr\CheckOutForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\Scanning\CheckOutForm.Designer.cs">
+    <Compile Include="GUI\Screens\ScanningScr\CheckOutForm.Designer.cs">
       <DependentUpon>CheckOutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\Scanning\ScanningControl.cs">
+    <Compile Include="GUI\Screens\ScanningScr\ScanningControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\Scanning\ScanningControl.Designer.cs">
+    <Compile Include="GUI\Screens\ScanningScr\ScanningControl.Designer.cs">
       <DependentUpon>ScanningControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\Price\PriceControl.cs">
+    <Compile Include="GUI\Screens\PriceScr\PriceControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\Price\PriceControl.Designer.cs">
+    <Compile Include="GUI\Screens\PriceScr\PriceControl.Designer.cs">
       <DependentUpon>PriceControl.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\CardScr\CardControl.cs">
@@ -326,28 +326,28 @@
     <Compile Include="GUI\Screens\CardScr\CardControl.Designer.cs">
       <DependentUpon>CardControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\Role\RoleControl.cs">
+    <Compile Include="GUI\Screens\RoleScr\RoleControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\Role\RoleControl.Designer.cs">
+    <Compile Include="GUI\Screens\RoleScr\RoleControl.Designer.cs">
       <DependentUpon>RoleControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\Account\AccountControl.cs">
+    <Compile Include="GUI\Screens\AccountScr\AccountControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\Account\AccountControl.Designer.cs">
+    <Compile Include="GUI\Screens\AccountScr\AccountControl.Designer.cs">
       <DependentUpon>AccountControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\Session\SessionDetailForm.cs">
+    <Compile Include="GUI\Screens\SessionScr\SessionDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\Session\SessionDetailForm.Designer.cs">
+    <Compile Include="GUI\Screens\SessionScr\SessionDetailForm.Designer.cs">
       <DependentUpon>SessionDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\Session\SessionControl.cs">
+    <Compile Include="GUI\Screens\SessionScr\SessionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\Session\SessionControl.Designer.cs">
+    <Compile Include="GUI\Screens\SessionScr\SessionControl.Designer.cs">
       <DependentUpon>SessionControl.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\ResidentScr\ResidentControl.cs">
@@ -385,10 +385,10 @@
     <EmbeddedResource Include="GUI\ArduinoRFIDReader.resx">
       <DependentUpon>ArduinoRFIDReader.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\Account\AccountDetailForm.resx">
+    <EmbeddedResource Include="GUI\Screens\AccountScr\AccountDetailForm.resx">
       <DependentUpon>AccountDetailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\Area\AreaControl.resx">
+    <EmbeddedResource Include="GUI\Screens\AreaScr\AreaControl.resx">
       <DependentUpon>AreaControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\IssueDetailRow.resx">
@@ -406,34 +406,34 @@
     <EmbeddedResource Include="GUI\Screens\ResidentScr\ResidentDetailForm.resx">
       <DependentUpon>ResidentDetailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\Role\RoleDetailForm.resx">
+    <EmbeddedResource Include="GUI\Screens\RoleScr\RoleDetailForm.resx">
       <DependentUpon>RoleDetailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\Scanning\CheckInForm.resx">
+    <EmbeddedResource Include="GUI\Screens\ScanningScr\CheckInForm.resx">
       <DependentUpon>CheckInForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\Scanning\CheckOutForm.resx">
+    <EmbeddedResource Include="GUI\Screens\ScanningScr\CheckOutForm.resx">
       <DependentUpon>CheckOutForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\Scanning\ScanningControl.resx">
+    <EmbeddedResource Include="GUI\Screens\ScanningScr\ScanningControl.resx">
       <DependentUpon>ScanningControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\Price\PriceControl.resx">
+    <EmbeddedResource Include="GUI\Screens\PriceScr\PriceControl.resx">
       <DependentUpon>PriceControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\CardScr\CardControl.resx">
       <DependentUpon>CardControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\Role\RoleControl.resx">
+    <EmbeddedResource Include="GUI\Screens\RoleScr\RoleControl.resx">
       <DependentUpon>RoleControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\Account\AccountControl.resx">
+    <EmbeddedResource Include="GUI\Screens\AccountScr\AccountControl.resx">
       <DependentUpon>AccountControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\Session\SessionDetailForm.resx">
+    <EmbeddedResource Include="GUI\Screens\SessionScr\SessionDetailForm.resx">
       <DependentUpon>SessionDetailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\Session\SessionControl.resx">
+    <EmbeddedResource Include="GUI\Screens\SessionScr\SessionControl.resx">
       <DependentUpon>SessionControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\ResidentScr\ResidentControl.resx">

@@ -1,4 +1,4 @@
-﻿namespace ZiTyLot.GUI.Screens.Role
+﻿namespace ZiTyLot.GUI.Screens.RoleScr
 {
     partial class RoleDetailForm
     {

@@ -1,50 +1,64 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZiTyLot.BUS;
+using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
-using ZiTyLot.GUI.Screens.Role;
 
 namespace ZiTyLot.GUI.Screens
 {
-    public partial class RoleControl : UserControl
+    public partial class PriceControl : UserControl
     {
-        public RoleControl()
+        VehicleTypeBUS vehicleTypeBUS = new VehicleTypeBUS();
+        List<FilterCondition> filters = new List<FilterCondition>();
+        List<VehicleType> vehicleTypes;
+        public PriceControl()
         {
             InitializeComponent();
+            LoadPageToTable();
         }
-
-        private void RoleScreen_Load(object sender, EventArgs e)
+        private void LoadPageToTable()
+        {
+            vehicleTypes = vehicleTypeBUS.GetAll(filters);
+            tableVehicalPrice.Rows.Clear();
+            foreach (VehicleType vehicleType in vehicleTypes)
+            {
+                tableVehicalPrice.Rows.Add(vehicleType.Id, vehicleType.Name, Has(vehicleType.Has_vehicle_plate), Has(vehicleType.Has_slot));
+            }
+        }
+        private string Has(bool has)
+        {
+            return has ? "Yes" : "No";
+        }
+        private void PriceScreen_Load(object sender, EventArgs e)
         {
             pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
+
             btnAdd.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnAdd.Width, btnAdd.Height, 10, 10));
-            this.tableRole.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
-            this.tableRole.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
-            this.tableRole.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
+
+            this.tableVehicalPrice.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
+            this.tableVehicalPrice.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
+            this.tableVehicalPrice.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
         }
         // Paint the header cell
         private void table_Paint(object sender, PaintEventArgs e)
         {
-            Rectangle firstHeaderCellRect = this.tableRole.GetCellDisplayRectangle(this.tableRole.Columns["colView"].Index, -1, true);
-            Rectangle lastHeaderCellRect = this.tableRole.GetCellDisplayRectangle(this.tableRole.Columns["colDelete"].Index, -1, true);
+            Rectangle firstHeaderCellRect = this.tableVehicalPrice.GetCellDisplayRectangle(this.tableVehicalPrice.Columns["colView"].Index, -1, true);
+            Rectangle lastHeaderCellRect = this.tableVehicalPrice.GetCellDisplayRectangle(this.tableVehicalPrice.Columns["colDelete"].Index, -1, true);
             Rectangle mergedHeaderRect = new Rectangle(firstHeaderCellRect.X, firstHeaderCellRect.Y, lastHeaderCellRect.X + lastHeaderCellRect.Width - firstHeaderCellRect.X, firstHeaderCellRect.Height);
             e.Graphics.FillRectangle(new SolidBrush(Color.White), mergedHeaderRect);
-            TextRenderer.DrawText(e.Graphics, "Action", this.tableRole.ColumnHeadersDefaultCellStyle.Font,
-                mergedHeaderRect, this.tableRole.ColumnHeadersDefaultCellStyle.ForeColor,
+            TextRenderer.DrawText(e.Graphics, "Action", this.tableVehicalPrice.ColumnHeadersDefaultCellStyle.Font,
+                mergedHeaderRect, this.tableVehicalPrice.ColumnHeadersDefaultCellStyle.ForeColor,
                 TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
         }
         // Paint the cell
         private void table_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if ((e.ColumnIndex == tableRole.Columns["colView"].Index ||
-                 e.ColumnIndex == tableRole.Columns["colEdit"].Index ||
-                 e.ColumnIndex == tableRole.Columns["colDelete"].Index) && e.RowIndex >= 0)
+            if ((e.ColumnIndex == tableVehicalPrice.Columns["colView"].Index ||
+                 e.ColumnIndex == tableVehicalPrice.Columns["colEdit"].Index ||
+                 e.ColumnIndex == tableVehicalPrice.Columns["colDelete"].Index) && e.RowIndex >= 0)
             {
                 if (e.RowIndex % 2 == 0)
                 {
@@ -54,16 +68,16 @@ namespace ZiTyLot.GUI.Screens
                 {
                     e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
                 }
-                Image icon = null;
-                if (e.ColumnIndex == tableRole.Columns["colView"].Index)
+                System.Drawing.Image icon = null;
+                if (e.ColumnIndex == tableVehicalPrice.Columns["colView"].Index)
                 {
                     icon = Properties.Resources.Icon_18x18px_View;
                 }
-                else if (e.ColumnIndex == tableRole.Columns["colEdit"].Index)
+                else if (e.ColumnIndex == tableVehicalPrice.Columns["colEdit"].Index)
                 {
                     icon = Properties.Resources.Icon_18x18px_Edit;
                 }
-                else if (e.ColumnIndex == tableRole.Columns["colDelete"].Index)
+                else if (e.ColumnIndex == tableVehicalPrice.Columns["colDelete"].Index)
                 {
                     icon = Properties.Resources.Icon_18x18px_Delete;
                 }
@@ -83,15 +97,15 @@ namespace ZiTyLot.GUI.Screens
         {
             if (e.RowIndex >= 0)
             {
-                if (e.ColumnIndex == tableRole.Columns["colView"].Index)
+                if (e.ColumnIndex == tableVehicalPrice.Columns["colView"].Index)
                 {
                     MessageBox.Show("View button clicked for row " + e.RowIndex);
                 }
-                else if (e.ColumnIndex == tableRole.Columns["colEdit"].Index)
+                else if (e.ColumnIndex == tableVehicalPrice.Columns["colEdit"].Index)
                 {
                     MessageBox.Show("Edit button clicked for row " + e.RowIndex);
                 }
-                else if (e.ColumnIndex == tableRole.Columns["colDelete"].Index)
+                else if (e.ColumnIndex == tableVehicalPrice.Columns["colDelete"].Index)
                 {
                     MessageBox.Show("Delete button clicked for row " + e.RowIndex);
                 }
@@ -108,10 +122,5 @@ namespace ZiTyLot.GUI.Screens
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            RoleDetailForm roleDetailForm = new RoleDetailForm();
-            roleDetailForm.Show();
-        }
     }
 }

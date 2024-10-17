@@ -1,4 +1,4 @@
-﻿namespace ZiTyLot.GUI.Screens.Session
+﻿namespace ZiTyLot.GUI.Screens.SessionScr
 {
     partial class SessionDetailForm
     {

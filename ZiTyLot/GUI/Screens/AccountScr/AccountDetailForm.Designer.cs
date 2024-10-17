@@ -1,4 +1,4 @@
-﻿namespace ZiTyLot.GUI.Screens.Account
+﻿namespace ZiTyLot.GUI.Screens.AccountScr
 {
     partial class AccountDetailForm
     {
