@@ -60,9 +60,6 @@ namespace ZiTyLot.GUI.Screens
             this.pnlPrevious = new System.Windows.Forms.Panel();
             this.btnPrevious = new Sunny.UI.UISymbolButton();
             this.tableResident = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.filterCb = new Sunny.UI.UIComboBox();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +67,9 @@ namespace ZiTyLot.GUI.Screens
             this.colView = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.filterCb = new Sunny.UI.UIComboBox();
             this.pnlTop.SuspendLayout();
             this.uiPanel1.SuspendLayout();
             this.uiPanel3.SuspendLayout();
@@ -286,11 +286,13 @@ namespace ZiTyLot.GUI.Screens
             this.btnAdd.RectPressColor = System.Drawing.Color.White;
             this.btnAdd.RectSelectedColor = System.Drawing.Color.White;
             this.btnAdd.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnAdd.RectSize = 2;
             this.btnAdd.Size = new System.Drawing.Size(140, 34);
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "New resident";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // separator
             // 
@@ -593,6 +595,64 @@ namespace ZiTyLot.GUI.Screens
             this.tableResident.Size = new System.Drawing.Size(1135, 507);
             this.tableResident.TabIndex = 1;
             // 
+            // colId
+            // 
+            this.colId.HeaderText = "ID";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colId.Width = 40;
+            // 
+            // colFullname
+            // 
+            this.colFullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colFullname.HeaderText = "Full name";
+            this.colFullname.MinimumWidth = 80;
+            this.colFullname.Name = "colFullname";
+            this.colFullname.ReadOnly = true;
+            this.colFullname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colApartment
+            // 
+            this.colApartment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colApartment.HeaderText = "Apartment";
+            this.colApartment.Name = "colApartment";
+            this.colApartment.ReadOnly = true;
+            // 
+            // colEmail
+            // 
+            this.colEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colEmail.HeaderText = "Email";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.ReadOnly = true;
+            // 
+            // colView
+            // 
+            this.colView.HeaderText = "";
+            this.colView.Name = "colView";
+            this.colView.ReadOnly = true;
+            this.colView.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colView.Text = "View";
+            this.colView.Width = 30;
+            // 
+            // colEdit
+            // 
+            this.colEdit.HeaderText = "";
+            this.colEdit.Name = "colEdit";
+            this.colEdit.ReadOnly = true;
+            this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEdit.Text = "Edit";
+            this.colEdit.Width = 30;
+            // 
+            // colDelete
+            // 
+            this.colDelete.HeaderText = "";
+            this.colDelete.Name = "colDelete";
+            this.colDelete.ReadOnly = true;
+            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colDelete.Text = "Delete";
+            this.colDelete.Width = 30;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.BottomPnl);
@@ -655,64 +715,6 @@ namespace ZiTyLot.GUI.Screens
             this.filterCb.Text = "Filter";
             this.filterCb.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.filterCb.Watermark = "";
-            // 
-            // colId
-            // 
-            this.colId.HeaderText = "ID";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colId.Width = 40;
-            // 
-            // colFullname
-            // 
-            this.colFullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colFullname.HeaderText = "Full name";
-            this.colFullname.MinimumWidth = 80;
-            this.colFullname.Name = "colFullname";
-            this.colFullname.ReadOnly = true;
-            this.colFullname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colApartment
-            // 
-            this.colApartment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colApartment.HeaderText = "Apartment";
-            this.colApartment.Name = "colApartment";
-            this.colApartment.ReadOnly = true;
-            // 
-            // colEmail
-            // 
-            this.colEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colEmail.HeaderText = "Email";
-            this.colEmail.Name = "colEmail";
-            this.colEmail.ReadOnly = true;
-            // 
-            // colView
-            // 
-            this.colView.HeaderText = "";
-            this.colView.Name = "colView";
-            this.colView.ReadOnly = true;
-            this.colView.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colView.Text = "View";
-            this.colView.Width = 30;
-            // 
-            // colEdit
-            // 
-            this.colEdit.HeaderText = "";
-            this.colEdit.Name = "colEdit";
-            this.colEdit.ReadOnly = true;
-            this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colEdit.Text = "Edit";
-            this.colEdit.Width = 30;
-            // 
-            // colDelete
-            // 
-            this.colDelete.HeaderText = "";
-            this.colDelete.Name = "colDelete";
-            this.colDelete.ReadOnly = true;
-            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colDelete.Text = "Delete";
-            this.colDelete.Width = 30;
             // 
             // ResidentControl
             // 

@@ -1,33 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
+using ZiTyLot.GUI.Screens.ResidentScr;
 using ZiTyLot.Helper;
 
 namespace ZiTyLot.GUI.Screens
 {
     public partial class ResidentControl : UserControl
     {
-
-        ResidentBUS residentBUS = new ResidentBUS();
-        Pageable pageable = new Pageable();
-        List<FilterCondition> filters= new List<FilterCondition>();
-        Page<Resident> page;
+        private ResidentBUS residentBUS = new ResidentBUS();
+        private Pageable pageable = new Pageable();
+        private List<FilterCondition> filters = new List<FilterCondition>();
+        private Page<Resident> page;
 
         public ResidentControl()
         {
             InitializeComponent();
-            cbNumberofitem.SelectedIndex = 0; 
+            cbNumberofitem.SelectedIndex = 0;
             page = residentBUS.GetAllPagination(pageable, filters);
-            tbCurrentpage.Text = "1"; 
+            tbCurrentpage.Text = "1";
             lbTotalpage.Text = "/" + page.TotalPages;
             LoadPageToTable();
         }
@@ -41,17 +36,19 @@ namespace ZiTyLot.GUI.Screens
             this.tableResident.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
             this.tableResident.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
         }
+
         // Paint the header cell
         private void table_Paint(object sender, PaintEventArgs e)
         {
             Rectangle firstHeaderCellRect = this.tableResident.GetCellDisplayRectangle(this.tableResident.Columns["colView"].Index, -1, true);
             Rectangle lastHeaderCellRect = this.tableResident.GetCellDisplayRectangle(this.tableResident.Columns["colDelete"].Index, -1, true);
-            Rectangle mergedHeaderRect = new Rectangle(firstHeaderCellRect.X, firstHeaderCellRect.Y,lastHeaderCellRect.X + lastHeaderCellRect.Width - firstHeaderCellRect.X, firstHeaderCellRect.Height);
+            Rectangle mergedHeaderRect = new Rectangle(firstHeaderCellRect.X, firstHeaderCellRect.Y, lastHeaderCellRect.X + lastHeaderCellRect.Width - firstHeaderCellRect.X, firstHeaderCellRect.Height);
             e.Graphics.FillRectangle(new SolidBrush(Color.White), mergedHeaderRect);
             TextRenderer.DrawText(e.Graphics, "Action", this.tableResident.ColumnHeadersDefaultCellStyle.Font,
                 mergedHeaderRect, this.tableResident.ColumnHeadersDefaultCellStyle.ForeColor,
                 TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
         }
+
         // Paint the cell
         private void table_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -91,6 +88,7 @@ namespace ZiTyLot.GUI.Screens
                 e.Handled = true;
             }
         }
+
         // Cell click event handler
         private void table_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -121,11 +119,10 @@ namespace ZiTyLot.GUI.Screens
             BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
         }
 
-
         private void LoadPageToTable()
         {
             tableResident.Rows.Clear();
-            foreach (Resident resident in page.Content)
+            foreach (ZiTyLot.ENTITY.Resident resident in page.Content)
             {
                 tableResident.Rows.Add(resident.Id, resident.Full_name, resident.Apartment_id, resident.Email);
             }
@@ -171,6 +168,12 @@ namespace ZiTyLot.GUI.Screens
             {
                 ChangePage(currentPage + 1);
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ResidentDetailForm residentDetailForm = new ResidentDetailForm();
+            residentDetailForm.Show();
         }
     }
 }
