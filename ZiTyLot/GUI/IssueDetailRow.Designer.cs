@@ -31,17 +31,17 @@
             this.uiPanel1 = new Sunny.UI.UIPanel();
             this.uiTableLayoutPanel1 = new Sunny.UI.UITableLayoutPanel();
             this.uiPanel6 = new Sunny.UI.UIPanel();
-            this.uiLabel5 = new Sunny.UI.UILabel();
+            this.lbTotal = new Sunny.UI.UILabel();
             this.uiPanel5 = new Sunny.UI.UIPanel();
-            this.uiLabel4 = new Sunny.UI.UILabel();
+            this.lbDate = new Sunny.UI.UILabel();
             this.uiPanel4 = new Sunny.UI.UIPanel();
-            this.uiLabel3 = new Sunny.UI.UILabel();
+            this.lbArea = new Sunny.UI.UILabel();
             this.uiPanel7 = new Sunny.UI.UIPanel();
-            this.uiLabel6 = new Sunny.UI.UILabel();
+            this.btnDeteteRow = new Sunny.UI.UISymbolButton();
             this.uiPanel3 = new Sunny.UI.UIPanel();
-            this.uiLabel2 = new Sunny.UI.UILabel();
+            this.lbPlate = new Sunny.UI.UILabel();
             this.uiPanel2 = new Sunny.UI.UIPanel();
-            this.uiLabel1 = new Sunny.UI.UILabel();
+            this.lbIcon = new Sunny.UI.UILabel();
             this.uiPanel1.SuspendLayout();
             this.uiTableLayoutPanel1.SuspendLayout();
             this.uiPanel6.SuspendLayout();
@@ -70,7 +70,6 @@
             this.uiPanel1.TabIndex = 0;
             this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.uiPanel1.Resize += new System.EventHandler(this.uiPanel1_Resize);
             // 
             // uiTableLayoutPanel1
             // 
@@ -99,7 +98,7 @@
             // 
             // uiPanel6
             // 
-            this.uiPanel6.Controls.Add(this.uiLabel5);
+            this.uiPanel6.Controls.Add(this.lbTotal);
             this.uiPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel6.FillColor = System.Drawing.Color.White;
             this.uiPanel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -113,21 +112,21 @@
             this.uiPanel6.Text = null;
             this.uiPanel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // uiLabel5
+            // lbTotal
             // 
-            this.uiLabel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel5.Location = new System.Drawing.Point(0, 0);
-            this.uiLabel5.Name = "uiLabel5";
-            this.uiLabel5.Size = new System.Drawing.Size(189, 22);
-            this.uiLabel5.TabIndex = 0;
-            this.uiLabel5.Text = "{total}";
-            this.uiLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbTotal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbTotal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lbTotal.Location = new System.Drawing.Point(0, 0);
+            this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(189, 22);
+            this.lbTotal.TabIndex = 0;
+            this.lbTotal.Text = "{total}";
+            this.lbTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // uiPanel5
             // 
-            this.uiPanel5.Controls.Add(this.uiLabel4);
+            this.uiPanel5.Controls.Add(this.lbDate);
             this.uiPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel5.FillColor = System.Drawing.Color.White;
             this.uiPanel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -141,21 +140,21 @@
             this.uiPanel5.Text = null;
             this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // uiLabel4
+            // lbDate
             // 
-            this.uiLabel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel4.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiLabel4.Location = new System.Drawing.Point(0, 0);
-            this.uiLabel4.Name = "uiLabel4";
-            this.uiLabel4.Size = new System.Drawing.Size(189, 22);
-            this.uiLabel4.TabIndex = 0;
-            this.uiLabel4.Text = "{date}";
-            this.uiLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lbDate.Location = new System.Drawing.Point(0, 0);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(189, 22);
+            this.lbDate.TabIndex = 0;
+            this.lbDate.Text = "{date}";
+            this.lbDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // uiPanel4
             // 
-            this.uiPanel4.Controls.Add(this.uiLabel3);
+            this.uiPanel4.Controls.Add(this.lbArea);
             this.uiPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel4.FillColor = System.Drawing.Color.White;
             this.uiPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -169,21 +168,21 @@
             this.uiPanel4.Text = null;
             this.uiPanel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // uiLabel3
+            // lbArea
             // 
-            this.uiLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel3.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiLabel3.Location = new System.Drawing.Point(0, 0);
-            this.uiLabel3.Name = "uiLabel3";
-            this.uiLabel3.Size = new System.Drawing.Size(189, 22);
-            this.uiLabel3.TabIndex = 0;
-            this.uiLabel3.Text = "{area}";
-            this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbArea.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbArea.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbArea.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lbArea.Location = new System.Drawing.Point(0, 0);
+            this.lbArea.Name = "lbArea";
+            this.lbArea.Size = new System.Drawing.Size(189, 22);
+            this.lbArea.TabIndex = 0;
+            this.lbArea.Text = "{area}";
+            this.lbArea.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // uiPanel7
             // 
-            this.uiPanel7.Controls.Add(this.uiLabel6);
+            this.uiPanel7.Controls.Add(this.btnDeteteRow);
             this.uiPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel7.FillColor = System.Drawing.Color.White;
             this.uiPanel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -197,20 +196,31 @@
             this.uiPanel7.Text = null;
             this.uiPanel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // uiLabel6
+            // btnDeteteRow
             // 
-            this.uiLabel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel6.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Plus_Black;
-            this.uiLabel6.Location = new System.Drawing.Point(0, 0);
-            this.uiLabel6.Name = "uiLabel6";
-            this.uiLabel6.Size = new System.Drawing.Size(35, 22);
-            this.uiLabel6.TabIndex = 0;
+            this.btnDeteteRow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeteteRow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeteteRow.FillColor = System.Drawing.Color.Transparent;
+            this.btnDeteteRow.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnDeteteRow.Location = new System.Drawing.Point(0, 0);
+            this.btnDeteteRow.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnDeteteRow.Name = "btnDeteteRow";
+            this.btnDeteteRow.RectColor = System.Drawing.Color.White;
+            this.btnDeteteRow.RectHoverColor = System.Drawing.Color.White;
+            this.btnDeteteRow.RectPressColor = System.Drawing.Color.White;
+            this.btnDeteteRow.RectSelectedColor = System.Drawing.Color.White;
+            this.btnDeteteRow.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnDeteteRow.Size = new System.Drawing.Size(35, 22);
+            this.btnDeteteRow.Symbol = 79;
+            this.btnDeteteRow.SymbolColor = System.Drawing.Color.Gray;
+            this.btnDeteteRow.SymbolHoverColor = System.Drawing.Color.Black;
+            this.btnDeteteRow.TabIndex = 0;
+            this.btnDeteteRow.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnDeteteRow.Click += new System.EventHandler(this.btnDeleteRow_Click);
             // 
             // uiPanel3
             // 
-            this.uiPanel3.Controls.Add(this.uiLabel2);
+            this.uiPanel3.Controls.Add(this.lbPlate);
             this.uiPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel3.FillColor = System.Drawing.Color.White;
             this.uiPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -224,21 +234,21 @@
             this.uiPanel3.Text = null;
             this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // uiLabel2
+            // lbPlate
             // 
-            this.uiLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel2.Location = new System.Drawing.Point(0, 0);
-            this.uiLabel2.Name = "uiLabel2";
-            this.uiLabel2.Size = new System.Drawing.Size(189, 22);
-            this.uiLabel2.TabIndex = 0;
-            this.uiLabel2.Text = "{plate}";
-            this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbPlate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbPlate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPlate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lbPlate.Location = new System.Drawing.Point(0, 0);
+            this.lbPlate.Name = "lbPlate";
+            this.lbPlate.Size = new System.Drawing.Size(189, 22);
+            this.lbPlate.TabIndex = 0;
+            this.lbPlate.Text = "{plate}";
+            this.lbPlate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // uiPanel2
             // 
-            this.uiPanel2.Controls.Add(this.uiLabel1);
+            this.uiPanel2.Controls.Add(this.lbIcon);
             this.uiPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel2.FillColor = System.Drawing.Color.White;
             this.uiPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -252,16 +262,16 @@
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // uiLabel1
+            // lbIcon
             // 
-            this.uiLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel1.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Plus_Black;
-            this.uiLabel1.Location = new System.Drawing.Point(0, 0);
-            this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(33, 22);
-            this.uiLabel1.TabIndex = 0;
+            this.lbIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbIcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbIcon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lbIcon.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Plus_Black;
+            this.lbIcon.Location = new System.Drawing.Point(0, 0);
+            this.lbIcon.Name = "lbIcon";
+            this.lbIcon.Size = new System.Drawing.Size(33, 22);
+            this.lbIcon.TabIndex = 0;
             // 
             // IssueDetailRow
             // 
@@ -290,15 +300,15 @@
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel1;
         private Sunny.UI.UIPanel uiPanel2;
         private Sunny.UI.UIPanel uiPanel6;
-        private Sunny.UI.UILabel uiLabel5;
+        private Sunny.UI.UILabel lbTotal;
         private Sunny.UI.UIPanel uiPanel5;
-        private Sunny.UI.UILabel uiLabel4;
+        private Sunny.UI.UILabel lbDate;
         private Sunny.UI.UIPanel uiPanel4;
-        private Sunny.UI.UILabel uiLabel3;
+        private Sunny.UI.UILabel lbArea;
         private Sunny.UI.UIPanel uiPanel7;
-        private Sunny.UI.UILabel uiLabel6;
         private Sunny.UI.UIPanel uiPanel3;
-        private Sunny.UI.UILabel uiLabel2;
-        private Sunny.UI.UILabel uiLabel1;
+        private Sunny.UI.UILabel lbPlate;
+        private Sunny.UI.UILabel lbIcon;
+        private Sunny.UI.UISymbolButton btnDeteteRow;
     }
 }

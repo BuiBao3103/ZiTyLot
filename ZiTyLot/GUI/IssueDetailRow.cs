@@ -17,9 +17,20 @@ namespace ZiTyLot.GUI.Screens.Bill
             InitializeComponent();
         }
 
-        private void uiPanel1_Resize(object sender, EventArgs e)
+        private void btnDeleteRow_Click(object sender, EventArgs e)
         {
+            this.Dispose();
+            OnRowDeleted();  // Notify the parent control
+        }
 
+        // Custom event to notify parent control about row deletion
+        public event EventHandler RowDeleted;
+
+        protected virtual void OnRowDeleted()
+        {
+            if (RowDeleted != null)
+                RowDeleted(this, EventArgs.Empty);
         }
     }
+
 }
