@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
+using ZiTyLot.GUI.Screens.BillScr;
 using ZiTyLot.Helper;
 namespace ZiTyLot.GUI.Screens
 {
@@ -149,10 +150,9 @@ namespace ZiTyLot.GUI.Screens
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //this.Parent.Controls.Clear();
-            //BillDetailControl billDetailControl = new BillDetailControl();
-            //this.Parent.Controls.Add(billDetailControl);
-            //billDetailControl.BringToFront();
+            Home home = (Home)ParentForm;
+            BillDetailControl BillDetailControl = new BillDetailControl();
+            home.LoadForm(BillDetailControl);
         }
 
     }

@@ -19,6 +19,8 @@ namespace ZiTyLot.GUI
             pictureBox2.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pictureBox2.Width, pictureBox2.Height, 10,10));
 
         }
+
+
         private void AddMenuToSidebar()
         {
             // Create a dictionary to map buttons to their respective panels
@@ -35,7 +37,7 @@ namespace ZiTyLot.GUI
                 { "PriceManagement", new PriceControl() },
                 { "AreaManagement", new AreaControl() },
                 { "Scanning", new ScanningControl() },
-                { "BillDetails", new BillDetailControl()},
+                //{ "BillDetails", new BillDetailControl()},
                 //{ "Setting", new SettingScreen() },
             };
 
@@ -52,7 +54,7 @@ namespace ZiTyLot.GUI
                 new { Name = "AreaManagement", Text = "Area" },
                 new { Name = "SessionManagement", Text = "Session" },
                 new { Name = "Scanning", Text = "Scanning" },
-                new { Name = "BillDetails", Text = "Bill Details" },
+                //new { Name = "BillDetails", Text = "Bill Details" },
                 //new { Name = "Dashboard", Text = "Dashboard" },
                 //new { Name = "Home", Text = "Example" },
                 //new { Name = "EmployeeManagement", Text = "Panel2" },
@@ -69,7 +71,7 @@ namespace ZiTyLot.GUI
                 new { Name = "AreaManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Area},
                 new { Name = "SessionManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Session},
                 new { Name = "Scanning", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Scanning},
-                new { Name = "BillDetails", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Scanning},
+                //new { Name = "BillDetails", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Scanning},
 
                 //new { Name = "Setting", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Setting},
             };
@@ -86,7 +88,7 @@ namespace ZiTyLot.GUI
                 new { Name = "AreaManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Area_Active},
                 new { Name = "SessionManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Session_Active},
                 new { Name = "Scanning", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Scanning_Active},
-                new { Name = "BillDetails", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Scanning_Active},
+                //new { Name = "BillDetails", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Scanning_Active},
 
                 //new { Name = "Setting", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Setting_Active},
             };
@@ -154,8 +156,6 @@ namespace ZiTyLot.GUI
         {
             AddMenuToSidebar();
             LoadForm(new ScanningControl());
-
-            // Optionally, trigger the Scanning button click for visual highlighting
             var scanningButton = sidebarMid.Controls.OfType<Button>()
                                     .FirstOrDefault(btn => btn.Name == "Scanning");
             if (scanningButton != null)

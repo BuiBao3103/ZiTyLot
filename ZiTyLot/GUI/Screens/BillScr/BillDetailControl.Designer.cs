@@ -772,6 +772,7 @@
             this.pnlIssueTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.pnlIssueTable.Location = new System.Drawing.Point(4, 59);
             this.pnlIssueTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlIssueTable.MaximumSize = new System.Drawing.Size(0, 240);
             this.pnlIssueTable.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlIssueTable.Name = "pnlIssueTable";
             this.pnlIssueTable.RectColor = System.Drawing.Color.White;
