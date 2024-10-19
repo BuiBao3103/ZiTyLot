@@ -34,37 +34,36 @@
             this.pnlBottom = new Sunny.UI.UIPanel();
             this.table = new Sunny.UI.UITableLayoutPanel();
             this.pnlPlateRecord = new Sunny.UI.UIPanel();
-            this.uiGroupBox6 = new Sunny.UI.UIGroupBox();
-            this.pbPlateRecord = new System.Windows.Forms.PictureBox();
             this.pnlPlateCamera = new Sunny.UI.UIPanel();
-            this.uiGroupBox5 = new Sunny.UI.UIGroupBox();
-            this.pbPlateCamera = new System.Windows.Forms.PictureBox();
             this.pnlBackRecord = new Sunny.UI.UIPanel();
-            this.uiGroupBox4 = new Sunny.UI.UIGroupBox();
-            this.pbBackRecord = new System.Windows.Forms.PictureBox();
             this.pnlBackCamera = new Sunny.UI.UIPanel();
-            this.uiGroupBox2 = new Sunny.UI.UIGroupBox();
-            this.pbBackCamera = new System.Windows.Forms.PictureBox();
             this.pnlFrontRecord = new Sunny.UI.UIPanel();
-            this.uiGroupBox3 = new Sunny.UI.UIGroupBox();
-            this.pbFrontRecord = new System.Windows.Forms.PictureBox();
             this.pnlFrontCamera = new Sunny.UI.UIPanel();
-            this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
-            this.pbFrontCamera = new System.Windows.Forms.PictureBox();
             this.pnlInformation = new Sunny.UI.UITableLayoutPanel();
-            this.pnlResident = new Sunny.UI.UIPanel();
-            this.uiGroupBox8 = new Sunny.UI.UIGroupBox();
-            this.uiTableLayoutPanel4 = new Sunny.UI.UITableLayoutPanel();
-            this.uiLabel24 = new Sunny.UI.UILabel();
-            this.lbRegistedPlate = new Sunny.UI.UILabel();
-            this.uiLabel26 = new Sunny.UI.UILabel();
-            this.lbDueDate = new Sunny.UI.UILabel();
-            this.uiLabel28 = new Sunny.UI.UILabel();
-            this.lbSignUpDate = new Sunny.UI.UILabel();
-            this.lbApartment = new Sunny.UI.UILabel();
-            this.uiLabel31 = new Sunny.UI.UILabel();
-            this.lbFullname = new Sunny.UI.UILabel();
-            this.uiLabel33 = new Sunny.UI.UILabel();
+            this.uiTableLayoutPanel1 = new Sunny.UI.UITableLayoutPanel();
+            this.uiPanel15 = new Sunny.UI.UIPanel();
+            this.btnOpen = new Sunny.UI.UIButton();
+            this.uiPanel7 = new Sunny.UI.UIPanel();
+            this.uiGroupBox9 = new Sunny.UI.UIGroupBox();
+            this.uiTableLayoutPanel5 = new Sunny.UI.UITableLayoutPanel();
+            this.uiLabel22 = new Sunny.UI.UILabel();
+            this.uiLabel23 = new Sunny.UI.UILabel();
+            this.uiLabel34 = new Sunny.UI.UILabel();
+            this.uiLabel35 = new Sunny.UI.UILabel();
+            this.uiLabel36 = new Sunny.UI.UILabel();
+            this.uiLabel37 = new Sunny.UI.UILabel();
+            this.pbPlateCamera = new System.Windows.Forms.PictureBox();
+            this.uiGroupBox5 = new Sunny.UI.UIGroupBox();
+            this.pbPlateRecord = new System.Windows.Forms.PictureBox();
+            this.uiGroupBox6 = new Sunny.UI.UIGroupBox();
+            this.pbBackCamera = new System.Windows.Forms.PictureBox();
+            this.uiGroupBox2 = new Sunny.UI.UIGroupBox();
+            this.pbFrontCamera = new System.Windows.Forms.PictureBox();
+            this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
+            this.pbFrontRecord = new System.Windows.Forms.PictureBox();
+            this.uiGroupBox3 = new Sunny.UI.UIGroupBox();
+            this.pbBackRecord = new System.Windows.Forms.PictureBox();
+            this.uiGroupBox4 = new Sunny.UI.UIGroupBox();
             this.pnlCard = new Sunny.UI.UIPanel();
             this.uiGroupBox7 = new Sunny.UI.UIGroupBox();
             this.uiTableLayoutPanel3 = new Sunny.UI.UITableLayoutPanel();
@@ -84,51 +83,52 @@
             this.uiLabel3 = new Sunny.UI.UILabel();
             this.lbCardId = new Sunny.UI.UILabel();
             this.uiLabel2 = new Sunny.UI.UILabel();
-            this.pnlShortcut = new Sunny.UI.UIPanel();
-            this.uiPanel7 = new Sunny.UI.UIPanel();
-            this.uiGroupBox9 = new Sunny.UI.UIGroupBox();
-            this.uiTableLayoutPanel5 = new Sunny.UI.UITableLayoutPanel();
-            this.uiLabel22 = new Sunny.UI.UILabel();
-            this.uiLabel23 = new Sunny.UI.UILabel();
-            this.uiLabel34 = new Sunny.UI.UILabel();
-            this.uiLabel35 = new Sunny.UI.UILabel();
-            this.uiLabel36 = new Sunny.UI.UILabel();
-            this.uiLabel37 = new Sunny.UI.UILabel();
-            this.uiPanel15 = new Sunny.UI.UIPanel();
-            this.btnOpen = new Sunny.UI.UIButton();
+            this.pnlResident = new Sunny.UI.UIPanel();
+            this.uiGroupBox8 = new Sunny.UI.UIGroupBox();
+            this.uiTableLayoutPanel4 = new Sunny.UI.UITableLayoutPanel();
+            this.uiLabel24 = new Sunny.UI.UILabel();
+            this.lbRegistedPlate = new Sunny.UI.UILabel();
+            this.uiLabel26 = new Sunny.UI.UILabel();
+            this.lbDueDate = new Sunny.UI.UILabel();
+            this.uiLabel28 = new Sunny.UI.UILabel();
+            this.lbSignUpDate = new Sunny.UI.UILabel();
+            this.lbApartment = new Sunny.UI.UILabel();
+            this.uiLabel31 = new Sunny.UI.UILabel();
+            this.lbFullname = new Sunny.UI.UILabel();
+            this.uiLabel33 = new Sunny.UI.UILabel();
             this.pnlTop.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.table.SuspendLayout();
             this.pnlPlateRecord.SuspendLayout();
-            this.uiGroupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlateRecord)).BeginInit();
             this.pnlPlateCamera.SuspendLayout();
-            this.uiGroupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlateCamera)).BeginInit();
             this.pnlBackRecord.SuspendLayout();
-            this.uiGroupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBackRecord)).BeginInit();
             this.pnlBackCamera.SuspendLayout();
-            this.uiGroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBackCamera)).BeginInit();
             this.pnlFrontRecord.SuspendLayout();
-            this.uiGroupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFrontRecord)).BeginInit();
             this.pnlFrontCamera.SuspendLayout();
-            this.uiGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFrontCamera)).BeginInit();
             this.pnlInformation.SuspendLayout();
-            this.pnlResident.SuspendLayout();
-            this.uiGroupBox8.SuspendLayout();
-            this.uiTableLayoutPanel4.SuspendLayout();
-            this.pnlCard.SuspendLayout();
-            this.uiGroupBox7.SuspendLayout();
-            this.uiTableLayoutPanel3.SuspendLayout();
-            this.pnlShortcut.SuspendLayout();
+            this.uiTableLayoutPanel1.SuspendLayout();
+            this.uiPanel15.SuspendLayout();
             this.uiPanel7.SuspendLayout();
             this.uiGroupBox9.SuspendLayout();
             this.uiTableLayoutPanel5.SuspendLayout();
-            this.uiPanel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlateCamera)).BeginInit();
+            this.uiGroupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlateRecord)).BeginInit();
+            this.uiGroupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackCamera)).BeginInit();
+            this.uiGroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFrontCamera)).BeginInit();
+            this.uiGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFrontRecord)).BeginInit();
+            this.uiGroupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackRecord)).BeginInit();
+            this.uiGroupBox4.SuspendLayout();
+            this.pnlCard.SuspendLayout();
+            this.uiGroupBox7.SuspendLayout();
+            this.uiTableLayoutPanel3.SuspendLayout();
+            this.pnlResident.SuspendLayout();
+            this.uiGroupBox8.SuspendLayout();
+            this.uiTableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -145,7 +145,7 @@
             this.pnlTop.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.pnlTop.Radius = 10;
             this.pnlTop.RectColor = System.Drawing.Color.White;
-            this.pnlTop.Size = new System.Drawing.Size(1564, 50);
+            this.pnlTop.Size = new System.Drawing.Size(1330, 50);
             this.pnlTop.TabIndex = 0;
             this.pnlTop.Text = null;
             this.pnlTop.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -168,7 +168,7 @@
             this.separator.Location = new System.Drawing.Point(10, 60);
             this.separator.MaximumSize = new System.Drawing.Size(1620, 4);
             this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(1564, 4);
+            this.separator.Size = new System.Drawing.Size(1330, 4);
             this.separator.TabIndex = 3;
             // 
             // pnlBottom
@@ -186,7 +186,7 @@
             this.pnlBottom.Radius = 10;
             this.pnlBottom.RectColor = System.Drawing.Color.White;
             this.pnlBottom.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlBottom.Size = new System.Drawing.Size(1564, 787);
+            this.pnlBottom.Size = new System.Drawing.Size(1330, 655);
             this.pnlBottom.TabIndex = 6;
             this.pnlBottom.Text = null;
             this.pnlBottom.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -211,7 +211,7 @@
             this.table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
             this.table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
             this.table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.table.Size = new System.Drawing.Size(1544, 767);
+            this.table.Size = new System.Drawing.Size(1310, 635);
             this.table.TabIndex = 1;
             this.table.TagString = null;
             // 
@@ -221,47 +221,17 @@
             this.pnlPlateRecord.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPlateRecord.FillColor = System.Drawing.Color.White;
             this.pnlPlateRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlPlateRecord.Location = new System.Drawing.Point(579, 574);
+            this.pnlPlateRecord.Location = new System.Drawing.Point(491, 476);
             this.pnlPlateRecord.Margin = new System.Windows.Forms.Padding(0);
             this.pnlPlateRecord.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlPlateRecord.Name = "pnlPlateRecord";
             this.pnlPlateRecord.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.pnlPlateRecord.RectColor = System.Drawing.Color.IndianRed;
             this.pnlPlateRecord.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlPlateRecord.Size = new System.Drawing.Size(579, 193);
+            this.pnlPlateRecord.Size = new System.Drawing.Size(491, 159);
             this.pnlPlateRecord.TabIndex = 8;
             this.pnlPlateRecord.Text = "uiPanel8";
             this.pnlPlateRecord.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiGroupBox6
-            // 
-            this.uiGroupBox6.Controls.Add(this.pbPlateRecord);
-            this.uiGroupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiGroupBox6.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox6.Font = new System.Drawing.Font("Helvetica", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiGroupBox6.Location = new System.Drawing.Point(5, 0);
-            this.uiGroupBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiGroupBox6.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiGroupBox6.Name = "uiGroupBox6";
-            this.uiGroupBox6.Padding = new System.Windows.Forms.Padding(10, 32, 10, 10);
-            this.uiGroupBox6.Radius = 10;
-            this.uiGroupBox6.RectColor = System.Drawing.SystemColors.AppWorkspace;
-            this.uiGroupBox6.Size = new System.Drawing.Size(569, 193);
-            this.uiGroupBox6.TabIndex = 1;
-            this.uiGroupBox6.Text = "Plate Record";
-            this.uiGroupBox6.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pbPlateRecord
-            // 
-            this.pbPlateRecord.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbPlateRecord.Image = global::ZiTyLot.Properties.Resources.logo;
-            this.pbPlateRecord.Location = new System.Drawing.Point(10, 32);
-            this.pbPlateRecord.Name = "pbPlateRecord";
-            this.pbPlateRecord.Size = new System.Drawing.Size(549, 151);
-            this.pbPlateRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbPlateRecord.TabIndex = 0;
-            this.pbPlateRecord.TabStop = false;
             // 
             // pnlPlateCamera
             // 
@@ -269,47 +239,17 @@
             this.pnlPlateCamera.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPlateCamera.FillColor = System.Drawing.Color.White;
             this.pnlPlateCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlPlateCamera.Location = new System.Drawing.Point(0, 574);
+            this.pnlPlateCamera.Location = new System.Drawing.Point(0, 476);
             this.pnlPlateCamera.Margin = new System.Windows.Forms.Padding(0);
             this.pnlPlateCamera.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlPlateCamera.Name = "pnlPlateCamera";
             this.pnlPlateCamera.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.pnlPlateCamera.RectColor = System.Drawing.Color.IndianRed;
             this.pnlPlateCamera.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlPlateCamera.Size = new System.Drawing.Size(579, 193);
+            this.pnlPlateCamera.Size = new System.Drawing.Size(491, 159);
             this.pnlPlateCamera.TabIndex = 7;
             this.pnlPlateCamera.Text = "uiPanel6";
             this.pnlPlateCamera.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiGroupBox5
-            // 
-            this.uiGroupBox5.Controls.Add(this.pbPlateCamera);
-            this.uiGroupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiGroupBox5.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox5.Font = new System.Drawing.Font("Helvetica", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiGroupBox5.Location = new System.Drawing.Point(0, 0);
-            this.uiGroupBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiGroupBox5.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiGroupBox5.Name = "uiGroupBox5";
-            this.uiGroupBox5.Padding = new System.Windows.Forms.Padding(10, 32, 10, 10);
-            this.uiGroupBox5.Radius = 10;
-            this.uiGroupBox5.RectColor = System.Drawing.SystemColors.AppWorkspace;
-            this.uiGroupBox5.Size = new System.Drawing.Size(569, 193);
-            this.uiGroupBox5.TabIndex = 1;
-            this.uiGroupBox5.Text = "Plate Camera";
-            this.uiGroupBox5.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pbPlateCamera
-            // 
-            this.pbPlateCamera.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbPlateCamera.Image = global::ZiTyLot.Properties.Resources.logo;
-            this.pbPlateCamera.Location = new System.Drawing.Point(10, 32);
-            this.pbPlateCamera.Name = "pbPlateCamera";
-            this.pbPlateCamera.Size = new System.Drawing.Size(549, 151);
-            this.pbPlateCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbPlateCamera.TabIndex = 0;
-            this.pbPlateCamera.TabStop = false;
             // 
             // pnlBackRecord
             // 
@@ -317,47 +257,17 @@
             this.pnlBackRecord.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBackRecord.FillColor = System.Drawing.Color.White;
             this.pnlBackRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlBackRecord.Location = new System.Drawing.Point(579, 287);
+            this.pnlBackRecord.Location = new System.Drawing.Point(491, 238);
             this.pnlBackRecord.Margin = new System.Windows.Forms.Padding(0);
             this.pnlBackRecord.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlBackRecord.Name = "pnlBackRecord";
             this.pnlBackRecord.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.pnlBackRecord.RectColor = System.Drawing.Color.IndianRed;
             this.pnlBackRecord.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlBackRecord.Size = new System.Drawing.Size(579, 287);
+            this.pnlBackRecord.Size = new System.Drawing.Size(491, 238);
             this.pnlBackRecord.TabIndex = 5;
             this.pnlBackRecord.Text = "uiPanel9";
             this.pnlBackRecord.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiGroupBox4
-            // 
-            this.uiGroupBox4.Controls.Add(this.pbBackRecord);
-            this.uiGroupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiGroupBox4.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox4.Font = new System.Drawing.Font("Helvetica", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiGroupBox4.Location = new System.Drawing.Point(5, 0);
-            this.uiGroupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiGroupBox4.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiGroupBox4.Name = "uiGroupBox4";
-            this.uiGroupBox4.Padding = new System.Windows.Forms.Padding(10, 32, 10, 10);
-            this.uiGroupBox4.Radius = 10;
-            this.uiGroupBox4.RectColor = System.Drawing.SystemColors.AppWorkspace;
-            this.uiGroupBox4.Size = new System.Drawing.Size(569, 287);
-            this.uiGroupBox4.TabIndex = 1;
-            this.uiGroupBox4.Text = "Back Record";
-            this.uiGroupBox4.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pbBackRecord
-            // 
-            this.pbBackRecord.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbBackRecord.Image = global::ZiTyLot.Properties.Resources.logo;
-            this.pbBackRecord.Location = new System.Drawing.Point(10, 32);
-            this.pbBackRecord.Name = "pbBackRecord";
-            this.pbBackRecord.Size = new System.Drawing.Size(549, 245);
-            this.pbBackRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbBackRecord.TabIndex = 0;
-            this.pbBackRecord.TabStop = false;
             // 
             // pnlBackCamera
             // 
@@ -365,47 +275,17 @@
             this.pnlBackCamera.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBackCamera.FillColor = System.Drawing.Color.White;
             this.pnlBackCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlBackCamera.Location = new System.Drawing.Point(0, 287);
+            this.pnlBackCamera.Location = new System.Drawing.Point(0, 238);
             this.pnlBackCamera.Margin = new System.Windows.Forms.Padding(0);
             this.pnlBackCamera.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlBackCamera.Name = "pnlBackCamera";
             this.pnlBackCamera.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.pnlBackCamera.RectColor = System.Drawing.Color.IndianRed;
             this.pnlBackCamera.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlBackCamera.Size = new System.Drawing.Size(579, 287);
+            this.pnlBackCamera.Size = new System.Drawing.Size(491, 238);
             this.pnlBackCamera.TabIndex = 4;
             this.pnlBackCamera.Text = "uiPanel5";
             this.pnlBackCamera.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiGroupBox2
-            // 
-            this.uiGroupBox2.Controls.Add(this.pbBackCamera);
-            this.uiGroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiGroupBox2.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox2.Font = new System.Drawing.Font("Helvetica", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiGroupBox2.Location = new System.Drawing.Point(0, 0);
-            this.uiGroupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiGroupBox2.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiGroupBox2.Name = "uiGroupBox2";
-            this.uiGroupBox2.Padding = new System.Windows.Forms.Padding(10, 32, 10, 10);
-            this.uiGroupBox2.Radius = 10;
-            this.uiGroupBox2.RectColor = System.Drawing.SystemColors.AppWorkspace;
-            this.uiGroupBox2.Size = new System.Drawing.Size(569, 287);
-            this.uiGroupBox2.TabIndex = 1;
-            this.uiGroupBox2.Text = "Back Camera";
-            this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pbBackCamera
-            // 
-            this.pbBackCamera.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbBackCamera.Image = global::ZiTyLot.Properties.Resources.logo;
-            this.pbBackCamera.Location = new System.Drawing.Point(10, 32);
-            this.pbBackCamera.Name = "pbBackCamera";
-            this.pbBackCamera.Size = new System.Drawing.Size(549, 245);
-            this.pbBackCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbBackCamera.TabIndex = 0;
-            this.pbBackCamera.TabStop = false;
             // 
             // pnlFrontRecord
             // 
@@ -413,47 +293,17 @@
             this.pnlFrontRecord.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlFrontRecord.FillColor = System.Drawing.Color.White;
             this.pnlFrontRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlFrontRecord.Location = new System.Drawing.Point(579, 0);
+            this.pnlFrontRecord.Location = new System.Drawing.Point(491, 0);
             this.pnlFrontRecord.Margin = new System.Windows.Forms.Padding(0);
             this.pnlFrontRecord.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlFrontRecord.Name = "pnlFrontRecord";
             this.pnlFrontRecord.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.pnlFrontRecord.RectColor = System.Drawing.Color.IndianRed;
             this.pnlFrontRecord.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlFrontRecord.Size = new System.Drawing.Size(579, 287);
+            this.pnlFrontRecord.Size = new System.Drawing.Size(491, 238);
             this.pnlFrontRecord.TabIndex = 2;
             this.pnlFrontRecord.Text = "uiPanel10";
             this.pnlFrontRecord.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiGroupBox3
-            // 
-            this.uiGroupBox3.Controls.Add(this.pbFrontRecord);
-            this.uiGroupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiGroupBox3.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox3.Font = new System.Drawing.Font("Helvetica", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiGroupBox3.Location = new System.Drawing.Point(5, 0);
-            this.uiGroupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiGroupBox3.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiGroupBox3.Name = "uiGroupBox3";
-            this.uiGroupBox3.Padding = new System.Windows.Forms.Padding(10, 32, 10, 10);
-            this.uiGroupBox3.Radius = 10;
-            this.uiGroupBox3.RectColor = System.Drawing.SystemColors.AppWorkspace;
-            this.uiGroupBox3.Size = new System.Drawing.Size(569, 287);
-            this.uiGroupBox3.TabIndex = 1;
-            this.uiGroupBox3.Text = "Front Record";
-            this.uiGroupBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pbFrontRecord
-            // 
-            this.pbFrontRecord.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbFrontRecord.Image = global::ZiTyLot.Properties.Resources.logo;
-            this.pbFrontRecord.Location = new System.Drawing.Point(10, 32);
-            this.pbFrontRecord.Name = "pbFrontRecord";
-            this.pbFrontRecord.Size = new System.Drawing.Size(549, 245);
-            this.pbFrontRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbFrontRecord.TabIndex = 0;
-            this.pbFrontRecord.TabStop = false;
             // 
             // pnlFrontCamera
             // 
@@ -468,17 +318,332 @@
             this.pnlFrontCamera.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.pnlFrontCamera.RectColor = System.Drawing.Color.IndianRed;
             this.pnlFrontCamera.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlFrontCamera.Size = new System.Drawing.Size(579, 287);
+            this.pnlFrontCamera.Size = new System.Drawing.Size(491, 238);
             this.pnlFrontCamera.TabIndex = 1;
             this.pnlFrontCamera.Text = null;
             this.pnlFrontCamera.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlInformation
+            // 
+            this.pnlInformation.ColumnCount = 1;
+            this.pnlInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.pnlInformation.Controls.Add(this.pnlResident, 0, 1);
+            this.pnlInformation.Controls.Add(this.pnlCard, 0, 0);
+            this.pnlInformation.Controls.Add(this.uiTableLayoutPanel1, 0, 2);
+            this.pnlInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInformation.Location = new System.Drawing.Point(985, 3);
+            this.pnlInformation.Name = "pnlInformation";
+            this.pnlInformation.RowCount = 3;
+            this.table.SetRowSpan(this.pnlInformation, 3);
+            this.pnlInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.pnlInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.pnlInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.pnlInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.pnlInformation.Size = new System.Drawing.Size(322, 629);
+            this.pnlInformation.TabIndex = 9;
+            this.pnlInformation.TagString = null;
+            // 
+            // uiTableLayoutPanel1
+            // 
+            this.uiTableLayoutPanel1.ColumnCount = 2;
+            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.uiTableLayoutPanel1.Controls.Add(this.uiPanel15, 1, 0);
+            this.uiTableLayoutPanel1.Controls.Add(this.uiPanel7, 0, 0);
+            this.uiTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiTableLayoutPanel1.Location = new System.Drawing.Point(10, 471);
+            this.uiTableLayoutPanel1.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.uiTableLayoutPanel1.Name = "uiTableLayoutPanel1";
+            this.uiTableLayoutPanel1.RowCount = 1;
+            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.uiTableLayoutPanel1.Size = new System.Drawing.Size(312, 158);
+            this.uiTableLayoutPanel1.TabIndex = 4;
+            this.uiTableLayoutPanel1.TagString = null;
+            // 
+            // uiPanel15
+            // 
+            this.uiPanel15.Controls.Add(this.btnOpen);
+            this.uiPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel15.FillColor = System.Drawing.Color.White;
+            this.uiPanel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel15.Location = new System.Drawing.Point(218, 0);
+            this.uiPanel15.Margin = new System.Windows.Forms.Padding(0);
+            this.uiPanel15.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel15.Name = "uiPanel15";
+            this.uiPanel15.Padding = new System.Windows.Forms.Padding(5, 15, 0, 0);
+            this.uiPanel15.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiPanel15.Size = new System.Drawing.Size(94, 158);
+            this.uiPanel15.TabIndex = 7;
+            this.uiPanel15.Text = null;
+            this.uiPanel15.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnOpen
+            // 
+            this.btnOpen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOpen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnOpen.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpen.FillColor2 = System.Drawing.Color.White;
+            this.btnOpen.FillHoverColor = System.Drawing.Color.White;
+            this.btnOpen.FillPressColor = System.Drawing.Color.White;
+            this.btnOpen.FillSelectedColor = System.Drawing.Color.White;
+            this.btnOpen.Font = new System.Drawing.Font("Helvetica Rounded", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpen.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpen.ForePressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpen.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpen.Location = new System.Drawing.Point(5, 15);
+            this.btnOpen.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Radius = 10;
+            this.btnOpen.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpen.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpen.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpen.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpen.RectSize = 2;
+            this.btnOpen.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnOpen.Size = new System.Drawing.Size(89, 143);
+            this.btnOpen.TabIndex = 0;
+            this.btnOpen.Text = "   OPEN \r\nBARRIER\r\n( SPACE )";
+            this.btnOpen.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnOpen.Resize += new System.EventHandler(this.btnOpen_Resize);
+            // 
+            // uiPanel7
+            // 
+            this.uiPanel7.Controls.Add(this.uiGroupBox9);
+            this.uiPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel7.FillColor = System.Drawing.Color.White;
+            this.uiPanel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel7.Location = new System.Drawing.Point(0, 0);
+            this.uiPanel7.Margin = new System.Windows.Forms.Padding(0);
+            this.uiPanel7.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel7.Name = "uiPanel7";
+            this.uiPanel7.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.uiPanel7.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiPanel7.Size = new System.Drawing.Size(218, 158);
+            this.uiPanel7.TabIndex = 6;
+            this.uiPanel7.Text = null;
+            this.uiPanel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiGroupBox9
+            // 
+            this.uiGroupBox9.Controls.Add(this.uiTableLayoutPanel5);
+            this.uiGroupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiGroupBox9.FillColor = System.Drawing.Color.White;
+            this.uiGroupBox9.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiGroupBox9.Location = new System.Drawing.Point(0, 0);
+            this.uiGroupBox9.Margin = new System.Windows.Forms.Padding(0);
+            this.uiGroupBox9.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiGroupBox9.Name = "uiGroupBox9";
+            this.uiGroupBox9.Padding = new System.Windows.Forms.Padding(10, 32, 10, 10);
+            this.uiGroupBox9.Radius = 10;
+            this.uiGroupBox9.RectColor = System.Drawing.SystemColors.AppWorkspace;
+            this.uiGroupBox9.Size = new System.Drawing.Size(213, 158);
+            this.uiGroupBox9.TabIndex = 3;
+            this.uiGroupBox9.Text = "Shortcut Guide";
+            this.uiGroupBox9.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiTableLayoutPanel5
+            // 
+            this.uiTableLayoutPanel5.ColumnCount = 2;
+            this.uiTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel5.Controls.Add(this.uiLabel22, 0, 2);
+            this.uiTableLayoutPanel5.Controls.Add(this.uiLabel23, 1, 2);
+            this.uiTableLayoutPanel5.Controls.Add(this.uiLabel34, 1, 1);
+            this.uiTableLayoutPanel5.Controls.Add(this.uiLabel35, 0, 1);
+            this.uiTableLayoutPanel5.Controls.Add(this.uiLabel36, 1, 0);
+            this.uiTableLayoutPanel5.Controls.Add(this.uiLabel37, 0, 0);
+            this.uiTableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiTableLayoutPanel5.Location = new System.Drawing.Point(10, 32);
+            this.uiTableLayoutPanel5.Name = "uiTableLayoutPanel5";
+            this.uiTableLayoutPanel5.RowCount = 3;
+            this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.uiTableLayoutPanel5.Size = new System.Drawing.Size(193, 116);
+            this.uiTableLayoutPanel5.TabIndex = 2;
+            this.uiTableLayoutPanel5.TagString = null;
+            this.uiTableLayoutPanel5.Resize += new System.EventHandler(this.uiTableLayoutPanel5_Resize);
+            // 
+            // uiLabel22
+            // 
+            this.uiLabel22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiLabel22.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel22.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel22.Location = new System.Drawing.Point(3, 76);
+            this.uiLabel22.Name = "uiLabel22";
+            this.uiLabel22.Size = new System.Drawing.Size(90, 40);
+            this.uiLabel22.TabIndex = 13;
+            this.uiLabel22.Text = "Settings:";
+            this.uiLabel22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLabel23
+            // 
+            this.uiLabel23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiLabel23.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel23.ForeColor = System.Drawing.Color.Black;
+            this.uiLabel23.Location = new System.Drawing.Point(99, 76);
+            this.uiLabel23.Name = "uiLabel23";
+            this.uiLabel23.Size = new System.Drawing.Size(91, 40);
+            this.uiLabel23.TabIndex = 12;
+            this.uiLabel23.Text = "Press ESC";
+            this.uiLabel23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLabel34
+            // 
+            this.uiLabel34.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiLabel34.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel34.ForeColor = System.Drawing.Color.Black;
+            this.uiLabel34.Location = new System.Drawing.Point(99, 38);
+            this.uiLabel34.Name = "uiLabel34";
+            this.uiLabel34.Size = new System.Drawing.Size(91, 38);
+            this.uiLabel34.TabIndex = 11;
+            this.uiLabel34.Text = "Press Enter";
+            this.uiLabel34.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLabel35
+            // 
+            this.uiLabel35.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiLabel35.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel35.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel35.Location = new System.Drawing.Point(3, 38);
+            this.uiLabel35.Name = "uiLabel35";
+            this.uiLabel35.Size = new System.Drawing.Size(90, 38);
+            this.uiLabel35.TabIndex = 10;
+            this.uiLabel35.Text = "For bicycle:";
+            this.uiLabel35.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLabel36
+            // 
+            this.uiLabel36.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiLabel36.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel36.ForeColor = System.Drawing.Color.Black;
+            this.uiLabel36.Location = new System.Drawing.Point(99, 0);
+            this.uiLabel36.Name = "uiLabel36";
+            this.uiLabel36.Size = new System.Drawing.Size(91, 38);
+            this.uiLabel36.TabIndex = 9;
+            this.uiLabel36.Text = "Press Space";
+            this.uiLabel36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLabel37
+            // 
+            this.uiLabel37.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiLabel37.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel37.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel37.Location = new System.Drawing.Point(3, 0);
+            this.uiLabel37.Name = "uiLabel37";
+            this.uiLabel37.Size = new System.Drawing.Size(90, 38);
+            this.uiLabel37.TabIndex = 1;
+            this.uiLabel37.Text = "Open gate:";
+            this.uiLabel37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pbPlateCamera
+            // 
+            this.pbPlateCamera.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbPlateCamera.Image = global::ZiTyLot.Properties.Resources.logo;
+            this.pbPlateCamera.Location = new System.Drawing.Point(10, 32);
+            this.pbPlateCamera.Name = "pbPlateCamera";
+            this.pbPlateCamera.Size = new System.Drawing.Size(461, 117);
+            this.pbPlateCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbPlateCamera.TabIndex = 0;
+            this.pbPlateCamera.TabStop = false;
+            // 
+            // uiGroupBox5
+            // 
+            this.uiGroupBox5.Controls.Add(this.pbPlateCamera);
+            this.uiGroupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiGroupBox5.FillColor = System.Drawing.Color.White;
+            this.uiGroupBox5.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiGroupBox5.Location = new System.Drawing.Point(0, 0);
+            this.uiGroupBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiGroupBox5.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiGroupBox5.Name = "uiGroupBox5";
+            this.uiGroupBox5.Padding = new System.Windows.Forms.Padding(10, 32, 10, 10);
+            this.uiGroupBox5.Radius = 10;
+            this.uiGroupBox5.RectColor = System.Drawing.SystemColors.AppWorkspace;
+            this.uiGroupBox5.Size = new System.Drawing.Size(481, 159);
+            this.uiGroupBox5.TabIndex = 1;
+            this.uiGroupBox5.Text = "Plate Camera";
+            this.uiGroupBox5.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pbPlateRecord
+            // 
+            this.pbPlateRecord.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbPlateRecord.Image = global::ZiTyLot.Properties.Resources.logo;
+            this.pbPlateRecord.Location = new System.Drawing.Point(10, 32);
+            this.pbPlateRecord.Name = "pbPlateRecord";
+            this.pbPlateRecord.Size = new System.Drawing.Size(461, 117);
+            this.pbPlateRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbPlateRecord.TabIndex = 0;
+            this.pbPlateRecord.TabStop = false;
+            // 
+            // uiGroupBox6
+            // 
+            this.uiGroupBox6.Controls.Add(this.pbPlateRecord);
+            this.uiGroupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiGroupBox6.FillColor = System.Drawing.Color.White;
+            this.uiGroupBox6.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiGroupBox6.Location = new System.Drawing.Point(5, 0);
+            this.uiGroupBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiGroupBox6.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiGroupBox6.Name = "uiGroupBox6";
+            this.uiGroupBox6.Padding = new System.Windows.Forms.Padding(10, 32, 10, 10);
+            this.uiGroupBox6.Radius = 10;
+            this.uiGroupBox6.RectColor = System.Drawing.SystemColors.AppWorkspace;
+            this.uiGroupBox6.Size = new System.Drawing.Size(481, 159);
+            this.uiGroupBox6.TabIndex = 1;
+            this.uiGroupBox6.Text = "Plate Record";
+            this.uiGroupBox6.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pbBackCamera
+            // 
+            this.pbBackCamera.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbBackCamera.Image = global::ZiTyLot.Properties.Resources.logo;
+            this.pbBackCamera.Location = new System.Drawing.Point(10, 32);
+            this.pbBackCamera.Name = "pbBackCamera";
+            this.pbBackCamera.Size = new System.Drawing.Size(461, 196);
+            this.pbBackCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbBackCamera.TabIndex = 0;
+            this.pbBackCamera.TabStop = false;
+            // 
+            // uiGroupBox2
+            // 
+            this.uiGroupBox2.Controls.Add(this.pbBackCamera);
+            this.uiGroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiGroupBox2.FillColor = System.Drawing.Color.White;
+            this.uiGroupBox2.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiGroupBox2.Location = new System.Drawing.Point(0, 0);
+            this.uiGroupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiGroupBox2.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiGroupBox2.Name = "uiGroupBox2";
+            this.uiGroupBox2.Padding = new System.Windows.Forms.Padding(10, 32, 10, 10);
+            this.uiGroupBox2.Radius = 10;
+            this.uiGroupBox2.RectColor = System.Drawing.SystemColors.AppWorkspace;
+            this.uiGroupBox2.Size = new System.Drawing.Size(481, 238);
+            this.uiGroupBox2.TabIndex = 1;
+            this.uiGroupBox2.Text = "Back Camera";
+            this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pbFrontCamera
+            // 
+            this.pbFrontCamera.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbFrontCamera.Image = global::ZiTyLot.Properties.Resources.scan;
+            this.pbFrontCamera.Location = new System.Drawing.Point(10, 32);
+            this.pbFrontCamera.Name = "pbFrontCamera";
+            this.pbFrontCamera.Size = new System.Drawing.Size(461, 196);
+            this.pbFrontCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbFrontCamera.TabIndex = 0;
+            this.pbFrontCamera.TabStop = false;
             // 
             // uiGroupBox1
             // 
             this.uiGroupBox1.Controls.Add(this.pbFrontCamera);
             this.uiGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox1.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox1.Font = new System.Drawing.Font("Helvetica", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox1.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -487,226 +652,70 @@
             this.uiGroupBox1.Padding = new System.Windows.Forms.Padding(10, 32, 10, 10);
             this.uiGroupBox1.Radius = 10;
             this.uiGroupBox1.RectColor = System.Drawing.SystemColors.AppWorkspace;
-            this.uiGroupBox1.Size = new System.Drawing.Size(569, 287);
+            this.uiGroupBox1.Size = new System.Drawing.Size(481, 238);
             this.uiGroupBox1.TabIndex = 0;
             this.uiGroupBox1.Text = "Front Camera";
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pbFrontCamera
+            // pbFrontRecord
             // 
-            this.pbFrontCamera.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbFrontCamera.Image = global::ZiTyLot.Properties.Resources.scan;
-            this.pbFrontCamera.Location = new System.Drawing.Point(10, 32);
-            this.pbFrontCamera.Name = "pbFrontCamera";
-            this.pbFrontCamera.Size = new System.Drawing.Size(549, 245);
-            this.pbFrontCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbFrontCamera.TabIndex = 0;
-            this.pbFrontCamera.TabStop = false;
+            this.pbFrontRecord.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbFrontRecord.Image = global::ZiTyLot.Properties.Resources.logo;
+            this.pbFrontRecord.Location = new System.Drawing.Point(10, 32);
+            this.pbFrontRecord.Name = "pbFrontRecord";
+            this.pbFrontRecord.Size = new System.Drawing.Size(461, 196);
+            this.pbFrontRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbFrontRecord.TabIndex = 0;
+            this.pbFrontRecord.TabStop = false;
             // 
-            // pnlInformation
+            // uiGroupBox3
             // 
-            this.pnlInformation.ColumnCount = 1;
-            this.pnlInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.pnlInformation.Controls.Add(this.pnlResident, 0, 1);
-            this.pnlInformation.Controls.Add(this.pnlCard, 0, 0);
-            this.pnlInformation.Controls.Add(this.pnlShortcut, 0, 2);
-            this.pnlInformation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInformation.Location = new System.Drawing.Point(1161, 3);
-            this.pnlInformation.Name = "pnlInformation";
-            this.pnlInformation.RowCount = 3;
-            this.table.SetRowSpan(this.pnlInformation, 3);
-            this.pnlInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.pnlInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.pnlInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.pnlInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.pnlInformation.Size = new System.Drawing.Size(380, 761);
-            this.pnlInformation.TabIndex = 9;
-            this.pnlInformation.TagString = null;
+            this.uiGroupBox3.Controls.Add(this.pbFrontRecord);
+            this.uiGroupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiGroupBox3.FillColor = System.Drawing.Color.White;
+            this.uiGroupBox3.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiGroupBox3.Location = new System.Drawing.Point(5, 0);
+            this.uiGroupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiGroupBox3.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiGroupBox3.Name = "uiGroupBox3";
+            this.uiGroupBox3.Padding = new System.Windows.Forms.Padding(10, 32, 10, 10);
+            this.uiGroupBox3.Radius = 10;
+            this.uiGroupBox3.RectColor = System.Drawing.SystemColors.AppWorkspace;
+            this.uiGroupBox3.Size = new System.Drawing.Size(481, 238);
+            this.uiGroupBox3.TabIndex = 1;
+            this.uiGroupBox3.Text = "Front Record";
+            this.uiGroupBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pnlResident
+            // pbBackRecord
             // 
-            this.pnlResident.Controls.Add(this.uiGroupBox8);
-            this.pnlResident.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlResident.FillColor = System.Drawing.Color.White;
-            this.pnlResident.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlResident.Location = new System.Drawing.Point(0, 342);
-            this.pnlResident.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlResident.MinimumSize = new System.Drawing.Size(1, 1);
-            this.pnlResident.Name = "pnlResident";
-            this.pnlResident.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.pnlResident.RectColor = System.Drawing.Color.IndianRed;
-            this.pnlResident.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlResident.Size = new System.Drawing.Size(380, 228);
-            this.pnlResident.TabIndex = 2;
-            this.pnlResident.Text = "uiPanel13";
-            this.pnlResident.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pbBackRecord.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbBackRecord.Image = global::ZiTyLot.Properties.Resources.logo;
+            this.pbBackRecord.Location = new System.Drawing.Point(10, 32);
+            this.pbBackRecord.Name = "pbBackRecord";
+            this.pbBackRecord.Size = new System.Drawing.Size(461, 196);
+            this.pbBackRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbBackRecord.TabIndex = 0;
+            this.pbBackRecord.TabStop = false;
             // 
-            // uiGroupBox8
+            // uiGroupBox4
             // 
-            this.uiGroupBox8.Controls.Add(this.uiTableLayoutPanel4);
-            this.uiGroupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiGroupBox8.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox8.Font = new System.Drawing.Font("Helvetica", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiGroupBox8.Location = new System.Drawing.Point(10, 0);
-            this.uiGroupBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiGroupBox8.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiGroupBox8.Name = "uiGroupBox8";
-            this.uiGroupBox8.Padding = new System.Windows.Forms.Padding(10, 32, 10, 10);
-            this.uiGroupBox8.Radius = 10;
-            this.uiGroupBox8.RectColor = System.Drawing.SystemColors.AppWorkspace;
-            this.uiGroupBox8.Size = new System.Drawing.Size(370, 228);
-            this.uiGroupBox8.TabIndex = 2;
-            this.uiGroupBox8.Text = "Resident Information";
-            this.uiGroupBox8.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // uiTableLayoutPanel4
-            // 
-            this.uiTableLayoutPanel4.ColumnCount = 2;
-            this.uiTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.uiTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.uiTableLayoutPanel4.Controls.Add(this.uiLabel24, 0, 4);
-            this.uiTableLayoutPanel4.Controls.Add(this.lbRegistedPlate, 1, 4);
-            this.uiTableLayoutPanel4.Controls.Add(this.uiLabel26, 0, 3);
-            this.uiTableLayoutPanel4.Controls.Add(this.lbDueDate, 1, 3);
-            this.uiTableLayoutPanel4.Controls.Add(this.uiLabel28, 0, 2);
-            this.uiTableLayoutPanel4.Controls.Add(this.lbSignUpDate, 1, 2);
-            this.uiTableLayoutPanel4.Controls.Add(this.lbApartment, 1, 1);
-            this.uiTableLayoutPanel4.Controls.Add(this.uiLabel31, 0, 1);
-            this.uiTableLayoutPanel4.Controls.Add(this.lbFullname, 1, 0);
-            this.uiTableLayoutPanel4.Controls.Add(this.uiLabel33, 0, 0);
-            this.uiTableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiTableLayoutPanel4.Location = new System.Drawing.Point(10, 32);
-            this.uiTableLayoutPanel4.Name = "uiTableLayoutPanel4";
-            this.uiTableLayoutPanel4.RowCount = 5;
-            this.uiTableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.uiTableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.uiTableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.uiTableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.uiTableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.uiTableLayoutPanel4.Size = new System.Drawing.Size(350, 186);
-            this.uiTableLayoutPanel4.TabIndex = 1;
-            this.uiTableLayoutPanel4.TagString = null;
-            // 
-            // uiLabel24
-            // 
-            this.uiLabel24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel24.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel24.ForeColor = System.Drawing.Color.Gray;
-            this.uiLabel24.Location = new System.Drawing.Point(3, 148);
-            this.uiLabel24.Name = "uiLabel24";
-            this.uiLabel24.Size = new System.Drawing.Size(134, 38);
-            this.uiLabel24.TabIndex = 17;
-            this.uiLabel24.Text = "Registed plate:";
-            this.uiLabel24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbRegistedPlate
-            // 
-            this.lbRegistedPlate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbRegistedPlate.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRegistedPlate.ForeColor = System.Drawing.Color.Black;
-            this.lbRegistedPlate.Location = new System.Drawing.Point(143, 148);
-            this.lbRegistedPlate.Name = "lbRegistedPlate";
-            this.lbRegistedPlate.Size = new System.Drawing.Size(204, 38);
-            this.lbRegistedPlate.TabIndex = 16;
-            this.lbRegistedPlate.Text = "{registed_plate}";
-            this.lbRegistedPlate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // uiLabel26
-            // 
-            this.uiLabel26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel26.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel26.ForeColor = System.Drawing.Color.Gray;
-            this.uiLabel26.Location = new System.Drawing.Point(3, 111);
-            this.uiLabel26.Name = "uiLabel26";
-            this.uiLabel26.Size = new System.Drawing.Size(134, 37);
-            this.uiLabel26.TabIndex = 15;
-            this.uiLabel26.Text = "Due date:";
-            this.uiLabel26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbDueDate
-            // 
-            this.lbDueDate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbDueDate.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDueDate.ForeColor = System.Drawing.Color.Black;
-            this.lbDueDate.Location = new System.Drawing.Point(143, 111);
-            this.lbDueDate.Name = "lbDueDate";
-            this.lbDueDate.Size = new System.Drawing.Size(204, 37);
-            this.lbDueDate.TabIndex = 14;
-            this.lbDueDate.Text = "{due_date}";
-            this.lbDueDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // uiLabel28
-            // 
-            this.uiLabel28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel28.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel28.ForeColor = System.Drawing.Color.Gray;
-            this.uiLabel28.Location = new System.Drawing.Point(3, 74);
-            this.uiLabel28.Name = "uiLabel28";
-            this.uiLabel28.Size = new System.Drawing.Size(134, 37);
-            this.uiLabel28.TabIndex = 13;
-            this.uiLabel28.Text = "Sign up date:";
-            this.uiLabel28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbSignUpDate
-            // 
-            this.lbSignUpDate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbSignUpDate.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSignUpDate.ForeColor = System.Drawing.Color.Black;
-            this.lbSignUpDate.Location = new System.Drawing.Point(143, 74);
-            this.lbSignUpDate.Name = "lbSignUpDate";
-            this.lbSignUpDate.Size = new System.Drawing.Size(204, 37);
-            this.lbSignUpDate.TabIndex = 12;
-            this.lbSignUpDate.Text = "{signup_date}";
-            this.lbSignUpDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbApartment
-            // 
-            this.lbApartment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbApartment.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbApartment.ForeColor = System.Drawing.Color.Black;
-            this.lbApartment.Location = new System.Drawing.Point(143, 37);
-            this.lbApartment.Name = "lbApartment";
-            this.lbApartment.Size = new System.Drawing.Size(204, 37);
-            this.lbApartment.TabIndex = 11;
-            this.lbApartment.Text = "{apartment}";
-            this.lbApartment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // uiLabel31
-            // 
-            this.uiLabel31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel31.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel31.ForeColor = System.Drawing.Color.Gray;
-            this.uiLabel31.Location = new System.Drawing.Point(3, 37);
-            this.uiLabel31.Name = "uiLabel31";
-            this.uiLabel31.Size = new System.Drawing.Size(134, 37);
-            this.uiLabel31.TabIndex = 10;
-            this.uiLabel31.Text = "Apartment:";
-            this.uiLabel31.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbFullname
-            // 
-            this.lbFullname.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbFullname.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFullname.ForeColor = System.Drawing.Color.Black;
-            this.lbFullname.Location = new System.Drawing.Point(143, 0);
-            this.lbFullname.Name = "lbFullname";
-            this.lbFullname.Size = new System.Drawing.Size(204, 37);
-            this.lbFullname.TabIndex = 9;
-            this.lbFullname.Text = "{fullname}";
-            this.lbFullname.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // uiLabel33
-            // 
-            this.uiLabel33.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel33.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel33.ForeColor = System.Drawing.Color.Gray;
-            this.uiLabel33.Location = new System.Drawing.Point(3, 0);
-            this.uiLabel33.Name = "uiLabel33";
-            this.uiLabel33.Size = new System.Drawing.Size(134, 37);
-            this.uiLabel33.TabIndex = 1;
-            this.uiLabel33.Text = "Full name:";
-            this.uiLabel33.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiGroupBox4.Controls.Add(this.pbBackRecord);
+            this.uiGroupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiGroupBox4.FillColor = System.Drawing.Color.White;
+            this.uiGroupBox4.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiGroupBox4.Location = new System.Drawing.Point(5, 0);
+            this.uiGroupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiGroupBox4.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiGroupBox4.Name = "uiGroupBox4";
+            this.uiGroupBox4.Padding = new System.Windows.Forms.Padding(10, 32, 10, 10);
+            this.uiGroupBox4.Radius = 10;
+            this.uiGroupBox4.RectColor = System.Drawing.SystemColors.AppWorkspace;
+            this.uiGroupBox4.Size = new System.Drawing.Size(481, 238);
+            this.uiGroupBox4.TabIndex = 1;
+            this.uiGroupBox4.Text = "Back Record";
+            this.uiGroupBox4.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnlCard
             // 
@@ -721,8 +730,8 @@
             this.pnlCard.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.pnlCard.RectColor = System.Drawing.Color.IndianRed;
             this.pnlCard.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlCard.Size = new System.Drawing.Size(380, 342);
-            this.pnlCard.TabIndex = 1;
+            this.pnlCard.Size = new System.Drawing.Size(322, 283);
+            this.pnlCard.TabIndex = 5;
             this.pnlCard.Text = "uiPanel14";
             this.pnlCard.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -731,7 +740,7 @@
             this.uiGroupBox7.Controls.Add(this.uiTableLayoutPanel3);
             this.uiGroupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox7.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox7.Font = new System.Drawing.Font("Helvetica", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox7.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiGroupBox7.Location = new System.Drawing.Point(10, 0);
             this.uiGroupBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -740,7 +749,7 @@
             this.uiGroupBox7.Padding = new System.Windows.Forms.Padding(10, 32, 10, 10);
             this.uiGroupBox7.Radius = 10;
             this.uiGroupBox7.RectColor = System.Drawing.SystemColors.AppWorkspace;
-            this.uiGroupBox7.Size = new System.Drawing.Size(370, 342);
+            this.uiGroupBox7.Size = new System.Drawing.Size(312, 283);
             this.uiGroupBox7.TabIndex = 2;
             this.uiGroupBox7.Text = "Card Information";
             this.uiGroupBox7.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -748,8 +757,8 @@
             // uiTableLayoutPanel3
             // 
             this.uiTableLayoutPanel3.ColumnCount = 2;
-            this.uiTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.uiTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.uiTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.uiTableLayoutPanel3.Controls.Add(this.uiLabel15, 0, 7);
             this.uiTableLayoutPanel3.Controls.Add(this.lbTotalPrice, 1, 7);
             this.uiTableLayoutPanel3.Controls.Add(this.uiLabel13, 0, 6);
@@ -778,18 +787,19 @@
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(350, 300);
+            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(292, 241);
             this.uiTableLayoutPanel3.TabIndex = 0;
             this.uiTableLayoutPanel3.TagString = null;
+            this.uiTableLayoutPanel3.Resize += new System.EventHandler(this.uiTableLayoutPanel3_Resize);
             // 
             // uiLabel15
             // 
             this.uiLabel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel15.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel15.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel15.ForeColor = System.Drawing.Color.Gray;
-            this.uiLabel15.Location = new System.Drawing.Point(3, 259);
+            this.uiLabel15.Location = new System.Drawing.Point(3, 210);
             this.uiLabel15.Name = "uiLabel15";
-            this.uiLabel15.Size = new System.Drawing.Size(134, 41);
+            this.uiLabel15.Size = new System.Drawing.Size(140, 31);
             this.uiLabel15.TabIndex = 23;
             this.uiLabel15.Text = "Total price:";
             this.uiLabel15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -797,11 +807,11 @@
             // lbTotalPrice
             // 
             this.lbTotalPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbTotalPrice.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalPrice.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalPrice.ForeColor = System.Drawing.Color.Black;
-            this.lbTotalPrice.Location = new System.Drawing.Point(143, 259);
+            this.lbTotalPrice.Location = new System.Drawing.Point(149, 210);
             this.lbTotalPrice.Name = "lbTotalPrice";
-            this.lbTotalPrice.Size = new System.Drawing.Size(204, 41);
+            this.lbTotalPrice.Size = new System.Drawing.Size(140, 31);
             this.lbTotalPrice.TabIndex = 22;
             this.lbTotalPrice.Text = "{total_price}";
             this.lbTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -809,11 +819,11 @@
             // uiLabel13
             // 
             this.uiLabel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel13.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel13.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel13.ForeColor = System.Drawing.Color.Gray;
-            this.uiLabel13.Location = new System.Drawing.Point(3, 222);
+            this.uiLabel13.Location = new System.Drawing.Point(3, 180);
             this.uiLabel13.Name = "uiLabel13";
-            this.uiLabel13.Size = new System.Drawing.Size(134, 37);
+            this.uiLabel13.Size = new System.Drawing.Size(140, 30);
             this.uiLabel13.TabIndex = 21;
             this.uiLabel13.Text = "Total time:";
             this.uiLabel13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -821,11 +831,11 @@
             // lbTotalTime
             // 
             this.lbTotalTime.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbTotalTime.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalTime.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalTime.ForeColor = System.Drawing.Color.Black;
-            this.lbTotalTime.Location = new System.Drawing.Point(143, 222);
+            this.lbTotalTime.Location = new System.Drawing.Point(149, 180);
             this.lbTotalTime.Name = "lbTotalTime";
-            this.lbTotalTime.Size = new System.Drawing.Size(204, 37);
+            this.lbTotalTime.Size = new System.Drawing.Size(140, 30);
             this.lbTotalTime.TabIndex = 20;
             this.lbTotalTime.Text = "{total_time}";
             this.lbTotalTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -833,11 +843,11 @@
             // uiLabel11
             // 
             this.uiLabel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel11.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel11.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel11.ForeColor = System.Drawing.Color.Gray;
-            this.uiLabel11.Location = new System.Drawing.Point(3, 185);
+            this.uiLabel11.Location = new System.Drawing.Point(3, 150);
             this.uiLabel11.Name = "uiLabel11";
-            this.uiLabel11.Size = new System.Drawing.Size(134, 37);
+            this.uiLabel11.Size = new System.Drawing.Size(140, 30);
             this.uiLabel11.TabIndex = 19;
             this.uiLabel11.Text = "Check out time:";
             this.uiLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -845,11 +855,11 @@
             // lbCheckOutTime
             // 
             this.lbCheckOutTime.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbCheckOutTime.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCheckOutTime.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCheckOutTime.ForeColor = System.Drawing.Color.Black;
-            this.lbCheckOutTime.Location = new System.Drawing.Point(143, 185);
+            this.lbCheckOutTime.Location = new System.Drawing.Point(149, 150);
             this.lbCheckOutTime.Name = "lbCheckOutTime";
-            this.lbCheckOutTime.Size = new System.Drawing.Size(204, 37);
+            this.lbCheckOutTime.Size = new System.Drawing.Size(140, 30);
             this.lbCheckOutTime.TabIndex = 18;
             this.lbCheckOutTime.Text = "{checkout_time}";
             this.lbCheckOutTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -857,11 +867,11 @@
             // uiLabel9
             // 
             this.uiLabel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel9.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel9.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel9.ForeColor = System.Drawing.Color.Gray;
-            this.uiLabel9.Location = new System.Drawing.Point(3, 148);
+            this.uiLabel9.Location = new System.Drawing.Point(3, 120);
             this.uiLabel9.Name = "uiLabel9";
-            this.uiLabel9.Size = new System.Drawing.Size(134, 37);
+            this.uiLabel9.Size = new System.Drawing.Size(140, 30);
             this.uiLabel9.TabIndex = 17;
             this.uiLabel9.Text = "Check in time:";
             this.uiLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -869,11 +879,11 @@
             // lbCheckInTime
             // 
             this.lbCheckInTime.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbCheckInTime.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCheckInTime.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCheckInTime.ForeColor = System.Drawing.Color.Black;
-            this.lbCheckInTime.Location = new System.Drawing.Point(143, 148);
+            this.lbCheckInTime.Location = new System.Drawing.Point(149, 120);
             this.lbCheckInTime.Name = "lbCheckInTime";
-            this.lbCheckInTime.Size = new System.Drawing.Size(204, 37);
+            this.lbCheckInTime.Size = new System.Drawing.Size(140, 30);
             this.lbCheckInTime.TabIndex = 16;
             this.lbCheckInTime.Text = "{checkin_time}";
             this.lbCheckInTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -881,11 +891,11 @@
             // uiLabel7
             // 
             this.uiLabel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel7.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel7.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel7.ForeColor = System.Drawing.Color.Gray;
-            this.uiLabel7.Location = new System.Drawing.Point(3, 111);
+            this.uiLabel7.Location = new System.Drawing.Point(3, 90);
             this.uiLabel7.Name = "uiLabel7";
-            this.uiLabel7.Size = new System.Drawing.Size(134, 37);
+            this.uiLabel7.Size = new System.Drawing.Size(140, 30);
             this.uiLabel7.TabIndex = 15;
             this.uiLabel7.Text = "Vehical plate";
             this.uiLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -893,11 +903,11 @@
             // lbVehicalPlate
             // 
             this.lbVehicalPlate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbVehicalPlate.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVehicalPlate.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbVehicalPlate.ForeColor = System.Drawing.Color.Black;
-            this.lbVehicalPlate.Location = new System.Drawing.Point(143, 111);
+            this.lbVehicalPlate.Location = new System.Drawing.Point(149, 90);
             this.lbVehicalPlate.Name = "lbVehicalPlate";
-            this.lbVehicalPlate.Size = new System.Drawing.Size(204, 37);
+            this.lbVehicalPlate.Size = new System.Drawing.Size(140, 30);
             this.lbVehicalPlate.TabIndex = 14;
             this.lbVehicalPlate.Text = "{vehical_plate}";
             this.lbVehicalPlate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -905,11 +915,11 @@
             // uiLabel5
             // 
             this.uiLabel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel5.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel5.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel5.ForeColor = System.Drawing.Color.Gray;
-            this.uiLabel5.Location = new System.Drawing.Point(3, 74);
+            this.uiLabel5.Location = new System.Drawing.Point(3, 60);
             this.uiLabel5.Name = "uiLabel5";
-            this.uiLabel5.Size = new System.Drawing.Size(134, 37);
+            this.uiLabel5.Size = new System.Drawing.Size(140, 30);
             this.uiLabel5.TabIndex = 13;
             this.uiLabel5.Text = "Vehical type:";
             this.uiLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -917,11 +927,11 @@
             // lbVehicalType
             // 
             this.lbVehicalType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbVehicalType.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVehicalType.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbVehicalType.ForeColor = System.Drawing.Color.Black;
-            this.lbVehicalType.Location = new System.Drawing.Point(143, 74);
+            this.lbVehicalType.Location = new System.Drawing.Point(149, 60);
             this.lbVehicalType.Name = "lbVehicalType";
-            this.lbVehicalType.Size = new System.Drawing.Size(204, 37);
+            this.lbVehicalType.Size = new System.Drawing.Size(140, 30);
             this.lbVehicalType.TabIndex = 12;
             this.lbVehicalType.Text = "{vehical_type}";
             this.lbVehicalType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -929,11 +939,11 @@
             // lbCardType
             // 
             this.lbCardType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbCardType.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCardType.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCardType.ForeColor = System.Drawing.Color.Black;
-            this.lbCardType.Location = new System.Drawing.Point(143, 37);
+            this.lbCardType.Location = new System.Drawing.Point(149, 30);
             this.lbCardType.Name = "lbCardType";
-            this.lbCardType.Size = new System.Drawing.Size(204, 37);
+            this.lbCardType.Size = new System.Drawing.Size(140, 30);
             this.lbCardType.TabIndex = 11;
             this.lbCardType.Text = "{card_type}";
             this.lbCardType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -941,11 +951,11 @@
             // uiLabel3
             // 
             this.uiLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel3.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel3.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel3.ForeColor = System.Drawing.Color.Gray;
-            this.uiLabel3.Location = new System.Drawing.Point(3, 37);
+            this.uiLabel3.Location = new System.Drawing.Point(3, 30);
             this.uiLabel3.Name = "uiLabel3";
-            this.uiLabel3.Size = new System.Drawing.Size(134, 37);
+            this.uiLabel3.Size = new System.Drawing.Size(140, 30);
             this.uiLabel3.TabIndex = 10;
             this.uiLabel3.Text = "Card type:";
             this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -953,11 +963,11 @@
             // lbCardId
             // 
             this.lbCardId.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbCardId.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCardId.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCardId.ForeColor = System.Drawing.Color.Black;
-            this.lbCardId.Location = new System.Drawing.Point(143, 0);
+            this.lbCardId.Location = new System.Drawing.Point(149, 0);
             this.lbCardId.Name = "lbCardId";
-            this.lbCardId.Size = new System.Drawing.Size(204, 37);
+            this.lbCardId.Size = new System.Drawing.Size(140, 30);
             this.lbCardId.TabIndex = 9;
             this.lbCardId.Text = "{card_id}";
             this.lbCardId.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -965,251 +975,246 @@
             // uiLabel2
             // 
             this.uiLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel2.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel2.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel2.ForeColor = System.Drawing.Color.Gray;
             this.uiLabel2.Location = new System.Drawing.Point(3, 0);
             this.uiLabel2.Name = "uiLabel2";
-            this.uiLabel2.Size = new System.Drawing.Size(134, 37);
+            this.uiLabel2.Size = new System.Drawing.Size(140, 30);
             this.uiLabel2.TabIndex = 1;
             this.uiLabel2.Text = "Card ID:";
             this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pnlShortcut
+            // pnlResident
             // 
-            this.pnlShortcut.Controls.Add(this.uiPanel7);
-            this.pnlShortcut.Controls.Add(this.uiPanel15);
-            this.pnlShortcut.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlShortcut.FillColor = System.Drawing.Color.White;
-            this.pnlShortcut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlShortcut.Location = new System.Drawing.Point(4, 575);
-            this.pnlShortcut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pnlShortcut.MinimumSize = new System.Drawing.Size(1, 1);
-            this.pnlShortcut.Name = "pnlShortcut";
-            this.pnlShortcut.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.pnlShortcut.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlShortcut.Size = new System.Drawing.Size(372, 181);
-            this.pnlShortcut.TabIndex = 3;
-            this.pnlShortcut.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pnlResident.Controls.Add(this.uiGroupBox8);
+            this.pnlResident.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlResident.FillColor = System.Drawing.Color.White;
+            this.pnlResident.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.pnlResident.Location = new System.Drawing.Point(0, 283);
+            this.pnlResident.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlResident.MinimumSize = new System.Drawing.Size(1, 1);
+            this.pnlResident.Name = "pnlResident";
+            this.pnlResident.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.pnlResident.RectColor = System.Drawing.Color.IndianRed;
+            this.pnlResident.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.pnlResident.Size = new System.Drawing.Size(322, 188);
+            this.pnlResident.TabIndex = 6;
+            this.pnlResident.Text = "uiPanel13";
+            this.pnlResident.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // uiPanel7
+            // uiGroupBox8
             // 
-            this.uiPanel7.Controls.Add(this.uiGroupBox9);
-            this.uiPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel7.FillColor = System.Drawing.Color.White;
-            this.uiPanel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel7.Location = new System.Drawing.Point(10, 0);
-            this.uiPanel7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel7.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel7.Name = "uiPanel7";
-            this.uiPanel7.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.uiPanel7.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel7.Size = new System.Drawing.Size(212, 181);
-            this.uiPanel7.TabIndex = 5;
-            this.uiPanel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.uiGroupBox8.Controls.Add(this.uiTableLayoutPanel4);
+            this.uiGroupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiGroupBox8.FillColor = System.Drawing.Color.White;
+            this.uiGroupBox8.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiGroupBox8.Location = new System.Drawing.Point(10, 0);
+            this.uiGroupBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiGroupBox8.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiGroupBox8.Name = "uiGroupBox8";
+            this.uiGroupBox8.Padding = new System.Windows.Forms.Padding(10, 32, 10, 10);
+            this.uiGroupBox8.Radius = 10;
+            this.uiGroupBox8.RectColor = System.Drawing.SystemColors.AppWorkspace;
+            this.uiGroupBox8.Size = new System.Drawing.Size(312, 188);
+            this.uiGroupBox8.TabIndex = 2;
+            this.uiGroupBox8.Text = "Resident Information";
+            this.uiGroupBox8.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiGroupBox9
+            // uiTableLayoutPanel4
             // 
-            this.uiGroupBox9.Controls.Add(this.uiTableLayoutPanel5);
-            this.uiGroupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiGroupBox9.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox9.Font = new System.Drawing.Font("Helvetica", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiGroupBox9.Location = new System.Drawing.Point(0, 0);
-            this.uiGroupBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiGroupBox9.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiGroupBox9.Name = "uiGroupBox9";
-            this.uiGroupBox9.Padding = new System.Windows.Forms.Padding(10, 32, 10, 10);
-            this.uiGroupBox9.Radius = 10;
-            this.uiGroupBox9.RectColor = System.Drawing.SystemColors.AppWorkspace;
-            this.uiGroupBox9.Size = new System.Drawing.Size(202, 181);
-            this.uiGroupBox9.TabIndex = 3;
-            this.uiGroupBox9.Text = "Shortcut Guide";
-            this.uiGroupBox9.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiTableLayoutPanel4.ColumnCount = 2;
+            this.uiTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel4.Controls.Add(this.uiLabel24, 0, 4);
+            this.uiTableLayoutPanel4.Controls.Add(this.lbRegistedPlate, 1, 4);
+            this.uiTableLayoutPanel4.Controls.Add(this.uiLabel26, 0, 3);
+            this.uiTableLayoutPanel4.Controls.Add(this.lbDueDate, 1, 3);
+            this.uiTableLayoutPanel4.Controls.Add(this.uiLabel28, 0, 2);
+            this.uiTableLayoutPanel4.Controls.Add(this.lbSignUpDate, 1, 2);
+            this.uiTableLayoutPanel4.Controls.Add(this.lbApartment, 1, 1);
+            this.uiTableLayoutPanel4.Controls.Add(this.uiLabel31, 0, 1);
+            this.uiTableLayoutPanel4.Controls.Add(this.lbFullname, 1, 0);
+            this.uiTableLayoutPanel4.Controls.Add(this.uiLabel33, 0, 0);
+            this.uiTableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiTableLayoutPanel4.Location = new System.Drawing.Point(10, 32);
+            this.uiTableLayoutPanel4.Name = "uiTableLayoutPanel4";
+            this.uiTableLayoutPanel4.RowCount = 5;
+            this.uiTableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.uiTableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.uiTableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.uiTableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.uiTableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.uiTableLayoutPanel4.Size = new System.Drawing.Size(292, 146);
+            this.uiTableLayoutPanel4.TabIndex = 1;
+            this.uiTableLayoutPanel4.TagString = null;
+            this.uiTableLayoutPanel4.Resize += new System.EventHandler(this.uiTableLayoutPanel4_Resize);
             // 
-            // uiTableLayoutPanel5
+            // uiLabel24
             // 
-            this.uiTableLayoutPanel5.ColumnCount = 2;
-            this.uiTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiTableLayoutPanel5.Controls.Add(this.uiLabel22, 0, 2);
-            this.uiTableLayoutPanel5.Controls.Add(this.uiLabel23, 1, 2);
-            this.uiTableLayoutPanel5.Controls.Add(this.uiLabel34, 1, 1);
-            this.uiTableLayoutPanel5.Controls.Add(this.uiLabel35, 0, 1);
-            this.uiTableLayoutPanel5.Controls.Add(this.uiLabel36, 1, 0);
-            this.uiTableLayoutPanel5.Controls.Add(this.uiLabel37, 0, 0);
-            this.uiTableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiTableLayoutPanel5.Location = new System.Drawing.Point(10, 32);
-            this.uiTableLayoutPanel5.Name = "uiTableLayoutPanel5";
-            this.uiTableLayoutPanel5.RowCount = 3;
-            this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.uiTableLayoutPanel5.Size = new System.Drawing.Size(182, 139);
-            this.uiTableLayoutPanel5.TabIndex = 2;
-            this.uiTableLayoutPanel5.TagString = null;
+            this.uiLabel24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiLabel24.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel24.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel24.Location = new System.Drawing.Point(3, 116);
+            this.uiLabel24.Name = "uiLabel24";
+            this.uiLabel24.Size = new System.Drawing.Size(140, 30);
+            this.uiLabel24.TabIndex = 17;
+            this.uiLabel24.Text = "Registed plate:";
+            this.uiLabel24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiLabel22
+            // lbRegistedPlate
             // 
-            this.uiLabel22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel22.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel22.ForeColor = System.Drawing.Color.Gray;
-            this.uiLabel22.Location = new System.Drawing.Point(3, 92);
-            this.uiLabel22.Name = "uiLabel22";
-            this.uiLabel22.Size = new System.Drawing.Size(85, 47);
-            this.uiLabel22.TabIndex = 13;
-            this.uiLabel22.Text = "Settings:";
-            this.uiLabel22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbRegistedPlate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbRegistedPlate.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRegistedPlate.ForeColor = System.Drawing.Color.Black;
+            this.lbRegistedPlate.Location = new System.Drawing.Point(149, 116);
+            this.lbRegistedPlate.Name = "lbRegistedPlate";
+            this.lbRegistedPlate.Size = new System.Drawing.Size(140, 30);
+            this.lbRegistedPlate.TabIndex = 16;
+            this.lbRegistedPlate.Text = "{registed_plate}";
+            this.lbRegistedPlate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiLabel23
+            // uiLabel26
             // 
-            this.uiLabel23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel23.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel23.ForeColor = System.Drawing.Color.Black;
-            this.uiLabel23.Location = new System.Drawing.Point(94, 92);
-            this.uiLabel23.Name = "uiLabel23";
-            this.uiLabel23.Size = new System.Drawing.Size(85, 47);
-            this.uiLabel23.TabIndex = 12;
-            this.uiLabel23.Text = "Press ESC";
-            this.uiLabel23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiLabel26.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiLabel26.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel26.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel26.Location = new System.Drawing.Point(3, 87);
+            this.uiLabel26.Name = "uiLabel26";
+            this.uiLabel26.Size = new System.Drawing.Size(140, 29);
+            this.uiLabel26.TabIndex = 15;
+            this.uiLabel26.Text = "Due date:";
+            this.uiLabel26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiLabel34
+            // lbDueDate
             // 
-            this.uiLabel34.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel34.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel34.ForeColor = System.Drawing.Color.Black;
-            this.uiLabel34.Location = new System.Drawing.Point(94, 46);
-            this.uiLabel34.Name = "uiLabel34";
-            this.uiLabel34.Size = new System.Drawing.Size(85, 46);
-            this.uiLabel34.TabIndex = 11;
-            this.uiLabel34.Text = "Press Enter";
-            this.uiLabel34.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbDueDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbDueDate.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDueDate.ForeColor = System.Drawing.Color.Black;
+            this.lbDueDate.Location = new System.Drawing.Point(149, 87);
+            this.lbDueDate.Name = "lbDueDate";
+            this.lbDueDate.Size = new System.Drawing.Size(140, 29);
+            this.lbDueDate.TabIndex = 14;
+            this.lbDueDate.Text = "{due_date}";
+            this.lbDueDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiLabel35
+            // uiLabel28
             // 
-            this.uiLabel35.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel35.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel35.ForeColor = System.Drawing.Color.Gray;
-            this.uiLabel35.Location = new System.Drawing.Point(3, 46);
-            this.uiLabel35.Name = "uiLabel35";
-            this.uiLabel35.Size = new System.Drawing.Size(85, 46);
-            this.uiLabel35.TabIndex = 10;
-            this.uiLabel35.Text = "For bicycle:";
-            this.uiLabel35.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiLabel28.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiLabel28.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel28.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel28.Location = new System.Drawing.Point(3, 58);
+            this.uiLabel28.Name = "uiLabel28";
+            this.uiLabel28.Size = new System.Drawing.Size(140, 29);
+            this.uiLabel28.TabIndex = 13;
+            this.uiLabel28.Text = "Sign up date:";
+            this.uiLabel28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiLabel36
+            // lbSignUpDate
             // 
-            this.uiLabel36.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel36.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel36.ForeColor = System.Drawing.Color.Black;
-            this.uiLabel36.Location = new System.Drawing.Point(94, 0);
-            this.uiLabel36.Name = "uiLabel36";
-            this.uiLabel36.Size = new System.Drawing.Size(85, 46);
-            this.uiLabel36.TabIndex = 9;
-            this.uiLabel36.Text = "Press Space";
-            this.uiLabel36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbSignUpDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSignUpDate.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSignUpDate.ForeColor = System.Drawing.Color.Black;
+            this.lbSignUpDate.Location = new System.Drawing.Point(149, 58);
+            this.lbSignUpDate.Name = "lbSignUpDate";
+            this.lbSignUpDate.Size = new System.Drawing.Size(140, 29);
+            this.lbSignUpDate.TabIndex = 12;
+            this.lbSignUpDate.Text = "{signup_date}";
+            this.lbSignUpDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiLabel37
+            // lbApartment
             // 
-            this.uiLabel37.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel37.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel37.ForeColor = System.Drawing.Color.Gray;
-            this.uiLabel37.Location = new System.Drawing.Point(3, 0);
-            this.uiLabel37.Name = "uiLabel37";
-            this.uiLabel37.Size = new System.Drawing.Size(85, 46);
-            this.uiLabel37.TabIndex = 1;
-            this.uiLabel37.Text = "Open barrier:";
-            this.uiLabel37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbApartment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbApartment.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbApartment.ForeColor = System.Drawing.Color.Black;
+            this.lbApartment.Location = new System.Drawing.Point(149, 29);
+            this.lbApartment.Name = "lbApartment";
+            this.lbApartment.Size = new System.Drawing.Size(140, 29);
+            this.lbApartment.TabIndex = 11;
+            this.lbApartment.Text = "{apartment}";
+            this.lbApartment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiPanel15
+            // uiLabel31
             // 
-            this.uiPanel15.Controls.Add(this.btnOpen);
-            this.uiPanel15.Dock = System.Windows.Forms.DockStyle.Right;
-            this.uiPanel15.FillColor = System.Drawing.Color.White;
-            this.uiPanel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel15.Location = new System.Drawing.Point(222, 0);
-            this.uiPanel15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel15.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel15.Name = "uiPanel15";
-            this.uiPanel15.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.uiPanel15.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel15.Size = new System.Drawing.Size(150, 181);
-            this.uiPanel15.TabIndex = 4;
-            this.uiPanel15.Text = null;
-            this.uiPanel15.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.uiLabel31.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiLabel31.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel31.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel31.Location = new System.Drawing.Point(3, 29);
+            this.uiLabel31.Name = "uiLabel31";
+            this.uiLabel31.Size = new System.Drawing.Size(140, 29);
+            this.uiLabel31.TabIndex = 10;
+            this.uiLabel31.Text = "Apartment:";
+            this.uiLabel31.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnOpen
+            // lbFullname
             // 
-            this.btnOpen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOpen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnOpen.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.FillColor2 = System.Drawing.Color.White;
-            this.btnOpen.FillHoverColor = System.Drawing.Color.White;
-            this.btnOpen.FillPressColor = System.Drawing.Color.White;
-            this.btnOpen.FillSelectedColor = System.Drawing.Color.White;
-            this.btnOpen.Font = new System.Drawing.Font("Helvetica Rounded", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpen.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.ForePressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.Location = new System.Drawing.Point(0, 15);
-            this.btnOpen.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Radius = 10;
-            this.btnOpen.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.RectSize = 2;
-            this.btnOpen.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnOpen.Size = new System.Drawing.Size(150, 166);
-            this.btnOpen.TabIndex = 0;
-            this.btnOpen.Text = "   OPEN \r\nBARRIER\r\n( SPACE )";
-            this.btnOpen.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lbFullname.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbFullname.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFullname.ForeColor = System.Drawing.Color.Black;
+            this.lbFullname.Location = new System.Drawing.Point(149, 0);
+            this.lbFullname.Name = "lbFullname";
+            this.lbFullname.Size = new System.Drawing.Size(140, 29);
+            this.lbFullname.TabIndex = 9;
+            this.lbFullname.Text = "{fullname}";
+            this.lbFullname.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLabel33
+            // 
+            this.uiLabel33.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiLabel33.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel33.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel33.Location = new System.Drawing.Point(3, 0);
+            this.uiLabel33.Name = "uiLabel33";
+            this.uiLabel33.Size = new System.Drawing.Size(140, 29);
+            this.uiLabel33.TabIndex = 1;
+            this.uiLabel33.Text = "Full name:";
+            this.uiLabel33.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CheckInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.separator);
             this.Controls.Add(this.pnlTop);
-            this.MinimumSize = new System.Drawing.Size(1600, 900);
+            this.MinimumSize = new System.Drawing.Size(1366, 768);
             this.Name = "CheckInForm";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.pnlTop.ResumeLayout(false);
             this.pnlBottom.ResumeLayout(false);
             this.table.ResumeLayout(false);
             this.pnlPlateRecord.ResumeLayout(false);
-            this.uiGroupBox6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlateRecord)).EndInit();
             this.pnlPlateCamera.ResumeLayout(false);
-            this.uiGroupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlateCamera)).EndInit();
             this.pnlBackRecord.ResumeLayout(false);
-            this.uiGroupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbBackRecord)).EndInit();
             this.pnlBackCamera.ResumeLayout(false);
-            this.uiGroupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbBackCamera)).EndInit();
             this.pnlFrontRecord.ResumeLayout(false);
-            this.uiGroupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbFrontRecord)).EndInit();
             this.pnlFrontCamera.ResumeLayout(false);
-            this.uiGroupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbFrontCamera)).EndInit();
             this.pnlInformation.ResumeLayout(false);
-            this.pnlResident.ResumeLayout(false);
-            this.uiGroupBox8.ResumeLayout(false);
-            this.uiTableLayoutPanel4.ResumeLayout(false);
-            this.pnlCard.ResumeLayout(false);
-            this.uiGroupBox7.ResumeLayout(false);
-            this.uiTableLayoutPanel3.ResumeLayout(false);
-            this.pnlShortcut.ResumeLayout(false);
+            this.uiTableLayoutPanel1.ResumeLayout(false);
+            this.uiPanel15.ResumeLayout(false);
             this.uiPanel7.ResumeLayout(false);
             this.uiGroupBox9.ResumeLayout(false);
             this.uiTableLayoutPanel5.ResumeLayout(false);
-            this.uiPanel15.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlateCamera)).EndInit();
+            this.uiGroupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlateRecord)).EndInit();
+            this.uiGroupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackCamera)).EndInit();
+            this.uiGroupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbFrontCamera)).EndInit();
+            this.uiGroupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbFrontRecord)).EndInit();
+            this.uiGroupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackRecord)).EndInit();
+            this.uiGroupBox4.ResumeLayout(false);
+            this.pnlCard.ResumeLayout(false);
+            this.uiGroupBox7.ResumeLayout(false);
+            this.uiTableLayoutPanel3.ResumeLayout(false);
+            this.pnlResident.ResumeLayout(false);
+            this.uiGroupBox8.ResumeLayout(false);
+            this.uiTableLayoutPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1222,37 +1227,36 @@
         private Sunny.UI.UIPanel pnlBottom;
         private Sunny.UI.UITableLayoutPanel table;
         private Sunny.UI.UIPanel pnlPlateRecord;
+        private Sunny.UI.UIPanel pnlPlateCamera;
+        private Sunny.UI.UIPanel pnlBackRecord;
+        private Sunny.UI.UIPanel pnlBackCamera;
+        private Sunny.UI.UIPanel pnlFrontRecord;
+        private Sunny.UI.UIPanel pnlFrontCamera;
+        private Sunny.UI.UITableLayoutPanel pnlInformation;
+        private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel1;
+        private Sunny.UI.UIPanel uiPanel15;
+        private Sunny.UI.UIButton btnOpen;
+        private Sunny.UI.UIPanel uiPanel7;
+        private Sunny.UI.UIGroupBox uiGroupBox9;
+        private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel5;
+        private Sunny.UI.UILabel uiLabel22;
+        private Sunny.UI.UILabel uiLabel23;
+        private Sunny.UI.UILabel uiLabel34;
+        private Sunny.UI.UILabel uiLabel35;
+        private Sunny.UI.UILabel uiLabel36;
+        private Sunny.UI.UILabel uiLabel37;
         private Sunny.UI.UIGroupBox uiGroupBox6;
         private System.Windows.Forms.PictureBox pbPlateRecord;
-        private Sunny.UI.UIPanel pnlPlateCamera;
         private Sunny.UI.UIGroupBox uiGroupBox5;
         private System.Windows.Forms.PictureBox pbPlateCamera;
-        private Sunny.UI.UIPanel pnlBackRecord;
         private Sunny.UI.UIGroupBox uiGroupBox4;
         private System.Windows.Forms.PictureBox pbBackRecord;
-        private Sunny.UI.UIPanel pnlBackCamera;
         private Sunny.UI.UIGroupBox uiGroupBox2;
         private System.Windows.Forms.PictureBox pbBackCamera;
-        private Sunny.UI.UIPanel pnlFrontRecord;
         private Sunny.UI.UIGroupBox uiGroupBox3;
         private System.Windows.Forms.PictureBox pbFrontRecord;
-        private Sunny.UI.UIPanel pnlFrontCamera;
         private Sunny.UI.UIGroupBox uiGroupBox1;
         private System.Windows.Forms.PictureBox pbFrontCamera;
-        private Sunny.UI.UITableLayoutPanel pnlInformation;
-        private Sunny.UI.UIPanel pnlResident;
-        private Sunny.UI.UIGroupBox uiGroupBox8;
-        private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel4;
-        private Sunny.UI.UILabel uiLabel24;
-        private Sunny.UI.UILabel lbRegistedPlate;
-        private Sunny.UI.UILabel uiLabel26;
-        private Sunny.UI.UILabel lbDueDate;
-        private Sunny.UI.UILabel uiLabel28;
-        private Sunny.UI.UILabel lbSignUpDate;
-        private Sunny.UI.UILabel lbApartment;
-        private Sunny.UI.UILabel uiLabel31;
-        private Sunny.UI.UILabel lbFullname;
-        private Sunny.UI.UILabel uiLabel33;
         private Sunny.UI.UIPanel pnlCard;
         private Sunny.UI.UIGroupBox uiGroupBox7;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel3;
@@ -1272,17 +1276,18 @@
         private Sunny.UI.UILabel uiLabel3;
         private Sunny.UI.UILabel lbCardId;
         private Sunny.UI.UILabel uiLabel2;
-        private Sunny.UI.UIPanel pnlShortcut;
-        private Sunny.UI.UIPanel uiPanel7;
-        private Sunny.UI.UIGroupBox uiGroupBox9;
-        private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel5;
-        private Sunny.UI.UILabel uiLabel22;
-        private Sunny.UI.UILabel uiLabel23;
-        private Sunny.UI.UILabel uiLabel34;
-        private Sunny.UI.UILabel uiLabel35;
-        private Sunny.UI.UILabel uiLabel36;
-        private Sunny.UI.UILabel uiLabel37;
-        private Sunny.UI.UIPanel uiPanel15;
-        private Sunny.UI.UIButton btnOpen;
+        private Sunny.UI.UIPanel pnlResident;
+        private Sunny.UI.UIGroupBox uiGroupBox8;
+        private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel4;
+        private Sunny.UI.UILabel uiLabel24;
+        private Sunny.UI.UILabel lbRegistedPlate;
+        private Sunny.UI.UILabel uiLabel26;
+        private Sunny.UI.UILabel lbDueDate;
+        private Sunny.UI.UILabel uiLabel28;
+        private Sunny.UI.UILabel lbSignUpDate;
+        private Sunny.UI.UILabel lbApartment;
+        private Sunny.UI.UILabel uiLabel31;
+        private Sunny.UI.UILabel lbFullname;
+        private Sunny.UI.UILabel uiLabel33;
     }
 }
