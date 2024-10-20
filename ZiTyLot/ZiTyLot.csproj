@@ -266,6 +266,12 @@
     <Compile Include="GUI\IssueDetailRow.Designer.cs">
       <DependentUpon>IssueDetailRow.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Screens\AreaScr\AreaDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\AreaScr\AreaDetailForm.Designer.cs">
+      <DependentUpon>AreaDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Screens\BillScr\BillControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -283,6 +289,12 @@
     </Compile>
     <Compile Include="GUI\Screens\BillScr\IssueDetailForm.Designer.cs">
       <DependentUpon>IssueDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\CardScr\CardDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\CardScr\CardDetailForm.Designer.cs">
+      <DependentUpon>CardDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\ResidentScr\ResidentDetailForm.cs">
       <SubType>Form</SubType>
@@ -356,12 +368,6 @@
     <Compile Include="GUI\Screens\ResidentScr\ResidentControl.Designer.cs">
       <DependentUpon>ResidentControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\ExampleScreen.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Screens\ExampleScreen.Designer.cs">
-      <DependentUpon>ExampleScreen.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helper\Arduino.cs" />
     <Compile Include="Helper\ExcelHelper.cs" />
     <Compile Include="Helper\FilterCondition.cs" />
@@ -394,6 +400,9 @@
     <EmbeddedResource Include="GUI\IssueDetailRow.resx">
       <DependentUpon>IssueDetailRow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\AreaScr\AreaDetailForm.resx">
+      <DependentUpon>AreaDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\BillScr\BillControl.resx">
       <DependentUpon>BillControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -402,6 +411,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\BillScr\IssueDetailForm.resx">
       <DependentUpon>IssueDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\CardScr\CardDetailForm.resx">
+      <DependentUpon>CardDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\ResidentScr\ResidentDetailForm.resx">
       <DependentUpon>ResidentDetailForm.cs</DependentUpon>
@@ -438,9 +450,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\ResidentScr\ResidentControl.resx">
       <DependentUpon>ResidentControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\ExampleScreen.resx">
-      <DependentUpon>ExampleScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -541,6 +550,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\components\" />
+    <Folder Include="GUI\Screens\LostHistoryScr\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

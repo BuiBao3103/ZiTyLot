@@ -25,8 +25,7 @@ namespace ZiTyLot.GUI
         {
             // Create a dictionary to map buttons to their respective panels
             var panelMapping = new Dictionary<string, UserControl>
-            {
-                { "Home", new ExampleScreen() },
+            { 
                 //{ "EmployeeManagement", new Panel2() },
                 { "AccountManagement", new AccountControl() },
                 { "BillManagement", new BillControl() },
