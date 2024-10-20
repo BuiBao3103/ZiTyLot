@@ -290,12 +290,6 @@
     <Compile Include="GUI\Screens\BillScr\IssueDetailForm.Designer.cs">
       <DependentUpon>IssueDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\CardScr\CardDetailForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Screens\CardScr\CardDetailForm.Designer.cs">
-      <DependentUpon>CardDetailForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Screens\ResidentScr\ResidentDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -411,9 +405,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\BillScr\IssueDetailForm.resx">
       <DependentUpon>IssueDetailForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\CardScr\CardDetailForm.resx">
-      <DependentUpon>CardDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\ResidentScr\ResidentDetailForm.resx">
       <DependentUpon>ResidentDetailForm.cs</DependentUpon>
