@@ -344,6 +344,12 @@
     <Compile Include="GUI\Screens\AccountScr\AccountControl.Designer.cs">
       <DependentUpon>AccountControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Screens\ScanningScr\SettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\ScanningScr\SettingForm.Designer.cs">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Screens\SessionScr\SessionDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -432,6 +438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\AccountScr\AccountControl.resx">
       <DependentUpon>AccountControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\ScanningScr\SettingForm.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\SessionScr\SessionDetailForm.resx">
       <DependentUpon>SessionDetailForm.cs</DependentUpon>

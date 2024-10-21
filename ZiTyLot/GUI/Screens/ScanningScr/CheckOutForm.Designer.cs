@@ -94,6 +94,8 @@
             this.lbCardId = new Sunny.UI.UILabel();
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.uiTableLayoutPanel1 = new Sunny.UI.UITableLayoutPanel();
+            this.uiPanel15 = new Sunny.UI.UIPanel();
+            this.btnOpen = new Sunny.UI.UIButton();
             this.uiPanel7 = new Sunny.UI.UIPanel();
             this.uiGroupBox9 = new Sunny.UI.UIGroupBox();
             this.uiTableLayoutPanel5 = new Sunny.UI.UITableLayoutPanel();
@@ -103,8 +105,6 @@
             this.uiLabel35 = new Sunny.UI.UILabel();
             this.uiLabel36 = new Sunny.UI.UILabel();
             this.uiLabel37 = new Sunny.UI.UILabel();
-            this.uiPanel15 = new Sunny.UI.UIPanel();
-            this.btnOpen = new Sunny.UI.UIButton();
             this.pnlTop.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.table.SuspendLayout();
@@ -143,10 +143,10 @@
             this.uiGroupBox7.SuspendLayout();
             this.uiTableLayoutPanel3.SuspendLayout();
             this.uiTableLayoutPanel1.SuspendLayout();
+            this.uiPanel15.SuspendLayout();
             this.uiPanel7.SuspendLayout();
             this.uiGroupBox9.SuspendLayout();
             this.uiTableLayoutPanel5.SuspendLayout();
-            this.uiPanel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -1161,6 +1161,52 @@
             this.uiTableLayoutPanel1.TabIndex = 3;
             this.uiTableLayoutPanel1.TagString = null;
             // 
+            // uiPanel15
+            // 
+            this.uiPanel15.Controls.Add(this.btnOpen);
+            this.uiPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel15.FillColor = System.Drawing.Color.White;
+            this.uiPanel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel15.Location = new System.Drawing.Point(219, 0);
+            this.uiPanel15.Margin = new System.Windows.Forms.Padding(0);
+            this.uiPanel15.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel15.Name = "uiPanel15";
+            this.uiPanel15.Padding = new System.Windows.Forms.Padding(5, 15, 0, 0);
+            this.uiPanel15.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiPanel15.Size = new System.Drawing.Size(94, 158);
+            this.uiPanel15.TabIndex = 7;
+            this.uiPanel15.Text = null;
+            this.uiPanel15.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnOpen
+            // 
+            this.btnOpen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOpen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnOpen.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpen.FillColor2 = System.Drawing.Color.White;
+            this.btnOpen.FillHoverColor = System.Drawing.Color.White;
+            this.btnOpen.FillPressColor = System.Drawing.Color.White;
+            this.btnOpen.FillSelectedColor = System.Drawing.Color.White;
+            this.btnOpen.Font = new System.Drawing.Font("Helvetica Rounded", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpen.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpen.ForePressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpen.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpen.Location = new System.Drawing.Point(5, 15);
+            this.btnOpen.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Radius = 10;
+            this.btnOpen.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpen.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpen.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpen.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpen.RectSize = 2;
+            this.btnOpen.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnOpen.Size = new System.Drawing.Size(89, 143);
+            this.btnOpen.TabIndex = 0;
+            this.btnOpen.Text = "   OPEN \r\nBARRIER\r\n( SPACE )";
+            this.btnOpen.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnOpen.Resize += new System.EventHandler(this.btnOpen_Resize);
+            // 
             // uiPanel7
             // 
             this.uiPanel7.Controls.Add(this.uiGroupBox9);
@@ -1292,52 +1338,6 @@
             this.uiLabel37.Text = "Open gate:";
             this.uiLabel37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiPanel15
-            // 
-            this.uiPanel15.Controls.Add(this.btnOpen);
-            this.uiPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel15.FillColor = System.Drawing.Color.White;
-            this.uiPanel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel15.Location = new System.Drawing.Point(219, 0);
-            this.uiPanel15.Margin = new System.Windows.Forms.Padding(0);
-            this.uiPanel15.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel15.Name = "uiPanel15";
-            this.uiPanel15.Padding = new System.Windows.Forms.Padding(5, 15, 0, 0);
-            this.uiPanel15.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel15.Size = new System.Drawing.Size(94, 158);
-            this.uiPanel15.TabIndex = 7;
-            this.uiPanel15.Text = null;
-            this.uiPanel15.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnOpen
-            // 
-            this.btnOpen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOpen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnOpen.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.FillColor2 = System.Drawing.Color.White;
-            this.btnOpen.FillHoverColor = System.Drawing.Color.White;
-            this.btnOpen.FillPressColor = System.Drawing.Color.White;
-            this.btnOpen.FillSelectedColor = System.Drawing.Color.White;
-            this.btnOpen.Font = new System.Drawing.Font("Helvetica Rounded", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpen.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.ForePressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.Location = new System.Drawing.Point(5, 15);
-            this.btnOpen.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Radius = 10;
-            this.btnOpen.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.RectSize = 2;
-            this.btnOpen.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnOpen.Size = new System.Drawing.Size(89, 143);
-            this.btnOpen.TabIndex = 0;
-            this.btnOpen.Text = "   OPEN \r\nBARRIER\r\n( SPACE )";
-            this.btnOpen.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnOpen.Resize += new System.EventHandler(this.btnOpen_Resize);
-            // 
             // CheckOutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1350,6 +1350,7 @@
             this.Name = "CheckOutForm";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "CheckOutForm";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CheckOutForm_KeyDown);
             this.pnlTop.ResumeLayout(false);
             this.pnlBottom.ResumeLayout(false);
             this.table.ResumeLayout(false);
@@ -1388,10 +1389,10 @@
             this.uiGroupBox7.ResumeLayout(false);
             this.uiTableLayoutPanel3.ResumeLayout(false);
             this.uiTableLayoutPanel1.ResumeLayout(false);
+            this.uiPanel15.ResumeLayout(false);
             this.uiPanel7.ResumeLayout(false);
             this.uiGroupBox9.ResumeLayout(false);
             this.uiTableLayoutPanel5.ResumeLayout(false);
-            this.uiPanel15.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

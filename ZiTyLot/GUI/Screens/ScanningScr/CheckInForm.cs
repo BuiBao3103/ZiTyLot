@@ -8,22 +8,10 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         public CheckInForm()
         {
             InitializeComponent();
+            this.CenterToScreen();
+            this.KeyPreview = true;
         }
 
-        private void uiGroupBox8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void uiGroupBox9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void uiLabel31_Click(object sender, EventArgs e)
-        {
-
-        }
         private void btnOpen_Resize(object sender, System.EventArgs e)
         {
             if (this.Size.Width > 1800)
@@ -80,6 +68,16 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 {
                     lable.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
+            }
+        }
+
+        private void CheckInForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                SettingForm settingForm = new SettingForm();
+                settingForm.Show();
+                
             }
         }
     }

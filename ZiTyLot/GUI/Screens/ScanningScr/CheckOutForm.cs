@@ -9,6 +9,8 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         public CheckOutForm()
         {
             InitializeComponent();
+            this.CenterToScreen();
+            this.KeyPreview = true;
         }
 
         private void pnlInformation_Paint(object sender, PaintEventArgs e)
@@ -75,5 +77,14 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             }
         }
 
+        private void CheckOutForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                SettingForm settingForm = new SettingForm();
+                settingForm.Show();
+                
+            }
+        }
     }
 }
