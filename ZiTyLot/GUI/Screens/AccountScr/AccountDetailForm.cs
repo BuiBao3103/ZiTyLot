@@ -8,5 +8,10 @@ namespace ZiTyLot.GUI.Screens.AccountScr
         {
             InitializeComponent();
         }
+
+        private void AccountDetailForm_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

@@ -42,10 +42,6 @@ namespace ZiTyLot.GUI.Screens
             this.cbFilter = new Sunny.UI.UIComboBox();
             this.pnlButton = new System.Windows.Forms.Panel();
             this.btnAdd = new Sunny.UI.UISymbolButton();
-            this.pnlTabpane = new System.Windows.Forms.Panel();
-            this.btnVistor = new System.Windows.Forms.RadioButton();
-            this.btnResident = new System.Windows.Forms.RadioButton();
-            this.btnAll = new System.Windows.Forms.RadioButton();
             this.separator = new System.Windows.Forms.Panel();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.pnlPagination = new System.Windows.Forms.Panel();
@@ -77,7 +73,6 @@ namespace ZiTyLot.GUI.Screens
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlFilter.SuspendLayout();
             this.pnlButton.SuspendLayout();
-            this.pnlTabpane.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.pnlPagination.SuspendLayout();
             this.pnlLeft.SuspendLayout();
@@ -94,7 +89,6 @@ namespace ZiTyLot.GUI.Screens
             // 
             this.pnlTop.BackColor = System.Drawing.Color.White;
             this.pnlTop.Controls.Add(this.uiPanel1);
-            this.pnlTop.Controls.Add(this.pnlTabpane);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
@@ -276,101 +270,6 @@ namespace ZiTyLot.GUI.Screens
             this.btnAdd.Text = "New area";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // pnlTabpane
-            // 
-            this.pnlTabpane.Controls.Add(this.btnVistor);
-            this.pnlTabpane.Controls.Add(this.btnResident);
-            this.pnlTabpane.Controls.Add(this.btnAll);
-            this.pnlTabpane.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlTabpane.Location = new System.Drawing.Point(10, 10);
-            this.pnlTabpane.Name = "pnlTabpane";
-            this.pnlTabpane.Size = new System.Drawing.Size(369, 34);
-            this.pnlTabpane.TabIndex = 8;
-            // 
-            // btnVistor
-            // 
-            this.btnVistor.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnVistor.AutoSize = true;
-            this.btnVistor.BackColor = System.Drawing.Color.White;
-            this.btnVistor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVistor.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnVistor.FlatAppearance.BorderSize = 0;
-            this.btnVistor.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnVistor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnVistor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnVistor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVistor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVistor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.btnVistor.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Visitor;
-            this.btnVistor.Location = new System.Drawing.Point(229, 0);
-            this.btnVistor.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnVistor.MinimumSize = new System.Drawing.Size(110, 34);
-            this.btnVistor.Name = "btnVistor";
-            this.btnVistor.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnVistor.Size = new System.Drawing.Size(110, 34);
-            this.btnVistor.TabIndex = 5;
-            this.btnVistor.TabStop = true;
-            this.btnVistor.Text = "Vistor";
-            this.btnVistor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnVistor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnVistor.UseVisualStyleBackColor = false;
-            // 
-            // btnResident
-            // 
-            this.btnResident.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnResident.AutoSize = true;
-            this.btnResident.BackColor = System.Drawing.Color.White;
-            this.btnResident.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnResident.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnResident.FlatAppearance.BorderSize = 0;
-            this.btnResident.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnResident.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnResident.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResident.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResident.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.btnResident.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Resident;
-            this.btnResident.Location = new System.Drawing.Point(110, 0);
-            this.btnResident.Margin = new System.Windows.Forms.Padding(0);
-            this.btnResident.MinimumSize = new System.Drawing.Size(110, 34);
-            this.btnResident.Name = "btnResident";
-            this.btnResident.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnResident.Size = new System.Drawing.Size(119, 34);
-            this.btnResident.TabIndex = 4;
-            this.btnResident.TabStop = true;
-            this.btnResident.Text = "Resident";
-            this.btnResident.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnResident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnResident.UseVisualStyleBackColor = false;
-            // 
-            // btnAll
-            // 
-            this.btnAll.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnAll.AutoSize = true;
-            this.btnAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnAll.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAll.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAll.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAll.FlatAppearance.BorderSize = 0;
-            this.btnAll.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnAll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAll.ForeColor = System.Drawing.Color.White;
-            this.btnAll.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_All_Active;
-            this.btnAll.Location = new System.Drawing.Point(0, 0);
-            this.btnAll.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAll.MinimumSize = new System.Drawing.Size(110, 34);
-            this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(110, 34);
-            this.btnAll.TabIndex = 3;
-            this.btnAll.TabStop = true;
-            this.btnAll.Text = "  All";
-            this.btnAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAll.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAll.UseVisualStyleBackColor = false;
             // 
             // separator
             // 
@@ -775,8 +674,6 @@ namespace ZiTyLot.GUI.Screens
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlFilter.ResumeLayout(false);
             this.pnlButton.ResumeLayout(false);
-            this.pnlTabpane.ResumeLayout(false);
-            this.pnlTabpane.PerformLayout();
             this.pnlBottom.ResumeLayout(false);
             this.pnlPagination.ResumeLayout(false);
             this.pnlLeft.ResumeLayout(false);
@@ -794,10 +691,6 @@ namespace ZiTyLot.GUI.Screens
 
         #endregion
         private System.Windows.Forms.Panel pnlTop;
-        private System.Windows.Forms.Panel pnlTabpane;
-        private System.Windows.Forms.RadioButton btnVistor;
-        private System.Windows.Forms.RadioButton btnResident;
-        private System.Windows.Forms.RadioButton btnAll;
         private System.Windows.Forms.Panel separator;
         private System.Windows.Forms.Panel pnlBottom;
         private System.Windows.Forms.Panel panel2;

@@ -40,10 +40,6 @@ namespace ZiTyLot.GUI.Screens
             this.tbSearch = new Sunny.UI.UITextBox();
             this.pnlFilter = new Sunny.UI.UIPanel();
             this.cbFilter = new Sunny.UI.UIComboBox();
-            this.pnlTabpane = new System.Windows.Forms.Panel();
-            this.btnCheckOut = new System.Windows.Forms.RadioButton();
-            this.btnCheckIn = new System.Windows.Forms.RadioButton();
-            this.btnAll = new System.Windows.Forms.RadioButton();
             this.separator = new System.Windows.Forms.Panel();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.pnlPagination = new System.Windows.Forms.Panel();
@@ -74,7 +70,6 @@ namespace ZiTyLot.GUI.Screens
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlFilter.SuspendLayout();
-            this.pnlTabpane.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.pnlPagination.SuspendLayout();
             this.pnlLeft.SuspendLayout();
@@ -91,7 +86,6 @@ namespace ZiTyLot.GUI.Screens
             // 
             this.pnlTop.BackColor = System.Drawing.Color.White;
             this.pnlTop.Controls.Add(this.uiPanel1);
-            this.pnlTop.Controls.Add(this.pnlTabpane);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
@@ -233,101 +227,6 @@ namespace ZiTyLot.GUI.Screens
             this.cbFilter.Text = "Filter";
             this.cbFilter.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cbFilter.Watermark = "";
-            // 
-            // pnlTabpane
-            // 
-            this.pnlTabpane.Controls.Add(this.btnCheckOut);
-            this.pnlTabpane.Controls.Add(this.btnCheckIn);
-            this.pnlTabpane.Controls.Add(this.btnAll);
-            this.pnlTabpane.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlTabpane.Location = new System.Drawing.Point(10, 10);
-            this.pnlTabpane.Name = "pnlTabpane";
-            this.pnlTabpane.Size = new System.Drawing.Size(491, 34);
-            this.pnlTabpane.TabIndex = 8;
-            // 
-            // btnCheckOut
-            // 
-            this.btnCheckOut.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnCheckOut.AutoSize = true;
-            this.btnCheckOut.BackColor = System.Drawing.Color.White;
-            this.btnCheckOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCheckOut.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnCheckOut.FlatAppearance.BorderSize = 0;
-            this.btnCheckOut.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCheckOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnCheckOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.btnCheckOut.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_CheckOut;
-            this.btnCheckOut.Location = new System.Drawing.Point(226, 0);
-            this.btnCheckOut.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnCheckOut.MinimumSize = new System.Drawing.Size(110, 34);
-            this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnCheckOut.Size = new System.Drawing.Size(128, 34);
-            this.btnCheckOut.TabIndex = 5;
-            this.btnCheckOut.TabStop = true;
-            this.btnCheckOut.Text = "Check out";
-            this.btnCheckOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCheckOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCheckOut.UseVisualStyleBackColor = false;
-            // 
-            // btnCheckIn
-            // 
-            this.btnCheckIn.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnCheckIn.AutoSize = true;
-            this.btnCheckIn.BackColor = System.Drawing.Color.White;
-            this.btnCheckIn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCheckIn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnCheckIn.FlatAppearance.BorderSize = 0;
-            this.btnCheckIn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCheckIn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnCheckIn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.btnCheckIn.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_CheckIn;
-            this.btnCheckIn.Location = new System.Drawing.Point(110, 0);
-            this.btnCheckIn.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCheckIn.MinimumSize = new System.Drawing.Size(110, 34);
-            this.btnCheckIn.Name = "btnCheckIn";
-            this.btnCheckIn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnCheckIn.Size = new System.Drawing.Size(116, 34);
-            this.btnCheckIn.TabIndex = 4;
-            this.btnCheckIn.TabStop = true;
-            this.btnCheckIn.Text = "Check in";
-            this.btnCheckIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCheckIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCheckIn.UseVisualStyleBackColor = false;
-            // 
-            // btnAll
-            // 
-            this.btnAll.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnAll.AutoSize = true;
-            this.btnAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnAll.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAll.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAll.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAll.FlatAppearance.BorderSize = 0;
-            this.btnAll.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnAll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAll.ForeColor = System.Drawing.Color.White;
-            this.btnAll.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_All_Active;
-            this.btnAll.Location = new System.Drawing.Point(0, 0);
-            this.btnAll.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAll.MinimumSize = new System.Drawing.Size(110, 34);
-            this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(110, 34);
-            this.btnAll.TabIndex = 3;
-            this.btnAll.TabStop = true;
-            this.btnAll.Text = "  All";
-            this.btnAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAll.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAll.UseVisualStyleBackColor = false;
             // 
             // separator
             // 
@@ -727,8 +626,6 @@ namespace ZiTyLot.GUI.Screens
             this.pnlSearch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlFilter.ResumeLayout(false);
-            this.pnlTabpane.ResumeLayout(false);
-            this.pnlTabpane.PerformLayout();
             this.pnlBottom.ResumeLayout(false);
             this.pnlPagination.ResumeLayout(false);
             this.pnlLeft.ResumeLayout(false);
@@ -746,10 +643,6 @@ namespace ZiTyLot.GUI.Screens
 
         #endregion
         private System.Windows.Forms.Panel pnlTop;
-        private System.Windows.Forms.Panel pnlTabpane;
-        private System.Windows.Forms.RadioButton btnCheckOut;
-        private System.Windows.Forms.RadioButton btnCheckIn;
-        private System.Windows.Forms.RadioButton btnAll;
         private System.Windows.Forms.Panel separator;
         private System.Windows.Forms.Panel pnlBottom;
         private System.Windows.Forms.Panel panel2;

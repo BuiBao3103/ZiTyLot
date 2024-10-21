@@ -45,12 +45,6 @@ namespace ZiTyLot.GUI.Screens
             this.pnlButton = new System.Windows.Forms.Panel();
             this.btnMore = new Sunny.UI.UIButton();
             this.btnAdd = new Sunny.UI.UISymbolButton();
-            this.pnlTabpane = new System.Windows.Forms.Panel();
-            this.btnLost = new System.Windows.Forms.RadioButton();
-            this.btnLocked = new System.Windows.Forms.RadioButton();
-            this.btnEmpty = new System.Windows.Forms.RadioButton();
-            this.btnActive = new System.Windows.Forms.RadioButton();
-            this.btnAll = new System.Windows.Forms.RadioButton();
             this.separator = new System.Windows.Forms.Panel();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.pnlPagination = new System.Windows.Forms.Panel();
@@ -85,7 +79,6 @@ namespace ZiTyLot.GUI.Screens
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.filterPnl.SuspendLayout();
             this.pnlButton.SuspendLayout();
-            this.pnlTabpane.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.pnlPagination.SuspendLayout();
             this.pnlLeft.SuspendLayout();
@@ -103,7 +96,6 @@ namespace ZiTyLot.GUI.Screens
             // 
             this.pnlTop.BackColor = System.Drawing.Color.White;
             this.pnlTop.Controls.Add(this.uiPanel1);
-            this.pnlTop.Controls.Add(this.pnlTabpane);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
@@ -311,161 +303,6 @@ namespace ZiTyLot.GUI.Screens
             this.btnAdd.Text = "New card";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // pnlTabpane
-            // 
-            this.pnlTabpane.Controls.Add(this.btnLost);
-            this.pnlTabpane.Controls.Add(this.btnLocked);
-            this.pnlTabpane.Controls.Add(this.btnEmpty);
-            this.pnlTabpane.Controls.Add(this.btnActive);
-            this.pnlTabpane.Controls.Add(this.btnAll);
-            this.pnlTabpane.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlTabpane.Location = new System.Drawing.Point(10, 10);
-            this.pnlTabpane.Name = "pnlTabpane";
-            this.pnlTabpane.Size = new System.Drawing.Size(560, 34);
-            this.pnlTabpane.TabIndex = 8;
-            // 
-            // btnLost
-            // 
-            this.btnLost.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnLost.AutoSize = true;
-            this.btnLost.BackColor = System.Drawing.Color.White;
-            this.btnLost.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLost.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnLost.FlatAppearance.BorderSize = 0;
-            this.btnLost.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnLost.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnLost.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnLost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLost.Font = new System.Drawing.Font("Helvetica Rounded", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.btnLost.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Lost;
-            this.btnLost.Location = new System.Drawing.Point(440, 0);
-            this.btnLost.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnLost.MinimumSize = new System.Drawing.Size(110, 34);
-            this.btnLost.Name = "btnLost";
-            this.btnLost.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnLost.Size = new System.Drawing.Size(110, 34);
-            this.btnLost.TabIndex = 6;
-            this.btnLost.Text = "Lost";
-            this.btnLost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnLost.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLost.UseVisualStyleBackColor = false;
-            this.btnLost.CheckedChanged += new System.EventHandler(this.lostFilter_CheckedChanged);
-            // 
-            // btnLocked
-            // 
-            this.btnLocked.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnLocked.AutoSize = true;
-            this.btnLocked.BackColor = System.Drawing.Color.White;
-            this.btnLocked.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLocked.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnLocked.FlatAppearance.BorderSize = 0;
-            this.btnLocked.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnLocked.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnLocked.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnLocked.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLocked.Font = new System.Drawing.Font("Helvetica Rounded", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLocked.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.btnLocked.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Lock;
-            this.btnLocked.Location = new System.Drawing.Point(330, 0);
-            this.btnLocked.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnLocked.MinimumSize = new System.Drawing.Size(110, 34);
-            this.btnLocked.Name = "btnLocked";
-            this.btnLocked.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnLocked.Size = new System.Drawing.Size(110, 34);
-            this.btnLocked.TabIndex = 7;
-            this.btnLocked.Text = "Locked";
-            this.btnLocked.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnLocked.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLocked.UseVisualStyleBackColor = false;
-            this.btnLocked.CheckedChanged += new System.EventHandler(this.lockedFilter_CheckedChanged);
-            // 
-            // btnEmpty
-            // 
-            this.btnEmpty.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnEmpty.AutoSize = true;
-            this.btnEmpty.BackColor = System.Drawing.Color.White;
-            this.btnEmpty.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEmpty.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnEmpty.FlatAppearance.BorderSize = 0;
-            this.btnEmpty.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnEmpty.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnEmpty.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnEmpty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmpty.Font = new System.Drawing.Font("Helvetica Rounded", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmpty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.btnEmpty.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Empty;
-            this.btnEmpty.Location = new System.Drawing.Point(220, 0);
-            this.btnEmpty.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnEmpty.MinimumSize = new System.Drawing.Size(110, 34);
-            this.btnEmpty.Name = "btnEmpty";
-            this.btnEmpty.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnEmpty.Size = new System.Drawing.Size(110, 34);
-            this.btnEmpty.TabIndex = 5;
-            this.btnEmpty.Text = "Empty";
-            this.btnEmpty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnEmpty.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEmpty.UseVisualStyleBackColor = false;
-            this.btnEmpty.CheckedChanged += new System.EventHandler(this.emptyFilter_CheckedChanged);
-            // 
-            // btnActive
-            // 
-            this.btnActive.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnActive.AutoSize = true;
-            this.btnActive.BackColor = System.Drawing.Color.White;
-            this.btnActive.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActive.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnActive.FlatAppearance.BorderSize = 0;
-            this.btnActive.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnActive.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnActive.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnActive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActive.Font = new System.Drawing.Font("Helvetica Rounded", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.btnActive.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Active;
-            this.btnActive.Location = new System.Drawing.Point(110, 0);
-            this.btnActive.Margin = new System.Windows.Forms.Padding(0);
-            this.btnActive.MinimumSize = new System.Drawing.Size(110, 34);
-            this.btnActive.Name = "btnActive";
-            this.btnActive.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnActive.Size = new System.Drawing.Size(110, 34);
-            this.btnActive.TabIndex = 4;
-            this.btnActive.Text = "Active";
-            this.btnActive.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnActive.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnActive.UseVisualStyleBackColor = false;
-            this.btnActive.CheckedChanged += new System.EventHandler(this.activeFilter_CheckedChanged);
-            // 
-            // btnAll
-            // 
-            this.btnAll.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnAll.AutoSize = true;
-            this.btnAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnAll.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAll.Checked = true;
-            this.btnAll.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAll.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAll.FlatAppearance.BorderSize = 0;
-            this.btnAll.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnAll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAll.Font = new System.Drawing.Font("Helvetica Rounded", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAll.ForeColor = System.Drawing.Color.White;
-            this.btnAll.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_All_Active;
-            this.btnAll.Location = new System.Drawing.Point(0, 0);
-            this.btnAll.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAll.MinimumSize = new System.Drawing.Size(110, 34);
-            this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(110, 34);
-            this.btnAll.TabIndex = 3;
-            this.btnAll.TabStop = true;
-            this.btnAll.Text = "  All";
-            this.btnAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAll.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAll.UseVisualStyleBackColor = false;
-            this.btnAll.CheckedChanged += new System.EventHandler(this.allFilter_CheckedChanged);
             // 
             // separator
             // 
@@ -892,8 +729,6 @@ namespace ZiTyLot.GUI.Screens
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.filterPnl.ResumeLayout(false);
             this.pnlButton.ResumeLayout(false);
-            this.pnlTabpane.ResumeLayout(false);
-            this.pnlTabpane.PerformLayout();
             this.pnlBottom.ResumeLayout(false);
             this.pnlPagination.ResumeLayout(false);
             this.pnlLeft.ResumeLayout(false);
@@ -913,17 +748,11 @@ namespace ZiTyLot.GUI.Screens
         #endregion
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel pnlTop;
-        private System.Windows.Forms.Panel pnlTabpane;
-        private System.Windows.Forms.RadioButton btnEmpty;
-        private System.Windows.Forms.RadioButton btnActive;
-        private System.Windows.Forms.RadioButton btnAll;
         private System.Windows.Forms.Panel separator;
         private System.Windows.Forms.Panel pnlBottom;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
         private DataGridView tableCard;
-        private RadioButton btnLost;
-        private RadioButton btnLocked;
         private DataGridViewTextBoxColumn colId;
         private DataGridViewTextBoxColumn colRfid;
         private DataGridViewTextBoxColumn colType;

@@ -116,11 +116,11 @@
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.RowCount = 6;
             this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.pnlMain.Size = new System.Drawing.Size(844, 721);
             this.pnlMain.TabIndex = 0;
             this.pnlMain.TagString = null;
@@ -134,7 +134,7 @@
             this.pnlButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlButton.FillColor = System.Drawing.Color.White;
             this.pnlButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlButton.Location = new System.Drawing.Point(4, 672);
+            this.pnlButton.Location = new System.Drawing.Point(4, 692);
             this.pnlButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlButton.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlButton.Name = "pnlButton";
@@ -142,7 +142,7 @@
             this.pnlButton.Radius = 10;
             this.pnlButton.RectColor = System.Drawing.Color.White;
             this.pnlButton.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlButton.Size = new System.Drawing.Size(836, 44);
+            this.pnlButton.Size = new System.Drawing.Size(836, 24);
             this.pnlButton.TabIndex = 15;
             this.pnlButton.Text = null;
             this.pnlButton.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -154,7 +154,7 @@
             this.panel1.Location = new System.Drawing.Point(426, 5);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.panel1.Size = new System.Drawing.Size(160, 34);
+            this.panel1.Size = new System.Drawing.Size(160, 14);
             this.panel1.TabIndex = 11;
             // 
             // btnResetPassword
@@ -179,7 +179,7 @@
             this.btnResetPassword.RectSelectedColor = System.Drawing.Color.White;
             this.btnResetPassword.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnResetPassword.RectSize = 2;
-            this.btnResetPassword.Size = new System.Drawing.Size(150, 34);
+            this.btnResetPassword.Size = new System.Drawing.Size(150, 14);
             this.btnResetPassword.Symbol = 0;
             this.btnResetPassword.TabIndex = 3;
             this.btnResetPassword.Text = "Reset password";
@@ -191,7 +191,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(586, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(120, 34);
+            this.panel2.Size = new System.Drawing.Size(120, 14);
             this.panel2.TabIndex = 10;
             // 
             // btnCancel
@@ -215,7 +215,7 @@
             this.btnCancel.RectPressColor = System.Drawing.Color.White;
             this.btnCancel.RectSelectedColor = System.Drawing.Color.White;
             this.btnCancel.RectSize = 2;
-            this.btnCancel.Size = new System.Drawing.Size(120, 34);
+            this.btnCancel.Size = new System.Drawing.Size(120, 14);
             this.btnCancel.Symbol = 0;
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
@@ -228,7 +228,7 @@
             this.panel3.Location = new System.Drawing.Point(706, 5);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(130, 34);
+            this.panel3.Size = new System.Drawing.Size(130, 14);
             this.panel3.TabIndex = 9;
             // 
             // btnConfirm
@@ -253,7 +253,7 @@
             this.btnConfirm.RectSelectedColor = System.Drawing.Color.White;
             this.btnConfirm.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnConfirm.RectSize = 2;
-            this.btnConfirm.Size = new System.Drawing.Size(120, 34);
+            this.btnConfirm.Size = new System.Drawing.Size(120, 14);
             this.btnConfirm.Symbol = 0;
             this.btnConfirm.TabIndex = 3;
             this.btnConfirm.Text = "Confirm";
@@ -266,13 +266,13 @@
             this.uiPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel4.FillColor = System.Drawing.Color.White;
             this.uiPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel4.Location = new System.Drawing.Point(4, 369);
+            this.uiPanel4.Location = new System.Drawing.Point(4, 353);
             this.uiPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel4.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel4.Name = "uiPanel4";
             this.uiPanel4.RectColor = System.Drawing.Color.White;
             this.uiPanel4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel4.Size = new System.Drawing.Size(836, 293);
+            this.uiPanel4.Size = new System.Drawing.Size(836, 329);
             this.uiPanel4.TabIndex = 5;
             this.uiPanel4.Text = null;
             this.uiPanel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -292,7 +292,7 @@
             this.pnlAccount.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.pnlAccount.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.pnlAccount.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.pnlAccount.Size = new System.Drawing.Size(836, 293);
+            this.pnlAccount.Size = new System.Drawing.Size(836, 329);
             this.pnlAccount.TabIndex = 0;
             this.pnlAccount.TagString = null;
             // 
@@ -303,12 +303,12 @@
             this.pnlRole.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRole.FillColor = System.Drawing.Color.White;
             this.pnlRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlRole.Location = new System.Drawing.Point(4, 92);
+            this.pnlRole.Location = new System.Drawing.Point(4, 103);
             this.pnlRole.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlRole.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlRole.Name = "pnlRole";
             this.pnlRole.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlRole.Size = new System.Drawing.Size(828, 196);
+            this.pnlRole.Size = new System.Drawing.Size(828, 221);
             this.pnlRole.TabIndex = 5;
             this.pnlRole.Text = null;
             this.pnlRole.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -326,7 +326,7 @@
             this.uiGroupBox8.Name = "uiGroupBox8";
             this.uiGroupBox8.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox8.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox8.Size = new System.Drawing.Size(828, 196);
+            this.uiGroupBox8.Size = new System.Drawing.Size(828, 221);
             this.uiGroupBox8.TabIndex = 0;
             this.uiGroupBox8.Text = "This account have access to";
             this.uiGroupBox8.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -353,7 +353,7 @@
             this.listAccess.RectColor = System.Drawing.SystemColors.ControlDark;
             this.listAccess.RectSize = 2;
             this.listAccess.ShowText = false;
-            this.listAccess.Size = new System.Drawing.Size(812, 160);
+            this.listAccess.Size = new System.Drawing.Size(812, 185);
             this.listAccess.TabIndex = 0;
             this.listAccess.Text = "uiListBox1";
             // 
@@ -368,7 +368,7 @@
             this.uiPanel6.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel6.Name = "uiPanel6";
             this.uiPanel6.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel6.Size = new System.Drawing.Size(410, 77);
+            this.uiPanel6.Size = new System.Drawing.Size(410, 88);
             this.uiPanel6.TabIndex = 4;
             this.uiPanel6.Text = null;
             this.uiPanel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -386,7 +386,7 @@
             this.uiGroupBox7.Name = "uiGroupBox7";
             this.uiGroupBox7.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox7.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox7.Size = new System.Drawing.Size(410, 77);
+            this.uiGroupBox7.Size = new System.Drawing.Size(410, 88);
             this.uiGroupBox7.TabIndex = 1;
             this.uiGroupBox7.Text = "Role";
             this.uiGroupBox7.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -430,7 +430,7 @@
             this.uiPanel5.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel5.Name = "uiPanel5";
             this.uiPanel5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel5.Size = new System.Drawing.Size(410, 77);
+            this.uiPanel5.Size = new System.Drawing.Size(410, 88);
             this.uiPanel5.TabIndex = 3;
             this.uiPanel5.Text = null;
             this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -448,7 +448,7 @@
             this.uiGroupBox6.Name = "uiGroupBox6";
             this.uiGroupBox6.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox6.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox6.Size = new System.Drawing.Size(410, 77);
+            this.uiGroupBox6.Size = new System.Drawing.Size(410, 88);
             this.uiGroupBox6.TabIndex = 0;
             this.uiGroupBox6.Text = "Username";
             this.uiGroupBox6.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -480,13 +480,13 @@
             this.uiPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel3.FillColor = System.Drawing.Color.White;
             this.uiPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel3.Location = new System.Drawing.Point(4, 315);
+            this.uiPanel3.Location = new System.Drawing.Point(4, 319);
             this.uiPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel3.Name = "uiPanel3";
             this.uiPanel3.RectColor = System.Drawing.Color.White;
             this.uiPanel3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel3.Size = new System.Drawing.Size(836, 44);
+            this.uiPanel3.Size = new System.Drawing.Size(836, 24);
             this.uiPanel3.TabIndex = 4;
             this.uiPanel3.Text = null;
             this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -498,7 +498,7 @@
             this.uiLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiLabel4.Location = new System.Drawing.Point(0, 0);
             this.uiLabel4.Name = "uiLabel4";
-            this.uiLabel4.Size = new System.Drawing.Size(836, 44);
+            this.uiLabel4.Size = new System.Drawing.Size(836, 24);
             this.uiLabel4.TabIndex = 0;
             this.uiLabel4.Text = "Account details";
             this.uiLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -510,13 +510,13 @@
             this.uiPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel2.FillColor = System.Drawing.Color.White;
             this.uiPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel2.Location = new System.Drawing.Point(4, 113);
+            this.uiPanel2.Location = new System.Drawing.Point(4, 93);
             this.uiPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel2.Name = "uiPanel2";
             this.uiPanel2.RectColor = System.Drawing.Color.White;
             this.uiPanel2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel2.Size = new System.Drawing.Size(836, 192);
+            this.uiPanel2.Size = new System.Drawing.Size(836, 216);
             this.uiPanel2.TabIndex = 3;
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -539,7 +539,7 @@
             this.pnlEmployee.RowCount = 2;
             this.pnlEmployee.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.pnlEmployee.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.pnlEmployee.Size = new System.Drawing.Size(836, 192);
+            this.pnlEmployee.Size = new System.Drawing.Size(836, 216);
             this.pnlEmployee.TabIndex = 0;
             this.pnlEmployee.TagString = null;
             // 
@@ -550,12 +550,12 @@
             this.pnlPhone.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPhone.FillColor = System.Drawing.Color.White;
             this.pnlPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlPhone.Location = new System.Drawing.Point(505, 101);
+            this.pnlPhone.Location = new System.Drawing.Point(505, 113);
             this.pnlPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlPhone.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlPhone.Name = "pnlPhone";
             this.pnlPhone.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlPhone.Size = new System.Drawing.Size(327, 86);
+            this.pnlPhone.Size = new System.Drawing.Size(327, 98);
             this.pnlPhone.TabIndex = 5;
             this.pnlPhone.Text = null;
             this.pnlPhone.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -573,7 +573,7 @@
             this.uiGroupBox5.Name = "uiGroupBox5";
             this.uiGroupBox5.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox5.Size = new System.Drawing.Size(327, 86);
+            this.uiGroupBox5.Size = new System.Drawing.Size(327, 98);
             this.uiGroupBox5.TabIndex = 1;
             this.uiGroupBox5.Text = "Phone";
             this.uiGroupBox5.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -605,12 +605,12 @@
             this.pnlEmail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlEmail.FillColor = System.Drawing.Color.White;
             this.pnlEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlEmail.Location = new System.Drawing.Point(4, 101);
+            this.pnlEmail.Location = new System.Drawing.Point(4, 113);
             this.pnlEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlEmail.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlEmail.Name = "pnlEmail";
             this.pnlEmail.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlEmail.Size = new System.Drawing.Size(493, 86);
+            this.pnlEmail.Size = new System.Drawing.Size(493, 98);
             this.pnlEmail.TabIndex = 4;
             this.pnlEmail.Text = null;
             this.pnlEmail.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -628,7 +628,7 @@
             this.uiGroupBox4.Name = "uiGroupBox4";
             this.uiGroupBox4.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox4.Size = new System.Drawing.Size(493, 86);
+            this.uiGroupBox4.Size = new System.Drawing.Size(493, 98);
             this.uiGroupBox4.TabIndex = 1;
             this.uiGroupBox4.Text = "Email";
             this.uiGroupBox4.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -664,7 +664,7 @@
             this.pnlGender.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlGender.Name = "pnlGender";
             this.pnlGender.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlGender.Size = new System.Drawing.Size(160, 86);
+            this.pnlGender.Size = new System.Drawing.Size(160, 98);
             this.pnlGender.TabIndex = 2;
             this.pnlGender.Text = null;
             this.pnlGender.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -682,7 +682,7 @@
             this.uiGroupBox3.Name = "uiGroupBox3";
             this.uiGroupBox3.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox3.Size = new System.Drawing.Size(160, 86);
+            this.uiGroupBox3.Size = new System.Drawing.Size(160, 98);
             this.uiGroupBox3.TabIndex = 1;
             this.uiGroupBox3.Text = "Gender";
             this.uiGroupBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -726,7 +726,7 @@
             this.pnlNationalId.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlNationalId.Name = "pnlNationalId";
             this.pnlNationalId.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlNationalId.Size = new System.Drawing.Size(326, 86);
+            this.pnlNationalId.Size = new System.Drawing.Size(326, 98);
             this.pnlNationalId.TabIndex = 1;
             this.pnlNationalId.Text = null;
             this.pnlNationalId.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -744,7 +744,7 @@
             this.uiGroupBox2.Name = "uiGroupBox2";
             this.uiGroupBox2.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox2.Size = new System.Drawing.Size(326, 86);
+            this.uiGroupBox2.Size = new System.Drawing.Size(326, 98);
             this.uiGroupBox2.TabIndex = 1;
             this.uiGroupBox2.Text = "National ID";
             this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -780,7 +780,7 @@
             this.pnlFullname.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlFullname.Name = "pnlFullname";
             this.pnlFullname.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlFullname.Size = new System.Drawing.Size(326, 86);
+            this.pnlFullname.Size = new System.Drawing.Size(326, 98);
             this.pnlFullname.TabIndex = 0;
             this.pnlFullname.Text = null;
             this.pnlFullname.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -798,7 +798,7 @@
             this.uiGroupBox1.Name = "uiGroupBox1";
             this.uiGroupBox1.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox1.Size = new System.Drawing.Size(326, 86);
+            this.uiGroupBox1.Size = new System.Drawing.Size(326, 98);
             this.uiGroupBox1.TabIndex = 0;
             this.uiGroupBox1.Text = "Full name";
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -836,7 +836,7 @@
             this.uiPanel1.Name = "uiPanel1";
             this.uiPanel1.RectColor = System.Drawing.Color.White;
             this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel1.Size = new System.Drawing.Size(836, 44);
+            this.uiPanel1.Size = new System.Drawing.Size(836, 24);
             this.uiPanel1.TabIndex = 2;
             this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -848,7 +848,7 @@
             this.uiLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiLabel2.Location = new System.Drawing.Point(0, 0);
             this.uiLabel2.Name = "uiLabel2";
-            this.uiLabel2.Size = new System.Drawing.Size(836, 44);
+            this.uiLabel2.Size = new System.Drawing.Size(836, 24);
             this.uiLabel2.TabIndex = 0;
             this.uiLabel2.Text = "Employee information";
             this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -894,6 +894,7 @@
             this.Name = "AccountDetailForm";
             this.Padding = new System.Windows.Forms.Padding(20);
             this.Text = "AccountDetailForm";
+            this.Load += new System.EventHandler(this.AccountDetailForm_Load);
             this.pnlMain.ResumeLayout(false);
             this.pnlButton.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

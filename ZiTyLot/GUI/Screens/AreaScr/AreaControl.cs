@@ -80,14 +80,7 @@ namespace ZiTyLot.GUI.Screens
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
 
             btnAdd.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnAdd.Width, btnAdd.Height, 10, 10));
-            btnAll.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnAll.Width, btnAll.Height, 10, 10));
-            btnResident.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnResident.Width, btnResident.Height, 10, 10));
-            btnVistor.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnVistor.Width, btnVistor.Height, 10, 10));
-
-            btnAll.Checked = true;
-            this.btnAll.CheckedChanged += new System.EventHandler(this.allFilter_CheckedChanged);
-            this.btnResident.CheckedChanged += new System.EventHandler(this.residentFilter_CheckedChanged);
-            this.btnVistor.CheckedChanged += new System.EventHandler(this.visitorFilter_CheckedChanged);
+            
             this.tableArea.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
             this.tableArea.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
             this.tableArea.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
@@ -171,54 +164,7 @@ namespace ZiTyLot.GUI.Screens
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
         }
 
-        // All Filter CheckedChanged event handler
-        private void allFilter_CheckedChanged(object sender, EventArgs e)
-        {
-            if (btnAll.Checked)
-            {
-                btnAll.BackColor = Color.FromArgb(240, 118, 54);
-                btnAll.ForeColor = Color.White;
-                btnAll.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_All_Active;
-            }
-            else
-            {
-                btnAll.BackColor = Color.White;
-                btnAll.ForeColor = Color.FromArgb(160, 160, 160);
-                btnAll.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_All;
-            }
-        }
-        // CheckIn Filter CheckedChanged event handler
-        private void residentFilter_CheckedChanged(object sender, EventArgs e)
-        {
-            if (btnResident.Checked)
-            {
-                btnResident.BackColor = Color.FromArgb(240, 118, 54);
-                btnResident.ForeColor = Color.White;
-                btnResident.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Resident_Active;
-            }
-            else
-            {
-                btnResident.BackColor = Color.White;
-                btnResident.ForeColor = Color.FromArgb(160, 160, 160);
-                btnResident.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Resident;
-            }
-        }
-
-        // CheckOut Filter CheckedChanged event handler
-        private void visitorFilter_CheckedChanged(object sender, EventArgs e)
-        {
-            if (btnVistor.Checked)
-            {
-                btnVistor.BackColor = Color.FromArgb(240, 118, 54);
-                btnVistor.ForeColor = Color.White;
-                btnVistor.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Vistor_Active;
-            }
-            else
-            {
-                btnVistor.BackColor = Color.White;
-                btnVistor.ForeColor = Color.FromArgb(160, 160, 160);
-                btnVistor.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Visitor;
-            }
-        }
+       
+       
     }
 }
