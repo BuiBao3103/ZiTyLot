@@ -7,6 +7,7 @@ using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.Helper;
 using ZiTyLot.GUI.Screens.AccountScr;
+using System.Drawing.Text;
 
 namespace ZiTyLot.GUI.Screens
 {
@@ -64,9 +65,7 @@ namespace ZiTyLot.GUI.Screens
         {
             pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
-
-            btnAdd.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnAdd.Width, btnAdd.Height, 10, 10));
-
+            pnlTop.Height = 54;
             this.tableAccount.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
             this.tableAccount.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
             this.tableAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
@@ -85,9 +84,7 @@ namespace ZiTyLot.GUI.Screens
         // Paint the cell
         private void table_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if ((e.ColumnIndex == tableAccount.Columns["colView"].Index ||
-                 e.ColumnIndex == tableAccount.Columns["colEdit"].Index ||
-                 e.ColumnIndex == tableAccount.Columns["colDelete"].Index) && e.RowIndex >= 0)
+            if ((e.ColumnIndex == tableAccount.Columns["colView"].Index || e.ColumnIndex == tableAccount.Columns["colDelete"].Index) && e.RowIndex >= 0)
             {
                 if (e.RowIndex % 2 == 0)
                 {
@@ -101,10 +98,6 @@ namespace ZiTyLot.GUI.Screens
                 if (e.ColumnIndex == tableAccount.Columns["colView"].Index)
                 {
                     icon = Properties.Resources.Icon_18x18px_View;
-                }
-                else if (e.ColumnIndex == tableAccount.Columns["colEdit"].Index)
-                {
-                    icon = Properties.Resources.Icon_18x18px_Edit;
                 }
                 else if (e.ColumnIndex == tableAccount.Columns["colDelete"].Index)
                 {
@@ -130,10 +123,6 @@ namespace ZiTyLot.GUI.Screens
                 {
                     MessageBox.Show("View button clicked for row " + e.RowIndex);
                 }
-                else if (e.ColumnIndex == tableAccount.Columns["colEdit"].Index)
-                {
-                    MessageBox.Show("Edit button clicked for row " + e.RowIndex);
-                }
                 else if (e.ColumnIndex == tableAccount.Columns["colDelete"].Index)
                 {
                     MessageBox.Show("Delete button clicked for row " + e.RowIndex);
@@ -155,6 +144,18 @@ namespace ZiTyLot.GUI.Screens
         {
             AccountDetailForm accountDetailForm = new AccountDetailForm();
             accountDetailForm.Show();
+        }
+
+        private void uiSymbolButton2_Click(object sender, EventArgs e)
+        {
+            if (pnlTop.Height == 96)
+            {
+                pnlTop.Height = 54;
+            }
+            else
+            {
+                pnlTop.Height = 96;
+            }
         }
     }
 }

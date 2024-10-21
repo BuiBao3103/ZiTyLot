@@ -120,7 +120,7 @@
             this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.pnlMain.Size = new System.Drawing.Size(844, 721);
             this.pnlMain.TabIndex = 0;
             this.pnlMain.TagString = null;
@@ -134,7 +134,7 @@
             this.pnlButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlButton.FillColor = System.Drawing.Color.White;
             this.pnlButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlButton.Location = new System.Drawing.Point(4, 692);
+            this.pnlButton.Location = new System.Drawing.Point(4, 672);
             this.pnlButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlButton.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlButton.Name = "pnlButton";
@@ -142,7 +142,7 @@
             this.pnlButton.Radius = 10;
             this.pnlButton.RectColor = System.Drawing.Color.White;
             this.pnlButton.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlButton.Size = new System.Drawing.Size(836, 24);
+            this.pnlButton.Size = new System.Drawing.Size(836, 44);
             this.pnlButton.TabIndex = 15;
             this.pnlButton.Text = null;
             this.pnlButton.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -154,7 +154,7 @@
             this.panel1.Location = new System.Drawing.Point(426, 5);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.panel1.Size = new System.Drawing.Size(160, 14);
+            this.panel1.Size = new System.Drawing.Size(160, 34);
             this.panel1.TabIndex = 11;
             // 
             // btnResetPassword
@@ -164,7 +164,7 @@
             this.btnResetPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnResetPassword.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
             this.btnResetPassword.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnResetPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResetPassword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnResetPassword.Location = new System.Drawing.Point(0, 0);
             this.btnResetPassword.Margin = new System.Windows.Forms.Padding(0);
@@ -178,8 +178,7 @@
             this.btnResetPassword.RectPressColor = System.Drawing.Color.White;
             this.btnResetPassword.RectSelectedColor = System.Drawing.Color.White;
             this.btnResetPassword.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnResetPassword.RectSize = 2;
-            this.btnResetPassword.Size = new System.Drawing.Size(150, 14);
+            this.btnResetPassword.Size = new System.Drawing.Size(150, 34);
             this.btnResetPassword.Symbol = 0;
             this.btnResetPassword.TabIndex = 3;
             this.btnResetPassword.Text = "Reset password";
@@ -191,7 +190,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(586, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(120, 14);
+            this.panel2.Size = new System.Drawing.Size(120, 34);
             this.panel2.TabIndex = 10;
             // 
             // btnCancel
@@ -201,7 +200,7 @@
             this.btnCancel.FillColor = System.Drawing.Color.White;
             this.btnCancel.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
             this.btnCancel.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancel.Location = new System.Drawing.Point(0, 0);
@@ -215,7 +214,7 @@
             this.btnCancel.RectPressColor = System.Drawing.Color.White;
             this.btnCancel.RectSelectedColor = System.Drawing.Color.White;
             this.btnCancel.RectSize = 2;
-            this.btnCancel.Size = new System.Drawing.Size(120, 14);
+            this.btnCancel.Size = new System.Drawing.Size(120, 34);
             this.btnCancel.Symbol = 0;
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
@@ -228,7 +227,7 @@
             this.panel3.Location = new System.Drawing.Point(706, 5);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(130, 14);
+            this.panel3.Size = new System.Drawing.Size(130, 34);
             this.panel3.TabIndex = 9;
             // 
             // btnConfirm
@@ -238,7 +237,7 @@
             this.btnConfirm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConfirm.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
             this.btnConfirm.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfirm.Location = new System.Drawing.Point(10, 0);
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(0);
@@ -252,8 +251,7 @@
             this.btnConfirm.RectPressColor = System.Drawing.Color.White;
             this.btnConfirm.RectSelectedColor = System.Drawing.Color.White;
             this.btnConfirm.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnConfirm.RectSize = 2;
-            this.btnConfirm.Size = new System.Drawing.Size(120, 14);
+            this.btnConfirm.Size = new System.Drawing.Size(120, 34);
             this.btnConfirm.Symbol = 0;
             this.btnConfirm.TabIndex = 3;
             this.btnConfirm.Text = "Confirm";
@@ -266,13 +264,13 @@
             this.uiPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel4.FillColor = System.Drawing.Color.White;
             this.uiPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel4.Location = new System.Drawing.Point(4, 353);
+            this.uiPanel4.Location = new System.Drawing.Point(4, 345);
             this.uiPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel4.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel4.Name = "uiPanel4";
             this.uiPanel4.RectColor = System.Drawing.Color.White;
             this.uiPanel4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel4.Size = new System.Drawing.Size(836, 329);
+            this.uiPanel4.Size = new System.Drawing.Size(836, 317);
             this.uiPanel4.TabIndex = 5;
             this.uiPanel4.Text = null;
             this.uiPanel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -292,7 +290,7 @@
             this.pnlAccount.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.pnlAccount.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.pnlAccount.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.pnlAccount.Size = new System.Drawing.Size(836, 329);
+            this.pnlAccount.Size = new System.Drawing.Size(836, 317);
             this.pnlAccount.TabIndex = 0;
             this.pnlAccount.TagString = null;
             // 
@@ -303,12 +301,12 @@
             this.pnlRole.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRole.FillColor = System.Drawing.Color.White;
             this.pnlRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlRole.Location = new System.Drawing.Point(4, 103);
+            this.pnlRole.Location = new System.Drawing.Point(4, 100);
             this.pnlRole.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlRole.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlRole.Name = "pnlRole";
             this.pnlRole.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlRole.Size = new System.Drawing.Size(828, 221);
+            this.pnlRole.Size = new System.Drawing.Size(828, 212);
             this.pnlRole.TabIndex = 5;
             this.pnlRole.Text = null;
             this.pnlRole.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -318,7 +316,7 @@
             this.uiGroupBox8.Controls.Add(this.listAccess);
             this.uiGroupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox8.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox8.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox8.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.uiGroupBox8.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -326,7 +324,7 @@
             this.uiGroupBox8.Name = "uiGroupBox8";
             this.uiGroupBox8.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox8.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox8.Size = new System.Drawing.Size(828, 221);
+            this.uiGroupBox8.Size = new System.Drawing.Size(828, 212);
             this.uiGroupBox8.TabIndex = 0;
             this.uiGroupBox8.Text = "This account have access to";
             this.uiGroupBox8.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -335,7 +333,7 @@
             // 
             this.listAccess.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listAccess.FillColor = System.Drawing.Color.White;
-            this.listAccess.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listAccess.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listAccess.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.listAccess.Items.AddRange(new object[] {
             "Account Management",
@@ -353,7 +351,7 @@
             this.listAccess.RectColor = System.Drawing.SystemColors.ControlDark;
             this.listAccess.RectSize = 2;
             this.listAccess.ShowText = false;
-            this.listAccess.Size = new System.Drawing.Size(812, 185);
+            this.listAccess.Size = new System.Drawing.Size(812, 176);
             this.listAccess.TabIndex = 0;
             this.listAccess.Text = "uiListBox1";
             // 
@@ -368,7 +366,7 @@
             this.uiPanel6.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel6.Name = "uiPanel6";
             this.uiPanel6.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel6.Size = new System.Drawing.Size(410, 88);
+            this.uiPanel6.Size = new System.Drawing.Size(410, 85);
             this.uiPanel6.TabIndex = 4;
             this.uiPanel6.Text = null;
             this.uiPanel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -378,7 +376,7 @@
             this.uiGroupBox7.Controls.Add(this.cbRole);
             this.uiGroupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox7.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox7.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox7.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.uiGroupBox7.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -386,7 +384,7 @@
             this.uiGroupBox7.Name = "uiGroupBox7";
             this.uiGroupBox7.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox7.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox7.Size = new System.Drawing.Size(410, 88);
+            this.uiGroupBox7.Size = new System.Drawing.Size(410, 85);
             this.uiGroupBox7.TabIndex = 1;
             this.uiGroupBox7.Text = "Role";
             this.uiGroupBox7.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -396,7 +394,7 @@
             this.cbRole.DataSource = null;
             this.cbRole.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbRole.FillColor = System.Drawing.Color.White;
-            this.cbRole.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRole.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRole.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.cbRole.Items.AddRange(new object[] {
             "Administrator",
@@ -430,7 +428,7 @@
             this.uiPanel5.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel5.Name = "uiPanel5";
             this.uiPanel5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel5.Size = new System.Drawing.Size(410, 88);
+            this.uiPanel5.Size = new System.Drawing.Size(410, 85);
             this.uiPanel5.TabIndex = 3;
             this.uiPanel5.Text = null;
             this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -440,7 +438,7 @@
             this.uiGroupBox6.Controls.Add(this.tbUsername);
             this.uiGroupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox6.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox6.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox6.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.uiGroupBox6.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -448,7 +446,7 @@
             this.uiGroupBox6.Name = "uiGroupBox6";
             this.uiGroupBox6.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox6.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox6.Size = new System.Drawing.Size(410, 88);
+            this.uiGroupBox6.Size = new System.Drawing.Size(410, 85);
             this.uiGroupBox6.TabIndex = 0;
             this.uiGroupBox6.Text = "Username";
             this.uiGroupBox6.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -457,7 +455,7 @@
             // 
             this.tbUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbUsername.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbUsername.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUsername.Location = new System.Drawing.Point(8, 32);
             this.tbUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbUsername.MaximumSize = new System.Drawing.Size(0, 34);
@@ -480,7 +478,7 @@
             this.uiPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel3.FillColor = System.Drawing.Color.White;
             this.uiPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel3.Location = new System.Drawing.Point(4, 319);
+            this.uiPanel3.Location = new System.Drawing.Point(4, 311);
             this.uiPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel3.Name = "uiPanel3";
@@ -494,7 +492,7 @@
             // uiLabel4
             // 
             this.uiLabel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel4.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiLabel4.Location = new System.Drawing.Point(0, 0);
             this.uiLabel4.Name = "uiLabel4";
@@ -516,7 +514,7 @@
             this.uiPanel2.Name = "uiPanel2";
             this.uiPanel2.RectColor = System.Drawing.Color.White;
             this.uiPanel2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel2.Size = new System.Drawing.Size(836, 216);
+            this.uiPanel2.Size = new System.Drawing.Size(836, 208);
             this.uiPanel2.TabIndex = 3;
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -539,7 +537,7 @@
             this.pnlEmployee.RowCount = 2;
             this.pnlEmployee.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.pnlEmployee.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.pnlEmployee.Size = new System.Drawing.Size(836, 216);
+            this.pnlEmployee.Size = new System.Drawing.Size(836, 208);
             this.pnlEmployee.TabIndex = 0;
             this.pnlEmployee.TagString = null;
             // 
@@ -550,12 +548,12 @@
             this.pnlPhone.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPhone.FillColor = System.Drawing.Color.White;
             this.pnlPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlPhone.Location = new System.Drawing.Point(505, 113);
+            this.pnlPhone.Location = new System.Drawing.Point(505, 109);
             this.pnlPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlPhone.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlPhone.Name = "pnlPhone";
             this.pnlPhone.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlPhone.Size = new System.Drawing.Size(327, 98);
+            this.pnlPhone.Size = new System.Drawing.Size(327, 94);
             this.pnlPhone.TabIndex = 5;
             this.pnlPhone.Text = null;
             this.pnlPhone.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -565,7 +563,7 @@
             this.uiGroupBox5.Controls.Add(this.tbPhone);
             this.uiGroupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox5.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox5.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox5.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.uiGroupBox5.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -573,7 +571,7 @@
             this.uiGroupBox5.Name = "uiGroupBox5";
             this.uiGroupBox5.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox5.Size = new System.Drawing.Size(327, 98);
+            this.uiGroupBox5.Size = new System.Drawing.Size(327, 94);
             this.uiGroupBox5.TabIndex = 1;
             this.uiGroupBox5.Text = "Phone";
             this.uiGroupBox5.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -582,7 +580,7 @@
             // 
             this.tbPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbPhone.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbPhone.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPhone.Location = new System.Drawing.Point(8, 32);
             this.tbPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbPhone.MaximumSize = new System.Drawing.Size(0, 34);
@@ -605,12 +603,12 @@
             this.pnlEmail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlEmail.FillColor = System.Drawing.Color.White;
             this.pnlEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlEmail.Location = new System.Drawing.Point(4, 113);
+            this.pnlEmail.Location = new System.Drawing.Point(4, 109);
             this.pnlEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlEmail.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlEmail.Name = "pnlEmail";
             this.pnlEmail.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlEmail.Size = new System.Drawing.Size(493, 98);
+            this.pnlEmail.Size = new System.Drawing.Size(493, 94);
             this.pnlEmail.TabIndex = 4;
             this.pnlEmail.Text = null;
             this.pnlEmail.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -620,7 +618,7 @@
             this.uiGroupBox4.Controls.Add(this.tbEmail);
             this.uiGroupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox4.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox4.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox4.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.uiGroupBox4.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -628,7 +626,7 @@
             this.uiGroupBox4.Name = "uiGroupBox4";
             this.uiGroupBox4.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox4.Size = new System.Drawing.Size(493, 98);
+            this.uiGroupBox4.Size = new System.Drawing.Size(493, 94);
             this.uiGroupBox4.TabIndex = 1;
             this.uiGroupBox4.Text = "Email";
             this.uiGroupBox4.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -637,7 +635,7 @@
             // 
             this.tbEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbEmail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbEmail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEmail.Location = new System.Drawing.Point(8, 32);
             this.tbEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbEmail.MaximumSize = new System.Drawing.Size(0, 34);
@@ -664,7 +662,7 @@
             this.pnlGender.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlGender.Name = "pnlGender";
             this.pnlGender.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlGender.Size = new System.Drawing.Size(160, 98);
+            this.pnlGender.Size = new System.Drawing.Size(160, 94);
             this.pnlGender.TabIndex = 2;
             this.pnlGender.Text = null;
             this.pnlGender.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -674,7 +672,7 @@
             this.uiGroupBox3.Controls.Add(this.cbGender);
             this.uiGroupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox3.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox3.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox3.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.uiGroupBox3.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -682,7 +680,7 @@
             this.uiGroupBox3.Name = "uiGroupBox3";
             this.uiGroupBox3.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox3.Size = new System.Drawing.Size(160, 98);
+            this.uiGroupBox3.Size = new System.Drawing.Size(160, 94);
             this.uiGroupBox3.TabIndex = 1;
             this.uiGroupBox3.Text = "Gender";
             this.uiGroupBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -692,7 +690,7 @@
             this.cbGender.DataSource = null;
             this.cbGender.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbGender.FillColor = System.Drawing.Color.White;
-            this.cbGender.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbGender.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGender.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.cbGender.Items.AddRange(new object[] {
             "Male",
@@ -726,7 +724,7 @@
             this.pnlNationalId.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlNationalId.Name = "pnlNationalId";
             this.pnlNationalId.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlNationalId.Size = new System.Drawing.Size(326, 98);
+            this.pnlNationalId.Size = new System.Drawing.Size(326, 94);
             this.pnlNationalId.TabIndex = 1;
             this.pnlNationalId.Text = null;
             this.pnlNationalId.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -736,7 +734,7 @@
             this.uiGroupBox2.Controls.Add(this.tbNationalId);
             this.uiGroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox2.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox2.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox2.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.uiGroupBox2.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -744,7 +742,7 @@
             this.uiGroupBox2.Name = "uiGroupBox2";
             this.uiGroupBox2.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox2.Size = new System.Drawing.Size(326, 98);
+            this.uiGroupBox2.Size = new System.Drawing.Size(326, 94);
             this.uiGroupBox2.TabIndex = 1;
             this.uiGroupBox2.Text = "National ID";
             this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -753,7 +751,7 @@
             // 
             this.tbNationalId.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbNationalId.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbNationalId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbNationalId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNationalId.Location = new System.Drawing.Point(8, 32);
             this.tbNationalId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbNationalId.MaximumSize = new System.Drawing.Size(0, 34);
@@ -780,7 +778,7 @@
             this.pnlFullname.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlFullname.Name = "pnlFullname";
             this.pnlFullname.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlFullname.Size = new System.Drawing.Size(326, 98);
+            this.pnlFullname.Size = new System.Drawing.Size(326, 94);
             this.pnlFullname.TabIndex = 0;
             this.pnlFullname.Text = null;
             this.pnlFullname.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -790,7 +788,7 @@
             this.uiGroupBox1.Controls.Add(this.tbFullname);
             this.uiGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox1.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox1.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox1.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.uiGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -798,7 +796,7 @@
             this.uiGroupBox1.Name = "uiGroupBox1";
             this.uiGroupBox1.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox1.Size = new System.Drawing.Size(326, 98);
+            this.uiGroupBox1.Size = new System.Drawing.Size(326, 94);
             this.uiGroupBox1.TabIndex = 0;
             this.uiGroupBox1.Text = "Full name";
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -807,7 +805,7 @@
             // 
             this.tbFullname.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbFullname.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbFullname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbFullname.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbFullname.Location = new System.Drawing.Point(8, 32);
             this.tbFullname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbFullname.MaximumSize = new System.Drawing.Size(0, 34);
@@ -844,7 +842,7 @@
             // uiLabel2
             // 
             this.uiLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel2.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiLabel2.Location = new System.Drawing.Point(0, 0);
             this.uiLabel2.Name = "uiLabel2";
@@ -874,7 +872,7 @@
             // lbAccountId
             // 
             this.lbAccountId.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbAccountId.Font = new System.Drawing.Font("Helvetica", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAccountId.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAccountId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.lbAccountId.Location = new System.Drawing.Point(0, 0);
             this.lbAccountId.Name = "lbAccountId";

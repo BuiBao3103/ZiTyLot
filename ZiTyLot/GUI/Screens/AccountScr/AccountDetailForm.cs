@@ -7,6 +7,7 @@ namespace ZiTyLot.GUI.Screens.AccountScr
         public AccountDetailForm()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void AccountDetailForm_Load(object sender, System.EventArgs e)
