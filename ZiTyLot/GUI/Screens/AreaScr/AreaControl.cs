@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
+using ZiTyLot.GUI.Screens.AreaScr;
 using ZiTyLot.Helper;
 
 namespace ZiTyLot.GUI.Screens
@@ -31,7 +32,7 @@ namespace ZiTyLot.GUI.Screens
             foreach (ParkingLot parkingLot in page.Content)
             {
                 // calculate the remaining number of slots
-                tableArea.Rows.Add(parkingLot.Id, parkingLot.Parking_lot_type, parkingLot.Total_slot, parkingLot.Status);
+                tableArea.Rows.Add(parkingLot.Id, parkingLot.Parking_lot_type,parkingLot.User_type, parkingLot.Total_slot, parkingLot.Status);
             }
         }
         private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
@@ -78,8 +79,7 @@ namespace ZiTyLot.GUI.Screens
         {
             pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
-
-            btnAdd.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnAdd.Width, btnAdd.Height, 10, 10));
+            pnlTop.Height = 54;
             
             this.tableArea.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
             this.tableArea.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
@@ -98,9 +98,7 @@ namespace ZiTyLot.GUI.Screens
         }
         private void table_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if ((e.ColumnIndex == tableArea.Columns["colView"].Index ||
-                 e.ColumnIndex == tableArea.Columns["colEdit"].Index ||
-                 e.ColumnIndex == tableArea.Columns["colDelete"].Index) && e.RowIndex >= 0)
+            if ((e.ColumnIndex == tableArea.Columns["colView"].Index || e.ColumnIndex == tableArea.Columns["colDelete"].Index) && e.RowIndex >= 0)
             {
                 if (e.RowIndex % 2 == 0)
                 {
@@ -114,10 +112,6 @@ namespace ZiTyLot.GUI.Screens
                 if (e.ColumnIndex == tableArea.Columns["colView"].Index)
                 {
                     icon = Properties.Resources.Icon_18x18px_View;
-                }
-                else if (e.ColumnIndex == tableArea.Columns["colEdit"].Index)
-                {
-                    icon = Properties.Resources.Icon_18x18px_Edit;
                 }
                 else if (e.ColumnIndex == tableArea.Columns["colDelete"].Index)
                 {
@@ -143,10 +137,6 @@ namespace ZiTyLot.GUI.Screens
                 {
                     MessageBox.Show("View button clicked for row " + e.RowIndex);
                 }
-                else if (e.ColumnIndex == tableArea.Columns["colEdit"].Index)
-                {
-                    MessageBox.Show("Edit button clicked for row " + e.RowIndex);
-                }
                 else if (e.ColumnIndex == tableArea.Columns["colDelete"].Index)
                 {
                     MessageBox.Show("Delete button clicked for row " + e.RowIndex);
@@ -164,7 +154,27 @@ namespace ZiTyLot.GUI.Screens
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
         }
 
-       
-       
+        private void tableArea_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            if (pnlTop.Height == 108)
+            {
+                pnlTop.Height = 54;
+            }
+            else
+            {
+                pnlTop.Height = 108;
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            AreaDetailForm areaDetailForm = new AreaDetailForm();
+            areaDetailForm.Show();
+        }
     }
 }
