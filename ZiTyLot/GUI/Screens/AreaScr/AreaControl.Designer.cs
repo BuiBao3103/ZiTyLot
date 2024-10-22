@@ -30,9 +30,9 @@ namespace ZiTyLot.GUI.Screens
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.separator = new System.Windows.Forms.Panel();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.pnlPagination = new System.Windows.Forms.Panel();
@@ -74,14 +74,17 @@ namespace ZiTyLot.GUI.Screens
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnClear = new Sunny.UI.UISymbolButton();
             this.uiPanel10 = new Sunny.UI.UIPanel();
-            this.cbStatus = new Sunny.UI.UIComboBox();
-            this.uiPanel8 = new Sunny.UI.UIPanel();
             this.uiPanel9 = new Sunny.UI.UIPanel();
+            this.uiPanel6 = new Sunny.UI.UIPanel();
+            this.uiTableLayoutPanel2 = new Sunny.UI.UITableLayoutPanel();
+            this.uiPanel5 = new Sunny.UI.UIPanel();
+            this.cbVehicalType = new Sunny.UI.UIComboBox();
+            this.uiTableLayoutPanel3 = new Sunny.UI.UITableLayoutPanel();
             this.cbUserType = new Sunny.UI.UIComboBox();
             this.uiPanel7 = new Sunny.UI.UIPanel();
-            this.uiPanel6 = new Sunny.UI.UIPanel();
-            this.cbVehicalType = new Sunny.UI.UIComboBox();
-            this.uiPanel5 = new Sunny.UI.UIPanel();
+            this.uiTableLayoutPanel4 = new Sunny.UI.UITableLayoutPanel();
+            this.cbStatus = new Sunny.UI.UIComboBox();
+            this.uiPanel8 = new Sunny.UI.UIPanel();
             this.pnlBottom.SuspendLayout();
             this.pnlPagination.SuspendLayout();
             this.pnlLeft.SuspendLayout();
@@ -106,6 +109,9 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel10.SuspendLayout();
             this.uiPanel9.SuspendLayout();
             this.uiPanel6.SuspendLayout();
+            this.uiTableLayoutPanel2.SuspendLayout();
+            this.uiTableLayoutPanel3.SuspendLayout();
+            this.uiTableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // separator
@@ -355,27 +361,27 @@ namespace ZiTyLot.GUI.Screens
             this.tableArea.AllowUserToDeleteRows = false;
             this.tableArea.AllowUserToResizeColumns = false;
             this.tableArea.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.tableArea.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.tableArea.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.tableArea.BackgroundColor = System.Drawing.Color.White;
             this.tableArea.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tableArea.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.tableArea.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableArea.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableArea.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.tableArea.ColumnHeadersHeight = 34;
             this.tableArea.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
@@ -386,15 +392,15 @@ namespace ZiTyLot.GUI.Screens
             this.colView,
             this.colDelete});
             this.tableArea.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableArea.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableArea.DefaultCellStyle = dataGridViewCellStyle3;
             this.tableArea.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableArea.GridColor = System.Drawing.Color.White;
             this.tableArea.Location = new System.Drawing.Point(10, 10);
@@ -479,23 +485,20 @@ namespace ZiTyLot.GUI.Screens
             // 
             // uiTableLayoutPanel1
             // 
-            this.uiTableLayoutPanel1.ColumnCount = 8;
-            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.uiTableLayoutPanel1.ColumnCount = 5;
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
-            this.uiTableLayoutPanel1.Controls.Add(this.uiPanel5, 0, 0);
-            this.uiTableLayoutPanel1.Controls.Add(this.uiPanel6, 1, 0);
-            this.uiTableLayoutPanel1.Controls.Add(this.uiPanel7, 2, 0);
-            this.uiTableLayoutPanel1.Controls.Add(this.uiPanel9, 3, 0);
-            this.uiTableLayoutPanel1.Controls.Add(this.uiPanel8, 4, 0);
-            this.uiTableLayoutPanel1.Controls.Add(this.uiPanel10, 5, 0);
-            this.uiTableLayoutPanel1.Controls.Add(this.panel4, 6, 0);
-            this.uiTableLayoutPanel1.Controls.Add(this.panel3, 7, 0);
+            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.uiTableLayoutPanel1.Controls.Add(this.uiPanel6, 0, 0);
+            this.uiTableLayoutPanel1.Controls.Add(this.uiPanel9, 1, 0);
+            this.uiTableLayoutPanel1.Controls.Add(this.uiPanel10, 2, 0);
+            this.uiTableLayoutPanel1.Controls.Add(this.panel4, 3, 0);
+            this.uiTableLayoutPanel1.Controls.Add(this.panel3, 4, 0);
             this.uiTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.uiTableLayoutPanel1.Name = "uiTableLayoutPanel1";
@@ -788,153 +791,84 @@ namespace ZiTyLot.GUI.Screens
             // 
             // uiPanel10
             // 
-            this.uiPanel10.Controls.Add(this.cbStatus);
+            this.uiPanel10.Controls.Add(this.uiTableLayoutPanel4);
             this.uiPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel10.FillColor = System.Drawing.Color.White;
             this.uiPanel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel10.Location = new System.Drawing.Point(712, 5);
+            this.uiPanel10.Location = new System.Drawing.Point(592, 5);
             this.uiPanel10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel10.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel10.Name = "uiPanel10";
             this.uiPanel10.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.uiPanel10.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel10.Size = new System.Drawing.Size(166, 34);
+            this.uiPanel10.Size = new System.Drawing.Size(286, 34);
             this.uiPanel10.TabIndex = 27;
             this.uiPanel10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cbStatus
-            // 
-            this.cbStatus.DataSource = null;
-            this.cbStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbStatus.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
-            this.cbStatus.FillColor = System.Drawing.Color.White;
-            this.cbStatus.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.cbStatus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbStatus.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cbStatus.ItemRectColor = System.Drawing.Color.White;
-            this.cbStatus.Items.AddRange(new object[] {
-            "  All",
-            "  Full",
-            "  Available",
-            "  Closed",
-            "  Under maintenace"});
-            this.cbStatus.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cbStatus.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cbStatus.Location = new System.Drawing.Point(5, 0);
-            this.cbStatus.Margin = new System.Windows.Forms.Padding(0);
-            this.cbStatus.MinimumSize = new System.Drawing.Size(63, 0);
-            this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Padding = new System.Windows.Forms.Padding(5, 0, 30, 2);
-            this.cbStatus.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cbStatus.RectSize = 2;
-            this.cbStatus.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.cbStatus.ScrollBarStyleInherited = false;
-            this.cbStatus.Size = new System.Drawing.Size(156, 34);
-            this.cbStatus.Style = Sunny.UI.UIStyle.Custom;
-            this.cbStatus.SymbolSize = 24;
-            this.cbStatus.TabIndex = 3;
-            this.cbStatus.Text = "  All";
-            this.cbStatus.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cbStatus.TrimFilter = true;
-            this.cbStatus.Watermark = "";
-            // 
-            // uiPanel8
-            // 
-            this.uiPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel8.FillColor = System.Drawing.Color.White;
-            this.uiPanel8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiPanel8.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiPanel8.Location = new System.Drawing.Point(592, 5);
-            this.uiPanel8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel8.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel8.Name = "uiPanel8";
-            this.uiPanel8.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel8.Size = new System.Drawing.Size(112, 34);
-            this.uiPanel8.TabIndex = 28;
-            this.uiPanel8.Text = "Status:";
-            this.uiPanel8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // uiPanel9
             // 
-            this.uiPanel9.Controls.Add(this.cbUserType);
+            this.uiPanel9.Controls.Add(this.uiTableLayoutPanel3);
             this.uiPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel9.FillColor = System.Drawing.Color.White;
             this.uiPanel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel9.Location = new System.Drawing.Point(418, 5);
+            this.uiPanel9.Location = new System.Drawing.Point(298, 5);
             this.uiPanel9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel9.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel9.Name = "uiPanel9";
             this.uiPanel9.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.uiPanel9.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel9.Size = new System.Drawing.Size(166, 34);
+            this.uiPanel9.Size = new System.Drawing.Size(286, 34);
             this.uiPanel9.TabIndex = 29;
             this.uiPanel9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cbUserType
-            // 
-            this.cbUserType.DataSource = null;
-            this.cbUserType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbUserType.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
-            this.cbUserType.FillColor = System.Drawing.Color.White;
-            this.cbUserType.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.cbUserType.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbUserType.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cbUserType.ItemRectColor = System.Drawing.Color.White;
-            this.cbUserType.Items.AddRange(new object[] {
-            "  All",
-            "  Resident",
-            "  Vistor"});
-            this.cbUserType.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cbUserType.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cbUserType.Location = new System.Drawing.Point(5, 0);
-            this.cbUserType.Margin = new System.Windows.Forms.Padding(0);
-            this.cbUserType.MinimumSize = new System.Drawing.Size(63, 0);
-            this.cbUserType.Name = "cbUserType";
-            this.cbUserType.Padding = new System.Windows.Forms.Padding(5, 0, 30, 2);
-            this.cbUserType.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cbUserType.RectSize = 2;
-            this.cbUserType.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.cbUserType.ScrollBarStyleInherited = false;
-            this.cbUserType.Size = new System.Drawing.Size(156, 34);
-            this.cbUserType.Style = Sunny.UI.UIStyle.Custom;
-            this.cbUserType.SymbolSize = 24;
-            this.cbUserType.TabIndex = 3;
-            this.cbUserType.Text = "  All";
-            this.cbUserType.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cbUserType.TrimFilter = true;
-            this.cbUserType.Watermark = "";
-            // 
-            // uiPanel7
-            // 
-            this.uiPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel7.FillColor = System.Drawing.Color.White;
-            this.uiPanel7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiPanel7.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiPanel7.Location = new System.Drawing.Point(298, 5);
-            this.uiPanel7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel7.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel7.Name = "uiPanel7";
-            this.uiPanel7.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel7.Size = new System.Drawing.Size(112, 34);
-            this.uiPanel7.TabIndex = 30;
-            this.uiPanel7.Text = "User type:";
-            this.uiPanel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // uiPanel6
             // 
-            this.uiPanel6.Controls.Add(this.cbVehicalType);
+            this.uiPanel6.Controls.Add(this.uiTableLayoutPanel2);
             this.uiPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel6.FillColor = System.Drawing.Color.White;
             this.uiPanel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel6.Location = new System.Drawing.Point(124, 5);
+            this.uiPanel6.Location = new System.Drawing.Point(4, 5);
             this.uiPanel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel6.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel6.Name = "uiPanel6";
             this.uiPanel6.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.uiPanel6.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel6.Size = new System.Drawing.Size(166, 34);
+            this.uiPanel6.Size = new System.Drawing.Size(286, 34);
             this.uiPanel6.TabIndex = 31;
             this.uiPanel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiTableLayoutPanel2
+            // 
+            this.uiTableLayoutPanel2.ColumnCount = 2;
+            this.uiTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.uiTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.uiTableLayoutPanel2.Controls.Add(this.cbVehicalType, 1, 0);
+            this.uiTableLayoutPanel2.Controls.Add(this.uiPanel5, 0, 0);
+            this.uiTableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiTableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.uiTableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.uiTableLayoutPanel2.Name = "uiTableLayoutPanel2";
+            this.uiTableLayoutPanel2.RowCount = 1;
+            this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.uiTableLayoutPanel2.Size = new System.Drawing.Size(281, 34);
+            this.uiTableLayoutPanel2.TabIndex = 0;
+            this.uiTableLayoutPanel2.TagString = null;
+            // 
+            // uiPanel5
+            // 
+            this.uiPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel5.FillColor = System.Drawing.Color.White;
+            this.uiPanel5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiPanel5.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiPanel5.Location = new System.Drawing.Point(0, 0);
+            this.uiPanel5.Margin = new System.Windows.Forms.Padding(0);
+            this.uiPanel5.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel5.Name = "uiPanel5";
+            this.uiPanel5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiPanel5.Size = new System.Drawing.Size(110, 34);
+            this.uiPanel5.TabIndex = 0;
+            this.uiPanel5.Text = "Vehical type:";
+            this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cbVehicalType
             // 
@@ -952,39 +886,159 @@ namespace ZiTyLot.GUI.Screens
             "  Four wheeler"});
             this.cbVehicalType.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.cbVehicalType.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cbVehicalType.Location = new System.Drawing.Point(0, 0);
+            this.cbVehicalType.Location = new System.Drawing.Point(110, 0);
             this.cbVehicalType.Margin = new System.Windows.Forms.Padding(0);
             this.cbVehicalType.MinimumSize = new System.Drawing.Size(63, 0);
             this.cbVehicalType.Name = "cbVehicalType";
             this.cbVehicalType.Padding = new System.Windows.Forms.Padding(5, 0, 30, 2);
-            this.cbVehicalType.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.cbVehicalType.RectColor = System.Drawing.SystemColors.ControlDark;
             this.cbVehicalType.RectSize = 2;
             this.cbVehicalType.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.cbVehicalType.ScrollBarStyleInherited = false;
-            this.cbVehicalType.Size = new System.Drawing.Size(161, 34);
+            this.cbVehicalType.Size = new System.Drawing.Size(171, 34);
             this.cbVehicalType.Style = Sunny.UI.UIStyle.Custom;
             this.cbVehicalType.SymbolSize = 24;
-            this.cbVehicalType.TabIndex = 3;
+            this.cbVehicalType.TabIndex = 4;
             this.cbVehicalType.Text = "  All";
             this.cbVehicalType.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cbVehicalType.TrimFilter = true;
             this.cbVehicalType.Watermark = "";
             // 
-            // uiPanel5
+            // uiTableLayoutPanel3
             // 
-            this.uiPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel5.FillColor = System.Drawing.Color.White;
-            this.uiPanel5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiPanel5.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiPanel5.Location = new System.Drawing.Point(4, 5);
-            this.uiPanel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel5.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel5.Name = "uiPanel5";
-            this.uiPanel5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel5.Size = new System.Drawing.Size(112, 34);
-            this.uiPanel5.TabIndex = 32;
-            this.uiPanel5.Text = "Vehical type:";
-            this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.uiTableLayoutPanel3.ColumnCount = 2;
+            this.uiTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.uiTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.uiTableLayoutPanel3.Controls.Add(this.cbUserType, 1, 0);
+            this.uiTableLayoutPanel3.Controls.Add(this.uiPanel7, 0, 0);
+            this.uiTableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiTableLayoutPanel3.Location = new System.Drawing.Point(5, 0);
+            this.uiTableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
+            this.uiTableLayoutPanel3.Name = "uiTableLayoutPanel3";
+            this.uiTableLayoutPanel3.RowCount = 1;
+            this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(276, 34);
+            this.uiTableLayoutPanel3.TabIndex = 1;
+            this.uiTableLayoutPanel3.TagString = null;
+            // 
+            // cbUserType
+            // 
+            this.cbUserType.DataSource = null;
+            this.cbUserType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbUserType.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.cbUserType.FillColor = System.Drawing.Color.White;
+            this.cbUserType.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.cbUserType.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbUserType.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbUserType.ItemRectColor = System.Drawing.Color.White;
+            this.cbUserType.Items.AddRange(new object[] {
+            "  All",
+            "  Resident",
+            "  Visitor"});
+            this.cbUserType.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbUserType.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.cbUserType.Location = new System.Drawing.Point(85, 0);
+            this.cbUserType.Margin = new System.Windows.Forms.Padding(0);
+            this.cbUserType.MinimumSize = new System.Drawing.Size(63, 0);
+            this.cbUserType.Name = "cbUserType";
+            this.cbUserType.Padding = new System.Windows.Forms.Padding(5, 0, 30, 2);
+            this.cbUserType.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.cbUserType.RectSize = 2;
+            this.cbUserType.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbUserType.ScrollBarStyleInherited = false;
+            this.cbUserType.Size = new System.Drawing.Size(191, 34);
+            this.cbUserType.Style = Sunny.UI.UIStyle.Custom;
+            this.cbUserType.SymbolSize = 24;
+            this.cbUserType.TabIndex = 4;
+            this.cbUserType.Text = "  All";
+            this.cbUserType.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cbUserType.TrimFilter = true;
+            this.cbUserType.Watermark = "";
+            // 
+            // uiPanel7
+            // 
+            this.uiPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel7.FillColor = System.Drawing.Color.White;
+            this.uiPanel7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiPanel7.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiPanel7.Location = new System.Drawing.Point(0, 0);
+            this.uiPanel7.Margin = new System.Windows.Forms.Padding(0);
+            this.uiPanel7.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel7.Name = "uiPanel7";
+            this.uiPanel7.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiPanel7.Size = new System.Drawing.Size(85, 34);
+            this.uiPanel7.TabIndex = 0;
+            this.uiPanel7.Text = "User type:";
+            this.uiPanel7.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // uiTableLayoutPanel4
+            // 
+            this.uiTableLayoutPanel4.ColumnCount = 2;
+            this.uiTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.uiTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.uiTableLayoutPanel4.Controls.Add(this.cbStatus, 1, 0);
+            this.uiTableLayoutPanel4.Controls.Add(this.uiPanel8, 0, 0);
+            this.uiTableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiTableLayoutPanel4.Location = new System.Drawing.Point(5, 0);
+            this.uiTableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
+            this.uiTableLayoutPanel4.Name = "uiTableLayoutPanel4";
+            this.uiTableLayoutPanel4.RowCount = 1;
+            this.uiTableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.uiTableLayoutPanel4.Size = new System.Drawing.Size(276, 34);
+            this.uiTableLayoutPanel4.TabIndex = 1;
+            this.uiTableLayoutPanel4.TagString = null;
+            // 
+            // cbStatus
+            // 
+            this.cbStatus.DataSource = null;
+            this.cbStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbStatus.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.cbStatus.FillColor = System.Drawing.Color.White;
+            this.cbStatus.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.cbStatus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStatus.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbStatus.ItemRectColor = System.Drawing.Color.White;
+            this.cbStatus.Items.AddRange(new object[] {
+            "  All",
+            "  Full",
+            "  Avaliable",
+            "  Closed",
+            "  Under maintenace"});
+            this.cbStatus.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbStatus.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.cbStatus.Location = new System.Drawing.Point(60, 0);
+            this.cbStatus.Margin = new System.Windows.Forms.Padding(0);
+            this.cbStatus.MinimumSize = new System.Drawing.Size(63, 0);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Padding = new System.Windows.Forms.Padding(5, 0, 30, 2);
+            this.cbStatus.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.cbStatus.RectSize = 2;
+            this.cbStatus.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbStatus.ScrollBarStyleInherited = false;
+            this.cbStatus.Size = new System.Drawing.Size(216, 34);
+            this.cbStatus.Style = Sunny.UI.UIStyle.Custom;
+            this.cbStatus.SymbolSize = 24;
+            this.cbStatus.TabIndex = 4;
+            this.cbStatus.Text = "  All";
+            this.cbStatus.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cbStatus.TrimFilter = true;
+            this.cbStatus.Watermark = "";
+            // 
+            // uiPanel8
+            // 
+            this.uiPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel8.FillColor = System.Drawing.Color.White;
+            this.uiPanel8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiPanel8.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiPanel8.Location = new System.Drawing.Point(0, 0);
+            this.uiPanel8.Margin = new System.Windows.Forms.Padding(0);
+            this.uiPanel8.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel8.Name = "uiPanel8";
+            this.uiPanel8.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiPanel8.Size = new System.Drawing.Size(60, 34);
+            this.uiPanel8.TabIndex = 0;
+            this.uiPanel8.Text = "Status:";
+            this.uiPanel8.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // AreaControl
             // 
@@ -1022,6 +1076,9 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel10.ResumeLayout(false);
             this.uiPanel9.ResumeLayout(false);
             this.uiPanel6.ResumeLayout(false);
+            this.uiTableLayoutPanel2.ResumeLayout(false);
+            this.uiTableLayoutPanel3.ResumeLayout(false);
+            this.uiTableLayoutPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1065,16 +1122,19 @@ namespace ZiTyLot.GUI.Screens
         private DataGridViewButtonColumn colDelete;
         private Panel panel3;
         private Sunny.UI.UISymbolButton btnApply;
-        private Sunny.UI.UIPanel uiPanel5;
         private Sunny.UI.UIPanel uiPanel6;
-        private Sunny.UI.UIComboBox cbVehicalType;
-        private Sunny.UI.UIPanel uiPanel7;
         private Sunny.UI.UIPanel uiPanel9;
-        private Sunny.UI.UIComboBox cbUserType;
-        private Sunny.UI.UIPanel uiPanel8;
         private Sunny.UI.UIPanel uiPanel10;
-        private Sunny.UI.UIComboBox cbStatus;
         private Panel panel4;
         private Sunny.UI.UISymbolButton btnClear;
+        private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel2;
+        private Sunny.UI.UIComboBox cbVehicalType;
+        private Sunny.UI.UIPanel uiPanel5;
+        private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel3;
+        private Sunny.UI.UIComboBox cbUserType;
+        private Sunny.UI.UIPanel uiPanel7;
+        private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel4;
+        private Sunny.UI.UIComboBox cbStatus;
+        private Sunny.UI.UIPanel uiPanel8;
     }
 }
