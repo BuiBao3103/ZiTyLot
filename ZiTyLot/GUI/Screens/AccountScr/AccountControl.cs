@@ -148,13 +148,13 @@ namespace ZiTyLot.GUI.Screens
 
         private void uiSymbolButton2_Click(object sender, EventArgs e)
         {
-            if (pnlTop.Height == 96)
+            if (pnlTop.Height == 150)
             {
                 pnlTop.Height = 54;
             }
             else
             {
-                pnlTop.Height = 96;
+                pnlTop.Height = 150;
             }
         }
     }
