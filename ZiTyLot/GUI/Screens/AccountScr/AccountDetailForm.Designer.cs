@@ -207,7 +207,6 @@
             this.btnCancel.Margin = new System.Windows.Forms.Padding(0);
             this.btnCancel.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Radius = 10;
             this.btnCancel.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCancel.RectDisableColor = System.Drawing.Color.White;
             this.btnCancel.RectHoverColor = System.Drawing.Color.White;
@@ -334,20 +333,19 @@
             this.listAccess.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listAccess.FillColor = System.Drawing.Color.White;
             this.listAccess.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listAccess.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.listAccess.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.listAccess.Items.AddRange(new object[] {
             "Account Management",
             "Role Management",
             "Bill Management",
             "..."});
-            this.listAccess.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.listAccess.ItemSelectForeColor = System.Drawing.Color.White;
+            this.listAccess.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.listAccess.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.listAccess.Location = new System.Drawing.Point(8, 32);
             this.listAccess.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listAccess.MinimumSize = new System.Drawing.Size(1, 1);
             this.listAccess.Name = "listAccess";
-            this.listAccess.Padding = new System.Windows.Forms.Padding(5);
-            this.listAccess.Radius = 10;
+            this.listAccess.Padding = new System.Windows.Forms.Padding(2);
             this.listAccess.RectColor = System.Drawing.SystemColors.ControlDark;
             this.listAccess.RectSize = 2;
             this.listAccess.ShowText = false;
@@ -395,21 +393,24 @@
             this.cbRole.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbRole.FillColor = System.Drawing.Color.White;
             this.cbRole.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbRole.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.cbRole.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbRole.ItemRectColor = System.Drawing.Color.White;
             this.cbRole.Items.AddRange(new object[] {
             "Administrator",
             "Staff",
             "Accountant"});
-            this.cbRole.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.cbRole.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbRole.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbRole.Location = new System.Drawing.Point(8, 32);
             this.cbRole.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbRole.MaximumSize = new System.Drawing.Size(0, 34);
             this.cbRole.MinimumSize = new System.Drawing.Size(0, 34);
             this.cbRole.Name = "cbRole";
             this.cbRole.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
-            this.cbRole.Radius = 10;
             this.cbRole.RectColor = System.Drawing.SystemColors.ControlDark;
             this.cbRole.RectSize = 2;
+            this.cbRole.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbRole.ScrollBarStyleInherited = false;
             this.cbRole.Size = new System.Drawing.Size(294, 34);
             this.cbRole.SymbolSize = 24;
             this.cbRole.TabIndex = 0;
@@ -462,7 +463,6 @@
             this.tbUsername.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbUsername.Radius = 10;
             this.tbUsername.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbUsername.RectSize = 2;
             this.tbUsername.ShowText = false;
@@ -587,7 +587,6 @@
             this.tbPhone.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbPhone.Radius = 10;
             this.tbPhone.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbPhone.RectSize = 2;
             this.tbPhone.ShowText = false;
@@ -642,7 +641,6 @@
             this.tbEmail.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbEmail.Radius = 10;
             this.tbEmail.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbEmail.RectSize = 2;
             this.tbEmail.ShowText = false;
@@ -691,20 +689,23 @@
             this.cbGender.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbGender.FillColor = System.Drawing.Color.White;
             this.cbGender.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbGender.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.cbGender.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbGender.ItemRectColor = System.Drawing.Color.White;
             this.cbGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.cbGender.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.cbGender.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbGender.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbGender.Location = new System.Drawing.Point(8, 32);
             this.cbGender.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbGender.MaximumSize = new System.Drawing.Size(0, 34);
             this.cbGender.MinimumSize = new System.Drawing.Size(0, 34);
             this.cbGender.Name = "cbGender";
             this.cbGender.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
-            this.cbGender.Radius = 10;
             this.cbGender.RectColor = System.Drawing.SystemColors.ControlDark;
             this.cbGender.RectSize = 2;
+            this.cbGender.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbGender.ScrollBarStyleInherited = false;
             this.cbGender.Size = new System.Drawing.Size(104, 34);
             this.cbGender.SymbolSize = 24;
             this.cbGender.TabIndex = 0;
@@ -758,7 +759,6 @@
             this.tbNationalId.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbNationalId.Name = "tbNationalId";
             this.tbNationalId.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbNationalId.Radius = 10;
             this.tbNationalId.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbNationalId.RectSize = 2;
             this.tbNationalId.ShowText = false;
@@ -812,7 +812,6 @@
             this.tbFullname.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbFullname.Name = "tbFullname";
             this.tbFullname.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbFullname.Radius = 10;
             this.tbFullname.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbFullname.RectSize = 2;
             this.tbFullname.ShowText = false;

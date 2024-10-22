@@ -65,7 +65,6 @@ namespace ZiTyLot.GUI.Screens
         {
             pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
-            pnlTop.Height = 54;
             this.tableAccount.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
             this.tableAccount.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
             this.tableAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
@@ -146,16 +145,26 @@ namespace ZiTyLot.GUI.Screens
             accountDetailForm.Show();
         }
 
-        private void uiSymbolButton2_Click(object sender, EventArgs e)
+        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (pnlTop.Height == 150)
+            
+            int index = cbFilter.SelectedIndex;
+            switch (index)
             {
-                pnlTop.Height = 54;
+                case 0:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 65);
+                    break;
+                case 1:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 120);
+                    break;
+                case 2:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 90);
+                    break;
+                default:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 100);
+                    break;
             }
-            else
-            {
-                pnlTop.Height = 150;
-            }
+
         }
     }
 }
