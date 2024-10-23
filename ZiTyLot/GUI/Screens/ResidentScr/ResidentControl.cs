@@ -13,9 +13,9 @@ namespace ZiTyLot.GUI.Screens
 {
     public partial class ResidentControl : UserControl
     {
-        private ResidentBUS residentBUS = new ResidentBUS();
-        private Pageable pageable = new Pageable();
-        private List<FilterCondition> filters = new List<FilterCondition>();
+        private readonly ResidentBUS residentBUS = new ResidentBUS();
+        private readonly Pageable pageable = new Pageable();
+        private readonly List<FilterCondition> filters = new List<FilterCondition>();
         private Page<Resident> page;
 
         public ResidentControl()

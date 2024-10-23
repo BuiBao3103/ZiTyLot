@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.ENTITY;
@@ -12,15 +13,16 @@ namespace ZiTyLot.GUI.Screens
 {
     public partial class CardControl : UserControl
     {
-        CardBUS cardBUS = new CardBUS();
-        Pageable pagebale = new Pageable();
-        List<FilterCondition> filterConditions = new List<FilterCondition>();
+        private readonly CardBUS cardBUS = new CardBUS();
+        private readonly Pageable pageable = new Pageable();
+        private readonly List<FilterCondition> filterConditions = new List<FilterCondition>();
         Page<Card> page;
         public CardControl()
         {
             InitializeComponent();
+            cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
-            page = cardBUS.GetAllPagination(pagebale, filterConditions);
+            page = cardBUS.GetAllPagination(pageable, filterConditions);
             tbCurrentpage.Text = "1";
             lbTotalpage.Text = "/" + page.TotalPages;
             LoadPageToTable();
@@ -36,38 +38,7 @@ namespace ZiTyLot.GUI.Screens
         private void table_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
-        private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            String selectedValue = cbNumberofitem.SelectedItem.ToString();
-            int pageSize = int.Parse(selectedValue.Split(' ')[0]);
-            pagebale.PageSize = pageSize;
-            pagebale.PageNumber = 1;
-            page = cardBUS.GetAllPagination(pagebale, filterConditions);
-            tbCurrentpage.Text = "1";
-            lbTotalpage.Text = "/" + page.TotalPages;
-            LoadPageToTable();
-        }
-        private void changePage(int pageNumber)
-        {
-            if (pageNumber < 1 || pageNumber > page.TotalPages)
-            {
-                return;
-            }
-            pagebale.PageNumber = pageNumber;
-            page = cardBUS.GetAllPagination(pagebale, filterConditions);
-            tbCurrentpage.Text = pageNumber.ToString();
-            LoadPageToTable();
-        }
-        private void previousBtn_Click(object sender, EventArgs e)
-        {
-            int currentPage = int.Parse(tbCurrentpage.Text);
-            changePage(currentPage - 1);
-        }
-        private void nextBtn_Click(object sender, EventArgs e)
-        {
-            int currentPage = int.Parse(tbCurrentpage.Text);
-            changePage((currentPage + 1));
-        }
+        
         private void CardScreen_Load(object sender, EventArgs e)
         {
             pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
@@ -176,6 +147,39 @@ namespace ZiTyLot.GUI.Screens
         private void logOutMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbNumberofitem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String selectedValue = cbNumberofitem.SelectedItem.ToString();
+            int pageSize = int.Parse(selectedValue.Split(' ')[0]);
+            pageable.PageSize = pageSize;
+            pageable.PageNumber = 1;
+            page = cardBUS.GetAllPagination(pageable, filterConditions);
+            tbCurrentpage.Text = "1";
+            lbTotalpage.Text = "/" + page.TotalPages;
+            LoadPageToTable();
+        }
+        private void changePage(int pageNumber)
+        {
+            if (pageNumber < 1 || pageNumber > page.TotalPages)
+            {
+                return;
+            }
+            pageable.PageNumber = pageNumber;
+            page = cardBUS.GetAllPagination(pageable, filterConditions);
+            tbCurrentpage.Text = pageNumber.ToString();
+            LoadPageToTable();
+        }
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            int currentPage = int.Parse(tbCurrentpage.Text);
+            changePage(currentPage - 1);
+        }
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            int currentPage = int.Parse(tbCurrentpage.Text);
+            changePage((currentPage + 1));
         }
     }
 }
