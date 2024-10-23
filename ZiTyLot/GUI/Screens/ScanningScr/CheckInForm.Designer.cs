@@ -153,7 +153,7 @@
             // uiLabel1
             // 
             this.uiLabel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uiLabel1.Font = new System.Drawing.Font("Helvetica", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiLabel1.Location = new System.Drawing.Point(10, 0);
             this.uiLabel1.Name = "uiLabel1";

@@ -13,6 +13,8 @@ using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.Helper;
 
+
+
 namespace ZiTyLot.GUI.Screens
 {
     public partial class SessionControl : UserControl
@@ -21,6 +23,7 @@ namespace ZiTyLot.GUI.Screens
         Pageable pageable = new Pageable();
         List<FilterCondition> filters = new List<FilterCondition>();
         Page<Session> page;
+
         public SessionControl()
         {
             InitializeComponent();
@@ -29,6 +32,19 @@ namespace ZiTyLot.GUI.Screens
             tbCurrentpage.Text = "1";
             lbTotalpage.Text = "/" + page.TotalPages;
             LoadPageToTable();
+            customDateTimePicker.DateTimeConfirmed += CustomDateTimePicker_DateTimeConfirmed_In;
+            customDateTimePicker1.DateTimeConfirmed += CustomDateTimePicker_DateTimeConfirmed_Out;
+
+        }
+        private void CustomDateTimePicker_DateTimeConfirmed_In(object sender, string combinedDateTime)
+        {
+            // Set the combined string to the tbTimeIn TextBox
+            tbTimeIn.Text = combinedDateTime;
+        }
+        private void CustomDateTimePicker_DateTimeConfirmed_Out(object sender, string combinedDateTime)
+        {
+            // Set the combined string to the tbTimeIn TextBox
+            tbTimeOut.Text = combinedDateTime;
         }
         private void LoadPageToTable()
         {
@@ -90,10 +106,15 @@ namespace ZiTyLot.GUI.Screens
         }
         private void SessionScreen_Load(object sender, EventArgs e)
         {
+            pnlTop.Height = 54;
             pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
             this.tableSession.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
             this.tableSession.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
+            customDateTimePicker.Visible = false;
+            customDateTimePicker1.Visible = false;
+
+
         }
         // Paint the cell
         private void table_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -144,6 +165,92 @@ namespace ZiTyLot.GUI.Screens
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
         }
 
-        
+        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = cbFilter.SelectedIndex;
+            switch (index)
+            {
+                case 0:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 65);
+                    break;
+                case 1:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 85);
+                    break;
+
+            }
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            if (pnlTop.Height == 108)
+            {
+                pnlTop.Height = 54;
+            }
+            else
+            {
+                pnlTop.Height = 108;
+            }
+            if (customDateTimePicker.Visible || customDateTimePicker1.Visible)
+            {
+                customDateTimePicker.Visible = false;
+                customDateTimePicker1.Visible = false;
+            }
+        }
+
+        private void btnTimeIn_Click(object sender, EventArgs e)
+        {
+            if(customDateTimePicker.Visible == false)
+            {
+                if (customDateTimePicker1.Visible == false)
+                {
+                    customDateTimePicker.Visible = true;
+                }
+                else
+                {
+                    customDateTimePicker1.Visible = false;
+                    customDateTimePicker.Visible = true;
+                }
+            }
+            else
+            {
+                customDateTimePicker.Visible = false;
+            }
+            
+            customDateTimePicker.Location = new Point(uiPanel9.Location.X, btnTimeIn.Location.Y + 110);
+        }
+
+        private void btnTimeOut_Click(object sender, EventArgs e)
+        {
+            if (customDateTimePicker1.Visible == false)
+            {
+                if (customDateTimePicker.Visible == false)
+                {
+                    customDateTimePicker1.Visible = true;
+                }
+                else
+                {
+                    customDateTimePicker.Visible = false;
+                    customDateTimePicker1.Visible = true;
+                }
+            }
+            else
+            {
+                customDateTimePicker1.Visible = false;
+            }
+
+            customDateTimePicker1.Location = new Point(uiPanel8.Location.X, btnTimeIn.Location.Y + 110);
+        }
+
+        private void SessionControl_Resize(object sender, EventArgs e)
+        {
+            if(customDateTimePicker.Visible)
+            {
+                customDateTimePicker.Location = new Point(uiPanel9.Location.X, btnTimeIn.Location.Y + 110);
+            }
+            if (customDateTimePicker1.Visible)
+            {
+                customDateTimePicker1.Location = new Point(uiPanel8.Location.X, btnTimeIn.Location.Y + 110);
+            }
+        }
     }
 }

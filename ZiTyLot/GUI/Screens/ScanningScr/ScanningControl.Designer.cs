@@ -79,7 +79,7 @@ namespace ZiTyLot.GUI.Screens
             this.btnCheckIn.FillHoverColor = System.Drawing.Color.White;
             this.btnCheckIn.FillPressColor = System.Drawing.Color.White;
             this.btnCheckIn.FillSelectedColor = System.Drawing.Color.White;
-            this.btnCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckIn.Font = new System.Drawing.Font("Helvetica Rounded", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckIn.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckIn.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -113,7 +113,7 @@ namespace ZiTyLot.GUI.Screens
             this.btnCheckOut.FillHoverColor = System.Drawing.Color.White;
             this.btnCheckOut.FillPressColor = System.Drawing.Color.White;
             this.btnCheckOut.FillSelectedColor = System.Drawing.Color.White;
-            this.btnCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckOut.Font = new System.Drawing.Font("Helvetica Rounded", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckOut.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckOut.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));

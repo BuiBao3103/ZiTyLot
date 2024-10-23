@@ -218,6 +218,12 @@
     <Compile Include="ENTITY\VehicleType.cs" />
     <Compile Include="ENTITY\VisitorFee.cs" />
     <Compile Include="GUI\component-extensions\RoundedBorder.cs" />
+    <Compile Include="GUI\CustomDateTimePicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\CustomDateTimePicker.Designer.cs">
+      <DependentUpon>CustomDateTimePicker.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ExcelExample.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -377,6 +383,9 @@
     <Compile Include="Helper\RFIDReader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\CustomDateTimePicker.resx">
+      <DependentUpon>CustomDateTimePicker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ExcelExample.resx">
       <DependentUpon>ExcelExample.cs</DependentUpon>
     </EmbeddedResource>
