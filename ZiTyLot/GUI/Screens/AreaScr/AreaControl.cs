@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.ENTITY;
@@ -19,6 +20,7 @@ namespace ZiTyLot.GUI.Screens
         public AreaControl()
         {
             InitializeComponent();
+            cbNumberOfItem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberOfItem.SelectedIndex = 0;
             page = parkingLotBUS.GetAllPagination(pageable, filters);
             tbCurrentPage.Text = "1";
