@@ -90,10 +90,12 @@ namespace ZiTyLot.GUI.Screens
         }
         private void SessionScreen_Load(object sender, EventArgs e)
         {
+            pnlTop.Height = 54;
             pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
             this.tableSession.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
             this.tableSession.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
+
         }
         // Paint the cell
         private void table_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -144,6 +146,32 @@ namespace ZiTyLot.GUI.Screens
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
         }
 
-        
+        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = cbFilter.SelectedIndex;
+            switch (index)
+            {
+                case 0:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 65);
+                    break;
+                case 1:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 85);
+                    break;
+
+            }
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            if (pnlTop.Height == 108)
+            {
+                pnlTop.Height = 54;
+            }
+            else
+            {
+                pnlTop.Height = 108;
+            }
+        }
+
     }
 }

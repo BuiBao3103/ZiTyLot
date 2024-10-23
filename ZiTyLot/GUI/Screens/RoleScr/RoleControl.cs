@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Windows.Forms;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens.RoleScr;
@@ -37,7 +38,6 @@ namespace ZiTyLot.GUI.Screens
         private void table_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if ((e.ColumnIndex == tableRole.Columns["colView"].Index ||
-                 e.ColumnIndex == tableRole.Columns["colEdit"].Index ||
                  e.ColumnIndex == tableRole.Columns["colDelete"].Index) && e.RowIndex >= 0)
             {
                 if (e.RowIndex % 2 == 0)
@@ -52,10 +52,6 @@ namespace ZiTyLot.GUI.Screens
                 if (e.ColumnIndex == tableRole.Columns["colView"].Index)
                 {
                     icon = Properties.Resources.Icon_18x18px_View;
-                }
-                else if (e.ColumnIndex == tableRole.Columns["colEdit"].Index)
-                {
-                    icon = Properties.Resources.Icon_18x18px_Edit;
                 }
                 else if (e.ColumnIndex == tableRole.Columns["colDelete"].Index)
                 {
@@ -81,10 +77,6 @@ namespace ZiTyLot.GUI.Screens
                 {
                     MessageBox.Show("View button clicked for row " + e.RowIndex);
                 }
-                else if (e.ColumnIndex == tableRole.Columns["colEdit"].Index)
-                {
-                    MessageBox.Show("Edit button clicked for row " + e.RowIndex);
-                }
                 else if (e.ColumnIndex == tableRole.Columns["colDelete"].Index)
                 {
                     MessageBox.Show("Delete button clicked for row " + e.RowIndex);
@@ -103,6 +95,27 @@ namespace ZiTyLot.GUI.Screens
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
+        {
+            RoleDetailForm roleDetailForm = new RoleDetailForm();
+            roleDetailForm.Show();
+        }
+
+        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = cbFilter.SelectedIndex;
+            switch (index)
+            {
+                case 0:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 65);
+                    break;
+                case 1:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 95);
+                    break;
+                
+            }
+        }
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
         {
             RoleDetailForm roleDetailForm = new RoleDetailForm();
             roleDetailForm.Show();
