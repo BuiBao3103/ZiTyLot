@@ -46,24 +46,24 @@ namespace ZiTyLot.GUI.Screens
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.panel2.Controls.Add(this.uiPanel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(13, 12);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(10, 10);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1535, 714);
+            this.panel2.Size = new System.Drawing.Size(1151, 580);
             this.panel2.TabIndex = 2;
             // 
             // uiPanel1
             // 
+            this.uiPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.uiPanel1.Controls.Add(this.btnCheckIn);
             this.uiPanel1.Controls.Add(this.btnCheckOut);
             this.uiPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel1.Location = new System.Drawing.Point(13, 12);
-            this.uiPanel1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.uiPanel1.Location = new System.Drawing.Point(288, 151);
+            this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel1.Name = "uiPanel1";
             this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel1.Size = new System.Drawing.Size(755, 308);
+            this.uiPanel1.Size = new System.Drawing.Size(566, 250);
             this.uiPanel1.TabIndex = 0;
             this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -79,11 +79,11 @@ namespace ZiTyLot.GUI.Screens
             this.btnCheckIn.FillHoverColor = System.Drawing.Color.White;
             this.btnCheckIn.FillPressColor = System.Drawing.Color.White;
             this.btnCheckIn.FillSelectedColor = System.Drawing.Color.White;
-            this.btnCheckIn.Font = new System.Drawing.Font("Helvetica Rounded", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckIn.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckIn.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCheckIn.Location = new System.Drawing.Point(505, 0);
+            this.btnCheckIn.Location = new System.Drawing.Point(316, 0);
             this.btnCheckIn.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnCheckIn.Name = "btnCheckIn";
             this.btnCheckIn.Padding = new System.Windows.Forms.Padding(50);
@@ -91,7 +91,7 @@ namespace ZiTyLot.GUI.Screens
             this.btnCheckIn.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
             this.btnCheckIn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnCheckIn.RectSize = 2;
-            this.btnCheckIn.Size = new System.Drawing.Size(250, 308);
+            this.btnCheckIn.Size = new System.Drawing.Size(250, 250);
             this.btnCheckIn.Symbol = 361579;
             this.btnCheckIn.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckIn.SymbolOffset = new System.Drawing.Point(-4, 0);
@@ -113,7 +113,7 @@ namespace ZiTyLot.GUI.Screens
             this.btnCheckOut.FillHoverColor = System.Drawing.Color.White;
             this.btnCheckOut.FillPressColor = System.Drawing.Color.White;
             this.btnCheckOut.FillSelectedColor = System.Drawing.Color.White;
-            this.btnCheckOut.Font = new System.Drawing.Font("Helvetica Rounded", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckOut.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckOut.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -125,7 +125,7 @@ namespace ZiTyLot.GUI.Screens
             this.btnCheckOut.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
             this.btnCheckOut.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnCheckOut.RectSize = 2;
-            this.btnCheckOut.Size = new System.Drawing.Size(250, 308);
+            this.btnCheckOut.Size = new System.Drawing.Size(250, 250);
             this.btnCheckOut.Symbol = 361584;
             this.btnCheckOut.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckOut.SymbolOffset = new System.Drawing.Point(-10, 0);
@@ -147,15 +147,14 @@ namespace ZiTyLot.GUI.Screens
             // 
             // ScanningControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ScanningControl";
-            this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.Size = new System.Drawing.Size(1561, 738);
+            this.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.Size = new System.Drawing.Size(1171, 600);
             this.Load += new System.EventHandler(this.ScanningScreen_Load);
             this.Resize += new System.EventHandler(this.ScanningScreen_Resize);
             this.panel2.ResumeLayout(false);

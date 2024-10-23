@@ -13,6 +13,7 @@ namespace ZiTyLot.GUI.Screens
             AdjustPanelPosition();
             btnCheckOut.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnCheckOut.Width, btnCheckOut.Height, 10, 10));
             btnCheckIn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnCheckIn.Width, btnCheckIn.Height, 10, 10));
+            uiPanel1.Location = new Point(this.panel2.Width / 2 - uiPanel1.Width / 2, this.panel2.Height / 2 - uiPanel1.Height / 2);
 
         }
         private void AdjustPanelPosition()
