@@ -9,7 +9,7 @@ namespace ZiTyLot.Helper
         private int pageSize = 10;
         private string sortBy = string.Empty;
         private string sortOrder = "ASC";// ASC or DESC
-        public readonly List<string> PageNumbersInit  = new List<string>() { "10", "25", "50", "100" };
+        public readonly List<string> PageNumbersInit  = new List<string>() { "1", "25", "50", "100" };
 
         public int PageNumber
         {

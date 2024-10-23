@@ -9,12 +9,13 @@ using ZiTyLot.Helper;
 using ZiTyLot.GUI.Screens.AccountScr;
 using System.Drawing.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace ZiTyLot.GUI.Screens
 {
     public partial class AccountControl : UserControl
     {
-        Debouncer _debouncer = new Debouncer();
+        //Debouncer _debouncer = new Debouncer();
         AccountBUS accountBUS = new AccountBUS();
         Pageable pageable = new Pageable();
         List<FilterCondition> filters = new List<FilterCondition>();
@@ -22,46 +23,15 @@ namespace ZiTyLot.GUI.Screens
         public AccountControl()
         {
             InitializeComponent();
+            cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
-            LoadPageToTable("1");
-        }
-        private void LoadPageToTable(string currentPage)
-        {
             page = accountBUS.GetAllPagination(pageable, filters);
-            tbCurrentpage.Text = currentPage;
+            tbCurrentpage.Text = "1";
             lbTotalpage.Text = "/" + page.TotalPages;
-            tableAccount.Rows.Clear();
-            foreach (Account account in page.Content)
-            {
-                tableAccount.Rows.Add(account.Id, account.Full_name, account.Username, accountBUS.PopulateRole(account).Role.Name);
-            }
+            LoadPageToTable();
         }
-        private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedValue = cbNumberofitem.SelectedText;
-            int pageSize = int.Parse(selectedValue.Split(' ')[0]);
-            pageable.PageNumber = 1;
-            pageable.PageSize = pageSize;
-            LoadPageToTable("1");
-        }
-        private void nextBtn_Click(object sender, EventArgs e)
-        {
-            int currentPage = int.Parse(tbCurrentpage.Text);
-            ChangePage(currentPage + 1);
-        }
-        private void previousBtn_Click(object sender, EventArgs e)
-        {
-            int currentPage = int.Parse(tbCurrentpage.Text);
-            ChangePage(currentPage - 1);
-        }
-        private void ChangePage(int pageNumber)
-        {
-            if (pageNumber >= 1 && pageNumber <= page.TotalPages)
-            {
-                pageable.PageNumber = pageNumber;
-                LoadPageToTable(pageNumber.ToString());
-            }
-        }
+       
+       
 
         private void AccountScreen_Load(object sender, EventArgs e)
         {
@@ -170,35 +140,76 @@ namespace ZiTyLot.GUI.Screens
 
         }
 
-        private async void tbSearch_TextChanged(object sender, EventArgs e)
-        {
-            String inputCboxSelected = cbFilter.GetItemText(cbFilter.SelectedItem);
-            // Use the debouncer with a 0.5-second delay
-            await _debouncer.DebounceAsync(async () =>
-            {
-                if (tbSearch.Text.Trim() == "")
-                {
-                    filters = new List<FilterCondition>();
-                }
-                else
-                {
-                    if (inputCboxSelected == "Full name")
-                    {
-                        filters = new List<FilterCondition> { new FilterCondition("Full_name", ComparisonOperator.Like, tbSearch.Text) };
-                    }
-                    else if (inputCboxSelected == "Username")
-                    {
-                        filters = new List<FilterCondition> { new FilterCondition("Username", ComparisonOperator.Like, tbSearch.Text) };
-                    }
-                    else if (inputCboxSelected == "ID")
-                    {
-                        filters = new List<FilterCondition> { new FilterCondition("Id", ComparisonOperator.Equals, tbSearch.Text) };
-                    }
-                }
+        //private async void tbSearch_TextChanged(object sender, EventArgs e)
+        //{
+        //    String inputCboxSelected = cbFilter.GetItemText(cbFilter.SelectedItem);
+        //    // Use the debouncer with a 0.5-second delay
+        //    await _debouncer.DebounceAsync(async () =>
+        //    {
+        //        if (tbSearch.Text.Trim() == "")
+        //        {
+        //            filters = new List<FilterCondition>();
+        //        }
+        //        else
+        //        {
+        //            if (inputCboxSelected == "Full name")
+        //            {
+        //                filters = new List<FilterCondition> { new FilterCondition("Full_name", ComparisonOperator.Like, tbSearch.Text) };
+        //            }
+        //            else if (inputCboxSelected == "Username")
+        //            {
+        //                filters = new List<FilterCondition> { new FilterCondition("Username", ComparisonOperator.Like, tbSearch.Text) };
+        //            }
+        //            else if (inputCboxSelected == "ID")
+        //            {
+        //                filters = new List<FilterCondition> { new FilterCondition("Id", ComparisonOperator.Equals, tbSearch.Text) };
+        //            }
+        //        }
 
-                LoadPageToTable("1");
-                // This will only trigger if the user stops typing for at least 0.5 second
-            }, 500); // Debounce delay of 500 ms (0.5 second)
+        //        LoadPageToTable("1");
+        //        // This will only trigger if the user stops typing for at least 0.5 second
+        //    }, 500); // Debounce delay of 500 ms (0.5 second)
+        //}
+        private void LoadPageToTable()
+        {
+            tableAccount.Rows.Clear();
+            foreach (Account account in page.Content)
+            {
+                tableAccount.Rows.Add(account.Id, account.Full_name, account.Username, account.Email);
+            }
+
+        }
+        private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedValue = cbNumberofitem.SelectedItem.ToString();
+            int pageSize = int.Parse(selectedValue.Split(' ')[0]);
+            pageable.PageNumber = 1;
+            pageable.PageSize = pageSize;
+            page = accountBUS.GetAllPagination(pageable, filters);
+            tbCurrentpage.Text = "1";
+            lbTotalpage.Text = "/" + page.TotalPages;
+            LoadPageToTable();
+        }
+    
+        private void ChangePage(int pageNumber)
+        {
+            if (pageNumber >= 1 && pageNumber <= page.TotalPages)
+            {
+                pageable.PageNumber = pageNumber;
+                LoadPageToTable();
+            }
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            int currentPage = int.Parse(tbCurrentpage.Text);
+            ChangePage(currentPage - 1);
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            int currentPage = int.Parse(tbCurrentpage.Text);
+            ChangePage(currentPage + 1);
         }
     }
 }
