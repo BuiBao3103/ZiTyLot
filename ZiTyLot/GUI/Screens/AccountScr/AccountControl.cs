@@ -15,23 +15,19 @@ namespace ZiTyLot.GUI.Screens
 {
     public partial class AccountControl : UserControl
     {
-        Debouncer _debouncer = new Debouncer();
-        AccountBUS accountBUS = new AccountBUS();
-        Pageable pageable = new Pageable();
-        List<FilterCondition> filters = new List<FilterCondition>();
-        Page<Account> page;
+        private readonly Debouncer _debouncer = new Debouncer();
+        private readonly AccountBUS accountBUS = new AccountBUS();
+        private readonly Pageable pageable = new Pageable();
+        private readonly List<FilterCondition> filters = new List<FilterCondition>();
+        private Page<Account> page;
         public AccountControl()
         {
             InitializeComponent();
             cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
             page = accountBUS.GetAllPagination(pageable, filters);
-            tbCurrentpage.Text = "1";
-            lbTotalpage.Text = "/" + page.TotalPages;
-            LoadPageToTable();
+            LoadPageAndPageable();
         }
-
-
 
         private void AccountScreen_Load(object sender, EventArgs e)
         {
@@ -140,15 +136,24 @@ namespace ZiTyLot.GUI.Screens
 
         }
 
-        private void LoadPageToTable()
+        private void LoadPageAndPageable()
         {
+            if (page == null || pageable == null) return;
+            //update page number
+            tbCurrentpage.Text = pageable.PageNumber.ToString();
+            lbTotalpage.Text = "/" + page.TotalPages;
             tableAccount.Rows.Clear();
+            //update table
             foreach (Account account in page.Content)
             {
                 tableAccount.Rows.Add(account.Id, account.Full_name, account.Username, account.Email);
             }
-
+            //update button
+            btnPrevious.Enabled = pageable.PageNumber > 1;
+            btnNext.Enabled = pageable.PageNumber < page.TotalPages;
         }
+
+
         private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedValue = cbNumberofitem.SelectedItem.ToString();
@@ -156,9 +161,7 @@ namespace ZiTyLot.GUI.Screens
             pageable.PageNumber = 1;
             pageable.PageSize = pageSize;
             page = accountBUS.GetAllPagination(pageable, filters);
-            tbCurrentpage.Text = "1";
-            lbTotalpage.Text = "/" + page.TotalPages;
-            LoadPageToTable();
+            LoadPageAndPageable();
         }
 
         private void ChangePage(int pageNumber)
@@ -169,20 +172,17 @@ namespace ZiTyLot.GUI.Screens
             }
             pageable.PageNumber = pageNumber;
             page = accountBUS.GetAllPagination(pageable, filters);
-            LoadPageToTable();
-            tbCurrentpage.Text = pageNumber.ToString();
+            LoadPageAndPageable();
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            int currentPage = int.Parse(tbCurrentpage.Text);
-            ChangePage(currentPage - 1);
+            ChangePage(pageable.PageNumber - 1);
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            int currentPage = int.Parse(tbCurrentpage.Text);
-            ChangePage(currentPage + 1);
+            ChangePage(pageable.PageNumber + 1);
         }
 
         private async void tbSearch_TextChanged(object sender, EventArgs e)
@@ -216,11 +216,10 @@ namespace ZiTyLot.GUI.Screens
                         filters.Add(new FilterCondition("Full_name", CompOp.Like, inputSearch));
                         break;
                 }
-
             }
             pageable.PageNumber = 1;
             page = accountBUS.GetAllPagination(pageable, filters);
-            LoadPageToTable();
+            LoadPageAndPageable();
         }
     }
 }
