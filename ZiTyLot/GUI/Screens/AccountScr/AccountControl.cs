@@ -10,6 +10,7 @@ using ZiTyLot.GUI.Screens.AccountScr;
 using System.Drawing.Text;
 using System.Threading.Tasks;
 using System.Linq;
+using Org.BouncyCastle.Bcpg.OpenPgp;
 
 namespace ZiTyLot.GUI.Screens
 {
@@ -220,6 +221,29 @@ namespace ZiTyLot.GUI.Screens
             pageable.PageNumber = 1;
             page = accountBUS.GetAllPagination(pageable, filters);
             LoadPageAndPageable();
+        }
+
+        private void tbCurrentpage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow only numbers and control characters in textbox
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) e.Handled = true;
+
+            // Allow enter key to change page
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                string input = tbCurrentpage.Text;
+                int pageNumber;
+
+                if (string.IsNullOrEmpty(input))
+                    pageNumber = 1;
+                else
+                {
+                    pageNumber = int.Parse(input);
+                    pageNumber = pageNumber < 1 ? 1 : pageNumber;
+                    pageNumber = pageNumber > page.TotalPages ? page.TotalPages : pageNumber;
+                }
+                ChangePage(pageNumber);
+            }
         }
     }
 }
