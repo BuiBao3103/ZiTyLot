@@ -131,7 +131,7 @@ namespace ZiTyLot.BUS
             {
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition("vehicle_type_id", ComparisonOperator.Equals, item.Id)
+                    new FilterCondition("vehicle_type_id", CompOp.Equals, item.Id)
                 };
                 List<VisitorFee> visitorFee = visitorFeeDAO.GetAll(filters);
                 item.Visitor_fee = visitorFee[0];
@@ -149,7 +149,7 @@ namespace ZiTyLot.BUS
             {
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition("vehicle_type_id", ComparisonOperator.Equals, item.Id)
+                    new FilterCondition("vehicle_type_id", CompOp.Equals, item.Id)
                 };
                 List<Card> cards = cardDAO.GetAll(filters);
                 item.Cards = cards;
@@ -167,7 +167,7 @@ namespace ZiTyLot.BUS
             {
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition("vehicle_type_id", ComparisonOperator.Equals, item.Id)
+                    new FilterCondition("vehicle_type_id", CompOp.Equals, item.Id)
                 };
                 List<ResidentFee> residentFees = residentFeeDAO.GetAll(filters);
                 item.Resident_fees = residentFees;
@@ -185,7 +185,7 @@ namespace ZiTyLot.BUS
             {
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition("vehicle_type_id", ComparisonOperator.Equals, item.Id)
+                    new FilterCondition("vehicle_type_id", CompOp.Equals, item.Id)
                 };
                 List<Issue> issues = issueDAO.GetAll(filters);
                 item.Issues = issues;

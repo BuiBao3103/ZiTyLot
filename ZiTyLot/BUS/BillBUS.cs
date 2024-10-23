@@ -171,7 +171,7 @@ namespace ZiTyLot.BUS
             {
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition("bill_id", ComparisonOperator.Equals, item.Id)
+                    new FilterCondition("bill_id", CompOp.Equals, item.Id)
                 };
                 List<Issue> issues = issueDAO.GetAll(filters);
                 item.Issues = issues;

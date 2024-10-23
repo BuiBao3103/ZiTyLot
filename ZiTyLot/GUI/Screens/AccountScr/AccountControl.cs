@@ -15,7 +15,7 @@ namespace ZiTyLot.GUI.Screens
 {
     public partial class AccountControl : UserControl
     {
-        //Debouncer _debouncer = new Debouncer();
+        Debouncer _debouncer = new Debouncer();
         AccountBUS accountBUS = new AccountBUS();
         Pageable pageable = new Pageable();
         List<FilterCondition> filters = new List<FilterCondition>();
@@ -30,8 +30,8 @@ namespace ZiTyLot.GUI.Screens
             lbTotalpage.Text = "/" + page.TotalPages;
             LoadPageToTable();
         }
-       
-       
+
+
 
         private void AccountScreen_Load(object sender, EventArgs e)
         {
@@ -140,36 +140,6 @@ namespace ZiTyLot.GUI.Screens
 
         }
 
-        //private async void tbSearch_TextChanged(object sender, EventArgs e)
-        //{
-        //    String inputCboxSelected = cbFilter.GetItemText(cbFilter.SelectedItem);
-        //    // Use the debouncer with a 0.5-second delay
-        //    await _debouncer.DebounceAsync(async () =>
-        //    {
-        //        if (tbSearch.Text.Trim() == "")
-        //        {
-        //            filters = new List<FilterCondition>();
-        //        }
-        //        else
-        //        {
-        //            if (inputCboxSelected == "Full name")
-        //            {
-        //                filters = new List<FilterCondition> { new FilterCondition("Full_name", ComparisonOperator.Like, tbSearch.Text) };
-        //            }
-        //            else if (inputCboxSelected == "Username")
-        //            {
-        //                filters = new List<FilterCondition> { new FilterCondition("Username", ComparisonOperator.Like, tbSearch.Text) };
-        //            }
-        //            else if (inputCboxSelected == "ID")
-        //            {
-        //                filters = new List<FilterCondition> { new FilterCondition("Id", ComparisonOperator.Equals, tbSearch.Text) };
-        //            }
-        //        }
-
-        //        LoadPageToTable("1");
-        //        // This will only trigger if the user stops typing for at least 0.5 second
-        //    }, 500); // Debounce delay of 500 ms (0.5 second)
-        //}
         private void LoadPageToTable()
         {
             tableAccount.Rows.Clear();
@@ -190,7 +160,7 @@ namespace ZiTyLot.GUI.Screens
             lbTotalpage.Text = "/" + page.TotalPages;
             LoadPageToTable();
         }
-    
+
         private void ChangePage(int pageNumber)
         {
             if (pageNumber < 1 || pageNumber > page.TotalPages)
@@ -215,6 +185,42 @@ namespace ZiTyLot.GUI.Screens
             ChangePage(currentPage + 1);
         }
 
-          
+        private async void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            await _debouncer.DebounceAsync(() =>
+            {
+                query();
+                return Task.CompletedTask;
+            }, 500);
+        }
+
+        private void query()
+        {
+            string inputCboxSelected = cbFilter.GetItemText(cbFilter.SelectedItem);
+            string inputSearch = tbSearch.Text;
+            filters.Clear();
+            if (!string.IsNullOrEmpty(inputSearch))
+            {
+                switch (inputCboxSelected)
+                {
+                    case "ID":
+                        filters.Add(new FilterCondition("Id", CompOp.Equals, inputSearch));
+                        break;
+                    case "Email":
+                        filters.Add(new FilterCondition("Email", CompOp.Like, inputSearch));
+                        break;
+                    case "Username":
+                        filters.Add(new FilterCondition("Username", CompOp.Like, inputSearch));
+                        break;
+                    case "Full name":
+                        filters.Add(new FilterCondition("Full_name", CompOp.Like, inputSearch));
+                        break;
+                }
+
+            }
+            pageable.PageNumber = 1;
+            page = accountBUS.GetAllPagination(pageable, filters);
+            LoadPageToTable();
+        }
     }
 }

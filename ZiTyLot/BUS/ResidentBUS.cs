@@ -127,7 +127,7 @@ namespace ZiTyLot.BUS
             {
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition("resident_id", ComparisonOperator.Equals, resident.Id)
+                    new FilterCondition("resident_id", CompOp.Equals, resident.Id)
                 };
                 List<Bill> bills = billDAO.GetAll(filters);
                 resident.Bills = bills;
@@ -146,7 +146,7 @@ namespace ZiTyLot.BUS
             {
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition("resident_id", ComparisonOperator.Equals, resident.Id)
+                    new FilterCondition("resident_id", CompOp.Equals, resident.Id)
                 };
                 List<Card> cards = cardDAO.GetAll(filters);
                 resident.Cards = cards;

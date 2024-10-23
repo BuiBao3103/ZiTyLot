@@ -147,8 +147,8 @@ namespace ZiTyLot
                 Console.WriteLine("Get All with filter");
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition("name", ComparisonOperator.Like, "Item"),
-                    new FilterCondition("id", ComparisonOperator.GreaterThan, "1")
+                    new FilterCondition("name", CompOp.Like, "Item"),
+                    new FilterCondition("id", CompOp.GreaterThan, "1")
                 };
                 List<A> filteredItems = aBus.GetAll(filters);
                 Console.WriteLine("Filtered Records:");
@@ -170,7 +170,7 @@ namespace ZiTyLot
             {
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                   new FilterCondition("Name", ComparisonOperator.Like, "")
+                   new FilterCondition("Name", CompOp.Like, "")
                 };
                 Pageable pageable = new Pageable { PageNumber = 1, PageSize = 2, SortBy = "", SortOrder = "DESC" };
                 //Page<A> page = aBus.GetAllPagination(pageable);

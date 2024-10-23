@@ -148,7 +148,7 @@ namespace ZiTyLot.BUS
             {
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition("session_id", ComparisonOperator.Equals, item.Id)
+                    new FilterCondition("session_id", CompOp.Equals, item.Id)
                 };
                 List<Image> images = imageDAO.GetAll(filters);
                 item.Images = images;

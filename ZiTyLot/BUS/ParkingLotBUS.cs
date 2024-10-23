@@ -127,7 +127,7 @@ namespace ZiTyLot.BUS
             {
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition("parking_lot_id", ComparisonOperator.Equals, parkingLot.Id)
+                    new FilterCondition("parking_lot_id", CompOp.Equals, parkingLot.Id)
                 };
                 List<Slot> slots = slotDAO.GetAll(filters);
                 parkingLot.Slots = slots;
@@ -145,7 +145,7 @@ namespace ZiTyLot.BUS
             {
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition("parking_lot_id", ComparisonOperator.Equals, parkingLot.Id)
+                    new FilterCondition("parking_lot_id", CompOp.Equals, parkingLot.Id)
                 };
                 List<Issue> issues = issueDAO.GetAll(filters);
                 parkingLot.Issues = issues;
