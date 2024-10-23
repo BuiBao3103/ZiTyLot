@@ -218,6 +218,23 @@ namespace ZiTyLot.GUI.Screens
                         break;
                 }
             }
+            //assume have a combobox when query
+            //ComboBox comboBox = new ComboBox();
+            //string input = comboBox.GetItemText(comboBox.SelectedItem);
+            //if (input != "All")
+            //{
+            //    switch (input)
+            //    {
+            //        case "A":
+            //            filters.Add(new FilterCondition("Status", CompOp.Equals, true));
+            //            break;
+            //        case "B":
+            //            filters.Add(new FilterCondition("Status", CompOp.Equals, false));
+            //            break;
+            //    }
+            //}
+
+
             pageable.PageNumber = 1;
             page = accountBUS.GetAllPagination(pageable, filters);
             LoadPageAndPageable();
