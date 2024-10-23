@@ -27,6 +27,7 @@ namespace ZiTyLot.GUI.Screens
         public SessionControl()
         {
             InitializeComponent();
+            cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
             page = sessionBUS.GetAllPagination(pageable, filters);
             tbCurrentpage.Text = "1";
@@ -83,7 +84,6 @@ namespace ZiTyLot.GUI.Screens
             }
         }
 
-        // change page
         private void ChangePage(int pageNumber)
         {
             if (pageNumber < 1 || pageNumber > page.TotalPages)

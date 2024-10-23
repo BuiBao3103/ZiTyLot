@@ -1,13 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ZiTyLot.Helper
 {
     public class Pageable
     {
-        private int pageNumber = 1; // Đặt giá trị mặc định
-        private int pageSize = 25;   // Đặt giá trị mặc định
-        private string sortBy = string.Empty; // Giá trị mặc định là chuỗi rỗng
-        private string sortOrder = "ASC";      // Giá trị mặc định là "ASC"
+        private int pageNumber = 1;
+        private int pageSize = 10;
+        private string sortBy = string.Empty;
+        private string sortOrder = "ASC";// ASC or DESC
+        public readonly List<string> PageNumbersInit  = new List<string>() { "10", "25", "50", "100" };
 
         public int PageNumber
         {
@@ -37,5 +39,9 @@ namespace ZiTyLot.Helper
         {
             return (PageNumber - 1) * PageSize;
         }
+
+
+
     }
+
 }
