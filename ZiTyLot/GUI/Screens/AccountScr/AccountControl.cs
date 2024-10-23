@@ -193,11 +193,14 @@ namespace ZiTyLot.GUI.Screens
     
         private void ChangePage(int pageNumber)
         {
-            if (pageNumber >= 1 && pageNumber <= page.TotalPages)
+            if (pageNumber < 1 || pageNumber > page.TotalPages)
             {
-                pageable.PageNumber = pageNumber;
-                LoadPageToTable();
+                return;
             }
+            pageable.PageNumber = pageNumber;
+            page = accountBUS.GetAllPagination(pageable, filters);
+            LoadPageToTable();
+            tbCurrentpage.Text = pageNumber.ToString();
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
@@ -211,5 +214,7 @@ namespace ZiTyLot.GUI.Screens
             int currentPage = int.Parse(tbCurrentpage.Text);
             ChangePage(currentPage + 1);
         }
+
+          
     }
 }
