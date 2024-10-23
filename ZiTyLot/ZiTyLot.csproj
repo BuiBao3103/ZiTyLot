@@ -537,6 +537,7 @@
     <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Scanning.png" />
     <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Session-Active.png" />
     <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Session.png" />
+    <Content Include="GUI\assets\logo_mini.png" />
     <Content Include="GUI\assets\logo.jpg" />
     <Content Include="GUI\assets\search.png" />
     <Content Include="GUI\assets\ZityLot-Logo-120x60px.ico" />

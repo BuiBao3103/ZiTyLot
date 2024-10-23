@@ -38,23 +38,21 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.sidebarMid = new System.Windows.Forms.Panel();
             this.sidebarTop = new System.Windows.Forms.Panel();
+            this.btnToggleMenu = new Sunny.UI.UIImageButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlCardLayout = new System.Windows.Forms.Panel();
             this.settingMenu = new Sunny.UI.UIContextMenuStrip();
             this.logOutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnToggleMenu = new Sunny.UI.UIImageButton();
-            this.pnlMenu = new Sunny.UI.UIPanel();
             this.sidebar.SuspendLayout();
             this.sidebarBottom.SuspendLayout();
             this.accountPnl.SuspendLayout();
             this.uiPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.sidebarTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnToggleMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.settingMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnToggleMenu)).BeginInit();
-            this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidebar
@@ -65,9 +63,10 @@
             this.sidebar.Controls.Add(this.sidebarTop);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
+            this.sidebar.Margin = new System.Windows.Forms.Padding(4);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.sidebar.Size = new System.Drawing.Size(245, 729);
+            this.sidebar.Padding = new System.Windows.Forms.Padding(0, 0, 0, 12);
+            this.sidebar.Size = new System.Drawing.Size(327, 897);
             this.sidebar.TabIndex = 0;
             // 
             // sidebarBottom
@@ -76,13 +75,13 @@
             this.sidebarBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.sidebarBottom.FillColor = System.Drawing.Color.White;
             this.sidebarBottom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.sidebarBottom.Location = new System.Drawing.Point(0, 659);
-            this.sidebarBottom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.sidebarBottom.Location = new System.Drawing.Point(0, 811);
+            this.sidebarBottom.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.sidebarBottom.MinimumSize = new System.Drawing.Size(1, 1);
             this.sidebarBottom.Name = "sidebarBottom";
-            this.sidebarBottom.Padding = new System.Windows.Forms.Padding(5);
+            this.sidebarBottom.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.sidebarBottom.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.sidebarBottom.Size = new System.Drawing.Size(245, 60);
+            this.sidebarBottom.Size = new System.Drawing.Size(327, 74);
             this.sidebarBottom.TabIndex = 0;
             this.sidebarBottom.Text = null;
             this.sidebarBottom.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -95,7 +94,7 @@
             this.accountPnl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.accountPnl.FillColor = System.Drawing.Color.White;
             this.accountPnl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.accountPnl.Location = new System.Drawing.Point(5, 5);
+            this.accountPnl.Location = new System.Drawing.Point(7, 6);
             this.accountPnl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.accountPnl.MinimumSize = new System.Drawing.Size(1, 1);
             this.accountPnl.Name = "accountPnl";
@@ -103,7 +102,7 @@
             this.accountPnl.Radius = 10;
             this.accountPnl.RectColor = System.Drawing.SystemColors.ControlLight;
             this.accountPnl.RectSize = 2;
-            this.accountPnl.Size = new System.Drawing.Size(235, 50);
+            this.accountPnl.Size = new System.Drawing.Size(313, 62);
             this.accountPnl.TabIndex = 0;
             this.accountPnl.Text = null;
             this.accountPnl.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -123,7 +122,7 @@
             this.uiPanel1.Radius = 0;
             this.uiPanel1.RectColor = System.Drawing.Color.White;
             this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel1.Size = new System.Drawing.Size(143, 40);
+            this.uiPanel1.Size = new System.Drawing.Size(212, 52);
             this.uiPanel1.TabIndex = 6;
             this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -135,7 +134,7 @@
             this.roleLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.roleLb.Location = new System.Drawing.Point(5, 23);
             this.roleLb.Name = "roleLb";
-            this.roleLb.Size = new System.Drawing.Size(133, 17);
+            this.roleLb.Size = new System.Drawing.Size(202, 29);
             this.roleLb.TabIndex = 1;
             this.roleLb.Text = "Administrator";
             // 
@@ -146,7 +145,7 @@
             this.nameLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.nameLb.Location = new System.Drawing.Point(5, 0);
             this.nameLb.Name = "nameLb";
-            this.nameLb.Size = new System.Drawing.Size(133, 23);
+            this.nameLb.Size = new System.Drawing.Size(202, 23);
             this.nameLb.TabIndex = 0;
             this.nameLb.Text = "Admin";
             // 
@@ -161,7 +160,7 @@
             this.settingBtn.FillSelectedColor = System.Drawing.Color.White;
             this.settingBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.settingBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.settingBtn.Location = new System.Drawing.Point(191, 5);
+            this.settingBtn.Location = new System.Drawing.Point(260, 5);
             this.settingBtn.MinimumSize = new System.Drawing.Size(1, 1);
             this.settingBtn.Name = "settingBtn";
             this.settingBtn.RectColor = System.Drawing.Color.White;
@@ -169,7 +168,7 @@
             this.settingBtn.RectPressColor = System.Drawing.Color.White;
             this.settingBtn.RectSelectedColor = System.Drawing.Color.White;
             this.settingBtn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.settingBtn.Size = new System.Drawing.Size(34, 40);
+            this.settingBtn.Size = new System.Drawing.Size(43, 52);
             this.settingBtn.TabIndex = 5;
             this.settingBtn.Text = "⋮";
             this.settingBtn.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -182,7 +181,7 @@
             this.pictureBox2.Image = global::ZiTyLot.Properties.Resources.Icon_24x24px_Account_Active;
             this.pictureBox2.Location = new System.Drawing.Point(8, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox2.Size = new System.Drawing.Size(40, 52);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -191,30 +190,54 @@
             // 
             this.sidebarMid.BackColor = System.Drawing.Color.White;
             this.sidebarMid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sidebarMid.Location = new System.Drawing.Point(0, 149);
+            this.sidebarMid.Location = new System.Drawing.Point(0, 180);
+            this.sidebarMid.Margin = new System.Windows.Forms.Padding(4);
             this.sidebarMid.Name = "sidebarMid";
-            this.sidebarMid.Padding = new System.Windows.Forms.Padding(5);
-            this.sidebarMid.Size = new System.Drawing.Size(245, 570);
+            this.sidebarMid.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.sidebarMid.Size = new System.Drawing.Size(327, 705);
             this.sidebarMid.TabIndex = 1;
             // 
             // sidebarTop
             // 
             this.sidebarTop.BackColor = System.Drawing.Color.White;
+            this.sidebarTop.Controls.Add(this.btnToggleMenu);
             this.sidebarTop.Controls.Add(this.pictureBox1);
             this.sidebarTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.sidebarTop.Location = new System.Drawing.Point(0, 0);
+            this.sidebarTop.Margin = new System.Windows.Forms.Padding(4);
             this.sidebarTop.Name = "sidebarTop";
-            this.sidebarTop.Padding = new System.Windows.Forms.Padding(20);
-            this.sidebarTop.Size = new System.Drawing.Size(245, 149);
+            this.sidebarTop.Padding = new System.Windows.Forms.Padding(27, 25, 27, 25);
+            this.sidebarTop.Size = new System.Drawing.Size(327, 180);
             this.sidebarTop.TabIndex = 0;
+            // 
+            // btnToggleMenu
+            // 
+            this.btnToggleMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnToggleMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnToggleMenu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnToggleMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnToggleMenu.Image = global::ZiTyLot.Properties.Resources.Icon_24x24px_Scanning_Active;
+            this.btnToggleMenu.ImageOffset = new System.Drawing.Point(10, 8);
+            this.btnToggleMenu.Location = new System.Drawing.Point(259, 25);
+            this.btnToggleMenu.MaximumSize = new System.Drawing.Size(41, 38);
+            this.btnToggleMenu.MinimumSize = new System.Drawing.Size(41, 38);
+            this.btnToggleMenu.Name = "btnToggleMenu";
+            this.btnToggleMenu.Padding = new System.Windows.Forms.Padding(2);
+            this.btnToggleMenu.Size = new System.Drawing.Size(41, 38);
+            this.btnToggleMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnToggleMenu.TabIndex = 0;
+            this.btnToggleMenu.TabStop = false;
+            this.btnToggleMenu.Text = null;
+            this.btnToggleMenu.Click += new System.EventHandler(this.btnToggleMenu_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pictureBox1.Image = global::ZiTyLot.Properties.Resources.ZityLot_Logo_120x60px;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 20);
+            this.pictureBox1.Location = new System.Drawing.Point(27, 63);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(205, 109);
+            this.pictureBox1.Size = new System.Drawing.Size(273, 92);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -223,79 +246,48 @@
             // 
             this.pnlCardLayout.BackColor = System.Drawing.Color.RosyBrown;
             this.pnlCardLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCardLayout.Location = new System.Drawing.Point(290, 0);
+            this.pnlCardLayout.Location = new System.Drawing.Point(327, 0);
+            this.pnlCardLayout.Margin = new System.Windows.Forms.Padding(4);
             this.pnlCardLayout.Name = "pnlCardLayout";
-            this.pnlCardLayout.Size = new System.Drawing.Size(1060, 729);
+            this.pnlCardLayout.Size = new System.Drawing.Size(1473, 897);
             this.pnlCardLayout.TabIndex = 1;
             // 
             // settingMenu
             // 
             this.settingMenu.BackColor = System.Drawing.Color.WhiteSmoke;
             this.settingMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.settingMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.settingMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logOutMenuItem,
             this.changePasswordMenuItem});
             this.settingMenu.Name = "settingMenu";
             this.settingMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.settingMenu.ShowImageMargin = false;
-            this.settingMenu.Size = new System.Drawing.Size(182, 52);
+            this.settingMenu.Size = new System.Drawing.Size(219, 64);
             // 
             // logOutMenuItem
             // 
             this.logOutMenuItem.BackColor = System.Drawing.Color.White;
             this.logOutMenuItem.Name = "logOutMenuItem";
-            this.logOutMenuItem.Size = new System.Drawing.Size(181, 24);
+            this.logOutMenuItem.Size = new System.Drawing.Size(218, 30);
             this.logOutMenuItem.Text = "Log out";
             // 
             // changePasswordMenuItem
             // 
             this.changePasswordMenuItem.BackColor = System.Drawing.Color.White;
             this.changePasswordMenuItem.Name = "changePasswordMenuItem";
-            this.changePasswordMenuItem.Size = new System.Drawing.Size(181, 24);
+            this.changePasswordMenuItem.Size = new System.Drawing.Size(218, 30);
             this.changePasswordMenuItem.Text = "Change password";
-            // 
-            // btnToggleMenu
-            // 
-            this.btnToggleMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnToggleMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnToggleMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnToggleMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnToggleMenu.Image = global::ZiTyLot.Properties.Resources.Icon_24x24px_Scanning_Active;
-            this.btnToggleMenu.ImageOffset = new System.Drawing.Point(10, 8);
-            this.btnToggleMenu.Location = new System.Drawing.Point(0, 0);
-            this.btnToggleMenu.Name = "btnToggleMenu";
-            this.btnToggleMenu.Size = new System.Drawing.Size(45, 41);
-            this.btnToggleMenu.TabIndex = 0;
-            this.btnToggleMenu.TabStop = false;
-            this.btnToggleMenu.Click += new System.EventHandler(this.btnToggleMenu_Click);
-            // 
-            // pnlMenu
-            // 
-            this.pnlMenu.Controls.Add(this.btnToggleMenu);
-            this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlMenu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.pnlMenu.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.pnlMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlMenu.Location = new System.Drawing.Point(245, 0);
-            this.pnlMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pnlMenu.MinimumSize = new System.Drawing.Size(1, 1);
-            this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Radius = 0;
-            this.pnlMenu.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.pnlMenu.Size = new System.Drawing.Size(45, 729);
-            this.pnlMenu.TabIndex = 0;
-            this.pnlMenu.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.ClientSize = new System.Drawing.Size(1800, 897);
             this.Controls.Add(this.pnlCardLayout);
-            this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.sidebar);
-            this.MinimumSize = new System.Drawing.Size(1366, 768);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1815, 934);
             this.Name = "Home";
             this.Text = "Zitylot";
             this.Load += new System.EventHandler(this.Home_Load);
@@ -305,10 +297,9 @@
             this.uiPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.sidebarTop.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnToggleMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.settingMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnToggleMenu)).EndInit();
-            this.pnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -331,6 +322,5 @@
         private System.Windows.Forms.ToolStripMenuItem changePasswordMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Sunny.UI.UIImageButton btnToggleMenu;
-        private Sunny.UI.UIPanel pnlMenu;
     }
 }
