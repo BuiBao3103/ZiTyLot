@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.ENTITY;
@@ -20,6 +21,7 @@ namespace ZiTyLot.GUI.Screens
         public ResidentControl()
         {
             InitializeComponent();
+            cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
             page = residentBUS.GetAllPagination(pageable, filters);
             tbCurrentpage.Text = "1";
@@ -128,7 +130,7 @@ namespace ZiTyLot.GUI.Screens
             }
         }
 
-        private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbNumberofitem_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedValue = cbNumberofitem.SelectedItem.ToString();
             int pageSize = int.Parse(selectedValue.Split(' ')[0]);
@@ -152,7 +154,7 @@ namespace ZiTyLot.GUI.Screens
             tbCurrentpage.Text = pageNumber.ToString();
         }
 
-        private void previousBtn_Click(object sender, EventArgs e)
+        private void btnPrevious_Click(object sender, EventArgs e)
         {
             int currentPage = int.Parse(tbCurrentpage.Text);
             if (currentPage > 1)
@@ -161,7 +163,7 @@ namespace ZiTyLot.GUI.Screens
             }
         }
 
-        private void nextBtn_Click(object sender, EventArgs e)
+        private void btnNext_Click(object sender, EventArgs e)
         {
             int currentPage = int.Parse(tbCurrentpage.Text);
             if (currentPage < page.TotalPages)
@@ -174,6 +176,6 @@ namespace ZiTyLot.GUI.Screens
         {
             ResidentDetailForm residentDetailForm = new ResidentDetailForm();
             residentDetailForm.Show();
-        }
+        }   
     }
 }
