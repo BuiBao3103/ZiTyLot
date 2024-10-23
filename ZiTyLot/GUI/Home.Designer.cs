@@ -11,14 +11,14 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing && (components != null))
+        //    {
+        //        components.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
 
         #region Windows Form Designer generated code
 
@@ -43,6 +43,8 @@
             this.settingMenu = new Sunny.UI.UIContextMenuStrip();
             this.logOutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnToggleMenu = new Sunny.UI.UIImageButton();
+            this.pnlMenu = new Sunny.UI.UIPanel();
             this.sidebar.SuspendLayout();
             this.sidebarBottom.SuspendLayout();
             this.accountPnl.SuspendLayout();
@@ -51,6 +53,8 @@
             this.sidebarTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.settingMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnToggleMenu)).BeginInit();
+            this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidebar
@@ -217,11 +221,11 @@
             // 
             // pnlCardLayout
             // 
-            this.pnlCardLayout.BackColor = System.Drawing.Color.Transparent;
+            this.pnlCardLayout.BackColor = System.Drawing.Color.RosyBrown;
             this.pnlCardLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCardLayout.Location = new System.Drawing.Point(245, 0);
+            this.pnlCardLayout.Location = new System.Drawing.Point(290, 0);
             this.pnlCardLayout.Name = "pnlCardLayout";
-            this.pnlCardLayout.Size = new System.Drawing.Size(1105, 729);
+            this.pnlCardLayout.Size = new System.Drawing.Size(1060, 729);
             this.pnlCardLayout.TabIndex = 1;
             // 
             // settingMenu
@@ -250,12 +254,46 @@
             this.changePasswordMenuItem.Size = new System.Drawing.Size(181, 24);
             this.changePasswordMenuItem.Text = "Change password";
             // 
+            // btnToggleMenu
+            // 
+            this.btnToggleMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnToggleMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnToggleMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnToggleMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnToggleMenu.Image = global::ZiTyLot.Properties.Resources.Icon_24x24px_Scanning_Active;
+            this.btnToggleMenu.ImageOffset = new System.Drawing.Point(10, 8);
+            this.btnToggleMenu.Location = new System.Drawing.Point(0, 0);
+            this.btnToggleMenu.Name = "btnToggleMenu";
+            this.btnToggleMenu.Size = new System.Drawing.Size(45, 41);
+            this.btnToggleMenu.TabIndex = 0;
+            this.btnToggleMenu.TabStop = false;
+            this.btnToggleMenu.Click += new System.EventHandler(this.btnToggleMenu_Click);
+            // 
+            // pnlMenu
+            // 
+            this.pnlMenu.Controls.Add(this.btnToggleMenu);
+            this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlMenu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.pnlMenu.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.pnlMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.pnlMenu.Location = new System.Drawing.Point(245, 0);
+            this.pnlMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlMenu.MinimumSize = new System.Drawing.Size(1, 1);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Radius = 0;
+            this.pnlMenu.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.pnlMenu.Size = new System.Drawing.Size(45, 729);
+            this.pnlMenu.TabIndex = 0;
+            this.pnlMenu.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.pnlCardLayout);
+            this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.sidebar);
             this.MinimumSize = new System.Drawing.Size(1366, 768);
             this.Name = "Home";
@@ -269,6 +307,8 @@
             this.sidebarTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.settingMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnToggleMenu)).EndInit();
+            this.pnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -277,7 +317,6 @@
 
         private System.Windows.Forms.Panel sidebar;
         private System.Windows.Forms.Panel sidebarTop;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel sidebarMid;
         private System.Windows.Forms.Panel pnlCardLayout;
         private Sunny.UI.UIPanel sidebarBottom;
@@ -290,5 +329,8 @@
         private Sunny.UI.UIContextMenuStrip settingMenu;
         private System.Windows.Forms.ToolStripMenuItem logOutMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePasswordMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Sunny.UI.UIImageButton btnToggleMenu;
+        private Sunny.UI.UIPanel pnlMenu;
     }
 }

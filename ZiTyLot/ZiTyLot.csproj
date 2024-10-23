@@ -369,6 +369,7 @@
       <DependentUpon>ResidentControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\Arduino.cs" />
+    <Compile Include="Helper\Debouncer.cs" />
     <Compile Include="Helper\ExcelHelper.cs" />
     <Compile Include="Helper\FilterCondition.cs" />
     <Compile Include="Helper\Page.cs" />

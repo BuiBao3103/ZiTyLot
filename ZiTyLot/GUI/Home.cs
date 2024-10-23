@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Home.cs
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -6,27 +7,53 @@ using System.Linq;
 using System.Windows.Forms;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens;
-using ZiTyLot.GUI.Screens.BillScr;
 
 namespace ZiTyLot.GUI
 {
     public partial class Home : Form
     {
+        private const int widthBar = 245;
+        private const int animationDurationInit = 300;
+        private const int stepInit = 15;
+        private bool isAnimating = false;
+        private BufferedGraphics bufferGraphics;
+        private BufferedGraphicsContext graphicsContext;
+        private Dictionary<string, UserControl> panelMapping;
+        private Dictionary<string, Image> menuIcon;
+        private Dictionary<string, Image> menuIconActive;
+
         public Home()
         {
             InitializeComponent();
-            this.CenterToScreen();
-            pictureBox2.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pictureBox2.Width, pictureBox2.Height, 10,10));
-
+            InitializeGraphics();
+            InitializeFormSettings();
+            InitializeMenuIcons();
         }
 
-
-        private void AddMenuToSidebar()
+        private void InitializeGraphics()
         {
-            // Create a dictionary to map buttons to their respective panels
-            var panelMapping = new Dictionary<string, UserControl>
-            { 
-                //{ "EmployeeManagement", new Panel2() },
+            this.DoubleBuffered = true;
+            SetStyle(ControlStyles.OptimizedDoubleBuffer |
+                    ControlStyles.AllPaintingInWmPaint |
+                    ControlStyles.UserPaint, true);
+
+            graphicsContext = BufferedGraphicsManager.Current;
+            bufferGraphics = graphicsContext.Allocate(this.CreateGraphics(),
+                this.DisplayRectangle);
+        }
+
+        private void InitializeFormSettings()
+        {
+            this.CenterToScreen();
+            pictureBox2.Region = Region.FromHrgn(
+                RoundedBorder.CreateRoundRectRgn(0, 0, pictureBox2.Width,
+                pictureBox2.Height, 10, 10));
+        }
+
+        private void InitializeMenuIcons()
+        {
+            panelMapping = new Dictionary<string, UserControl>
+            {
                 { "AccountManagement", new AccountControl() },
                 { "BillManagement", new BillControl() },
                 { "ResidentManagement", new ResidentControl() },
@@ -36,14 +63,49 @@ namespace ZiTyLot.GUI
                 { "PriceManagement", new PriceControl() },
                 { "AreaManagement", new AreaControl() },
                 { "Scanning", new ScanningControl() },
-                //{ "BillDetails", new BillDetailControl()},
-                //{ "Setting", new SettingScreen() },
             };
 
-            // Array of menu items with names and texts
+            menuIcon = new Dictionary<string, Image>
+            {
+                { "PriceManagement", ZiTyLot.Properties.Resources.Icon_24x24px_Price },
+                { "RoleManagement", ZiTyLot.Properties.Resources.Icon_24x24px_Role },
+                { "AccountManagement", ZiTyLot.Properties.Resources.Icon_24x24px_Account },
+                { "BillManagement", ZiTyLot.Properties.Resources.Icon_24x24px_Bill },
+                { "CardManagement", ZiTyLot.Properties.Resources.Icon_24x24px_Card },
+                { "ResidentManagement", ZiTyLot.Properties.Resources.Icon_24x24px_Resident },
+                { "AreaManagement", ZiTyLot.Properties.Resources.Icon_24x24px_Area },
+                { "SessionManagement", ZiTyLot.Properties.Resources.Icon_24x24px_Session },
+                { "Scanning", ZiTyLot.Properties.Resources.Icon_24x24px_Scanning },
+            };
+
+            menuIconActive = new Dictionary<string, Image>
+            {
+                { "PriceManagement", ZiTyLot.Properties.Resources.Icon_24x24px_Price_Active },
+                { "RoleManagement", ZiTyLot.Properties.Resources.Icon_24x24px_Role_Active },
+                { "AccountManagement", ZiTyLot.Properties.Resources.Icon_24x24px_Account_Active },
+                { "BillManagement", ZiTyLot.Properties.Resources.Icon_24x24px_Bill_Active },
+                { "CardManagement", ZiTyLot.Properties.Resources.Icon_24x24px_Card_Active },
+                { "ResidentManagement", ZiTyLot.Properties.Resources.Icon_24x24px_Resident_Active },
+                { "AreaManagement", ZiTyLot.Properties.Resources.Icon_24x24px_Area_Active },
+                { "SessionManagement", ZiTyLot.Properties.Resources.Icon_24x24px_Session_Active },
+                { "Scanning", ZiTyLot.Properties.Resources.Icon_24x24px_Scanning_Active },
+            };
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
+        }
+
+        private void AddMenuToSidebar()
+        {
             var menuItems = new[]
             {
-                //new { Name = "Setting", Text = "Setting"},
                 new { Name = "PriceManagement", Text = "Price" },
                 new { Name = "RoleManagement", Text = "Role" },
                 new { Name = "AccountManagement", Text = "Account" },
@@ -53,103 +115,207 @@ namespace ZiTyLot.GUI
                 new { Name = "AreaManagement", Text = "Area" },
                 new { Name = "SessionManagement", Text = "Session" },
                 new { Name = "Scanning", Text = "Scanning" },
-                //new { Name = "BillDetails", Text = "Bill Details" },
-                //new { Name = "Dashboard", Text = "Dashboard" },
-                //new { Name = "Home", Text = "Example" },
-                //new { Name = "EmployeeManagement", Text = "Panel2" },
-            };
-            var menuIcon = new[]
-            {   
-                //new { Name = "Home", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Price},
-                new { Name = "PriceManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Price},
-                new { Name = "RoleManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Role},
-                new { Name = "AccountManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Account},
-                new { Name = "BillManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Bill},
-                new { Name = "CardManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Card},
-                new { Name = "ResidentManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Resident},
-                new { Name = "AreaManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Area},
-                new { Name = "SessionManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Session},
-                new { Name = "Scanning", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Scanning},
-                //new { Name = "BillDetails", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Scanning},
-
-                //new { Name = "Setting", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Setting},
             };
 
-            var menuIconActive = new[]
-            {
-                //new { Name = "Home", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Price_Active},
-                new { Name = "PriceManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Price_Active},
-                new { Name = "RoleManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Role_Active},
-                new { Name = "AccountManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Account_Active},
-                new { Name = "BillManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Bill_Active},
-                new { Name = "CardManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Card_Active},
-                new { Name = "ResidentManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Resident_Active},
-                new { Name = "AreaManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Area_Active},
-                new { Name = "SessionManagement", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Session_Active},
-                new { Name = "Scanning", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Scanning_Active},
-                //new { Name = "BillDetails", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Scanning_Active},
-
-                //new { Name = "Setting", Icon = ZiTyLot.Properties.Resources.Icon_24x24px_Setting_Active},
-            };
-
-            // Iterate over the menu items
             foreach (var item in menuItems)
             {
-                Button button = new Button();
-                button.Name = item.Name;
-                button.Text = item.Text.ToString();
-                button.FlatStyle = FlatStyle.Flat;
-                button.FlatAppearance.BorderSize = 0;
-                button.Size = new Size(sidebar.Width - 10, 45);
-                button.Image = menuIcon.Where(x => x.Name == item.Name).FirstOrDefault().Icon;
-                button.BackColor = Color.White;
-                button.ForeColor = Color.Black;
-                button.Dock = DockStyle.Top;
-                button.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, sidebar.Width - 10, 45, 14, 14));
-                button.Font = new Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-                // Image on the left, text in the middle
-                button.ImageAlign = ContentAlignment.MiddleLeft;
-                button.TextAlign = ContentAlignment.MiddleCenter; // Change this to MiddleLeft for better control
-
-                // Use Padding to move text and adjust space between image and text
-                button.Padding = new Padding(20, 0, 0, 0); // Move text away from the image with left padding
-
-                // Attach click event
-                button.Click += (sender, e) =>
-                {
-                    LoadForm(panelMapping[item.Name]);
-                    button.ForeColor = Color.White;
-                    button.BackColor = Color.FromArgb(240, 118, 54);
-                    button.Image = menuIconActive.Where(x => x.Name == button.Name).FirstOrDefault().Icon;
-                    foreach (Button btn in sidebarMid.Controls)
-                    {
-                        if (btn != button)
-                        {
-                            btn.BackColor = Color.White;
-                            btn.ForeColor = Color.Black;
-                            btn.Image = menuIcon.Where(x => x.Name == btn.Name).FirstOrDefault()?.Icon;
-                        }
-                    }
-                };
-                // Add the button to the sidebar
-                sidebarMid.Controls.Add(button);
+                CreateMenuButton(item.Name, item.Text);
             }
-
         }
+
+        private void CreateMenuButton(string name, string text)
+        {
+            Button button = new Button
+            {
+                Name = name,
+                Text = text,
+                FlatStyle = FlatStyle.Flat,
+                Size = new Size(sidebar.Width - 10, 45),
+                Image = menuIcon[name],
+                BackColor = Color.White,
+                ForeColor = Color.Black,
+                Dock = DockStyle.Top,
+                Font = new Font("Helvetica", 12F, FontStyle.Bold),
+                ImageAlign = ContentAlignment.MiddleLeft,
+                TextAlign = ContentAlignment.MiddleCenter,
+                Padding = new Padding(20, 0, 0, 0)
+            };
+
+            button.FlatAppearance.BorderSize = 0;
+            button.Region = Region.FromHrgn(
+                RoundedBorder.CreateRoundRectRgn(0, 0, sidebar.Width - 10, 45, 14, 14));
+
+            button.Click += (sender, e) => MenuButton_Click(button);
+            sidebarMid.Controls.Add(button);
+        }
+
+        private void MenuButton_Click(Button clickedButton)
+        {
+            if (panelMapping.TryGetValue(clickedButton.Name, out UserControl control))
+            {
+                LoadForm(control);
+                UpdateButtonStyles(clickedButton);
+            }
+        }
+
+        private void UpdateButtonStyles(Button activeButton)
+        {
+            foreach (Button btn in sidebarMid.Controls.OfType<Button>())
+            {
+                if (btn == activeButton)
+                {
+                    btn.ForeColor = Color.White;
+                    btn.BackColor = Color.FromArgb(240, 118, 54);
+                    btn.Image = menuIconActive[btn.Name];
+                }
+                else
+                {
+                    btn.BackColor = Color.White;
+                    btn.ForeColor = Color.Black;
+                    btn.Image = menuIcon[btn.Name];
+                }
+            }
+        }
+
         public void LoadForm(UserControl userControl)
         {
-            if (this.pnlCardLayout.Controls.Count > 0)
+            pnlCardLayout.SuspendLayout();
+            if (pnlCardLayout.Controls.Count > 0)
             {
-                this.pnlCardLayout.Controls.RemoveAt(0); // Remove the existing control
+                pnlCardLayout.Controls.RemoveAt(0);
             }
 
-            userControl.Dock = DockStyle.Fill; // Set the UserControl to fill the panel
-            this.pnlCardLayout.Controls.Add(userControl); // Add the new UserControl to the panel
-            this.pnlCardLayout.Tag = userControl; // Optionally set the Tag property for reference
-            userControl.BringToFront(); // Bring the control to the front
+            userControl.Dock = DockStyle.Fill;
+            pnlCardLayout.Controls.Add(userControl);
+            pnlCardLayout.Tag = userControl;
+            userControl.BringToFront();
+            pnlCardLayout.ResumeLayout(true);
         }
 
+        public void OpenMenu()
+        {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            // Tạm ẩn panel bên phải trong lúc thực hiện animation
+            pnlCardLayout.Visible = false;
+
+            int initialWidth = sidebar.Width;
+            int targetWidth = widthBar;
+            int animationDuration = animationDurationInit;
+            int steps = 5;
+            int stepDelay = animationDuration / steps;
+            float stepSize = (targetWidth - initialWidth) / (float)steps;
+
+            Timer timer = new Timer();
+            timer.Interval = stepDelay;
+            int currentStep = 0;
+
+            timer.Tick += (sender, e) =>
+            {
+                currentStep++;
+                if (currentStep >= steps)
+                {
+                    sidebar.Width = targetWidth;
+                    timer.Stop();
+                    isAnimating = false;
+                    this.Refresh(); // Chỉ refresh phần sidebar
+
+                    // Hiện lại panel bên phải sau khi animation hoàn tất
+                    pnlCardLayout.Visible = true;
+                }
+                else
+                {
+                    int newWidth = (int)(initialWidth + (stepSize * currentStep));
+                    sidebar.SuspendLayout();
+                    sidebar.Width = newWidth;
+                    sidebar.ResumeLayout(false);
+                }
+
+                // Chỉ vẽ lại sidebar
+                sidebar.Invalidate();
+            };
+
+            timer.Start();
+        }
+
+        public void CloseMenu()
+        {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            // Tạm ẩn panel bên phải trong lúc thực hiện animation
+            pnlCardLayout.Visible = false;
+
+            int initialWidth = sidebar.Width;
+            int targetWidth = 0;
+            int animationDuration = animationDurationInit;
+            int steps = stepInit;
+            int stepDelay = animationDuration / steps;
+            float stepSize = (targetWidth - initialWidth) / (float)steps;
+
+            Timer timer = new Timer();
+            timer.Interval = stepDelay;
+            int currentStep = 0;
+
+            timer.Tick += (sender, e) =>
+            {
+                currentStep++;
+                if (currentStep >= steps)
+                {
+                    sidebar.Width = targetWidth;
+                    timer.Stop();
+                    isAnimating = false;
+                    this.Refresh(); // Chỉ refresh phần sidebar
+
+                    // Hiện lại panel bên phải sau khi animation hoàn tất
+                    pnlCardLayout.Visible = true;
+                }
+                else
+                {
+                    int newWidth = (int)(initialWidth + (stepSize * currentStep));
+                    sidebar.SuspendLayout();
+                    sidebar.Width = newWidth;
+                    sidebar.ResumeLayout(false);
+                }
+
+                // Chỉ vẽ lại sidebar
+                sidebar.Invalidate();
+            };
+
+            timer.Start();
+        }
+
+        private void btnToggleMenu_Click(object sender, EventArgs e)
+        {
+            if (isAnimating) return;
+            if (sidebar.Width == 0)
+            {
+                OpenMenu();
+            }
+            else
+            {
+                CloseMenu();
+            }
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            if (isAnimating)
+            {
+                using (BufferedGraphics bg = graphicsContext.Allocate(
+                    e.Graphics, this.DisplayRectangle))
+                {
+                    bg.Graphics.Clear(this.BackColor);
+                    base.OnPaint(new PaintEventArgs(bg.Graphics, e.ClipRectangle));
+                    bg.Render(e.Graphics);
+                }
+            }
+            else
+            {
+                base.OnPaint(e);
+            }
+        }
 
         private void Home_Load(object sender, EventArgs e)
         {
@@ -157,15 +323,29 @@ namespace ZiTyLot.GUI
             LoadForm(new ScanningControl());
             var scanningButton = sidebarMid.Controls.OfType<Button>()
                                     .FirstOrDefault(btn => btn.Name == "Scanning");
-            if (scanningButton != null)
-            {
-                scanningButton.PerformClick();  // Simulate button click
-            }
+            scanningButton?.PerformClick();
         }
 
         private void settingBtn_Click(object sender, EventArgs e)
         {
-           settingMenu.Show(settingBtn, new Point(35, settingBtn.Height-55));
+            settingMenu.Show(settingBtn, new Point(35, settingBtn.Height - 55));
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (bufferGraphics != null)
+                {
+                    bufferGraphics.Dispose();
+                    bufferGraphics = null;
+                }
+                if (components != null)
+                {
+                    components.Dispose();
+                }
+            }
+            base.Dispose(disposing);
         }
     }
 }
