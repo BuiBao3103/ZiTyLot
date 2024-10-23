@@ -6,17 +6,17 @@ using System.Linq;
 using System.Windows.Forms;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens;
-using ZiTyLot.GUI.Screens.BillScr;
 
 namespace ZiTyLot.GUI
 {
     public partial class Home : Form
     {
+        private const int widthBar = 245;
         public Home()
         {
             InitializeComponent();
             this.CenterToScreen();
-            pictureBox2.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pictureBox2.Width, pictureBox2.Height, 10,10));
+            pictureBox2.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pictureBox2.Width, pictureBox2.Height, 10, 10));
 
         }
 
@@ -165,7 +165,67 @@ namespace ZiTyLot.GUI
 
         private void settingBtn_Click(object sender, EventArgs e)
         {
-           settingMenu.Show(settingBtn, new Point(35, settingBtn.Height-55));
+            settingMenu.Show(settingBtn, new Point(35, settingBtn.Height - 55));
+        }
+        public void OpenMenu()
+        {
+            int initialWidth = sidebar.Width;
+            int steps = 100 / 10; // 10 ms interval between each step
+            int stepWidth = widthBar / steps;
+
+            Timer timer = new Timer();
+            timer.Interval = 20;
+            int currentWidth = initialWidth;
+
+            timer.Tick += (sender, e) =>
+        {
+            currentWidth += stepWidth;
+            if (currentWidth >= widthBar)
+            {
+                currentWidth = widthBar;
+                timer.Stop();
+            }
+            sidebar.Width = currentWidth;
+            sidebar.Invalidate(); // To refresh the UI
+        };
+
+            timer.Start();
+        }
+        public void CloseMenu()
+        {
+            int initialWidth = sidebar.Width;
+            int steps = 100 / 10; // 10 ms interval between each step
+            int stepWidth = widthBar / steps;
+
+            Timer timer = new Timer();
+            timer.Interval = 20;
+            int currentWidth = initialWidth;
+
+            timer.Tick += (sender, e) =>
+            {
+                currentWidth -= stepWidth;
+                if (currentWidth <= 0)
+                {
+                    currentWidth = 0;
+                    timer.Stop();
+                }
+                sidebar.Width = currentWidth;
+                sidebar.Invalidate(); // To refresh the UI
+            };
+
+            timer.Start();
+        }
+
+        private void btnToggleMenu_Click(object sender, EventArgs e)
+        {
+            if (sidebar.Width == 0)
+            {
+                OpenMenu();
+            }
+            else
+            {
+                CloseMenu();
+            }
         }
     }
 }

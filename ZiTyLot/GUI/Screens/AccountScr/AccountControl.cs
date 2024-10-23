@@ -8,11 +8,13 @@ using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.Helper;
 using ZiTyLot.GUI.Screens.AccountScr;
 using System.Drawing.Text;
+using System.Threading.Tasks;
 
 namespace ZiTyLot.GUI.Screens
 {
     public partial class AccountControl : UserControl
     {
+        Debouncer _debouncer = new Debouncer();
         AccountBUS accountBUS = new AccountBUS();
         Pageable pageable = new Pageable();
         List<FilterCondition> filters = new List<FilterCondition>();
@@ -147,7 +149,8 @@ namespace ZiTyLot.GUI.Screens
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            String inputCboxSelected = cbFilter.GetItemText(cbFilter.SelectedItem);
+            Console.WriteLine(inputCboxSelected);
             int index = cbFilter.SelectedIndex;
             switch (index)
             {
@@ -161,10 +164,41 @@ namespace ZiTyLot.GUI.Screens
                     tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 90);
                     break;
                 default:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 100);
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 120);
                     break;
             }
 
+        }
+
+        private async void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            String inputCboxSelected = cbFilter.GetItemText(cbFilter.SelectedItem);
+            // Use the debouncer with a 0.5-second delay
+            await _debouncer.DebounceAsync(async () =>
+            {
+                if (tbSearch.Text.Trim() == "")
+                {
+                    filters = new List<FilterCondition>();
+                }
+                else
+                {
+                    if (inputCboxSelected == "Full name")
+                    {
+                        filters = new List<FilterCondition> { new FilterCondition("Full_name", ComparisonOperator.Like, tbSearch.Text) };
+                    }
+                    else if (inputCboxSelected == "Username")
+                    {
+                        filters = new List<FilterCondition> { new FilterCondition("Username", ComparisonOperator.Like, tbSearch.Text) };
+                    }
+                    else if (inputCboxSelected == "ID")
+                    {
+                        filters = new List<FilterCondition> { new FilterCondition("Id", ComparisonOperator.Equals, tbSearch.Text) };
+                    }
+                }
+
+                LoadPageToTable("1");
+                // This will only trigger if the user stops typing for at least 0.5 second
+            }, 500); // Debounce delay of 500 ms (0.5 second)
         }
     }
 }
