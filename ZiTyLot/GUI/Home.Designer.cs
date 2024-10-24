@@ -63,10 +63,9 @@
             this.sidebar.Controls.Add(this.sidebarTop);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
-            this.sidebar.Margin = new System.Windows.Forms.Padding(4);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Padding = new System.Windows.Forms.Padding(0, 0, 0, 12);
-            this.sidebar.Size = new System.Drawing.Size(327, 897);
+            this.sidebar.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.sidebar.Size = new System.Drawing.Size(245, 729);
             this.sidebar.TabIndex = 0;
             // 
             // sidebarBottom
@@ -75,13 +74,13 @@
             this.sidebarBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.sidebarBottom.FillColor = System.Drawing.Color.White;
             this.sidebarBottom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.sidebarBottom.Location = new System.Drawing.Point(0, 811);
-            this.sidebarBottom.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.sidebarBottom.Location = new System.Drawing.Point(0, 659);
+            this.sidebarBottom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sidebarBottom.MinimumSize = new System.Drawing.Size(1, 1);
             this.sidebarBottom.Name = "sidebarBottom";
-            this.sidebarBottom.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.sidebarBottom.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.sidebarBottom.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.sidebarBottom.Size = new System.Drawing.Size(327, 74);
+            this.sidebarBottom.Size = new System.Drawing.Size(245, 60);
             this.sidebarBottom.TabIndex = 0;
             this.sidebarBottom.Text = null;
             this.sidebarBottom.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -94,7 +93,7 @@
             this.accountPnl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.accountPnl.FillColor = System.Drawing.Color.White;
             this.accountPnl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.accountPnl.Location = new System.Drawing.Point(7, 6);
+            this.accountPnl.Location = new System.Drawing.Point(5, 5);
             this.accountPnl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.accountPnl.MinimumSize = new System.Drawing.Size(1, 1);
             this.accountPnl.Name = "accountPnl";
@@ -102,7 +101,7 @@
             this.accountPnl.Radius = 10;
             this.accountPnl.RectColor = System.Drawing.SystemColors.ControlLight;
             this.accountPnl.RectSize = 2;
-            this.accountPnl.Size = new System.Drawing.Size(313, 62);
+            this.accountPnl.Size = new System.Drawing.Size(235, 50);
             this.accountPnl.TabIndex = 0;
             this.accountPnl.Text = null;
             this.accountPnl.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -122,7 +121,7 @@
             this.uiPanel1.Radius = 0;
             this.uiPanel1.RectColor = System.Drawing.Color.White;
             this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel1.Size = new System.Drawing.Size(212, 52);
+            this.uiPanel1.Size = new System.Drawing.Size(134, 40);
             this.uiPanel1.TabIndex = 6;
             this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -134,7 +133,7 @@
             this.roleLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.roleLb.Location = new System.Drawing.Point(5, 23);
             this.roleLb.Name = "roleLb";
-            this.roleLb.Size = new System.Drawing.Size(202, 29);
+            this.roleLb.Size = new System.Drawing.Size(124, 17);
             this.roleLb.TabIndex = 1;
             this.roleLb.Text = "Administrator";
             // 
@@ -145,7 +144,7 @@
             this.nameLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.nameLb.Location = new System.Drawing.Point(5, 0);
             this.nameLb.Name = "nameLb";
-            this.nameLb.Size = new System.Drawing.Size(202, 23);
+            this.nameLb.Size = new System.Drawing.Size(124, 23);
             this.nameLb.TabIndex = 0;
             this.nameLb.Text = "Admin";
             // 
@@ -160,7 +159,7 @@
             this.settingBtn.FillSelectedColor = System.Drawing.Color.White;
             this.settingBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.settingBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.settingBtn.Location = new System.Drawing.Point(260, 5);
+            this.settingBtn.Location = new System.Drawing.Point(182, 5);
             this.settingBtn.MinimumSize = new System.Drawing.Size(1, 1);
             this.settingBtn.Name = "settingBtn";
             this.settingBtn.RectColor = System.Drawing.Color.White;
@@ -168,7 +167,7 @@
             this.settingBtn.RectPressColor = System.Drawing.Color.White;
             this.settingBtn.RectSelectedColor = System.Drawing.Color.White;
             this.settingBtn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.settingBtn.Size = new System.Drawing.Size(43, 52);
+            this.settingBtn.Size = new System.Drawing.Size(43, 40);
             this.settingBtn.TabIndex = 5;
             this.settingBtn.Text = "⋮";
             this.settingBtn.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -181,7 +180,7 @@
             this.pictureBox2.Image = global::ZiTyLot.Properties.Resources.Icon_24x24px_Account_Active;
             this.pictureBox2.Location = new System.Drawing.Point(8, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 52);
+            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -190,11 +189,10 @@
             // 
             this.sidebarMid.BackColor = System.Drawing.Color.White;
             this.sidebarMid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sidebarMid.Location = new System.Drawing.Point(0, 180);
-            this.sidebarMid.Margin = new System.Windows.Forms.Padding(4);
+            this.sidebarMid.Location = new System.Drawing.Point(0, 146);
             this.sidebarMid.Name = "sidebarMid";
-            this.sidebarMid.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.sidebarMid.Size = new System.Drawing.Size(327, 705);
+            this.sidebarMid.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.sidebarMid.Size = new System.Drawing.Size(245, 573);
             this.sidebarMid.TabIndex = 1;
             // 
             // sidebarTop
@@ -204,10 +202,9 @@
             this.sidebarTop.Controls.Add(this.pictureBox1);
             this.sidebarTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.sidebarTop.Location = new System.Drawing.Point(0, 0);
-            this.sidebarTop.Margin = new System.Windows.Forms.Padding(4);
             this.sidebarTop.Name = "sidebarTop";
-            this.sidebarTop.Padding = new System.Windows.Forms.Padding(27, 25, 27, 25);
-            this.sidebarTop.Size = new System.Drawing.Size(327, 180);
+            this.sidebarTop.Padding = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.sidebarTop.Size = new System.Drawing.Size(245, 146);
             this.sidebarTop.TabIndex = 0;
             // 
             // btnToggleMenu
@@ -218,12 +215,13 @@
             this.btnToggleMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnToggleMenu.Image = global::ZiTyLot.Properties.Resources.Icon_24x24px_Scanning_Active;
             this.btnToggleMenu.ImageOffset = new System.Drawing.Point(10, 8);
-            this.btnToggleMenu.Location = new System.Drawing.Point(259, 25);
-            this.btnToggleMenu.MaximumSize = new System.Drawing.Size(41, 38);
-            this.btnToggleMenu.MinimumSize = new System.Drawing.Size(41, 38);
+            this.btnToggleMenu.Location = new System.Drawing.Point(194, 20);
+            this.btnToggleMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnToggleMenu.MaximumSize = new System.Drawing.Size(31, 31);
+            this.btnToggleMenu.MinimumSize = new System.Drawing.Size(31, 31);
             this.btnToggleMenu.Name = "btnToggleMenu";
             this.btnToggleMenu.Padding = new System.Windows.Forms.Padding(2);
-            this.btnToggleMenu.Size = new System.Drawing.Size(41, 38);
+            this.btnToggleMenu.Size = new System.Drawing.Size(31, 31);
             this.btnToggleMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnToggleMenu.TabIndex = 0;
             this.btnToggleMenu.TabStop = false;
@@ -234,22 +232,20 @@
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pictureBox1.Image = global::ZiTyLot.Properties.Resources.ZityLot_Logo_120x60px;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 63);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 51);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(273, 92);
+            this.pictureBox1.Size = new System.Drawing.Size(205, 75);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // pnlCardLayout
             // 
-            this.pnlCardLayout.BackColor = System.Drawing.Color.RosyBrown;
+            this.pnlCardLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.pnlCardLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCardLayout.Location = new System.Drawing.Point(327, 0);
-            this.pnlCardLayout.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlCardLayout.Location = new System.Drawing.Point(245, 0);
             this.pnlCardLayout.Name = "pnlCardLayout";
-            this.pnlCardLayout.Size = new System.Drawing.Size(1473, 897);
+            this.pnlCardLayout.Size = new System.Drawing.Size(1105, 729);
             this.pnlCardLayout.TabIndex = 1;
             // 
             // settingMenu
@@ -263,31 +259,30 @@
             this.settingMenu.Name = "settingMenu";
             this.settingMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.settingMenu.ShowImageMargin = false;
-            this.settingMenu.Size = new System.Drawing.Size(219, 64);
+            this.settingMenu.Size = new System.Drawing.Size(182, 52);
             // 
             // logOutMenuItem
             // 
             this.logOutMenuItem.BackColor = System.Drawing.Color.White;
             this.logOutMenuItem.Name = "logOutMenuItem";
-            this.logOutMenuItem.Size = new System.Drawing.Size(218, 30);
+            this.logOutMenuItem.Size = new System.Drawing.Size(181, 24);
             this.logOutMenuItem.Text = "Log out";
             // 
             // changePasswordMenuItem
             // 
             this.changePasswordMenuItem.BackColor = System.Drawing.Color.White;
             this.changePasswordMenuItem.Name = "changePasswordMenuItem";
-            this.changePasswordMenuItem.Size = new System.Drawing.Size(218, 30);
+            this.changePasswordMenuItem.Size = new System.Drawing.Size(181, 24);
             this.changePasswordMenuItem.Text = "Change password";
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1800, 897);
+            this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.pnlCardLayout);
             this.Controls.Add(this.sidebar);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(1815, 934);
+            this.MinimumSize = new System.Drawing.Size(1365, 766);
             this.Name = "Home";
             this.Text = "Zitylot";
             this.Load += new System.EventHandler(this.Home_Load);
