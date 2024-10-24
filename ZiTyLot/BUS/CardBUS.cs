@@ -148,7 +148,7 @@ namespace ZiTyLot.BUS
             {
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition("card_id", ComparisonOperator.Equals, item.Id)
+                    new FilterCondition("card_id", CompOp.Equals, item.Id)
                 };
                 List<LostHistory> lostHistories = lostHistoryDAO.GetAll(filters);
                 item.Lost_histories = lostHistories;
@@ -166,7 +166,7 @@ namespace ZiTyLot.BUS
             {
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition("card_id", ComparisonOperator.Equals, item.Id)
+                    new FilterCondition("card_id", CompOp.Equals, item.Id)
                 };
                 List<Session> sessions = sessionDAO.GetAll(filters);
                 item.Sessions = sessions;
@@ -198,7 +198,7 @@ namespace ZiTyLot.BUS
             {
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition("card_id", ComparisonOperator.Equals, item.Id)
+                    new FilterCondition("card_id", CompOp.Equals, item.Id)
                 };
                 List<Issue> issues = issueDAO.GetAll(filters);
                 item.Issues = issues;

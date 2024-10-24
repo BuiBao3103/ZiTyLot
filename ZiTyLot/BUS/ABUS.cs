@@ -129,7 +129,7 @@ namespace ZiTyLot.BUS
             {
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition("a_id", ComparisonOperator.Equals, a.Id)
+                    new FilterCondition("a_id", CompOp.Equals, a.Id)
                 };
                 List<B> bs = bDao.GetAll(filters);
                 a.Bs = bs;

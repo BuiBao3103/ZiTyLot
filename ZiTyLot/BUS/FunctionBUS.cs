@@ -125,7 +125,7 @@ namespace ZiTyLot.BUS
             {
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition("function_id", ComparisonOperator.Equals, item.Id)
+                    new FilterCondition("function_id", CompOp.Equals, item.Id)
                 };
                 List<RoleFunction> roleFunctions = roleFunctionDao.GetAll(filters);
                 item.Role_functions = roleFunctions;
@@ -145,7 +145,7 @@ namespace ZiTyLot.BUS
                 RoleFunctionBUS roleFunctionBUS = new RoleFunctionBUS();
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition("function_id", ComparisonOperator.Equals, item.Id)
+                    new FilterCondition("function_id", CompOp.Equals, item.Id)
                 };
                 List<RoleFunction> roleFunctions = roleFunctionDao.GetAll(filters);
                 List<Role> roles = new List<Role>();

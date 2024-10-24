@@ -21,7 +21,7 @@ namespace ZiTyLot.BUS
             username = username.Trim();
             password = password.Trim();
             List<FilterCondition> filters = new List<FilterCondition>() {
-                new FilterCondition("username",ComparisonOperator.Equals,username),
+                new FilterCondition("username",CompOp.Equals,username),
             };
             List<Account> accounts = accountBUS.GetAll(filters);
             if (accounts.Count == 0)

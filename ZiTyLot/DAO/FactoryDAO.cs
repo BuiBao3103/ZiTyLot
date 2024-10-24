@@ -420,19 +420,19 @@ namespace ZiTyLot.DAO
             // Generate the SQL condition based on the filter's operator
             switch (filter.Operator)
             {
-                case ComparisonOperator.Equals:
+                case CompOp.Equals:
                     return $" AND {filter.Column} = @{filter.Column}";
-                case ComparisonOperator.GreaterThan:
+                case CompOp.GreaterThan:
                     return $" AND {filter.Column} > @{filter.Column}";
-                case ComparisonOperator.LessThan:
+                case CompOp.LessThan:
                     return $" AND {filter.Column} < @{filter.Column}";
-                case ComparisonOperator.LessThanOrEqual:
+                case CompOp.LessThanOrEqual:
                     return $" AND {filter.Column} <= @{filter.Column}";
-                case ComparisonOperator.GreaterThanOrEqual:
+                case CompOp.GreaterThanOrEqual:
                     return $" AND {filter.Column} >= @{filter.Column}";
-                case ComparisonOperator.Like:
+                case CompOp.Like:
                     return $" AND {filter.Column} LIKE @{filter.Column}";
-                case ComparisonOperator.In:
+                case CompOp.In:
                     return $" AND {filter.Column} IN ({filter.Value})";
                 default:
                     throw new NotSupportedException($"Operator {filter.Operator} is not supported.");
@@ -442,7 +442,7 @@ namespace ZiTyLot.DAO
         private void AddFilterConditionParameters(MySqlCommand command, FilterCondition filter)
         {
             // Add the filter condition parameter to the command
-            var parameterValue = filter.Operator == ComparisonOperator.Like ? $"%{filter.Value}%" : filter.Value;
+            var parameterValue = filter.Operator == CompOp.Like ? $"%{filter.Value}%" : filter.Value;
             command.Parameters.AddWithValue($"@{filter.Column}", parameterValue);
         }
 

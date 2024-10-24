@@ -156,19 +156,17 @@ namespace ZiTyLot.GUI.Screens
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            int currentPage = int.Parse(tbCurrentpage.Text);
-            if (currentPage > 1)
+            if (pageable.PageNumber > 1)
             {
-                ChangePage(currentPage - 1);
+                ChangePage(pageable.PageNumber - 1);
             }
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            int currentPage = int.Parse(tbCurrentpage.Text);
-            if (currentPage < page.TotalPages)
+            if (pageable.PageNumber < page.TotalPages)
             {
-                ChangePage(currentPage + 1);
+                ChangePage(pageable.PageNumber + 1);
             }
         }
 

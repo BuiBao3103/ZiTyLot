@@ -147,7 +147,7 @@ namespace ZiTyLot.BUS
             {
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition("account_id", ComparisonOperator.Equals, item.Id)
+                    new FilterCondition("account_id", CompOp.Equals, item.Id)
                 };
                 List<Bill> bills = billDAO.GetAll(filters);
                 item.Bills = bills;
