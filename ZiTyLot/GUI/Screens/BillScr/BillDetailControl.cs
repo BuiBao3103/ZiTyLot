@@ -1,47 +1,97 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Drawing;
+using ZiTyLot.Helper;
+using ZiTyLot.GUI.component_extensions;
+using System.Security.Cryptography.X509Certificates;
+
 
 namespace ZiTyLot.GUI.Screens.BillScr
 {
     public partial class BillDetailControl : UserControl
     {
+        int rows = 0;
+        Home home = new Home();
         public BillDetailControl()
         {
             InitializeComponent();
             pnlBillDetail.RowStyles[1] = new RowStyle(SizeType.Absolute, 0);
+            listIssue.AutoScroll = true;
+            
+
         }
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
+            
             IssueDetailForm issueDetailForm = new IssueDetailForm();
             issueDetailForm.Show();
+
             IssueDetailRow newRow = new IssueDetailRow();
             newRow.Dock = DockStyle.Top;
-            newRow.RowDeleted += OnRowDeleted; // Subscribe to the RowDeleted event
-            pnlIssueTable.Controls.Add(newRow);
 
-            AdjustPanelHeight(120); // Increase height when adding a row
+            // Listen for the RowDeleted event from the new row
+            newRow.RowDeleted += (s, ev) => RemoveRow(newRow);
+
+            listIssue.Controls.Add(newRow);
+            rows += 1;
+            listIssue_ResizeAutoScrollMinSize(rows);
+
         }
 
-        private void OnRowDeleted(object sender, EventArgs e)
+        private void RemoveRow(IssueDetailRow row)
         {
-            AdjustPanelHeight(-120); // Decrease height when a row is deleted
+            listIssue.Controls.Remove(row);  // Remove the row from the panel
+            rows -= 1;  // Decrease the row count
+            listIssue_ResizeAutoScrollMinSize(rows);  // Adjust scroll area
         }
 
-        // Adjust the height of the panel dynamically
-        private void AdjustPanelHeight(int change)
+        private void listIssue_ResizeAutoScrollMinSize(int rows)
         {
-            if (pnlBillDetail.RowStyles[1].Height + change >= 0)
-            {
-                pnlBillDetail.RowStyles[1].Height += change;
-            }
+            int newHeight = 60 * rows;  // Assuming each row is 60px in height
+
+            // Adjust the scrollable area based on the number of rows
+            listIssue.AutoScrollMinSize = new Size(listIssue.AutoScrollMinSize.Width, newHeight);
         }
+
 
         private void pnlIssueTable_SizeChanged(object sender, EventArgs e)
         {
-            foreach (Control control in pnlIssueTable.Controls)
+            foreach (Control control in listIssue.Controls)
             {
-                control.Width = pnlIssueTable.Width - 40;
+                control.Width = listIssue.Width - 40;
+            }
+        }
+
+        private void BillDetailControl_Load(object sender, EventArgs e)
+        {
+            pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
+            pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
+            home = this.ParentForm as Home;
+        }
+
+        private void pnlTop_Resize(object sender, EventArgs e)
+        {
+            pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
+        }
+
+        private void pnlBottom_Resize(object sender, EventArgs e)
+        {
+            pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
+
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            if (home != null)
+            {
+                this.Dispose();
+                BillControl billControl = new BillControl();
+                home.LoadForm(billControl);
+            }
+            else
+            {
+                MessageBox.Show("Home form is not assigned.");
             }
         }
     }

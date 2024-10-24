@@ -40,6 +40,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void BillScreen_Load(object sender, EventArgs e)
         {
+            ResumeLayout();
             pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
 
@@ -121,6 +122,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            SuspendLayout();
             Home home = (Home)ParentForm;
             BillDetailControl BillDetailControl = new BillDetailControl();
             home.LoadForm(BillDetailControl);
@@ -158,6 +160,20 @@ namespace ZiTyLot.GUI.Screens
         {
             int currentPage = int.Parse(tbCurrentpage.Text);
             changePage(currentPage + 1);
+        }
+
+        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = cbFilter.SelectedIndex;
+            switch (index) {
+                case 0:
+                    tableSearch.ColumnStyles[1].Width = 90;
+                    break;
+                case 1:
+                    tableSearch.ColumnStyles[1].Width = 130;
+                    break;
+
+            }
         }
     }
 }
