@@ -33,7 +33,7 @@ namespace ZiTyLot.GUI.Screens
             tableAccount.Rows.Clear();
             foreach (Account account in page.Content)
             {
-                tableAccount.Rows.Add(account.Id, account.Full_name, account.Username, accountBUS.PopulateRole(account).Role.Name);
+                tableAccount.Rows.Add(account.Id, account.Full_name, account.Username,account.Email, accountBUS.PopulateRole(account).Role.Name);
             }
         }
         private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)

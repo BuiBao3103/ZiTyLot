@@ -45,6 +45,7 @@ namespace ZiTyLot.GUI.Screens
             this.tbSearch = new Sunny.UI.UITextBox();
             this.separator = new System.Windows.Forms.Panel();
             this.pnlBottom = new System.Windows.Forms.Panel();
+            this.tableAccount = new System.Windows.Forms.DataGridView();
             this.pnlPagination = new System.Windows.Forms.Panel();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.uiPanel2 = new Sunny.UI.UIPanel();
@@ -57,19 +58,19 @@ namespace ZiTyLot.GUI.Screens
             this.tbCurrentpage = new Sunny.UI.UITextBox();
             this.pnlPrevious = new System.Windows.Forms.Panel();
             this.btnPrevious = new Sunny.UI.UISymbolButton();
-            this.tableAccount = new System.Windows.Forms.DataGridView();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colView = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.uiTextBox3 = new Sunny.UI.UITextBox();
             this.uiTextBox2 = new Sunny.UI.UITextBox();
             this.uiTextBox1 = new Sunny.UI.UITextBox();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colView = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnlTop.SuspendLayout();
             this.tableTop.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -77,6 +78,7 @@ namespace ZiTyLot.GUI.Screens
             this.pnlSearch.SuspendLayout();
             this.tableSearch.SuspendLayout();
             this.pnlBottom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableAccount)).BeginInit();
             this.pnlPagination.SuspendLayout();
             this.pnlLeft.SuspendLayout();
             this.uiPanel2.SuspendLayout();
@@ -84,7 +86,6 @@ namespace ZiTyLot.GUI.Screens
             this.pnlNext.SuspendLayout();
             this.pnlCurrentPage.SuspendLayout();
             this.pnlPrevious.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tableAccount)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -219,10 +220,10 @@ namespace ZiTyLot.GUI.Screens
             this.cbFilter.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.cbFilter.ItemRectColor = System.Drawing.Color.White;
             this.cbFilter.Items.AddRange(new object[] {
-            "ID",
-            "Full name",
-            "Email",
-            "Username"});
+            "  ID",
+            "  Full name",
+            "  Email",
+            "  Username"});
             this.cbFilter.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.cbFilter.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbFilter.Location = new System.Drawing.Point(290, 0);
@@ -239,7 +240,7 @@ namespace ZiTyLot.GUI.Screens
             this.cbFilter.Style = Sunny.UI.UIStyle.Custom;
             this.cbFilter.SymbolSize = 24;
             this.cbFilter.TabIndex = 2;
-            this.cbFilter.Text = "ID";
+            this.cbFilter.Text = "  ID";
             this.cbFilter.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cbFilter.TrimFilter = true;
             this.cbFilter.Watermark = "";
@@ -288,6 +289,64 @@ namespace ZiTyLot.GUI.Screens
             this.pnlBottom.Size = new System.Drawing.Size(1151, 474);
             this.pnlBottom.TabIndex = 3;
             this.pnlBottom.Resize += new System.EventHandler(this.BottomPnl_Resize);
+            // 
+            // tableAccount
+            // 
+            this.tableAccount.AllowUserToDeleteRows = false;
+            this.tableAccount.AllowUserToResizeColumns = false;
+            this.tableAccount.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.tableAccount.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tableAccount.BackgroundColor = System.Drawing.Color.White;
+            this.tableAccount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tableAccount.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.tableAccount.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableAccount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tableAccount.ColumnHeadersHeight = 34;
+            this.tableAccount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colId,
+            this.colFullname,
+            this.colUsername,
+            this.colEmail,
+            this.colRole,
+            this.colView,
+            this.colDelete});
+            this.tableAccount.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableAccount.DefaultCellStyle = dataGridViewCellStyle3;
+            this.tableAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableAccount.GridColor = System.Drawing.Color.White;
+            this.tableAccount.Location = new System.Drawing.Point(10, 10);
+            this.tableAccount.Margin = new System.Windows.Forms.Padding(0);
+            this.tableAccount.Name = "tableAccount";
+            this.tableAccount.ReadOnly = true;
+            this.tableAccount.RowHeadersVisible = false;
+            this.tableAccount.RowHeadersWidth = 30;
+            this.tableAccount.RowTemplate.Height = 40;
+            this.tableAccount.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableAccount.Size = new System.Drawing.Size(1131, 404);
+            this.tableAccount.TabIndex = 1;
             // 
             // pnlPagination
             // 
@@ -507,113 +566,6 @@ namespace ZiTyLot.GUI.Screens
             this.btnPrevious.TabIndex = 4;
             this.btnPrevious.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // tableAccount
-            // 
-            this.tableAccount.AllowUserToAddRows = false;
-            this.tableAccount.AllowUserToDeleteRows = false;
-            this.tableAccount.AllowUserToResizeColumns = false;
-            this.tableAccount.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.tableAccount.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.tableAccount.BackgroundColor = System.Drawing.Color.White;
-            this.tableAccount.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tableAccount.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.tableAccount.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableAccount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.tableAccount.ColumnHeadersHeight = 34;
-            this.tableAccount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colId,
-            this.colFullname,
-            this.colUsername,
-            this.colRole,
-            this.colView,
-            this.colDelete});
-            this.tableAccount.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableAccount.DefaultCellStyle = dataGridViewCellStyle3;
-            this.tableAccount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableAccount.GridColor = System.Drawing.Color.White;
-            this.tableAccount.Location = new System.Drawing.Point(10, 10);
-            this.tableAccount.Margin = new System.Windows.Forms.Padding(0);
-            this.tableAccount.Name = "tableAccount";
-            this.tableAccount.ReadOnly = true;
-            this.tableAccount.RowHeadersVisible = false;
-            this.tableAccount.RowHeadersWidth = 30;
-            this.tableAccount.RowTemplate.Height = 40;
-            this.tableAccount.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableAccount.Size = new System.Drawing.Size(1131, 404);
-            this.tableAccount.TabIndex = 1;
-            // 
-            // colId
-            // 
-            this.colId.HeaderText = "ID";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colId.Width = 50;
-            // 
-            // colFullname
-            // 
-            this.colFullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colFullname.HeaderText = "Full name";
-            this.colFullname.MinimumWidth = 80;
-            this.colFullname.Name = "colFullname";
-            this.colFullname.ReadOnly = true;
-            this.colFullname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colUsername
-            // 
-            this.colUsername.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colUsername.HeaderText = "Username";
-            this.colUsername.Name = "colUsername";
-            this.colUsername.ReadOnly = true;
-            // 
-            // colRole
-            // 
-            this.colRole.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRole.HeaderText = "Role";
-            this.colRole.Name = "colRole";
-            this.colRole.ReadOnly = true;
-            // 
-            // colView
-            // 
-            this.colView.HeaderText = "";
-            this.colView.Name = "colView";
-            this.colView.ReadOnly = true;
-            this.colView.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colView.Text = "View";
-            this.colView.Width = 45;
-            // 
-            // colDelete
-            // 
-            this.colDelete.HeaderText = "";
-            this.colDelete.Name = "colDelete";
-            this.colDelete.ReadOnly = true;
-            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colDelete.Text = "Delete";
-            this.colDelete.Width = 45;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.pnlBottom);
@@ -694,6 +646,62 @@ namespace ZiTyLot.GUI.Screens
             this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiTextBox1.Watermark = "";
             // 
+            // colId
+            // 
+            this.colId.HeaderText = "ID";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colId.Width = 50;
+            // 
+            // colFullname
+            // 
+            this.colFullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colFullname.HeaderText = "Full name";
+            this.colFullname.MinimumWidth = 80;
+            this.colFullname.Name = "colFullname";
+            this.colFullname.ReadOnly = true;
+            this.colFullname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colUsername
+            // 
+            this.colUsername.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colUsername.HeaderText = "Username";
+            this.colUsername.Name = "colUsername";
+            this.colUsername.ReadOnly = true;
+            // 
+            // colEmail
+            // 
+            this.colEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colEmail.HeaderText = "Email";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.ReadOnly = true;
+            // 
+            // colRole
+            // 
+            this.colRole.HeaderText = "Role";
+            this.colRole.Name = "colRole";
+            this.colRole.ReadOnly = true;
+            this.colRole.Width = 150;
+            // 
+            // colView
+            // 
+            this.colView.HeaderText = "";
+            this.colView.Name = "colView";
+            this.colView.ReadOnly = true;
+            this.colView.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colView.Text = "View";
+            this.colView.Width = 45;
+            // 
+            // colDelete
+            // 
+            this.colDelete.HeaderText = "";
+            this.colDelete.Name = "colDelete";
+            this.colDelete.ReadOnly = true;
+            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colDelete.Text = "Delete";
+            this.colDelete.Width = 45;
+            // 
             // AccountControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -712,6 +720,7 @@ namespace ZiTyLot.GUI.Screens
             this.pnlSearch.ResumeLayout(false);
             this.tableSearch.ResumeLayout(false);
             this.pnlBottom.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tableAccount)).EndInit();
             this.pnlPagination.ResumeLayout(false);
             this.pnlLeft.ResumeLayout(false);
             this.uiPanel2.ResumeLayout(false);
@@ -720,7 +729,6 @@ namespace ZiTyLot.GUI.Screens
             this.pnlCurrentPage.ResumeLayout(false);
             this.pnlCurrentPage.PerformLayout();
             this.pnlPrevious.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tableAccount)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -745,12 +753,6 @@ namespace ZiTyLot.GUI.Screens
         private Panel pnlLeft;
         private Sunny.UI.UIPanel uiPanel2;
         private Sunny.UI.UIComboBox cbNumberofitem;
-        private DataGridViewTextBoxColumn colId;
-        private DataGridViewTextBoxColumn colFullname;
-        private DataGridViewTextBoxColumn colUsername;
-        private DataGridViewTextBoxColumn colRole;
-        private DataGridViewButtonColumn colView;
-        private DataGridViewButtonColumn colDelete;
         private Timer timer1;
         private Sunny.UI.UITableLayoutPanel tableTop;
         private Panel panel1;
@@ -763,5 +765,12 @@ namespace ZiTyLot.GUI.Screens
         private TableLayoutPanel tableSearch;
         private Sunny.UI.UITextBox tbSearch;
         private Sunny.UI.UIComboBox cbFilter;
+        private DataGridViewTextBoxColumn colId;
+        private DataGridViewTextBoxColumn colFullname;
+        private DataGridViewTextBoxColumn colUsername;
+        private DataGridViewTextBoxColumn colEmail;
+        private DataGridViewTextBoxColumn colRole;
+        private DataGridViewButtonColumn colView;
+        private DataGridViewButtonColumn colDelete;
     }
 }
