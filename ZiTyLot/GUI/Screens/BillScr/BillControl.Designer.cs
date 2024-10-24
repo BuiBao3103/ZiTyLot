@@ -109,6 +109,7 @@ namespace ZiTyLot.GUI.Screens
             // 
             // tableBill
             // 
+            this.tableBill.AllowUserToAddRows = false;
             this.tableBill.AllowUserToDeleteRows = false;
             this.tableBill.AllowUserToResizeColumns = false;
             this.tableBill.AllowUserToResizeRows = false;
