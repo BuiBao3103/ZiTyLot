@@ -13,7 +13,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
         private void btnDeleteRow_Click(object sender, EventArgs e)
         {
             this.Dispose();
-            OnRowDeleted();  // Notify the parent control
+            OnRowDeleted();  
         }
 
         // Custom event to notify parent control about row deletion

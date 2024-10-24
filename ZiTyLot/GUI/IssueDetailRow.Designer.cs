@@ -67,7 +67,7 @@
             this.uiPanel1.Radius = 10;
             this.uiPanel1.RectColor = System.Drawing.Color.White;
             this.uiPanel1.RectSize = 2;
-            this.uiPanel1.Size = new System.Drawing.Size(913, 40);
+            this.uiPanel1.Size = new System.Drawing.Size(997, 40);
             this.uiPanel1.TabIndex = 0;
             this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -94,7 +94,7 @@
             this.uiTableLayoutPanel1.Name = "uiTableLayoutPanel1";
             this.uiTableLayoutPanel1.RowCount = 1;
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel1.Size = new System.Drawing.Size(905, 32);
+            this.uiTableLayoutPanel1.Size = new System.Drawing.Size(989, 32);
             this.uiTableLayoutPanel1.TabIndex = 0;
             this.uiTableLayoutPanel1.TagString = null;
             // 
@@ -104,12 +104,12 @@
             this.uiPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel6.FillColor = System.Drawing.Color.White;
             this.uiPanel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel6.Location = new System.Drawing.Point(658, 5);
+            this.uiPanel6.Location = new System.Drawing.Point(719, 5);
             this.uiPanel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel6.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel6.Name = "uiPanel6";
             this.uiPanel6.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel6.Size = new System.Drawing.Size(196, 22);
+            this.uiPanel6.Size = new System.Drawing.Size(215, 22);
             this.uiPanel6.TabIndex = 8;
             this.uiPanel6.Text = null;
             this.uiPanel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -121,7 +121,7 @@
             this.lbTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.lbTotal.Location = new System.Drawing.Point(0, 0);
             this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(196, 22);
+            this.lbTotal.Size = new System.Drawing.Size(215, 22);
             this.lbTotal.TabIndex = 0;
             this.lbTotal.Text = "{total}";
             this.lbTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -132,12 +132,12 @@
             this.uiPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel5.FillColor = System.Drawing.Color.White;
             this.uiPanel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel5.Location = new System.Drawing.Point(454, 5);
+            this.uiPanel5.Location = new System.Drawing.Point(496, 5);
             this.uiPanel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel5.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel5.Name = "uiPanel5";
             this.uiPanel5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel5.Size = new System.Drawing.Size(196, 22);
+            this.uiPanel5.Size = new System.Drawing.Size(215, 22);
             this.uiPanel5.TabIndex = 7;
             this.uiPanel5.Text = null;
             this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -149,7 +149,7 @@
             this.lbDate.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbDate.Location = new System.Drawing.Point(0, 0);
             this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(196, 22);
+            this.lbDate.Size = new System.Drawing.Size(215, 22);
             this.lbDate.TabIndex = 0;
             this.lbDate.Text = "{date}";
             this.lbDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -160,12 +160,12 @@
             this.uiPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel4.FillColor = System.Drawing.Color.White;
             this.uiPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel4.Location = new System.Drawing.Point(250, 5);
+            this.uiPanel4.Location = new System.Drawing.Point(273, 5);
             this.uiPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel4.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel4.Name = "uiPanel4";
             this.uiPanel4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel4.Size = new System.Drawing.Size(196, 22);
+            this.uiPanel4.Size = new System.Drawing.Size(215, 22);
             this.uiPanel4.TabIndex = 6;
             this.uiPanel4.Text = null;
             this.uiPanel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -177,7 +177,7 @@
             this.lbArea.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbArea.Location = new System.Drawing.Point(0, 0);
             this.lbArea.Name = "lbArea";
-            this.lbArea.Size = new System.Drawing.Size(196, 22);
+            this.lbArea.Size = new System.Drawing.Size(215, 22);
             this.lbArea.TabIndex = 0;
             this.lbArea.Text = "{area}";
             this.lbArea.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -188,12 +188,12 @@
             this.uiPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel7.FillColor = System.Drawing.Color.White;
             this.uiPanel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel7.Location = new System.Drawing.Point(862, 5);
+            this.uiPanel7.Location = new System.Drawing.Point(942, 5);
             this.uiPanel7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel7.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel7.Name = "uiPanel7";
             this.uiPanel7.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel7.Size = new System.Drawing.Size(39, 22);
+            this.uiPanel7.Size = new System.Drawing.Size(43, 22);
             this.uiPanel7.TabIndex = 5;
             this.uiPanel7.Text = null;
             this.uiPanel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -207,12 +207,13 @@
             this.btnDeteteRow.Location = new System.Drawing.Point(0, 0);
             this.btnDeteteRow.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnDeteteRow.Name = "btnDeteteRow";
+            this.btnDeteteRow.Radius = 2;
             this.btnDeteteRow.RectColor = System.Drawing.Color.White;
             this.btnDeteteRow.RectHoverColor = System.Drawing.Color.White;
             this.btnDeteteRow.RectPressColor = System.Drawing.Color.White;
             this.btnDeteteRow.RectSelectedColor = System.Drawing.Color.White;
             this.btnDeteteRow.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnDeteteRow.Size = new System.Drawing.Size(39, 22);
+            this.btnDeteteRow.Size = new System.Drawing.Size(43, 22);
             this.btnDeteteRow.Symbol = 79;
             this.btnDeteteRow.SymbolColor = System.Drawing.Color.Gray;
             this.btnDeteteRow.SymbolHoverColor = System.Drawing.Color.Black;
@@ -226,12 +227,12 @@
             this.uiPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel3.FillColor = System.Drawing.Color.White;
             this.uiPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel3.Location = new System.Drawing.Point(46, 5);
+            this.uiPanel3.Location = new System.Drawing.Point(50, 5);
             this.uiPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel3.Name = "uiPanel3";
             this.uiPanel3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel3.Size = new System.Drawing.Size(196, 22);
+            this.uiPanel3.Size = new System.Drawing.Size(215, 22);
             this.uiPanel3.TabIndex = 1;
             this.uiPanel3.Text = null;
             this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -243,7 +244,7 @@
             this.lbPlate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.lbPlate.Location = new System.Drawing.Point(0, 0);
             this.lbPlate.Name = "lbPlate";
-            this.lbPlate.Size = new System.Drawing.Size(196, 22);
+            this.lbPlate.Size = new System.Drawing.Size(215, 22);
             this.lbPlate.TabIndex = 0;
             this.lbPlate.Text = "{plate}";
             this.lbPlate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -259,7 +260,7 @@
             this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel2.Name = "uiPanel2";
             this.uiPanel2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel2.Size = new System.Drawing.Size(34, 22);
+            this.uiPanel2.Size = new System.Drawing.Size(38, 22);
             this.uiPanel2.TabIndex = 0;
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -272,7 +273,7 @@
             this.lbIcon.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Plus_Black;
             this.lbIcon.Location = new System.Drawing.Point(0, 0);
             this.lbIcon.Name = "lbIcon";
-            this.lbIcon.Size = new System.Drawing.Size(34, 22);
+            this.lbIcon.Size = new System.Drawing.Size(38, 22);
             this.lbIcon.TabIndex = 0;
             // 
             // IssueDetailRow
@@ -280,12 +281,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.Controls.Add(this.uiPanel1);
             this.MaximumSize = new System.Drawing.Size(0, 60);
             this.Name = "IssueDetailRow";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.Size = new System.Drawing.Size(933, 60);
+            this.Size = new System.Drawing.Size(1017, 60);
             this.uiPanel1.ResumeLayout(false);
             this.uiPanel1.PerformLayout();
             this.uiTableLayoutPanel1.ResumeLayout(false);

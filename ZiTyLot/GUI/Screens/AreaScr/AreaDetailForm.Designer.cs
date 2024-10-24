@@ -39,10 +39,15 @@
             this.uiTableLayoutPanel2 = new Sunny.UI.UITableLayoutPanel();
             this.uiPanel3 = new Sunny.UI.UIPanel();
             this.pnlInformation = new Sunny.UI.UITableLayoutPanel();
+            this.pnlType = new Sunny.UI.UIPanel();
+            this.uiGroupBox2 = new Sunny.UI.UIGroupBox();
+            this.cbUserType = new Sunny.UI.UIComboBox();
             this.pnlCamera = new Sunny.UI.UIPanel();
             this.pnl = new Sunny.UI.UIGroupBox();
+            this.cbCamera = new Sunny.UI.UIComboBox();
             this.pnlVehical = new Sunny.UI.UIPanel();
             this.uiGroupBox3 = new Sunny.UI.UIGroupBox();
+            this.cbVehicalType = new Sunny.UI.UIComboBox();
             this.pnlStatus = new Sunny.UI.UIPanel();
             this.uiGroupBox6 = new Sunny.UI.UIGroupBox();
             this.uiPanel4 = new Sunny.UI.UIPanel();
@@ -54,11 +59,6 @@
             this.tbTotalSlot = new Sunny.UI.UITextBox();
             this.uiPanel2 = new Sunny.UI.UIPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cbVehicalType = new Sunny.UI.UIComboBox();
-            this.cbCamera = new Sunny.UI.UIComboBox();
-            this.pnlType = new Sunny.UI.UIPanel();
-            this.uiGroupBox2 = new Sunny.UI.UIGroupBox();
-            this.cbUserType = new Sunny.UI.UIComboBox();
             this.uiTableLayoutPanel1.SuspendLayout();
             this.pnlButton.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -67,6 +67,8 @@
             this.uiTableLayoutPanel2.SuspendLayout();
             this.uiPanel3.SuspendLayout();
             this.pnlInformation.SuspendLayout();
+            this.pnlType.SuspendLayout();
+            this.uiGroupBox2.SuspendLayout();
             this.pnlCamera.SuspendLayout();
             this.pnl.SuspendLayout();
             this.pnlVehical.SuspendLayout();
@@ -78,8 +80,6 @@
             this.uiGroupBox4.SuspendLayout();
             this.uiPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnlType.SuspendLayout();
-            this.uiGroupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // uiTableLayoutPanel1
@@ -111,7 +111,7 @@
             this.pnlButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlButton.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlButton.Name = "pnlButton";
-            this.pnlButton.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.pnlButton.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.pnlButton.Radius = 10;
             this.pnlButton.RectColor = System.Drawing.Color.White;
             this.pnlButton.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
@@ -124,9 +124,9 @@
             // 
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(626, 5);
+            this.panel2.Location = new System.Drawing.Point(626, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(120, 34);
+            this.panel2.Size = new System.Drawing.Size(120, 38);
             this.panel2.TabIndex = 10;
             // 
             // btnCancel
@@ -149,7 +149,7 @@
             this.btnCancel.RectPressColor = System.Drawing.Color.White;
             this.btnCancel.RectSelectedColor = System.Drawing.Color.White;
             this.btnCancel.RectSize = 2;
-            this.btnCancel.Size = new System.Drawing.Size(120, 34);
+            this.btnCancel.Size = new System.Drawing.Size(120, 38);
             this.btnCancel.Symbol = 0;
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
@@ -159,10 +159,10 @@
             // 
             this.panel3.Controls.Add(this.btnConfirm);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(746, 5);
+            this.panel3.Location = new System.Drawing.Point(746, 3);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(130, 34);
+            this.panel3.Size = new System.Drawing.Size(130, 38);
             this.panel3.TabIndex = 9;
             // 
             // btnConfirm
@@ -186,7 +186,7 @@
             this.btnConfirm.RectPressColor = System.Drawing.Color.White;
             this.btnConfirm.RectSelectedColor = System.Drawing.Color.White;
             this.btnConfirm.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnConfirm.Size = new System.Drawing.Size(120, 34);
+            this.btnConfirm.Size = new System.Drawing.Size(120, 38);
             this.btnConfirm.Symbol = 0;
             this.btnConfirm.TabIndex = 3;
             this.btnConfirm.Text = "Confirm";
@@ -279,6 +279,73 @@
             this.pnlInformation.TabIndex = 0;
             this.pnlInformation.TagString = null;
             // 
+            // pnlType
+            // 
+            this.pnlInformation.SetColumnSpan(this.pnlType, 3);
+            this.pnlType.Controls.Add(this.uiGroupBox2);
+            this.pnlType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlType.FillColor = System.Drawing.Color.White;
+            this.pnlType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.pnlType.Location = new System.Drawing.Point(4, 5);
+            this.pnlType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlType.MinimumSize = new System.Drawing.Size(1, 1);
+            this.pnlType.Name = "pnlType";
+            this.pnlType.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.pnlType.Size = new System.Drawing.Size(430, 70);
+            this.pnlType.TabIndex = 10;
+            this.pnlType.Text = null;
+            this.pnlType.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiGroupBox2
+            // 
+            this.uiGroupBox2.Controls.Add(this.cbUserType);
+            this.uiGroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiGroupBox2.FillColor = System.Drawing.Color.White;
+            this.uiGroupBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox2.Location = new System.Drawing.Point(0, 0);
+            this.uiGroupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiGroupBox2.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiGroupBox2.Name = "uiGroupBox2";
+            this.uiGroupBox2.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
+            this.uiGroupBox2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiGroupBox2.Size = new System.Drawing.Size(430, 70);
+            this.uiGroupBox2.TabIndex = 1;
+            this.uiGroupBox2.Text = "User type";
+            this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cbUserType
+            // 
+            this.cbUserType.DataSource = null;
+            this.cbUserType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbUserType.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.cbUserType.FillColor = System.Drawing.Color.White;
+            this.cbUserType.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbUserType.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbUserType.ItemRectColor = System.Drawing.Color.White;
+            this.cbUserType.Items.AddRange(new object[] {
+            "  Resident",
+            "  Vistor"});
+            this.cbUserType.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbUserType.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.cbUserType.Location = new System.Drawing.Point(8, 32);
+            this.cbUserType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbUserType.MaximumSize = new System.Drawing.Size(0, 34);
+            this.cbUserType.MinimumSize = new System.Drawing.Size(0, 34);
+            this.cbUserType.Name = "cbUserType";
+            this.cbUserType.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
+            this.cbUserType.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.cbUserType.RectSize = 2;
+            this.cbUserType.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbUserType.ScrollBarStyleInherited = false;
+            this.cbUserType.Size = new System.Drawing.Size(414, 34);
+            this.cbUserType.SymbolSize = 24;
+            this.cbUserType.TabIndex = 1;
+            this.cbUserType.Text = "  Resident";
+            this.cbUserType.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cbUserType.TrimFilter = true;
+            this.cbUserType.Watermark = "";
+            // 
             // pnlCamera
             // 
             this.pnlInformation.SetColumnSpan(this.pnlCamera, 3);
@@ -314,6 +381,38 @@
             this.pnl.Text = "Camera";
             this.pnl.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // cbCamera
+            // 
+            this.cbCamera.DataSource = null;
+            this.cbCamera.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbCamera.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.cbCamera.FillColor = System.Drawing.Color.White;
+            this.cbCamera.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCamera.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbCamera.ItemRectColor = System.Drawing.Color.White;
+            this.cbCamera.Items.AddRange(new object[] {
+            "  Camera 1",
+            "  Camera 2"});
+            this.cbCamera.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbCamera.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.cbCamera.Location = new System.Drawing.Point(8, 32);
+            this.cbCamera.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbCamera.MaximumSize = new System.Drawing.Size(0, 34);
+            this.cbCamera.MinimumSize = new System.Drawing.Size(0, 34);
+            this.cbCamera.Name = "cbCamera";
+            this.cbCamera.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
+            this.cbCamera.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.cbCamera.RectSize = 2;
+            this.cbCamera.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbCamera.ScrollBarStyleInherited = false;
+            this.cbCamera.Size = new System.Drawing.Size(414, 34);
+            this.cbCamera.SymbolSize = 24;
+            this.cbCamera.TabIndex = 1;
+            this.cbCamera.Text = "  Camera 1";
+            this.cbCamera.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cbCamera.TrimFilter = true;
+            this.cbCamera.Watermark = "";
+            // 
             // pnlVehical
             // 
             this.pnlInformation.SetColumnSpan(this.pnlVehical, 2);
@@ -348,6 +447,38 @@
             this.uiGroupBox3.TabIndex = 1;
             this.uiGroupBox3.Text = "Vehical Type";
             this.uiGroupBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cbVehicalType
+            // 
+            this.cbVehicalType.DataSource = null;
+            this.cbVehicalType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbVehicalType.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.cbVehicalType.FillColor = System.Drawing.Color.White;
+            this.cbVehicalType.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbVehicalType.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbVehicalType.ItemRectColor = System.Drawing.Color.White;
+            this.cbVehicalType.Items.AddRange(new object[] {
+            "  Two wheeler",
+            "  Four wheeler"});
+            this.cbVehicalType.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbVehicalType.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.cbVehicalType.Location = new System.Drawing.Point(8, 32);
+            this.cbVehicalType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbVehicalType.MaximumSize = new System.Drawing.Size(0, 34);
+            this.cbVehicalType.MinimumSize = new System.Drawing.Size(0, 34);
+            this.cbVehicalType.Name = "cbVehicalType";
+            this.cbVehicalType.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
+            this.cbVehicalType.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.cbVehicalType.RectSize = 2;
+            this.cbVehicalType.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbVehicalType.ScrollBarStyleInherited = false;
+            this.cbVehicalType.Size = new System.Drawing.Size(268, 34);
+            this.cbVehicalType.SymbolSize = 24;
+            this.cbVehicalType.TabIndex = 1;
+            this.cbVehicalType.Text = "  Two wheeler";
+            this.cbVehicalType.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cbVehicalType.TrimFilter = true;
+            this.cbVehicalType.Watermark = "";
             // 
             // pnlStatus
             // 
@@ -522,137 +653,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // cbVehicalType
-            // 
-            this.cbVehicalType.DataSource = null;
-            this.cbVehicalType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbVehicalType.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
-            this.cbVehicalType.FillColor = System.Drawing.Color.White;
-            this.cbVehicalType.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbVehicalType.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cbVehicalType.ItemRectColor = System.Drawing.Color.White;
-            this.cbVehicalType.Items.AddRange(new object[] {
-            "  Two wheeler",
-            "  Four wheeler"});
-            this.cbVehicalType.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cbVehicalType.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cbVehicalType.Location = new System.Drawing.Point(8, 32);
-            this.cbVehicalType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cbVehicalType.MaximumSize = new System.Drawing.Size(0, 34);
-            this.cbVehicalType.MinimumSize = new System.Drawing.Size(0, 34);
-            this.cbVehicalType.Name = "cbVehicalType";
-            this.cbVehicalType.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
-            this.cbVehicalType.RectColor = System.Drawing.SystemColors.ControlDark;
-            this.cbVehicalType.RectSize = 2;
-            this.cbVehicalType.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.cbVehicalType.ScrollBarStyleInherited = false;
-            this.cbVehicalType.Size = new System.Drawing.Size(268, 34);
-            this.cbVehicalType.SymbolSize = 24;
-            this.cbVehicalType.TabIndex = 1;
-            this.cbVehicalType.Text = "  Two wheeler";
-            this.cbVehicalType.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cbVehicalType.TrimFilter = true;
-            this.cbVehicalType.Watermark = "";
-            // 
-            // cbCamera
-            // 
-            this.cbCamera.DataSource = null;
-            this.cbCamera.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbCamera.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
-            this.cbCamera.FillColor = System.Drawing.Color.White;
-            this.cbCamera.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbCamera.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cbCamera.ItemRectColor = System.Drawing.Color.White;
-            this.cbCamera.Items.AddRange(new object[] {
-            "  Camera 1",
-            "  Camera 2"});
-            this.cbCamera.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cbCamera.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cbCamera.Location = new System.Drawing.Point(8, 32);
-            this.cbCamera.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cbCamera.MaximumSize = new System.Drawing.Size(0, 34);
-            this.cbCamera.MinimumSize = new System.Drawing.Size(0, 34);
-            this.cbCamera.Name = "cbCamera";
-            this.cbCamera.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
-            this.cbCamera.RectColor = System.Drawing.SystemColors.ControlDark;
-            this.cbCamera.RectSize = 2;
-            this.cbCamera.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.cbCamera.ScrollBarStyleInherited = false;
-            this.cbCamera.Size = new System.Drawing.Size(414, 34);
-            this.cbCamera.SymbolSize = 24;
-            this.cbCamera.TabIndex = 1;
-            this.cbCamera.Text = "  Camera 1";
-            this.cbCamera.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cbCamera.TrimFilter = true;
-            this.cbCamera.Watermark = "";
-            // 
-            // pnlType
-            // 
-            this.pnlInformation.SetColumnSpan(this.pnlType, 3);
-            this.pnlType.Controls.Add(this.uiGroupBox2);
-            this.pnlType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlType.FillColor = System.Drawing.Color.White;
-            this.pnlType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlType.Location = new System.Drawing.Point(4, 5);
-            this.pnlType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pnlType.MinimumSize = new System.Drawing.Size(1, 1);
-            this.pnlType.Name = "pnlType";
-            this.pnlType.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlType.Size = new System.Drawing.Size(430, 70);
-            this.pnlType.TabIndex = 10;
-            this.pnlType.Text = null;
-            this.pnlType.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiGroupBox2
-            // 
-            this.uiGroupBox2.Controls.Add(this.cbUserType);
-            this.uiGroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiGroupBox2.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiGroupBox2.Location = new System.Drawing.Point(0, 0);
-            this.uiGroupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiGroupBox2.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiGroupBox2.Name = "uiGroupBox2";
-            this.uiGroupBox2.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
-            this.uiGroupBox2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox2.Size = new System.Drawing.Size(430, 70);
-            this.uiGroupBox2.TabIndex = 1;
-            this.uiGroupBox2.Text = "User type";
-            this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // cbUserType
-            // 
-            this.cbUserType.DataSource = null;
-            this.cbUserType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbUserType.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
-            this.cbUserType.FillColor = System.Drawing.Color.White;
-            this.cbUserType.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbUserType.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cbUserType.ItemRectColor = System.Drawing.Color.White;
-            this.cbUserType.Items.AddRange(new object[] {
-            "  Resident",
-            "  Vistor"});
-            this.cbUserType.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cbUserType.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cbUserType.Location = new System.Drawing.Point(8, 32);
-            this.cbUserType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cbUserType.MaximumSize = new System.Drawing.Size(0, 34);
-            this.cbUserType.MinimumSize = new System.Drawing.Size(0, 34);
-            this.cbUserType.Name = "cbUserType";
-            this.cbUserType.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
-            this.cbUserType.RectColor = System.Drawing.SystemColors.ControlDark;
-            this.cbUserType.RectSize = 2;
-            this.cbUserType.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.cbUserType.ScrollBarStyleInherited = false;
-            this.cbUserType.Size = new System.Drawing.Size(414, 34);
-            this.cbUserType.SymbolSize = 24;
-            this.cbUserType.TabIndex = 1;
-            this.cbUserType.Text = "  Resident";
-            this.cbUserType.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cbUserType.TrimFilter = true;
-            this.cbUserType.Watermark = "";
-            // 
             // AreaDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -672,6 +672,8 @@
             this.uiTableLayoutPanel2.ResumeLayout(false);
             this.uiPanel3.ResumeLayout(false);
             this.pnlInformation.ResumeLayout(false);
+            this.pnlType.ResumeLayout(false);
+            this.uiGroupBox2.ResumeLayout(false);
             this.pnlCamera.ResumeLayout(false);
             this.pnl.ResumeLayout(false);
             this.pnlVehical.ResumeLayout(false);
@@ -683,8 +685,6 @@
             this.uiGroupBox4.ResumeLayout(false);
             this.uiPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnlType.ResumeLayout(false);
-            this.uiGroupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

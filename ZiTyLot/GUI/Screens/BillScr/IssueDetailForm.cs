@@ -8,6 +8,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
         public IssueDetailForm()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)

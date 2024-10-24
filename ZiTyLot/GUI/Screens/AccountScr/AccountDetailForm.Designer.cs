@@ -138,7 +138,7 @@
             this.pnlButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlButton.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlButton.Name = "pnlButton";
-            this.pnlButton.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.pnlButton.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.pnlButton.Radius = 10;
             this.pnlButton.RectColor = System.Drawing.Color.White;
             this.pnlButton.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
@@ -151,10 +151,10 @@
             // 
             this.panel1.Controls.Add(this.btnResetPassword);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(226, 5);
+            this.panel1.Location = new System.Drawing.Point(226, 3);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.panel1.Size = new System.Drawing.Size(160, 34);
+            this.panel1.Size = new System.Drawing.Size(160, 38);
             this.panel1.TabIndex = 11;
             // 
             // btnResetPassword
@@ -178,7 +178,7 @@
             this.btnResetPassword.RectPressColor = System.Drawing.Color.White;
             this.btnResetPassword.RectSelectedColor = System.Drawing.Color.White;
             this.btnResetPassword.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnResetPassword.Size = new System.Drawing.Size(150, 34);
+            this.btnResetPassword.Size = new System.Drawing.Size(150, 38);
             this.btnResetPassword.Symbol = 0;
             this.btnResetPassword.TabIndex = 3;
             this.btnResetPassword.Text = "Reset password";
@@ -188,9 +188,9 @@
             // 
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(386, 5);
+            this.panel2.Location = new System.Drawing.Point(386, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(120, 34);
+            this.panel2.Size = new System.Drawing.Size(120, 38);
             this.panel2.TabIndex = 10;
             // 
             // btnCancel
@@ -213,7 +213,7 @@
             this.btnCancel.RectPressColor = System.Drawing.Color.White;
             this.btnCancel.RectSelectedColor = System.Drawing.Color.White;
             this.btnCancel.RectSize = 2;
-            this.btnCancel.Size = new System.Drawing.Size(120, 34);
+            this.btnCancel.Size = new System.Drawing.Size(120, 38);
             this.btnCancel.Symbol = 0;
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
@@ -223,10 +223,10 @@
             // 
             this.panel3.Controls.Add(this.btnConfirm);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(506, 5);
+            this.panel3.Location = new System.Drawing.Point(506, 3);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(130, 34);
+            this.panel3.Size = new System.Drawing.Size(130, 38);
             this.panel3.TabIndex = 9;
             // 
             // btnConfirm
@@ -250,7 +250,7 @@
             this.btnConfirm.RectPressColor = System.Drawing.Color.White;
             this.btnConfirm.RectSelectedColor = System.Drawing.Color.White;
             this.btnConfirm.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnConfirm.Size = new System.Drawing.Size(120, 34);
+            this.btnConfirm.Size = new System.Drawing.Size(120, 38);
             this.btnConfirm.Symbol = 0;
             this.btnConfirm.TabIndex = 3;
             this.btnConfirm.Text = "Confirm";
