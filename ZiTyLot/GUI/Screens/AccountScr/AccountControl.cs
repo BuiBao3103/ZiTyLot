@@ -117,7 +117,6 @@ namespace ZiTyLot.GUI.Screens
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             String inputCboxSelected = cbFilter.GetItemText(cbFilter.SelectedItem);
-            Console.WriteLine(inputCboxSelected);
             int index = cbFilter.SelectedIndex;
             switch (index)
             {
@@ -139,6 +138,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void LoadPageAndPageable()
         {
+
             if (page == null || pageable == null) return;
             //update page number
             tbCurrentpage.Text = pageable.PageNumber.ToString();
@@ -197,23 +197,23 @@ namespace ZiTyLot.GUI.Screens
 
         private void query()
         {
-            string inputCboxSelected = cbFilter.GetItemText(cbFilter.SelectedItem);
-            string inputSearch = tbSearch.Text;
+            int inputCboxIndex = cbFilter.SelectedIndex;
+            string inputSearch = tbSearch.Text.Trim();
             filters.Clear();
             if (!string.IsNullOrEmpty(inputSearch))
             {
-                switch (inputCboxSelected)
+                switch (inputCboxIndex)
                 {
-                    case "ID":
+                    case 0:
                         filters.Add(new FilterCondition("Id", CompOp.Equals, inputSearch));
                         break;
-                    case "Email":
+                    case 1:
                         filters.Add(new FilterCondition("Email", CompOp.Like, inputSearch));
                         break;
-                    case "Username":
+                    case 2:
                         filters.Add(new FilterCondition("Username", CompOp.Like, inputSearch));
                         break;
-                    case "Full name":
+                    case 3:
                         filters.Add(new FilterCondition("Full_name", CompOp.Like, inputSearch));
                         break;
                 }
