@@ -210,26 +210,5 @@ namespace ZiTyLot.BUS
                 throw new Exception(ex.Message);
             }
         }
-
-        public Issue PopulateCard(Issue item)
-        {
-            try
-            {
-                if (item.Card_id.HasValue)
-                {
-                    Card card = cardDAO.GetById(item.Card_id.Value);
-                    item.Card = card;
-                    return item;
-                }
-                else
-                {
-                    throw new KeyNotFoundException($"CardID is null, no record to search.");
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
     }
 }

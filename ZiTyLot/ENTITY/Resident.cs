@@ -17,7 +17,7 @@ namespace ZiTyLot.ENTITY
 
         //relationships
         private ICollection<Bill> bills = new List<Bill>();
-        private ICollection<Card> cards = new List<Card>();
+        private Card card = null;
 
         public int Id { get => id; set => id = value; }
         public string Full_name { get => full_name; set => full_name = value; }
@@ -28,6 +28,6 @@ namespace ZiTyLot.ENTITY
         public DateTime? Updated_at { get => updated_at; set => updated_at = value; }
         public DateTime? Deleted_at { get => deleted_at; set => deleted_at = value; }
         public ICollection<Bill> Bills { get => bills; set => bills = value; }
-        public ICollection<Card> Cards { get => cards; set => cards = value; }
+        public Card Card { get => card; set => card = value; }
     }
 }
