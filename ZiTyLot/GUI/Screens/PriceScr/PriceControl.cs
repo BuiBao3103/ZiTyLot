@@ -57,7 +57,6 @@ namespace ZiTyLot.GUI.Screens
         private void table_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if ((e.ColumnIndex == tableVehicalPrice.Columns["colView"].Index ||
-                 e.ColumnIndex == tableVehicalPrice.Columns["colEdit"].Index ||
                  e.ColumnIndex == tableVehicalPrice.Columns["colDelete"].Index) && e.RowIndex >= 0)
             {
                 if (e.RowIndex % 2 == 0)
@@ -72,10 +71,6 @@ namespace ZiTyLot.GUI.Screens
                 if (e.ColumnIndex == tableVehicalPrice.Columns["colView"].Index)
                 {
                     icon = Properties.Resources.Icon_18x18px_View;
-                }
-                else if (e.ColumnIndex == tableVehicalPrice.Columns["colEdit"].Index)
-                {
-                    icon = Properties.Resources.Icon_18x18px_Edit;
                 }
                 else if (e.ColumnIndex == tableVehicalPrice.Columns["colDelete"].Index)
                 {
@@ -100,10 +95,6 @@ namespace ZiTyLot.GUI.Screens
                 if (e.ColumnIndex == tableVehicalPrice.Columns["colView"].Index)
                 {
                     MessageBox.Show("View button clicked for row " + e.RowIndex);
-                }
-                else if (e.ColumnIndex == tableVehicalPrice.Columns["colEdit"].Index)
-                {
-                    MessageBox.Show("Edit button clicked for row " + e.RowIndex);
                 }
                 else if (e.ColumnIndex == tableVehicalPrice.Columns["colDelete"].Index)
                 {

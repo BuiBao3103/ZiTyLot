@@ -6,7 +6,6 @@ using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
-using ZiTyLot.GUI.Screens.ResidentScr;
 using ZiTyLot.Helper;
 
 namespace ZiTyLot.GUI.Screens
@@ -32,7 +31,7 @@ namespace ZiTyLot.GUI.Screens
         private void ResidentScreen_Load(object sender, EventArgs e)
         {
             pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
-            BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
+            pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
             btnAdd.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnAdd.Width, btnAdd.Height, 10, 10));
             this.tableResident.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
             this.tableResident.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
@@ -55,7 +54,6 @@ namespace ZiTyLot.GUI.Screens
         private void table_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if ((e.ColumnIndex == tableResident.Columns["colView"].Index ||
-                 e.ColumnIndex == tableResident.Columns["colEdit"].Index ||
                  e.ColumnIndex == tableResident.Columns["colDelete"].Index) && e.RowIndex >= 0)
             {
                 if (e.RowIndex % 2 == 0)
@@ -70,10 +68,6 @@ namespace ZiTyLot.GUI.Screens
                 if (e.ColumnIndex == tableResident.Columns["colView"].Index)
                 {
                     icon = Properties.Resources.Icon_18x18px_View;
-                }
-                else if (e.ColumnIndex == tableResident.Columns["colEdit"].Index)
-                {
-                    icon = Properties.Resources.Icon_18x18px_Edit;
                 }
                 else if (e.ColumnIndex == tableResident.Columns["colDelete"].Index)
                 {
@@ -100,10 +94,6 @@ namespace ZiTyLot.GUI.Screens
                 {
                     MessageBox.Show("View button clicked for row " + e.RowIndex);
                 }
-                else if (e.ColumnIndex == tableResident.Columns["colEdit"].Index)
-                {
-                    MessageBox.Show("Edit button clicked for row " + e.RowIndex);
-                }
                 else if (e.ColumnIndex == tableResident.Columns["colDelete"].Index)
                 {
                     MessageBox.Show("Delete button clicked for row " + e.RowIndex);
@@ -118,7 +108,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void BottomPnl_Resize(object sender, EventArgs e)
         {
-            BottomPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, BottomPnl.Width, BottomPnl.Height, 10, 10));
+            pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
         }
 
         private void LoadPageToTable()
@@ -172,8 +162,32 @@ namespace ZiTyLot.GUI.Screens
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ResidentDetailForm residentDetailForm = new ResidentDetailForm();
-            residentDetailForm.Show();
-        }   
+            
+        }
+
+        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            int index = cbFilter.SelectedIndex;
+            switch (index)
+            {
+                case 0:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 65);
+                    break;
+                case 1:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 95);
+                    break;
+                case 2:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 95);
+                    break;
+                case 3:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 120);
+                    break;
+                case 4:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 140);
+                    break;
+            }
+        }
+
     }
 }

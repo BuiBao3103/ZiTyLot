@@ -36,14 +36,6 @@ namespace ZiTyLot.GUI.Screens
             this.separator = new System.Windows.Forms.Panel();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.tableSession = new System.Windows.Forms.DataGridView();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPlate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCheckInTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCheckOutTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colView = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnlPagination = new System.Windows.Forms.Panel();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.uiPanel2 = new Sunny.UI.UIPanel();
@@ -89,6 +81,14 @@ namespace ZiTyLot.GUI.Screens
             this.panel5 = new System.Windows.Forms.Panel();
             this.customDateTimePicker1 = new ZiTyLot.GUI.CustomDateTimePicker();
             this.customDateTimePicker = new ZiTyLot.GUI.CustomDateTimePicker();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPlate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCheckInTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCheckOutTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colView = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableSession)).BeginInit();
             this.pnlPagination.SuspendLayout();
@@ -198,74 +198,6 @@ namespace ZiTyLot.GUI.Screens
             this.tableSession.RowTemplate.Height = 40;
             this.tableSession.Size = new System.Drawing.Size(1056, 398);
             this.tableSession.TabIndex = 1;
-            // 
-            // colId
-            // 
-            this.colId.HeaderText = "ID";
-            this.colId.MinimumWidth = 6;
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colId.Width = 30;
-            // 
-            // colType
-            // 
-            this.colType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colType.HeaderText = "Type";
-            this.colType.MinimumWidth = 80;
-            this.colType.Name = "colType";
-            this.colType.ReadOnly = true;
-            this.colType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colPlate
-            // 
-            this.colPlate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colPlate.HeaderText = "Plate";
-            this.colPlate.MinimumWidth = 6;
-            this.colPlate.Name = "colPlate";
-            this.colPlate.ReadOnly = true;
-            // 
-            // colCheckInTime
-            // 
-            this.colCheckInTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colCheckInTime.HeaderText = "Check in Time";
-            this.colCheckInTime.MinimumWidth = 6;
-            this.colCheckInTime.Name = "colCheckInTime";
-            this.colCheckInTime.ReadOnly = true;
-            // 
-            // colCheckOutTime
-            // 
-            this.colCheckOutTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colCheckOutTime.HeaderText = "Check out Time";
-            this.colCheckOutTime.MinimumWidth = 6;
-            this.colCheckOutTime.Name = "colCheckOutTime";
-            this.colCheckOutTime.ReadOnly = true;
-            // 
-            // colTotalTime
-            // 
-            this.colTotalTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colTotalTime.HeaderText = "Total Time";
-            this.colTotalTime.MinimumWidth = 100;
-            this.colTotalTime.Name = "colTotalTime";
-            this.colTotalTime.ReadOnly = true;
-            // 
-            // colTotalPrice
-            // 
-            this.colTotalPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colTotalPrice.HeaderText = "Total Price";
-            this.colTotalPrice.MinimumWidth = 6;
-            this.colTotalPrice.Name = "colTotalPrice";
-            this.colTotalPrice.ReadOnly = true;
-            // 
-            // colView
-            // 
-            this.colView.HeaderText = "Action";
-            this.colView.MinimumWidth = 6;
-            this.colView.Name = "colView";
-            this.colView.ReadOnly = true;
-            this.colView.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colView.Text = "View";
-            this.colView.Width = 90;
             // 
             // pnlPagination
             // 
@@ -1097,6 +1029,74 @@ namespace ZiTyLot.GUI.Screens
             this.customDateTimePicker.Size = new System.Drawing.Size(494, 470);
             this.customDateTimePicker.TabIndex = 6;
             // 
+            // colId
+            // 
+            this.colId.HeaderText = "ID";
+            this.colId.MinimumWidth = 6;
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colId.Width = 50;
+            // 
+            // colType
+            // 
+            this.colType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colType.HeaderText = "Type";
+            this.colType.MinimumWidth = 80;
+            this.colType.Name = "colType";
+            this.colType.ReadOnly = true;
+            this.colType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colPlate
+            // 
+            this.colPlate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colPlate.HeaderText = "Plate";
+            this.colPlate.MinimumWidth = 6;
+            this.colPlate.Name = "colPlate";
+            this.colPlate.ReadOnly = true;
+            // 
+            // colCheckInTime
+            // 
+            this.colCheckInTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colCheckInTime.HeaderText = "Check in Time";
+            this.colCheckInTime.MinimumWidth = 6;
+            this.colCheckInTime.Name = "colCheckInTime";
+            this.colCheckInTime.ReadOnly = true;
+            // 
+            // colCheckOutTime
+            // 
+            this.colCheckOutTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colCheckOutTime.HeaderText = "Check out Time";
+            this.colCheckOutTime.MinimumWidth = 6;
+            this.colCheckOutTime.Name = "colCheckOutTime";
+            this.colCheckOutTime.ReadOnly = true;
+            // 
+            // colTotalTime
+            // 
+            this.colTotalTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTotalTime.HeaderText = "Total Time";
+            this.colTotalTime.MinimumWidth = 100;
+            this.colTotalTime.Name = "colTotalTime";
+            this.colTotalTime.ReadOnly = true;
+            // 
+            // colTotalPrice
+            // 
+            this.colTotalPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTotalPrice.HeaderText = "Total Price";
+            this.colTotalPrice.MinimumWidth = 6;
+            this.colTotalPrice.Name = "colTotalPrice";
+            this.colTotalPrice.ReadOnly = true;
+            // 
+            // colView
+            // 
+            this.colView.HeaderText = "Action";
+            this.colView.MinimumWidth = 6;
+            this.colView.Name = "colView";
+            this.colView.ReadOnly = true;
+            this.colView.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colView.Text = "View";
+            this.colView.Width = 90;
+            // 
             // SessionControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1148,14 +1148,6 @@ namespace ZiTyLot.GUI.Screens
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
         private DataGridView tableSession;
-        private DataGridViewTextBoxColumn colId;
-        private DataGridViewTextBoxColumn colType;
-        private DataGridViewTextBoxColumn colPlate;
-        private DataGridViewTextBoxColumn colCheckInTime;
-        private DataGridViewTextBoxColumn colCheckOutTime;
-        private DataGridViewTextBoxColumn colTotalTime;
-        private DataGridViewTextBoxColumn colTotalPrice;
-        private DataGridViewButtonColumn colView;
         private Panel pnlPagination;
         private Panel pnlLeft;
         private Sunny.UI.UIPanel uiPanel2;
@@ -1199,5 +1191,13 @@ namespace ZiTyLot.GUI.Screens
         private Sunny.UI.UISymbolButton btnTimeOut;
         private CustomDateTimePicker customDateTimePicker1;
         private CustomDateTimePicker customDateTimePicker;
+        private DataGridViewTextBoxColumn colId;
+        private DataGridViewTextBoxColumn colType;
+        private DataGridViewTextBoxColumn colPlate;
+        private DataGridViewTextBoxColumn colCheckInTime;
+        private DataGridViewTextBoxColumn colCheckOutTime;
+        private DataGridViewTextBoxColumn colTotalTime;
+        private DataGridViewTextBoxColumn colTotalPrice;
+        private DataGridViewButtonColumn colView;
     }
 }

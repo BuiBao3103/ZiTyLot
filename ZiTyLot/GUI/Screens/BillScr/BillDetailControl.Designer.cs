@@ -93,16 +93,16 @@
             this.separator = new System.Windows.Forms.Panel();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.uiTableLayoutPanel5 = new Sunny.UI.UITableLayoutPanel();
-            this.uiPanel2 = new Sunny.UI.UIPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnBack = new Sunny.UI.UISymbolButton();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.lbBillTitle = new Sunny.UI.UILabel();
             this.uiPanel13 = new Sunny.UI.UIPanel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.btnCancel = new Sunny.UI.UISymbolButton();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnConfirm = new Sunny.UI.UISymbolButton();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.lbBillTitle = new Sunny.UI.UILabel();
+            this.uiPanel2 = new Sunny.UI.UIPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBack = new Sunny.UI.UISymbolButton();
             this.panel2.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.pnlMainTable.SuspendLayout();
@@ -149,12 +149,12 @@
             this.tableSearch.SuspendLayout();
             this.pnlTop.SuspendLayout();
             this.uiTableLayoutPanel5.SuspendLayout();
-            this.uiPanel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.uiPanel13.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.uiPanel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -1242,6 +1242,119 @@
             this.uiTableLayoutPanel5.TabIndex = 0;
             this.uiTableLayoutPanel5.TagString = null;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.lbBillTitle);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(523, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(514, 48);
+            this.panel6.TabIndex = 23;
+            // 
+            // lbBillTitle
+            // 
+            this.lbBillTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbBillTitle.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBillTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.lbBillTitle.Location = new System.Drawing.Point(0, 0);
+            this.lbBillTitle.Name = "lbBillTitle";
+            this.lbBillTitle.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.lbBillTitle.Size = new System.Drawing.Size(514, 48);
+            this.lbBillTitle.TabIndex = 0;
+            this.lbBillTitle.Text = "Bill {bill_id}";
+            this.lbBillTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiPanel13
+            // 
+            this.uiPanel13.Controls.Add(this.panel8);
+            this.uiPanel13.Controls.Add(this.panel9);
+            this.uiPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel13.FillColor = System.Drawing.Color.White;
+            this.uiPanel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel13.Location = new System.Drawing.Point(1044, 5);
+            this.uiPanel13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel13.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel13.Name = "uiPanel13";
+            this.uiPanel13.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.uiPanel13.Radius = 10;
+            this.uiPanel13.RectColor = System.Drawing.Color.White;
+            this.uiPanel13.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiPanel13.Size = new System.Drawing.Size(512, 44);
+            this.uiPanel13.TabIndex = 22;
+            this.uiPanel13.Text = null;
+            this.uiPanel13.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.btnCancel);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel8.Location = new System.Drawing.Point(262, 3);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(120, 38);
+            this.panel8.TabIndex = 10;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCancel.FillColor = System.Drawing.Color.White;
+            this.btnCancel.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnCancel.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(0, 0);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCancel.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCancel.RectDisableColor = System.Drawing.Color.White;
+            this.btnCancel.RectHoverColor = System.Drawing.Color.White;
+            this.btnCancel.RectPressColor = System.Drawing.Color.White;
+            this.btnCancel.RectSelectedColor = System.Drawing.Color.White;
+            this.btnCancel.RectSize = 2;
+            this.btnCancel.Size = new System.Drawing.Size(120, 38);
+            this.btnCancel.Symbol = 0;
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.btnConfirm);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel9.Location = new System.Drawing.Point(382, 3);
+            this.panel9.Name = "panel9";
+            this.panel9.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.panel9.Size = new System.Drawing.Size(130, 38);
+            this.panel9.TabIndex = 9;
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnConfirm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConfirm.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnConfirm.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnConfirm.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfirm.Location = new System.Drawing.Point(10, 0);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(0);
+            this.btnConfirm.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Radius = 10;
+            this.btnConfirm.RectColor = System.Drawing.Color.White;
+            this.btnConfirm.RectDisableColor = System.Drawing.Color.White;
+            this.btnConfirm.RectHoverColor = System.Drawing.Color.White;
+            this.btnConfirm.RectPressColor = System.Drawing.Color.White;
+            this.btnConfirm.RectSelectedColor = System.Drawing.Color.White;
+            this.btnConfirm.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnConfirm.Size = new System.Drawing.Size(120, 38);
+            this.btnConfirm.Symbol = 0;
+            this.btnConfirm.TabIndex = 3;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
             // uiPanel2
             // 
             this.uiPanel2.Controls.Add(this.panel1);
@@ -1256,7 +1369,7 @@
             this.uiPanel2.Radius = 10;
             this.uiPanel2.RectColor = System.Drawing.Color.White;
             this.uiPanel2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel2.Size = new System.Drawing.Size(511, 44);
+            this.uiPanel2.Size = new System.Drawing.Size(512, 44);
             this.uiPanel2.TabIndex = 21;
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1299,119 +1412,6 @@
             this.btnBack.Text = "Back";
             this.btnBack.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // uiPanel13
-            // 
-            this.uiPanel13.Controls.Add(this.panel8);
-            this.uiPanel13.Controls.Add(this.panel9);
-            this.uiPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel13.FillColor = System.Drawing.Color.White;
-            this.uiPanel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel13.Location = new System.Drawing.Point(1042, 5);
-            this.uiPanel13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel13.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel13.Name = "uiPanel13";
-            this.uiPanel13.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.uiPanel13.Radius = 10;
-            this.uiPanel13.RectColor = System.Drawing.Color.White;
-            this.uiPanel13.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel13.Size = new System.Drawing.Size(514, 44);
-            this.uiPanel13.TabIndex = 22;
-            this.uiPanel13.Text = null;
-            this.uiPanel13.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.btnCancel);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(264, 3);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(120, 38);
-            this.panel8.TabIndex = 10;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancel.FillColor = System.Drawing.Color.White;
-            this.btnCancel.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.btnCancel.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnCancel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(0, 0);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCancel.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCancel.RectDisableColor = System.Drawing.Color.White;
-            this.btnCancel.RectHoverColor = System.Drawing.Color.White;
-            this.btnCancel.RectPressColor = System.Drawing.Color.White;
-            this.btnCancel.RectSelectedColor = System.Drawing.Color.White;
-            this.btnCancel.RectSize = 2;
-            this.btnCancel.Size = new System.Drawing.Size(120, 38);
-            this.btnCancel.Symbol = 0;
-            this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.btnConfirm);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel9.Location = new System.Drawing.Point(384, 3);
-            this.panel9.Name = "panel9";
-            this.panel9.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel9.Size = new System.Drawing.Size(130, 38);
-            this.panel9.TabIndex = 9;
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnConfirm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnConfirm.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.btnConfirm.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnConfirm.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirm.Location = new System.Drawing.Point(10, 0);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(0);
-            this.btnConfirm.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Radius = 10;
-            this.btnConfirm.RectColor = System.Drawing.Color.White;
-            this.btnConfirm.RectDisableColor = System.Drawing.Color.White;
-            this.btnConfirm.RectHoverColor = System.Drawing.Color.White;
-            this.btnConfirm.RectPressColor = System.Drawing.Color.White;
-            this.btnConfirm.RectSelectedColor = System.Drawing.Color.White;
-            this.btnConfirm.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnConfirm.Size = new System.Drawing.Size(120, 38);
-            this.btnConfirm.Symbol = 0;
-            this.btnConfirm.TabIndex = 3;
-            this.btnConfirm.Text = "Confirm";
-            this.btnConfirm.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.lbBillTitle);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(522, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(513, 48);
-            this.panel6.TabIndex = 23;
-            // 
-            // lbBillTitle
-            // 
-            this.lbBillTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbBillTitle.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBillTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.lbBillTitle.Location = new System.Drawing.Point(0, 0);
-            this.lbBillTitle.Name = "lbBillTitle";
-            this.lbBillTitle.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.lbBillTitle.Size = new System.Drawing.Size(513, 48);
-            this.lbBillTitle.TabIndex = 0;
-            this.lbBillTitle.Text = "Bill {bill_id}";
-            this.lbBillTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BillDetailControl
             // 
@@ -1469,12 +1469,12 @@
             this.tableSearch.ResumeLayout(false);
             this.pnlTop.ResumeLayout(false);
             this.uiTableLayoutPanel5.ResumeLayout(false);
-            this.uiPanel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.uiPanel13.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
+            this.uiPanel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

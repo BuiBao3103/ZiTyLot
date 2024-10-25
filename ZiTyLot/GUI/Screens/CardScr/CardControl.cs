@@ -26,6 +26,7 @@ namespace ZiTyLot.GUI.Screens
             tbCurrentpage.Text = "1";
             lbTotalpage.Text = "/" + page.TotalPages;
             LoadPageToTable();
+
         }
         private void LoadPageToTable()
         {
@@ -43,10 +44,11 @@ namespace ZiTyLot.GUI.Screens
         {
             pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
-            btnAdd.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnAdd.Width, btnAdd.Height, 10, 10));
             this.tableCard.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
             this.tableCard.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
             this.tableCard.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
+            pnlTop.Height = 54;
+
         }
         // Paint the header cell
         private void table_Paint(object sender, PaintEventArgs e)
@@ -63,7 +65,6 @@ namespace ZiTyLot.GUI.Screens
         private void table_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if ((e.ColumnIndex == tableCard.Columns["colView"].Index ||
-                 e.ColumnIndex == tableCard.Columns["colEdit"].Index ||
                  e.ColumnIndex == tableCard.Columns["colDelete"].Index) && e.RowIndex >= 0)
             {
                 if (e.RowIndex % 2 == 0)
@@ -78,10 +79,6 @@ namespace ZiTyLot.GUI.Screens
                 if (e.ColumnIndex == tableCard.Columns["colView"].Index)
                 {
                     icon = Properties.Resources.Icon_18x18px_View;
-                }
-                else if (e.ColumnIndex == tableCard.Columns["colEdit"].Index)
-                {
-                    icon = Properties.Resources.Icon_18x18px_Edit;
                 }
                 else if (e.ColumnIndex == tableCard.Columns["colDelete"].Index)
                 {
@@ -107,10 +104,6 @@ namespace ZiTyLot.GUI.Screens
                 {
                     MessageBox.Show("View button clicked for row " + e.RowIndex);
                 }
-                else if (e.ColumnIndex == tableCard.Columns["colEdit"].Index)
-                {
-                    MessageBox.Show("Edit button clicked for row " + e.RowIndex);
-                }
                 else if (e.ColumnIndex == tableCard.Columns["colDelete"].Index)
                 {
                     MessageBox.Show("Delete button clicked for row " + e.RowIndex);
@@ -134,10 +127,6 @@ namespace ZiTyLot.GUI.Screens
 
         }
 
-        private void uiButton1_Click(object sender, EventArgs e)
-        {
-            menuMore.Show(btnMore, new Point(-100, btnMore.Height + 10));
-        }
 
         private void downloadTemplateMenuItem_Click(object sender, EventArgs e)
         {
@@ -180,6 +169,32 @@ namespace ZiTyLot.GUI.Screens
         {
             int currentPage = int.Parse(tbCurrentpage.Text);
             changePage((currentPage + 1));
+        }
+
+        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = cbFilter.SelectedIndex;
+            switch (index)
+            {
+                case 0:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 65);
+                    break;
+                case 1:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 85);
+                    break;
+            }
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            if (pnlTop.Height == 108)
+            {
+                pnlTop.Height = 54;
+            }
+            else
+            {
+                pnlTop.Height = 108;
+            }
         }
     }
 }
