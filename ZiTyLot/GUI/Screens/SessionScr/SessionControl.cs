@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
+using ZiTyLot.GUI.Screens.SessionScr;
 using ZiTyLot.Helper;
 
 
@@ -150,7 +151,8 @@ namespace ZiTyLot.GUI.Screens
             {
                 if (e.ColumnIndex == tableSession.Columns["colView"].Index)
                 {
-                    MessageBox.Show("View button clicked for row " + e.RowIndex);
+                    SessionDetailForm sessionDetailForm = new SessionDetailForm();
+                    sessionDetailForm.Show();
                 }
             }
         }

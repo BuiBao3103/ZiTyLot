@@ -7,6 +7,7 @@ namespace ZiTyLot.GUI.Screens.SessionScr
         public SessionDetailForm()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
     }
 }
