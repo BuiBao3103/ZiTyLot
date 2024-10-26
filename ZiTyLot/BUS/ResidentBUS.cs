@@ -140,7 +140,7 @@ namespace ZiTyLot.BUS
 
         }
 
-        public Resident PopulateCards(Resident resident)
+        public Resident PopulateCard(Resident resident)
         {
             try
             {
@@ -149,7 +149,8 @@ namespace ZiTyLot.BUS
                     new FilterCondition("resident_id", CompOp.Equals, resident.Id)
                 };
                 List<Card> cards = cardDAO.GetAll(filters);
-                resident.Cards = cards;
+                if (cards.Count > 0)
+                    resident.Card = cards[0];
                 return resident;
             }
             catch (Exception ex)

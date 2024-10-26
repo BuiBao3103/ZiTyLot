@@ -179,11 +179,11 @@
     <Compile Include="Constants\Enum\SessionType.cs" />
     <Compile Include="Constants\Enum\SlotStatus.cs" />
     <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\ADAO.cs" />
     <Compile Include="DAO\BDAO.cs" />
     <Compile Include="DAO\BillDAO.cs" />
     <Compile Include="DAO\CardDAO.cs" />
     <Compile Include="DAO\FactoryDAO.cs" />
-    <Compile Include="DAO\ADAO.cs" />
     <Compile Include="Config\DBConfig.cs" />
     <Compile Include="DAO\FunctionDAO.cs" />
     <Compile Include="DAO\IDAO.cs" />
