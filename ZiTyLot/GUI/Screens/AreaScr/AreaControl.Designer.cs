@@ -609,10 +609,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
-            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.uiTableLayoutPanel1.Controls.Add(this.uiPanel6, 0, 0);
             this.uiTableLayoutPanel1.Controls.Add(this.uiPanel9, 1, 0);
             this.uiTableLayoutPanel1.Controls.Add(this.uiPanel10, 2, 0);
@@ -639,7 +636,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel6.Name = "uiPanel6";
             this.uiPanel6.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.uiPanel6.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel6.Size = new System.Drawing.Size(286, 34);
+            this.uiPanel6.Size = new System.Drawing.Size(285, 34);
             this.uiPanel6.TabIndex = 31;
             this.uiPanel6.Text = null;
             this.uiPanel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -657,7 +654,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiTableLayoutPanel2.Name = "uiTableLayoutPanel2";
             this.uiTableLayoutPanel2.RowCount = 1;
             this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel2.Size = new System.Drawing.Size(281, 34);
+            this.uiTableLayoutPanel2.Size = new System.Drawing.Size(280, 34);
             this.uiTableLayoutPanel2.TabIndex = 0;
             this.uiTableLayoutPanel2.TagString = null;
             // 
@@ -686,7 +683,7 @@ namespace ZiTyLot.GUI.Screens
             this.cbVehicalType.RectSize = 2;
             this.cbVehicalType.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.cbVehicalType.ScrollBarStyleInherited = false;
-            this.cbVehicalType.Size = new System.Drawing.Size(171, 34);
+            this.cbVehicalType.Size = new System.Drawing.Size(170, 34);
             this.cbVehicalType.Style = Sunny.UI.UIStyle.Custom;
             this.cbVehicalType.SymbolSize = 24;
             this.cbVehicalType.TabIndex = 4;
@@ -717,13 +714,13 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel9.FillColor = System.Drawing.Color.White;
             this.uiPanel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel9.Location = new System.Drawing.Point(298, 5);
+            this.uiPanel9.Location = new System.Drawing.Point(297, 5);
             this.uiPanel9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel9.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel9.Name = "uiPanel9";
             this.uiPanel9.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.uiPanel9.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel9.Size = new System.Drawing.Size(286, 34);
+            this.uiPanel9.Size = new System.Drawing.Size(285, 34);
             this.uiPanel9.TabIndex = 29;
             this.uiPanel9.Text = null;
             this.uiPanel9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -741,7 +738,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiTableLayoutPanel3.Name = "uiTableLayoutPanel3";
             this.uiTableLayoutPanel3.RowCount = 1;
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(276, 34);
+            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(275, 34);
             this.uiTableLayoutPanel3.TabIndex = 1;
             this.uiTableLayoutPanel3.TagString = null;
             // 
@@ -770,7 +767,7 @@ namespace ZiTyLot.GUI.Screens
             this.cbUserType.RectSize = 2;
             this.cbUserType.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.cbUserType.ScrollBarStyleInherited = false;
-            this.cbUserType.Size = new System.Drawing.Size(191, 34);
+            this.cbUserType.Size = new System.Drawing.Size(190, 34);
             this.cbUserType.Style = Sunny.UI.UIStyle.Custom;
             this.cbUserType.SymbolSize = 24;
             this.cbUserType.TabIndex = 4;
@@ -801,13 +798,13 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel10.FillColor = System.Drawing.Color.White;
             this.uiPanel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel10.Location = new System.Drawing.Point(592, 5);
+            this.uiPanel10.Location = new System.Drawing.Point(590, 5);
             this.uiPanel10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel10.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel10.Name = "uiPanel10";
             this.uiPanel10.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.uiPanel10.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel10.Size = new System.Drawing.Size(286, 34);
+            this.uiPanel10.Size = new System.Drawing.Size(285, 34);
             this.uiPanel10.TabIndex = 27;
             this.uiPanel10.Text = null;
             this.uiPanel10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -825,7 +822,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiTableLayoutPanel4.Name = "uiTableLayoutPanel4";
             this.uiTableLayoutPanel4.RowCount = 1;
             this.uiTableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel4.Size = new System.Drawing.Size(276, 34);
+            this.uiTableLayoutPanel4.Size = new System.Drawing.Size(275, 34);
             this.uiTableLayoutPanel4.TabIndex = 1;
             this.uiTableLayoutPanel4.TagString = null;
             // 
@@ -856,7 +853,7 @@ namespace ZiTyLot.GUI.Screens
             this.cbStatus.RectSize = 2;
             this.cbStatus.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.cbStatus.ScrollBarStyleInherited = false;
-            this.cbStatus.Size = new System.Drawing.Size(216, 34);
+            this.cbStatus.Size = new System.Drawing.Size(215, 34);
             this.cbStatus.Style = Sunny.UI.UIStyle.Custom;
             this.cbStatus.SymbolSize = 24;
             this.cbStatus.TabIndex = 4;
@@ -885,7 +882,7 @@ namespace ZiTyLot.GUI.Screens
             // 
             this.panel4.Controls.Add(this.btnClear);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(885, 3);
+            this.panel4.Location = new System.Drawing.Point(882, 3);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.panel4.Size = new System.Drawing.Size(124, 38);
@@ -924,10 +921,10 @@ namespace ZiTyLot.GUI.Screens
             // 
             this.panel3.Controls.Add(this.btnApply);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(1015, 3);
+            this.panel3.Location = new System.Drawing.Point(1012, 3);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(123, 38);
+            this.panel3.Size = new System.Drawing.Size(126, 38);
             this.panel3.TabIndex = 25;
             // 
             // btnApply
@@ -950,7 +947,7 @@ namespace ZiTyLot.GUI.Screens
             this.btnApply.RectPressColor = System.Drawing.Color.White;
             this.btnApply.RectSelectedColor = System.Drawing.Color.White;
             this.btnApply.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnApply.Size = new System.Drawing.Size(118, 38);
+            this.btnApply.Size = new System.Drawing.Size(121, 38);
             this.btnApply.Symbol = 61616;
             this.btnApply.TabIndex = 3;
             this.btnApply.Text = "Apply";
