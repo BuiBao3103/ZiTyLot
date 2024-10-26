@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
+using ZiTyLot.GUI.Screens.ResidentScr;
 using ZiTyLot.Helper;
 
 namespace ZiTyLot.GUI.Screens
@@ -92,7 +93,8 @@ namespace ZiTyLot.GUI.Screens
             {
                 if (e.ColumnIndex == tableResident.Columns["colView"].Index)
                 {
-                    MessageBox.Show("View button clicked for row " + e.RowIndex);
+                    ResidentDetailForm residentDetailForm = new ResidentDetailForm();
+                    residentDetailForm.Show();
                 }
                 else if (e.ColumnIndex == tableResident.Columns["colDelete"].Index)
                 {
@@ -116,7 +118,7 @@ namespace ZiTyLot.GUI.Screens
             tableResident.Rows.Clear();
             foreach (Resident resident in page.Content)
             {
-                tableResident.Rows.Add(resident.Id, resident.Full_name, resident.Apartment_id, resident.Email);
+                tableResident.Rows.Add(resident.Id, resident.Full_name, resident.Apartment_id, resident.Email, resident.Phone);
             }
         }
 
@@ -162,6 +164,8 @@ namespace ZiTyLot.GUI.Screens
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            ResidentCreateForm residentCreateForm = new ResidentCreateForm();
+            residentCreateForm.Show();
             
         }
 
