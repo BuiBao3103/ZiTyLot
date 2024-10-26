@@ -11,6 +11,7 @@ using System.Drawing.Text;
 using System.Threading.Tasks;
 using System.Linq;
 using Org.BouncyCastle.Bcpg.OpenPgp;
+using ZiTyLot.Constants.Enum;
 
 namespace ZiTyLot.GUI.Screens
 {
@@ -143,8 +144,8 @@ namespace ZiTyLot.GUI.Screens
             //update page number
             tbCurrentpage.Text = pageable.PageNumber.ToString();
             lbTotalpage.Text = "/" + page.TotalPages;
-            tableAccount.Rows.Clear();
             //update table
+            tableAccount.Rows.Clear();
             foreach (Account account in page.Content)
             {
                 tableAccount.Rows.Add(account.Id, account.Full_name, account.Username, account.Email);
@@ -153,18 +154,6 @@ namespace ZiTyLot.GUI.Screens
             btnPrevious.Enabled = pageable.PageNumber > 1;
             btnNext.Enabled = pageable.PageNumber < page.TotalPages;
         }
-
-
-        private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedValue = cbNumberofitem.SelectedItem.ToString();
-            int pageSize = int.Parse(selectedValue.Split(' ')[0]);
-            pageable.PageNumber = 1;
-            pageable.PageSize = pageSize;
-            page = accountBUS.GetAllPagination(pageable, filters);
-            LoadPageAndPageable();
-        }
-
         private void ChangePage(int pageNumber)
         {
             if (pageNumber < 1 || pageNumber > page.TotalPages)
@@ -175,26 +164,6 @@ namespace ZiTyLot.GUI.Screens
             page = accountBUS.GetAllPagination(pageable, filters);
             LoadPageAndPageable();
         }
-
-        private void btnPrevious_Click(object sender, EventArgs e)
-        {
-            ChangePage(pageable.PageNumber - 1);
-        }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            ChangePage(pageable.PageNumber + 1);
-        }
-
-        private async void tbSearch_TextChanged(object sender, EventArgs e)
-        {
-            await _debouncer.DebounceAsync(() =>
-            {
-                query();
-                return Task.CompletedTask;
-            }, 500);
-        }
-
         private void query()
         {
             int inputCboxIndex = cbFilter.SelectedIndex;
@@ -219,17 +188,16 @@ namespace ZiTyLot.GUI.Screens
                 }
             }
             //assume have a combobox when query
-            //ComboBox comboBox = new ComboBox();
-            //string input = comboBox.GetItemText(comboBox.SelectedItem);
-            //if (input != "All")
+            //int inputCboxIndexType = cbFilter.SelectedIndex;
+            //if (inputCboxIndexType != 0)
             //{
-            //    switch (input)
+            //    switch (inputCboxIndexType)
             //    {
-            //        case "A":
-            //            filters.Add(new FilterCondition("Status", CompOp.Equals, true));
+            //        case 1:
+            //            filters.Add(new FilterCondition("Status", CompOp.Equals, AccountGender.MALE));
             //            break;
-            //        case "B":
-            //            filters.Add(new FilterCondition("Status", CompOp.Equals, false));
+            //        case 2:
+            //            filters.Add(new FilterCondition("Status", CompOp.Equals, AccountGender.MALE));
             //            break;
             //    }
             //}
@@ -238,6 +206,35 @@ namespace ZiTyLot.GUI.Screens
             pageable.PageNumber = 1;
             page = accountBUS.GetAllPagination(pageable, filters);
             LoadPageAndPageable();
+        }
+
+        private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedValue = cbNumberofitem.SelectedItem.ToString();
+            int pageSize = int.Parse(selectedValue.Split(' ')[0]);
+            pageable.PageNumber = 1;
+            pageable.PageSize = pageSize;
+            page = accountBUS.GetAllPagination(pageable, filters);
+            LoadPageAndPageable();
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            ChangePage(pageable.PageNumber - 1);
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            ChangePage(pageable.PageNumber + 1);
+        }
+
+        private async void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            await _debouncer.DebounceAsync(() =>
+            {
+                query();
+                return Task.CompletedTask;
+            }, 500);
         }
 
         private void tbCurrentpage_KeyPress(object sender, KeyPressEventArgs e)
