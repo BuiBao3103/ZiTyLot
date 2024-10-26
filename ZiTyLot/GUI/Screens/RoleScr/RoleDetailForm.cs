@@ -7,6 +7,7 @@ namespace ZiTyLot.GUI.Screens.RoleScr
         public RoleDetailForm()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
     }
 }
