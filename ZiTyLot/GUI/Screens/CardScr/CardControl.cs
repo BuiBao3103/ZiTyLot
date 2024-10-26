@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
+using ZiTyLot.GUI.Screens.CardScr;
 using ZiTyLot.Helper;
 
 namespace ZiTyLot.GUI.Screens
@@ -195,6 +196,12 @@ namespace ZiTyLot.GUI.Screens
             {
                 pnlTop.Height = 108;
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            CardCreateForm cardCreateForm = new CardCreateForm();
+            cardCreateForm.Show();
         }
     }
 }
