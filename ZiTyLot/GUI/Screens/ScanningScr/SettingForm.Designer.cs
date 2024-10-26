@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uiPanel1 = new Sunny.UI.UIPanel();
-            this.uiLabel1 = new Sunny.UI.UILabel();
             this.uiPanel5 = new Sunny.UI.UIPanel();
             this.uiGroupBox3 = new Sunny.UI.UIGroupBox();
             this.uiTableLayoutPanel2 = new Sunny.UI.UITableLayoutPanel();
@@ -38,11 +36,6 @@
             this.btnDisconnectCheckInFront = new Sunny.UI.UISymbolButton();
             this.uiPanel2 = new Sunny.UI.UIPanel();
             this.btnConnectCheckInFront = new Sunny.UI.UISymbolButton();
-            this.uiPanel8 = new Sunny.UI.UIPanel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.btnCancel = new Sunny.UI.UISymbolButton();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.btnConfirm = new Sunny.UI.UISymbolButton();
             this.uiGroupBox5 = new Sunny.UI.UIGroupBox();
             this.uiTableLayoutPanel4 = new Sunny.UI.UITableLayoutPanel();
             this.cbCheckInBack = new Sunny.UI.UIComboBox();
@@ -113,15 +106,19 @@
             this.uiLabel4 = new Sunny.UI.UILabel();
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.fbdFolderLocation = new System.Windows.Forms.FolderBrowserDialog();
-            this.uiPanel1.SuspendLayout();
+            this.uiPanel1 = new Sunny.UI.UIPanel();
+            this.uiPanel4 = new Sunny.UI.UIPanel();
+            this.lbSessionID = new Sunny.UI.UILabel();
+            this.uiPanel8 = new Sunny.UI.UIPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.uiSymbolButton2 = new Sunny.UI.UISymbolButton();
             this.uiPanel5.SuspendLayout();
             this.uiGroupBox3.SuspendLayout();
             this.uiTableLayoutPanel2.SuspendLayout();
             this.uiPanel3.SuspendLayout();
             this.uiPanel2.SuspendLayout();
-            this.uiPanel8.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.uiGroupBox5.SuspendLayout();
             this.uiTableLayoutPanel4.SuspendLayout();
             this.uiPanel7.SuspendLayout();
@@ -161,37 +158,12 @@
             this.uiGroupBox8.SuspendLayout();
             this.uiTableLayoutPanel12.SuspendLayout();
             this.uiPanel13.SuspendLayout();
+            this.uiPanel1.SuspendLayout();
+            this.uiPanel4.SuspendLayout();
+            this.uiPanel8.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // uiPanel1
-            // 
-            this.uiTableLayoutPanel1.SetColumnSpan(this.uiPanel1, 2);
-            this.uiPanel1.Controls.Add(this.uiLabel1);
-            this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel1.FillColor = System.Drawing.Color.White;
-            this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel1.Location = new System.Drawing.Point(4, 5);
-            this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel1.Name = "uiPanel1";
-            this.uiPanel1.RectColor = System.Drawing.Color.White;
-            this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel1.Size = new System.Drawing.Size(736, 44);
-            this.uiPanel1.TabIndex = 0;
-            this.uiPanel1.Text = null;
-            this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiLabel1
-            // 
-            this.uiLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel1.Location = new System.Drawing.Point(0, 0);
-            this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(736, 44);
-            this.uiLabel1.TabIndex = 0;
-            this.uiLabel1.Text = "Settings";
-            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiPanel5
             // 
@@ -205,7 +177,7 @@
             this.uiPanel5.Name = "uiPanel5";
             this.uiPanel5.RectColor = System.Drawing.Color.White;
             this.uiPanel5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel5.Size = new System.Drawing.Size(364, 81);
+            this.uiPanel5.Size = new System.Drawing.Size(374, 83);
             this.uiPanel5.TabIndex = 5;
             this.uiPanel5.Text = null;
             this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -223,7 +195,7 @@
             this.uiGroupBox3.Name = "uiGroupBox3";
             this.uiGroupBox3.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox3.RectColor = System.Drawing.Color.White;
-            this.uiGroupBox3.Size = new System.Drawing.Size(364, 81);
+            this.uiGroupBox3.Size = new System.Drawing.Size(374, 83);
             this.uiGroupBox3.TabIndex = 1;
             this.uiGroupBox3.Text = "Check in front camera";
             this.uiGroupBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -243,7 +215,7 @@
             this.uiTableLayoutPanel2.Name = "uiTableLayoutPanel2";
             this.uiTableLayoutPanel2.RowCount = 1;
             this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel2.Size = new System.Drawing.Size(348, 45);
+            this.uiTableLayoutPanel2.Size = new System.Drawing.Size(358, 47);
             this.uiTableLayoutPanel2.TabIndex = 0;
             this.uiTableLayoutPanel2.TagString = null;
             // 
@@ -266,10 +238,9 @@
             this.cbCheckInFront.MinimumSize = new System.Drawing.Size(0, 40);
             this.cbCheckInFront.Name = "cbCheckInFront";
             this.cbCheckInFront.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
-            this.cbCheckInFront.Radius = 7;
-            this.cbCheckInFront.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.cbCheckInFront.RectColor = System.Drawing.SystemColors.ControlDark;
             this.cbCheckInFront.RectSize = 2;
-            this.cbCheckInFront.Size = new System.Drawing.Size(240, 40);
+            this.cbCheckInFront.Size = new System.Drawing.Size(250, 40);
             this.cbCheckInFront.SymbolSize = 24;
             this.cbCheckInFront.TabIndex = 6;
             this.cbCheckInFront.Text = "Camera 1";
@@ -282,13 +253,13 @@
             this.uiPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel3.FillColor = System.Drawing.Color.White;
             this.uiPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel3.Location = new System.Drawing.Point(302, 5);
+            this.uiPanel3.Location = new System.Drawing.Point(312, 5);
             this.uiPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel3.Name = "uiPanel3";
             this.uiPanel3.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel3.Size = new System.Drawing.Size(42, 35);
+            this.uiPanel3.Size = new System.Drawing.Size(42, 37);
             this.uiPanel3.TabIndex = 5;
             this.uiPanel3.Text = null;
             this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -311,7 +282,7 @@
             this.btnDisconnectCheckInFront.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckInFront.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckInFront.RectSize = 2;
-            this.btnDisconnectCheckInFront.Size = new System.Drawing.Size(32, 25);
+            this.btnDisconnectCheckInFront.Size = new System.Drawing.Size(32, 27);
             this.btnDisconnectCheckInFront.Symbol = 557711;
             this.btnDisconnectCheckInFront.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckInFront.SymbolOffset = new System.Drawing.Point(1, 1);
@@ -326,13 +297,13 @@
             this.uiPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel2.FillColor = System.Drawing.Color.White;
             this.uiPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel2.Location = new System.Drawing.Point(252, 5);
+            this.uiPanel2.Location = new System.Drawing.Point(262, 5);
             this.uiPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel2.Name = "uiPanel2";
             this.uiPanel2.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel2.Size = new System.Drawing.Size(42, 35);
+            this.uiPanel2.Size = new System.Drawing.Size(42, 37);
             this.uiPanel2.TabIndex = 4;
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -355,7 +326,7 @@
             this.btnConnectCheckInFront.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckInFront.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckInFront.RectSize = 2;
-            this.btnConnectCheckInFront.Size = new System.Drawing.Size(32, 25);
+            this.btnConnectCheckInFront.Size = new System.Drawing.Size(32, 27);
             this.btnConnectCheckInFront.Symbol = 557687;
             this.btnConnectCheckInFront.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckInFront.SymbolOffset = new System.Drawing.Point(1, 1);
@@ -364,101 +335,6 @@
             this.btnConnectCheckInFront.TabIndex = 0;
             this.btnConnectCheckInFront.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             // 
-            // uiPanel8
-            // 
-            this.uiTableLayoutPanel1.SetColumnSpan(this.uiPanel8, 2);
-            this.uiPanel8.Controls.Add(this.panel7);
-            this.uiPanel8.Controls.Add(this.panel8);
-            this.uiPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel8.FillColor = System.Drawing.Color.White;
-            this.uiPanel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel8.Location = new System.Drawing.Point(4, 707);
-            this.uiPanel8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel8.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel8.Name = "uiPanel8";
-            this.uiPanel8.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.uiPanel8.Radius = 10;
-            this.uiPanel8.RectColor = System.Drawing.Color.White;
-            this.uiPanel8.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel8.Size = new System.Drawing.Size(736, 49);
-            this.uiPanel8.TabIndex = 34;
-            this.uiPanel8.Text = null;
-            this.uiPanel8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.btnCancel);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(486, 5);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(120, 39);
-            this.panel7.TabIndex = 10;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancel.FillColor = System.Drawing.Color.White;
-            this.btnCancel.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.btnCancel.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(0, 0);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCancel.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Radius = 10;
-            this.btnCancel.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCancel.RectDisableColor = System.Drawing.Color.White;
-            this.btnCancel.RectHoverColor = System.Drawing.Color.White;
-            this.btnCancel.RectPressColor = System.Drawing.Color.White;
-            this.btnCancel.RectSelectedColor = System.Drawing.Color.White;
-            this.btnCancel.RectSize = 2;
-            this.btnCancel.Size = new System.Drawing.Size(120, 39);
-            this.btnCancel.Symbol = 0;
-            this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.btnConfirm);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(606, 5);
-            this.panel8.Name = "panel8";
-            this.panel8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel8.Size = new System.Drawing.Size(130, 39);
-            this.panel8.TabIndex = 9;
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnConfirm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnConfirm.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.btnConfirm.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirm.Location = new System.Drawing.Point(10, 0);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(0);
-            this.btnConfirm.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Padding = new System.Windows.Forms.Padding(14, 0, 12, 0);
-            this.btnConfirm.Radius = 10;
-            this.btnConfirm.RectColor = System.Drawing.Color.White;
-            this.btnConfirm.RectDisableColor = System.Drawing.Color.White;
-            this.btnConfirm.RectHoverColor = System.Drawing.Color.White;
-            this.btnConfirm.RectPressColor = System.Drawing.Color.White;
-            this.btnConfirm.RectSelectedColor = System.Drawing.Color.White;
-            this.btnConfirm.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnConfirm.RectSize = 2;
-            this.btnConfirm.Size = new System.Drawing.Size(120, 39);
-            this.btnConfirm.Symbol = 0;
-            this.btnConfirm.TabIndex = 3;
-            this.btnConfirm.Text = "Confirm";
-            this.btnConfirm.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
             // uiGroupBox5
             // 
             this.uiGroupBox5.Controls.Add(this.uiTableLayoutPanel4);
@@ -466,13 +342,13 @@
             this.uiGroupBox5.FillColor = System.Drawing.Color.White;
             this.uiGroupBox5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox5.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiGroupBox5.Location = new System.Drawing.Point(4, 184);
+            this.uiGroupBox5.Location = new System.Drawing.Point(4, 186);
             this.uiGroupBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox5.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox5.Name = "uiGroupBox5";
             this.uiGroupBox5.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox5.RectColor = System.Drawing.Color.White;
-            this.uiGroupBox5.Size = new System.Drawing.Size(364, 81);
+            this.uiGroupBox5.Size = new System.Drawing.Size(374, 83);
             this.uiGroupBox5.TabIndex = 43;
             this.uiGroupBox5.Text = "Check in back camera";
             this.uiGroupBox5.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -492,7 +368,7 @@
             this.uiTableLayoutPanel4.Name = "uiTableLayoutPanel4";
             this.uiTableLayoutPanel4.RowCount = 1;
             this.uiTableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel4.Size = new System.Drawing.Size(348, 45);
+            this.uiTableLayoutPanel4.Size = new System.Drawing.Size(358, 47);
             this.uiTableLayoutPanel4.TabIndex = 1;
             this.uiTableLayoutPanel4.TagString = null;
             // 
@@ -515,10 +391,9 @@
             this.cbCheckInBack.MinimumSize = new System.Drawing.Size(0, 40);
             this.cbCheckInBack.Name = "cbCheckInBack";
             this.cbCheckInBack.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
-            this.cbCheckInBack.Radius = 7;
-            this.cbCheckInBack.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.cbCheckInBack.RectColor = System.Drawing.SystemColors.ControlDark;
             this.cbCheckInBack.RectSize = 2;
-            this.cbCheckInBack.Size = new System.Drawing.Size(240, 40);
+            this.cbCheckInBack.Size = new System.Drawing.Size(250, 40);
             this.cbCheckInBack.SymbolSize = 24;
             this.cbCheckInBack.TabIndex = 6;
             this.cbCheckInBack.Text = "Camera 2";
@@ -531,13 +406,13 @@
             this.uiPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel7.FillColor = System.Drawing.Color.White;
             this.uiPanel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel7.Location = new System.Drawing.Point(302, 5);
+            this.uiPanel7.Location = new System.Drawing.Point(312, 5);
             this.uiPanel7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel7.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel7.Name = "uiPanel7";
             this.uiPanel7.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel7.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel7.Size = new System.Drawing.Size(42, 35);
+            this.uiPanel7.Size = new System.Drawing.Size(42, 37);
             this.uiPanel7.TabIndex = 5;
             this.uiPanel7.Text = null;
             this.uiPanel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -560,7 +435,7 @@
             this.btnDisconnectCheckInBack.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckInBack.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckInBack.RectSize = 2;
-            this.btnDisconnectCheckInBack.Size = new System.Drawing.Size(32, 25);
+            this.btnDisconnectCheckInBack.Size = new System.Drawing.Size(32, 27);
             this.btnDisconnectCheckInBack.Symbol = 557711;
             this.btnDisconnectCheckInBack.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckInBack.SymbolOffset = new System.Drawing.Point(1, 1);
@@ -575,13 +450,13 @@
             this.uiPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel9.FillColor = System.Drawing.Color.White;
             this.uiPanel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel9.Location = new System.Drawing.Point(252, 5);
+            this.uiPanel9.Location = new System.Drawing.Point(262, 5);
             this.uiPanel9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel9.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel9.Name = "uiPanel9";
             this.uiPanel9.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel9.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel9.Size = new System.Drawing.Size(42, 35);
+            this.uiPanel9.Size = new System.Drawing.Size(42, 37);
             this.uiPanel9.TabIndex = 4;
             this.uiPanel9.Text = null;
             this.uiPanel9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -604,7 +479,7 @@
             this.btnConnectCheckInBack.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckInBack.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckInBack.RectSize = 2;
-            this.btnConnectCheckInBack.Size = new System.Drawing.Size(32, 25);
+            this.btnConnectCheckInBack.Size = new System.Drawing.Size(32, 27);
             this.btnConnectCheckInBack.Symbol = 557687;
             this.btnConnectCheckInBack.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckInBack.SymbolOffset = new System.Drawing.Point(1, 1);
@@ -620,13 +495,13 @@
             this.uiGroupBox6.FillColor = System.Drawing.Color.White;
             this.uiGroupBox6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox6.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiGroupBox6.Location = new System.Drawing.Point(376, 184);
+            this.uiGroupBox6.Location = new System.Drawing.Point(386, 186);
             this.uiGroupBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox6.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox6.Name = "uiGroupBox6";
             this.uiGroupBox6.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox6.RectColor = System.Drawing.Color.White;
-            this.uiGroupBox6.Size = new System.Drawing.Size(364, 81);
+            this.uiGroupBox6.Size = new System.Drawing.Size(374, 83);
             this.uiGroupBox6.TabIndex = 44;
             this.uiGroupBox6.Text = "Check out back camera";
             this.uiGroupBox6.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -646,7 +521,7 @@
             this.uiTableLayoutPanel5.Name = "uiTableLayoutPanel5";
             this.uiTableLayoutPanel5.RowCount = 1;
             this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel5.Size = new System.Drawing.Size(348, 45);
+            this.uiTableLayoutPanel5.Size = new System.Drawing.Size(358, 47);
             this.uiTableLayoutPanel5.TabIndex = 1;
             this.uiTableLayoutPanel5.TagString = null;
             // 
@@ -669,10 +544,9 @@
             this.cbCheckOutBack.MinimumSize = new System.Drawing.Size(0, 40);
             this.cbCheckOutBack.Name = "cbCheckOutBack";
             this.cbCheckOutBack.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
-            this.cbCheckOutBack.Radius = 7;
-            this.cbCheckOutBack.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.cbCheckOutBack.RectColor = System.Drawing.SystemColors.ControlDark;
             this.cbCheckOutBack.RectSize = 2;
-            this.cbCheckOutBack.Size = new System.Drawing.Size(240, 40);
+            this.cbCheckOutBack.Size = new System.Drawing.Size(250, 40);
             this.cbCheckOutBack.SymbolSize = 24;
             this.cbCheckOutBack.TabIndex = 6;
             this.cbCheckOutBack.Text = "Camera 4";
@@ -685,13 +559,13 @@
             this.uiPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel10.FillColor = System.Drawing.Color.White;
             this.uiPanel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel10.Location = new System.Drawing.Point(302, 5);
+            this.uiPanel10.Location = new System.Drawing.Point(312, 5);
             this.uiPanel10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel10.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel10.Name = "uiPanel10";
             this.uiPanel10.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel10.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel10.Size = new System.Drawing.Size(42, 35);
+            this.uiPanel10.Size = new System.Drawing.Size(42, 37);
             this.uiPanel10.TabIndex = 5;
             this.uiPanel10.Text = null;
             this.uiPanel10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -714,7 +588,7 @@
             this.btnDisconnectCheckOutBack.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckOutBack.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckOutBack.RectSize = 2;
-            this.btnDisconnectCheckOutBack.Size = new System.Drawing.Size(32, 25);
+            this.btnDisconnectCheckOutBack.Size = new System.Drawing.Size(32, 27);
             this.btnDisconnectCheckOutBack.Symbol = 557711;
             this.btnDisconnectCheckOutBack.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckOutBack.SymbolOffset = new System.Drawing.Point(1, 1);
@@ -729,13 +603,13 @@
             this.uiPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel11.FillColor = System.Drawing.Color.White;
             this.uiPanel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel11.Location = new System.Drawing.Point(252, 5);
+            this.uiPanel11.Location = new System.Drawing.Point(262, 5);
             this.uiPanel11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel11.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel11.Name = "uiPanel11";
             this.uiPanel11.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel11.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel11.Size = new System.Drawing.Size(42, 35);
+            this.uiPanel11.Size = new System.Drawing.Size(42, 37);
             this.uiPanel11.TabIndex = 4;
             this.uiPanel11.Text = null;
             this.uiPanel11.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -758,7 +632,7 @@
             this.btnConnectCheckOutBack.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckOutBack.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckOutBack.RectSize = 2;
-            this.btnConnectCheckOutBack.Size = new System.Drawing.Size(32, 25);
+            this.btnConnectCheckOutBack.Size = new System.Drawing.Size(32, 27);
             this.btnConnectCheckOutBack.Symbol = 557687;
             this.btnConnectCheckOutBack.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckOutBack.SymbolOffset = new System.Drawing.Point(1, 1);
@@ -774,13 +648,13 @@
             this.uiGroupBox4.FillColor = System.Drawing.Color.White;
             this.uiGroupBox4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox4.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiGroupBox4.Location = new System.Drawing.Point(376, 93);
+            this.uiGroupBox4.Location = new System.Drawing.Point(386, 93);
             this.uiGroupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox4.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox4.Name = "uiGroupBox4";
             this.uiGroupBox4.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox4.RectColor = System.Drawing.Color.White;
-            this.uiGroupBox4.Size = new System.Drawing.Size(364, 81);
+            this.uiGroupBox4.Size = new System.Drawing.Size(374, 83);
             this.uiGroupBox4.TabIndex = 45;
             this.uiGroupBox4.Text = "Check out front camera";
             this.uiGroupBox4.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -800,7 +674,7 @@
             this.uiTableLayoutPanel3.Name = "uiTableLayoutPanel3";
             this.uiTableLayoutPanel3.RowCount = 1;
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(348, 45);
+            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(358, 47);
             this.uiTableLayoutPanel3.TabIndex = 1;
             this.uiTableLayoutPanel3.TagString = null;
             // 
@@ -810,13 +684,13 @@
             this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel.FillColor = System.Drawing.Color.White;
             this.panel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.panel.Location = new System.Drawing.Point(302, 5);
+            this.panel.Location = new System.Drawing.Point(312, 5);
             this.panel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel.MinimumSize = new System.Drawing.Size(1, 1);
             this.panel.Name = "panel";
             this.panel.Padding = new System.Windows.Forms.Padding(5);
             this.panel.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.panel.Size = new System.Drawing.Size(42, 35);
+            this.panel.Size = new System.Drawing.Size(42, 37);
             this.panel.TabIndex = 5;
             this.panel.Text = null;
             this.panel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -839,7 +713,7 @@
             this.btnDisconnectCheckOutFront.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckOutFront.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckOutFront.RectSize = 2;
-            this.btnDisconnectCheckOutFront.Size = new System.Drawing.Size(32, 25);
+            this.btnDisconnectCheckOutFront.Size = new System.Drawing.Size(32, 27);
             this.btnDisconnectCheckOutFront.Symbol = 557711;
             this.btnDisconnectCheckOutFront.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckOutFront.SymbolOffset = new System.Drawing.Point(1, 1);
@@ -867,10 +741,9 @@
             this.cbCheckOutFront.MinimumSize = new System.Drawing.Size(0, 40);
             this.cbCheckOutFront.Name = "cbCheckOutFront";
             this.cbCheckOutFront.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
-            this.cbCheckOutFront.Radius = 7;
-            this.cbCheckOutFront.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.cbCheckOutFront.RectColor = System.Drawing.SystemColors.ControlDark;
             this.cbCheckOutFront.RectSize = 2;
-            this.cbCheckOutFront.Size = new System.Drawing.Size(240, 40);
+            this.cbCheckOutFront.Size = new System.Drawing.Size(250, 40);
             this.cbCheckOutFront.SymbolSize = 24;
             this.cbCheckOutFront.TabIndex = 3;
             this.cbCheckOutFront.Text = "Camera 3";
@@ -883,13 +756,13 @@
             this.uiPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel6.FillColor = System.Drawing.Color.White;
             this.uiPanel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel6.Location = new System.Drawing.Point(252, 5);
+            this.uiPanel6.Location = new System.Drawing.Point(262, 5);
             this.uiPanel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel6.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel6.Name = "uiPanel6";
             this.uiPanel6.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel6.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel6.Size = new System.Drawing.Size(42, 35);
+            this.uiPanel6.Size = new System.Drawing.Size(42, 37);
             this.uiPanel6.TabIndex = 4;
             this.uiPanel6.Text = null;
             this.uiPanel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -912,7 +785,7 @@
             this.btnConnectCheckOutFront.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckOutFront.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckOutFront.RectSize = 2;
-            this.btnConnectCheckOutFront.Size = new System.Drawing.Size(32, 25);
+            this.btnConnectCheckOutFront.Size = new System.Drawing.Size(32, 27);
             this.btnConnectCheckOutFront.Symbol = 557687;
             this.btnConnectCheckOutFront.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckOutFront.SymbolOffset = new System.Drawing.Point(1, 1);
@@ -926,6 +799,8 @@
             this.uiTableLayoutPanel1.ColumnCount = 2;
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel1.Controls.Add(this.uiPanel8, 0, 10);
+            this.uiTableLayoutPanel1.Controls.Add(this.uiPanel1, 0, 0);
             this.uiTableLayoutPanel1.Controls.Add(this.uiGroupBox12, 1, 9);
             this.uiTableLayoutPanel1.Controls.Add(this.uiGroupBox11, 0, 9);
             this.uiTableLayoutPanel1.Controls.Add(this.uiGroupBox7, 1, 8);
@@ -940,11 +815,9 @@
             this.uiTableLayoutPanel1.Controls.Add(this.uiGroupBox4, 1, 2);
             this.uiTableLayoutPanel1.Controls.Add(this.uiGroupBox6, 1, 3);
             this.uiTableLayoutPanel1.Controls.Add(this.uiGroupBox5, 0, 3);
-            this.uiTableLayoutPanel1.Controls.Add(this.uiPanel8, 0, 10);
             this.uiTableLayoutPanel1.Controls.Add(this.uiPanel5, 0, 2);
-            this.uiTableLayoutPanel1.Controls.Add(this.uiPanel1, 0, 0);
             this.uiTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiTableLayoutPanel1.Location = new System.Drawing.Point(20, 20);
+            this.uiTableLayoutPanel1.Location = new System.Drawing.Point(10, 10);
             this.uiTableLayoutPanel1.Name = "uiTableLayoutPanel1";
             this.uiTableLayoutPanel1.RowCount = 11;
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
@@ -957,8 +830,8 @@
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.uiTableLayoutPanel1.Size = new System.Drawing.Size(744, 761);
+            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.uiTableLayoutPanel1.Size = new System.Drawing.Size(764, 781);
             this.uiTableLayoutPanel1.TabIndex = 1;
             this.uiTableLayoutPanel1.TagString = null;
             // 
@@ -969,13 +842,13 @@
             this.uiGroupBox12.FillColor = System.Drawing.Color.White;
             this.uiGroupBox12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox12.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiGroupBox12.Location = new System.Drawing.Point(376, 616);
+            this.uiGroupBox12.Location = new System.Drawing.Point(386, 626);
             this.uiGroupBox12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox12.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox12.Name = "uiGroupBox12";
             this.uiGroupBox12.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox12.RectColor = System.Drawing.Color.White;
-            this.uiGroupBox12.Size = new System.Drawing.Size(364, 81);
+            this.uiGroupBox12.Size = new System.Drawing.Size(374, 83);
             this.uiGroupBox12.TabIndex = 66;
             this.uiGroupBox12.Text = "Check out plate record folder location";
             this.uiGroupBox12.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -994,7 +867,7 @@
             this.uiTableLayoutPanel13.Name = "uiTableLayoutPanel13";
             this.uiTableLayoutPanel13.RowCount = 1;
             this.uiTableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel13.Size = new System.Drawing.Size(348, 45);
+            this.uiTableLayoutPanel13.Size = new System.Drawing.Size(358, 47);
             this.uiTableLayoutPanel13.TabIndex = 2;
             this.uiTableLayoutPanel13.TagString = null;
             // 
@@ -1009,11 +882,10 @@
             this.tbCheckOutPlateRecord.MinimumSize = new System.Drawing.Size(0, 40);
             this.tbCheckOutPlateRecord.Name = "tbCheckOutPlateRecord";
             this.tbCheckOutPlateRecord.Padding = new System.Windows.Forms.Padding(10, 0, 5, 2);
-            this.tbCheckOutPlateRecord.Radius = 10;
-            this.tbCheckOutPlateRecord.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.tbCheckOutPlateRecord.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbCheckOutPlateRecord.RectSize = 2;
             this.tbCheckOutPlateRecord.ShowText = false;
-            this.tbCheckOutPlateRecord.Size = new System.Drawing.Size(290, 40);
+            this.tbCheckOutPlateRecord.Size = new System.Drawing.Size(300, 40);
             this.tbCheckOutPlateRecord.TabIndex = 5;
             this.tbCheckOutPlateRecord.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbCheckOutPlateRecord.Watermark = "";
@@ -1024,13 +896,13 @@
             this.uiPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel21.FillColor = System.Drawing.Color.White;
             this.uiPanel21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel21.Location = new System.Drawing.Point(302, 5);
+            this.uiPanel21.Location = new System.Drawing.Point(312, 5);
             this.uiPanel21.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel21.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel21.Name = "uiPanel21";
             this.uiPanel21.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel21.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel21.Size = new System.Drawing.Size(42, 35);
+            this.uiPanel21.Size = new System.Drawing.Size(42, 37);
             this.uiPanel21.TabIndex = 4;
             this.uiPanel21.Text = null;
             this.uiPanel21.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1053,7 +925,7 @@
             this.btnCheckOutPlateFolder.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckOutPlateFolder.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckOutPlateFolder.RectSize = 2;
-            this.btnCheckOutPlateFolder.Size = new System.Drawing.Size(32, 25);
+            this.btnCheckOutPlateFolder.Size = new System.Drawing.Size(32, 27);
             this.btnCheckOutPlateFolder.Symbol = 257733;
             this.btnCheckOutPlateFolder.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckOutPlateFolder.SymbolOffset = new System.Drawing.Point(-1, 1);
@@ -1070,13 +942,13 @@
             this.uiGroupBox11.FillColor = System.Drawing.Color.White;
             this.uiGroupBox11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox11.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiGroupBox11.Location = new System.Drawing.Point(4, 616);
+            this.uiGroupBox11.Location = new System.Drawing.Point(4, 626);
             this.uiGroupBox11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox11.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox11.Name = "uiGroupBox11";
             this.uiGroupBox11.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox11.RectColor = System.Drawing.Color.White;
-            this.uiGroupBox11.Size = new System.Drawing.Size(364, 81);
+            this.uiGroupBox11.Size = new System.Drawing.Size(374, 83);
             this.uiGroupBox11.TabIndex = 65;
             this.uiGroupBox11.Text = "Check in plate record folder location";
             this.uiGroupBox11.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1095,7 +967,7 @@
             this.uiTableLayoutPanel11.Name = "uiTableLayoutPanel11";
             this.uiTableLayoutPanel11.RowCount = 1;
             this.uiTableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel11.Size = new System.Drawing.Size(348, 45);
+            this.uiTableLayoutPanel11.Size = new System.Drawing.Size(358, 47);
             this.uiTableLayoutPanel11.TabIndex = 2;
             this.uiTableLayoutPanel11.TagString = null;
             // 
@@ -1110,11 +982,10 @@
             this.tbCheckInPlateRecord.MinimumSize = new System.Drawing.Size(0, 40);
             this.tbCheckInPlateRecord.Name = "tbCheckInPlateRecord";
             this.tbCheckInPlateRecord.Padding = new System.Windows.Forms.Padding(10, 0, 5, 2);
-            this.tbCheckInPlateRecord.Radius = 10;
-            this.tbCheckInPlateRecord.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.tbCheckInPlateRecord.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbCheckInPlateRecord.RectSize = 2;
             this.tbCheckInPlateRecord.ShowText = false;
-            this.tbCheckInPlateRecord.Size = new System.Drawing.Size(290, 40);
+            this.tbCheckInPlateRecord.Size = new System.Drawing.Size(300, 40);
             this.tbCheckInPlateRecord.TabIndex = 5;
             this.tbCheckInPlateRecord.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbCheckInPlateRecord.Watermark = "";
@@ -1125,13 +996,13 @@
             this.uiPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel20.FillColor = System.Drawing.Color.White;
             this.uiPanel20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel20.Location = new System.Drawing.Point(302, 5);
+            this.uiPanel20.Location = new System.Drawing.Point(312, 5);
             this.uiPanel20.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel20.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel20.Name = "uiPanel20";
             this.uiPanel20.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel20.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel20.Size = new System.Drawing.Size(42, 35);
+            this.uiPanel20.Size = new System.Drawing.Size(42, 37);
             this.uiPanel20.TabIndex = 4;
             this.uiPanel20.Text = null;
             this.uiPanel20.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1154,7 +1025,7 @@
             this.btnCheckInPlateFolder.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckInPlateFolder.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckInPlateFolder.RectSize = 2;
-            this.btnCheckInPlateFolder.Size = new System.Drawing.Size(32, 25);
+            this.btnCheckInPlateFolder.Size = new System.Drawing.Size(32, 27);
             this.btnCheckInPlateFolder.Symbol = 257733;
             this.btnCheckInPlateFolder.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckInPlateFolder.SymbolOffset = new System.Drawing.Point(-1, 1);
@@ -1171,13 +1042,13 @@
             this.uiGroupBox7.FillColor = System.Drawing.Color.White;
             this.uiGroupBox7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox7.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiGroupBox7.Location = new System.Drawing.Point(376, 525);
+            this.uiGroupBox7.Location = new System.Drawing.Point(386, 533);
             this.uiGroupBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox7.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox7.Name = "uiGroupBox7";
             this.uiGroupBox7.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox7.RectColor = System.Drawing.Color.White;
-            this.uiGroupBox7.Size = new System.Drawing.Size(364, 81);
+            this.uiGroupBox7.Size = new System.Drawing.Size(374, 83);
             this.uiGroupBox7.TabIndex = 64;
             this.uiGroupBox7.Text = "Check out back record folder location";
             this.uiGroupBox7.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1196,7 +1067,7 @@
             this.uiTableLayoutPanel10.Name = "uiTableLayoutPanel10";
             this.uiTableLayoutPanel10.RowCount = 1;
             this.uiTableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel10.Size = new System.Drawing.Size(348, 45);
+            this.uiTableLayoutPanel10.Size = new System.Drawing.Size(358, 47);
             this.uiTableLayoutPanel10.TabIndex = 2;
             this.uiTableLayoutPanel10.TagString = null;
             // 
@@ -1211,11 +1082,10 @@
             this.tbCheckOutBackRecord.MinimumSize = new System.Drawing.Size(0, 40);
             this.tbCheckOutBackRecord.Name = "tbCheckOutBackRecord";
             this.tbCheckOutBackRecord.Padding = new System.Windows.Forms.Padding(10, 0, 5, 2);
-            this.tbCheckOutBackRecord.Radius = 10;
-            this.tbCheckOutBackRecord.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.tbCheckOutBackRecord.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbCheckOutBackRecord.RectSize = 2;
             this.tbCheckOutBackRecord.ShowText = false;
-            this.tbCheckOutBackRecord.Size = new System.Drawing.Size(290, 40);
+            this.tbCheckOutBackRecord.Size = new System.Drawing.Size(300, 40);
             this.tbCheckOutBackRecord.TabIndex = 5;
             this.tbCheckOutBackRecord.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbCheckOutBackRecord.Watermark = "";
@@ -1226,13 +1096,13 @@
             this.uiPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel18.FillColor = System.Drawing.Color.White;
             this.uiPanel18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel18.Location = new System.Drawing.Point(302, 5);
+            this.uiPanel18.Location = new System.Drawing.Point(312, 5);
             this.uiPanel18.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel18.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel18.Name = "uiPanel18";
             this.uiPanel18.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel18.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel18.Size = new System.Drawing.Size(42, 35);
+            this.uiPanel18.Size = new System.Drawing.Size(42, 37);
             this.uiPanel18.TabIndex = 4;
             this.uiPanel18.Text = null;
             this.uiPanel18.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1255,7 +1125,7 @@
             this.btnCheckOutBackFolder.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckOutBackFolder.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckOutBackFolder.RectSize = 2;
-            this.btnCheckOutBackFolder.Size = new System.Drawing.Size(32, 25);
+            this.btnCheckOutBackFolder.Size = new System.Drawing.Size(32, 27);
             this.btnCheckOutBackFolder.Symbol = 257733;
             this.btnCheckOutBackFolder.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckOutBackFolder.SymbolOffset = new System.Drawing.Point(-1, 1);
@@ -1272,13 +1142,13 @@
             this.uiGroupBox2.FillColor = System.Drawing.Color.White;
             this.uiGroupBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiGroupBox2.Location = new System.Drawing.Point(4, 525);
+            this.uiGroupBox2.Location = new System.Drawing.Point(4, 533);
             this.uiGroupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox2.Name = "uiGroupBox2";
             this.uiGroupBox2.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox2.RectColor = System.Drawing.Color.White;
-            this.uiGroupBox2.Size = new System.Drawing.Size(364, 81);
+            this.uiGroupBox2.Size = new System.Drawing.Size(374, 83);
             this.uiGroupBox2.TabIndex = 63;
             this.uiGroupBox2.Text = "Check in back record folder location";
             this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1297,7 +1167,7 @@
             this.uiTableLayoutPanel9.Name = "uiTableLayoutPanel9";
             this.uiTableLayoutPanel9.RowCount = 1;
             this.uiTableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel9.Size = new System.Drawing.Size(348, 45);
+            this.uiTableLayoutPanel9.Size = new System.Drawing.Size(358, 47);
             this.uiTableLayoutPanel9.TabIndex = 2;
             this.uiTableLayoutPanel9.TagString = null;
             // 
@@ -1312,11 +1182,10 @@
             this.tbCheckInBackRecord.MinimumSize = new System.Drawing.Size(0, 40);
             this.tbCheckInBackRecord.Name = "tbCheckInBackRecord";
             this.tbCheckInBackRecord.Padding = new System.Windows.Forms.Padding(10, 0, 5, 2);
-            this.tbCheckInBackRecord.Radius = 10;
-            this.tbCheckInBackRecord.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.tbCheckInBackRecord.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbCheckInBackRecord.RectSize = 2;
             this.tbCheckInBackRecord.ShowText = false;
-            this.tbCheckInBackRecord.Size = new System.Drawing.Size(290, 40);
+            this.tbCheckInBackRecord.Size = new System.Drawing.Size(300, 40);
             this.tbCheckInBackRecord.TabIndex = 5;
             this.tbCheckInBackRecord.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbCheckInBackRecord.Watermark = "";
@@ -1327,13 +1196,13 @@
             this.uiPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel17.FillColor = System.Drawing.Color.White;
             this.uiPanel17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel17.Location = new System.Drawing.Point(302, 5);
+            this.uiPanel17.Location = new System.Drawing.Point(312, 5);
             this.uiPanel17.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel17.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel17.Name = "uiPanel17";
             this.uiPanel17.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel17.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel17.Size = new System.Drawing.Size(42, 35);
+            this.uiPanel17.Size = new System.Drawing.Size(42, 37);
             this.uiPanel17.TabIndex = 4;
             this.uiPanel17.Text = null;
             this.uiPanel17.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1356,7 +1225,7 @@
             this.btnCheckInBackFolder.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckInBackFolder.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckInBackFolder.RectSize = 2;
-            this.btnCheckInBackFolder.Size = new System.Drawing.Size(32, 25);
+            this.btnCheckInBackFolder.Size = new System.Drawing.Size(32, 27);
             this.btnCheckInBackFolder.Symbol = 257733;
             this.btnCheckInBackFolder.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckInBackFolder.SymbolOffset = new System.Drawing.Point(-1, 1);
@@ -1373,13 +1242,13 @@
             this.uiGroupBox1.FillColor = System.Drawing.Color.White;
             this.uiGroupBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiGroupBox1.Location = new System.Drawing.Point(376, 434);
+            this.uiGroupBox1.Location = new System.Drawing.Point(386, 440);
             this.uiGroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox1.Name = "uiGroupBox1";
             this.uiGroupBox1.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox1.RectColor = System.Drawing.Color.White;
-            this.uiGroupBox1.Size = new System.Drawing.Size(364, 81);
+            this.uiGroupBox1.Size = new System.Drawing.Size(374, 83);
             this.uiGroupBox1.TabIndex = 62;
             this.uiGroupBox1.Text = "Check out front record folder location";
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1398,7 +1267,7 @@
             this.uiTableLayoutPanel6.Name = "uiTableLayoutPanel6";
             this.uiTableLayoutPanel6.RowCount = 1;
             this.uiTableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel6.Size = new System.Drawing.Size(348, 45);
+            this.uiTableLayoutPanel6.Size = new System.Drawing.Size(358, 47);
             this.uiTableLayoutPanel6.TabIndex = 2;
             this.uiTableLayoutPanel6.TagString = null;
             // 
@@ -1413,11 +1282,10 @@
             this.tbCheckOutFrontRecord.MinimumSize = new System.Drawing.Size(0, 40);
             this.tbCheckOutFrontRecord.Name = "tbCheckOutFrontRecord";
             this.tbCheckOutFrontRecord.Padding = new System.Windows.Forms.Padding(10, 0, 5, 2);
-            this.tbCheckOutFrontRecord.Radius = 10;
-            this.tbCheckOutFrontRecord.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.tbCheckOutFrontRecord.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbCheckOutFrontRecord.RectSize = 2;
             this.tbCheckOutFrontRecord.ShowText = false;
-            this.tbCheckOutFrontRecord.Size = new System.Drawing.Size(290, 40);
+            this.tbCheckOutFrontRecord.Size = new System.Drawing.Size(300, 40);
             this.tbCheckOutFrontRecord.TabIndex = 5;
             this.tbCheckOutFrontRecord.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbCheckOutFrontRecord.Watermark = "";
@@ -1428,13 +1296,13 @@
             this.uiPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel12.FillColor = System.Drawing.Color.White;
             this.uiPanel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel12.Location = new System.Drawing.Point(302, 5);
+            this.uiPanel12.Location = new System.Drawing.Point(312, 5);
             this.uiPanel12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel12.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel12.Name = "uiPanel12";
             this.uiPanel12.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel12.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel12.Size = new System.Drawing.Size(42, 35);
+            this.uiPanel12.Size = new System.Drawing.Size(42, 37);
             this.uiPanel12.TabIndex = 4;
             this.uiPanel12.Text = null;
             this.uiPanel12.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1457,7 +1325,7 @@
             this.btnCheckOutFrontFolder.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckOutFrontFolder.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckOutFrontFolder.RectSize = 2;
-            this.btnCheckOutFrontFolder.Size = new System.Drawing.Size(32, 25);
+            this.btnCheckOutFrontFolder.Size = new System.Drawing.Size(32, 27);
             this.btnCheckOutFrontFolder.Symbol = 257733;
             this.btnCheckOutFrontFolder.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckOutFrontFolder.SymbolOffset = new System.Drawing.Point(-1, 1);
@@ -1474,13 +1342,13 @@
             this.uiGroupBox10.FillColor = System.Drawing.Color.White;
             this.uiGroupBox10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox10.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiGroupBox10.Location = new System.Drawing.Point(376, 309);
+            this.uiGroupBox10.Location = new System.Drawing.Point(386, 313);
             this.uiGroupBox10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox10.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox10.Name = "uiGroupBox10";
             this.uiGroupBox10.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox10.RectColor = System.Drawing.Color.White;
-            this.uiGroupBox10.Size = new System.Drawing.Size(364, 81);
+            this.uiGroupBox10.Size = new System.Drawing.Size(374, 83);
             this.uiGroupBox10.TabIndex = 61;
             this.uiGroupBox10.Text = "Check out gate";
             this.uiGroupBox10.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1500,7 +1368,7 @@
             this.uiTableLayoutPanel8.Name = "uiTableLayoutPanel8";
             this.uiTableLayoutPanel8.RowCount = 1;
             this.uiTableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel8.Size = new System.Drawing.Size(348, 45);
+            this.uiTableLayoutPanel8.Size = new System.Drawing.Size(358, 47);
             this.uiTableLayoutPanel8.TabIndex = 0;
             this.uiTableLayoutPanel8.TagString = null;
             // 
@@ -1510,13 +1378,13 @@
             this.uiPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel14.FillColor = System.Drawing.Color.White;
             this.uiPanel14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel14.Location = new System.Drawing.Point(302, 5);
+            this.uiPanel14.Location = new System.Drawing.Point(312, 5);
             this.uiPanel14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel14.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel14.Name = "uiPanel14";
             this.uiPanel14.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel14.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel14.Size = new System.Drawing.Size(42, 35);
+            this.uiPanel14.Size = new System.Drawing.Size(42, 37);
             this.uiPanel14.TabIndex = 5;
             this.uiPanel14.Text = null;
             this.uiPanel14.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1539,7 +1407,7 @@
             this.btnDisconnectCheckOutGate.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckOutGate.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckOutGate.RectSize = 2;
-            this.btnDisconnectCheckOutGate.Size = new System.Drawing.Size(32, 25);
+            this.btnDisconnectCheckOutGate.Size = new System.Drawing.Size(32, 27);
             this.btnDisconnectCheckOutGate.Symbol = 557711;
             this.btnDisconnectCheckOutGate.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckOutGate.SymbolOffset = new System.Drawing.Point(1, 1);
@@ -1568,10 +1436,9 @@
             this.cbCheckOutGate.MinimumSize = new System.Drawing.Size(0, 40);
             this.cbCheckOutGate.Name = "cbCheckOutGate";
             this.cbCheckOutGate.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
-            this.cbCheckOutGate.Radius = 7;
-            this.cbCheckOutGate.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.cbCheckOutGate.RectColor = System.Drawing.SystemColors.ControlDark;
             this.cbCheckOutGate.RectSize = 2;
-            this.cbCheckOutGate.Size = new System.Drawing.Size(240, 40);
+            this.cbCheckOutGate.Size = new System.Drawing.Size(250, 40);
             this.cbCheckOutGate.SymbolSize = 24;
             this.cbCheckOutGate.TabIndex = 3;
             this.cbCheckOutGate.Text = "Boom gate 1";
@@ -1584,13 +1451,13 @@
             this.uiPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel16.FillColor = System.Drawing.Color.White;
             this.uiPanel16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel16.Location = new System.Drawing.Point(252, 5);
+            this.uiPanel16.Location = new System.Drawing.Point(262, 5);
             this.uiPanel16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel16.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel16.Name = "uiPanel16";
             this.uiPanel16.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel16.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel16.Size = new System.Drawing.Size(42, 35);
+            this.uiPanel16.Size = new System.Drawing.Size(42, 37);
             this.uiPanel16.TabIndex = 4;
             this.uiPanel16.Text = null;
             this.uiPanel16.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1613,7 +1480,7 @@
             this.btnConnectCheckOutGate.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckOutGate.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckOutGate.RectSize = 2;
-            this.btnConnectCheckOutGate.Size = new System.Drawing.Size(32, 25);
+            this.btnConnectCheckOutGate.Size = new System.Drawing.Size(32, 27);
             this.btnConnectCheckOutGate.Symbol = 557687;
             this.btnConnectCheckOutGate.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckOutGate.SymbolOffset = new System.Drawing.Point(1, 1);
@@ -1626,11 +1493,11 @@
             // 
             this.uiTableLayoutPanel1.SetColumnSpan(this.uiLabel3, 2);
             this.uiLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel3.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiLabel3.Location = new System.Drawing.Point(3, 395);
+            this.uiLabel3.Location = new System.Drawing.Point(3, 401);
             this.uiLabel3.Name = "uiLabel3";
-            this.uiLabel3.Size = new System.Drawing.Size(738, 34);
+            this.uiLabel3.Size = new System.Drawing.Size(758, 34);
             this.uiLabel3.TabIndex = 60;
             this.uiLabel3.Text = "Images location";
             this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1642,13 +1509,13 @@
             this.uiGroupBox9.FillColor = System.Drawing.Color.White;
             this.uiGroupBox9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox9.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiGroupBox9.Location = new System.Drawing.Point(4, 309);
+            this.uiGroupBox9.Location = new System.Drawing.Point(4, 313);
             this.uiGroupBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox9.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox9.Name = "uiGroupBox9";
             this.uiGroupBox9.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox9.RectColor = System.Drawing.Color.White;
-            this.uiGroupBox9.Size = new System.Drawing.Size(364, 81);
+            this.uiGroupBox9.Size = new System.Drawing.Size(374, 83);
             this.uiGroupBox9.TabIndex = 58;
             this.uiGroupBox9.Text = "Check in gate";
             this.uiGroupBox9.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1668,7 +1535,7 @@
             this.uiTableLayoutPanel7.Name = "uiTableLayoutPanel7";
             this.uiTableLayoutPanel7.RowCount = 1;
             this.uiTableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel7.Size = new System.Drawing.Size(348, 45);
+            this.uiTableLayoutPanel7.Size = new System.Drawing.Size(358, 47);
             this.uiTableLayoutPanel7.TabIndex = 0;
             this.uiTableLayoutPanel7.TagString = null;
             // 
@@ -1678,13 +1545,13 @@
             this.uiPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel15.FillColor = System.Drawing.Color.White;
             this.uiPanel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel15.Location = new System.Drawing.Point(302, 5);
+            this.uiPanel15.Location = new System.Drawing.Point(312, 5);
             this.uiPanel15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel15.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel15.Name = "uiPanel15";
             this.uiPanel15.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel15.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel15.Size = new System.Drawing.Size(42, 35);
+            this.uiPanel15.Size = new System.Drawing.Size(42, 37);
             this.uiPanel15.TabIndex = 5;
             this.uiPanel15.Text = null;
             this.uiPanel15.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1707,7 +1574,7 @@
             this.btnDisconnectCheckInGate.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckInGate.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckInGate.RectSize = 2;
-            this.btnDisconnectCheckInGate.Size = new System.Drawing.Size(32, 25);
+            this.btnDisconnectCheckInGate.Size = new System.Drawing.Size(32, 27);
             this.btnDisconnectCheckInGate.Symbol = 557711;
             this.btnDisconnectCheckInGate.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckInGate.SymbolOffset = new System.Drawing.Point(1, 1);
@@ -1736,10 +1603,9 @@
             this.cbCheckInGate.MinimumSize = new System.Drawing.Size(0, 40);
             this.cbCheckInGate.Name = "cbCheckInGate";
             this.cbCheckInGate.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
-            this.cbCheckInGate.Radius = 7;
-            this.cbCheckInGate.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.cbCheckInGate.RectColor = System.Drawing.SystemColors.ControlDark;
             this.cbCheckInGate.RectSize = 2;
-            this.cbCheckInGate.Size = new System.Drawing.Size(240, 40);
+            this.cbCheckInGate.Size = new System.Drawing.Size(250, 40);
             this.cbCheckInGate.SymbolSize = 24;
             this.cbCheckInGate.TabIndex = 3;
             this.cbCheckInGate.Text = "Boom gate 1";
@@ -1752,13 +1618,13 @@
             this.uiPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel19.FillColor = System.Drawing.Color.White;
             this.uiPanel19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel19.Location = new System.Drawing.Point(252, 5);
+            this.uiPanel19.Location = new System.Drawing.Point(262, 5);
             this.uiPanel19.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel19.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel19.Name = "uiPanel19";
             this.uiPanel19.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel19.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel19.Size = new System.Drawing.Size(42, 35);
+            this.uiPanel19.Size = new System.Drawing.Size(42, 37);
             this.uiPanel19.TabIndex = 4;
             this.uiPanel19.Text = null;
             this.uiPanel19.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1781,7 +1647,7 @@
             this.btnConnectCheckInGate.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckInGate.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckInGate.RectSize = 2;
-            this.btnConnectCheckInGate.Size = new System.Drawing.Size(32, 25);
+            this.btnConnectCheckInGate.Size = new System.Drawing.Size(32, 27);
             this.btnConnectCheckInGate.Symbol = 557687;
             this.btnConnectCheckInGate.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckInGate.SymbolOffset = new System.Drawing.Point(1, 1);
@@ -1797,13 +1663,13 @@
             this.uiGroupBox8.FillColor = System.Drawing.Color.White;
             this.uiGroupBox8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox8.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiGroupBox8.Location = new System.Drawing.Point(4, 434);
+            this.uiGroupBox8.Location = new System.Drawing.Point(4, 440);
             this.uiGroupBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox8.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox8.Name = "uiGroupBox8";
             this.uiGroupBox8.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox8.RectColor = System.Drawing.Color.White;
-            this.uiGroupBox8.Size = new System.Drawing.Size(364, 81);
+            this.uiGroupBox8.Size = new System.Drawing.Size(374, 83);
             this.uiGroupBox8.TabIndex = 57;
             this.uiGroupBox8.Text = "Check in front record folder location";
             this.uiGroupBox8.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1822,7 +1688,7 @@
             this.uiTableLayoutPanel12.Name = "uiTableLayoutPanel12";
             this.uiTableLayoutPanel12.RowCount = 1;
             this.uiTableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel12.Size = new System.Drawing.Size(348, 45);
+            this.uiTableLayoutPanel12.Size = new System.Drawing.Size(358, 47);
             this.uiTableLayoutPanel12.TabIndex = 2;
             this.uiTableLayoutPanel12.TagString = null;
             // 
@@ -1837,11 +1703,10 @@
             this.tbCheckInFrontRecord.MinimumSize = new System.Drawing.Size(0, 40);
             this.tbCheckInFrontRecord.Name = "tbCheckInFrontRecord";
             this.tbCheckInFrontRecord.Padding = new System.Windows.Forms.Padding(10, 0, 5, 2);
-            this.tbCheckInFrontRecord.Radius = 10;
-            this.tbCheckInFrontRecord.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.tbCheckInFrontRecord.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbCheckInFrontRecord.RectSize = 2;
             this.tbCheckInFrontRecord.ShowText = false;
-            this.tbCheckInFrontRecord.Size = new System.Drawing.Size(290, 40);
+            this.tbCheckInFrontRecord.Size = new System.Drawing.Size(300, 40);
             this.tbCheckInFrontRecord.TabIndex = 5;
             this.tbCheckInFrontRecord.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbCheckInFrontRecord.Watermark = "";
@@ -1852,13 +1717,13 @@
             this.uiPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel13.FillColor = System.Drawing.Color.White;
             this.uiPanel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel13.Location = new System.Drawing.Point(302, 5);
+            this.uiPanel13.Location = new System.Drawing.Point(312, 5);
             this.uiPanel13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel13.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel13.Name = "uiPanel13";
             this.uiPanel13.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel13.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel13.Size = new System.Drawing.Size(42, 35);
+            this.uiPanel13.Size = new System.Drawing.Size(42, 37);
             this.uiPanel13.TabIndex = 4;
             this.uiPanel13.Text = null;
             this.uiPanel13.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1881,7 +1746,7 @@
             this.btnCheckInFrontFolder.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckInFrontFolder.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckInFrontFolder.RectSize = 2;
-            this.btnCheckInFrontFolder.Size = new System.Drawing.Size(32, 25);
+            this.btnCheckInFrontFolder.Size = new System.Drawing.Size(32, 27);
             this.btnCheckInFrontFolder.Symbol = 257733;
             this.btnCheckInFrontFolder.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckInFrontFolder.SymbolOffset = new System.Drawing.Point(-1, 1);
@@ -1895,11 +1760,11 @@
             // 
             this.uiTableLayoutPanel1.SetColumnSpan(this.uiLabel4, 2);
             this.uiLabel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel4.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiLabel4.Location = new System.Drawing.Point(3, 270);
+            this.uiLabel4.Location = new System.Drawing.Point(3, 274);
             this.uiLabel4.Name = "uiLabel4";
-            this.uiLabel4.Size = new System.Drawing.Size(738, 34);
+            this.uiLabel4.Size = new System.Drawing.Size(758, 34);
             this.uiLabel4.TabIndex = 48;
             this.uiLabel4.Text = "Boom gate connection";
             this.uiLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1908,14 +1773,162 @@
             // 
             this.uiTableLayoutPanel1.SetColumnSpan(this.uiLabel2, 2);
             this.uiLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel2.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiLabel2.Location = new System.Drawing.Point(3, 54);
             this.uiLabel2.Name = "uiLabel2";
-            this.uiLabel2.Size = new System.Drawing.Size(738, 34);
+            this.uiLabel2.Size = new System.Drawing.Size(758, 34);
             this.uiLabel2.TabIndex = 46;
             this.uiLabel2.Text = "Camera connection";
             this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiPanel1
+            // 
+            this.uiTableLayoutPanel1.SetColumnSpan(this.uiPanel1, 2);
+            this.uiPanel1.Controls.Add(this.uiPanel4);
+            this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel1.FillColor = System.Drawing.Color.White;
+            this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel1.Location = new System.Drawing.Point(4, 5);
+            this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel1.Name = "uiPanel1";
+            this.uiPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.uiPanel1.Radius = 0;
+            this.uiPanel1.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom;
+            this.uiPanel1.RectSize = 2;
+            this.uiPanel1.Size = new System.Drawing.Size(756, 44);
+            this.uiPanel1.TabIndex = 68;
+            this.uiPanel1.Text = null;
+            this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiPanel4
+            // 
+            this.uiPanel4.Controls.Add(this.lbSessionID);
+            this.uiPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel4.FillColor = System.Drawing.Color.White;
+            this.uiPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel4.Location = new System.Drawing.Point(0, 0);
+            this.uiPanel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiPanel4.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel4.Name = "uiPanel4";
+            this.uiPanel4.Padding = new System.Windows.Forms.Padding(0, 2, 0, 10);
+            this.uiPanel4.Radius = 0;
+            this.uiPanel4.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.uiPanel4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiPanel4.RectSize = 2;
+            this.uiPanel4.Size = new System.Drawing.Size(756, 42);
+            this.uiPanel4.TabIndex = 5;
+            this.uiPanel4.Text = null;
+            this.uiPanel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSessionID
+            // 
+            this.lbSessionID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSessionID.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSessionID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lbSessionID.Location = new System.Drawing.Point(0, 2);
+            this.lbSessionID.Margin = new System.Windows.Forms.Padding(0);
+            this.lbSessionID.Name = "lbSessionID";
+            this.lbSessionID.Size = new System.Drawing.Size(756, 30);
+            this.lbSessionID.TabIndex = 3;
+            this.lbSessionID.Text = "Setting";
+            this.lbSessionID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiPanel8
+            // 
+            this.uiTableLayoutPanel1.SetColumnSpan(this.uiPanel8, 2);
+            this.uiPanel8.Controls.Add(this.panel1);
+            this.uiPanel8.Controls.Add(this.panel4);
+            this.uiPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel8.FillColor = System.Drawing.Color.White;
+            this.uiPanel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel8.Location = new System.Drawing.Point(4, 719);
+            this.uiPanel8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel8.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel8.Name = "uiPanel8";
+            this.uiPanel8.Padding = new System.Windows.Forms.Padding(0, 13, 0, 3);
+            this.uiPanel8.Radius = 0;
+            this.uiPanel8.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.uiPanel8.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
+            this.uiPanel8.RectSize = 2;
+            this.uiPanel8.Size = new System.Drawing.Size(756, 57);
+            this.uiPanel8.TabIndex = 69;
+            this.uiPanel8.Text = null;
+            this.uiPanel8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.uiSymbolButton1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(506, 13);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(120, 41);
+            this.panel1.TabIndex = 10;
+            // 
+            // uiSymbolButton1
+            // 
+            this.uiSymbolButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiSymbolButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiSymbolButton1.FillColor = System.Drawing.Color.White;
+            this.uiSymbolButton1.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.uiSymbolButton1.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.uiSymbolButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiSymbolButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiSymbolButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiSymbolButton1.Location = new System.Drawing.Point(0, 0);
+            this.uiSymbolButton1.Margin = new System.Windows.Forms.Padding(0);
+            this.uiSymbolButton1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiSymbolButton1.Name = "uiSymbolButton1";
+            this.uiSymbolButton1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiSymbolButton1.RectDisableColor = System.Drawing.Color.White;
+            this.uiSymbolButton1.RectHoverColor = System.Drawing.Color.White;
+            this.uiSymbolButton1.RectPressColor = System.Drawing.Color.White;
+            this.uiSymbolButton1.RectSelectedColor = System.Drawing.Color.White;
+            this.uiSymbolButton1.RectSize = 2;
+            this.uiSymbolButton1.Size = new System.Drawing.Size(120, 41);
+            this.uiSymbolButton1.Symbol = 0;
+            this.uiSymbolButton1.TabIndex = 3;
+            this.uiSymbolButton1.Text = "Cancel";
+            this.uiSymbolButton1.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.uiSymbolButton2);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(626, 13);
+            this.panel4.Name = "panel4";
+            this.panel4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.panel4.Size = new System.Drawing.Size(130, 41);
+            this.panel4.TabIndex = 9;
+            // 
+            // uiSymbolButton2
+            // 
+            this.uiSymbolButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiSymbolButton2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiSymbolButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiSymbolButton2.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.uiSymbolButton2.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.uiSymbolButton2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiSymbolButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiSymbolButton2.Location = new System.Drawing.Point(10, 0);
+            this.uiSymbolButton2.Margin = new System.Windows.Forms.Padding(0);
+            this.uiSymbolButton2.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiSymbolButton2.Name = "uiSymbolButton2";
+            this.uiSymbolButton2.Padding = new System.Windows.Forms.Padding(14, 0, 12, 0);
+            this.uiSymbolButton2.Radius = 10;
+            this.uiSymbolButton2.RectColor = System.Drawing.Color.White;
+            this.uiSymbolButton2.RectDisableColor = System.Drawing.Color.White;
+            this.uiSymbolButton2.RectHoverColor = System.Drawing.Color.White;
+            this.uiSymbolButton2.RectPressColor = System.Drawing.Color.White;
+            this.uiSymbolButton2.RectSelectedColor = System.Drawing.Color.White;
+            this.uiSymbolButton2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiSymbolButton2.Size = new System.Drawing.Size(120, 41);
+            this.uiSymbolButton2.Symbol = 0;
+            this.uiSymbolButton2.TabIndex = 3;
+            this.uiSymbolButton2.Text = "Confirm";
+            this.uiSymbolButton2.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // SettingForm
             // 
@@ -1924,18 +1937,15 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(784, 801);
             this.Controls.Add(this.uiTableLayoutPanel1);
+            this.MinimumSize = new System.Drawing.Size(800, 840);
             this.Name = "SettingForm";
-            this.Padding = new System.Windows.Forms.Padding(20);
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "SettingForm";
-            this.uiPanel1.ResumeLayout(false);
             this.uiPanel5.ResumeLayout(false);
             this.uiGroupBox3.ResumeLayout(false);
             this.uiTableLayoutPanel2.ResumeLayout(false);
             this.uiPanel3.ResumeLayout(false);
             this.uiPanel2.ResumeLayout(false);
-            this.uiPanel8.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
             this.uiGroupBox5.ResumeLayout(false);
             this.uiTableLayoutPanel4.ResumeLayout(false);
             this.uiPanel7.ResumeLayout(false);
@@ -1975,25 +1985,22 @@
             this.uiGroupBox8.ResumeLayout(false);
             this.uiTableLayoutPanel12.ResumeLayout(false);
             this.uiPanel13.ResumeLayout(false);
+            this.uiPanel1.ResumeLayout(false);
+            this.uiPanel4.ResumeLayout(false);
+            this.uiPanel8.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Sunny.UI.UIPanel uiPanel1;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel1;
         private Sunny.UI.UIGroupBox uiGroupBox4;
         private Sunny.UI.UIGroupBox uiGroupBox6;
         private Sunny.UI.UIGroupBox uiGroupBox5;
-        private Sunny.UI.UIPanel uiPanel8;
-        private System.Windows.Forms.Panel panel7;
-        private Sunny.UI.UISymbolButton btnCancel;
-        private System.Windows.Forms.Panel panel8;
-        private Sunny.UI.UISymbolButton btnConfirm;
         private Sunny.UI.UIPanel uiPanel5;
         private Sunny.UI.UIGroupBox uiGroupBox3;
-        private Sunny.UI.UILabel uiLabel1;
         private Sunny.UI.UILabel uiLabel4;
         private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel2;
@@ -2066,5 +2073,13 @@
         private Sunny.UI.UIPanel uiPanel12;
         private Sunny.UI.UISymbolButton btnCheckOutFrontFolder;
         private System.Windows.Forms.FolderBrowserDialog fbdFolderLocation;
+        private Sunny.UI.UIPanel uiPanel1;
+        private Sunny.UI.UIPanel uiPanel4;
+        private Sunny.UI.UILabel lbSessionID;
+        private Sunny.UI.UIPanel uiPanel8;
+        private System.Windows.Forms.Panel panel1;
+        private Sunny.UI.UISymbolButton uiSymbolButton1;
+        private System.Windows.Forms.Panel panel4;
+        private Sunny.UI.UISymbolButton uiSymbolButton2;
     }
 }

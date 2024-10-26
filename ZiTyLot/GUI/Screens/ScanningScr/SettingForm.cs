@@ -74,5 +74,10 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 tbCheckOutPlateRecord.Text = fbdFolderLocation.SelectedPath;
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
