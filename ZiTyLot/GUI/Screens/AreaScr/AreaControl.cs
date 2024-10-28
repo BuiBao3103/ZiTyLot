@@ -25,8 +25,6 @@ namespace ZiTyLot.GUI.Screens
             InitializeComponent();
             cbNumberOfItem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberOfItem.SelectedIndex = 0;
-            page = parkingLotBUS.GetAllPagination(pageable, filters);
-            LoadPageAndPageable();
         }
         private void AreaScreen_Load(object sender, EventArgs e)
         {
@@ -150,10 +148,6 @@ namespace ZiTyLot.GUI.Screens
 
         private void ChangePage(int pageNumber)
         {
-            if (pageNumber < 1 || pageNumber > page.TotalPages)
-            {
-                return;
-            }
             pageable.PageNumber = pageNumber;
             page = parkingLotBUS.GetAllPagination(pageable, filters);
             LoadPageAndPageable();
@@ -178,7 +172,6 @@ namespace ZiTyLot.GUI.Screens
                     case 2:
                         filters.Add(new FilterCondition("parking_lot_type", CompOp.Like, ParkingLotType.FOUR_WHEELER));
                         break;
-
                 }
             }
 
@@ -215,22 +208,17 @@ namespace ZiTyLot.GUI.Screens
                         break;
                 }
             }
-
-            pageable.PageNumber = 1;
-            page = parkingLotBUS.GetAllPagination(pageable, filters);
-            LoadPageAndPageable();
+            ChangePage(1);
         }
 
         private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedValue = cbNumberOfItem.SelectedItem.ToString();
             int pageSize = int.Parse(selectedValue.Split(' ')[0]);
-            pageable.PageNumber = 1;
             pageable.PageSize = pageSize;
-            page = parkingLotBUS.GetAllPagination(pageable, filters);
-            LoadPageAndPageable();
+            ChangePage(1);
         }
-     
+
         private void nextBtn_Click(object sender, EventArgs e)
         {
             ChangePage(pageable.PageNumber + 1);
@@ -251,9 +239,9 @@ namespace ZiTyLot.GUI.Screens
             cbVehicalType.SelectedIndex = 0;
             cbUserType.SelectedIndex = 0;
             cbStatus.SelectedIndex = 0;
+            tbSearch.Text = "";
             filters.Clear();
             ChangePage(1);
-           
         }
 
         private void tbCurrentPage_KeyPress(object sender, KeyPressEventArgs e)
