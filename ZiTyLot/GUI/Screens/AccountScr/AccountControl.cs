@@ -128,10 +128,10 @@ namespace ZiTyLot.GUI.Screens
                     tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 120);
                     break;
                 case 2:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 90);
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 120);
                     break;
                 default:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 120);
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 90);
                     break;
             }
 
@@ -177,13 +177,14 @@ namespace ZiTyLot.GUI.Screens
                         filters.Add(new FilterCondition("Id", CompOp.Equals, inputSearch));
                         break;
                     case 1:
-                        filters.Add(new FilterCondition("Email", CompOp.Like, inputSearch));
+                        filters.Add(new FilterCondition("Full_name", CompOp.Like, inputSearch));
+                       
                         break;
                     case 2:
                         filters.Add(new FilterCondition("Username", CompOp.Like, inputSearch));
                         break;
                     case 3:
-                        filters.Add(new FilterCondition("Full_name", CompOp.Like, inputSearch));
+                        filters.Add(new FilterCondition("Email", CompOp.Like, inputSearch));
                         break;
                 }
             }
