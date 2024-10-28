@@ -1,14 +1,13 @@
 ﻿using MySqlX.XDevAPI.Relational;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
+using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens.SessionScr;
@@ -20,10 +19,11 @@ namespace ZiTyLot.GUI.Screens
 {
     public partial class SessionControl : UserControl
     {
-        SessionBUS sessionBUS = new SessionBUS();
-        Pageable pageable = new Pageable();
-        List<FilterCondition> filters = new List<FilterCondition>();
-        Page<Session> page;
+        private readonly Debouncer _debouncer = new Debouncer();
+        private readonly SessionBUS  sessionBUS = new SessionBUS();
+        private readonly Pageable pageable = new Pageable();
+        private readonly List<FilterCondition> filters = new List<FilterCondition>();
+        private Page<Session> page;
 
         public SessionControl()
         {
@@ -31,9 +31,8 @@ namespace ZiTyLot.GUI.Screens
             cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
             page = sessionBUS.GetAllPagination(pageable, filters);
-            tbCurrentpage.Text = "1";
-            lbTotalpage.Text = "/" + page.TotalPages;
-            LoadPageToTable();
+            LoadPageAndPageable();
+            tbSearch.TextChanged += tbSearch_TextChanged;
             customDateTimePicker.DateTimeConfirmed += CustomDateTimePicker_DateTimeConfirmed_In;
             customDateTimePicker1.DateTimeConfirmed += CustomDateTimePicker_DateTimeConfirmed_Out;
 
@@ -47,63 +46,6 @@ namespace ZiTyLot.GUI.Screens
         {
             // Set the combined string to the tbTimeIn TextBox
             tbTimeOut.Text = combinedDateTime;
-        }
-        private void LoadPageToTable()
-        {
-            tableSession.Rows.Clear();
-            foreach (Session session in page.Content)
-            {
-                string total_time = "";
-                if (session.Checkout_time != null)
-                {
-                    TimeSpan time = session.Checkout_time - session.Checkin_time;
-                    total_time = time.Hours + "h " + time.Minutes + "m";
-                }
-                tableSession.Rows.Add(session.Id, session.Type,
-                    session.License_plate, session.Checkin_time, session.Checkout_time,
-                    total_time, session.Fee);
-            }
-        }
-        private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedValue = cbNumberofitem.SelectedItem.ToString();
-            int pageSize = int.Parse(selectedValue.Split(' ')[0]);
-            pageable.PageNumber = 1;
-            pageable.PageSize = pageSize;
-            page = sessionBUS.GetAllPagination(pageable, filters);
-            tbCurrentpage.Text = "1";
-            lbTotalpage.Text = "/" + page.TotalPages;
-            LoadPageToTable();
-        }
-
-        private void nextBtn_Click(object sender, EventArgs e)
-        {
-            int currentPage = int.Parse(tbCurrentpage.Text);
-            if (currentPage < page.TotalPages)
-            {
-                ChangePage(currentPage + 1);
-            }
-        }
-
-        private void ChangePage(int pageNumber)
-        {
-            if (pageNumber < 1 || pageNumber > page.TotalPages)
-            {
-                return;
-            }
-            pageable.PageNumber = pageNumber;
-            page = sessionBUS.GetAllPagination(pageable, filters);
-            LoadPageToTable();
-            tbCurrentpage.Text = pageNumber.ToString();
-        }
-
-        private void previousBtn_Click(object sender, EventArgs e)
-        {
-            int currentPage = int.Parse(tbCurrentpage.Text);
-            if (currentPage > 1)
-            {
-                ChangePage(currentPage - 1);
-            }
         }
         private void SessionScreen_Load(object sender, EventArgs e)
         {
@@ -253,6 +195,129 @@ namespace ZiTyLot.GUI.Screens
             {
                 customDateTimePicker1.Location = new Point(uiPanel8.Location.X, btnTimeIn.Location.Y + 110);
             }
+        }
+
+        private void LoadPageAndPageable()
+        {
+            if (page == null || pageable == null) return;
+
+            tbCurrentpage.Text = pageable.PageNumber.ToString();
+            lbTotalpage.Text = "/" + page.TotalPages;
+
+            tableSession.Rows.Clear();
+            foreach (Session session in page.Content)
+            {
+                tableSession.Rows.Add(session.Id, session.Type, session.License_plate, session.Checkin_time, session.Checkout_time, "", session.Fee);
+            }
+            btnPrevious.Enabled = pageable.PageNumber > 1;
+            btnNext.Enabled = pageable.PageNumber < page.TotalPages;
+        }
+
+        private void ChangePage(int pageNumber)
+        {
+            if (pageNumber < 1 || pageNumber > page.TotalPages)
+            {
+                return;
+            }
+            pageable.PageNumber = pageNumber;
+            page = sessionBUS.GetAllPagination(pageable, filters);
+            LoadPageAndPageable();
+            tbCurrentpage.Text = pageNumber.ToString();
+        }
+
+        private void Query()
+        {
+            int inputCboxIndex = cbFilter.SelectedIndex;
+            string inputSearch = tbSearch.Text.Trim();
+            filters.Clear();
+            if (!string.IsNullOrEmpty(inputSearch))
+            {
+                switch (inputCboxIndex) 
+                { 
+                    case 0:
+                        filters.Add(new FilterCondition("Id", CompOp.Equals, inputSearch));
+                        break;
+                    case 1:
+                        filters.Add(new FilterCondition("license_plate", CompOp.Like, inputSearch));
+                        break;
+                }
+            }
+
+            int inputCboxIndexType = cbVehicalType.SelectedIndex;
+            if (inputCboxIndexType != 0)
+            {
+                switch (inputCboxIndexType)
+                {
+                    case 1:
+                        filters.Add(new FilterCondition("type", CompOp.Like, SessionType.RESIDENT));
+                        break;
+                    case 2:
+                        filters.Add(new FilterCondition("type", CompOp.Like, SessionType.VISITOR));
+                        break;
+                }
+            }
+
+            pageable.PageNumber = 1;
+            page = sessionBUS.GetAllPagination(pageable, filters);
+            LoadPageAndPageable();
+        }
+
+        private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedValue = cbNumberofitem.SelectedItem.ToString();
+            int pageSize = int.Parse(selectedValue.Split(' ')[0]);
+            pageable.PageNumber = 1;
+            pageable.PageSize = pageSize;
+            page = sessionBUS.GetAllPagination(pageable, filters);
+            LoadPageAndPageable();
+        }
+
+        private void nextBtn_Click(object sender, EventArgs e)
+        {
+            ChangePage(pageable.PageNumber + 1);
+        }
+
+        
+        private void previousBtn_Click(object sender, EventArgs e)
+        {
+            ChangePage(pageable.PageNumber - 1);
+        }
+
+        private async void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            await _debouncer.DebounceAsync(() =>
+            {
+                Query();
+                return Task.CompletedTask;
+            }, 500);
+        }
+
+        private void tbCurrentpage_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            // Allow only numbers and control characters in textbox
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) e.Handled = true;
+
+            // Allow enter key to change page
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                string input = tbCurrentpage.Text;
+                int pageNumber;
+
+                if (string.IsNullOrEmpty(input))
+                    pageNumber = 1;
+                else
+                {
+                    pageNumber = int.Parse(input);
+                    pageNumber = pageNumber < 1 ? 1 : pageNumber;
+                    pageNumber = pageNumber > page.TotalPages ? page.TotalPages : pageNumber;
+                }
+                ChangePage(pageNumber);
+            }
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            Query();
         }
     }
 }

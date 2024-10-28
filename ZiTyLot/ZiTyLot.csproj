@@ -489,7 +489,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="App.config" />
+    <Content Include="App.config" />
     <None Include="App.Designer.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
