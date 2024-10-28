@@ -384,7 +384,7 @@
             this.tbFee.TextChanged += new System.EventHandler(this.tbFee_TextChanged);
             this.tbFee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFee_KeyPress);
             // 
-            // PriceResidentForm
+            // AddResidentFeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -392,7 +392,7 @@
             this.ClientSize = new System.Drawing.Size(905, 302);
             this.Controls.Add(this.pnlMain);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "PriceResidentForm";
+            this.Name = "AddResidentFeeForm";
             this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.Text = "PriceResidentForm";
             this.pnlMain.ResumeLayout(false);

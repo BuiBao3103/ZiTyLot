@@ -17,6 +17,8 @@ namespace ZiTyLot.GUI.Screens
         private const int MOTORBIKE_ID = 2;
         private const int BICYCLE_ID = 3;
         private List<ResidentFee> residentFees;
+
+        private AddResidentFeeForm addResidentFeeForm = null;
         public PriceControl()
         {
             InitializeComponent();
@@ -273,37 +275,36 @@ namespace ZiTyLot.GUI.Screens
         // Separate handlers for resident fee buttons
         private void btnMotorbikeResidentFee_Click(object sender, EventArgs e)
         {
-            AddResidentFeeForm priceResidentForm = new AddResidentFeeForm(MOTORBIKE_ID);
-            priceResidentForm.ResidentFeeInsertionEvent += new EventHandler((s, args) =>
-            {
-                residentFees = residentFeeBUS.GetAll();
-                LoadResidentFee();
-            });
-            priceResidentForm.Show();
+            ShowAddResidentFeeForm(MOTORBIKE_ID);
         }
 
         private void btnCarResidentFee_Click(object sender, EventArgs e)
         {
-            AddResidentFeeForm priceResidentForm = new AddResidentFeeForm(CAR_ID);
-            priceResidentForm.ResidentFeeInsertionEvent += new EventHandler((s, args) =>
-            {
-                residentFees = residentFeeBUS.GetAll();
-                LoadResidentFee();
-            });
-            priceResidentForm.Show();
+            ShowAddResidentFeeForm(CAR_ID);
         }
 
         private void btnBicycleResidentFee_Click(object sender, EventArgs e)
         {
-            AddResidentFeeForm priceResidentForm = new AddResidentFeeForm(BICYCLE_ID);
-            priceResidentForm.ResidentFeeInsertionEvent += new EventHandler((s, args) =>
-            {
-                residentFees = residentFeeBUS.GetAll();
-                LoadResidentFee();
-            });
-            priceResidentForm.Show();
+            ShowAddResidentFeeForm(BICYCLE_ID);
         }
 
+        private void ShowAddResidentFeeForm(int vehicleId)
+        {
+            if (addResidentFeeForm == null || addResidentFeeForm.IsDisposed)
+            {
+                addResidentFeeForm = new AddResidentFeeForm(vehicleId);
+                addResidentFeeForm.ResidentFeeInsertionEvent += new EventHandler((s, args) =>
+                {
+                    residentFees = residentFeeBUS.GetAll();
+                    LoadResidentFee();
+                });
+                addResidentFeeForm.Show();
+            }
+            else
+            {
+                addResidentFeeForm.BringToFront();
+            }
+        }
         private void LoadResidentFee()
         {
             Console.WriteLine("Load resident fee");
