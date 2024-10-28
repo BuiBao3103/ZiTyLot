@@ -167,10 +167,10 @@ namespace ZiTyLot.GUI.Screens
                 switch (inputCboxIndexVehicleType)
                 {
                     case 1:
-                        filters.Add(new FilterCondition("parking_lot_type", CompOp.Like, ParkingLotType.TWO_WHEELER));
+                        filters.Add(new FilterCondition("parking_lot_type", CompOp.Equals, ParkingLotType.TWO_WHEELER));
                         break;
                     case 2:
-                        filters.Add(new FilterCondition("parking_lot_type", CompOp.Like, ParkingLotType.FOUR_WHEELER));
+                        filters.Add(new FilterCondition("parking_lot_type", CompOp.Equals, ParkingLotType.FOUR_WHEELER));
                         break;
                 }
             }
@@ -181,10 +181,10 @@ namespace ZiTyLot.GUI.Screens
                 switch (inputCboxIndexUserType)
                 {
                     case 1:
-                        filters.Add(new FilterCondition("user_type", CompOp.Like, ParkingLotUserType.RESIDENT));
+                        filters.Add(new FilterCondition("user_type", CompOp.Equals, ParkingLotUserType.RESIDENT));
                         break;
                     case 2:
-                        filters.Add(new FilterCondition("user_type", CompOp.Like, ParkingLotUserType.VISITOR));
+                        filters.Add(new FilterCondition("user_type", CompOp.Equals, ParkingLotUserType.VISITOR));
                         break;
                 }
             }
@@ -195,16 +195,16 @@ namespace ZiTyLot.GUI.Screens
                 switch (inputCboxIndexStatus)
                 {
                     case 1:
-                        filters.Add(new FilterCondition("status", CompOp.Like, ParkingLotStatus.FULL));
+                        filters.Add(new FilterCondition("status", CompOp.Equals, ParkingLotStatus.FULL));
                         break;
                     case 2:
-                        filters.Add(new FilterCondition("status", CompOp.Like, ParkingLotStatus.AVAILABLE));
+                        filters.Add(new FilterCondition("status", CompOp.Equals, ParkingLotStatus.AVAILABLE));
                         break;
                     case 3:
-                        filters.Add(new FilterCondition("status", CompOp.Like, ParkingLotStatus.CLOSED));
+                        filters.Add(new FilterCondition("status", CompOp.Equals, ParkingLotStatus.CLOSED));
                         break;
                     case 4:
-                        filters.Add(new FilterCondition("status", CompOp.Like, ParkingLotStatus.UNDER_MAINTENANCE));
+                        filters.Add(new FilterCondition("status", CompOp.Equals, ParkingLotStatus.UNDER_MAINTENANCE));
                         break;
                 }
             }
