@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
+using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens.CardScr;
@@ -14,29 +16,22 @@ namespace ZiTyLot.GUI.Screens
 {
     public partial class CardControl : UserControl
     {
+        private readonly Debouncer _debouncer = new Debouncer();
         private readonly CardBUS cardBUS = new CardBUS();
         private readonly Pageable pageable = new Pageable();
         private readonly List<FilterCondition> filterConditions = new List<FilterCondition>();
-        Page<Card> page;
+        private Page<Card> page;
+
         public CardControl()
         {
             InitializeComponent();
             cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
             page = cardBUS.GetAllPagination(pageable, filterConditions);
-            tbCurrentpage.Text = "1";
-            lbTotalpage.Text = "/" + page.TotalPages;
-            LoadPageToTable();
+            LoadPageAndPageable();
 
         }
-        private void LoadPageToTable()
-        {
-            tableCard.Rows.Clear();
-            foreach (Card card in page.Content)
-            {
-                tableCard.Rows.Add(card.Id, card.Rfid, card.Type, card.Status);
-            }
-        }
+
         private void table_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
@@ -51,6 +46,7 @@ namespace ZiTyLot.GUI.Screens
             pnlTop.Height = 54;
 
         }
+
         // Paint the header cell
         private void table_Paint(object sender, PaintEventArgs e)
         {
@@ -62,6 +58,7 @@ namespace ZiTyLot.GUI.Screens
                 mergedHeaderRect, this.tableCard.ColumnHeadersDefaultCellStyle.ForeColor,
                 TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
         }
+
         // Paint the cell
         private void table_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -96,6 +93,7 @@ namespace ZiTyLot.GUI.Screens
                 e.Handled = true;
             }
         }
+
         // Cell click event handler
         private void table_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -122,12 +120,10 @@ namespace ZiTyLot.GUI.Screens
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
         }
 
-
         private void excelMenu_Opening(object sender, CancelEventArgs e)
         {
 
         }
-
 
         private void downloadTemplateMenuItem_Click(object sender, EventArgs e)
         {
@@ -139,6 +135,23 @@ namespace ZiTyLot.GUI.Screens
 
         }
 
+        private void LoadPageAndPageable()
+        {
+            if (page == null || pageable == null) return;
+            //update page number
+            tbCurrentpage.Text = pageable.PageNumber.ToString();
+            lbTotalpage.Text = "/" + page.TotalPages;
+            //update table
+            tableCard.Rows.Clear();
+            foreach (Card card in page.Content)
+            {
+                tableCard.Rows.Add(card.Id, card.Rfid, card.Type, card.Status);
+            }
+            //update button
+            btnPrevious.Enabled = pageable.PageNumber > 1;
+            btnNext.Enabled = pageable.PageNumber < page.TotalPages;
+        }
+
         private void cbNumberofitem_SelectedIndexChanged(object sender, EventArgs e)
         {
             String selectedValue = cbNumberofitem.SelectedItem.ToString();
@@ -146,10 +159,9 @@ namespace ZiTyLot.GUI.Screens
             pageable.PageSize = pageSize;
             pageable.PageNumber = 1;
             page = cardBUS.GetAllPagination(pageable, filterConditions);
-            tbCurrentpage.Text = "1";
-            lbTotalpage.Text = "/" + page.TotalPages;
-            LoadPageToTable();
+            LoadPageAndPageable();
         }
+
         private void changePage(int pageNumber)
         {
             if (pageNumber < 1 || pageNumber > page.TotalPages)
@@ -158,18 +170,17 @@ namespace ZiTyLot.GUI.Screens
             }
             pageable.PageNumber = pageNumber;
             page = cardBUS.GetAllPagination(pageable, filterConditions);
-            tbCurrentpage.Text = pageNumber.ToString();
-            LoadPageToTable();
+            LoadPageAndPageable();
         }
+
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            int currentPage = int.Parse(tbCurrentpage.Text);
-            changePage(currentPage - 1);
+            changePage(pageable.PageNumber - 1);
         }
+
         private void btnNext_Click(object sender, EventArgs e)
         {
-            int currentPage = int.Parse(tbCurrentpage.Text);
-            changePage((currentPage + 1));
+            changePage(pageable.PageNumber + 1);
         }
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -202,6 +213,107 @@ namespace ZiTyLot.GUI.Screens
         {
             CardCreateForm cardCreateForm = new CardCreateForm();
             cardCreateForm.Show();
+        }
+
+        private void tbCurrentpage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow only numbers and control characters in textbox
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) e.Handled = true;
+
+            // Allow enter key to change page
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                string input = tbCurrentpage.Text;
+                int pageNumber;
+
+                if (string.IsNullOrEmpty(input))
+                    pageNumber = 1;
+                else
+                {
+                    pageNumber = int.Parse(input);
+                    pageNumber = pageNumber < 1 ? 1 : pageNumber;
+                    pageNumber = pageNumber > page.TotalPages ? page.TotalPages : pageNumber;
+                }
+                changePage(pageNumber);
+            }
+        }
+
+        private Task query()
+        {
+            int inputCboxIndex = cbFilter.SelectedIndex;
+            string inputSearch = tbSearch.Text.Trim();
+            filterConditions.Clear();
+            if (!string.IsNullOrEmpty(inputSearch))
+            {
+                switch (inputCboxIndex)
+                {
+                    case 0:
+                        filterConditions.Add(new FilterCondition("id", CompOp.Equals, inputSearch));
+                        break;
+                    case 1:
+                        filterConditions.Add(new FilterCondition("rfid", CompOp.Like, inputSearch));
+                        break;
+                }
+            }
+            pageable.PageNumber = 1;
+            page = cardBUS.GetAllPagination(pageable, filterConditions);
+            LoadPageAndPageable();
+            return Task.CompletedTask;
+        }
+
+        private async void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            await _debouncer.DebounceAsync(async () =>
+            {
+                await query();
+            }, 500);
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            int inputCboxUserType = cbUserType.SelectedIndex;
+            int inputCboxStatus = cbStatus.SelectedIndex;
+            filterConditions.Clear();
+
+            // Sử dụng Dictionary để ánh xạ các giá trị
+            var userTypeMapping = new Dictionary<int, CardType>
+            {
+                { 1, CardType.RESIDENT },
+                { 2, CardType.VISITOR }
+            };
+            var statusMapping = new Dictionary<int, CardStatus>
+            {
+                { 1, CardStatus.EMPTY },
+                { 2, CardStatus.ACTIVE },
+                { 3, CardStatus.BLOCKED },
+                { 4, CardStatus.LOST }
+            };
+
+            if (inputCboxUserType != 0 && userTypeMapping.ContainsKey(inputCboxUserType))
+            {
+                filterConditions.Add(new FilterCondition("type", CompOp.Like, userTypeMapping[inputCboxUserType]));
+            }
+            if (inputCboxStatus != 0 && statusMapping.ContainsKey(inputCboxStatus))
+            {
+                filterConditions.Add(new FilterCondition("status", CompOp.Like, statusMapping[inputCboxStatus]));
+            }
+            
+            pageable.PageNumber = 1;
+            page = cardBUS.GetAllPagination(pageable, filterConditions);
+            LoadPageAndPageable();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            if (cbUserType.SelectedIndex != 0 || cbStatus.SelectedIndex != 0)
+            {
+                cbUserType.SelectedIndex = 0;
+                cbStatus.SelectedIndex = 0;
+                filterConditions.Clear();
+                pageable.PageNumber = 1;
+                page = cardBUS.GetAllPagination(pageable, filterConditions);
+                LoadPageAndPageable();
+            }
         }
     }
 }
