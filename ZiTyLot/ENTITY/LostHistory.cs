@@ -10,6 +10,7 @@ namespace ZiTyLot.ENTITY
         private string license_plate;
         private string owner_name;
         private string owner_identification_card;
+        private bool is_found;
         private DateTime created_at;
         private DateTime? updated_at;
         private DateTime? deleted_at;
@@ -29,5 +30,6 @@ namespace ZiTyLot.ENTITY
         public DateTime? Deleted_at { get => deleted_at; set => deleted_at = value; }
         public int? Card_id { get => card_id; set => card_id = value; }
         public Card Card { get => card; set => card = value; }
+        public bool Is_found { get => is_found; set => is_found = value; }
     }
 }
