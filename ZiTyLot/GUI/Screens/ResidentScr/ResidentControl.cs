@@ -25,8 +25,6 @@ namespace ZiTyLot.GUI.Screens
             InitializeComponent();
             cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
-            page = residentBUS.GetAllPagination(pageable, filters);
-            LoadPageAndPageable();
         }
 
         private void ResidentScreen_Load(object sender, EventArgs e)
@@ -164,10 +162,6 @@ namespace ZiTyLot.GUI.Screens
 
         private void ChangePage(int pageNumber)
         {
-            if (pageNumber < 1 || pageNumber > page.TotalPages)
-            {
-                return;
-            }
             pageable.PageNumber = pageNumber;
             page = residentBUS.GetAllPagination(pageable, filters);
             LoadPageAndPageable();
@@ -199,19 +193,16 @@ namespace ZiTyLot.GUI.Screens
                         break;
                 }
             }
-            pageable.PageNumber = 1;
-            page = residentBUS.GetAllPagination(pageable, filters);
-            LoadPageAndPageable();
+            ChangePage(1);
         }
 
         private void cbNumberofitem_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedValue = cbNumberofitem.SelectedItem.ToString();
             int pageSize = int.Parse(selectedValue.Split(' ')[0]);
-            pageable.PageNumber = 1;
             pageable.PageSize = pageSize;
-            page = residentBUS.GetAllPagination(pageable, filters);
-            LoadPageAndPageable();
+            ChangePage(1);
+
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
