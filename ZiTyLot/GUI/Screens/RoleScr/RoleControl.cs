@@ -127,9 +127,9 @@ namespace ZiTyLot.GUI.Screens
                     break;
                 case 1:
                     tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 95);
-                    break;
-                
+                    break;      
             }
+            query();
         }
 
         private void btnAdd_Click_1(object sender, EventArgs e)
@@ -149,7 +149,7 @@ namespace ZiTyLot.GUI.Screens
             }
         }
 
-        private Task query()
+        private void query()
         {
             int inputCboxIndex = cbFilter.SelectedIndex;
             string inputSearch = tbSearch.Text.Trim();
@@ -168,14 +168,14 @@ namespace ZiTyLot.GUI.Screens
             }
             roleList = roleBUS.GetAll(filters);
             LoadDataToTable();
-            return Task.CompletedTask;
         }
 
         private async void tbSearch_TextChanged(object sender, EventArgs e)
         {
-            await _debouncer.DebounceAsync(async () =>
+            await _debouncer.DebounceAsync(() =>
             {
-                await query();
+                query();
+                return Task.CompletedTask;
             }, 500);
         }
     }
