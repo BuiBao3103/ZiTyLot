@@ -93,7 +93,8 @@ namespace ZiTyLot.GUI.Screens
                 }
                 else if (e.ColumnIndex == tableMotorbike.Columns["colMotorbikeDelete"].Index)
                 {
-                    MessageBox.Show("Delete button clicked for row " + e.RowIndex);
+                    int id = (int)tableMotorbike.Rows[e.RowIndex].Cells[0].Value;
+                    DeleteResidentFee(id);
                 }
             }
         }
@@ -152,7 +153,8 @@ namespace ZiTyLot.GUI.Screens
                 }
                 else if (e.ColumnIndex == tableCar.Columns["colCarDelete"].Index)
                 {
-                    MessageBox.Show("Delete button clicked for row " + e.RowIndex);
+                    int id = (int)tableCar.Rows[e.RowIndex].Cells[0].Value;
+                    DeleteResidentFee(id);
                 }
             }
         }
@@ -211,7 +213,8 @@ namespace ZiTyLot.GUI.Screens
                 }
                 else if (e.ColumnIndex == tableBicycle.Columns["colBicycleDelete"].Index)
                 {
-                    MessageBox.Show("Delete button clicked for row " + e.RowIndex);
+                    int id = (int)tableBicycle.Rows[e.RowIndex].Cells[0].Value;
+                    DeleteResidentFee(id);
                 }
             }
         }
@@ -326,6 +329,25 @@ namespace ZiTyLot.GUI.Screens
                 }
             }
 
+        }
+
+        private void DeleteResidentFee(int id)
+        {
+            try
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this resident fee?", "Delete Resident Fee", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    residentFeeBUS.Delete(id);
+                    residentFees = residentFeeBUS.GetAll();
+                    LoadResidentFee();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show($"An error occurred while deleting resident fee: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

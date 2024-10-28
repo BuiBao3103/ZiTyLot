@@ -83,21 +83,18 @@ namespace ZiTyLot.GUI.Screens.PriceScr
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
-                return;
             }
 
             //not allow leading zero
             if (tbFee.Text.Length == 0 && e.KeyChar == '0')
             {
                 e.Handled = true;
-                return;
             }
 
             //not allow more than 9 digits
             if (tbFee.Text.Replace(",", "").Length >= 9 && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
-                return;
             }
         }
 
