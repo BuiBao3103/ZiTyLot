@@ -270,19 +270,19 @@ namespace ZiTyLot.GUI.Screens
         // Separate handlers for resident fee buttons
         private void btnMotorbikeResidentFee_Click(object sender, EventArgs e)
         {
-            PriceResidentForm priceResidentForm = new PriceResidentForm();
+            PriceResidentForm priceResidentForm = new PriceResidentForm(MOTORBIKE_ID);
             priceResidentForm.Show();
         }
 
         private void btnCarResidentFee_Click(object sender, EventArgs e)
         {
-            PriceResidentForm priceResidentForm = new PriceResidentForm();
+            PriceResidentForm priceResidentForm = new PriceResidentForm(CAR_ID);
             priceResidentForm.Show();
         }
 
         private void btnBicycleResidentFee_Click(object sender, EventArgs e)
         {
-            PriceResidentForm priceResidentForm = new PriceResidentForm();
+            PriceResidentForm priceResidentForm = new PriceResidentForm(BICYCLE_ID);
             priceResidentForm.Show();
         }
 
