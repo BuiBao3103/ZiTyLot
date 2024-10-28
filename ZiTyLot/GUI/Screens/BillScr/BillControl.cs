@@ -24,8 +24,6 @@ namespace ZiTyLot.GUI.Screens
             InitializeComponent();
             cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
-            page = billBUS.GetAllPagination(pageable, filters);
-            LoadPageAndPageable();
         }
 
         private void BillScreen_Load(object sender, EventArgs e)
@@ -150,10 +148,6 @@ namespace ZiTyLot.GUI.Screens
 
         private void changePage(int pageNumber)
         {
-            if (pageNumber < 1 || pageNumber > page.TotalPages)
-            {
-                return;
-            }
             pageable.PageNumber = pageNumber;
             page = billBUS.GetAllPagination(pageable, filters);
             LoadPageAndPageable();
@@ -172,15 +166,16 @@ namespace ZiTyLot.GUI.Screens
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = cbFilter.SelectedIndex;
-            switch (index) {
+            switch (index)
+            {
                 case 0:
                     tableSearch.ColumnStyles[1].Width = 90;
                     break;
                 case 1:
                     tableSearch.ColumnStyles[1].Width = 130;
                     break;
-
             }
+            query();
         }
 
         private void tbCurrentpage_KeyPress(object sender, KeyPressEventArgs e)
@@ -206,7 +201,7 @@ namespace ZiTyLot.GUI.Screens
             }
         }
 
-        private Task query()
+        private void query()
         {
             int inputCboxIndex = cbFilter.SelectedIndex;
             string inputSearch = tbSearch.Text.Trim();
@@ -223,17 +218,15 @@ namespace ZiTyLot.GUI.Screens
                         break;
                 }
             }
-            pageable.PageNumber = 1;
-            page = billBUS.GetAllPagination(pageable, filters);
-            LoadPageAndPageable();
-            return Task.CompletedTask;
+            changePage(1);
         }
 
         private async void tbSearch_TextChanged(object sender, EventArgs e)
         {
-            await _debouncer.DebounceAsync(async () =>
+            await _debouncer.DebounceAsync(() =>
             {
-                await query();
+                query();
+                return Task.CompletedTask;
             }, 500);
         }
     }

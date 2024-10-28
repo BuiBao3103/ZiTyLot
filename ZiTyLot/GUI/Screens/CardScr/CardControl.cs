@@ -281,7 +281,6 @@ namespace ZiTyLot.GUI.Screens
 
                 }
             }
-            Console.WriteLine(filters.Count);
             changePage(1);
         }
 
