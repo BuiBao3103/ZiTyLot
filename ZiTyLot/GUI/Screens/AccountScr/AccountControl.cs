@@ -117,7 +117,6 @@ namespace ZiTyLot.GUI.Screens
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String inputCboxSelected = cbFilter.GetItemText(cbFilter.SelectedItem);
             int index = cbFilter.SelectedIndex;
             switch (index)
             {
@@ -130,11 +129,11 @@ namespace ZiTyLot.GUI.Screens
                 case 2:
                     tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 120);
                     break;
-                default:
+                case 3:
                     tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 90);
                     break;
             }
-
+            query();
         }
 
         private void LoadPageAndPageable()
