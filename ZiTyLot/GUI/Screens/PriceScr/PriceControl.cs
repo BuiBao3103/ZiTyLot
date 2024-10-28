@@ -11,10 +11,12 @@ namespace ZiTyLot.GUI.Screens
 {
     public partial class PriceControl : UserControl
     {
-        VehicleTypeBUS vehicleTypeBUS = new VehicleTypeBUS();
-        List<FilterCondition> filters = new List<FilterCondition>();
-        List<VehicleType> vehicleTypes;
-
+        private readonly ResidentFeeBUS residentFeeBUS = new ResidentFeeBUS();
+        private readonly VisitorFeeBUS visitorFeeBUS = new VisitorFeeBUS();
+        private const int CAR_ID = 1;
+        private const int MOTORBIKE_ID = 2;
+        private const int BICYCLE_ID = 3;
+        private List<ResidentFee> residentFees;
         public PriceControl()
         {
             InitializeComponent();
@@ -27,7 +29,11 @@ namespace ZiTyLot.GUI.Screens
             this.tableBicycle.Paint += new System.Windows.Forms.PaintEventHandler(this.table_PaintBicycle);
             this.tableBicycle.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPaintingBicycle);
             this.tableBicycle.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClickBicycle);
+            residentFees = residentFeeBUS.GetAll();
+            LoadResidentFee();
         }
+
+
 
         private void pnlTab_Resize(object sender, EventArgs e)
         {
@@ -280,7 +286,30 @@ namespace ZiTyLot.GUI.Screens
             priceResidentForm.Show();
         }
 
+        private void LoadResidentFee()
+        {
+            tableBicycle.Rows.Clear();
+            tableCar.Rows.Clear();
+            tableMotorbike.Rows.Clear();
+            foreach (ResidentFee residentFee in residentFees)
+            {
+                // Format fee in currency vietnam
+                string feeFormat = residentFee.Fee.ToString("C0", new System.Globalization.CultureInfo("vi-VN"));
+                string durationFormat = residentFee.Month != 1 ? residentFee.Month + " months" : residentFee.Month + " month";
+                switch (residentFee.Vehicle_type_id)
+                {
+                    case MOTORBIKE_ID:
+                        tableMotorbike.Rows.Add(residentFee.Id, feeFormat, durationFormat);
+                        break;
+                    case CAR_ID:
+                        tableCar.Rows.Add(residentFee.Id, feeFormat, durationFormat);
+                        break;
+                    case BICYCLE_ID:
+                        tableBicycle.Rows.Add(residentFee.Id, feeFormat, durationFormat);
+                        break;
+                }
+            }
 
-
+        }
     }
 }
