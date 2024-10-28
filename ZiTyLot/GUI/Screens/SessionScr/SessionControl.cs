@@ -319,5 +319,14 @@ namespace ZiTyLot.GUI.Screens
         {
             Query();
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            cbFilter.SelectedIndex = 0;
+            tbSearch.Text = String.Empty;
+            cbVehicalType.SelectedIndex = 0;
+            filters.Clear();
+            ChangePage(1);
+        }
     }
 }

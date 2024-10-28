@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
+using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens.AreaScr;
@@ -13,69 +15,18 @@ namespace ZiTyLot.GUI.Screens
 {
     public partial class AreaControl : UserControl
     {
-        ParkingLotBUS parkingLotBUS = new ParkingLotBUS();
-        Pageable pageable = new Pageable();
-        List<FilterCondition> filters = new List<FilterCondition>();
-        Page<ParkingLot> page;
+        private readonly Debouncer _debouncer = new Debouncer();
+        private readonly ParkingLotBUS parkingLotBUS = new ParkingLotBUS();
+        private readonly Pageable pageable = new Pageable();
+        private readonly List<FilterCondition> filters = new List<FilterCondition>();
+        private Page<ParkingLot> page;
         public AreaControl()
         {
             InitializeComponent();
             cbNumberOfItem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberOfItem.SelectedIndex = 0;
             page = parkingLotBUS.GetAllPagination(pageable, filters);
-            tbCurrentPage.Text = "1";
-            lbTotalPage.Text = "/" + page.TotalPages;
-            LoadPageToTable();
-
-        }
-        private void LoadPageToTable()
-        {
-            tableArea.Rows.Clear();
-            foreach (ParkingLot parkingLot in page.Content)
-            {
-                // calculate the remaining number of slots
-                tableArea.Rows.Add(parkingLot.Id, parkingLot.Parking_lot_type,parkingLot.User_type, parkingLot.Total_slot, parkingLot.Status);
-            }
-        }
-        private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedValue = cbNumberOfItem.SelectedItem.ToString();
-            int pageSize = int.Parse(selectedValue.Split(' ')[0]);
-            pageable.PageNumber = 1;
-            pageable.PageSize = pageSize;
-            page = parkingLotBUS.GetAllPagination(pageable, filters);
-            tbCurrentPage.Text = "1";
-            lbTotalPage.Text = "/" + page.TotalPages;
-            LoadPageToTable();
-        }
-
-        private void ChangePage(int pageNumber)
-        {
-            if (pageNumber < 1 || pageNumber > page.TotalPages)
-            {
-                return;
-            }
-            pageable.PageNumber = pageNumber;
-            page = parkingLotBUS.GetAllPagination(pageable, filters);
-            LoadPageToTable();
-            tbCurrentPage.Text = pageNumber.ToString();
-        }
-        private void nextBtn_Click(object sender, EventArgs e)
-        {
-            int currentPage = int.Parse(tbCurrentPage.Text);
-            if (currentPage < page.TotalPages)
-            {
-                ChangePage(currentPage + 1);
-            }
-        }
-
-        private void previousBtn_Click(object sender, EventArgs e)
-        {
-            int currentPage = int.Parse(tbCurrentPage.Text);
-            if (currentPage > 1)
-            {
-                ChangePage(currentPage - 1);
-            }
+            LoadPageAndPageable();
         }
         private void AreaScreen_Load(object sender, EventArgs e)
         {
@@ -177,6 +128,164 @@ namespace ZiTyLot.GUI.Screens
         {
             AreaDetailForm areaDetailForm = new AreaDetailForm();
             areaDetailForm.Show();
+        }
+
+        private void LoadPageAndPageable()
+        {
+            if (page == null || pageable == null) return;
+
+            tbCurrentPage.Text = pageable.PageNumber.ToString();
+            lbTotalPage.Text = "/" + page.TotalPages;
+
+            tableArea.Rows.Clear();
+            foreach (ParkingLot parkingLot in page.Content)
+            {
+                // calculate the remaining number of slots
+                tableArea.Rows.Add(parkingLot.Id, parkingLot.Parking_lot_type, parkingLot.User_type, parkingLot.Total_slot, parkingLot.Status);
+            }
+
+            btnPrevious.Enabled = pageable.PageNumber > 1;
+            btnNext.Enabled = pageable.PageNumber < page.TotalPages;
+        }
+
+        private void ChangePage(int pageNumber)
+        {
+            if (pageNumber < 1 || pageNumber > page.TotalPages)
+            {
+                return;
+            }
+            pageable.PageNumber = pageNumber;
+            page = parkingLotBUS.GetAllPagination(pageable, filters);
+            LoadPageAndPageable();
+        }
+
+        private void Query()
+        {
+            string inputSearch = tbSearch.Text.Trim();
+            filters.Clear();
+            if (!string.IsNullOrEmpty(inputSearch)){
+                filters.Add(new FilterCondition("Id", CompOp.Equals, inputSearch));
+            }
+            
+            int inputCboxIndexVehicleType = cbVehicalType.SelectedIndex;
+            if (inputCboxIndexVehicleType != 0)
+            {
+                switch (inputCboxIndexVehicleType)
+                {
+                    case 1:
+                        filters.Add(new FilterCondition("parking_lot_type", CompOp.Like, ParkingLotType.TWO_WHEELER));
+                        break;
+                    case 2:
+                        filters.Add(new FilterCondition("parking_lot_type", CompOp.Like, ParkingLotType.FOUR_WHEELER));
+                        break;
+
+                }
+            }
+
+            int inputCboxIndexUserType = cbUserType.SelectedIndex;
+            if (inputCboxIndexUserType != 0)
+            {
+                switch (inputCboxIndexUserType)
+                {
+                    case 1:
+                        filters.Add(new FilterCondition("user_type", CompOp.Like, ParkingLotUserType.RESIDENT));
+                        break;
+                    case 2:
+                        filters.Add(new FilterCondition("user_type", CompOp.Like, ParkingLotUserType.VISITOR));
+                        break;
+                }
+            }
+
+            int inputCboxIndexStatus = cbStatus.SelectedIndex;
+            if (inputCboxIndexStatus != 0)
+            {
+                switch (inputCboxIndexStatus)
+                {
+                    case 1:
+                        filters.Add(new FilterCondition("status", CompOp.Like, ParkingLotStatus.FULL));
+                        break;
+                    case 2:
+                        filters.Add(new FilterCondition("status", CompOp.Like, ParkingLotStatus.AVAILABLE));
+                        break;
+                    case 3:
+                        filters.Add(new FilterCondition("status", CompOp.Like, ParkingLotStatus.CLOSED));
+                        break;
+                    case 4:
+                        filters.Add(new FilterCondition("status", CompOp.Like, ParkingLotStatus.UNDER_MAINTENANCE));
+                        break;
+                }
+            }
+
+            pageable.PageNumber = 1;
+            page = parkingLotBUS.GetAllPagination(pageable, filters);
+            LoadPageAndPageable();
+        }
+
+        private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedValue = cbNumberOfItem.SelectedItem.ToString();
+            int pageSize = int.Parse(selectedValue.Split(' ')[0]);
+            pageable.PageNumber = 1;
+            pageable.PageSize = pageSize;
+            page = parkingLotBUS.GetAllPagination(pageable, filters);
+            LoadPageAndPageable();
+        }
+     
+        private void nextBtn_Click(object sender, EventArgs e)
+        {
+            ChangePage(pageable.PageNumber + 1);
+        }
+
+        private void previousBtn_Click(object sender, EventArgs e)
+        {
+            ChangePage(pageable.PageNumber - 1);
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            Query();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            cbVehicalType.SelectedIndex = 0;
+            cbUserType.SelectedIndex = 0;
+            cbStatus.SelectedIndex = 0;
+            filters.Clear();
+            ChangePage(1);
+           
+        }
+
+        private void tbCurrentPage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow only numbers and control characters in textbox
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) e.Handled = true;
+
+            // Allow enter key to change page
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                string input = tbCurrentPage.Text;
+                int pageNumber;
+
+                if (string.IsNullOrEmpty(input))
+                    pageNumber = 1;
+                else
+                {
+                    pageNumber = int.Parse(input);
+                    pageNumber = pageNumber < 1 ? 1 : pageNumber;
+                    pageNumber = pageNumber > page.TotalPages ? page.TotalPages : pageNumber;
+                }
+                ChangePage(pageNumber);
+            }
+        }
+
+        private async void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            await _debouncer.DebounceAsync(() =>
+            {
+                Query();
+                return Task.CompletedTask;
+            }, 500);
         }
     }
 }
