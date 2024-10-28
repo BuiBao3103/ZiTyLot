@@ -1,6 +1,6 @@
 ﻿namespace ZiTyLot.GUI.Screens.PriceScr
 {
-    partial class PriceResidentForm
+    partial class AddResidentFeeForm
     {
         /// <summary>
         /// Required designer variable.

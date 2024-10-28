@@ -273,7 +273,7 @@ namespace ZiTyLot.GUI.Screens
         // Separate handlers for resident fee buttons
         private void btnMotorbikeResidentFee_Click(object sender, EventArgs e)
         {
-            PriceResidentForm priceResidentForm = new PriceResidentForm(MOTORBIKE_ID);
+            AddResidentFeeForm priceResidentForm = new AddResidentFeeForm(MOTORBIKE_ID);
             priceResidentForm.ResidentFeeInsertionEvent += new EventHandler((s, args) =>
             {
                 residentFees = residentFeeBUS.GetAll();
@@ -284,7 +284,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void btnCarResidentFee_Click(object sender, EventArgs e)
         {
-            PriceResidentForm priceResidentForm = new PriceResidentForm(CAR_ID);
+            AddResidentFeeForm priceResidentForm = new AddResidentFeeForm(CAR_ID);
             priceResidentForm.ResidentFeeInsertionEvent += new EventHandler((s, args) =>
             {
                 residentFees = residentFeeBUS.GetAll();
@@ -295,7 +295,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void btnBicycleResidentFee_Click(object sender, EventArgs e)
         {
-            PriceResidentForm priceResidentForm = new PriceResidentForm(BICYCLE_ID);
+            AddResidentFeeForm priceResidentForm = new AddResidentFeeForm(BICYCLE_ID);
             priceResidentForm.ResidentFeeInsertionEvent += new EventHandler((s, args) =>
             {
                 residentFees = residentFeeBUS.GetAll();

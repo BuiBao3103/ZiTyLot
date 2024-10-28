@@ -12,7 +12,7 @@ using ZiTyLot.ENTITY;
 
 namespace ZiTyLot.GUI.Screens.PriceScr
 {
-    public partial class PriceResidentForm : Form
+    public partial class AddResidentFeeForm : Form
     {
         private readonly VehicleTypeBUS vehicleTypeBUS = new VehicleTypeBUS();
         private readonly ResidentFeeBUS residentFeeBUS = new ResidentFeeBUS();
@@ -20,7 +20,7 @@ namespace ZiTyLot.GUI.Screens.PriceScr
         private readonly VehicleType vehicleType;
 
         public event EventHandler ResidentFeeInsertionEvent;
-        public PriceResidentForm(int vehicle_id)
+        public AddResidentFeeForm(int vehicle_id)
         {
             InitializeComponent();
             this.CenterToScreen();
