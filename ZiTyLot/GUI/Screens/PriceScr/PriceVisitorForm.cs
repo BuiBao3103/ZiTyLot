@@ -26,37 +26,23 @@ namespace ZiTyLot.GUI.Screens.PriceScr
         public event EventHandler PricePerTurnInsertion;
         public event EventHandler PricePerHourTurnInsertion;
         public event EventHandler PricePerPeriodInsertion;
-        protected virtual void OnPricePerTurnInsertion()
-        {
-            PricePerTurnInsertion?.Invoke(this, EventArgs.Empty);
-        }
-
-        protected virtual void OnPricePerHourTurnInsertion()
-        {
-            if (PricePerHourTurnInsertion != null)
-                PricePerHourTurnInsertion(this, EventArgs.Empty);
-        }
-        protected virtual void OnPricePerPeriodInsertion() {
-            if (PricePerPeriodInsertion != null)
-                PricePerPeriodInsertion(this, EventArgs.Empty);
-        }
 
         private void btnConfirmPT_Click(object sender, EventArgs e)
         {
+            PricePerTurnInsertion?.Invoke(this, EventArgs.Empty);
             this.Close();
-            OnPricePerTurnInsertion();
         }
 
         private void btnConfirmPHT_Click(object sender, EventArgs e)
         {
+            PricePerHourTurnInsertion?.Invoke(this, EventArgs.Empty);
             this.Close();
-            OnPricePerHourTurnInsertion();
         }
 
         private void btnConfirmPeriod_Click(object sender, EventArgs e)
         {
+            PricePerPeriodInsertion?.Invoke(this, EventArgs.Empty);
             this.Close();
-            OnPricePerPeriodInsertion();
         }
 
         private void btnCancelPT_Click(object sender, EventArgs e)
