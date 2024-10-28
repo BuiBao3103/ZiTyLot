@@ -274,33 +274,33 @@ namespace ZiTyLot.GUI.Screens
         private void btnMotorbikeResidentFee_Click(object sender, EventArgs e)
         {
             PriceResidentForm priceResidentForm = new PriceResidentForm(MOTORBIKE_ID);
-            priceResidentForm.FormClosedEvent += () =>
+            priceResidentForm.ResidentFeeInsertionEvent += new EventHandler((s, args) =>
             {
                 residentFees = residentFeeBUS.GetAll();
                 LoadResidentFee();
-            };
+            });
             priceResidentForm.Show();
         }
 
         private void btnCarResidentFee_Click(object sender, EventArgs e)
         {
             PriceResidentForm priceResidentForm = new PriceResidentForm(CAR_ID);
-            priceResidentForm.FormClosedEvent += () =>
+            priceResidentForm.ResidentFeeInsertionEvent += new EventHandler((s, args) =>
             {
                 residentFees = residentFeeBUS.GetAll();
                 LoadResidentFee();
-            };
+            });
             priceResidentForm.Show();
         }
 
         private void btnBicycleResidentFee_Click(object sender, EventArgs e)
         {
             PriceResidentForm priceResidentForm = new PriceResidentForm(BICYCLE_ID);
-            priceResidentForm.FormClosedEvent += () =>
+            priceResidentForm.ResidentFeeInsertionEvent += new EventHandler((s, args) =>
             {
                 residentFees = residentFeeBUS.GetAll();
                 LoadResidentFee();
-            };
+            });
             priceResidentForm.Show();
         }
 

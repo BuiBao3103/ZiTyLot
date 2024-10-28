@@ -28,8 +28,7 @@ namespace ZiTyLot.GUI.Screens.PriceScr
         public event EventHandler PricePerPeriodInsertion;
         protected virtual void OnPricePerTurnInsertion()
         {
-            if (PricePerTurnInsertion != null)
-                PricePerTurnInsertion(this, EventArgs.Empty);
+            PricePerTurnInsertion?.Invoke(this, EventArgs.Empty);
         }
 
         protected virtual void OnPricePerHourTurnInsertion()

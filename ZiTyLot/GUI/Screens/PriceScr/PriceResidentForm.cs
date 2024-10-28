@@ -19,8 +19,7 @@ namespace ZiTyLot.GUI.Screens.PriceScr
         private static readonly List<int> INIT_DURATION = new List<int> { 1, 2, 3, 6, 9, 12 };
         private readonly VehicleType vehicleType;
 
-        public delegate void FormClosedHandler();
-        public event FormClosedHandler FormClosedEvent;
+        public event EventHandler ResidentFeeInsertionEvent;
         public PriceResidentForm(int vehicle_id)
         {
             InitializeComponent();
@@ -61,7 +60,7 @@ namespace ZiTyLot.GUI.Screens.PriceScr
                 };
                 residentFeeBUS.Add(residentFee);
 
-                FormClosedEvent?.Invoke();
+                ResidentFeeInsertionEvent?.Invoke(this, EventArgs.Empty);
                 this.Close();
 
             }
