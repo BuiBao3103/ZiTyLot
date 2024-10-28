@@ -381,6 +381,8 @@
             this.tbFee.TabIndex = 0;
             this.tbFee.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbFee.Watermark = "";
+            this.tbFee.TextChanged += new System.EventHandler(this.tbFee_TextChanged);
+            this.tbFee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFee_KeyPress);
             // 
             // PriceResidentForm
             // 

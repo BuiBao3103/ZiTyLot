@@ -15,8 +15,12 @@ namespace ZiTyLot.GUI.Screens.PriceScr
     public partial class PriceResidentForm : Form
     {
         private readonly VehicleTypeBUS vehicleTypeBUS = new VehicleTypeBUS();
+        private readonly ResidentFeeBUS residentFeeBUS = new ResidentFeeBUS();
         private static readonly List<int> INIT_DURATION = new List<int> { 1, 2, 3, 6, 9, 12 };
         private readonly VehicleType vehicleType;
+
+        public delegate void FormClosedHandler();
+        public event FormClosedHandler FormClosedEvent;
         public PriceResidentForm(int vehicle_id)
         {
             InitializeComponent();
@@ -47,7 +51,64 @@ namespace ZiTyLot.GUI.Screens.PriceScr
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            this.Close();
+            try
+            {
+                ResidentFee residentFee = new ResidentFee
+                {
+                    Vehicle_type_id = vehicleType.Id,
+                    Month = int.Parse(cbDuration.Text.Split(' ')[0]),
+                    Fee = int.Parse(tbFee.Text.Replace(",", ""))
+                };
+                residentFeeBUS.Add(residentFee);
+
+                FormClosedEvent?.Invoke();
+                this.Close();
+
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("An error occurred while adding resident fee", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
+        private void tbFee_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //allow only digits and control characters
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                return;
+            }
+
+            //not allow leading zero
+            if (tbFee.Text.Length == 0 && e.KeyChar == '0')
+            {
+                e.Handled = true;
+                return;
+            }
+
+            //not allow more than 9 digits
+            if (tbFee.Text.Replace(",", "").Length >= 9 && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void tbFee_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(tbFee.Text)) return;
+
+            //format fee text
+            string text = tbFee.Text.Replace(",", "");
+            tbFee.Text = string.Format("{0:#,##0}", int.Parse(text));
+            tbFee.SelectionStart = tbFee.Text.Length;
         }
     }
 }
