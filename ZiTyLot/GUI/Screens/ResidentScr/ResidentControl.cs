@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.ENTITY;
@@ -13,6 +14,7 @@ namespace ZiTyLot.GUI.Screens
 {
     public partial class ResidentControl : UserControl
     {
+        private readonly Debouncer _debouncer = new Debouncer();
         private readonly ResidentBUS residentBUS = new ResidentBUS();
         private readonly Pageable pageable = new Pageable();
         private readonly List<FilterCondition> filters = new List<FilterCondition>();
@@ -24,9 +26,7 @@ namespace ZiTyLot.GUI.Screens
             cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
             page = residentBUS.GetAllPagination(pageable, filters);
-            tbCurrentpage.Text = "1";
-            lbTotalpage.Text = "/" + page.TotalPages;
-            LoadPageToTable();
+            LoadPageAndPageable();
         }
 
         private void ResidentScreen_Load(object sender, EventArgs e)
@@ -113,62 +113,6 @@ namespace ZiTyLot.GUI.Screens
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
         }
 
-        private void LoadPageToTable()
-        {
-            tableResident.Rows.Clear();
-            foreach (Resident resident in page.Content)
-            {
-                tableResident.Rows.Add(resident.Id, resident.Full_name, resident.Apartment_id, resident.Email, resident.Phone);
-            }
-        }
-
-        private void cbNumberofitem_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedValue = cbNumberofitem.SelectedItem.ToString();
-            int pageSize = int.Parse(selectedValue.Split(' ')[0]);
-            pageable.PageNumber = 1;
-            pageable.PageSize = pageSize;
-            page = residentBUS.GetAllPagination(pageable, filters);
-            tbCurrentpage.Text = "1";
-            lbTotalpage.Text = "/" + page.TotalPages;
-            LoadPageToTable();
-        }
-
-        private void ChangePage(int pageNumber)
-        {
-            if (pageNumber < 1 || pageNumber > page.TotalPages)
-            {
-                return;
-            }
-            pageable.PageNumber = pageNumber;
-            page = residentBUS.GetAllPagination(pageable, filters);
-            LoadPageToTable();
-            tbCurrentpage.Text = pageNumber.ToString();
-        }
-
-        private void btnPrevious_Click(object sender, EventArgs e)
-        {
-            if (pageable.PageNumber > 1)
-            {
-                ChangePage(pageable.PageNumber - 1);
-            }
-        }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            if (pageable.PageNumber < page.TotalPages)
-            {
-                ChangePage(pageable.PageNumber + 1);
-            }
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            ResidentCreateForm residentCreateForm = new ResidentCreateForm();
-            residentCreateForm.Show();
-            
-        }
-
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             
@@ -193,5 +137,122 @@ namespace ZiTyLot.GUI.Screens
             }
         }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ResidentCreateForm residentCreateForm = new ResidentCreateForm();
+            residentCreateForm.Show();
+
+        }
+
+        private void LoadPageAndPageable()
+        {
+            if (page == null || pageable == null) return;
+
+            tbCurrentpage.Text = pageable.PageNumber.ToString();
+            lbTotalpage.Text = "/" + page.TotalPages;
+
+            tableResident.Rows.Clear();
+            foreach (Resident resident in page.Content)
+            {
+                tableResident.Rows.Add(resident.Id, resident.Full_name, resident.Apartment_id, resident.Email, resident.Phone);
+            }
+
+            btnPrevious.Enabled = pageable.PageNumber > 1;
+            btnNext.Enabled = pageable.PageNumber < page.TotalPages;
+        }
+
+        private void ChangePage(int pageNumber)
+        {
+            if (pageNumber < 1 || pageNumber > page.TotalPages)
+            {
+                return;
+            }
+            pageable.PageNumber = pageNumber;
+            page = residentBUS.GetAllPagination(pageable, filters);
+            LoadPageAndPageable();
+        }
+
+        private void Query()
+        {
+            int inputCboxIndex = cbFilter.SelectedIndex;
+            String inputSearch = tbSearch.Text.Trim();
+            filters.Clear();
+            if (!string.IsNullOrEmpty(inputSearch))
+            {
+                switch (inputCboxIndex)
+                {
+                    case 0:
+                        filters.Add(new FilterCondition("Id", CompOp.Equals, inputSearch));
+                        break;
+                    case 1:
+                        filters.Add(new FilterCondition("email", CompOp.Like, inputSearch));
+                        break;
+                    case 2:
+                        filters.Add(new FilterCondition("phone", CompOp.Like, inputSearch));
+                        break;
+                    case 3:
+                        filters.Add(new FilterCondition("full_name", CompOp.Like, inputSearch));
+                        break;
+                    case 4:
+                        filters.Add(new FilterCondition("apartment_id", CompOp.Like, inputSearch));
+                        break;
+                }
+            }
+            pageable.PageNumber = 1;
+            page = residentBUS.GetAllPagination(pageable, filters);
+            LoadPageAndPageable();
+        }
+
+        private void cbNumberofitem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedValue = cbNumberofitem.SelectedItem.ToString();
+            int pageSize = int.Parse(selectedValue.Split(' ')[0]);
+            pageable.PageNumber = 1;
+            pageable.PageSize = pageSize;
+            page = residentBUS.GetAllPagination(pageable, filters);
+            LoadPageAndPageable();
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            ChangePage(pageable.PageNumber - 1);
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            ChangePage(pageable.PageNumber + 1);
+        }
+
+        private void tbCurrentpage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow only numbers and control characters in textbox
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) e.Handled = true;
+
+            // Allow enter key to change page
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                string input = tbCurrentpage.Text;
+                int pageNumber;
+
+                if (string.IsNullOrEmpty(input))
+                    pageNumber = 1;
+                else
+                {
+                    pageNumber = int.Parse(input);
+                    pageNumber = pageNumber < 1 ? 1 : pageNumber;
+                    pageNumber = pageNumber > page.TotalPages ? page.TotalPages : pageNumber;
+                }
+                ChangePage(pageNumber);
+            }
+        }
+
+        private async void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            await _debouncer.DebounceAsync(() =>
+            {
+                Query();
+                return Task.CompletedTask;
+            }, 500);
+        }
     }
 }
