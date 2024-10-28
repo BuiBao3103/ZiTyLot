@@ -19,7 +19,7 @@ namespace ZiTyLot.GUI.Screens
         private readonly Debouncer _debouncer = new Debouncer();
         private readonly CardBUS cardBUS = new CardBUS();
         private readonly Pageable pageable = new Pageable();
-        private readonly List<FilterCondition> filterConditions = new List<FilterCondition>();
+        private readonly List<FilterCondition> filters = new List<FilterCondition>();
         private Page<Card> page;
 
         public CardControl()
@@ -27,15 +27,13 @@ namespace ZiTyLot.GUI.Screens
             InitializeComponent();
             cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
-            page = cardBUS.GetAllPagination(pageable, filterConditions);
-            LoadPageAndPageable();
 
         }
 
         private void table_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
-        
+
         private void CardScreen_Load(object sender, EventArgs e)
         {
             pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
@@ -157,19 +155,13 @@ namespace ZiTyLot.GUI.Screens
             String selectedValue = cbNumberofitem.SelectedItem.ToString();
             int pageSize = int.Parse(selectedValue.Split(' ')[0]);
             pageable.PageSize = pageSize;
-            pageable.PageNumber = 1;
-            page = cardBUS.GetAllPagination(pageable, filterConditions);
-            LoadPageAndPageable();
+            changePage(1);
         }
 
         private void changePage(int pageNumber)
         {
-            if (pageNumber < 1 || pageNumber > page.TotalPages)
-            {
-                return;
-            }
             pageable.PageNumber = pageNumber;
-            page = cardBUS.GetAllPagination(pageable, filterConditions);
+            page = cardBUS.GetAllPagination(pageable, filters);
             LoadPageAndPageable();
         }
 
@@ -195,6 +187,7 @@ namespace ZiTyLot.GUI.Screens
                     tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 85);
                     break;
             }
+            query();
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
@@ -238,82 +231,82 @@ namespace ZiTyLot.GUI.Screens
             }
         }
 
-        private Task query()
+        private void query()
         {
             int inputCboxIndex = cbFilter.SelectedIndex;
             string inputSearch = tbSearch.Text.Trim();
-            filterConditions.Clear();
+            filters.Clear();
             if (!string.IsNullOrEmpty(inputSearch))
             {
                 switch (inputCboxIndex)
                 {
                     case 0:
-                        filterConditions.Add(new FilterCondition("id", CompOp.Equals, inputSearch));
+                        filters.Add(new FilterCondition("id", CompOp.Equals, inputSearch));
                         break;
                     case 1:
-                        filterConditions.Add(new FilterCondition("rfid", CompOp.Like, inputSearch));
+                        filters.Add(new FilterCondition("rfid", CompOp.Like, inputSearch));
                         break;
                 }
             }
-            pageable.PageNumber = 1;
-            page = cardBUS.GetAllPagination(pageable, filterConditions);
-            LoadPageAndPageable();
-            return Task.CompletedTask;
+            int inputCboxUserType = cbUserType.SelectedIndex;
+            if (inputCboxUserType != 0)
+            {
+                switch (inputCboxUserType)
+                {
+                    case 1:
+                        filters.Add(new FilterCondition("type", CompOp.Equals, CardType.RESIDENT));
+                        break;
+                    case 2:
+                        filters.Add(new FilterCondition("Type", CompOp.Equals, CardType.VISITOR));
+                        break;
+                }
+            }
+            int inputCboxStatus = cbStatus.SelectedIndex;
+            if (inputCboxStatus != 0)
+            {
+                switch (inputCboxStatus)
+                {
+                    case 1:
+                        filters.Add(new FilterCondition("status", CompOp.Equals, CardStatus.EMPTY));
+                        break;
+                    case 2:
+                        filters.Add(new FilterCondition("status", CompOp.Equals, CardStatus.ACTIVE));
+                        break;
+                    case 3:
+                        filters.Add(new FilterCondition("status", CompOp.Equals, CardStatus.BLOCKED));
+                        break;
+                    case 4:
+                        filters.Add(new FilterCondition("status", CompOp.Equals, CardStatus.LOST));
+                        break;
+
+                }
+            }
+            Console.WriteLine(filters.Count);
+            changePage(1);
         }
 
         private async void tbSearch_TextChanged(object sender, EventArgs e)
         {
-            await _debouncer.DebounceAsync(async () =>
+            await _debouncer.DebounceAsync(() =>
             {
-                await query();
+                query();
+                return Task.CompletedTask;
             }, 500);
         }
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            int inputCboxUserType = cbUserType.SelectedIndex;
-            int inputCboxStatus = cbStatus.SelectedIndex;
-            filterConditions.Clear();
-
-            // Sử dụng Dictionary để ánh xạ các giá trị
-            var userTypeMapping = new Dictionary<int, CardType>
-            {
-                { 1, CardType.RESIDENT },
-                { 2, CardType.VISITOR }
-            };
-            var statusMapping = new Dictionary<int, CardStatus>
-            {
-                { 1, CardStatus.EMPTY },
-                { 2, CardStatus.ACTIVE },
-                { 3, CardStatus.BLOCKED },
-                { 4, CardStatus.LOST }
-            };
-
-            if (inputCboxUserType != 0 && userTypeMapping.ContainsKey(inputCboxUserType))
-            {
-                filterConditions.Add(new FilterCondition("type", CompOp.Like, userTypeMapping[inputCboxUserType]));
-            }
-            if (inputCboxStatus != 0 && statusMapping.ContainsKey(inputCboxStatus))
-            {
-                filterConditions.Add(new FilterCondition("status", CompOp.Like, statusMapping[inputCboxStatus]));
-            }
-            
-            pageable.PageNumber = 1;
-            page = cardBUS.GetAllPagination(pageable, filterConditions);
-            LoadPageAndPageable();
+            query();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            if (cbUserType.SelectedIndex != 0 || cbStatus.SelectedIndex != 0)
-            {
-                cbUserType.SelectedIndex = 0;
-                cbStatus.SelectedIndex = 0;
-                filterConditions.Clear();
-                pageable.PageNumber = 1;
-                page = cardBUS.GetAllPagination(pageable, filterConditions);
-                LoadPageAndPageable();
-            }
+            cbUserType.SelectedIndex = 0;
+            cbStatus.SelectedIndex = 0;
+            pageable.PageNumber = 1;
+            tbSearch.Text = "";
+            filters.Clear();
+            changePage(1);
         }
     }
 }
