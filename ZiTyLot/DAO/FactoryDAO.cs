@@ -442,7 +442,9 @@ namespace ZiTyLot.DAO
         private void AddFilterConditionParameters(MySqlCommand command, FilterCondition filter)
         {
             // Add the filter condition parameter to the command
-            var parameterValue = filter.Operator == CompOp.Like ? $"%{filter.Value}%" : filter.Value;
+            var parameterValue = filter.Operator == CompOp.Like ? $"%{filter.Value}%" : filter.Value.ToString();
+            //if filter value is enum, add '' to convert it to string
+          
             command.Parameters.AddWithValue($"@{filter.Column}", parameterValue);
         }
 

@@ -1,17 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Text;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZiTyLot.BUS;
+using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens.RoleScr;
+using ZiTyLot.Helper;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ZiTyLot.GUI.Screens
 {
     public partial class RoleControl : UserControl
     {
+        private readonly Debouncer _debouncer = new Debouncer();
+        private readonly RoleBUS roleBUS = new RoleBUS();
+        private readonly List<FilterCondition> filters = new List<FilterCondition>();
+        private List<Role> roleList;
+
         public RoleControl()
         {
             InitializeComponent();
+            roleList = roleBUS.GetAll(filters);
+            LoadDataToTable();
         }
 
         private void RoleScreen_Load(object sender, EventArgs e)
@@ -23,6 +37,7 @@ namespace ZiTyLot.GUI.Screens
             this.tableRole.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
             this.tableRole.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
         }
+
         // Paint the header cell
         private void table_Paint(object sender, PaintEventArgs e)
         {
@@ -34,6 +49,7 @@ namespace ZiTyLot.GUI.Screens
                 mergedHeaderRect, this.tableRole.ColumnHeadersDefaultCellStyle.ForeColor,
                 TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
         }
+
         // Paint the cell
         private void table_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -48,7 +64,7 @@ namespace ZiTyLot.GUI.Screens
                 {
                     e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
                 }
-                Image icon = null;
+                System.Drawing.Image icon = null;
                 if (e.ColumnIndex == tableRole.Columns["colView"].Index)
                 {
                     icon = Properties.Resources.Icon_18x18px_View;
@@ -68,6 +84,7 @@ namespace ZiTyLot.GUI.Screens
                 e.Handled = true;
             }
         }
+
         // Cell click event handler
         private void table_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -110,15 +127,56 @@ namespace ZiTyLot.GUI.Screens
                     break;
                 case 1:
                     tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 95);
-                    break;
-                
+                    break;      
             }
+            query();
         }
 
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
             RoleDetailForm roleDetailForm = new RoleDetailForm();
             roleDetailForm.Show();
+        }
+
+        private void LoadDataToTable()
+        {
+            if (roleList == null) return;
+            //update table
+            tableRole.Rows.Clear();
+            foreach (Role role in roleList)
+            {
+                tableRole.Rows.Add(role.Id, role.Name);
+            }
+        }
+
+        private void query()
+        {
+            int inputCboxIndex = cbFilter.SelectedIndex;
+            string inputSearch = tbSearch.Text.Trim();
+            filters.Clear();
+            if (!string.IsNullOrEmpty(inputSearch))
+            {
+                switch (inputCboxIndex)
+                {
+                    case 0:
+                        filters.Add(new FilterCondition("id", CompOp.Equals, inputSearch));
+                        break;
+                    case 1:
+                        filters.Add(new FilterCondition("name", CompOp.Like, inputSearch));
+                        break;
+                }
+            }
+            roleList = roleBUS.GetAll(filters);
+            LoadDataToTable();
+        }
+
+        private async void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            await _debouncer.DebounceAsync(() =>
+            {
+                query();
+                return Task.CompletedTask;
+            }, 500);
         }
     }
 }
