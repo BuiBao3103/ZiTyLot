@@ -29,7 +29,7 @@ namespace ZiTyLot.DAO
                     connection.Open(); // Open the connection
 
                     // Start building the SQL query
-                    var query = new StringBuilder($"SELECT * FROM {tableName} WHERE 1=1");
+                    var query = new StringBuilder($"SELECT * FROM {tableName} WHERE deleted_at IS NULL");
 
                     // Append filter conditions to the query if any filters are provided
                     if (filters != null)
@@ -102,7 +102,7 @@ namespace ZiTyLot.DAO
                     totalElements = GetTotalElements(connection, filters);
 
                     // Start building the SQL query for fetching data
-                    var dataQuery = new StringBuilder($"SELECT * FROM {tableName} WHERE 1=1");
+                    var dataQuery = new StringBuilder($"SELECT * FROM {tableName} WHERE deleted_at IS NULL");
 
                     // Append filter conditions to the query if any filters are provided
                     if (filters != null)
@@ -175,7 +175,6 @@ namespace ZiTyLot.DAO
             }
         }
 
-
         public T GetById(object id)
         {
             try
@@ -186,7 +185,7 @@ namespace ZiTyLot.DAO
                     connection.Open(); // Open the connection
 
                     // Define the SQL query to fetch the record by ID
-                    var query = $"SELECT * FROM {tableName} WHERE Id = @Id";
+                    var query = $"SELECT * FROM {tableName} WHERE deleted_at IS NULL AND Id = @Id";
 
                     // Create a MySqlCommand with the query
                     using (var command = new MySqlCommand(query, connection))
@@ -396,7 +395,7 @@ namespace ZiTyLot.DAO
                     connection.Open(); // Open the connection
 
                     // Define the SQL query to soft delete the record by ID
-                    var query = $"UPDATE {tableName} SET Delete_at = NOW() WHERE Id = @Id";
+                    var query = $"UPDATE {tableName} SET delete_at = NOW() WHERE Id = @Id";
 
                     // Create a MySqlCommand with the query
                     using (var command = new MySqlCommand(query, connection))
@@ -469,7 +468,7 @@ namespace ZiTyLot.DAO
         private int GetTotalElements(MySqlConnection connection, List<FilterCondition> filters)
         {
             // Start building the SQL query to count the total elements
-            var countQuery = new StringBuilder($"SELECT COUNT(*) FROM {tableName} WHERE 1=1");
+            var countQuery = new StringBuilder($"SELECT COUNT(*) FROM {tableName} WHERE deleted_at IS NULL");
 
             // Append filter conditions to the query if any filters are provided
             if (filters != null)
