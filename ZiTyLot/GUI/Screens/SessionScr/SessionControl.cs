@@ -30,8 +30,6 @@ namespace ZiTyLot.GUI.Screens
             InitializeComponent();
             cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
-            page = sessionBUS.GetAllPagination(pageable, filters);
-            LoadPageAndPageable();
             tbSearch.TextChanged += tbSearch_TextChanged;
             customDateTimePicker.DateTimeConfirmed += CustomDateTimePicker_DateTimeConfirmed_In;
             customDateTimePicker1.DateTimeConfirmed += CustomDateTimePicker_DateTimeConfirmed_Out;
@@ -109,21 +107,7 @@ namespace ZiTyLot.GUI.Screens
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
         }
 
-        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int index = cbFilter.SelectedIndex;
-            switch (index)
-            {
-                case 0:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 65);
-                    break;
-                case 1:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 85);
-                    break;
-            }
-            Query();
-        }
-
+        
         private void btnFilter_Click(object sender, EventArgs e)
         {
             if (pnlTop.Height == 108)
@@ -196,6 +180,20 @@ namespace ZiTyLot.GUI.Screens
                 customDateTimePicker1.Location = new Point(uiPanel8.Location.X, btnTimeIn.Location.Y + 110);
             }
         }
+        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = cbFilter.SelectedIndex;
+            switch (index)
+            {
+                case 0:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 65);
+                    break;
+                case 1:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 85);
+                    break;
+            }
+            Query();
+        }
 
         private void LoadPageAndPageable()
         {
@@ -215,10 +213,6 @@ namespace ZiTyLot.GUI.Screens
 
         private void ChangePage(int pageNumber)
         {
-            if (pageNumber < 1 || pageNumber > page.TotalPages)
-            {
-                return;
-            }
             pageable.PageNumber = pageNumber;
             page = sessionBUS.GetAllPagination(pageable, filters);
             LoadPageAndPageable();
@@ -241,7 +235,6 @@ namespace ZiTyLot.GUI.Screens
                         break;
                 }
             }
-
             int inputCboxIndexType = cbVehicalType.SelectedIndex;
             if (inputCboxIndexType != 0)
             {
@@ -255,20 +248,15 @@ namespace ZiTyLot.GUI.Screens
                         break;
                 }
             }
-
-            pageable.PageNumber = 1;
-            page = sessionBUS.GetAllPagination(pageable, filters);
-            LoadPageAndPageable();
+            ChangePage(1);
         }
 
         private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedValue = cbNumberofitem.SelectedItem.ToString();
             int pageSize = int.Parse(selectedValue.Split(' ')[0]);
-            pageable.PageNumber = 1;
             pageable.PageSize = pageSize;
-            page = sessionBUS.GetAllPagination(pageable, filters);
-            LoadPageAndPageable();
+            ChangePage(1);
         }
 
         private void nextBtn_Click(object sender, EventArgs e)
@@ -322,8 +310,8 @@ namespace ZiTyLot.GUI.Screens
         private void btnClear_Click(object sender, EventArgs e)
         {
             cbFilter.SelectedIndex = 0;
-            tbSearch.Text = String.Empty;
             cbVehicalType.SelectedIndex = 0;
+            tbSearch.Text = string.Empty;
             filters.Clear();
             ChangePage(1);
         }
