@@ -120,8 +120,8 @@ namespace ZiTyLot.GUI.Screens
                 case 1:
                     tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 85);
                     break;
-
             }
+            Query();
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
@@ -222,7 +222,6 @@ namespace ZiTyLot.GUI.Screens
             pageable.PageNumber = pageNumber;
             page = sessionBUS.GetAllPagination(pageable, filters);
             LoadPageAndPageable();
-            tbCurrentpage.Text = pageNumber.ToString();
         }
 
         private void Query()

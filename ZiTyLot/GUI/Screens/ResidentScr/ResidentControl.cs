@@ -135,6 +135,7 @@ namespace ZiTyLot.GUI.Screens
                     tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 140);
                     break;
             }
+            Query();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
