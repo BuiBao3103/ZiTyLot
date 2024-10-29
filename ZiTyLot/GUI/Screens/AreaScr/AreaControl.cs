@@ -86,7 +86,8 @@ namespace ZiTyLot.GUI.Screens
             {
                 if (e.ColumnIndex == tableArea.Columns["colView"].Index)
                 {
-                    MessageBox.Show("View button clicked for row " + e.RowIndex);
+                    AreaDetailForm areaDetailForm = new AreaDetailForm();
+                    areaDetailForm.ShowDialog();
                 }
                 else if (e.ColumnIndex == tableArea.Columns["colDelete"].Index)
                 {
@@ -124,8 +125,8 @@ namespace ZiTyLot.GUI.Screens
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AreaDetailForm areaDetailForm = new AreaDetailForm();
-            areaDetailForm.Show();
+            AreaCreateForm areaCreateForm = new AreaCreateForm();
+            areaCreateForm.Show();
         }
 
         private void LoadPageAndPageable()
