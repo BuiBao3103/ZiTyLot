@@ -86,11 +86,13 @@ namespace ZiTyLot.GUI.Screens
         // Cell click event handler
         private void table_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             if (e.RowIndex >= 0)
             {
                 if (e.ColumnIndex == tableAccount.Columns["colView"].Index)
                 {
-                    MessageBox.Show("View button clicked for row " + e.RowIndex);
+                    AccountDetailForm accountDetailForm = new AccountDetailForm();
+                    accountDetailForm.ShowDialog();
                 }
                 else if (e.ColumnIndex == tableAccount.Columns["colDelete"].Index)
                 {
@@ -111,8 +113,8 @@ namespace ZiTyLot.GUI.Screens
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AccountDetailForm accountDetailForm = new AccountDetailForm();
-            accountDetailForm.Show();
+            AccountCreateForm accountCreateForm = new AccountCreateForm();
+            accountCreateForm.Show();
         }
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)

@@ -1,6 +1,6 @@
 ﻿namespace ZiTyLot.GUI.Screens.AccountScr
 {
-    partial class AccountDetailForm
+    partial class AccountCreateForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,6 +31,12 @@
             this.pnlMain = new Sunny.UI.UITableLayoutPanel();
             this.uiPanel7 = new Sunny.UI.UIPanel();
             this.uiPanel8 = new Sunny.UI.UIPanel();
+            this.uiSymbolLabel1 = new Sunny.UI.UISymbolLabel();
+            this.pnlButton = new Sunny.UI.UIPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCancel = new Sunny.UI.UISymbolButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnCreate = new Sunny.UI.UISymbolButton();
             this.uiPanel4 = new Sunny.UI.UIPanel();
             this.pnlAccount = new Sunny.UI.UITableLayoutPanel();
             this.pnlRole = new Sunny.UI.UIPanel();
@@ -59,17 +65,12 @@
             this.pnlFullname = new Sunny.UI.UIPanel();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
             this.tbFullname = new Sunny.UI.UITextBox();
-            this.uiSymbolLabel1 = new Sunny.UI.UISymbolLabel();
-            this.pnlButton = new Sunny.UI.UIPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnResetPassword = new Sunny.UI.UISymbolButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnCancel = new Sunny.UI.UISymbolButton();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnSave = new Sunny.UI.UISymbolButton();
             this.pnlMain.SuspendLayout();
             this.uiPanel7.SuspendLayout();
             this.uiPanel8.SuspendLayout();
+            this.pnlButton.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.uiPanel4.SuspendLayout();
             this.pnlAccount.SuspendLayout();
             this.pnlRole.SuspendLayout();
@@ -90,10 +91,6 @@
             this.uiGroupBox2.SuspendLayout();
             this.pnlFullname.SuspendLayout();
             this.uiGroupBox1.SuspendLayout();
-            this.pnlButton.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -101,8 +98,8 @@
             this.pnlMain.ColumnCount = 2;
             this.pnlMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.pnlMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.pnlMain.Controls.Add(this.pnlButton, 0, 3);
             this.pnlMain.Controls.Add(this.uiPanel7, 0, 0);
+            this.pnlMain.Controls.Add(this.pnlButton, 0, 3);
             this.pnlMain.Controls.Add(this.uiPanel4, 0, 2);
             this.pnlMain.Controls.Add(this.uiPanel2, 0, 1);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -116,7 +113,7 @@
             this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.pnlMain.Size = new System.Drawing.Size(664, 641);
-            this.pnlMain.TabIndex = 0;
+            this.pnlMain.TabIndex = 1;
             this.pnlMain.TagString = null;
             // 
             // uiPanel7
@@ -159,6 +156,117 @@
             this.uiPanel8.TabIndex = 5;
             this.uiPanel8.Text = null;
             this.uiPanel8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiSymbolLabel1
+            // 
+            this.uiSymbolLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiSymbolLabel1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiSymbolLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiSymbolLabel1.Location = new System.Drawing.Point(0, 2);
+            this.uiSymbolLabel1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiSymbolLabel1.Name = "uiSymbolLabel1";
+            this.uiSymbolLabel1.Size = new System.Drawing.Size(656, 30);
+            this.uiSymbolLabel1.Symbol = 559389;
+            this.uiSymbolLabel1.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiSymbolLabel1.SymbolOffset = new System.Drawing.Point(0, 2);
+            this.uiSymbolLabel1.SymbolSize = 32;
+            this.uiSymbolLabel1.TabIndex = 0;
+            this.uiSymbolLabel1.Text = "Create account";
+            this.uiSymbolLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pnlButton
+            // 
+            this.pnlMain.SetColumnSpan(this.pnlButton, 2);
+            this.pnlButton.Controls.Add(this.panel2);
+            this.pnlButton.Controls.Add(this.panel3);
+            this.pnlButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlButton.FillColor = System.Drawing.Color.White;
+            this.pnlButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.pnlButton.Location = new System.Drawing.Point(4, 581);
+            this.pnlButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlButton.MinimumSize = new System.Drawing.Size(1, 1);
+            this.pnlButton.Name = "pnlButton";
+            this.pnlButton.Padding = new System.Windows.Forms.Padding(0, 13, 0, 3);
+            this.pnlButton.Radius = 0;
+            this.pnlButton.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.pnlButton.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
+            this.pnlButton.RectSize = 2;
+            this.pnlButton.Size = new System.Drawing.Size(656, 55);
+            this.pnlButton.TabIndex = 15;
+            this.pnlButton.Text = null;
+            this.pnlButton.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnCancel);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(406, 13);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(120, 39);
+            this.panel2.TabIndex = 10;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCancel.FillColor = System.Drawing.Color.White;
+            this.btnCancel.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnCancel.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCancel.Location = new System.Drawing.Point(0, 0);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCancel.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCancel.RectDisableColor = System.Drawing.Color.White;
+            this.btnCancel.RectHoverColor = System.Drawing.Color.White;
+            this.btnCancel.RectPressColor = System.Drawing.Color.White;
+            this.btnCancel.RectSelectedColor = System.Drawing.Color.White;
+            this.btnCancel.RectSize = 2;
+            this.btnCancel.Size = new System.Drawing.Size(120, 39);
+            this.btnCancel.Symbol = 362163;
+            this.btnCancel.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCancel.SymbolSize = 20;
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnCreate);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(526, 13);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.panel3.Size = new System.Drawing.Size(130, 39);
+            this.panel3.TabIndex = 9;
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCreate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCreate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCreate.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnCreate.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnCreate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.Location = new System.Drawing.Point(10, 0);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCreate.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Radius = 10;
+            this.btnCreate.RectColor = System.Drawing.Color.White;
+            this.btnCreate.RectDisableColor = System.Drawing.Color.White;
+            this.btnCreate.RectHoverColor = System.Drawing.Color.White;
+            this.btnCreate.RectPressColor = System.Drawing.Color.White;
+            this.btnCreate.RectSelectedColor = System.Drawing.Color.White;
+            this.btnCreate.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnCreate.Size = new System.Drawing.Size(120, 39);
+            this.btnCreate.Symbol = 61694;
+            this.btnCreate.SymbolSize = 20;
+            this.btnCreate.TabIndex = 3;
+            this.btnCreate.Text = "Create";
+            this.btnCreate.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // uiPanel4
             // 
@@ -694,154 +802,7 @@
             this.tbFullname.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbFullname.Watermark = "";
             // 
-            // uiSymbolLabel1
-            // 
-            this.uiSymbolLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiSymbolLabel1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiSymbolLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiSymbolLabel1.Location = new System.Drawing.Point(0, 2);
-            this.uiSymbolLabel1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiSymbolLabel1.Name = "uiSymbolLabel1";
-            this.uiSymbolLabel1.Size = new System.Drawing.Size(656, 30);
-            this.uiSymbolLabel1.Symbol = 559389;
-            this.uiSymbolLabel1.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiSymbolLabel1.SymbolOffset = new System.Drawing.Point(0, 2);
-            this.uiSymbolLabel1.SymbolSize = 32;
-            this.uiSymbolLabel1.TabIndex = 0;
-            this.uiSymbolLabel1.Text = "Account details";
-            this.uiSymbolLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pnlButton
-            // 
-            this.pnlMain.SetColumnSpan(this.pnlButton, 2);
-            this.pnlButton.Controls.Add(this.panel1);
-            this.pnlButton.Controls.Add(this.panel2);
-            this.pnlButton.Controls.Add(this.panel3);
-            this.pnlButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlButton.FillColor = System.Drawing.Color.White;
-            this.pnlButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlButton.Location = new System.Drawing.Point(4, 581);
-            this.pnlButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pnlButton.MinimumSize = new System.Drawing.Size(1, 1);
-            this.pnlButton.Name = "pnlButton";
-            this.pnlButton.Padding = new System.Windows.Forms.Padding(0, 13, 0, 3);
-            this.pnlButton.Radius = 0;
-            this.pnlButton.RectColor = System.Drawing.SystemColors.ControlLight;
-            this.pnlButton.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
-            this.pnlButton.RectSize = 2;
-            this.pnlButton.Size = new System.Drawing.Size(656, 55);
-            this.pnlButton.TabIndex = 17;
-            this.pnlButton.Text = null;
-            this.pnlButton.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnResetPassword);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(226, 13);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.panel1.Size = new System.Drawing.Size(180, 39);
-            this.panel1.TabIndex = 11;
-            // 
-            // btnResetPassword
-            // 
-            this.btnResetPassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnResetPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnResetPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnResetPassword.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.btnResetPassword.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnResetPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResetPassword.Location = new System.Drawing.Point(0, 0);
-            this.btnResetPassword.Margin = new System.Windows.Forms.Padding(0);
-            this.btnResetPassword.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnResetPassword.Name = "btnResetPassword";
-            this.btnResetPassword.Radius = 10;
-            this.btnResetPassword.RectColor = System.Drawing.Color.White;
-            this.btnResetPassword.RectDisableColor = System.Drawing.Color.White;
-            this.btnResetPassword.RectHoverColor = System.Drawing.Color.White;
-            this.btnResetPassword.RectPressColor = System.Drawing.Color.White;
-            this.btnResetPassword.RectSelectedColor = System.Drawing.Color.White;
-            this.btnResetPassword.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnResetPassword.Size = new System.Drawing.Size(170, 39);
-            this.btnResetPassword.Symbol = 361470;
-            this.btnResetPassword.TabIndex = 3;
-            this.btnResetPassword.Text = "Reset password";
-            this.btnResetPassword.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnCancel);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(406, 13);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(120, 39);
-            this.panel2.TabIndex = 10;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancel.FillColor = System.Drawing.Color.White;
-            this.btnCancel.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.btnCancel.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnCancel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCancel.Location = new System.Drawing.Point(0, 0);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCancel.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCancel.RectDisableColor = System.Drawing.Color.White;
-            this.btnCancel.RectHoverColor = System.Drawing.Color.White;
-            this.btnCancel.RectPressColor = System.Drawing.Color.White;
-            this.btnCancel.RectSelectedColor = System.Drawing.Color.White;
-            this.btnCancel.RectSize = 2;
-            this.btnCancel.Size = new System.Drawing.Size(120, 39);
-            this.btnCancel.Symbol = 362163;
-            this.btnCancel.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCancel.SymbolSize = 20;
-            this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnSave);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(526, 13);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(130, 39);
-            this.panel3.TabIndex = 9;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnSave.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.btnSave.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnSave.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(10, 0);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSave.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Radius = 10;
-            this.btnSave.RectColor = System.Drawing.Color.White;
-            this.btnSave.RectDisableColor = System.Drawing.Color.White;
-            this.btnSave.RectHoverColor = System.Drawing.Color.White;
-            this.btnSave.RectPressColor = System.Drawing.Color.White;
-            this.btnSave.RectSelectedColor = System.Drawing.Color.White;
-            this.btnSave.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnSave.Size = new System.Drawing.Size(120, 39);
-            this.btnSave.Symbol = 557715;
-            this.btnSave.SymbolSize = 20;
-            this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "Save";
-            this.btnSave.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // AccountDetailForm
+            // AccountCreateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -849,13 +810,15 @@
             this.ClientSize = new System.Drawing.Size(684, 661);
             this.Controls.Add(this.pnlMain);
             this.MinimumSize = new System.Drawing.Size(700, 700);
-            this.Name = "AccountDetailForm";
+            this.Name = "AccountCreateForm";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.Text = "AccountDetailForm";
-            this.Load += new System.EventHandler(this.AccountDetailForm_Load);
+            this.Text = "AccountCreateForm";
             this.pnlMain.ResumeLayout(false);
             this.uiPanel7.ResumeLayout(false);
             this.uiPanel8.ResumeLayout(false);
+            this.pnlButton.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.uiPanel4.ResumeLayout(false);
             this.pnlAccount.ResumeLayout(false);
             this.pnlRole.ResumeLayout(false);
@@ -876,10 +839,6 @@
             this.uiGroupBox2.ResumeLayout(false);
             this.pnlFullname.ResumeLayout(false);
             this.uiGroupBox1.ResumeLayout(false);
-            this.pnlButton.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -887,43 +846,41 @@
         #endregion
 
         private Sunny.UI.UITableLayoutPanel pnlMain;
+        private Sunny.UI.UIPanel uiPanel7;
+        private Sunny.UI.UIPanel uiPanel8;
+        private Sunny.UI.UISymbolLabel uiSymbolLabel1;
+        private Sunny.UI.UIPanel pnlButton;
+        private System.Windows.Forms.Panel panel2;
+        private Sunny.UI.UISymbolButton btnCancel;
+        private System.Windows.Forms.Panel panel3;
+        private Sunny.UI.UISymbolButton btnCreate;
         private Sunny.UI.UIPanel uiPanel4;
-        private Sunny.UI.UIPanel uiPanel2;
-        private Sunny.UI.UITableLayoutPanel pnlEmployee;
-        private Sunny.UI.UIPanel pnlPhone;
-        private Sunny.UI.UIPanel pnlEmail;
-        private Sunny.UI.UIPanel pnlGender;
-        private Sunny.UI.UIPanel pnlNationalId;
-        private Sunny.UI.UIPanel pnlFullname;
-        private Sunny.UI.UIGroupBox uiGroupBox1;
-        private Sunny.UI.UITextBox tbFullname;
-        private Sunny.UI.UIGroupBox uiGroupBox5;
-        private Sunny.UI.UITextBox tbPhone;
-        private Sunny.UI.UIGroupBox uiGroupBox4;
-        private Sunny.UI.UITextBox tbEmail;
-        private Sunny.UI.UIGroupBox uiGroupBox3;
-        private Sunny.UI.UIComboBox cbGender;
-        private Sunny.UI.UIGroupBox uiGroupBox2;
-        private Sunny.UI.UITextBox tbNationalId;
         private Sunny.UI.UITableLayoutPanel pnlAccount;
         private Sunny.UI.UIPanel pnlRole;
         private Sunny.UI.UIGroupBox uiGroupBox8;
+        private Sunny.UI.UIListBox listAccess;
         private Sunny.UI.UIPanel uiPanel6;
         private Sunny.UI.UIGroupBox uiGroupBox7;
         private Sunny.UI.UIComboBox cbRole;
         private Sunny.UI.UIPanel uiPanel5;
         private Sunny.UI.UIGroupBox uiGroupBox6;
         private Sunny.UI.UITextBox tbUsername;
-        private Sunny.UI.UIListBox listAccess;
-        private Sunny.UI.UIPanel uiPanel7;
-        private Sunny.UI.UIPanel uiPanel8;
-        private Sunny.UI.UISymbolLabel uiSymbolLabel1;
-        private Sunny.UI.UIPanel pnlButton;
-        private System.Windows.Forms.Panel panel1;
-        private Sunny.UI.UISymbolButton btnResetPassword;
-        private System.Windows.Forms.Panel panel2;
-        private Sunny.UI.UISymbolButton btnCancel;
-        private System.Windows.Forms.Panel panel3;
-        private Sunny.UI.UISymbolButton btnSave;
+        private Sunny.UI.UIPanel uiPanel2;
+        private Sunny.UI.UITableLayoutPanel pnlEmployee;
+        private Sunny.UI.UIPanel pnlPhone;
+        private Sunny.UI.UIGroupBox uiGroupBox5;
+        private Sunny.UI.UITextBox tbPhone;
+        private Sunny.UI.UIPanel pnlEmail;
+        private Sunny.UI.UIGroupBox uiGroupBox4;
+        private Sunny.UI.UITextBox tbEmail;
+        private Sunny.UI.UIPanel pnlGender;
+        private Sunny.UI.UIGroupBox uiGroupBox3;
+        private Sunny.UI.UIComboBox cbGender;
+        private Sunny.UI.UIPanel pnlNationalId;
+        private Sunny.UI.UIGroupBox uiGroupBox2;
+        private Sunny.UI.UITextBox tbNationalId;
+        private Sunny.UI.UIPanel pnlFullname;
+        private Sunny.UI.UIGroupBox uiGroupBox1;
+        private Sunny.UI.UITextBox tbFullname;
     }
 }

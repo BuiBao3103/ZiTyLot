@@ -254,6 +254,12 @@
     <Compile Include="GUI\ArduinoRFIDReader.Designer.cs">
       <DependentUpon>ArduinoRFIDReader.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Screens\AccountScr\AccountCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\AccountScr\AccountCreateForm.Designer.cs">
+      <DependentUpon>AccountCreateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Screens\AccountScr\AccountDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -442,6 +448,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ArduinoRFIDReader.resx">
       <DependentUpon>ArduinoRFIDReader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\AccountScr\AccountCreateForm.resx">
+      <DependentUpon>AccountCreateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\AccountScr\AccountDetailForm.resx">
       <DependentUpon>AccountDetailForm.cs</DependentUpon>
