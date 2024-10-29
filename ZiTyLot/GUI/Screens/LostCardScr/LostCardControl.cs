@@ -71,6 +71,26 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
                 pnlTop.Height = 54;
             }
         }
+
+        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = cbFilter.SelectedIndex;
+            switch (index)
+            {
+                case 0:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 65);
+                    break;
+                case 1:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 85);
+                    break;
+                case 2:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 130);
+                    break;
+                default:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 130);
+                    break;
+            }
+        }
     }
 
 }
