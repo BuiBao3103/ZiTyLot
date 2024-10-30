@@ -90,6 +90,7 @@ namespace ZiTyLot.BUS
             Validate(item);
             try
             {
+                item.Updated_at = DateTime.Now;
                 residentFeeDAO.Update(item);
             }
             catch (Exception ex)

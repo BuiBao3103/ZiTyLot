@@ -48,7 +48,7 @@ namespace ZiTyLot.GUI.Screens.PriceScr
 
 
             //initialize fee title
-            this.Text = "Resident Fee for " + vehicleType.Name;
+            this.Text = "Detail resident Fee for " + vehicleType.Name;
             lbVehicleType.Text = vehicleType.Name;
         }
 
@@ -59,35 +59,30 @@ namespace ZiTyLot.GUI.Screens.PriceScr
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (double.TryParse(InputFormatter.GetRawNumericValue(tbFee.Text), out double fee))
-            //    {
-            //        ResidentFee residentFee = new ResidentFee
-            //        {
-            //            Vehicle_type_id = vehicleType.Id,
-            //            Month = int.Parse(cbDuration.Text.Split(' ')[0]),
-            //            Fee = fee
-            //        };
-            //        residentFeeBUS.Add(residentFee);
-            //        ResidentFeeInsertionEvent?.Invoke(this, EventArgs.Empty);
-            //        this.Close();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Invalid fee value", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-            //}
-            //catch (ArgumentException ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine(ex.Message);
-            //    MessageBox.Show("An error occurred while adding resident fee", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-
+            try
+            {
+                if (double.TryParse(InputFormatter.GetRawNumericValue(tbFee.Text), out double fee))
+                {
+                    residentFee.Month = int.Parse(cbDuration.Text.Split(' ')[0]);
+                    residentFee.Fee = fee;
+                    residentFeeBUS.Update(residentFee);
+                    ResidentFeeUpdateEvent?.Invoke(this, EventArgs.Empty);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid fee value", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("An error occurred while adding resident fee", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void tbFee_KeyPress(object sender, KeyPressEventArgs e)

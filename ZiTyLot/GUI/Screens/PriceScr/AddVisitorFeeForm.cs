@@ -28,7 +28,7 @@ namespace ZiTyLot.GUI.Screens.PriceScr
             this.CenterToScreen();
             vehicleType = vehicleTypeBUS.GetById(vehicle_id);
 
-            this.Text = "Visitor Fee for " + vehicleType.Name;
+            this.Text = "Add visitor Fee for " + vehicleType.Name;
             lbVehicleType.Text = vehicleType.Name;
         }
 
