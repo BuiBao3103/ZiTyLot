@@ -15,6 +15,7 @@ namespace ZiTyLot.GUI.Screens.AreaScr
         public AreaCreateForm()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
     }
 }
