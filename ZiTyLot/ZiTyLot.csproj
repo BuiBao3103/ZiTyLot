@@ -217,6 +217,12 @@
     <Compile Include="ENTITY\Slot.cs" />
     <Compile Include="ENTITY\VehicleType.cs" />
     <Compile Include="ENTITY\VisitorFee.cs" />
+    <Compile Include="GUI\Screens\PriceScr\DetailResidentFeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\PriceScr\DetailResidentFeeForm.Designer.cs">
+      <DependentUpon>DetailResidentFeeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Utils\InputFormatter.cs" />
     <Compile Include="GUI\Utils\InputValidator.cs" />
     <Compile Include="GUI\component-extensions\RoundedBorder.cs" />
@@ -468,6 +474,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\CardScr\CardCreateForm.resx">
       <DependentUpon>CardCreateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\PriceScr\DetailResidentFeeForm.resx">
+      <DependentUpon>DetailResidentFeeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\PriceScr\AddResidentFeeForm.resx">
       <DependentUpon>AddResidentFeeForm.cs</DependentUpon>

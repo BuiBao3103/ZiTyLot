@@ -32,6 +32,7 @@ namespace ZiTyLot.GUI.Screens
         private AddVisitorFeeForm _addVisitorCarFeeForm;
         private AddVisitorFeeForm _addVisitorMotorbikeFeeForm;
         private AddVisitorFeeForm _addVisitorBicycleFeeForm;
+        private DetailResidentFeeForm _detailResidentFeeForm;
         public PriceControl()
         {
             InitializeComponent();
@@ -41,7 +42,7 @@ namespace ZiTyLot.GUI.Screens
             LoadInitialData();
         }
 
-       
+
         private void LoadInitialData()
         {
             _visitorFeeCar = _visitorFeeBUS.GetVisitorFeeByVehicleTypeId(CAR_ID);
@@ -52,7 +53,7 @@ namespace ZiTyLot.GUI.Screens
             LoadVisitorFee();
             LoadResidentFee();
         }
-        
+
 
         private void ShowAddVisitorFeeForm(Sunny.UI.UIPanel targetPanel)
         {
@@ -198,36 +199,26 @@ namespace ZiTyLot.GUI.Screens
 
         private void LoadResidentFee()
         {
-            ClearAllTables();
-            foreach (var residentFee in _residentFees)
-            {
-                AddResidentFeeToTable(residentFee);
-            }
-        }
-
-        private void ClearAllTables()
-        {
             tableBicycle.Rows.Clear();
             tableCar.Rows.Clear();
             tableMotorbike.Rows.Clear();
-        }
-
-        private void AddResidentFeeToTable(ResidentFee residentFee)
-        {
-            var feeFormat = residentFee.Fee.ToString("C0", new System.Globalization.CultureInfo("vi-VN"));
-            var durationFormat = $"{residentFee.Month} {(residentFee.Month == 1 ? "month" : "months")}";
-
-            switch (residentFee.Vehicle_type_id)
+            foreach (var residentFee in _residentFees)
             {
-                case MOTORBIKE_ID:
-                    tableMotorbike.Rows.Add(residentFee.Id, feeFormat, durationFormat);
-                    break;
-                case CAR_ID:
-                    tableCar.Rows.Add(residentFee.Id, feeFormat, durationFormat);
-                    break;
-                case BICYCLE_ID:
-                    tableBicycle.Rows.Add(residentFee.Id, feeFormat, durationFormat);
-                    break;
+                var feeFormat = residentFee.Fee.ToString("C0", new System.Globalization.CultureInfo("vi-VN"));
+                var durationFormat = $"{residentFee.Month} {(residentFee.Month == 1 ? "month" : "months")}";
+
+                switch (residentFee.Vehicle_type_id)
+                {
+                    case MOTORBIKE_ID:
+                        tableMotorbike.Rows.Add(residentFee.Id, feeFormat, durationFormat);
+                        break;
+                    case CAR_ID:
+                        tableCar.Rows.Add(residentFee.Id, feeFormat, durationFormat);
+                        break;
+                    case BICYCLE_ID:
+                        tableBicycle.Rows.Add(residentFee.Id, feeFormat, durationFormat);
+                        break;
+                }
             }
         }
 
@@ -245,9 +236,29 @@ namespace ZiTyLot.GUI.Screens
             }
             else
             {
-                if(_addResidentFeeForm.WindowState == FormWindowState.Minimized)
+                if (_addResidentFeeForm.WindowState == FormWindowState.Minimized)
                     _addResidentFeeForm.WindowState = FormWindowState.Normal;
                 _addResidentFeeForm.BringToFront();
+            }
+        }
+
+        private void ShowDetailResidentFeeForm(int residentFeeId)
+        {
+            if(_detailResidentFeeForm == null || _detailResidentFeeForm.IsDisposed)
+            {
+                _detailResidentFeeForm = new DetailResidentFeeForm(residentFeeId);
+                _detailResidentFeeForm.ResidentFeeUpdateEvent += (s, args) =>
+                {
+                    _residentFees = _residentFeeBUS.GetAll();
+                    LoadResidentFee();
+                };
+                _detailResidentFeeForm.Show();
+            }
+            else
+            {
+                if (_detailResidentFeeForm.WindowState == FormWindowState.Minimized)
+                    _detailResidentFeeForm.WindowState = FormWindowState.Normal;
+                _detailResidentFeeForm.BringToFront();
             }
         }
 
@@ -255,7 +266,8 @@ namespace ZiTyLot.GUI.Screens
         {
             try
             {
-                if (ShowDeleteConfirmation())
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this resident fee?", "Delete Resident Fee", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
                 {
                     _residentFeeBUS.Delete(id);
                     _residentFees = _residentFeeBUS.GetAll();
@@ -264,19 +276,10 @@ namespace ZiTyLot.GUI.Screens
             }
             catch (Exception ex)
             {
-                HandleDeleteError(ex);
+                Console.WriteLine(ex.Message);
+                MessageBox.Show($"An error occurred while deleting resident fee: {ex.Message}",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private bool ShowDeleteConfirmation() =>
-            MessageBox.Show("Are you sure you want to delete this resident fee?",
-                "Delete Resident Fee", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes;
-
-        private void HandleDeleteError(Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-            MessageBox.Show($"An error occurred while deleting resident fee: {ex.Message}",
-                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         #region Event Handlers
@@ -351,13 +354,13 @@ namespace ZiTyLot.GUI.Screens
         {
             if (e.RowIndex >= 0)
             {
+                int id = (int)tableMotorbike.Rows[e.RowIndex].Cells[0].Value;
                 if (e.ColumnIndex == tableMotorbike.Columns["colMotorbikeView"].Index)
                 {
-                    MessageBox.Show("View button clicked for row " + e.RowIndex);
+                    ShowDetailResidentFeeForm(id);
                 }
                 else if (e.ColumnIndex == tableMotorbike.Columns["colMotorbikeDelete"].Index)
                 {
-                    int id = (int)tableMotorbike.Rows[e.RowIndex].Cells[0].Value;
                     DeleteResidentFee(id);
                 }
             }
@@ -411,13 +414,13 @@ namespace ZiTyLot.GUI.Screens
         {
             if (e.RowIndex >= 0)
             {
+                int id = (int)tableCar.Rows[e.RowIndex].Cells[0].Value;
                 if (e.ColumnIndex == tableCar.Columns["colCarView"].Index)
                 {
-                    MessageBox.Show("View button clicked for row " + e.RowIndex);
+                    ShowDetailResidentFeeForm(id);
                 }
                 else if (e.ColumnIndex == tableCar.Columns["colCarDelete"].Index)
                 {
-                    int id = (int)tableCar.Rows[e.RowIndex].Cells[0].Value;
                     DeleteResidentFee(id);
                 }
             }
@@ -471,13 +474,13 @@ namespace ZiTyLot.GUI.Screens
         {
             if (e.RowIndex >= 0)
             {
+                int id = (int)tableBicycle.Rows[e.RowIndex].Cells[0].Value;
                 if (e.ColumnIndex == tableBicycle.Columns["colBicycleView"].Index)
                 {
-                    MessageBox.Show("View button clicked for row " + e.RowIndex);
+                    ShowDetailResidentFeeForm(id);
                 }
                 else if (e.ColumnIndex == tableBicycle.Columns["colBicycleDelete"].Index)
                 {
-                    int id = (int)tableBicycle.Rows[e.RowIndex].Cells[0].Value;
                     DeleteResidentFee(id);
                 }
             }
