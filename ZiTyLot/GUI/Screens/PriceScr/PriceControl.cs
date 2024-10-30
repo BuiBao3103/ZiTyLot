@@ -58,14 +58,37 @@ namespace ZiTyLot.GUI.Screens
 
         private void ShowAddVisitorFeeForm()
         {
-            var (currentForm, vehicleTypeId) = GetAddFormForTab(pnlTab.SelectedIndex);
+            var (addForm, vehicleTypeId) = GetAddFormForTab(pnlTab.SelectedIndex);
+            if (addForm == null || addForm.IsDisposed)
+            {
+                var newForm = new AddVisitorFeeForm(vehicleTypeId);
 
-            ShowOrCreateForm(currentForm, vehicleTypeId, pnlTab.SelectedIndex);
-        }
+                newForm.PricePerTurnInsertion += (s, args) => RefreshVisitorFees();
+                newForm.PricePerHourTurnInsertion += (s, args) => RefreshVisitorFees();
+                newForm.PricePerPeriodInsertion += (s, args) => RefreshVisitorFees();
 
-        private void ShowDetailVisitorFeeForm()
-        {
-
+                switch (pnlTab.SelectedIndex)
+                {
+                    case 0:
+                        _addVisitorMotorbikeFeeForm = newForm;
+                        break;
+                    case 1:
+                        _addVisitorCarFeeForm = newForm;
+                        break;
+                    case 2:
+                        _addVisitorBicycleFeeForm = newForm;
+                        break;
+                }
+                newForm.Show();
+            }
+            else
+            {
+                if (addForm.WindowState == FormWindowState.Minimized)
+                {
+                    addForm.WindowState = FormWindowState.Normal;
+                }
+                addForm.BringToFront();
+            }
         }
 
         private (AddVisitorFeeForm form, int vehicleTypeId) GetAddFormForTab(int tabIndex)
@@ -100,47 +123,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void ShowOrCreateForm(AddVisitorFeeForm form, int vehicleTypeId, int tabIndex)
         {
-            if (form == null || form.IsDisposed)
-            {
-                var newForm = CreateNewVisitorFeeForm(vehicleTypeId, tabIndex);
-                newForm.Show();
-            }
-            else
-            {
-                if (form.WindowState == FormWindowState.Minimized)
-                {
-                    form.WindowState = FormWindowState.Normal;
-                }
-                form.BringToFront();
-            }
-        }
-
-        private AddVisitorFeeForm CreateNewVisitorFeeForm(int vehicleTypeId, int tabIndex)
-        {
-            var newForm = new AddVisitorFeeForm(vehicleTypeId);
-
-            newForm.PricePerTurnInsertion += (s, args) => RefreshVisitorFees();
-            newForm.PricePerHourTurnInsertion += (s, args) => RefreshVisitorFees();
-            newForm.PricePerPeriodInsertion += (s, args) => RefreshVisitorFees();
-
-            AssignFormToTab(newForm, tabIndex);
-            return newForm;
-        }
-
-        private void AssignFormToTab(AddVisitorFeeForm form, int tabIndex)
-        {
-            switch (tabIndex)
-            {
-                case 0:
-                    _addVisitorMotorbikeFeeForm = form;
-                    break;
-                case 1:
-                    _addVisitorCarFeeForm = form;
-                    break;
-                case 2:
-                    _addVisitorBicycleFeeForm = form;
-                    break;
-            }
+            
         }
 
         private void RefreshVisitorFees()
