@@ -129,7 +129,7 @@ namespace ZiTyLot.GUI.Screens
                         return;
                 }
                 _detailVisitorFeeForm = new DetailVisitorFeeForm(visitorFee.Id);
-                _detailVisitorFeeForm.VistorFeeUpdateEvent += (s, args) => RefreshVisitorFees();
+                _detailVisitorFeeForm.VisitorFeeUpdateEvent += (s, args) => RefreshVisitorFees();
                 _detailVisitorFeeForm.Show();
             }
             else

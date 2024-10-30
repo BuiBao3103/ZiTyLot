@@ -21,7 +21,7 @@ namespace ZiTyLot.GUI.Screens.PriceScr
         private readonly VisitorFeeBUS visitorFeeBUS = new VisitorFeeBUS();
         private readonly VisitorFee visitorFee;
 
-        public event EventHandler VistorFeeUpdateEvent;
+        public event EventHandler VisitorFeeUpdateEvent;
 
         public DetailVisitorFeeForm(int visitorFeeId)
         {
@@ -30,8 +30,30 @@ namespace ZiTyLot.GUI.Screens.PriceScr
             visitorFee = visitorFeeBUS.GetById(visitorFeeId);
             visitorFee = visitorFeeBUS.PopulateVehicleType(visitorFee);
 
-            //this.Text = residentFee.Id + " - Detailed visitor fee for " + vehicleType.Name;
-            lbVehicleType.Text = visitorFee.Vehicle_type.Name;
+
+            switch(visitorFee.Fee_type)
+            {
+                case FeeType.TURN:
+                    pnlTab.SelectedIndex = 0;
+                    tbDayFeePT.Text = visitorFee.Day_fee.ToString();
+                    tbNightFeePT.Text = visitorFee.Night_fee.ToString();
+                    break;
+                case FeeType.HOUR_PER_TURN:
+                    pnlTab.SelectedIndex = 1;
+                    tbDayFeePHT.Text = visitorFee.Day_fee.ToString();
+                    tbNightFeePHT.Text = visitorFee.Night_fee.ToString();
+                    tbHourPHT.Text = visitorFee.Hours_per_turn.ToString();
+                    break;
+                case FeeType.FIRST_N_AND_NEXT_M_HOUR:
+                    pnlTab.SelectedIndex = 2;
+                    tbFeeFirstPeriod.Text = visitorFee.First_n_hours_fee.ToString();
+                    tbFeeNextPeriod.Text = visitorFee.Additional_m_hours_fee.ToString();
+                    tbHourFirstPeriod.Text = visitorFee.N_hours.ToString();
+                    tbHourNextPeriod.Text = visitorFee.M_hours.ToString();
+                    break;
+            }
+            this.Text = "Detailed visitor fee for " + visitorFee.Vehicle_type.Name;
+            lbVehicleType.Text = "Detailed visitor fee for " + visitorFee.Vehicle_type.Name;
         }
 
         private void PriceDetailForm_Load(object sender, EventArgs e)
