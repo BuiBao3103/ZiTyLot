@@ -103,6 +103,7 @@ namespace ZiTyLot.BUS
             Validate(item);
             try
             {
+                item.Updated_at = DateTime.Now;
                 visitorFeeDAO.Update(item);
             }
             catch (Exception ex)
