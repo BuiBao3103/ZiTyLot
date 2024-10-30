@@ -1,4 +1,5 @@
-﻿using Org.BouncyCastle.Tls.Crypto;
+﻿using OfficeOpenXml.Utils;
+using Org.BouncyCastle.Tls.Crypto;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -251,6 +252,7 @@ namespace ZiTyLot.GUI.Screens
         {
             int tabControlIndex = pnlTab.SelectedIndex;
             AddVisitorFeeForm currentForm;
+            VisitorFee visitorFee;
             int vehicleTypeId;
 
             switch (tabControlIndex)
@@ -258,33 +260,35 @@ namespace ZiTyLot.GUI.Screens
                 case 0: //Motorbike
                     currentForm = addVisitorMotorbikeFeeForm;
                     vehicleTypeId = MOTORBIKE_ID;
+                    visitorFee = visitorFeeMotorbike;
                     break;
                 case 1: //Car
                     currentForm = addVisitorCarFeeForm;
                     vehicleTypeId = CAR_ID;
+                    visitorFee = visitorFeeCar;
                     break;
                 case 2: //Bicycle
                     currentForm = addVisitorBicycleFeeForm;
                     vehicleTypeId = BICYCLE_ID;
+                    visitorFee = visitorFeeBicycle;
                     break;
                 default:
                     return;
             }
 
-            ShowOrCreateForm(currentForm, vehicleTypeId, targetPanel, tabControlIndex);
+            ShowOrCreateForm(currentForm, vehicleTypeId, targetPanel, tabControlIndex, visitorFee);
         }
 
-        private void ShowOrCreateForm(AddVisitorFeeForm form, int vehicleTypeId, Sunny.UI.UIPanel targetPanel, int tabIndex)
+        private void ShowOrCreateForm(AddVisitorFeeForm form, int vehicleTypeId, Sunny.UI.UIPanel targetPanel, int tabIndex, VisitorFee visitorFee)
         {
             if (form == null || form.IsDisposed)
             {
                 var newForm = new AddVisitorFeeForm(vehicleTypeId);
-                newForm.PricePerTurnInsertion += (sender, e) => AddNewPricePerTurnCard(targetPanel);
-                newForm.PricePerHourTurnInsertion += (sender, e) => AddNewPricePerHourTurnCard(targetPanel);
-                newForm.PricePerPeriodInsertion += (sender, e) => AddNewPricePerPeriodCard(targetPanel);
+                newForm.PricePerTurnInsertion += (sender, e) => AddNewPricePerTurnCard(targetPanel, visitorFee);
+                newForm.PricePerHourTurnInsertion += (sender, e) => AddNewPricePerHourTurnCard(targetPanel, visitorFee);
+                newForm.PricePerPeriodInsertion += (sender, e) => AddNewPricePerPeriodCard(targetPanel,visitorFee);
                 newForm.Show();
 
-                // Gán form mới vào biến toàn cục tương ứng
                 switch (tabIndex)
                 {
                     case 0:
@@ -307,27 +311,27 @@ namespace ZiTyLot.GUI.Screens
                 form.BringToFront();
             }
         }
-        private void AddNewPricePerTurnCard(Sunny.UI.UIPanel targetPanel)
+        private void AddNewPricePerTurnCard(Sunny.UI.UIPanel targetPanel, VisitorFee visitorFee)
         {
-            PricePerTurnCard pricePerTurnCard = new PricePerTurnCard();
+            PricePerTurnCard pricePerTurnCard = new PricePerTurnCard(visitorFee);
             pricePerTurnCard.Dock = DockStyle.Top;
             pricePerTurnCard.EditButtonClicked += (s, e) => ShowAddVisitorFeeForm(targetPanel);
             targetPanel.Controls.Clear();
             targetPanel.Controls.Add(pricePerTurnCard);
         }
 
-        private void AddNewPricePerHourTurnCard(Sunny.UI.UIPanel targetPanel)
+        private void AddNewPricePerHourTurnCard(Sunny.UI.UIPanel targetPanel, VisitorFee visitorFee)
         {
-            PricePerHourTurnCard pricePerHourTurnCard = new PricePerHourTurnCard();
+            PricePerHourTurnCard pricePerHourTurnCard = new PricePerHourTurnCard(visitorFee);
             pricePerHourTurnCard.Dock = DockStyle.Top;
             pricePerHourTurnCard.EditButtonClicked += (s, e) => ShowAddVisitorFeeForm(targetPanel);
             targetPanel.Controls.Clear();
             targetPanel.Controls.Add(pricePerHourTurnCard);
         }
 
-        private void AddNewPricePerPeriodCard(Sunny.UI.UIPanel targetPanel)
+        private void AddNewPricePerPeriodCard(Sunny.UI.UIPanel targetPanel, VisitorFee visitorFee)
         {
-            PricePerPeriodCard pricePerPeriodCard = new PricePerPeriodCard();
+            PricePerPeriodCard pricePerPeriodCard = new PricePerPeriodCard(visitorFee);
             pricePerPeriodCard.Dock = DockStyle.Top;
             pricePerPeriodCard.EditButtonClicked += (s, e) => ShowAddVisitorFeeForm(targetPanel);
             targetPanel.Controls.Clear();
@@ -411,44 +415,48 @@ namespace ZiTyLot.GUI.Screens
         }
         private void LoadVisitorFee()
         {
-            List<VisitorFee> visitorFees = new List<VisitorFee>{
-                visitorFeeCar,
-                visitorFeeMotorbike,
-                visitorFeeBicycle
-            };
-
-            foreach (VisitorFee visitorFee in visitorFees)
+            if (visitorFeeCar != null)
             {
-                if (visitorFee == null)
-                {
-                    continue;
-                }
-                Sunny.UI.UIPanel targetPanel;
-                switch (visitorFee.Vehicle_type_id)
-                {
-                    case CAR_ID:
-                        targetPanel = pnlCarPrice;
-                        break;
-                    case MOTORBIKE_ID:
-                        targetPanel = pnlMotorbikePrice;
-                        break;
-                    case BICYCLE_ID:
-                        targetPanel = pnlBicyclePrice;
-                        break;
-                    default:
-                        targetPanel = new Sunny.UI.UIPanel();
-                        break;
-                }
-                switch (visitorFee.Fee_type)
+                switch (visitorFeeCar.Fee_type)
                 {
                     case FeeType.TURN:
-                        AddNewPricePerTurnCard(targetPanel);
+                        AddNewPricePerTurnCard(pnlCarPrice, visitorFeeCar);
                         break;
                     case FeeType.HOUR_PER_TURN:
-                        AddNewPricePerHourTurnCard(targetPanel);
+                        AddNewPricePerHourTurnCard(pnlCarPrice, visitorFeeCar);
                         break;
                     case FeeType.FIRST_N_AND_NEXT_M_HOUR:
-                        AddNewPricePerPeriodCard(targetPanel);
+                        AddNewPricePerPeriodCard(pnlCarPrice, visitorFeeCar);
+                        break;
+                }
+            }
+            if (visitorFeeMotorbike != null)
+            {
+                switch (visitorFeeMotorbike.Fee_type)
+                {
+                    case FeeType.TURN:
+                        AddNewPricePerTurnCard(pnlMotorbikePrice, visitorFeeMotorbike);
+                        break;
+                    case FeeType.HOUR_PER_TURN:
+                        AddNewPricePerHourTurnCard(pnlMotorbikePrice, visitorFeeMotorbike);
+                        break;
+                    case FeeType.FIRST_N_AND_NEXT_M_HOUR:
+                        AddNewPricePerPeriodCard(pnlMotorbikePrice, visitorFeeMotorbike);
+                        break;
+                }
+            }
+            if (visitorFeeBicycle != null)
+            {
+                switch (visitorFeeBicycle.Fee_type)
+                {
+                    case FeeType.TURN:
+                        AddNewPricePerTurnCard(pnlBicyclePrice, visitorFeeBicycle);
+                        break;
+                    case FeeType.HOUR_PER_TURN:
+                        AddNewPricePerHourTurnCard(pnlBicyclePrice, visitorFeeBicycle);
+                        break;
+                    case FeeType.FIRST_N_AND_NEXT_M_HOUR:
+                        AddNewPricePerPeriodCard(pnlBicyclePrice, visitorFeeBicycle);
                         break;
                 }
             }
