@@ -284,9 +284,67 @@ namespace ZiTyLot.GUI.Screens
             if (form == null || form.IsDisposed)
             {
                 var newForm = new AddVisitorFeeForm(vehicleTypeId);
-                newForm.PricePerTurnInsertion += (sender, e) => AddNewPricePerTurnCard(targetPanel, visitorFee);
-                newForm.PricePerHourTurnInsertion += (sender, e) => AddNewPricePerHourTurnCard(targetPanel, visitorFee);
-                newForm.PricePerPeriodInsertion += (sender, e) => AddNewPricePerPeriodCard(targetPanel,visitorFee);
+                newForm.PricePerTurnInsertion += new EventHandler((s, args) =>
+                {
+
+                    visitorFeeCar = visitorFeeBUS
+                        .GetAll(
+                        new List<FilterCondition> {
+                            new FilterCondition("vehicle_type_id", CompOp.Equals, CAR_ID)
+                        }).FirstOrDefault() ?? null;
+                    visitorFeeMotorbike = visitorFeeBUS
+                        .GetAll(
+                        new List<FilterCondition> {
+                            new FilterCondition("vehicle_type_id", CompOp.Equals, MOTORBIKE_ID)
+                        }).FirstOrDefault() ?? null;
+                    visitorFeeBicycle = visitorFeeBUS
+                        .GetAll(
+                        new List<FilterCondition> {
+                            new FilterCondition("vehicle_type_id", CompOp.Equals, BICYCLE_ID)
+                        }).FirstOrDefault() ?? null;
+                    LoadVisitorFee();
+                });
+
+                newForm.PricePerHourTurnInsertion += new EventHandler((s, args) =>
+                {
+
+                    visitorFeeCar = visitorFeeBUS
+                        .GetAll(
+                        new List<FilterCondition> {
+                            new FilterCondition("vehicle_type_id", CompOp.Equals, CAR_ID)
+                        }).FirstOrDefault() ?? null;
+                    visitorFeeMotorbike = visitorFeeBUS
+                        .GetAll(
+                        new List<FilterCondition> {
+                            new FilterCondition("vehicle_type_id", CompOp.Equals, MOTORBIKE_ID)
+                        }).FirstOrDefault() ?? null;
+                    visitorFeeBicycle = visitorFeeBUS
+                        .GetAll(
+                        new List<FilterCondition> {
+                            new FilterCondition("vehicle_type_id", CompOp.Equals, BICYCLE_ID)
+                        }).FirstOrDefault() ?? null;
+                    LoadVisitorFee();
+                }); ;
+                newForm.PricePerPeriodInsertion += new EventHandler((s, args) =>
+                {
+
+                    visitorFeeCar = visitorFeeBUS
+                        .GetAll(
+                        new List<FilterCondition> {
+                            new FilterCondition("vehicle_type_id", CompOp.Equals, CAR_ID)
+                        }).FirstOrDefault() ?? null;
+                    visitorFeeMotorbike = visitorFeeBUS
+                        .GetAll(
+                        new List<FilterCondition> {
+                            new FilterCondition("vehicle_type_id", CompOp.Equals, MOTORBIKE_ID)
+                        }).FirstOrDefault() ?? null;
+                    visitorFeeBicycle = visitorFeeBUS
+                        .GetAll(
+                        new List<FilterCondition> {
+                            new FilterCondition("vehicle_type_id", CompOp.Equals, BICYCLE_ID)
+                        }).FirstOrDefault() ?? null;
+                    LoadVisitorFee();
+                }); ;
                 newForm.Show();
 
                 switch (tabIndex)
