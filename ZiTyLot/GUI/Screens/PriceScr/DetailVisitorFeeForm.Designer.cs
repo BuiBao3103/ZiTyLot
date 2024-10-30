@@ -1,6 +1,6 @@
 ﻿namespace ZiTyLot.GUI.Screens.PriceScr
 {
-    partial class PriceVisitorForm
+    partial class DetailVisitorFeeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.pnlMain = new Sunny.UI.UITableLayoutPanel();
             this.uiPanel1 = new Sunny.UI.UIPanel();
             this.uiPanel3 = new Sunny.UI.UIPanel();
-            this.lbSessionID = new Sunny.UI.UILabel();
+            this.lbVehicleType = new Sunny.UI.UILabel();
             this.uiPanel2 = new Sunny.UI.UIPanel();
             this.pnlTab = new Sunny.UI.UITabControl();
             this.tpTurn = new System.Windows.Forms.TabPage();
@@ -49,9 +49,11 @@
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
             this.tbDayFeePT = new Sunny.UI.UITextBox();
             this.tpHourTurn = new System.Windows.Forms.TabPage();
-            this.tpMNHour = new System.Windows.Forms.TabPage();
             this.uiPanel7 = new Sunny.UI.UIPanel();
             this.uiPanel8 = new Sunny.UI.UIPanel();
+            this.uiPanel12 = new Sunny.UI.UIPanel();
+            this.uiGroupBox5 = new Sunny.UI.UIGroupBox();
+            this.tbHourPHT = new Sunny.UI.UITextBox();
             this.uiPanel9 = new Sunny.UI.UIPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancelPHT = new Sunny.UI.UISymbolButton();
@@ -63,11 +65,12 @@
             this.uiPanel11 = new Sunny.UI.UIPanel();
             this.uiGroupBox4 = new Sunny.UI.UIGroupBox();
             this.tbDayFeePHT = new Sunny.UI.UITextBox();
-            this.uiPanel12 = new Sunny.UI.UIPanel();
-            this.uiGroupBox5 = new Sunny.UI.UIGroupBox();
-            this.tbHourPHT = new Sunny.UI.UITextBox();
+            this.tpMNHour = new System.Windows.Forms.TabPage();
             this.uiPanel13 = new Sunny.UI.UIPanel();
             this.uiPanel14 = new Sunny.UI.UIPanel();
+            this.uiPanel19 = new Sunny.UI.UIPanel();
+            this.uiGroupBox9 = new Sunny.UI.UIGroupBox();
+            this.tbHourNextPeriod = new Sunny.UI.UITextBox();
             this.uiPanel15 = new Sunny.UI.UIPanel();
             this.uiGroupBox6 = new Sunny.UI.UIGroupBox();
             this.tbFeeNextPeriod = new Sunny.UI.UITextBox();
@@ -82,9 +85,6 @@
             this.uiPanel18 = new Sunny.UI.UIPanel();
             this.uiGroupBox8 = new Sunny.UI.UIGroupBox();
             this.tbFeeFirstPeriod = new Sunny.UI.UITextBox();
-            this.uiPanel19 = new Sunny.UI.UIPanel();
-            this.uiGroupBox9 = new Sunny.UI.UIGroupBox();
-            this.tbHourNextPeriod = new Sunny.UI.UITextBox();
             this.pnlMain.SuspendLayout();
             this.uiPanel1.SuspendLayout();
             this.uiPanel3.SuspendLayout();
@@ -101,9 +101,10 @@
             this.pnlFullname.SuspendLayout();
             this.uiGroupBox1.SuspendLayout();
             this.tpHourTurn.SuspendLayout();
-            this.tpMNHour.SuspendLayout();
             this.uiPanel7.SuspendLayout();
             this.uiPanel8.SuspendLayout();
+            this.uiPanel12.SuspendLayout();
+            this.uiGroupBox5.SuspendLayout();
             this.uiPanel9.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -111,10 +112,11 @@
             this.uiGroupBox3.SuspendLayout();
             this.uiPanel11.SuspendLayout();
             this.uiGroupBox4.SuspendLayout();
-            this.uiPanel12.SuspendLayout();
-            this.uiGroupBox5.SuspendLayout();
+            this.tpMNHour.SuspendLayout();
             this.uiPanel13.SuspendLayout();
             this.uiPanel14.SuspendLayout();
+            this.uiPanel19.SuspendLayout();
+            this.uiGroupBox9.SuspendLayout();
             this.uiPanel15.SuspendLayout();
             this.uiGroupBox6.SuspendLayout();
             this.uiPanel16.SuspendLayout();
@@ -124,8 +126,6 @@
             this.uiGroupBox7.SuspendLayout();
             this.uiPanel18.SuspendLayout();
             this.uiGroupBox8.SuspendLayout();
-            this.uiPanel19.SuspendLayout();
-            this.uiGroupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -136,12 +136,13 @@
             this.pnlMain.Controls.Add(this.uiPanel1, 0, 0);
             this.pnlMain.Controls.Add(this.uiPanel2, 0, 1);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(10, 10);
+            this.pnlMain.Location = new System.Drawing.Point(13, 12);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.RowCount = 2;
-            this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
             this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.pnlMain.Size = new System.Drawing.Size(564, 491);
+            this.pnlMain.Size = new System.Drawing.Size(753, 605);
             this.pnlMain.TabIndex = 2;
             this.pnlMain.TagString = null;
             // 
@@ -152,8 +153,8 @@
             this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel1.FillColor = System.Drawing.Color.White;
             this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel1.Location = new System.Drawing.Point(4, 5);
-            this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel1.Location = new System.Drawing.Point(5, 6);
+            this.uiPanel1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel1.Name = "uiPanel1";
             this.uiPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
@@ -161,14 +162,14 @@
             this.uiPanel1.RectColor = System.Drawing.SystemColors.ControlLight;
             this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom;
             this.uiPanel1.RectSize = 2;
-            this.uiPanel1.Size = new System.Drawing.Size(556, 44);
+            this.uiPanel1.Size = new System.Drawing.Size(743, 54);
             this.uiPanel1.TabIndex = 17;
             this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // uiPanel3
             // 
-            this.uiPanel3.Controls.Add(this.lbSessionID);
+            this.uiPanel3.Controls.Add(this.lbVehicleType);
             this.uiPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel3.FillColor = System.Drawing.Color.White;
             this.uiPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -181,23 +182,23 @@
             this.uiPanel3.RectColor = System.Drawing.SystemColors.ControlLight;
             this.uiPanel3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel3.RectSize = 2;
-            this.uiPanel3.Size = new System.Drawing.Size(556, 42);
+            this.uiPanel3.Size = new System.Drawing.Size(743, 52);
             this.uiPanel3.TabIndex = 5;
             this.uiPanel3.Text = null;
             this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbSessionID
+            // lbVehicleType
             // 
-            this.lbSessionID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbSessionID.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSessionID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.lbSessionID.Location = new System.Drawing.Point(0, 2);
-            this.lbSessionID.Margin = new System.Windows.Forms.Padding(0);
-            this.lbSessionID.Name = "lbSessionID";
-            this.lbSessionID.Size = new System.Drawing.Size(556, 30);
-            this.lbSessionID.TabIndex = 3;
-            this.lbSessionID.Text = "{vehical_type} pricing";
-            this.lbSessionID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbVehicleType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbVehicleType.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVehicleType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lbVehicleType.Location = new System.Drawing.Point(0, 2);
+            this.lbVehicleType.Margin = new System.Windows.Forms.Padding(0);
+            this.lbVehicleType.Name = "lbVehicleType";
+            this.lbVehicleType.Size = new System.Drawing.Size(743, 40);
+            this.lbVehicleType.TabIndex = 3;
+            this.lbVehicleType.Text = "{vehical_type} pricing";
+            this.lbVehicleType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiPanel2
             // 
@@ -206,13 +207,13 @@
             this.uiPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel2.FillColor = System.Drawing.Color.White;
             this.uiPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel2.Location = new System.Drawing.Point(4, 59);
-            this.uiPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel2.Location = new System.Drawing.Point(5, 72);
+            this.uiPanel2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel2.Name = "uiPanel2";
             this.uiPanel2.RectColor = System.Drawing.Color.White;
             this.uiPanel2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel2.Size = new System.Drawing.Size(556, 427);
+            this.uiPanel2.Size = new System.Drawing.Size(743, 527);
             this.uiPanel2.TabIndex = 3;
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -233,7 +234,7 @@
             this.pnlTab.Name = "pnlTab";
             this.pnlTab.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.pnlTab.SelectedIndex = 0;
-            this.pnlTab.Size = new System.Drawing.Size(556, 427);
+            this.pnlTab.Size = new System.Drawing.Size(743, 527);
             this.pnlTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.pnlTab.TabBackColor = System.Drawing.Color.White;
             this.pnlTab.TabIndex = 1;
@@ -249,7 +250,7 @@
             this.tpTurn.Controls.Add(this.uiPanel4);
             this.tpTurn.Location = new System.Drawing.Point(0, 40);
             this.tpTurn.Name = "tpTurn";
-            this.tpTurn.Size = new System.Drawing.Size(556, 387);
+            this.tpTurn.Size = new System.Drawing.Size(743, 487);
             this.tpTurn.TabIndex = 0;
             this.tpTurn.Text = "Per turn";
             // 
@@ -268,7 +269,7 @@
             this.uiPanel4.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.uiPanel4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel4.RectSize = 2;
-            this.uiPanel4.Size = new System.Drawing.Size(556, 387);
+            this.uiPanel4.Size = new System.Drawing.Size(743, 487);
             this.uiPanel4.TabIndex = 0;
             this.uiPanel4.Text = null;
             this.uiPanel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -286,7 +287,7 @@
             this.uiPanel5.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel5.Name = "uiPanel5";
             this.uiPanel5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel5.Size = new System.Drawing.Size(556, 382);
+            this.uiPanel5.Size = new System.Drawing.Size(743, 482);
             this.uiPanel5.TabIndex = 0;
             this.uiPanel5.Text = null;
             this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -298,7 +299,7 @@
             this.pnlButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlButton.FillColor = System.Drawing.Color.White;
             this.pnlButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlButton.Location = new System.Drawing.Point(0, 328);
+            this.pnlButton.Location = new System.Drawing.Point(0, 428);
             this.pnlButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlButton.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlButton.Name = "pnlButton";
@@ -307,7 +308,7 @@
             this.pnlButton.RectColor = System.Drawing.SystemColors.ControlLight;
             this.pnlButton.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
             this.pnlButton.RectSize = 2;
-            this.pnlButton.Size = new System.Drawing.Size(556, 54);
+            this.pnlButton.Size = new System.Drawing.Size(743, 54);
             this.pnlButton.TabIndex = 17;
             this.pnlButton.Text = null;
             this.pnlButton.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -316,7 +317,7 @@
             // 
             this.panel2.Controls.Add(this.btnCancelPT);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(306, 13);
+            this.panel2.Location = new System.Drawing.Point(493, 13);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(120, 38);
             this.panel2.TabIndex = 10;
@@ -352,7 +353,7 @@
             // 
             this.panel3.Controls.Add(this.btnConfirmPT);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(426, 13);
+            this.panel3.Location = new System.Drawing.Point(613, 13);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.panel3.Size = new System.Drawing.Size(130, 38);
@@ -397,7 +398,7 @@
             this.uiPanel6.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel6.Name = "uiPanel6";
             this.uiPanel6.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel6.Size = new System.Drawing.Size(556, 70);
+            this.uiPanel6.Size = new System.Drawing.Size(743, 70);
             this.uiPanel6.TabIndex = 3;
             this.uiPanel6.Text = null;
             this.uiPanel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -415,7 +416,7 @@
             this.uiGroupBox2.Name = "uiGroupBox2";
             this.uiGroupBox2.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox2.Size = new System.Drawing.Size(556, 70);
+            this.uiGroupBox2.Size = new System.Drawing.Size(743, 70);
             this.uiGroupBox2.TabIndex = 0;
             this.uiGroupBox2.Text = "Night fee per turn";
             this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -434,10 +435,12 @@
             this.tbNightFeePT.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbNightFeePT.RectSize = 2;
             this.tbNightFeePT.ShowText = false;
-            this.tbNightFeePT.Size = new System.Drawing.Size(540, 34);
+            this.tbNightFeePT.Size = new System.Drawing.Size(727, 34);
             this.tbNightFeePT.TabIndex = 0;
             this.tbNightFeePT.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbNightFeePT.Watermark = "";
+            this.tbNightFeePT.TextChanged += new System.EventHandler(this.tbNightFeePT_TextChanged);
+            this.tbNightFeePT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNightFeePT_KeyPress);
             // 
             // pnlFullname
             // 
@@ -450,7 +453,7 @@
             this.pnlFullname.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlFullname.Name = "pnlFullname";
             this.pnlFullname.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlFullname.Size = new System.Drawing.Size(556, 70);
+            this.pnlFullname.Size = new System.Drawing.Size(743, 70);
             this.pnlFullname.TabIndex = 2;
             this.pnlFullname.Text = null;
             this.pnlFullname.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -468,7 +471,7 @@
             this.uiGroupBox1.Name = "uiGroupBox1";
             this.uiGroupBox1.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox1.Size = new System.Drawing.Size(556, 70);
+            this.uiGroupBox1.Size = new System.Drawing.Size(743, 70);
             this.uiGroupBox1.TabIndex = 0;
             this.uiGroupBox1.Text = "Day fee per turn";
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -487,10 +490,12 @@
             this.tbDayFeePT.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbDayFeePT.RectSize = 2;
             this.tbDayFeePT.ShowText = false;
-            this.tbDayFeePT.Size = new System.Drawing.Size(540, 34);
+            this.tbDayFeePT.Size = new System.Drawing.Size(727, 34);
             this.tbDayFeePT.TabIndex = 0;
             this.tbDayFeePT.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbDayFeePT.Watermark = "";
+            this.tbDayFeePT.TextChanged += new System.EventHandler(this.tbDayFeePT_TextChanged);
+            this.tbDayFeePT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDayFeePT_KeyPress);
             // 
             // tpHourTurn
             // 
@@ -498,19 +503,9 @@
             this.tpHourTurn.Controls.Add(this.uiPanel7);
             this.tpHourTurn.Location = new System.Drawing.Point(0, 40);
             this.tpHourTurn.Name = "tpHourTurn";
-            this.tpHourTurn.Size = new System.Drawing.Size(556, 387);
+            this.tpHourTurn.Size = new System.Drawing.Size(743, 487);
             this.tpHourTurn.TabIndex = 1;
             this.tpHourTurn.Text = "Per hour turn";
-            // 
-            // tpMNHour
-            // 
-            this.tpMNHour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.tpMNHour.Controls.Add(this.uiPanel13);
-            this.tpMNHour.Location = new System.Drawing.Point(0, 40);
-            this.tpMNHour.Name = "tpMNHour";
-            this.tpMNHour.Size = new System.Drawing.Size(556, 387);
-            this.tpMNHour.TabIndex = 2;
-            this.tpMNHour.Text = "Per first and later hour";
             // 
             // uiPanel7
             // 
@@ -527,7 +522,7 @@
             this.uiPanel7.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.uiPanel7.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel7.RectSize = 2;
-            this.uiPanel7.Size = new System.Drawing.Size(556, 387);
+            this.uiPanel7.Size = new System.Drawing.Size(743, 487);
             this.uiPanel7.TabIndex = 1;
             this.uiPanel7.Text = null;
             this.uiPanel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -546,10 +541,64 @@
             this.uiPanel8.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel8.Name = "uiPanel8";
             this.uiPanel8.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel8.Size = new System.Drawing.Size(556, 382);
+            this.uiPanel8.Size = new System.Drawing.Size(743, 482);
             this.uiPanel8.TabIndex = 0;
             this.uiPanel8.Text = null;
             this.uiPanel8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiPanel12
+            // 
+            this.uiPanel12.Controls.Add(this.uiGroupBox5);
+            this.uiPanel12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uiPanel12.FillColor = System.Drawing.Color.White;
+            this.uiPanel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel12.Location = new System.Drawing.Point(0, 140);
+            this.uiPanel12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel12.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel12.Name = "uiPanel12";
+            this.uiPanel12.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiPanel12.Size = new System.Drawing.Size(743, 70);
+            this.uiPanel12.TabIndex = 18;
+            this.uiPanel12.Text = null;
+            this.uiPanel12.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiGroupBox5
+            // 
+            this.uiGroupBox5.Controls.Add(this.tbHourPHT);
+            this.uiGroupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiGroupBox5.FillColor = System.Drawing.Color.White;
+            this.uiGroupBox5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox5.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox5.Location = new System.Drawing.Point(0, 0);
+            this.uiGroupBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiGroupBox5.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiGroupBox5.Name = "uiGroupBox5";
+            this.uiGroupBox5.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
+            this.uiGroupBox5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiGroupBox5.Size = new System.Drawing.Size(743, 70);
+            this.uiGroupBox5.TabIndex = 0;
+            this.uiGroupBox5.Text = "Hour per turn";
+            this.uiGroupBox5.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tbHourPHT
+            // 
+            this.tbHourPHT.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbHourPHT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbHourPHT.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbHourPHT.Location = new System.Drawing.Point(8, 32);
+            this.tbHourPHT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbHourPHT.MaximumSize = new System.Drawing.Size(0, 34);
+            this.tbHourPHT.MinimumSize = new System.Drawing.Size(0, 34);
+            this.tbHourPHT.Name = "tbHourPHT";
+            this.tbHourPHT.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
+            this.tbHourPHT.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbHourPHT.RectSize = 2;
+            this.tbHourPHT.ShowText = false;
+            this.tbHourPHT.Size = new System.Drawing.Size(727, 34);
+            this.tbHourPHT.TabIndex = 0;
+            this.tbHourPHT.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tbHourPHT.Watermark = "";
+            this.tbHourPHT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbHourPHT_KeyPress);
             // 
             // uiPanel9
             // 
@@ -558,7 +607,7 @@
             this.uiPanel9.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.uiPanel9.FillColor = System.Drawing.Color.White;
             this.uiPanel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel9.Location = new System.Drawing.Point(0, 328);
+            this.uiPanel9.Location = new System.Drawing.Point(0, 428);
             this.uiPanel9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel9.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel9.Name = "uiPanel9";
@@ -567,7 +616,7 @@
             this.uiPanel9.RectColor = System.Drawing.SystemColors.ControlLight;
             this.uiPanel9.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
             this.uiPanel9.RectSize = 2;
-            this.uiPanel9.Size = new System.Drawing.Size(556, 54);
+            this.uiPanel9.Size = new System.Drawing.Size(743, 54);
             this.uiPanel9.TabIndex = 17;
             this.uiPanel9.Text = null;
             this.uiPanel9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -576,7 +625,7 @@
             // 
             this.panel1.Controls.Add(this.btnCancelPHT);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(306, 13);
+            this.panel1.Location = new System.Drawing.Point(493, 13);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(120, 38);
             this.panel1.TabIndex = 10;
@@ -612,7 +661,7 @@
             // 
             this.panel4.Controls.Add(this.btnConfirmPHT);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(426, 13);
+            this.panel4.Location = new System.Drawing.Point(613, 13);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.panel4.Size = new System.Drawing.Size(130, 38);
@@ -657,7 +706,7 @@
             this.uiPanel10.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel10.Name = "uiPanel10";
             this.uiPanel10.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel10.Size = new System.Drawing.Size(556, 70);
+            this.uiPanel10.Size = new System.Drawing.Size(743, 70);
             this.uiPanel10.TabIndex = 3;
             this.uiPanel10.Text = null;
             this.uiPanel10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -675,7 +724,7 @@
             this.uiGroupBox3.Name = "uiGroupBox3";
             this.uiGroupBox3.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox3.Size = new System.Drawing.Size(556, 70);
+            this.uiGroupBox3.Size = new System.Drawing.Size(743, 70);
             this.uiGroupBox3.TabIndex = 0;
             this.uiGroupBox3.Text = "Night fee per turn";
             this.uiGroupBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -694,10 +743,12 @@
             this.tbNightFeePHT.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbNightFeePHT.RectSize = 2;
             this.tbNightFeePHT.ShowText = false;
-            this.tbNightFeePHT.Size = new System.Drawing.Size(540, 34);
+            this.tbNightFeePHT.Size = new System.Drawing.Size(727, 34);
             this.tbNightFeePHT.TabIndex = 0;
             this.tbNightFeePHT.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbNightFeePHT.Watermark = "";
+            this.tbNightFeePHT.TextChanged += new System.EventHandler(this.tbNightFeePHT_TextChanged);
+            this.tbNightFeePHT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNightFeePHT_KeyPress);
             // 
             // uiPanel11
             // 
@@ -710,7 +761,7 @@
             this.uiPanel11.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel11.Name = "uiPanel11";
             this.uiPanel11.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel11.Size = new System.Drawing.Size(556, 70);
+            this.uiPanel11.Size = new System.Drawing.Size(743, 70);
             this.uiPanel11.TabIndex = 2;
             this.uiPanel11.Text = null;
             this.uiPanel11.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -728,7 +779,7 @@
             this.uiGroupBox4.Name = "uiGroupBox4";
             this.uiGroupBox4.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox4.Size = new System.Drawing.Size(556, 70);
+            this.uiGroupBox4.Size = new System.Drawing.Size(743, 70);
             this.uiGroupBox4.TabIndex = 0;
             this.uiGroupBox4.Text = "Day fee per turn";
             this.uiGroupBox4.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -747,63 +798,22 @@
             this.tbDayFeePHT.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbDayFeePHT.RectSize = 2;
             this.tbDayFeePHT.ShowText = false;
-            this.tbDayFeePHT.Size = new System.Drawing.Size(540, 34);
+            this.tbDayFeePHT.Size = new System.Drawing.Size(727, 34);
             this.tbDayFeePHT.TabIndex = 0;
             this.tbDayFeePHT.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbDayFeePHT.Watermark = "";
+            this.tbDayFeePHT.TextChanged += new System.EventHandler(this.tbDayFeePHT_TextChanged);
+            this.tbDayFeePHT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDayFeePHT_KeyPress);
             // 
-            // uiPanel12
+            // tpMNHour
             // 
-            this.uiPanel12.Controls.Add(this.uiGroupBox5);
-            this.uiPanel12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.uiPanel12.FillColor = System.Drawing.Color.White;
-            this.uiPanel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel12.Location = new System.Drawing.Point(0, 140);
-            this.uiPanel12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel12.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel12.Name = "uiPanel12";
-            this.uiPanel12.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel12.Size = new System.Drawing.Size(556, 70);
-            this.uiPanel12.TabIndex = 18;
-            this.uiPanel12.Text = null;
-            this.uiPanel12.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiGroupBox5
-            // 
-            this.uiGroupBox5.Controls.Add(this.tbHourPHT);
-            this.uiGroupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiGroupBox5.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox5.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiGroupBox5.Location = new System.Drawing.Point(0, 0);
-            this.uiGroupBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiGroupBox5.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiGroupBox5.Name = "uiGroupBox5";
-            this.uiGroupBox5.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
-            this.uiGroupBox5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox5.Size = new System.Drawing.Size(556, 70);
-            this.uiGroupBox5.TabIndex = 0;
-            this.uiGroupBox5.Text = "Hour per turn";
-            this.uiGroupBox5.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // tbHourPHT
-            // 
-            this.tbHourPHT.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbHourPHT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbHourPHT.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbHourPHT.Location = new System.Drawing.Point(8, 32);
-            this.tbHourPHT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tbHourPHT.MaximumSize = new System.Drawing.Size(0, 34);
-            this.tbHourPHT.MinimumSize = new System.Drawing.Size(0, 34);
-            this.tbHourPHT.Name = "tbHourPHT";
-            this.tbHourPHT.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbHourPHT.RectColor = System.Drawing.SystemColors.ControlDark;
-            this.tbHourPHT.RectSize = 2;
-            this.tbHourPHT.ShowText = false;
-            this.tbHourPHT.Size = new System.Drawing.Size(540, 34);
-            this.tbHourPHT.TabIndex = 0;
-            this.tbHourPHT.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tbHourPHT.Watermark = "";
+            this.tpMNHour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.tpMNHour.Controls.Add(this.uiPanel13);
+            this.tpMNHour.Location = new System.Drawing.Point(0, 40);
+            this.tpMNHour.Name = "tpMNHour";
+            this.tpMNHour.Size = new System.Drawing.Size(743, 487);
+            this.tpMNHour.TabIndex = 2;
+            this.tpMNHour.Text = "Per first and later hour";
             // 
             // uiPanel13
             // 
@@ -820,7 +830,7 @@
             this.uiPanel13.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.uiPanel13.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel13.RectSize = 2;
-            this.uiPanel13.Size = new System.Drawing.Size(556, 387);
+            this.uiPanel13.Size = new System.Drawing.Size(743, 487);
             this.uiPanel13.TabIndex = 2;
             this.uiPanel13.Text = null;
             this.uiPanel13.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -840,10 +850,64 @@
             this.uiPanel14.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel14.Name = "uiPanel14";
             this.uiPanel14.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel14.Size = new System.Drawing.Size(556, 382);
+            this.uiPanel14.Size = new System.Drawing.Size(743, 482);
             this.uiPanel14.TabIndex = 0;
             this.uiPanel14.Text = null;
             this.uiPanel14.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiPanel19
+            // 
+            this.uiPanel19.Controls.Add(this.uiGroupBox9);
+            this.uiPanel19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uiPanel19.FillColor = System.Drawing.Color.White;
+            this.uiPanel19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel19.Location = new System.Drawing.Point(0, 210);
+            this.uiPanel19.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel19.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel19.Name = "uiPanel19";
+            this.uiPanel19.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiPanel19.Size = new System.Drawing.Size(743, 70);
+            this.uiPanel19.TabIndex = 19;
+            this.uiPanel19.Text = null;
+            this.uiPanel19.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiGroupBox9
+            // 
+            this.uiGroupBox9.Controls.Add(this.tbHourNextPeriod);
+            this.uiGroupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiGroupBox9.FillColor = System.Drawing.Color.White;
+            this.uiGroupBox9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox9.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox9.Location = new System.Drawing.Point(0, 0);
+            this.uiGroupBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiGroupBox9.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiGroupBox9.Name = "uiGroupBox9";
+            this.uiGroupBox9.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
+            this.uiGroupBox9.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiGroupBox9.Size = new System.Drawing.Size(743, 70);
+            this.uiGroupBox9.TabIndex = 0;
+            this.uiGroupBox9.Text = "Hour per next period";
+            this.uiGroupBox9.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tbHourNextPeriod
+            // 
+            this.tbHourNextPeriod.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbHourNextPeriod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbHourNextPeriod.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbHourNextPeriod.Location = new System.Drawing.Point(8, 32);
+            this.tbHourNextPeriod.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbHourNextPeriod.MaximumSize = new System.Drawing.Size(0, 34);
+            this.tbHourNextPeriod.MinimumSize = new System.Drawing.Size(0, 34);
+            this.tbHourNextPeriod.Name = "tbHourNextPeriod";
+            this.tbHourNextPeriod.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
+            this.tbHourNextPeriod.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbHourNextPeriod.RectSize = 2;
+            this.tbHourNextPeriod.ShowText = false;
+            this.tbHourNextPeriod.Size = new System.Drawing.Size(727, 34);
+            this.tbHourNextPeriod.TabIndex = 0;
+            this.tbHourNextPeriod.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tbHourNextPeriod.Watermark = "";
+            this.tbHourNextPeriod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbHourNextPeriod_KeyPress);
             // 
             // uiPanel15
             // 
@@ -856,7 +920,7 @@
             this.uiPanel15.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel15.Name = "uiPanel15";
             this.uiPanel15.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel15.Size = new System.Drawing.Size(556, 70);
+            this.uiPanel15.Size = new System.Drawing.Size(743, 70);
             this.uiPanel15.TabIndex = 18;
             this.uiPanel15.Text = null;
             this.uiPanel15.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -874,7 +938,7 @@
             this.uiGroupBox6.Name = "uiGroupBox6";
             this.uiGroupBox6.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox6.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox6.Size = new System.Drawing.Size(556, 70);
+            this.uiGroupBox6.Size = new System.Drawing.Size(743, 70);
             this.uiGroupBox6.TabIndex = 0;
             this.uiGroupBox6.Text = "Fee for next period";
             this.uiGroupBox6.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -893,10 +957,12 @@
             this.tbFeeNextPeriod.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbFeeNextPeriod.RectSize = 2;
             this.tbFeeNextPeriod.ShowText = false;
-            this.tbFeeNextPeriod.Size = new System.Drawing.Size(540, 34);
+            this.tbFeeNextPeriod.Size = new System.Drawing.Size(727, 34);
             this.tbFeeNextPeriod.TabIndex = 0;
             this.tbFeeNextPeriod.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbFeeNextPeriod.Watermark = "";
+            this.tbFeeNextPeriod.TextChanged += new System.EventHandler(this.tbFeeNextPeriod_TextChanged);
+            this.tbFeeNextPeriod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFeeNextPeriod_KeyPress);
             // 
             // uiPanel16
             // 
@@ -905,7 +971,7 @@
             this.uiPanel16.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.uiPanel16.FillColor = System.Drawing.Color.White;
             this.uiPanel16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel16.Location = new System.Drawing.Point(0, 328);
+            this.uiPanel16.Location = new System.Drawing.Point(0, 428);
             this.uiPanel16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel16.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel16.Name = "uiPanel16";
@@ -914,7 +980,7 @@
             this.uiPanel16.RectColor = System.Drawing.SystemColors.ControlLight;
             this.uiPanel16.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
             this.uiPanel16.RectSize = 2;
-            this.uiPanel16.Size = new System.Drawing.Size(556, 54);
+            this.uiPanel16.Size = new System.Drawing.Size(743, 54);
             this.uiPanel16.TabIndex = 17;
             this.uiPanel16.Text = null;
             this.uiPanel16.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -923,7 +989,7 @@
             // 
             this.panel5.Controls.Add(this.btnCancelPeriod);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(306, 13);
+            this.panel5.Location = new System.Drawing.Point(493, 13);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(120, 38);
             this.panel5.TabIndex = 10;
@@ -959,7 +1025,7 @@
             // 
             this.panel6.Controls.Add(this.btnConfirmPeriod);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(426, 13);
+            this.panel6.Location = new System.Drawing.Point(613, 13);
             this.panel6.Name = "panel6";
             this.panel6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.panel6.Size = new System.Drawing.Size(130, 38);
@@ -1004,7 +1070,7 @@
             this.uiPanel17.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel17.Name = "uiPanel17";
             this.uiPanel17.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel17.Size = new System.Drawing.Size(556, 70);
+            this.uiPanel17.Size = new System.Drawing.Size(743, 70);
             this.uiPanel17.TabIndex = 3;
             this.uiPanel17.Text = null;
             this.uiPanel17.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1022,7 +1088,7 @@
             this.uiGroupBox7.Name = "uiGroupBox7";
             this.uiGroupBox7.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox7.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox7.Size = new System.Drawing.Size(556, 70);
+            this.uiGroupBox7.Size = new System.Drawing.Size(743, 70);
             this.uiGroupBox7.TabIndex = 0;
             this.uiGroupBox7.Text = "Hour per first period";
             this.uiGroupBox7.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1041,10 +1107,11 @@
             this.tbHourFirstPeriod.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbHourFirstPeriod.RectSize = 2;
             this.tbHourFirstPeriod.ShowText = false;
-            this.tbHourFirstPeriod.Size = new System.Drawing.Size(540, 34);
+            this.tbHourFirstPeriod.Size = new System.Drawing.Size(727, 34);
             this.tbHourFirstPeriod.TabIndex = 0;
             this.tbHourFirstPeriod.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbHourFirstPeriod.Watermark = "";
+            this.tbHourFirstPeriod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbHourFirstPeriod_KeyPress);
             // 
             // uiPanel18
             // 
@@ -1057,7 +1124,7 @@
             this.uiPanel18.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel18.Name = "uiPanel18";
             this.uiPanel18.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel18.Size = new System.Drawing.Size(556, 70);
+            this.uiPanel18.Size = new System.Drawing.Size(743, 70);
             this.uiPanel18.TabIndex = 2;
             this.uiPanel18.Text = null;
             this.uiPanel18.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1075,7 +1142,7 @@
             this.uiGroupBox8.Name = "uiGroupBox8";
             this.uiGroupBox8.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox8.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox8.Size = new System.Drawing.Size(556, 70);
+            this.uiGroupBox8.Size = new System.Drawing.Size(743, 70);
             this.uiGroupBox8.TabIndex = 0;
             this.uiGroupBox8.Text = "Fee for first period";
             this.uiGroupBox8.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1094,74 +1161,24 @@
             this.tbFeeFirstPeriod.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbFeeFirstPeriod.RectSize = 2;
             this.tbFeeFirstPeriod.ShowText = false;
-            this.tbFeeFirstPeriod.Size = new System.Drawing.Size(540, 34);
+            this.tbFeeFirstPeriod.Size = new System.Drawing.Size(727, 34);
             this.tbFeeFirstPeriod.TabIndex = 0;
             this.tbFeeFirstPeriod.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbFeeFirstPeriod.Watermark = "";
+            this.tbFeeFirstPeriod.TextChanged += new System.EventHandler(this.tbFeeFirstPeriod_TextChanged);
+            this.tbFeeFirstPeriod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFeeFirstPeriod_KeyPress);
             // 
-            // uiPanel19
+            // AddVisitorFeeForm
             // 
-            this.uiPanel19.Controls.Add(this.uiGroupBox9);
-            this.uiPanel19.Dock = System.Windows.Forms.DockStyle.Top;
-            this.uiPanel19.FillColor = System.Drawing.Color.White;
-            this.uiPanel19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel19.Location = new System.Drawing.Point(0, 210);
-            this.uiPanel19.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel19.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel19.Name = "uiPanel19";
-            this.uiPanel19.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel19.Size = new System.Drawing.Size(556, 70);
-            this.uiPanel19.TabIndex = 19;
-            this.uiPanel19.Text = null;
-            this.uiPanel19.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiGroupBox9
-            // 
-            this.uiGroupBox9.Controls.Add(this.tbHourNextPeriod);
-            this.uiGroupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiGroupBox9.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox9.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiGroupBox9.Location = new System.Drawing.Point(0, 0);
-            this.uiGroupBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiGroupBox9.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiGroupBox9.Name = "uiGroupBox9";
-            this.uiGroupBox9.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
-            this.uiGroupBox9.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox9.Size = new System.Drawing.Size(556, 70);
-            this.uiGroupBox9.TabIndex = 0;
-            this.uiGroupBox9.Text = "Hour per next period";
-            this.uiGroupBox9.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // tbHourNextPeriod
-            // 
-            this.tbHourNextPeriod.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbHourNextPeriod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbHourNextPeriod.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbHourNextPeriod.Location = new System.Drawing.Point(8, 32);
-            this.tbHourNextPeriod.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tbHourNextPeriod.MaximumSize = new System.Drawing.Size(0, 34);
-            this.tbHourNextPeriod.MinimumSize = new System.Drawing.Size(0, 34);
-            this.tbHourNextPeriod.Name = "tbHourNextPeriod";
-            this.tbHourNextPeriod.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbHourNextPeriod.RectColor = System.Drawing.SystemColors.ControlDark;
-            this.tbHourNextPeriod.RectSize = 2;
-            this.tbHourNextPeriod.ShowText = false;
-            this.tbHourNextPeriod.Size = new System.Drawing.Size(540, 34);
-            this.tbHourNextPeriod.TabIndex = 0;
-            this.tbHourNextPeriod.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tbHourNextPeriod.Watermark = "";
-            // 
-            // PriceDetailForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(584, 511);
+            this.ClientSize = new System.Drawing.Size(779, 629);
             this.Controls.Add(this.pnlMain);
-            this.MinimumSize = new System.Drawing.Size(600, 550);
-            this.Name = "PriceDetailForm";
-            this.Padding = new System.Windows.Forms.Padding(10);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(794, 666);
+            this.Name = "AddVisitorFeeForm";
+            this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.Text = "PriceDetailForm";
             this.Load += new System.EventHandler(this.PriceDetailForm_Load);
             this.pnlMain.ResumeLayout(false);
@@ -1180,9 +1197,10 @@
             this.pnlFullname.ResumeLayout(false);
             this.uiGroupBox1.ResumeLayout(false);
             this.tpHourTurn.ResumeLayout(false);
-            this.tpMNHour.ResumeLayout(false);
             this.uiPanel7.ResumeLayout(false);
             this.uiPanel8.ResumeLayout(false);
+            this.uiPanel12.ResumeLayout(false);
+            this.uiGroupBox5.ResumeLayout(false);
             this.uiPanel9.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -1190,10 +1208,11 @@
             this.uiGroupBox3.ResumeLayout(false);
             this.uiPanel11.ResumeLayout(false);
             this.uiGroupBox4.ResumeLayout(false);
-            this.uiPanel12.ResumeLayout(false);
-            this.uiGroupBox5.ResumeLayout(false);
+            this.tpMNHour.ResumeLayout(false);
             this.uiPanel13.ResumeLayout(false);
             this.uiPanel14.ResumeLayout(false);
+            this.uiPanel19.ResumeLayout(false);
+            this.uiGroupBox9.ResumeLayout(false);
             this.uiPanel15.ResumeLayout(false);
             this.uiGroupBox6.ResumeLayout(false);
             this.uiPanel16.ResumeLayout(false);
@@ -1203,8 +1222,6 @@
             this.uiGroupBox7.ResumeLayout(false);
             this.uiPanel18.ResumeLayout(false);
             this.uiGroupBox8.ResumeLayout(false);
-            this.uiPanel19.ResumeLayout(false);
-            this.uiGroupBox9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1214,7 +1231,7 @@
         private Sunny.UI.UITableLayoutPanel pnlMain;
         private Sunny.UI.UIPanel uiPanel1;
         private Sunny.UI.UIPanel uiPanel3;
-        private Sunny.UI.UILabel lbSessionID;
+        private Sunny.UI.UILabel lbVehicleType;
         private Sunny.UI.UIPanel uiPanel2;
         private Sunny.UI.UITabControl pnlTab;
         private System.Windows.Forms.TabPage tpTurn;

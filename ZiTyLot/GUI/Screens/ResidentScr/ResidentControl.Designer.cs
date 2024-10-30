@@ -98,8 +98,8 @@ namespace ZiTyLot.GUI.Screens
             // pnlBottom
             // 
             this.pnlBottom.BackColor = System.Drawing.Color.White;
-            this.pnlBottom.Controls.Add(this.pnlPagination);
             this.pnlBottom.Controls.Add(this.tableResident);
+            this.pnlBottom.Controls.Add(this.pnlPagination);
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBottom.Location = new System.Drawing.Point(0, 66);
             this.pnlBottom.Margin = new System.Windows.Forms.Padding(0);
@@ -384,7 +384,7 @@ namespace ZiTyLot.GUI.Screens
             this.tableResident.RowHeadersVisible = false;
             this.tableResident.RowHeadersWidth = 30;
             this.tableResident.RowTemplate.Height = 40;
-            this.tableResident.Size = new System.Drawing.Size(1513, 628);
+            this.tableResident.Size = new System.Drawing.Size(1513, 566);
             this.tableResident.TabIndex = 1;
             // 
             // colId

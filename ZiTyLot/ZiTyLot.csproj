@@ -217,6 +217,20 @@
     <Compile Include="ENTITY\Slot.cs" />
     <Compile Include="ENTITY\VehicleType.cs" />
     <Compile Include="ENTITY\VisitorFee.cs" />
+    <Compile Include="GUI\Screens\PriceScr\DetailVisitorFeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\PriceScr\DetailVisitorFeeForm.Designer.cs">
+      <DependentUpon>DetailVisitorFeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\PriceScr\DetailResidentFeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\PriceScr\DetailResidentFeeForm.Designer.cs">
+      <DependentUpon>DetailResidentFeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Utils\InputFormatter.cs" />
+    <Compile Include="GUI\Utils\InputValidator.cs" />
     <Compile Include="GUI\component-extensions\RoundedBorder.cs" />
     <Compile Include="GUI\CustomDateTimePicker.cs">
       <SubType>UserControl</SubType>
@@ -332,17 +346,17 @@
     <Compile Include="GUI\Screens\PriceScr\PricePerTurnCard.Designer.cs">
       <DependentUpon>PricePerTurnCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\PriceScr\PriceVisitorForm.cs">
+    <Compile Include="GUI\Screens\PriceScr\AddVisitorFeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\PriceScr\PriceVisitorForm.Designer.cs">
-      <DependentUpon>PriceVisitorForm.cs</DependentUpon>
+    <Compile Include="GUI\Screens\PriceScr\AddVisitorFeeForm.Designer.cs">
+      <DependentUpon>AddVisitorFeeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\PriceScr\PriceResidentForm.cs">
+    <Compile Include="GUI\Screens\PriceScr\AddResidentFeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\PriceScr\PriceResidentForm.Designer.cs">
-      <DependentUpon>PriceResidentForm.cs</DependentUpon>
+    <Compile Include="GUI\Screens\PriceScr\AddResidentFeeForm.Designer.cs">
+      <DependentUpon>AddResidentFeeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\ResidentScr\ResidentCreateForm.cs">
       <SubType>Form</SubType>
@@ -485,11 +499,17 @@
     <EmbeddedResource Include="GUI\Screens\CardScr\CardCreateForm.resx">
       <DependentUpon>CardCreateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\PriceScr\PriceResidentForm.resx">
-      <DependentUpon>PriceResidentForm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Screens\PriceScr\DetailVisitorFeeForm.resx">
+      <DependentUpon>DetailVisitorFeeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\PriceScr\PriceVisitorForm.resx">
-      <DependentUpon>PriceVisitorForm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Screens\PriceScr\DetailResidentFeeForm.resx">
+      <DependentUpon>DetailResidentFeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\PriceScr\AddResidentFeeForm.resx">
+      <DependentUpon>AddResidentFeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\PriceScr\AddVisitorFeeForm.resx">
+      <DependentUpon>AddVisitorFeeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\PriceScr\PricePerHourTurnCard.resx">
       <DependentUpon>PricePerHourTurnCard.cs</DependentUpon>

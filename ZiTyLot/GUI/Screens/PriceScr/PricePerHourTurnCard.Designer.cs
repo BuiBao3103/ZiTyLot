@@ -54,12 +54,12 @@
             this.uiPanel10.FillColor = System.Drawing.Color.White;
             this.uiPanel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.uiPanel10.Location = new System.Drawing.Point(0, 0);
-            this.uiPanel10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel10.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.uiPanel10.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel10.Name = "uiPanel10";
-            this.uiPanel10.Padding = new System.Windows.Forms.Padding(5, 0, 5, 10);
+            this.uiPanel10.Padding = new System.Windows.Forms.Padding(7, 0, 7, 12);
             this.uiPanel10.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel10.Size = new System.Drawing.Size(400, 250);
+            this.uiPanel10.Size = new System.Drawing.Size(533, 252);
             this.uiPanel10.TabIndex = 2;
             this.uiPanel10.Text = null;
             this.uiPanel10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -70,14 +70,14 @@
             this.uiPanel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.uiPanel11.FillColor = System.Drawing.Color.White;
             this.uiPanel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel11.Location = new System.Drawing.Point(5, 0);
+            this.uiPanel11.Location = new System.Drawing.Point(7, 0);
             this.uiPanel11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel11.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel11.Name = "uiPanel11";
             this.uiPanel11.Padding = new System.Windows.Forms.Padding(10);
             this.uiPanel11.RectColor = System.Drawing.SystemColors.ControlLight;
             this.uiPanel11.RectSize = 2;
-            this.uiPanel11.Size = new System.Drawing.Size(390, 240);
+            this.uiPanel11.Size = new System.Drawing.Size(519, 240);
             this.uiPanel11.TabIndex = 2;
             this.uiPanel11.Text = null;
             this.uiPanel11.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -105,7 +105,7 @@
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(370, 220);
+            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(499, 220);
             this.uiTableLayoutPanel3.TabIndex = 0;
             this.uiTableLayoutPanel3.TagString = null;
             // 
@@ -117,7 +117,7 @@
             this.panel4.Location = new System.Drawing.Point(3, 169);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(5, 5, 0, 5);
-            this.panel4.Size = new System.Drawing.Size(364, 48);
+            this.panel4.Size = new System.Drawing.Size(493, 48);
             this.panel4.TabIndex = 15;
             // 
             // btnEdit
@@ -139,7 +139,7 @@
             this.btnEdit.RectSelectedColor = System.Drawing.Color.White;
             this.btnEdit.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnEdit.RectSize = 2;
-            this.btnEdit.Size = new System.Drawing.Size(359, 38);
+            this.btnEdit.Size = new System.Drawing.Size(488, 38);
             this.btnEdit.Symbol = 361508;
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Edit";
@@ -154,9 +154,9 @@
             this.lbNightHour.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbNightHour.Location = new System.Drawing.Point(173, 103);
             this.lbNightHour.Name = "lbNightHour";
-            this.lbNightHour.Size = new System.Drawing.Size(194, 63);
+            this.lbNightHour.Size = new System.Drawing.Size(323, 63);
             this.lbNightHour.TabIndex = 9;
-            this.lbNightHour.Text = "per 6 hours night turn";
+            this.lbNightHour.Text = "per {hour} hours night turn";
             this.lbNightHour.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbNightFee
@@ -204,9 +204,9 @@
             this.lbDayHour.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbDayHour.Location = new System.Drawing.Point(173, 40);
             this.lbDayHour.Name = "lbDayHour";
-            this.lbDayHour.Size = new System.Drawing.Size(194, 63);
+            this.lbDayHour.Size = new System.Drawing.Size(323, 63);
             this.lbDayHour.TabIndex = 4;
-            this.lbDayHour.Text = "per 6 hours day turn";
+            this.lbDayHour.Text = "per {hour} hours day turn";
             this.lbDayHour.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiSymbolLabel4
@@ -237,19 +237,20 @@
             this.uiPanel13.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiPanel13.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom;
             this.uiPanel13.RectSize = 2;
-            this.uiPanel13.Size = new System.Drawing.Size(362, 30);
+            this.uiPanel13.Size = new System.Drawing.Size(491, 30);
             this.uiPanel13.TabIndex = 11;
             this.uiPanel13.Text = "Fee per hour turn";
             this.uiPanel13.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PricePerHourTurnCard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.uiPanel10);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PricePerHourTurnCard";
-            this.Size = new System.Drawing.Size(400, 250);
+            this.Size = new System.Drawing.Size(533, 308);
             this.uiPanel10.ResumeLayout(false);
             this.uiPanel11.ResumeLayout(false);
             this.uiTableLayoutPanel3.ResumeLayout(false);

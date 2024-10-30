@@ -54,12 +54,12 @@
             this.uiPanel14.FillColor = System.Drawing.Color.White;
             this.uiPanel14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.uiPanel14.Location = new System.Drawing.Point(0, 0);
-            this.uiPanel14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel14.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.uiPanel14.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel14.Name = "uiPanel14";
-            this.uiPanel14.Padding = new System.Windows.Forms.Padding(5, 0, 5, 10);
+            this.uiPanel14.Padding = new System.Windows.Forms.Padding(7, 0, 7, 12);
             this.uiPanel14.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel14.Size = new System.Drawing.Size(400, 250);
+            this.uiPanel14.Size = new System.Drawing.Size(533, 252);
             this.uiPanel14.TabIndex = 3;
             this.uiPanel14.Text = null;
             this.uiPanel14.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -70,14 +70,14 @@
             this.uiPanel15.Dock = System.Windows.Forms.DockStyle.Top;
             this.uiPanel15.FillColor = System.Drawing.Color.White;
             this.uiPanel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel15.Location = new System.Drawing.Point(5, 0);
+            this.uiPanel15.Location = new System.Drawing.Point(7, 0);
             this.uiPanel15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel15.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel15.Name = "uiPanel15";
             this.uiPanel15.Padding = new System.Windows.Forms.Padding(10);
             this.uiPanel15.RectColor = System.Drawing.SystemColors.ControlLight;
             this.uiPanel15.RectSize = 2;
-            this.uiPanel15.Size = new System.Drawing.Size(390, 240);
+            this.uiPanel15.Size = new System.Drawing.Size(519, 240);
             this.uiPanel15.TabIndex = 2;
             this.uiPanel15.Text = null;
             this.uiPanel15.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -105,7 +105,7 @@
             this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.uiTableLayoutPanel5.Size = new System.Drawing.Size(370, 220);
+            this.uiTableLayoutPanel5.Size = new System.Drawing.Size(499, 220);
             this.uiTableLayoutPanel5.TabIndex = 0;
             this.uiTableLayoutPanel5.TagString = null;
             // 
@@ -117,7 +117,7 @@
             this.panel6.Location = new System.Drawing.Point(3, 169);
             this.panel6.Name = "panel6";
             this.panel6.Padding = new System.Windows.Forms.Padding(5, 5, 0, 5);
-            this.panel6.Size = new System.Drawing.Size(364, 48);
+            this.panel6.Size = new System.Drawing.Size(493, 48);
             this.panel6.TabIndex = 15;
             // 
             // btnEdit
@@ -139,7 +139,7 @@
             this.btnEdit.RectSelectedColor = System.Drawing.Color.White;
             this.btnEdit.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnEdit.RectSize = 2;
-            this.btnEdit.Size = new System.Drawing.Size(359, 38);
+            this.btnEdit.Size = new System.Drawing.Size(488, 38);
             this.btnEdit.Symbol = 361508;
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Edit";
@@ -154,9 +154,9 @@
             this.lbHourNextPeriod.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbHourNextPeriod.Location = new System.Drawing.Point(173, 103);
             this.lbHourNextPeriod.Name = "lbHourNextPeriod";
-            this.lbHourNextPeriod.Size = new System.Drawing.Size(194, 63);
+            this.lbHourNextPeriod.Size = new System.Drawing.Size(323, 63);
             this.lbHourNextPeriod.TabIndex = 9;
-            this.lbHourNextPeriod.Text = "for next 5 hours";
+            this.lbHourNextPeriod.Text = "for next {hour} hours";
             this.lbHourNextPeriod.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbFeeNextPeriod
@@ -204,9 +204,9 @@
             this.lbHourFirstPeriod.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbHourFirstPeriod.Location = new System.Drawing.Point(173, 40);
             this.lbHourFirstPeriod.Name = "lbHourFirstPeriod";
-            this.lbHourFirstPeriod.Size = new System.Drawing.Size(194, 63);
+            this.lbHourFirstPeriod.Size = new System.Drawing.Size(323, 63);
             this.lbHourFirstPeriod.TabIndex = 4;
-            this.lbHourFirstPeriod.Text = "for first 3 hours";
+            this.lbHourFirstPeriod.Text = "for first {hour} hours";
             this.lbHourFirstPeriod.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiSymbolLabel6
@@ -237,19 +237,20 @@
             this.uiPanel17.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiPanel17.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom;
             this.uiPanel17.RectSize = 2;
-            this.uiPanel17.Size = new System.Drawing.Size(362, 30);
+            this.uiPanel17.Size = new System.Drawing.Size(491, 30);
             this.uiPanel17.TabIndex = 11;
             this.uiPanel17.Text = "Fee for first and next hour";
             this.uiPanel17.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PricePerPeriodCard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.uiPanel14);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PricePerPeriodCard";
-            this.Size = new System.Drawing.Size(400, 250);
+            this.Size = new System.Drawing.Size(533, 308);
             this.uiPanel14.ResumeLayout(false);
             this.uiPanel15.ResumeLayout(false);
             this.uiTableLayoutPanel5.ResumeLayout(false);

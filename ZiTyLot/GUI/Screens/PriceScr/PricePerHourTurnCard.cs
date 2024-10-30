@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZiTyLot.ENTITY;
 
 namespace ZiTyLot.GUI.Screens.PriceScr
 {
     public partial class PricePerHourTurnCard : UserControl
     {
-        public PricePerHourTurnCard()
+        public PricePerHourTurnCard(VisitorFee visitorFee)
         {
             InitializeComponent();
+            lbDayFee.Text = visitorFee.Day_fee?.ToString("C0", new System.Globalization.CultureInfo("vi-VN"));
+            lbNightFee.Text = visitorFee.Night_fee?.ToString("C0", new System.Globalization.CultureInfo("vi-VN"));
+            lbDayHour.Text = lbDayHour.Text.Replace("{hour}", visitorFee.Hours_per_turn.ToString());
+            lbNightHour.Text = lbNightHour.Text.Replace("{hour}", visitorFee.Hours_per_turn.ToString());
         }
         public event EventHandler EditButtonClicked;
 
