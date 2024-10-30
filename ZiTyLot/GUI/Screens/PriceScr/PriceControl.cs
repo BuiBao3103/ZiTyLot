@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Org.BouncyCastle.Tls.Crypto;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
+using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens.PriceScr;
@@ -11,11 +14,15 @@ namespace ZiTyLot.GUI.Screens
 {
     public partial class PriceControl : UserControl
     {
+        private readonly VehicleTypeBUS vehicleTypeBUS = new VehicleTypeBUS();
         private readonly ResidentFeeBUS residentFeeBUS = new ResidentFeeBUS();
         private readonly VisitorFeeBUS visitorFeeBUS = new VisitorFeeBUS();
         private const int CAR_ID = 1;
         private const int MOTORBIKE_ID = 2;
         private const int BICYCLE_ID = 3;
+        private VisitorFee visitorFeeCar = null;
+        private VisitorFee visitorFeeMotorbike = null;
+        private VisitorFee visitorFeeBicycle = null;
         private List<ResidentFee> residentFees;
 
         private AddResidentFeeForm addResidentFeeForm = null;
@@ -31,7 +38,24 @@ namespace ZiTyLot.GUI.Screens
             this.tableBicycle.Paint += new System.Windows.Forms.PaintEventHandler(this.table_PaintBicycle);
             this.tableBicycle.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPaintingBicycle);
             this.tableBicycle.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClickBicycle);
+
+            visitorFeeCar = visitorFeeBUS
+                .GetAll(
+                new List<FilterCondition> {
+                    new FilterCondition("vehicle_type_id", CompOp.Equals, CAR_ID)
+                }).FirstOrDefault() ?? null;
+            visitorFeeMotorbike = visitorFeeBUS
+                .GetAll(
+                new List<FilterCondition> {
+                    new FilterCondition("vehicle_type_id", CompOp.Equals, MOTORBIKE_ID)
+                }).FirstOrDefault() ?? null;
+            visitorFeeBicycle = visitorFeeBUS
+                .GetAll(
+                new List<FilterCondition> {
+                    new FilterCondition("vehicle_type_id", CompOp.Equals, BICYCLE_ID)
+                }).FirstOrDefault() ?? null;
             residentFees = residentFeeBUS.GetAll();
+            LoadVisitorFee();
             LoadResidentFee();
         }
 
@@ -305,9 +329,9 @@ namespace ZiTyLot.GUI.Screens
                 addResidentFeeForm.BringToFront();
             }
         }
+
         private void LoadResidentFee()
         {
-            Console.WriteLine("Load resident fee");
             tableBicycle.Rows.Clear();
             tableCar.Rows.Clear();
             tableMotorbike.Rows.Clear();
@@ -331,7 +355,51 @@ namespace ZiTyLot.GUI.Screens
             }
 
         }
+        private void LoadVisitorFee()
+        {
+            List<VisitorFee> visitorFees = new List<VisitorFee>{
+                visitorFeeCar,
+                visitorFeeMotorbike,
+                visitorFeeBicycle
+            };
 
+            foreach(VisitorFee visitorFee in visitorFees)
+            {
+                if (visitorFee == null)
+                {
+                    continue;
+                }
+                Sunny.UI.UIPanel targetPanel;
+                switch (visitorFee.Vehicle_type_id)
+                {
+                    case CAR_ID:
+                        targetPanel = pnlCarPrice;
+                        break;
+                    case MOTORBIKE_ID:
+                        targetPanel = pnlMotorbikePrice;
+                        break;
+                    case BICYCLE_ID:
+                        targetPanel = pnlBicyclePrice;
+                        break;
+                    default:
+                        targetPanel = new Sunny.UI.UIPanel();
+                        break;
+                }
+                switch (visitorFee.Fee_type)
+                {
+                    case FeeType.TURN:
+                        AddNewPricePerTurnCard(targetPanel);
+                        break;
+                    case FeeType.HOUR_PER_TURN:
+                        AddNewPricePerHourTurnCard(targetPanel);
+                        break;
+                    case FeeType.FIRST_N_AND_NEXT_M_HOUR:
+                        AddNewPricePerPeriodCard(targetPanel);
+                        break;
+
+                }
+            }
+        }
         private void DeleteResidentFee(int id)
         {
             try
