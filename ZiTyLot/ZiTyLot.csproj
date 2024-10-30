@@ -320,11 +320,11 @@
     <Compile Include="GUI\Screens\PriceScr\PricePerTurnCard.Designer.cs">
       <DependentUpon>PricePerTurnCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\PriceScr\PriceVisitorForm.cs">
+    <Compile Include="GUI\Screens\PriceScr\AddVisitorFeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\PriceScr\PriceVisitorForm.Designer.cs">
-      <DependentUpon>PriceVisitorForm.cs</DependentUpon>
+    <Compile Include="GUI\Screens\PriceScr\AddVisitorFeeForm.Designer.cs">
+      <DependentUpon>AddVisitorFeeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\PriceScr\AddResidentFeeForm.cs">
       <SubType>Form</SubType>
@@ -470,8 +470,8 @@
     <EmbeddedResource Include="GUI\Screens\PriceScr\AddResidentFeeForm.resx">
       <DependentUpon>AddResidentFeeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\PriceScr\PriceVisitorForm.resx">
-      <DependentUpon>PriceVisitorForm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Screens\PriceScr\AddVisitorFeeForm.resx">
+      <DependentUpon>AddVisitorFeeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\PriceScr\PricePerHourTurnCard.resx">
       <DependentUpon>PricePerHourTurnCard.cs</DependentUpon>
