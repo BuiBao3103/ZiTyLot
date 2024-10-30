@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
+using ZiTyLot.GUI.component_extensions;
+using ZiTyLot.GUI.Utils;
 
 namespace ZiTyLot.GUI.Screens.PriceScr
 {
@@ -133,7 +135,7 @@ namespace ZiTyLot.GUI.Screens.PriceScr
                 {
                     MessageBox.Show("Invalid fee input. Please enter a valid number for fees and hours.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-               
+
             }
             catch (Exception ex)
             {
@@ -155,6 +157,93 @@ namespace ZiTyLot.GUI.Screens.PriceScr
         private void btnCancelPeriod_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tbDayFeePT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = InputValidator.ValidateNumericKeyPress(tbDayFeePT.Text, e.KeyChar);
+        }
+
+        private void tbNightFeePT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = InputValidator.ValidateNumericKeyPress(tbNightFeePT.Text, e.KeyChar);
+
+        }
+
+        private void tbDayFeePHT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = InputValidator.ValidateNumericKeyPress(tbDayFeePHT.Text, e.KeyChar);
+        }
+
+        private void tbNightFeePHT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = InputValidator.ValidateNumericKeyPress(tbNightFeePHT.Text, e.KeyChar);
+
+        }
+
+        private void tbHourPHT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = InputValidator.ValidateNumericKeyPress(tbHourPHT.Text, e.KeyChar);
+        }
+
+
+        private void tbFeeFirstPeriod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = InputValidator.ValidateNumericKeyPress(tbFeeFirstPeriod.Text, e.KeyChar);
+        }
+
+
+        private void tbHourFirstPeriod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = InputValidator.ValidateNumericKeyPress(tbHourFirstPeriod.Text, e.KeyChar);
+        }
+
+        private void tbFeeNextPeriod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = InputValidator.ValidateNumericKeyPress(tbFeeNextPeriod.Text, e.KeyChar);
+
+        }
+
+        private void tbHourNextPeriod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = InputValidator.ValidateNumericKeyPress(tbHourNextPeriod.Text, e.KeyChar);
+
+        }
+
+        private void tbFeeFirstPeriod_TextChanged(object sender, EventArgs e)
+        {
+            tbFeeFirstPeriod.Text = InputFormatter.FormatNumericText(tbFeeFirstPeriod.Text);
+            tbFeeFirstPeriod.SelectionStart = tbFeeFirstPeriod.Text.Length;
+        }
+
+        private void tbFeeNextPeriod_TextChanged(object sender, EventArgs e)
+        {
+            tbFeeNextPeriod.Text = InputFormatter.FormatNumericText(tbFeeNextPeriod.Text);
+            tbFeeNextPeriod.SelectionStart = tbFeeNextPeriod.Text.Length;
+        }
+
+        private void tbDayFeePHT_TextChanged(object sender, EventArgs e)
+        {
+            tbDayFeePHT.Text = InputFormatter.FormatNumericText(tbDayFeePHT.Text);
+            tbDayFeePHT.SelectionStart = tbDayFeePHT.Text.Length;
+        }
+
+        private void tbNightFeePHT_TextChanged(object sender, EventArgs e)
+        {
+            tbNightFeePHT.Text = InputFormatter.FormatNumericText(tbNightFeePHT.Text);
+            tbNightFeePHT.SelectionStart = tbNightFeePHT.Text.Length;
+        }
+
+        private void tbDayFeePT_TextChanged(object sender, EventArgs e)
+        {
+            tbDayFeePT.Text = InputFormatter.FormatNumericText(tbDayFeePT.Text);
+            tbDayFeePT.SelectionStart = tbDayFeePT.Text.Length;
+        }
+
+        private void tbNightFeePT_TextChanged(object sender, EventArgs e)
+        {
+            tbNightFeePT.Text = InputFormatter.FormatNumericText(tbNightFeePT.Text);
+            tbNightFeePT.SelectionStart = tbNightFeePT.Text.Length;
         }
     }
 }

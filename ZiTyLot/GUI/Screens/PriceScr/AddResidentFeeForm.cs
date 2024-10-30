@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.ENTITY;
+using ZiTyLot.GUI.component_extensions;
+using ZiTyLot.GUI.Utils;
 
 namespace ZiTyLot.GUI.Screens.PriceScr
 {
@@ -52,17 +54,22 @@ namespace ZiTyLot.GUI.Screens.PriceScr
         {
             try
             {
-                ResidentFee residentFee = new ResidentFee
+                if(double.TryParse(InputFormatter.GetRawNumericValue(tbFee.Text),out double fee))
                 {
-                    Vehicle_type_id = vehicleType.Id,
-                    Month = int.Parse(cbDuration.Text.Split(' ')[0]),
-                    Fee = int.Parse(tbFee.Text.Replace(",", ""))
-                };
-                residentFeeBUS.Add(residentFee);
-
-                ResidentFeeInsertionEvent?.Invoke(this, EventArgs.Empty);
-                this.Close();
-
+                    ResidentFee residentFee = new ResidentFee
+                    {
+                        Vehicle_type_id = vehicleType.Id,
+                        Month = int.Parse(cbDuration.Text.Split(' ')[0]),
+                        Fee = fee
+                    };
+                    residentFeeBUS.Add(residentFee);
+                    ResidentFeeInsertionEvent?.Invoke(this, EventArgs.Empty);
+                    this.Close();
+                }
+                else
+                {
+                   MessageBox.Show("Invalid fee value", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (ArgumentException ex)
             {
@@ -78,32 +85,12 @@ namespace ZiTyLot.GUI.Screens.PriceScr
 
         private void tbFee_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //allow only digits and control characters
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-
-            //not allow leading zero
-            if (tbFee.Text.Length == 0 && e.KeyChar == '0')
-            {
-                e.Handled = true;
-            }
-
-            //not allow more than 9 digits
-            if (tbFee.Text.Replace(",", "").Length >= 9 && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            e.Handled = InputValidator.ValidateNumericKeyPress(tbFee.Text, e.KeyChar);
         }
 
         private void tbFee_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(tbFee.Text)) return;
-
-            //format fee text
-            string text = tbFee.Text.Replace(",", "");
-            tbFee.Text = string.Format("{0:#,##0}", int.Parse(text));
+            tbFee.Text = InputFormatter.FormatNumericText(tbFee.Text);
             tbFee.SelectionStart = tbFee.Text.Length;
         }
     }

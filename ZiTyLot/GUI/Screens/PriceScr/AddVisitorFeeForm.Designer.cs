@@ -439,6 +439,8 @@
             this.tbNightFeePT.TabIndex = 0;
             this.tbNightFeePT.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbNightFeePT.Watermark = "";
+            this.tbNightFeePT.TextChanged += new System.EventHandler(this.tbNightFeePT_TextChanged);
+            this.tbNightFeePT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNightFeePT_KeyPress);
             // 
             // pnlFullname
             // 
@@ -492,6 +494,8 @@
             this.tbDayFeePT.TabIndex = 0;
             this.tbDayFeePT.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbDayFeePT.Watermark = "";
+            this.tbDayFeePT.TextChanged += new System.EventHandler(this.tbDayFeePT_TextChanged);
+            this.tbDayFeePT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDayFeePT_KeyPress);
             // 
             // tpHourTurn
             // 
@@ -594,6 +598,7 @@
             this.tbHourPHT.TabIndex = 0;
             this.tbHourPHT.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbHourPHT.Watermark = "";
+            this.tbHourPHT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbHourPHT_KeyPress);
             // 
             // uiPanel9
             // 
@@ -742,6 +747,8 @@
             this.tbNightFeePHT.TabIndex = 0;
             this.tbNightFeePHT.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbNightFeePHT.Watermark = "";
+            this.tbNightFeePHT.TextChanged += new System.EventHandler(this.tbNightFeePHT_TextChanged);
+            this.tbNightFeePHT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNightFeePHT_KeyPress);
             // 
             // uiPanel11
             // 
@@ -795,6 +802,8 @@
             this.tbDayFeePHT.TabIndex = 0;
             this.tbDayFeePHT.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbDayFeePHT.Watermark = "";
+            this.tbDayFeePHT.TextChanged += new System.EventHandler(this.tbDayFeePHT_TextChanged);
+            this.tbDayFeePHT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDayFeePHT_KeyPress);
             // 
             // tpMNHour
             // 
@@ -898,6 +907,7 @@
             this.tbHourNextPeriod.TabIndex = 0;
             this.tbHourNextPeriod.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbHourNextPeriod.Watermark = "";
+            this.tbHourNextPeriod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbHourNextPeriod_KeyPress);
             // 
             // uiPanel15
             // 
@@ -951,6 +961,8 @@
             this.tbFeeNextPeriod.TabIndex = 0;
             this.tbFeeNextPeriod.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbFeeNextPeriod.Watermark = "";
+            this.tbFeeNextPeriod.TextChanged += new System.EventHandler(this.tbFeeNextPeriod_TextChanged);
+            this.tbFeeNextPeriod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFeeNextPeriod_KeyPress);
             // 
             // uiPanel16
             // 
@@ -1099,6 +1111,7 @@
             this.tbHourFirstPeriod.TabIndex = 0;
             this.tbHourFirstPeriod.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbHourFirstPeriod.Watermark = "";
+            this.tbHourFirstPeriod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbHourFirstPeriod_KeyPress);
             // 
             // uiPanel18
             // 
@@ -1152,6 +1165,8 @@
             this.tbFeeFirstPeriod.TabIndex = 0;
             this.tbFeeFirstPeriod.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbFeeFirstPeriod.Watermark = "";
+            this.tbFeeFirstPeriod.TextChanged += new System.EventHandler(this.tbFeeFirstPeriod_TextChanged);
+            this.tbFeeFirstPeriod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFeeFirstPeriod_KeyPress);
             // 
             // AddVisitorFeeForm
             // 
