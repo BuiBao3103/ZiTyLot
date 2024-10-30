@@ -15,55 +15,289 @@ namespace ZiTyLot.GUI.Screens
 {
     public partial class PriceControl : UserControl
     {
-        private readonly VehicleTypeBUS vehicleTypeBUS = new VehicleTypeBUS();
-        private readonly ResidentFeeBUS residentFeeBUS = new ResidentFeeBUS();
-        private readonly VisitorFeeBUS visitorFeeBUS = new VisitorFeeBUS();
         private const int CAR_ID = 1;
         private const int MOTORBIKE_ID = 2;
         private const int BICYCLE_ID = 3;
-        private VisitorFee visitorFeeCar = null;
-        private VisitorFee visitorFeeMotorbike = null;
-        private VisitorFee visitorFeeBicycle = null;
-        private List<ResidentFee> residentFees;
 
-        private AddResidentFeeForm addResidentFeeForm = null;
-        private AddVisitorFeeForm addVisitorCarFeeForm = null;
-        private AddVisitorFeeForm addVisitorMotorbikeFeeForm = null;
-        private AddVisitorFeeForm addVisitorBicycleFeeForm = null;
+        private readonly VehicleTypeBUS _vehicleTypeBUS;
+        private readonly ResidentFeeBUS _residentFeeBUS;
+        private readonly VisitorFeeBUS _visitorFeeBUS;
+
+        private VisitorFee _visitorFeeCar;
+        private VisitorFee _visitorFeeMotorbike;
+        private VisitorFee _visitorFeeBicycle;
+        private List<ResidentFee> _residentFees;
+
+        private AddResidentFeeForm _addResidentFeeForm;
+        private AddVisitorFeeForm _addVisitorCarFeeForm;
+        private AddVisitorFeeForm _addVisitorMotorbikeFeeForm;
+        private AddVisitorFeeForm _addVisitorBicycleFeeForm;
         public PriceControl()
         {
             InitializeComponent();
-            this.tableMotorbike.Paint += new System.Windows.Forms.PaintEventHandler(this.table_PaintMotorbike);
-            this.tableMotorbike.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPaintingMotorbike);
-            this.tableMotorbike.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClickMotorbike);
-            this.tableCar.Paint += new System.Windows.Forms.PaintEventHandler(this.table_PaintCar);
-            this.tableCar.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPaintingCar);
-            this.tableCar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClickCar);
-            this.tableBicycle.Paint += new System.Windows.Forms.PaintEventHandler(this.table_PaintBicycle);
-            this.tableBicycle.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPaintingBicycle);
-            this.tableBicycle.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClickBicycle);
+            _vehicleTypeBUS = new VehicleTypeBUS();
+            _residentFeeBUS = new ResidentFeeBUS();
+            _visitorFeeBUS = new VisitorFeeBUS();
+            LoadInitialData();
+        }
 
-            visitorFeeCar = visitorFeeBUS
-                .GetAll(
-                new List<FilterCondition> {
-                    new FilterCondition("vehicle_type_id", CompOp.Equals, CAR_ID)
-                }).FirstOrDefault() ?? null;
-            visitorFeeMotorbike = visitorFeeBUS
-                .GetAll(
-                new List<FilterCondition> {
-                    new FilterCondition("vehicle_type_id", CompOp.Equals, MOTORBIKE_ID)
-                }).FirstOrDefault() ?? null;
-            visitorFeeBicycle = visitorFeeBUS
-                .GetAll(
-                new List<FilterCondition> {
-                    new FilterCondition("vehicle_type_id", CompOp.Equals, BICYCLE_ID)
-                }).FirstOrDefault() ?? null;
-            residentFees = residentFeeBUS.GetAll();
+       
+        private void LoadInitialData()
+        {
+            _visitorFeeCar = _visitorFeeBUS.GetVisitorFeeByVehicleTypeId(CAR_ID);
+            _visitorFeeMotorbike = _visitorFeeBUS.GetVisitorFeeByVehicleTypeId(MOTORBIKE_ID);
+            _visitorFeeBicycle = _visitorFeeBUS.GetVisitorFeeByVehicleTypeId(BICYCLE_ID);
+            _residentFees = _residentFeeBUS.GetAll();
+
             LoadVisitorFee();
             LoadResidentFee();
         }
+        
 
+        private void ShowAddVisitorFeeForm(Sunny.UI.UIPanel targetPanel)
+        {
+            var (currentForm, vehicleTypeId, visitorFee) = GetFormDetailsForTab(pnlTab.SelectedIndex);
+            //if (currentForm == null) return;
 
+            ShowOrCreateForm(currentForm, vehicleTypeId, targetPanel, pnlTab.SelectedIndex, visitorFee);
+        }
+
+        private (AddVisitorFeeForm form, int vehicleTypeId, VisitorFee visitorFee) GetFormDetailsForTab(int tabIndex)
+        {
+            switch (tabIndex)
+            {
+                case 0:
+                    return (_addVisitorMotorbikeFeeForm, MOTORBIKE_ID, _visitorFeeMotorbike);
+                case 1:
+                    return (_addVisitorCarFeeForm, CAR_ID, _visitorFeeCar);
+                case 2:
+                    return (_addVisitorBicycleFeeForm, BICYCLE_ID, _visitorFeeBicycle);
+                default:
+                    return (null, 0, null);
+            }
+        }
+
+        private void ShowOrCreateForm(AddVisitorFeeForm form, int vehicleTypeId, Sunny.UI.UIPanel targetPanel,
+            int tabIndex, VisitorFee visitorFee)
+        {
+            if (form == null || form.IsDisposed)
+            {
+                var newForm = CreateNewVisitorFeeForm(vehicleTypeId, tabIndex);
+                newForm.Show();
+            }
+            else
+            {
+                if (form.WindowState == FormWindowState.Minimized)
+                {
+                    form.WindowState = FormWindowState.Normal;
+                }
+                form.BringToFront();
+            }
+        }
+
+        private AddVisitorFeeForm CreateNewVisitorFeeForm(int vehicleTypeId, int tabIndex)
+        {
+            var newForm = new AddVisitorFeeForm(vehicleTypeId);
+
+            newForm.PricePerTurnInsertion += (s, args) => RefreshVisitorFees();
+            newForm.PricePerHourTurnInsertion += (s, args) => RefreshVisitorFees();
+            newForm.PricePerPeriodInsertion += (s, args) => RefreshVisitorFees();
+
+            AssignFormToTab(newForm, tabIndex);
+            return newForm;
+        }
+
+        private void AssignFormToTab(AddVisitorFeeForm form, int tabIndex)
+        {
+            switch (tabIndex)
+            {
+                case 0:
+                    _addVisitorMotorbikeFeeForm = form;
+                    break;
+                case 1:
+                    _addVisitorCarFeeForm = form;
+                    break;
+                case 2:
+                    _addVisitorBicycleFeeForm = form;
+                    break;
+            }
+        }
+
+        private void RefreshVisitorFees()
+        {
+            _visitorFeeCar = _visitorFeeBUS.GetVisitorFeeByVehicleTypeId(CAR_ID);
+            _visitorFeeMotorbike = _visitorFeeBUS.GetVisitorFeeByVehicleTypeId(MOTORBIKE_ID);
+            _visitorFeeBicycle = _visitorFeeBUS.GetVisitorFeeByVehicleTypeId(BICYCLE_ID);
+            LoadVisitorFee();
+        }
+
+        private void AddPriceCard(Sunny.UI.UIPanel targetPanel, VisitorFee visitorFee)
+        {
+            switch (visitorFee.Fee_type)
+            {
+                case FeeType.TURN:
+                    AddNewPricePerTurnCard(targetPanel, visitorFee);
+                    break;
+                case FeeType.HOUR_PER_TURN:
+                    AddNewPricePerHourTurnCard(targetPanel, visitorFee);
+                    break;
+                case FeeType.FIRST_N_AND_NEXT_M_HOUR:
+                    AddNewPricePerPeriodCard(targetPanel, visitorFee);
+                    break;
+            }
+        }
+
+        private void AddNewPricePerTurnCard(Sunny.UI.UIPanel targetPanel, VisitorFee visitorFee)
+        {
+            PricePerTurnCard pricePerTurnCard = new PricePerTurnCard(visitorFee);
+            pricePerTurnCard.Dock = DockStyle.Top;
+            pricePerTurnCard.EditButtonClicked += (s, e) => ShowAddVisitorFeeForm(targetPanel);
+            targetPanel.Controls.Clear();
+            targetPanel.Controls.Add(pricePerTurnCard);
+        }
+
+        private void AddNewPricePerHourTurnCard(Sunny.UI.UIPanel targetPanel, VisitorFee visitorFee)
+        {
+            PricePerHourTurnCard pricePerHourTurnCard = new PricePerHourTurnCard(visitorFee);
+            pricePerHourTurnCard.Dock = DockStyle.Top;
+            pricePerHourTurnCard.EditButtonClicked += (s, e) => ShowAddVisitorFeeForm(targetPanel);
+            targetPanel.Controls.Clear();
+            targetPanel.Controls.Add(pricePerHourTurnCard);
+        }
+
+        private void AddNewPricePerPeriodCard(Sunny.UI.UIPanel targetPanel, VisitorFee visitorFee)
+        {
+            PricePerPeriodCard pricePerPeriodCard = new PricePerPeriodCard(visitorFee);
+            pricePerPeriodCard.Dock = DockStyle.Top;
+            pricePerPeriodCard.EditButtonClicked += (s, e) => ShowAddVisitorFeeForm(targetPanel);
+            targetPanel.Controls.Clear();
+            targetPanel.Controls.Add(pricePerPeriodCard);
+        }
+
+        private Sunny.UI.UIPanel GetTargetPanelForVehicle(int vehicleTypeId)
+        {
+            switch (vehicleTypeId)
+            {
+                case CAR_ID:
+                    return pnlCarPrice;
+                case MOTORBIKE_ID:
+                    return pnlMotorbikePrice;
+                case BICYCLE_ID:
+                    return pnlBicyclePrice;
+                default:
+                    return null;
+            }
+        }
+
+        private void LoadVisitorFee()
+        {
+            if (_visitorFeeCar != null) AddPriceCard(pnlCarPrice, _visitorFeeCar);
+            if (_visitorFeeMotorbike != null) AddPriceCard(pnlMotorbikePrice, _visitorFeeMotorbike);
+            if (_visitorFeeBicycle != null) AddPriceCard(pnlBicyclePrice, _visitorFeeBicycle);
+        }
+
+        private void LoadResidentFee()
+        {
+            ClearAllTables();
+            foreach (var residentFee in _residentFees)
+            {
+                AddResidentFeeToTable(residentFee);
+            }
+        }
+
+        private void ClearAllTables()
+        {
+            tableBicycle.Rows.Clear();
+            tableCar.Rows.Clear();
+            tableMotorbike.Rows.Clear();
+        }
+
+        private void AddResidentFeeToTable(ResidentFee residentFee)
+        {
+            var feeFormat = residentFee.Fee.ToString("C0", new System.Globalization.CultureInfo("vi-VN"));
+            var durationFormat = $"{residentFee.Month} {(residentFee.Month == 1 ? "month" : "months")}";
+
+            switch (residentFee.Vehicle_type_id)
+            {
+                case MOTORBIKE_ID:
+                    tableMotorbike.Rows.Add(residentFee.Id, feeFormat, durationFormat);
+                    break;
+                case CAR_ID:
+                    tableCar.Rows.Add(residentFee.Id, feeFormat, durationFormat);
+                    break;
+                case BICYCLE_ID:
+                    tableBicycle.Rows.Add(residentFee.Id, feeFormat, durationFormat);
+                    break;
+            }
+        }
+
+        private void ShowAddResidentFeeForm(int vehicleId)
+        {
+            if (_addResidentFeeForm == null || _addResidentFeeForm.IsDisposed)
+            {
+                _addResidentFeeForm = new AddResidentFeeForm(vehicleId);
+                _addResidentFeeForm.ResidentFeeInsertionEvent += (s, args) =>
+                {
+                    _residentFees = _residentFeeBUS.GetAll();
+                    LoadResidentFee();
+                };
+                _addResidentFeeForm.Show();
+            }
+            else
+            {
+                if(_addResidentFeeForm.WindowState == FormWindowState.Minimized)
+                    _addResidentFeeForm.WindowState = FormWindowState.Normal;
+                _addResidentFeeForm.BringToFront();
+            }
+        }
+
+        private void DeleteResidentFee(int id)
+        {
+            try
+            {
+                if (ShowDeleteConfirmation())
+                {
+                    _residentFeeBUS.Delete(id);
+                    _residentFees = _residentFeeBUS.GetAll();
+                    LoadResidentFee();
+                }
+            }
+            catch (Exception ex)
+            {
+                HandleDeleteError(ex);
+            }
+        }
+
+        private bool ShowDeleteConfirmation() =>
+            MessageBox.Show("Are you sure you want to delete this resident fee?",
+                "Delete Resident Fee", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes;
+
+        private void HandleDeleteError(Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            MessageBox.Show($"An error occurred while deleting resident fee: {ex.Message}",
+                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        #region Event Handlers
+        private void btnMotorbikeVisitorFee_Click(object sender, EventArgs e) =>
+            ShowAddVisitorFeeForm(pnlMotorbikePrice);
+
+        private void btnCarVisitorFee_Click(object sender, EventArgs e) =>
+            ShowAddVisitorFeeForm(pnlCarPrice);
+
+        private void btnBicycleVisitorFee_Click(object sender, EventArgs e) =>
+            ShowAddVisitorFeeForm(pnlBicyclePrice);
+
+        private void btnMotorbikeResidentFee_Click(object sender, EventArgs e) =>
+            ShowAddResidentFeeForm(MOTORBIKE_ID);
+
+        private void btnCarResidentFee_Click(object sender, EventArgs e) =>
+            ShowAddResidentFeeForm(CAR_ID);
+
+        private void btnBicycleResidentFee_Click(object sender, EventArgs e) =>
+            ShowAddResidentFeeForm(BICYCLE_ID);
+        #endregion
 
         private void pnlTab_Resize(object sender, EventArgs e)
         {
@@ -246,295 +480,6 @@ namespace ZiTyLot.GUI.Screens
                     int id = (int)tableBicycle.Rows[e.RowIndex].Cells[0].Value;
                     DeleteResidentFee(id);
                 }
-            }
-        }
-        private void ShowAddVisitorFeeForm(Sunny.UI.UIPanel targetPanel)
-        {
-            int tabControlIndex = pnlTab.SelectedIndex;
-            AddVisitorFeeForm currentForm;
-            VisitorFee visitorFee;
-            int vehicleTypeId;
-
-            switch (tabControlIndex)
-            {
-                case 0: //Motorbike
-                    currentForm = addVisitorMotorbikeFeeForm;
-                    vehicleTypeId = MOTORBIKE_ID;
-                    visitorFee = visitorFeeMotorbike;
-                    break;
-                case 1: //Car
-                    currentForm = addVisitorCarFeeForm;
-                    vehicleTypeId = CAR_ID;
-                    visitorFee = visitorFeeCar;
-                    break;
-                case 2: //Bicycle
-                    currentForm = addVisitorBicycleFeeForm;
-                    vehicleTypeId = BICYCLE_ID;
-                    visitorFee = visitorFeeBicycle;
-                    break;
-                default:
-                    return;
-            }
-
-            ShowOrCreateForm(currentForm, vehicleTypeId, targetPanel, tabControlIndex, visitorFee);
-        }
-
-        private void ShowOrCreateForm(AddVisitorFeeForm form, int vehicleTypeId, Sunny.UI.UIPanel targetPanel, int tabIndex, VisitorFee visitorFee)
-        {
-            if (form == null || form.IsDisposed)
-            {
-                var newForm = new AddVisitorFeeForm(vehicleTypeId);
-                newForm.PricePerTurnInsertion += new EventHandler((s, args) =>
-                {
-
-                    visitorFeeCar = visitorFeeBUS
-                        .GetAll(
-                        new List<FilterCondition> {
-                            new FilterCondition("vehicle_type_id", CompOp.Equals, CAR_ID)
-                        }).FirstOrDefault() ?? null;
-                    visitorFeeMotorbike = visitorFeeBUS
-                        .GetAll(
-                        new List<FilterCondition> {
-                            new FilterCondition("vehicle_type_id", CompOp.Equals, MOTORBIKE_ID)
-                        }).FirstOrDefault() ?? null;
-                    visitorFeeBicycle = visitorFeeBUS
-                        .GetAll(
-                        new List<FilterCondition> {
-                            new FilterCondition("vehicle_type_id", CompOp.Equals, BICYCLE_ID)
-                        }).FirstOrDefault() ?? null;
-                    LoadVisitorFee();
-                });
-
-                newForm.PricePerHourTurnInsertion += new EventHandler((s, args) =>
-                {
-
-                    visitorFeeCar = visitorFeeBUS
-                        .GetAll(
-                        new List<FilterCondition> {
-                            new FilterCondition("vehicle_type_id", CompOp.Equals, CAR_ID)
-                        }).FirstOrDefault() ?? null;
-                    visitorFeeMotorbike = visitorFeeBUS
-                        .GetAll(
-                        new List<FilterCondition> {
-                            new FilterCondition("vehicle_type_id", CompOp.Equals, MOTORBIKE_ID)
-                        }).FirstOrDefault() ?? null;
-                    visitorFeeBicycle = visitorFeeBUS
-                        .GetAll(
-                        new List<FilterCondition> {
-                            new FilterCondition("vehicle_type_id", CompOp.Equals, BICYCLE_ID)
-                        }).FirstOrDefault() ?? null;
-                    LoadVisitorFee();
-                }); ;
-                newForm.PricePerPeriodInsertion += new EventHandler((s, args) =>
-                {
-
-                    visitorFeeCar = visitorFeeBUS
-                        .GetAll(
-                        new List<FilterCondition> {
-                            new FilterCondition("vehicle_type_id", CompOp.Equals, CAR_ID)
-                        }).FirstOrDefault() ?? null;
-                    visitorFeeMotorbike = visitorFeeBUS
-                        .GetAll(
-                        new List<FilterCondition> {
-                            new FilterCondition("vehicle_type_id", CompOp.Equals, MOTORBIKE_ID)
-                        }).FirstOrDefault() ?? null;
-                    visitorFeeBicycle = visitorFeeBUS
-                        .GetAll(
-                        new List<FilterCondition> {
-                            new FilterCondition("vehicle_type_id", CompOp.Equals, BICYCLE_ID)
-                        }).FirstOrDefault() ?? null;
-                    LoadVisitorFee();
-                }); ;
-                newForm.Show();
-
-                switch (tabIndex)
-                {
-                    case 0:
-                        addVisitorMotorbikeFeeForm = newForm;
-                        break;
-                    case 1:
-                        addVisitorCarFeeForm = newForm;
-                        break;
-                    case 2:
-                        addVisitorBicycleFeeForm = newForm;
-                        break;
-                }
-            }
-            else
-            {
-                if (form.WindowState == FormWindowState.Minimized)
-                {
-                    form.WindowState = FormWindowState.Normal;
-                }
-                form.BringToFront();
-            }
-        }
-        private void AddNewPricePerTurnCard(Sunny.UI.UIPanel targetPanel, VisitorFee visitorFee)
-        {
-            PricePerTurnCard pricePerTurnCard = new PricePerTurnCard(visitorFee);
-            pricePerTurnCard.Dock = DockStyle.Top;
-            pricePerTurnCard.EditButtonClicked += (s, e) => ShowAddVisitorFeeForm(targetPanel);
-            targetPanel.Controls.Clear();
-            targetPanel.Controls.Add(pricePerTurnCard);
-        }
-
-        private void AddNewPricePerHourTurnCard(Sunny.UI.UIPanel targetPanel, VisitorFee visitorFee)
-        {
-            PricePerHourTurnCard pricePerHourTurnCard = new PricePerHourTurnCard(visitorFee);
-            pricePerHourTurnCard.Dock = DockStyle.Top;
-            pricePerHourTurnCard.EditButtonClicked += (s, e) => ShowAddVisitorFeeForm(targetPanel);
-            targetPanel.Controls.Clear();
-            targetPanel.Controls.Add(pricePerHourTurnCard);
-        }
-
-        private void AddNewPricePerPeriodCard(Sunny.UI.UIPanel targetPanel, VisitorFee visitorFee)
-        {
-            PricePerPeriodCard pricePerPeriodCard = new PricePerPeriodCard(visitorFee);
-            pricePerPeriodCard.Dock = DockStyle.Top;
-            pricePerPeriodCard.EditButtonClicked += (s, e) => ShowAddVisitorFeeForm(targetPanel);
-            targetPanel.Controls.Clear();
-            targetPanel.Controls.Add(pricePerPeriodCard);
-        }
-
-        // Button click handlers specify the target panel
-        private void btnMotorbikeVisitorFee_Click(object sender, EventArgs e)
-        {
-            ShowAddVisitorFeeForm(this.pnlMotorbikePrice);
-        }
-
-        private void btnCarVisitorFee_Click(object sender, EventArgs e)
-        {
-            ShowAddVisitorFeeForm(this.pnlCarPrice);
-        }
-
-        private void btnBicycleVisitorFee_Click(object sender, EventArgs e)
-        {
-            ShowAddVisitorFeeForm(this.pnlBicyclePrice);
-        }
-
-        // Separate handlers for resident fee buttons
-        private void btnMotorbikeResidentFee_Click(object sender, EventArgs e)
-        {
-            ShowAddResidentFeeForm(MOTORBIKE_ID);
-        }
-
-        private void btnCarResidentFee_Click(object sender, EventArgs e)
-        {
-            ShowAddResidentFeeForm(CAR_ID);
-        }
-
-        private void btnBicycleResidentFee_Click(object sender, EventArgs e)
-        {
-            ShowAddResidentFeeForm(BICYCLE_ID);
-        }
-
-        private void ShowAddResidentFeeForm(int vehicleId)
-        {
-            if (addResidentFeeForm == null || addResidentFeeForm.IsDisposed)
-            {
-                addResidentFeeForm = new AddResidentFeeForm(vehicleId);
-                addResidentFeeForm.ResidentFeeInsertionEvent += new EventHandler((s, args) =>
-                {
-                    residentFees = residentFeeBUS.GetAll();
-                    LoadResidentFee();
-                });
-                addResidentFeeForm.Show();
-            }
-            else
-            {
-                addResidentFeeForm.BringToFront();
-            }
-        }
-
-        private void LoadResidentFee()
-        {
-            tableBicycle.Rows.Clear();
-            tableCar.Rows.Clear();
-            tableMotorbike.Rows.Clear();
-            foreach (ResidentFee residentFee in residentFees)
-            {
-                // Format fee in currency vietnam
-                string feeFormat = residentFee.Fee.ToString("C0", new System.Globalization.CultureInfo("vi-VN"));
-                string durationFormat = residentFee.Month != 1 ? residentFee.Month + " months" : residentFee.Month + " month";
-                switch (residentFee.Vehicle_type_id)
-                {
-                    case MOTORBIKE_ID:
-                        tableMotorbike.Rows.Add(residentFee.Id, feeFormat, durationFormat);
-                        break;
-                    case CAR_ID:
-                        tableCar.Rows.Add(residentFee.Id, feeFormat, durationFormat);
-                        break;
-                    case BICYCLE_ID:
-                        tableBicycle.Rows.Add(residentFee.Id, feeFormat, durationFormat);
-                        break;
-                }
-            }
-
-        }
-        private void LoadVisitorFee()
-        {
-            if (visitorFeeCar != null)
-            {
-                switch (visitorFeeCar.Fee_type)
-                {
-                    case FeeType.TURN:
-                        AddNewPricePerTurnCard(pnlCarPrice, visitorFeeCar);
-                        break;
-                    case FeeType.HOUR_PER_TURN:
-                        AddNewPricePerHourTurnCard(pnlCarPrice, visitorFeeCar);
-                        break;
-                    case FeeType.FIRST_N_AND_NEXT_M_HOUR:
-                        AddNewPricePerPeriodCard(pnlCarPrice, visitorFeeCar);
-                        break;
-                }
-            }
-            if (visitorFeeMotorbike != null)
-            {
-                switch (visitorFeeMotorbike.Fee_type)
-                {
-                    case FeeType.TURN:
-                        AddNewPricePerTurnCard(pnlMotorbikePrice, visitorFeeMotorbike);
-                        break;
-                    case FeeType.HOUR_PER_TURN:
-                        AddNewPricePerHourTurnCard(pnlMotorbikePrice, visitorFeeMotorbike);
-                        break;
-                    case FeeType.FIRST_N_AND_NEXT_M_HOUR:
-                        AddNewPricePerPeriodCard(pnlMotorbikePrice, visitorFeeMotorbike);
-                        break;
-                }
-            }
-            if (visitorFeeBicycle != null)
-            {
-                switch (visitorFeeBicycle.Fee_type)
-                {
-                    case FeeType.TURN:
-                        AddNewPricePerTurnCard(pnlBicyclePrice, visitorFeeBicycle);
-                        break;
-                    case FeeType.HOUR_PER_TURN:
-                        AddNewPricePerHourTurnCard(pnlBicyclePrice, visitorFeeBicycle);
-                        break;
-                    case FeeType.FIRST_N_AND_NEXT_M_HOUR:
-                        AddNewPricePerPeriodCard(pnlBicyclePrice, visitorFeeBicycle);
-                        break;
-                }
-            }
-        }
-        private void DeleteResidentFee(int id)
-        {
-            try
-            {
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this resident fee?", "Delete Resident Fee", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    residentFeeBUS.Delete(id);
-                    residentFees = residentFeeBUS.GetAll();
-                    LoadResidentFee();
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                MessageBox.Show($"An error occurred while deleting resident fee: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -590,6 +590,9 @@ namespace ZiTyLot.GUI.Screens
             this.tableMotorbike.RowTemplate.Height = 40;
             this.tableMotorbike.Size = new System.Drawing.Size(471, 368);
             this.tableMotorbike.TabIndex = 2;
+            this.tableMotorbike.Paint += table_PaintMotorbike;
+            this.tableMotorbike.CellPainting += table_CellPaintingMotorbike;
+            this.tableMotorbike.CellClick += table_CellClickMotorbike;
             // 
             // tpCar
             // 
@@ -974,6 +977,9 @@ namespace ZiTyLot.GUI.Screens
             this.tableCar.RowTemplate.Height = 40;
             this.tableCar.Size = new System.Drawing.Size(471, 368);
             this.tableCar.TabIndex = 2;
+            this.tableCar.Paint += table_PaintCar;
+            this.tableCar.CellPainting += table_CellPaintingCar;
+            this.tableCar.CellClick += table_CellClickCar;
             // 
             // tpBicycle
             // 
@@ -1367,6 +1373,9 @@ namespace ZiTyLot.GUI.Screens
             this.tableBicycle.RowTemplate.Height = 40;
             this.tableBicycle.Size = new System.Drawing.Size(471, 368);
             this.tableBicycle.TabIndex = 2;
+            this.tableBicycle.Paint += table_PaintBicycle;
+            this.tableBicycle.CellPainting += table_CellPaintingBicycle;
+            this.tableBicycle.CellClick += table_CellClickBicycle;
             // 
             // colCarID
             // 
