@@ -56,30 +56,30 @@ namespace ZiTyLot.GUI.Screens
         }
 
 
-        private void ShowAddVisitorFeeForm(Sunny.UI.UIPanel targetPanel)
+        private void ShowAddVisitorFeeForm()
         {
-            var (currentForm, vehicleTypeId, visitorFee) = GetAddFormForTab(pnlTab.SelectedIndex);
+            var (currentForm, vehicleTypeId) = GetAddFormForTab(pnlTab.SelectedIndex);
 
-            ShowOrCreateForm(currentForm, vehicleTypeId, targetPanel, pnlTab.SelectedIndex, visitorFee);
+            ShowOrCreateForm(currentForm, vehicleTypeId, pnlTab.SelectedIndex);
         }
 
-        private void ShowDetailVisitorFeeForm(Sunny.UI.UIPanel targetPanel)
+        private void ShowDetailVisitorFeeForm()
         {
 
         }
 
-        private (AddVisitorFeeForm form, int vehicleTypeId, VisitorFee visitorFee) GetAddFormForTab(int tabIndex)
+        private (AddVisitorFeeForm form, int vehicleTypeId) GetAddFormForTab(int tabIndex)
         {
             switch (tabIndex)
             {
                 case 0:
-                    return (_addVisitorMotorbikeFeeForm, MOTORBIKE_ID, _visitorFeeMotorbike);
+                    return (_addVisitorMotorbikeFeeForm, MOTORBIKE_ID);
                 case 1:
-                    return (_addVisitorCarFeeForm, CAR_ID, _visitorFeeCar);
+                    return (_addVisitorCarFeeForm, CAR_ID);
                 case 2:
-                    return (_addVisitorBicycleFeeForm, BICYCLE_ID, _visitorFeeBicycle);
+                    return (_addVisitorBicycleFeeForm, BICYCLE_ID);
                 default:
-                    return (null, 0, null);
+                    return (null, 0);
             }
         }
 
@@ -98,8 +98,7 @@ namespace ZiTyLot.GUI.Screens
         //    }
         //}
 
-        private void ShowOrCreateForm(AddVisitorFeeForm form, int vehicleTypeId, Sunny.UI.UIPanel targetPanel,
-            int tabIndex, VisitorFee visitorFee)
+        private void ShowOrCreateForm(AddVisitorFeeForm form, int vehicleTypeId, int tabIndex)
         {
             if (form == null || form.IsDisposed)
             {
@@ -172,7 +171,7 @@ namespace ZiTyLot.GUI.Screens
         {
             PricePerTurnCard pricePerTurnCard = new PricePerTurnCard(visitorFee);
             pricePerTurnCard.Dock = DockStyle.Top;
-            pricePerTurnCard.EditButtonClicked += (s, e) => ShowAddVisitorFeeForm(targetPanel);
+            pricePerTurnCard.EditButtonClicked += (s, e) => ShowAddVisitorFeeForm();
             targetPanel.Controls.Clear();
             targetPanel.Controls.Add(pricePerTurnCard);
         }
@@ -181,7 +180,7 @@ namespace ZiTyLot.GUI.Screens
         {
             PricePerHourTurnCard pricePerHourTurnCard = new PricePerHourTurnCard(visitorFee);
             pricePerHourTurnCard.Dock = DockStyle.Top;
-            pricePerHourTurnCard.EditButtonClicked += (s, e) => ShowAddVisitorFeeForm(targetPanel);
+            pricePerHourTurnCard.EditButtonClicked += (s, e) => ShowAddVisitorFeeForm();
             targetPanel.Controls.Clear();
             targetPanel.Controls.Add(pricePerHourTurnCard);
         }
@@ -190,24 +189,9 @@ namespace ZiTyLot.GUI.Screens
         {
             PricePerPeriodCard pricePerPeriodCard = new PricePerPeriodCard(visitorFee);
             pricePerPeriodCard.Dock = DockStyle.Top;
-            pricePerPeriodCard.EditButtonClicked += (s, e) => ShowAddVisitorFeeForm(targetPanel);
+            pricePerPeriodCard.EditButtonClicked += (s, e) => ShowAddVisitorFeeForm();
             targetPanel.Controls.Clear();
             targetPanel.Controls.Add(pricePerPeriodCard);
-        }
-
-        private Sunny.UI.UIPanel GetTargetPanelForVehicle(int vehicleTypeId)
-        {
-            switch (vehicleTypeId)
-            {
-                case CAR_ID:
-                    return pnlCarPrice;
-                case MOTORBIKE_ID:
-                    return pnlMotorbikePrice;
-                case BICYCLE_ID:
-                    return pnlBicyclePrice;
-                default:
-                    return null;
-            }
         }
 
         private void LoadVisitorFee()
@@ -309,14 +293,11 @@ namespace ZiTyLot.GUI.Screens
         }
 
         #region Event Handlers
-        private void btnMotorbikeVisitorFee_Click(object sender, EventArgs e) =>
-            ShowAddVisitorFeeForm(pnlMotorbikePrice);
+        private void btnMotorbikeVisitorFee_Click(object sender, EventArgs e) => ShowAddVisitorFeeForm();
 
-        private void btnCarVisitorFee_Click(object sender, EventArgs e) =>
-            ShowAddVisitorFeeForm(pnlCarPrice);
+        private void btnCarVisitorFee_Click(object sender, EventArgs e) => ShowAddVisitorFeeForm();
 
-        private void btnBicycleVisitorFee_Click(object sender, EventArgs e) =>
-            ShowAddVisitorFeeForm(pnlBicyclePrice);
+        private void btnBicycleVisitorFee_Click(object sender, EventArgs e) => ShowAddVisitorFeeForm();
 
         private void btnMotorbikeResidentFee_Click(object sender, EventArgs e) =>
             ShowAddResidentFeeForm(MOTORBIKE_ID);
