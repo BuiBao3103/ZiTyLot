@@ -15,21 +15,21 @@ using ZiTyLot.GUI.Utils;
 
 namespace ZiTyLot.GUI.Screens.PriceScr
 {
-    public partial class AddVisitorFeeForm : Form
+    public partial class DetailVisitorFeeForm : Form
     {
         private readonly VehicleTypeBUS vehicleTypeBUS = new VehicleTypeBUS();
         private readonly VisitorFeeBUS visitorFeeBUS = new VisitorFeeBUS();
         private readonly VehicleType vehicleType;
 
 
-        public AddVisitorFeeForm(int vehicle_id)
+        public DetailVisitorFeeForm(int vehicle_id)
         {
             InitializeComponent();
             this.CenterToScreen();
             vehicleType = vehicleTypeBUS.GetById(vehicle_id);
 
-            this.Text = "Add Visitor Fee for " + vehicleType.Name;
-            lbVehicleType.Text = "Add Visitor Fee for " + vehicleType.Name;
+            //this.Text = residentFee.Id + " - Detailed visitor fee for " + vehicleType.Name;
+            lbVehicleType.Text = vehicleType.Name;
         }
 
         private void PriceDetailForm_Load(object sender, EventArgs e)

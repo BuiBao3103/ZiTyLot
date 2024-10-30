@@ -33,6 +33,7 @@ namespace ZiTyLot.GUI.Screens
         private AddVisitorFeeForm _addVisitorMotorbikeFeeForm;
         private AddVisitorFeeForm _addVisitorBicycleFeeForm;
         private DetailResidentFeeForm _detailResidentFeeForm;
+        private DetailVisitorFeeForm _detailVisitorFeeForm;
         public PriceControl()
         {
             InitializeComponent();
@@ -57,13 +58,17 @@ namespace ZiTyLot.GUI.Screens
 
         private void ShowAddVisitorFeeForm(Sunny.UI.UIPanel targetPanel)
         {
-            var (currentForm, vehicleTypeId, visitorFee) = GetFormDetailsForTab(pnlTab.SelectedIndex);
-            //if (currentForm == null) return;
+            var (currentForm, vehicleTypeId, visitorFee) = GetAddFormForTab(pnlTab.SelectedIndex);
 
             ShowOrCreateForm(currentForm, vehicleTypeId, targetPanel, pnlTab.SelectedIndex, visitorFee);
         }
 
-        private (AddVisitorFeeForm form, int vehicleTypeId, VisitorFee visitorFee) GetFormDetailsForTab(int tabIndex)
+        private void ShowDetailVisitorFeeForm(Sunny.UI.UIPanel targetPanel)
+        {
+
+        }
+
+        private (AddVisitorFeeForm form, int vehicleTypeId, VisitorFee visitorFee) GetAddFormForTab(int tabIndex)
         {
             switch (tabIndex)
             {
@@ -77,6 +82,21 @@ namespace ZiTyLot.GUI.Screens
                     return (null, 0, null);
             }
         }
+
+        //private (DetailVisitorFeeForm form, int vehicleTypeId, VisitorFee visitorFee) GetDetailFormForTab(int tabIndex)
+        //{
+        //    switch (tabIndex)
+        //    {
+        //        case 0:
+        //            return (_addVisitorMotorbikeFeeForm, MOTORBIKE_ID, _visitorFeeMotorbike);
+        //        case 1:
+        //            return (_addVisitorCarFeeForm, CAR_ID, _visitorFeeCar);
+        //        case 2:
+        //            return (_addVisitorBicycleFeeForm, BICYCLE_ID, _visitorFeeBicycle);
+        //        default:
+        //            return (null, 0, null);
+        //    }
+        //}
 
         private void ShowOrCreateForm(AddVisitorFeeForm form, int vehicleTypeId, Sunny.UI.UIPanel targetPanel,
             int tabIndex, VisitorFee visitorFee)
@@ -244,8 +264,14 @@ namespace ZiTyLot.GUI.Screens
 
         private void ShowDetailResidentFeeForm(int residentFeeId)
         {
-            if(_detailResidentFeeForm == null || _detailResidentFeeForm.IsDisposed)
+            if (_detailResidentFeeForm != null && residentFeeId != _detailResidentFeeForm.residentFee.Id)
             {
+                _detailResidentFeeForm.Close();
+            }
+
+            if (_detailResidentFeeForm == null || _detailResidentFeeForm.IsDisposed)
+            {
+
                 _detailResidentFeeForm = new DetailResidentFeeForm(residentFeeId);
                 _detailResidentFeeForm.ResidentFeeUpdateEvent += (s, args) =>
                 {

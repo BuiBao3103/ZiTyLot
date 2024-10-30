@@ -19,7 +19,7 @@ namespace ZiTyLot.GUI.Screens.PriceScr
         private readonly VehicleTypeBUS vehicleTypeBUS = new VehicleTypeBUS();
         private readonly ResidentFeeBUS residentFeeBUS = new ResidentFeeBUS();
         private static readonly List<int> INIT_DURATION = new List<int> { 1, 2, 3, 6, 9, 12 };
-        private readonly ResidentFee residentFee;
+        public readonly ResidentFee residentFee;
 
         public event EventHandler ResidentFeeUpdateEvent;
         public DetailResidentFeeForm(int residentFeeId)
@@ -48,8 +48,8 @@ namespace ZiTyLot.GUI.Screens.PriceScr
 
 
             //initialize fee title
-            this.Text = "Detail resident Fee for " + vehicleType.Name;
-            lbVehicleType.Text = vehicleType.Name;
+            this.Text = residentFee.Id + " - Detailed resident fee for " + vehicleType.Name;
+            lbVehicleType.Text = residentFee.Id + " - Detailed resident fee for " + vehicleType.Name;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

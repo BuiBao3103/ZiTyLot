@@ -41,8 +41,8 @@ namespace ZiTyLot.GUI.Screens.PriceScr
             }
             cbDuration.SelectedIndex = 0;
             //initialize fee title
-            this.Text = "Add resident Fee for " + vehicleType.Name;
-            lbVehicleType.Text = vehicleType.Name;
+            this.Text = "Add Resident Fee for " + vehicleType.Name;
+            lbVehicleType.Text = "Add Resident Fee for " + vehicleType.Name;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
