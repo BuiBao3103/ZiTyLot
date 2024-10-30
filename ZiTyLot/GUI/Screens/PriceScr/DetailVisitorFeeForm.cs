@@ -19,17 +19,19 @@ namespace ZiTyLot.GUI.Screens.PriceScr
     {
         private readonly VehicleTypeBUS vehicleTypeBUS = new VehicleTypeBUS();
         private readonly VisitorFeeBUS visitorFeeBUS = new VisitorFeeBUS();
-        private readonly VehicleType vehicleType;
+        private readonly VisitorFee visitorFee;
 
+        public event EventHandler VistorFeeUpdateEvent;
 
-        public DetailVisitorFeeForm(int vehicle_id)
+        public DetailVisitorFeeForm(int visitorFeeId)
         {
             InitializeComponent();
             this.CenterToScreen();
-            vehicleType = vehicleTypeBUS.GetById(vehicle_id);
+            visitorFee = visitorFeeBUS.GetById(visitorFeeId);
+            visitorFee = visitorFeeBUS.PopulateVehicleType(visitorFee);
 
             //this.Text = residentFee.Id + " - Detailed visitor fee for " + vehicleType.Name;
-            lbVehicleType.Text = vehicleType.Name;
+            lbVehicleType.Text = visitorFee.Vehicle_type.Name;
         }
 
         private void PriceDetailForm_Load(object sender, EventArgs e)
@@ -43,105 +45,105 @@ namespace ZiTyLot.GUI.Screens.PriceScr
 
         private void btnConfirmPT_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (double.TryParse(tbDayFeePT.Text, out double dayFee) &&
-                    double.TryParse(tbNightFeePT.Text, out double nightFee))
-                {
-                    VisitorFee visitorFee = new VisitorFee()
-                    {
-                        Fee_type = FeeType.TURN,
-                        Day_fee = dayFee,
-                        Night_fee = nightFee,
-                        Vehicle_type_id = vehicleType.Id
-                    };
-                    visitorFeeBUS.Add(visitorFee);
-                    PricePerTurnInsertion?.Invoke(this, EventArgs.Empty);
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid fee input. Please enter a valid number for fees.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                MessageBox.Show("An error occurred while adding visitor fee", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //try
+            //{
+            //    if (double.TryParse(tbDayFeePT.Text, out double dayFee) &&
+            //        double.TryParse(tbNightFeePT.Text, out double nightFee))
+            //    {
+            //        VisitorFee visitorFee = new VisitorFee()
+            //        {
+            //            Fee_type = FeeType.TURN,
+            //            Day_fee = dayFee,
+            //            Night_fee = nightFee,
+            //            Vehicle_type_id = vehicleType.Id
+            //        };
+            //        visitorFeeBUS.Add(visitorFee);
+            //        PricePerTurnInsertion?.Invoke(this, EventArgs.Empty);
+            //        this.Close();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Invalid fee input. Please enter a valid number for fees.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //    MessageBox.Show("An error occurred while adding visitor fee", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
 
         private void btnConfirmPHT_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (double.TryParse(tbDayFeePHT.Text, out double dayFee) &&
-                   double.TryParse(tbNightFeePHT.Text, out double nightFee) &&
-                   int.TryParse(tbHourPHT.Text, out int hour))
-                {
-                    VisitorFee visitorFee = new VisitorFee()
-                    {
-                        Fee_type = FeeType.HOUR_PER_TURN,
-                        Day_fee = dayFee,
-                        Night_fee = nightFee,
-                        Hours_per_turn = hour,
-                        Vehicle_type_id = vehicleType.Id
-                    };
-                    visitorFeeBUS.Add(visitorFee);
-                    PricePerHourTurnInsertion?.Invoke(this, EventArgs.Empty);
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid fee input. Please enter a valid number for fees and hours.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                MessageBox.Show("An error occurred while adding visitor fee", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //try
+            //{
+            //    if (double.TryParse(tbDayFeePHT.Text, out double dayFee) &&
+            //       double.TryParse(tbNightFeePHT.Text, out double nightFee) &&
+            //       int.TryParse(tbHourPHT.Text, out int hour))
+            //    {
+            //        VisitorFee visitorFee = new VisitorFee()
+            //        {
+            //            Fee_type = FeeType.HOUR_PER_TURN,
+            //            Day_fee = dayFee,
+            //            Night_fee = nightFee,
+            //            Hours_per_turn = hour,
+            //            Vehicle_type_id = vehicleType.Id
+            //        };
+            //        visitorFeeBUS.Add(visitorFee);
+            //        PricePerHourTurnInsertion?.Invoke(this, EventArgs.Empty);
+            //        this.Close();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Invalid fee input. Please enter a valid number for fees and hours.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //    MessageBox.Show("An error occurred while adding visitor fee", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void btnConfirmPeriod_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (double.TryParse(tbFeeFirstPeriod.Text, out double firstFee) &&
-                   double.TryParse(tbFeeNextPeriod.Text, out double nextFee) &&
-                   int.TryParse(tbHourFirstPeriod.Text, out int firstHour) &&
-                   int.TryParse(tbHourNextPeriod.Text, out int nextHour))
-                {
-                    Console.WriteLine(firstFee);
-                    Console.WriteLine(nextFee);
-                    Console.WriteLine(firstHour);
-                    Console.WriteLine(nextHour);
+            //try
+            //{
+            //    if (double.TryParse(tbFeeFirstPeriod.Text, out double firstFee) &&
+            //       double.TryParse(tbFeeNextPeriod.Text, out double nextFee) &&
+            //       int.TryParse(tbHourFirstPeriod.Text, out int firstHour) &&
+            //       int.TryParse(tbHourNextPeriod.Text, out int nextHour))
+            //    {
+            //        Console.WriteLine(firstFee);
+            //        Console.WriteLine(nextFee);
+            //        Console.WriteLine(firstHour);
+            //        Console.WriteLine(nextHour);
 
-                    VisitorFee visitorFee = new VisitorFee()
-                    {
-                        Fee_type = FeeType.FIRST_N_AND_NEXT_M_HOUR,
-                        First_n_hours_fee = firstFee,
-                        Additional_m_hours_fee = nextFee,
-                        N_hours = firstHour,
-                        M_hours = nextHour,
-                        Vehicle_type_id = vehicleType.Id
-                    };
-                    visitorFeeBUS.Add(visitorFee);
-                    PricePerPeriodInsertion?.Invoke(this, EventArgs.Empty);
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid fee input. Please enter a valid number for fees and hours.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+            //        VisitorFee visitorFee = new VisitorFee()
+            //        {
+            //            Fee_type = FeeType.FIRST_N_AND_NEXT_M_HOUR,
+            //            First_n_hours_fee = firstFee,
+            //            Additional_m_hours_fee = nextFee,
+            //            N_hours = firstHour,
+            //            M_hours = nextHour,
+            //            Vehicle_type_id = vehicleType.Id
+            //        };
+            //        visitorFeeBUS.Add(visitorFee);
+            //        PricePerPeriodInsertion?.Invoke(this, EventArgs.Empty);
+            //        this.Close();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Invalid fee input. Please enter a valid number for fees and hours.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    }
 
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                MessageBox.Show("An error occurred while adding visitor fee", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //    MessageBox.Show("An error occurred while adding visitor fee", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void btnCancelPT_Click(object sender, EventArgs e)

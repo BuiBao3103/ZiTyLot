@@ -105,26 +105,44 @@ namespace ZiTyLot.GUI.Screens
                     return (null, 0);
             }
         }
-
-        //private (DetailVisitorFeeForm form, int vehicleTypeId, VisitorFee visitorFee) GetDetailFormForTab(int tabIndex)
-        //{
-        //    switch (tabIndex)
-        //    {
-        //        case 0:
-        //            return (_addVisitorMotorbikeFeeForm, MOTORBIKE_ID, _visitorFeeMotorbike);
-        //        case 1:
-        //            return (_addVisitorCarFeeForm, CAR_ID, _visitorFeeCar);
-        //        case 2:
-        //            return (_addVisitorBicycleFeeForm, BICYCLE_ID, _visitorFeeBicycle);
-        //        default:
-        //            return (null, 0, null);
-        //    }
-        //}
-
-        private void ShowOrCreateForm(AddVisitorFeeForm form, int vehicleTypeId, int tabIndex)
+        private void ShowDetailVisitorFeeForm()
         {
-            
+            if (_detailVisitorFeeForm != null && !_detailVisitorFeeForm.IsDisposed)
+            {
+                _detailVisitorFeeForm.Close();
+            }
+            if (_detailVisitorFeeForm == null || _detailVisitorFeeForm.IsDisposed)
+            {
+                VisitorFee visitorFee;
+                switch (pnlTab.SelectedIndex)
+                {
+                    case 0:
+                        visitorFee = _visitorFeeMotorbike;
+                        break;
+                    case 1:
+                        visitorFee = _visitorFeeCar;
+                        break;
+                    case 2:
+                        visitorFee = _visitorFeeBicycle;
+                        break;
+                    default:
+                        return;
+                }
+                _detailVisitorFeeForm = new DetailVisitorFeeForm(visitorFee.Id);
+                _detailVisitorFeeForm.VistorFeeUpdateEvent += (s, args) => RefreshVisitorFees();
+                _detailVisitorFeeForm.Show();
+            }
+            else
+            {
+                if (_detailVisitorFeeForm.WindowState == FormWindowState.Minimized)
+                {
+                    _detailVisitorFeeForm.WindowState = FormWindowState.Normal;
+                }
+                _detailVisitorFeeForm.BringToFront();
+            }
         }
+
+
 
         private void RefreshVisitorFees()
         {
@@ -154,7 +172,7 @@ namespace ZiTyLot.GUI.Screens
         {
             PricePerTurnCard pricePerTurnCard = new PricePerTurnCard(visitorFee);
             pricePerTurnCard.Dock = DockStyle.Top;
-            pricePerTurnCard.EditButtonClicked += (s, e) => ShowAddVisitorFeeForm();
+            pricePerTurnCard.EditButtonClicked += (s, e) => ShowDetailVisitorFeeForm();
             targetPanel.Controls.Clear();
             targetPanel.Controls.Add(pricePerTurnCard);
         }
@@ -163,7 +181,7 @@ namespace ZiTyLot.GUI.Screens
         {
             PricePerHourTurnCard pricePerHourTurnCard = new PricePerHourTurnCard(visitorFee);
             pricePerHourTurnCard.Dock = DockStyle.Top;
-            pricePerHourTurnCard.EditButtonClicked += (s, e) => ShowAddVisitorFeeForm();
+            pricePerHourTurnCard.EditButtonClicked += (s, e) => ShowDetailVisitorFeeForm();
             targetPanel.Controls.Clear();
             targetPanel.Controls.Add(pricePerHourTurnCard);
         }
@@ -172,7 +190,7 @@ namespace ZiTyLot.GUI.Screens
         {
             PricePerPeriodCard pricePerPeriodCard = new PricePerPeriodCard(visitorFee);
             pricePerPeriodCard.Dock = DockStyle.Top;
-            pricePerPeriodCard.EditButtonClicked += (s, e) => ShowAddVisitorFeeForm();
+            pricePerPeriodCard.EditButtonClicked += (s, e) => ShowDetailVisitorFeeForm();
             targetPanel.Controls.Clear();
             targetPanel.Controls.Add(pricePerPeriodCard);
         }
