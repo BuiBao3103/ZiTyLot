@@ -229,6 +229,12 @@
     <Compile Include="GUI\Screens\PriceScr\DetailResidentFeeForm.Designer.cs">
       <DependentUpon>DetailResidentFeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Screens\RoleScr\RoleCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\RoleScr\RoleCreateForm.Designer.cs">
+      <DependentUpon>RoleCreateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Utils\InputFormatter.cs" />
     <Compile Include="GUI\Utils\InputValidator.cs" />
     <Compile Include="GUI\component-extensions\RoundedBorder.cs" />
@@ -525,6 +531,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\ResidentScr\ResidentDetailForm.resx">
       <DependentUpon>ResidentDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\RoleScr\RoleCreateForm.resx">
+      <DependentUpon>RoleCreateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\RoleScr\RoleDetailForm.resx">
       <DependentUpon>RoleDetailForm.cs</DependentUpon>

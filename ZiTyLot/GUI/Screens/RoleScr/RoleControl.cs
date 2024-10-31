@@ -134,8 +134,8 @@ namespace ZiTyLot.GUI.Screens
 
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
-            RoleDetailForm roleDetailForm = new RoleDetailForm();
-            roleDetailForm.Show();
+            RoleCreateForm roleCreateForm = new RoleCreateForm();
+            roleCreateForm.Show();
         }
 
         private void LoadDataToTable()
