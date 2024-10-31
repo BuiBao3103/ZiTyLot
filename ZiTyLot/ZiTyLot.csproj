@@ -600,13 +600,16 @@
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_CheckOutCamera.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Close.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Delete.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Download.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Edit.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Empty-Active.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Empty.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Export-41.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Export.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Female-Active.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Female.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Filter.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Import-42.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Import.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Lock-Active.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Lock.png" />
@@ -619,6 +622,7 @@
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Plus-Black.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Plus.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Previous.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Remove.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Resident-Active.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Resident.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Setting.png" />

@@ -193,6 +193,16 @@ namespace ZiTyLot.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Download {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icon_18x18px_Edit {
             get {
                 object obj = ResourceManager.GetObject("Icon-18x18px_Edit", resourceCulture);
@@ -233,6 +243,16 @@ namespace ZiTyLot.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Export_41 {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Export-41", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icon_18x18px_Female {
             get {
                 object obj = ResourceManager.GetObject("Icon-18x18px_Female", resourceCulture);
@@ -266,6 +286,16 @@ namespace ZiTyLot.Properties {
         internal static System.Drawing.Bitmap Icon_18x18px_Import {
             get {
                 object obj = ResourceManager.GetObject("Icon-18x18px_Import", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Import_42 {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Import-42", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
