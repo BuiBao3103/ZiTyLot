@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
+using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens.SessionScr;
 
 namespace ZiTyLot.GUI.Screens.LostCardScr
@@ -16,7 +17,6 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
     {
         public LostCardControl()
         {
-            this.pnlTop.Height = 54;
             InitializeComponent();
             this.tableLostCard.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
             this.tableLostCard.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
@@ -90,6 +90,35 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
                     tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 130);
                     break;
             }
+        }
+
+        private void TopPnl_Resize(object sender, EventArgs e)
+        {
+            pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
+        }
+
+        private void BottomPnl_Resize(object sender, EventArgs e)
+        {
+            pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
+        }
+
+        private void LostCardControl_Load(object sender, EventArgs e)
+        {
+            this.pnlTop.Height = 54;
+            this.pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
+            this.pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
+        }
+
+        private void btnFilter_Click_1(object sender, EventArgs e)
+        {
+            if (pnlTop.Height == 54)
+            {
+                pnlTop.Height = 108;
+            }
+            else
+            {
+                pnlTop.Height = 54;
+            }   
         }
     }
 

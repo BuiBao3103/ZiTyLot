@@ -593,6 +593,26 @@ namespace ZiTyLot.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_LostCard {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_LostCard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_24x24px_LostCard_Active {
+            get {
+                object obj = ResourceManager.GetObject("Icon-24x24px_LostCard-Active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icon_24x24px_Price {
             get {
                 object obj = ResourceManager.GetObject("Icon-24x24px_Price", resourceCulture);

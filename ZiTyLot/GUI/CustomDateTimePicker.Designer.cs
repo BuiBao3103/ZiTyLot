@@ -120,7 +120,7 @@
             this.uiPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel7.FillColor = System.Drawing.Color.White;
             this.uiPanel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel7.Location = new System.Drawing.Point(4, 419);
+            this.uiPanel7.Location = new System.Drawing.Point(4, 415);
             this.uiPanel7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel7.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel7.Name = "uiPanel7";
@@ -128,7 +128,7 @@
             this.uiPanel7.Radius = 10;
             this.uiPanel7.RectColor = System.Drawing.Color.White;
             this.uiPanel7.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel7.Size = new System.Drawing.Size(484, 44);
+            this.uiPanel7.Size = new System.Drawing.Size(484, 48);
             this.uiPanel7.TabIndex = 19;
             this.uiPanel7.Text = null;
             this.uiPanel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -139,7 +139,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(234, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(120, 34);
+            this.panel1.Size = new System.Drawing.Size(120, 38);
             this.panel1.TabIndex = 10;
             // 
             // btnCancel
@@ -156,13 +156,13 @@
             this.btnCancel.Margin = new System.Windows.Forms.Padding(0);
             this.btnCancel.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCancel.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnCancel.RectDisableColor = System.Drawing.Color.White;
             this.btnCancel.RectHoverColor = System.Drawing.Color.White;
             this.btnCancel.RectPressColor = System.Drawing.Color.White;
             this.btnCancel.RectSelectedColor = System.Drawing.Color.White;
             this.btnCancel.RectSize = 2;
-            this.btnCancel.Size = new System.Drawing.Size(120, 34);
+            this.btnCancel.Size = new System.Drawing.Size(120, 38);
             this.btnCancel.Symbol = 0;
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
@@ -176,7 +176,7 @@
             this.panel4.Location = new System.Drawing.Point(354, 5);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel4.Size = new System.Drawing.Size(130, 34);
+            this.panel4.Size = new System.Drawing.Size(130, 38);
             this.panel4.TabIndex = 9;
             // 
             // btnConfirm
@@ -192,7 +192,6 @@
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(0);
             this.btnConfirm.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Padding = new System.Windows.Forms.Padding(14, 0, 12, 0);
             this.btnConfirm.Radius = 10;
             this.btnConfirm.RectColor = System.Drawing.Color.White;
             this.btnConfirm.RectDisableColor = System.Drawing.Color.White;
@@ -200,7 +199,7 @@
             this.btnConfirm.RectPressColor = System.Drawing.Color.White;
             this.btnConfirm.RectSelectedColor = System.Drawing.Color.White;
             this.btnConfirm.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnConfirm.Size = new System.Drawing.Size(120, 34);
+            this.btnConfirm.Size = new System.Drawing.Size(120, 38);
             this.btnConfirm.Symbol = 0;
             this.btnConfirm.TabIndex = 3;
             this.btnConfirm.Text = "Confirm";
@@ -217,12 +216,12 @@
             this.uiTableLayoutPanel3.Controls.Add(this.uiPanel9, 1, 0);
             this.uiTableLayoutPanel3.Controls.Add(this.uiPanel10, 0, 0);
             this.uiTableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiTableLayoutPanel3.Location = new System.Drawing.Point(3, 237);
+            this.uiTableLayoutPanel3.Location = new System.Drawing.Point(3, 235);
             this.uiTableLayoutPanel3.Name = "uiTableLayoutPanel3";
             this.uiTableLayoutPanel3.RowCount = 1;
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 174F));
-            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(239, 174);
+            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(239, 172);
             this.uiTableLayoutPanel3.TabIndex = 21;
             this.uiTableLayoutPanel3.TagString = null;
             // 
@@ -239,7 +238,7 @@
             this.uiPanel8.Padding = new System.Windows.Forms.Padding(0, 10, 5, 10);
             this.uiPanel8.Radius = 0;
             this.uiPanel8.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel8.Size = new System.Drawing.Size(73, 164);
+            this.uiPanel8.Size = new System.Drawing.Size(73, 162);
             this.uiPanel8.TabIndex = 2;
             this.uiPanel8.Text = null;
             this.uiPanel8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -267,7 +266,7 @@
             this.listAmPmFrom.ScrollBarColor = System.Drawing.Color.White;
             this.listAmPmFrom.ScrollBarStyleInherited = false;
             this.listAmPmFrom.ShowText = false;
-            this.listAmPmFrom.Size = new System.Drawing.Size(68, 144);
+            this.listAmPmFrom.Size = new System.Drawing.Size(68, 142);
             this.listAmPmFrom.TabIndex = 3;
             this.listAmPmFrom.Text = "uiListBox3";
             // 
@@ -284,7 +283,7 @@
             this.uiPanel9.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.uiPanel9.Radius = 0;
             this.uiPanel9.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel9.Size = new System.Drawing.Size(71, 164);
+            this.uiPanel9.Size = new System.Drawing.Size(71, 162);
             this.uiPanel9.TabIndex = 1;
             this.uiPanel9.Text = null;
             this.uiPanel9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -370,7 +369,7 @@
             this.listMinuteFrom.ScrollBarColor = System.Drawing.Color.White;
             this.listMinuteFrom.ScrollBarStyleInherited = false;
             this.listMinuteFrom.ShowText = false;
-            this.listMinuteFrom.Size = new System.Drawing.Size(71, 144);
+            this.listMinuteFrom.Size = new System.Drawing.Size(71, 142);
             this.listMinuteFrom.TabIndex = 3;
             this.listMinuteFrom.Text = "uiListBox2";
             // 
@@ -387,7 +386,7 @@
             this.uiPanel10.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.uiPanel10.Radius = 0;
             this.uiPanel10.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel10.Size = new System.Drawing.Size(71, 164);
+            this.uiPanel10.Size = new System.Drawing.Size(71, 162);
             this.uiPanel10.TabIndex = 0;
             this.uiPanel10.Text = null;
             this.uiPanel10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -425,7 +424,7 @@
             this.listHourFrom.ScrollBarColor = System.Drawing.Color.White;
             this.listHourFrom.ScrollBarStyleInherited = false;
             this.listHourFrom.ShowText = false;
-            this.listHourFrom.Size = new System.Drawing.Size(71, 144);
+            this.listHourFrom.Size = new System.Drawing.Size(71, 142);
             this.listHourFrom.TabIndex = 3;
             this.listHourFrom.Text = "uiListBox1";
             // 
@@ -450,7 +449,7 @@
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.uiTableLayoutPanel1.Size = new System.Drawing.Size(492, 468);
             this.uiTableLayoutPanel1.TabIndex = 0;
             this.uiTableLayoutPanel1.TagString = null;
@@ -465,12 +464,12 @@
             this.uiTableLayoutPanel2.Controls.Add(this.uiPanel11, 1, 0);
             this.uiTableLayoutPanel2.Controls.Add(this.uiPanel12, 0, 0);
             this.uiTableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiTableLayoutPanel2.Location = new System.Drawing.Point(249, 237);
+            this.uiTableLayoutPanel2.Location = new System.Drawing.Point(249, 235);
             this.uiTableLayoutPanel2.Name = "uiTableLayoutPanel2";
             this.uiTableLayoutPanel2.RowCount = 1;
             this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 174F));
-            this.uiTableLayoutPanel2.Size = new System.Drawing.Size(240, 174);
+            this.uiTableLayoutPanel2.Size = new System.Drawing.Size(240, 172);
             this.uiTableLayoutPanel2.TabIndex = 25;
             this.uiTableLayoutPanel2.TagString = null;
             // 
@@ -487,7 +486,7 @@
             this.uiPanel6.Padding = new System.Windows.Forms.Padding(0, 10, 5, 10);
             this.uiPanel6.Radius = 0;
             this.uiPanel6.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel6.Size = new System.Drawing.Size(72, 164);
+            this.uiPanel6.Size = new System.Drawing.Size(72, 162);
             this.uiPanel6.TabIndex = 2;
             this.uiPanel6.Text = null;
             this.uiPanel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -515,7 +514,7 @@
             this.listAmPmTo.ScrollBarColor = System.Drawing.Color.White;
             this.listAmPmTo.ScrollBarStyleInherited = false;
             this.listAmPmTo.ShowText = false;
-            this.listAmPmTo.Size = new System.Drawing.Size(67, 144);
+            this.listAmPmTo.Size = new System.Drawing.Size(67, 142);
             this.listAmPmTo.TabIndex = 3;
             this.listAmPmTo.Text = "uiListBox3";
             // 
@@ -532,7 +531,7 @@
             this.uiPanel11.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.uiPanel11.Radius = 0;
             this.uiPanel11.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel11.Size = new System.Drawing.Size(72, 164);
+            this.uiPanel11.Size = new System.Drawing.Size(72, 162);
             this.uiPanel11.TabIndex = 1;
             this.uiPanel11.Text = null;
             this.uiPanel11.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -618,7 +617,7 @@
             this.listMinuteTo.ScrollBarColor = System.Drawing.Color.White;
             this.listMinuteTo.ScrollBarStyleInherited = false;
             this.listMinuteTo.ShowText = false;
-            this.listMinuteTo.Size = new System.Drawing.Size(72, 144);
+            this.listMinuteTo.Size = new System.Drawing.Size(72, 142);
             this.listMinuteTo.TabIndex = 3;
             this.listMinuteTo.Text = "uiListBox5";
             // 
@@ -635,7 +634,7 @@
             this.uiPanel12.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.uiPanel12.Radius = 0;
             this.uiPanel12.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel12.Size = new System.Drawing.Size(72, 164);
+            this.uiPanel12.Size = new System.Drawing.Size(72, 162);
             this.uiPanel12.TabIndex = 0;
             this.uiPanel12.Text = null;
             this.uiPanel12.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -673,7 +672,7 @@
             this.listHourTo.ScrollBarColor = System.Drawing.Color.White;
             this.listHourTo.ScrollBarStyleInherited = false;
             this.listHourTo.ShowText = false;
-            this.listHourTo.Size = new System.Drawing.Size(72, 144);
+            this.listHourTo.Size = new System.Drawing.Size(72, 142);
             this.listHourTo.TabIndex = 3;
             this.listHourTo.Text = "uiListBox1";
             // 
@@ -731,7 +730,7 @@
             this.uiPanel2.Radius = 0;
             this.uiPanel2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiTableLayoutPanel1.SetRowSpan(this.uiPanel2, 3);
-            this.uiPanel2.Size = new System.Drawing.Size(1, 414);
+            this.uiPanel2.Size = new System.Drawing.Size(1, 410);
             this.uiPanel2.TabIndex = 22;
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;

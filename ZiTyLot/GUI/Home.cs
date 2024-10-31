@@ -9,6 +9,7 @@ using System.Linq;
 using System.Windows.Forms;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens;
+using ZiTyLot.GUI.Screens.LostCardScr;
 
 namespace ZiTyLot.GUI
 {
@@ -71,7 +72,7 @@ namespace ZiTyLot.GUI
         {
             panelMapping = new Dictionary<string, UserControl>
             {
-                //{ "LostHistoryManagement", new LostControl() },
+                { "LostCardManagement", new LostCardControl()},
                 { "AccountManagement", new AccountControl() },
                 { "BillManagement", new BillControl() },
                 { "ResidentManagement", new ResidentControl() },
@@ -94,6 +95,7 @@ namespace ZiTyLot.GUI
         {
             var iconDictionary = new Dictionary<string, Image>
     {
+        { "LostCardManagement", isActive ? ZiTyLot.Properties.Resources.Icon_24x24px_LostCard_Active : ZiTyLot.Properties.Resources.Icon_24x24px_LostCard },
         { "PriceManagement", isActive ? ZiTyLot.Properties.Resources.Icon_24x24px_Price_Active : ZiTyLot.Properties.Resources.Icon_24x24px_Price },
         { "RoleManagement", isActive ? ZiTyLot.Properties.Resources.Icon_24x24px_Role_Active : ZiTyLot.Properties.Resources.Icon_24x24px_Role },
         { "AccountManagement", isActive ? ZiTyLot.Properties.Resources.Icon_24x24px_Account_Active : ZiTyLot.Properties.Resources.Icon_24x24px_Account },
@@ -114,7 +116,7 @@ namespace ZiTyLot.GUI
         {
             var menuItems = new[]
             {
-                //new { Name = "LostHistoryManagement", Text = "Lost History"},
+                new { Name = "LostCardManagement", Text = "Lost Card" },
                 new { Name = "PriceManagement", Text = "Price" },
                 new { Name = "RoleManagement", Text = "Role" },
                 new { Name = "AccountManagement", Text = "Account" },
