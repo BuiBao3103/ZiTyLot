@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.uiTableLayoutPanel1 = new Sunny.UI.UITableLayoutPanel();
             this.uiTabControlMenu1 = new Sunny.UI.UITabControlMenu();
             this.tpProfile = new System.Windows.Forms.TabPage();
@@ -66,6 +66,8 @@
             this.uiGroupBox5 = new Sunny.UI.UIGroupBox();
             this.tbStatus = new Sunny.UI.UITextBox();
             this.uiPanel11 = new Sunny.UI.UIPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnRestoreCard = new Sunny.UI.UISymbolButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnLockCard = new Sunny.UI.UISymbolButton();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -77,8 +79,6 @@
             this.uiTextBox6 = new Sunny.UI.UITextBox();
             this.uiPanel1 = new Sunny.UI.UIPanel();
             this.uiSymbolLabel1 = new Sunny.UI.UISymbolLabel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnRestoreCard = new Sunny.UI.UISymbolButton();
             this.uiTableLayoutPanel1.SuspendLayout();
             this.uiTabControlMenu1.SuspendLayout();
             this.tpProfile.SuspendLayout();
@@ -103,13 +103,13 @@
             this.uiTableLayoutPanel3.SuspendLayout();
             this.uiGroupBox5.SuspendLayout();
             this.uiPanel11.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.uiPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.uiGroupBox7.SuspendLayout();
             this.uiPanel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // uiTableLayoutPanel1
@@ -205,7 +205,7 @@
             this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
             this.uiTableLayoutPanel2.Size = new System.Drawing.Size(623, 378);
             this.uiTableLayoutPanel2.TabIndex = 0;
             this.uiTableLayoutPanel2.TagString = null;
@@ -221,7 +221,7 @@
             this.uiPanel10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel10.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel10.Name = "uiPanel10";
-            this.uiPanel10.Padding = new System.Windows.Forms.Padding(0, 4, 10, 4);
+            this.uiPanel10.Padding = new System.Windows.Forms.Padding(0, 5, 10, 5);
             this.uiPanel10.Radius = 0;
             this.uiPanel10.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
             this.uiPanel10.RectColor = System.Drawing.SystemColors.ControlLight;
@@ -236,9 +236,9 @@
             // 
             this.panel3.Controls.Add(this.btnSaveProfile);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(465, 4);
+            this.panel3.Location = new System.Drawing.Point(465, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(140, 40);
+            this.panel3.Size = new System.Drawing.Size(140, 38);
             this.panel3.TabIndex = 9;
             // 
             // btnSaveProfile
@@ -253,14 +253,14 @@
             this.btnSaveProfile.Margin = new System.Windows.Forms.Padding(0);
             this.btnSaveProfile.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnSaveProfile.Name = "btnSaveProfile";
-            this.btnSaveProfile.Radius = 10;
             this.btnSaveProfile.RectColor = System.Drawing.Color.White;
             this.btnSaveProfile.RectDisableColor = System.Drawing.Color.White;
             this.btnSaveProfile.RectHoverColor = System.Drawing.Color.White;
             this.btnSaveProfile.RectPressColor = System.Drawing.Color.White;
             this.btnSaveProfile.RectSelectedColor = System.Drawing.Color.White;
             this.btnSaveProfile.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnSaveProfile.Size = new System.Drawing.Size(140, 40);
+            this.btnSaveProfile.RectSize = 2;
+            this.btnSaveProfile.Size = new System.Drawing.Size(140, 38);
             this.btnSaveProfile.Symbol = 557715;
             this.btnSaveProfile.TabIndex = 3;
             this.btnSaveProfile.Text = "Save change";
@@ -534,27 +534,27 @@
             this.tableAccount.AllowUserToDeleteRows = false;
             this.tableAccount.AllowUserToResizeColumns = false;
             this.tableAccount.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.tableAccount.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.tableAccount.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tableAccount.BackgroundColor = System.Drawing.Color.White;
             this.tableAccount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tableAccount.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.tableAccount.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableAccount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableAccount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.tableAccount.ColumnHeadersHeight = 34;
             this.tableAccount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
@@ -563,15 +563,15 @@
             this.colStartDate,
             this.colEndDate});
             this.tableAccount.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableAccount.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableAccount.DefaultCellStyle = dataGridViewCellStyle6;
             this.tableAccount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableAccount.GridColor = System.Drawing.Color.White;
             this.tableAccount.Location = new System.Drawing.Point(1, 1);
@@ -666,8 +666,8 @@
             this.uiTableLayoutPanel3.RowCount = 4;
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+            this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
             this.uiTableLayoutPanel3.Size = new System.Drawing.Size(623, 266);
             this.uiTableLayoutPanel3.TabIndex = 0;
             this.uiTableLayoutPanel3.TagString = null;
@@ -731,10 +731,45 @@
             this.uiPanel11.RectColor = System.Drawing.SystemColors.ControlLight;
             this.uiPanel11.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel11.RectSize = 2;
-            this.uiPanel11.Size = new System.Drawing.Size(615, 44);
+            this.uiPanel11.Size = new System.Drawing.Size(615, 46);
             this.uiPanel11.TabIndex = 25;
             this.uiPanel11.Text = null;
             this.uiPanel11.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnRestoreCard);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(165, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(140, 38);
+            this.panel2.TabIndex = 12;
+            // 
+            // btnRestoreCard
+            // 
+            this.btnRestoreCard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestoreCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRestoreCard.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnRestoreCard.FillHoverColor = System.Drawing.Color.Lime;
+            this.btnRestoreCard.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnRestoreCard.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnRestoreCard.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestoreCard.Location = new System.Drawing.Point(0, 0);
+            this.btnRestoreCard.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRestoreCard.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnRestoreCard.Name = "btnRestoreCard";
+            this.btnRestoreCard.RectColor = System.Drawing.Color.White;
+            this.btnRestoreCard.RectDisableColor = System.Drawing.Color.White;
+            this.btnRestoreCard.RectHoverColor = System.Drawing.Color.White;
+            this.btnRestoreCard.RectPressColor = System.Drawing.Color.White;
+            this.btnRestoreCard.RectSelectedColor = System.Drawing.Color.White;
+            this.btnRestoreCard.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnRestoreCard.RectSize = 2;
+            this.btnRestoreCard.Size = new System.Drawing.Size(140, 38);
+            this.btnRestoreCard.Symbol = 361473;
+            this.btnRestoreCard.TabIndex = 3;
+            this.btnRestoreCard.Text = "Restore card";
+            this.btnRestoreCard.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // panel4
             // 
@@ -743,7 +778,7 @@
             this.panel4.Location = new System.Drawing.Point(305, 4);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.panel4.Size = new System.Drawing.Size(160, 36);
+            this.panel4.Size = new System.Drawing.Size(160, 38);
             this.panel4.TabIndex = 11;
             // 
             // btnLockCard
@@ -765,7 +800,8 @@
             this.btnLockCard.RectPressColor = System.Drawing.Color.White;
             this.btnLockCard.RectSelectedColor = System.Drawing.Color.White;
             this.btnLockCard.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnLockCard.Size = new System.Drawing.Size(140, 36);
+            this.btnLockCard.RectSize = 2;
+            this.btnLockCard.Size = new System.Drawing.Size(140, 38);
             this.btnLockCard.Symbol = 61475;
             this.btnLockCard.TabIndex = 3;
             this.btnLockCard.Text = "Locked card";
@@ -777,7 +813,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel6.Location = new System.Drawing.Point(465, 4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(140, 36);
+            this.panel6.Size = new System.Drawing.Size(140, 38);
             this.panel6.TabIndex = 10;
             // 
             // btnLostCard
@@ -799,7 +835,8 @@
             this.btnLostCard.RectPressColor = System.Drawing.Color.White;
             this.btnLostCard.RectSelectedColor = System.Drawing.Color.White;
             this.btnLostCard.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnLostCard.Size = new System.Drawing.Size(140, 36);
+            this.btnLostCard.RectSize = 2;
+            this.btnLostCard.Size = new System.Drawing.Size(140, 38);
             this.btnLostCard.Symbol = 361553;
             this.btnLostCard.TabIndex = 3;
             this.btnLostCard.Text = "Lost card";
@@ -812,7 +849,7 @@
             this.uiPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel3.FillColor = System.Drawing.Color.White;
             this.uiPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel3.Location = new System.Drawing.Point(4, 219);
+            this.uiPanel3.Location = new System.Drawing.Point(4, 221);
             this.uiPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel3.Name = "uiPanel3";
@@ -822,7 +859,7 @@
             this.uiPanel3.RectColor = System.Drawing.SystemColors.ControlLight;
             this.uiPanel3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel3.RectSize = 2;
-            this.uiPanel3.Size = new System.Drawing.Size(615, 44);
+            this.uiPanel3.Size = new System.Drawing.Size(615, 46);
             this.uiPanel3.TabIndex = 24;
             this.uiPanel3.Text = null;
             this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -833,7 +870,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(465, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(140, 36);
+            this.panel1.Size = new System.Drawing.Size(140, 38);
             this.panel1.TabIndex = 9;
             // 
             // btnSaveCard
@@ -848,14 +885,14 @@
             this.btnSaveCard.Margin = new System.Windows.Forms.Padding(0);
             this.btnSaveCard.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnSaveCard.Name = "btnSaveCard";
-            this.btnSaveCard.Radius = 10;
             this.btnSaveCard.RectColor = System.Drawing.Color.White;
             this.btnSaveCard.RectDisableColor = System.Drawing.Color.White;
             this.btnSaveCard.RectHoverColor = System.Drawing.Color.White;
             this.btnSaveCard.RectPressColor = System.Drawing.Color.White;
             this.btnSaveCard.RectSelectedColor = System.Drawing.Color.White;
             this.btnSaveCard.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnSaveCard.Size = new System.Drawing.Size(140, 36);
+            this.btnSaveCard.RectSize = 2;
+            this.btnSaveCard.Size = new System.Drawing.Size(140, 38);
             this.btnSaveCard.Symbol = 557715;
             this.btnSaveCard.TabIndex = 3;
             this.btnSaveCard.Text = "Save change";
@@ -938,40 +975,6 @@
             this.uiSymbolLabel1.Text = "Resident details";
             this.uiSymbolLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnRestoreCard);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(165, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(140, 36);
-            this.panel2.TabIndex = 12;
-            // 
-            // btnRestoreCard
-            // 
-            this.btnRestoreCard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRestoreCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRestoreCard.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnRestoreCard.FillHoverColor = System.Drawing.Color.Lime;
-            this.btnRestoreCard.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnRestoreCard.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnRestoreCard.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestoreCard.Location = new System.Drawing.Point(0, 0);
-            this.btnRestoreCard.Margin = new System.Windows.Forms.Padding(0);
-            this.btnRestoreCard.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnRestoreCard.Name = "btnRestoreCard";
-            this.btnRestoreCard.RectColor = System.Drawing.Color.White;
-            this.btnRestoreCard.RectDisableColor = System.Drawing.Color.White;
-            this.btnRestoreCard.RectHoverColor = System.Drawing.Color.White;
-            this.btnRestoreCard.RectPressColor = System.Drawing.Color.White;
-            this.btnRestoreCard.RectSelectedColor = System.Drawing.Color.White;
-            this.btnRestoreCard.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnRestoreCard.Size = new System.Drawing.Size(140, 36);
-            this.btnRestoreCard.Symbol = 361473;
-            this.btnRestoreCard.TabIndex = 3;
-            this.btnRestoreCard.Text = "Restore card";
-            this.btnRestoreCard.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
             // ResidentDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1007,13 +1010,13 @@
             this.uiTableLayoutPanel3.ResumeLayout(false);
             this.uiGroupBox5.ResumeLayout(false);
             this.uiPanel11.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.uiPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.uiGroupBox7.ResumeLayout(false);
             this.uiPanel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
