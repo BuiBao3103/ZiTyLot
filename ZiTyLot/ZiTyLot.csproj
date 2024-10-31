@@ -334,11 +334,6 @@
     <Compile Include="GUI\Screens\CardScr\CardCreateForm.Designer.cs">
       <DependentUpon>CardCreateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\LostCardScr\LostCardControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Screens\LostCardScr\LostCardControl.Designer.cs">
-      <DependentUpon>LostCardControl.cs</DependentUpon>
     <Compile Include="GUI\Screens\PriceScr\PricePerHourTurnCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -510,8 +505,6 @@
     <EmbeddedResource Include="GUI\Screens\CardScr\CardCreateForm.resx">
       <DependentUpon>CardCreateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\LostCardScr\LostCardControl.resx">
-      <DependentUpon>LostCardControl.cs</DependentUpon>
     <EmbeddedResource Include="GUI\Screens\PriceScr\DetailVisitorFeeForm.resx">
       <DependentUpon>DetailVisitorFeeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -682,6 +675,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\components\" />
+    <Folder Include="GUI\Screens\LostHistoryScr\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
