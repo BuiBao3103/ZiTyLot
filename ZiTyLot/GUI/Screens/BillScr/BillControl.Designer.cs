@@ -402,6 +402,7 @@ namespace ZiTyLot.GUI.Screens
             this.tbCurrentpage.Text = "01";
             this.tbCurrentpage.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.tbCurrentpage.Watermark = "";
+            this.tbCurrentpage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCurrentpage_KeyPress);
             // 
             // pnlPrevious
             // 
@@ -623,6 +624,7 @@ namespace ZiTyLot.GUI.Screens
             this.tbSearch.TabIndex = 0;
             this.tbSearch.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbSearch.Watermark = "";
+            this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
             // 
             // panel5
             // 

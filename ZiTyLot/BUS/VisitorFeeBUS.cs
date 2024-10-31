@@ -83,12 +83,27 @@ namespace ZiTyLot.BUS
             }
         }
 
+        public VisitorFee GetVisitorFeeByVehicleTypeId(object vehicleTypeId)
+        {
+            try
+            {
+                 return visitorFeeDAO.GetAll(new List<FilterCondition>
+                {
+                    new FilterCondition("vehicle_type_id", CompOp.Equals, vehicleTypeId)
+                }).FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         public void Update(VisitorFee item)
         {
             EnsureRecordExists(item.Id);
             Validate(item);
             try
             {
+                item.Updated_at = DateTime.Now;
                 visitorFeeDAO.Update(item);
             }
             catch (Exception ex)

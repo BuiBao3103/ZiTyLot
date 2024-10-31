@@ -41,14 +41,14 @@
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
             this.tbName = new Sunny.UI.UITextBox();
             this.uiTableLayoutPanel1 = new Sunny.UI.UITableLayoutPanel();
-            this.uiPanel3 = new Sunny.UI.UIPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.uiSymbolButton2 = new Sunny.UI.UISymbolButton();
             this.uiPanel4 = new Sunny.UI.UIPanel();
             this.uiPanel5 = new Sunny.UI.UIPanel();
-            this.lbSessionID = new Sunny.UI.UILabel();
+            this.uiSymbolLabel1 = new Sunny.UI.UISymbolLabel();
+            this.pnlButton = new Sunny.UI.UIPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCancel = new Sunny.UI.UISymbolButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnSave = new Sunny.UI.UISymbolButton();
             this.uiTableLayoutPanel2.SuspendLayout();
             this.uiGroupBox5.SuspendLayout();
             this.uiGroupBox3.SuspendLayout();
@@ -57,11 +57,11 @@
             this.uiPanel1.SuspendLayout();
             this.uiGroupBox1.SuspendLayout();
             this.uiTableLayoutPanel1.SuspendLayout();
-            this.uiPanel3.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.uiPanel4.SuspendLayout();
             this.uiPanel5.SuspendLayout();
+            this.pnlButton.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // uiTableLayoutPanel2
@@ -204,7 +204,7 @@
             this.btnRemove.Location = new System.Drawing.Point(5, 5);
             this.btnRemove.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnRemove.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnRemove.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnRemove.RectSelectedColor = System.Drawing.Color.White;
             this.btnRemove.RectSize = 2;
@@ -247,7 +247,7 @@
             this.btnAdd.Location = new System.Drawing.Point(5, 50);
             this.btnAdd.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnAdd.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnAdd.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnAdd.RectSelectedColor = System.Drawing.Color.White;
             this.btnAdd.RectSize = 2;
@@ -300,8 +300,8 @@
             // 
             this.uiTableLayoutPanel1.ColumnCount = 1;
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.uiTableLayoutPanel1.Controls.Add(this.pnlButton, 0, 3);
             this.uiTableLayoutPanel1.Controls.Add(this.uiPanel4, 0, 0);
-            this.uiTableLayoutPanel1.Controls.Add(this.uiPanel3, 0, 3);
             this.uiTableLayoutPanel1.Controls.Add(this.uiGroupBox1, 0, 1);
             this.uiTableLayoutPanel1.Controls.Add(this.uiTableLayoutPanel2, 0, 2);
             this.uiTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -315,99 +315,6 @@
             this.uiTableLayoutPanel1.Size = new System.Drawing.Size(564, 421);
             this.uiTableLayoutPanel1.TabIndex = 0;
             this.uiTableLayoutPanel1.TagString = null;
-            // 
-            // uiPanel3
-            // 
-            this.uiPanel3.Controls.Add(this.panel1);
-            this.uiPanel3.Controls.Add(this.panel4);
-            this.uiPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel3.FillColor = System.Drawing.Color.White;
-            this.uiPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel3.Location = new System.Drawing.Point(4, 362);
-            this.uiPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel3.Name = "uiPanel3";
-            this.uiPanel3.Padding = new System.Windows.Forms.Padding(0, 13, 0, 3);
-            this.uiPanel3.Radius = 0;
-            this.uiPanel3.RectColor = System.Drawing.SystemColors.ControlLight;
-            this.uiPanel3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
-            this.uiPanel3.RectSize = 2;
-            this.uiPanel3.Size = new System.Drawing.Size(556, 54);
-            this.uiPanel3.TabIndex = 17;
-            this.uiPanel3.Text = null;
-            this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.uiSymbolButton1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(306, 13);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(120, 38);
-            this.panel1.TabIndex = 10;
-            // 
-            // uiSymbolButton1
-            // 
-            this.uiSymbolButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiSymbolButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiSymbolButton1.FillColor = System.Drawing.Color.White;
-            this.uiSymbolButton1.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.uiSymbolButton1.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.uiSymbolButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiSymbolButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiSymbolButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiSymbolButton1.Location = new System.Drawing.Point(0, 0);
-            this.uiSymbolButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.uiSymbolButton1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiSymbolButton1.Name = "uiSymbolButton1";
-            this.uiSymbolButton1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiSymbolButton1.RectDisableColor = System.Drawing.Color.White;
-            this.uiSymbolButton1.RectHoverColor = System.Drawing.Color.White;
-            this.uiSymbolButton1.RectPressColor = System.Drawing.Color.White;
-            this.uiSymbolButton1.RectSelectedColor = System.Drawing.Color.White;
-            this.uiSymbolButton1.RectSize = 2;
-            this.uiSymbolButton1.Size = new System.Drawing.Size(120, 38);
-            this.uiSymbolButton1.Symbol = 0;
-            this.uiSymbolButton1.TabIndex = 3;
-            this.uiSymbolButton1.Text = "Cancel";
-            this.uiSymbolButton1.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.uiSymbolButton2);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(426, 13);
-            this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel4.Size = new System.Drawing.Size(130, 38);
-            this.panel4.TabIndex = 9;
-            // 
-            // uiSymbolButton2
-            // 
-            this.uiSymbolButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiSymbolButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiSymbolButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiSymbolButton2.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.uiSymbolButton2.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.uiSymbolButton2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiSymbolButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiSymbolButton2.Location = new System.Drawing.Point(10, 0);
-            this.uiSymbolButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.uiSymbolButton2.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiSymbolButton2.Name = "uiSymbolButton2";
-            this.uiSymbolButton2.Padding = new System.Windows.Forms.Padding(14, 0, 12, 0);
-            this.uiSymbolButton2.Radius = 10;
-            this.uiSymbolButton2.RectColor = System.Drawing.Color.White;
-            this.uiSymbolButton2.RectDisableColor = System.Drawing.Color.White;
-            this.uiSymbolButton2.RectHoverColor = System.Drawing.Color.White;
-            this.uiSymbolButton2.RectPressColor = System.Drawing.Color.White;
-            this.uiSymbolButton2.RectSelectedColor = System.Drawing.Color.White;
-            this.uiSymbolButton2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiSymbolButton2.Size = new System.Drawing.Size(120, 38);
-            this.uiSymbolButton2.Symbol = 0;
-            this.uiSymbolButton2.TabIndex = 3;
-            this.uiSymbolButton2.Text = "Confirm";
-            this.uiSymbolButton2.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // uiPanel4
             // 
@@ -431,7 +338,7 @@
             // 
             // uiPanel5
             // 
-            this.uiPanel5.Controls.Add(this.lbSessionID);
+            this.uiPanel5.Controls.Add(this.uiSymbolLabel1);
             this.uiPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel5.FillColor = System.Drawing.Color.White;
             this.uiPanel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -449,18 +356,114 @@
             this.uiPanel5.Text = null;
             this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbSessionID
+            // uiSymbolLabel1
             // 
-            this.lbSessionID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbSessionID.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSessionID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.lbSessionID.Location = new System.Drawing.Point(0, 2);
-            this.lbSessionID.Margin = new System.Windows.Forms.Padding(0);
-            this.lbSessionID.Name = "lbSessionID";
-            this.lbSessionID.Size = new System.Drawing.Size(556, 30);
-            this.lbSessionID.TabIndex = 3;
-            this.lbSessionID.Text = "{role_id}";
-            this.lbSessionID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiSymbolLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiSymbolLabel1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiSymbolLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiSymbolLabel1.Location = new System.Drawing.Point(0, 2);
+            this.uiSymbolLabel1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiSymbolLabel1.Name = "uiSymbolLabel1";
+            this.uiSymbolLabel1.Size = new System.Drawing.Size(556, 30);
+            this.uiSymbolLabel1.Symbol = 61459;
+            this.uiSymbolLabel1.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiSymbolLabel1.SymbolOffset = new System.Drawing.Point(0, 1);
+            this.uiSymbolLabel1.SymbolSize = 32;
+            this.uiSymbolLabel1.TabIndex = 2;
+            this.uiSymbolLabel1.Text = "Create role";
+            this.uiSymbolLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pnlButton
+            // 
+            this.pnlButton.Controls.Add(this.panel2);
+            this.pnlButton.Controls.Add(this.panel3);
+            this.pnlButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlButton.FillColor = System.Drawing.Color.White;
+            this.pnlButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.pnlButton.Location = new System.Drawing.Point(4, 362);
+            this.pnlButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlButton.MinimumSize = new System.Drawing.Size(1, 1);
+            this.pnlButton.Name = "pnlButton";
+            this.pnlButton.Padding = new System.Windows.Forms.Padding(0, 13, 0, 3);
+            this.pnlButton.Radius = 0;
+            this.pnlButton.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.pnlButton.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
+            this.pnlButton.RectSize = 2;
+            this.pnlButton.Size = new System.Drawing.Size(556, 54);
+            this.pnlButton.TabIndex = 19;
+            this.pnlButton.Text = null;
+            this.pnlButton.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnCancel);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(306, 13);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(120, 38);
+            this.panel2.TabIndex = 10;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCancel.FillColor = System.Drawing.Color.White;
+            this.btnCancel.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnCancel.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCancel.Location = new System.Drawing.Point(0, 0);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCancel.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCancel.RectDisableColor = System.Drawing.Color.White;
+            this.btnCancel.RectHoverColor = System.Drawing.Color.White;
+            this.btnCancel.RectPressColor = System.Drawing.Color.White;
+            this.btnCancel.RectSelectedColor = System.Drawing.Color.White;
+            this.btnCancel.RectSize = 2;
+            this.btnCancel.Size = new System.Drawing.Size(120, 38);
+            this.btnCancel.Symbol = 61453;
+            this.btnCancel.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnSave);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(426, 13);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.panel3.Size = new System.Drawing.Size(130, 38);
+            this.panel3.TabIndex = 9;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnSave.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnSave.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnSave.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(10, 0);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSave.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Radius = 10;
+            this.btnSave.RectColor = System.Drawing.Color.White;
+            this.btnSave.RectDisableColor = System.Drawing.Color.White;
+            this.btnSave.RectHoverColor = System.Drawing.Color.White;
+            this.btnSave.RectPressColor = System.Drawing.Color.White;
+            this.btnSave.RectSelectedColor = System.Drawing.Color.White;
+            this.btnSave.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnSave.Size = new System.Drawing.Size(120, 38);
+            this.btnSave.Symbol = 557715;
+            this.btnSave.SymbolSize = 20;
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "Save";
+            this.btnSave.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // RoleDetailForm
             // 
@@ -481,11 +484,11 @@
             this.uiPanel1.ResumeLayout(false);
             this.uiGroupBox1.ResumeLayout(false);
             this.uiTableLayoutPanel1.ResumeLayout(false);
-            this.uiPanel3.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.uiPanel4.ResumeLayout(false);
             this.uiPanel5.ResumeLayout(false);
+            this.pnlButton.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -505,13 +508,13 @@
         private Sunny.UI.UIGroupBox uiGroupBox1;
         private Sunny.UI.UITextBox tbName;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel1;
-        private Sunny.UI.UIPanel uiPanel3;
-        private System.Windows.Forms.Panel panel1;
-        private Sunny.UI.UISymbolButton uiSymbolButton1;
-        private System.Windows.Forms.Panel panel4;
-        private Sunny.UI.UISymbolButton uiSymbolButton2;
         private Sunny.UI.UIPanel uiPanel4;
         private Sunny.UI.UIPanel uiPanel5;
-        private Sunny.UI.UILabel lbSessionID;
+        private Sunny.UI.UISymbolLabel uiSymbolLabel1;
+        private Sunny.UI.UIPanel pnlButton;
+        private System.Windows.Forms.Panel panel2;
+        private Sunny.UI.UISymbolButton btnCancel;
+        private System.Windows.Forms.Panel panel3;
+        private Sunny.UI.UISymbolButton btnSave;
     }
 }

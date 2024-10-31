@@ -11,6 +11,7 @@ using System.Drawing.Text;
 using System.Threading.Tasks;
 using System.Linq;
 using Org.BouncyCastle.Bcpg.OpenPgp;
+using ZiTyLot.Constants.Enum;
 
 namespace ZiTyLot.GUI.Screens
 {
@@ -85,11 +86,13 @@ namespace ZiTyLot.GUI.Screens
         // Cell click event handler
         private void table_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             if (e.RowIndex >= 0)
             {
                 if (e.ColumnIndex == tableAccount.Columns["colView"].Index)
                 {
-                    MessageBox.Show("View button clicked for row " + e.RowIndex);
+                    AccountDetailForm accountDetailForm = new AccountDetailForm();
+                    accountDetailForm.ShowDialog();
                 }
                 else if (e.ColumnIndex == tableAccount.Columns["colDelete"].Index)
                 {
@@ -110,13 +113,12 @@ namespace ZiTyLot.GUI.Screens
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AccountDetailForm accountDetailForm = new AccountDetailForm();
-            accountDetailForm.Show();
+            AccountCreateForm accountCreateForm = new AccountCreateForm();
+            accountCreateForm.Show();
         }
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String inputCboxSelected = cbFilter.GetItemText(cbFilter.SelectedItem);
             int index = cbFilter.SelectedIndex;
             switch (index)
             {
@@ -127,13 +129,13 @@ namespace ZiTyLot.GUI.Screens
                     tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 120);
                     break;
                 case 2:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 90);
-                    break;
-                default:
                     tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 120);
                     break;
+                case 3:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 90);
+                    break;
             }
-
+            query();
         }
 
         private void LoadPageAndPageable()
@@ -143,8 +145,8 @@ namespace ZiTyLot.GUI.Screens
             //update page number
             tbCurrentpage.Text = pageable.PageNumber.ToString();
             lbTotalpage.Text = "/" + page.TotalPages;
-            tableAccount.Rows.Clear();
             //update table
+            tableAccount.Rows.Clear();
             foreach (Account account in page.Content)
             {
                 tableAccount.Rows.Add(account.Id, account.Full_name, account.Username, account.Email);
@@ -153,18 +155,6 @@ namespace ZiTyLot.GUI.Screens
             btnPrevious.Enabled = pageable.PageNumber > 1;
             btnNext.Enabled = pageable.PageNumber < page.TotalPages;
         }
-
-
-        private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedValue = cbNumberofitem.SelectedItem.ToString();
-            int pageSize = int.Parse(selectedValue.Split(' ')[0]);
-            pageable.PageNumber = 1;
-            pageable.PageSize = pageSize;
-            page = accountBUS.GetAllPagination(pageable, filters);
-            LoadPageAndPageable();
-        }
-
         private void ChangePage(int pageNumber)
         {
             if (pageNumber < 1 || pageNumber > page.TotalPages)
@@ -172,6 +162,60 @@ namespace ZiTyLot.GUI.Screens
                 return;
             }
             pageable.PageNumber = pageNumber;
+            page = accountBUS.GetAllPagination(pageable, filters);
+            LoadPageAndPageable();
+        }
+        private void query()
+        {
+            int inputCboxIndex = cbFilter.SelectedIndex;
+            string inputSearch = tbSearch.Text.Trim();
+            filters.Clear();
+            if (!string.IsNullOrEmpty(inputSearch))
+            {
+                switch (inputCboxIndex)
+                {
+                    case 0:
+                        filters.Add(new FilterCondition("Id", CompOp.Equals, inputSearch));
+                        break;
+                    case 1:
+                        filters.Add(new FilterCondition("Full_name", CompOp.Like, inputSearch));
+                       
+                        break;
+                    case 2:
+                        filters.Add(new FilterCondition("Username", CompOp.Like, inputSearch));
+                        break;
+                    case 3:
+                        filters.Add(new FilterCondition("Email", CompOp.Like, inputSearch));
+                        break;
+                }
+            }
+            //assume have a combobox when query
+            //int inputCboxIndexType = cbFilter.SelectedIndex;
+            //if (inputCboxIndexType != 0)
+            //{
+            //    switch (inputCboxIndexType)
+            //    {
+            //        case 1:
+            //            filters.Add(new FilterCondition("Status", CompOp.Equals, AccountGender.MALE));
+            //            break;
+            //        case 2:
+            //            filters.Add(new FilterCondition("Status", CompOp.Equals, AccountGender.MALE));
+            //            break;
+            //    }
+            //}
+
+
+            pageable.PageNumber = 1;
+            page = accountBUS.GetAllPagination(pageable, filters);
+            LoadPageAndPageable();
+        }
+
+        private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedValue = cbNumberofitem.SelectedItem.ToString();
+            int pageSize = int.Parse(selectedValue.Split(' ')[0]);
+            pageable.PageNumber = 1;
+            pageable.PageSize = pageSize;
             page = accountBUS.GetAllPagination(pageable, filters);
             LoadPageAndPageable();
         }
@@ -193,51 +237,6 @@ namespace ZiTyLot.GUI.Screens
                 query();
                 return Task.CompletedTask;
             }, 500);
-        }
-
-        private void query()
-        {
-            int inputCboxIndex = cbFilter.SelectedIndex;
-            string inputSearch = tbSearch.Text.Trim();
-            filters.Clear();
-            if (!string.IsNullOrEmpty(inputSearch))
-            {
-                switch (inputCboxIndex)
-                {
-                    case 0:
-                        filters.Add(new FilterCondition("Id", CompOp.Equals, inputSearch));
-                        break;
-                    case 1:
-                        filters.Add(new FilterCondition("Email", CompOp.Like, inputSearch));
-                        break;
-                    case 2:
-                        filters.Add(new FilterCondition("Username", CompOp.Like, inputSearch));
-                        break;
-                    case 3:
-                        filters.Add(new FilterCondition("Full_name", CompOp.Like, inputSearch));
-                        break;
-                }
-            }
-            //assume have a combobox when query
-            //ComboBox comboBox = new ComboBox();
-            //string input = comboBox.GetItemText(comboBox.SelectedItem);
-            //if (input != "All")
-            //{
-            //    switch (input)
-            //    {
-            //        case "A":
-            //            filters.Add(new FilterCondition("Status", CompOp.Equals, true));
-            //            break;
-            //        case "B":
-            //            filters.Add(new FilterCondition("Status", CompOp.Equals, false));
-            //            break;
-            //    }
-            //}
-
-
-            pageable.PageNumber = 1;
-            page = accountBUS.GetAllPagination(pageable, filters);
-            LoadPageAndPageable();
         }
 
         private void tbCurrentpage_KeyPress(object sender, KeyPressEventArgs e)

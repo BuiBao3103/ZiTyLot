@@ -58,6 +58,8 @@
             this.uiPanel6 = new Sunny.UI.UIPanel();
             this.btnConnectCheckOutFront = new Sunny.UI.UISymbolButton();
             this.uiTableLayoutPanel1 = new Sunny.UI.UITableLayoutPanel();
+            this.uiPanel1 = new Sunny.UI.UIPanel();
+            this.uiPanel4 = new Sunny.UI.UIPanel();
             this.uiGroupBox12 = new Sunny.UI.UIGroupBox();
             this.uiTableLayoutPanel13 = new Sunny.UI.UITableLayoutPanel();
             this.tbCheckOutPlateRecord = new Sunny.UI.UITextBox();
@@ -106,14 +108,12 @@
             this.uiLabel4 = new Sunny.UI.UILabel();
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.fbdFolderLocation = new System.Windows.Forms.FolderBrowserDialog();
-            this.uiPanel1 = new Sunny.UI.UIPanel();
-            this.uiPanel4 = new Sunny.UI.UIPanel();
-            this.lbSessionID = new Sunny.UI.UILabel();
-            this.uiPanel8 = new Sunny.UI.UIPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.uiSymbolButton2 = new Sunny.UI.UISymbolButton();
+            this.uiSymbolLabel1 = new Sunny.UI.UISymbolLabel();
+            this.pnlButton = new Sunny.UI.UIPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCancel = new Sunny.UI.UISymbolButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnSave = new Sunny.UI.UISymbolButton();
             this.uiPanel5.SuspendLayout();
             this.uiGroupBox3.SuspendLayout();
             this.uiTableLayoutPanel2.SuspendLayout();
@@ -132,6 +132,8 @@
             this.panel.SuspendLayout();
             this.uiPanel6.SuspendLayout();
             this.uiTableLayoutPanel1.SuspendLayout();
+            this.uiPanel1.SuspendLayout();
+            this.uiPanel4.SuspendLayout();
             this.uiGroupBox12.SuspendLayout();
             this.uiTableLayoutPanel13.SuspendLayout();
             this.uiPanel21.SuspendLayout();
@@ -158,11 +160,9 @@
             this.uiGroupBox8.SuspendLayout();
             this.uiTableLayoutPanel12.SuspendLayout();
             this.uiPanel13.SuspendLayout();
-            this.uiPanel1.SuspendLayout();
-            this.uiPanel4.SuspendLayout();
-            this.uiPanel8.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.pnlButton.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // uiPanel5
@@ -277,7 +277,7 @@
             this.btnDisconnectCheckInFront.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnDisconnectCheckInFront.Name = "btnDisconnectCheckInFront";
             this.btnDisconnectCheckInFront.Radius = 1;
-            this.btnDisconnectCheckInFront.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnDisconnectCheckInFront.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnDisconnectCheckInFront.RectHoverColor = System.Drawing.Color.White;
             this.btnDisconnectCheckInFront.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckInFront.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -321,7 +321,7 @@
             this.btnConnectCheckInFront.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnConnectCheckInFront.Name = "btnConnectCheckInFront";
             this.btnConnectCheckInFront.Radius = 1;
-            this.btnConnectCheckInFront.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConnectCheckInFront.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnConnectCheckInFront.RectHoverColor = System.Drawing.Color.White;
             this.btnConnectCheckInFront.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckInFront.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -430,7 +430,7 @@
             this.btnDisconnectCheckInBack.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnDisconnectCheckInBack.Name = "btnDisconnectCheckInBack";
             this.btnDisconnectCheckInBack.Radius = 1;
-            this.btnDisconnectCheckInBack.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnDisconnectCheckInBack.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnDisconnectCheckInBack.RectHoverColor = System.Drawing.Color.White;
             this.btnDisconnectCheckInBack.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckInBack.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -474,7 +474,7 @@
             this.btnConnectCheckInBack.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnConnectCheckInBack.Name = "btnConnectCheckInBack";
             this.btnConnectCheckInBack.Radius = 1;
-            this.btnConnectCheckInBack.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConnectCheckInBack.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnConnectCheckInBack.RectHoverColor = System.Drawing.Color.White;
             this.btnConnectCheckInBack.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckInBack.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -583,7 +583,7 @@
             this.btnDisconnectCheckOutBack.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnDisconnectCheckOutBack.Name = "btnDisconnectCheckOutBack";
             this.btnDisconnectCheckOutBack.Radius = 1;
-            this.btnDisconnectCheckOutBack.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnDisconnectCheckOutBack.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnDisconnectCheckOutBack.RectHoverColor = System.Drawing.Color.White;
             this.btnDisconnectCheckOutBack.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckOutBack.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -627,7 +627,7 @@
             this.btnConnectCheckOutBack.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnConnectCheckOutBack.Name = "btnConnectCheckOutBack";
             this.btnConnectCheckOutBack.Radius = 1;
-            this.btnConnectCheckOutBack.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConnectCheckOutBack.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnConnectCheckOutBack.RectHoverColor = System.Drawing.Color.White;
             this.btnConnectCheckOutBack.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckOutBack.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -708,7 +708,7 @@
             this.btnDisconnectCheckOutFront.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnDisconnectCheckOutFront.Name = "btnDisconnectCheckOutFront";
             this.btnDisconnectCheckOutFront.Radius = 1;
-            this.btnDisconnectCheckOutFront.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnDisconnectCheckOutFront.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnDisconnectCheckOutFront.RectHoverColor = System.Drawing.Color.White;
             this.btnDisconnectCheckOutFront.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckOutFront.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -780,7 +780,7 @@
             this.btnConnectCheckOutFront.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnConnectCheckOutFront.Name = "btnConnectCheckOutFront";
             this.btnConnectCheckOutFront.Radius = 1;
-            this.btnConnectCheckOutFront.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConnectCheckOutFront.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnConnectCheckOutFront.RectHoverColor = System.Drawing.Color.White;
             this.btnConnectCheckOutFront.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckOutFront.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -799,7 +799,7 @@
             this.uiTableLayoutPanel1.ColumnCount = 2;
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiTableLayoutPanel1.Controls.Add(this.uiPanel8, 0, 10);
+            this.uiTableLayoutPanel1.Controls.Add(this.pnlButton, 0, 10);
             this.uiTableLayoutPanel1.Controls.Add(this.uiPanel1, 0, 0);
             this.uiTableLayoutPanel1.Controls.Add(this.uiGroupBox12, 1, 9);
             this.uiTableLayoutPanel1.Controls.Add(this.uiGroupBox11, 0, 9);
@@ -834,6 +834,47 @@
             this.uiTableLayoutPanel1.Size = new System.Drawing.Size(764, 781);
             this.uiTableLayoutPanel1.TabIndex = 1;
             this.uiTableLayoutPanel1.TagString = null;
+            // 
+            // uiPanel1
+            // 
+            this.uiTableLayoutPanel1.SetColumnSpan(this.uiPanel1, 2);
+            this.uiPanel1.Controls.Add(this.uiPanel4);
+            this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel1.FillColor = System.Drawing.Color.White;
+            this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel1.Location = new System.Drawing.Point(4, 5);
+            this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel1.Name = "uiPanel1";
+            this.uiPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.uiPanel1.Radius = 0;
+            this.uiPanel1.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom;
+            this.uiPanel1.RectSize = 2;
+            this.uiPanel1.Size = new System.Drawing.Size(756, 44);
+            this.uiPanel1.TabIndex = 68;
+            this.uiPanel1.Text = null;
+            this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiPanel4
+            // 
+            this.uiPanel4.Controls.Add(this.uiSymbolLabel1);
+            this.uiPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel4.FillColor = System.Drawing.Color.White;
+            this.uiPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel4.Location = new System.Drawing.Point(0, 0);
+            this.uiPanel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiPanel4.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel4.Name = "uiPanel4";
+            this.uiPanel4.Padding = new System.Windows.Forms.Padding(0, 2, 0, 10);
+            this.uiPanel4.Radius = 0;
+            this.uiPanel4.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.uiPanel4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiPanel4.RectSize = 2;
+            this.uiPanel4.Size = new System.Drawing.Size(756, 42);
+            this.uiPanel4.TabIndex = 5;
+            this.uiPanel4.Text = null;
+            this.uiPanel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // uiGroupBox12
             // 
@@ -920,7 +961,7 @@
             this.btnCheckOutPlateFolder.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnCheckOutPlateFolder.Name = "btnCheckOutPlateFolder";
             this.btnCheckOutPlateFolder.Radius = 1;
-            this.btnCheckOutPlateFolder.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCheckOutPlateFolder.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnCheckOutPlateFolder.RectHoverColor = System.Drawing.Color.White;
             this.btnCheckOutPlateFolder.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckOutPlateFolder.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -1020,7 +1061,7 @@
             this.btnCheckInPlateFolder.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnCheckInPlateFolder.Name = "btnCheckInPlateFolder";
             this.btnCheckInPlateFolder.Radius = 1;
-            this.btnCheckInPlateFolder.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCheckInPlateFolder.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnCheckInPlateFolder.RectHoverColor = System.Drawing.Color.White;
             this.btnCheckInPlateFolder.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckInPlateFolder.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -1120,7 +1161,7 @@
             this.btnCheckOutBackFolder.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnCheckOutBackFolder.Name = "btnCheckOutBackFolder";
             this.btnCheckOutBackFolder.Radius = 1;
-            this.btnCheckOutBackFolder.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCheckOutBackFolder.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnCheckOutBackFolder.RectHoverColor = System.Drawing.Color.White;
             this.btnCheckOutBackFolder.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckOutBackFolder.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -1220,7 +1261,7 @@
             this.btnCheckInBackFolder.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnCheckInBackFolder.Name = "btnCheckInBackFolder";
             this.btnCheckInBackFolder.Radius = 1;
-            this.btnCheckInBackFolder.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCheckInBackFolder.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnCheckInBackFolder.RectHoverColor = System.Drawing.Color.White;
             this.btnCheckInBackFolder.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckInBackFolder.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -1320,7 +1361,7 @@
             this.btnCheckOutFrontFolder.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnCheckOutFrontFolder.Name = "btnCheckOutFrontFolder";
             this.btnCheckOutFrontFolder.Radius = 1;
-            this.btnCheckOutFrontFolder.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCheckOutFrontFolder.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnCheckOutFrontFolder.RectHoverColor = System.Drawing.Color.White;
             this.btnCheckOutFrontFolder.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckOutFrontFolder.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -1402,7 +1443,7 @@
             this.btnDisconnectCheckOutGate.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnDisconnectCheckOutGate.Name = "btnDisconnectCheckOutGate";
             this.btnDisconnectCheckOutGate.Radius = 1;
-            this.btnDisconnectCheckOutGate.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnDisconnectCheckOutGate.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnDisconnectCheckOutGate.RectHoverColor = System.Drawing.Color.White;
             this.btnDisconnectCheckOutGate.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckOutGate.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -1475,7 +1516,7 @@
             this.btnConnectCheckOutGate.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnConnectCheckOutGate.Name = "btnConnectCheckOutGate";
             this.btnConnectCheckOutGate.Radius = 1;
-            this.btnConnectCheckOutGate.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConnectCheckOutGate.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnConnectCheckOutGate.RectHoverColor = System.Drawing.Color.White;
             this.btnConnectCheckOutGate.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckOutGate.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -1569,7 +1610,7 @@
             this.btnDisconnectCheckInGate.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnDisconnectCheckInGate.Name = "btnDisconnectCheckInGate";
             this.btnDisconnectCheckInGate.Radius = 1;
-            this.btnDisconnectCheckInGate.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnDisconnectCheckInGate.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnDisconnectCheckInGate.RectHoverColor = System.Drawing.Color.White;
             this.btnDisconnectCheckInGate.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDisconnectCheckInGate.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -1642,7 +1683,7 @@
             this.btnConnectCheckInGate.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnConnectCheckInGate.Name = "btnConnectCheckInGate";
             this.btnConnectCheckInGate.Radius = 1;
-            this.btnConnectCheckInGate.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConnectCheckInGate.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnConnectCheckInGate.RectHoverColor = System.Drawing.Color.White;
             this.btnConnectCheckInGate.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConnectCheckInGate.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -1741,7 +1782,7 @@
             this.btnCheckInFrontFolder.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnCheckInFrontFolder.Name = "btnCheckInFrontFolder";
             this.btnCheckInFrontFolder.Radius = 1;
-            this.btnCheckInFrontFolder.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCheckInFrontFolder.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnCheckInFrontFolder.RectHoverColor = System.Drawing.Color.White;
             this.btnCheckInFrontFolder.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCheckInFrontFolder.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -1782,153 +1823,115 @@
             this.uiLabel2.Text = "Camera connection";
             this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiPanel1
+            // uiSymbolLabel1
             // 
-            this.uiTableLayoutPanel1.SetColumnSpan(this.uiPanel1, 2);
-            this.uiPanel1.Controls.Add(this.uiPanel4);
-            this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel1.FillColor = System.Drawing.Color.White;
-            this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel1.Location = new System.Drawing.Point(4, 5);
-            this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel1.Name = "uiPanel1";
-            this.uiPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.uiPanel1.Radius = 0;
-            this.uiPanel1.RectColor = System.Drawing.SystemColors.ControlLight;
-            this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom;
-            this.uiPanel1.RectSize = 2;
-            this.uiPanel1.Size = new System.Drawing.Size(756, 44);
-            this.uiPanel1.TabIndex = 68;
-            this.uiPanel1.Text = null;
-            this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.uiSymbolLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiSymbolLabel1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiSymbolLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiSymbolLabel1.Location = new System.Drawing.Point(0, 2);
+            this.uiSymbolLabel1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiSymbolLabel1.Name = "uiSymbolLabel1";
+            this.uiSymbolLabel1.Size = new System.Drawing.Size(756, 30);
+            this.uiSymbolLabel1.Symbol = 61459;
+            this.uiSymbolLabel1.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiSymbolLabel1.SymbolOffset = new System.Drawing.Point(0, 1);
+            this.uiSymbolLabel1.SymbolSize = 32;
+            this.uiSymbolLabel1.TabIndex = 3;
+            this.uiSymbolLabel1.Text = "Settings";
+            this.uiSymbolLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiPanel4
+            // pnlButton
             // 
-            this.uiPanel4.Controls.Add(this.lbSessionID);
-            this.uiPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel4.FillColor = System.Drawing.Color.White;
-            this.uiPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel4.Location = new System.Drawing.Point(0, 0);
-            this.uiPanel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.uiPanel4.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel4.Name = "uiPanel4";
-            this.uiPanel4.Padding = new System.Windows.Forms.Padding(0, 2, 0, 10);
-            this.uiPanel4.Radius = 0;
-            this.uiPanel4.RectColor = System.Drawing.SystemColors.ControlLight;
-            this.uiPanel4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel4.RectSize = 2;
-            this.uiPanel4.Size = new System.Drawing.Size(756, 42);
-            this.uiPanel4.TabIndex = 5;
-            this.uiPanel4.Text = null;
-            this.uiPanel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.uiTableLayoutPanel1.SetColumnSpan(this.pnlButton, 2);
+            this.pnlButton.Controls.Add(this.panel2);
+            this.pnlButton.Controls.Add(this.panel3);
+            this.pnlButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlButton.FillColor = System.Drawing.Color.White;
+            this.pnlButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.pnlButton.Location = new System.Drawing.Point(4, 719);
+            this.pnlButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlButton.MinimumSize = new System.Drawing.Size(1, 1);
+            this.pnlButton.Name = "pnlButton";
+            this.pnlButton.Padding = new System.Windows.Forms.Padding(0, 13, 0, 6);
+            this.pnlButton.Radius = 0;
+            this.pnlButton.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.pnlButton.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
+            this.pnlButton.RectSize = 2;
+            this.pnlButton.Size = new System.Drawing.Size(756, 57);
+            this.pnlButton.TabIndex = 69;
+            this.pnlButton.Text = null;
+            this.pnlButton.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbSessionID
+            // panel2
             // 
-            this.lbSessionID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbSessionID.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSessionID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.lbSessionID.Location = new System.Drawing.Point(0, 2);
-            this.lbSessionID.Margin = new System.Windows.Forms.Padding(0);
-            this.lbSessionID.Name = "lbSessionID";
-            this.lbSessionID.Size = new System.Drawing.Size(756, 30);
-            this.lbSessionID.TabIndex = 3;
-            this.lbSessionID.Text = "Setting";
-            this.lbSessionID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panel2.Controls.Add(this.btnCancel);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(506, 13);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(120, 38);
+            this.panel2.TabIndex = 10;
             // 
-            // uiPanel8
+            // btnCancel
             // 
-            this.uiTableLayoutPanel1.SetColumnSpan(this.uiPanel8, 2);
-            this.uiPanel8.Controls.Add(this.panel1);
-            this.uiPanel8.Controls.Add(this.panel4);
-            this.uiPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel8.FillColor = System.Drawing.Color.White;
-            this.uiPanel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel8.Location = new System.Drawing.Point(4, 719);
-            this.uiPanel8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel8.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel8.Name = "uiPanel8";
-            this.uiPanel8.Padding = new System.Windows.Forms.Padding(0, 13, 0, 3);
-            this.uiPanel8.Radius = 0;
-            this.uiPanel8.RectColor = System.Drawing.SystemColors.ControlLight;
-            this.uiPanel8.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
-            this.uiPanel8.RectSize = 2;
-            this.uiPanel8.Size = new System.Drawing.Size(756, 57);
-            this.uiPanel8.TabIndex = 69;
-            this.uiPanel8.Text = null;
-            this.uiPanel8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCancel.FillColor = System.Drawing.Color.White;
+            this.btnCancel.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnCancel.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCancel.Location = new System.Drawing.Point(0, 0);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCancel.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCancel.RectDisableColor = System.Drawing.Color.White;
+            this.btnCancel.RectHoverColor = System.Drawing.Color.White;
+            this.btnCancel.RectPressColor = System.Drawing.Color.White;
+            this.btnCancel.RectSelectedColor = System.Drawing.Color.White;
+            this.btnCancel.RectSize = 2;
+            this.btnCancel.Size = new System.Drawing.Size(120, 38);
+            this.btnCancel.Symbol = 61453;
+            this.btnCancel.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // panel1
+            // panel3
             // 
-            this.panel1.Controls.Add(this.uiSymbolButton1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(506, 13);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(120, 41);
-            this.panel1.TabIndex = 10;
+            this.panel3.Controls.Add(this.btnSave);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(626, 13);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.panel3.Size = new System.Drawing.Size(130, 38);
+            this.panel3.TabIndex = 9;
             // 
-            // uiSymbolButton1
+            // btnSave
             // 
-            this.uiSymbolButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiSymbolButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiSymbolButton1.FillColor = System.Drawing.Color.White;
-            this.uiSymbolButton1.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.uiSymbolButton1.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.uiSymbolButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiSymbolButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiSymbolButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiSymbolButton1.Location = new System.Drawing.Point(0, 0);
-            this.uiSymbolButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.uiSymbolButton1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiSymbolButton1.Name = "uiSymbolButton1";
-            this.uiSymbolButton1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiSymbolButton1.RectDisableColor = System.Drawing.Color.White;
-            this.uiSymbolButton1.RectHoverColor = System.Drawing.Color.White;
-            this.uiSymbolButton1.RectPressColor = System.Drawing.Color.White;
-            this.uiSymbolButton1.RectSelectedColor = System.Drawing.Color.White;
-            this.uiSymbolButton1.RectSize = 2;
-            this.uiSymbolButton1.Size = new System.Drawing.Size(120, 41);
-            this.uiSymbolButton1.Symbol = 0;
-            this.uiSymbolButton1.TabIndex = 3;
-            this.uiSymbolButton1.Text = "Cancel";
-            this.uiSymbolButton1.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.uiSymbolButton2);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(626, 13);
-            this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel4.Size = new System.Drawing.Size(130, 41);
-            this.panel4.TabIndex = 9;
-            // 
-            // uiSymbolButton2
-            // 
-            this.uiSymbolButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiSymbolButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiSymbolButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiSymbolButton2.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.uiSymbolButton2.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.uiSymbolButton2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiSymbolButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiSymbolButton2.Location = new System.Drawing.Point(10, 0);
-            this.uiSymbolButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.uiSymbolButton2.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiSymbolButton2.Name = "uiSymbolButton2";
-            this.uiSymbolButton2.Padding = new System.Windows.Forms.Padding(14, 0, 12, 0);
-            this.uiSymbolButton2.Radius = 10;
-            this.uiSymbolButton2.RectColor = System.Drawing.Color.White;
-            this.uiSymbolButton2.RectDisableColor = System.Drawing.Color.White;
-            this.uiSymbolButton2.RectHoverColor = System.Drawing.Color.White;
-            this.uiSymbolButton2.RectPressColor = System.Drawing.Color.White;
-            this.uiSymbolButton2.RectSelectedColor = System.Drawing.Color.White;
-            this.uiSymbolButton2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiSymbolButton2.Size = new System.Drawing.Size(120, 41);
-            this.uiSymbolButton2.Symbol = 0;
-            this.uiSymbolButton2.TabIndex = 3;
-            this.uiSymbolButton2.Text = "Confirm";
-            this.uiSymbolButton2.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnSave.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnSave.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnSave.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(10, 0);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSave.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Radius = 10;
+            this.btnSave.RectColor = System.Drawing.Color.White;
+            this.btnSave.RectDisableColor = System.Drawing.Color.White;
+            this.btnSave.RectHoverColor = System.Drawing.Color.White;
+            this.btnSave.RectPressColor = System.Drawing.Color.White;
+            this.btnSave.RectSelectedColor = System.Drawing.Color.White;
+            this.btnSave.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnSave.Size = new System.Drawing.Size(120, 38);
+            this.btnSave.Symbol = 557715;
+            this.btnSave.SymbolSize = 20;
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "Save";
+            this.btnSave.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // SettingForm
             // 
@@ -1959,6 +1962,8 @@
             this.panel.ResumeLayout(false);
             this.uiPanel6.ResumeLayout(false);
             this.uiTableLayoutPanel1.ResumeLayout(false);
+            this.uiPanel1.ResumeLayout(false);
+            this.uiPanel4.ResumeLayout(false);
             this.uiGroupBox12.ResumeLayout(false);
             this.uiTableLayoutPanel13.ResumeLayout(false);
             this.uiPanel21.ResumeLayout(false);
@@ -1985,11 +1990,9 @@
             this.uiGroupBox8.ResumeLayout(false);
             this.uiTableLayoutPanel12.ResumeLayout(false);
             this.uiPanel13.ResumeLayout(false);
-            this.uiPanel1.ResumeLayout(false);
-            this.uiPanel4.ResumeLayout(false);
-            this.uiPanel8.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
+            this.pnlButton.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2075,11 +2078,11 @@
         private System.Windows.Forms.FolderBrowserDialog fbdFolderLocation;
         private Sunny.UI.UIPanel uiPanel1;
         private Sunny.UI.UIPanel uiPanel4;
-        private Sunny.UI.UILabel lbSessionID;
-        private Sunny.UI.UIPanel uiPanel8;
-        private System.Windows.Forms.Panel panel1;
-        private Sunny.UI.UISymbolButton uiSymbolButton1;
-        private System.Windows.Forms.Panel panel4;
-        private Sunny.UI.UISymbolButton uiSymbolButton2;
+        private Sunny.UI.UISymbolLabel uiSymbolLabel1;
+        private Sunny.UI.UIPanel pnlButton;
+        private System.Windows.Forms.Panel panel2;
+        private Sunny.UI.UISymbolButton btnCancel;
+        private System.Windows.Forms.Panel panel3;
+        private Sunny.UI.UISymbolButton btnSave;
     }
 }

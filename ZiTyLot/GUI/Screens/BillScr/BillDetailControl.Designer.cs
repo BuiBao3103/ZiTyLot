@@ -1307,7 +1307,7 @@
             this.btnCancel.Margin = new System.Windows.Forms.Padding(0);
             this.btnCancel.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCancel.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnCancel.RectDisableColor = System.Drawing.Color.White;
             this.btnCancel.RectHoverColor = System.Drawing.Color.White;
             this.btnCancel.RectPressColor = System.Drawing.Color.White;

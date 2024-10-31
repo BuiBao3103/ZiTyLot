@@ -25,6 +25,7 @@ namespace ZiTyLot.BUS
             Validate(item);
             try
             {
+                item.Created_at = DateTime.Now;
                 residentFeeDAO.Add(item);
             }
             catch (Exception ex)
@@ -89,6 +90,7 @@ namespace ZiTyLot.BUS
             Validate(item);
             try
             {
+                item.Updated_at = DateTime.Now;
                 residentFeeDAO.Update(item);
             }
             catch (Exception ex)
@@ -100,6 +102,7 @@ namespace ZiTyLot.BUS
         //
         private void Validate(ResidentFee item)
         {
+
             //if (string.IsNullOrWhiteSpace(item.Name))
             //{
             //    throw new ArgumentException("Name cannot be null or empty.", nameof(item.Name));

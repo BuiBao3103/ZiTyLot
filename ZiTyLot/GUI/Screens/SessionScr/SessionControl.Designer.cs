@@ -135,7 +135,7 @@ namespace ZiTyLot.GUI.Screens
             this.pnlBottom.Location = new System.Drawing.Point(0, 112);
             this.pnlBottom.Margin = new System.Windows.Forms.Padding(0);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Padding = new System.Windows.Forms.Padding(10);
+            this.pnlBottom.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.pnlBottom.Size = new System.Drawing.Size(1076, 468);
             this.pnlBottom.TabIndex = 3;
             this.pnlBottom.Resize += new System.EventHandler(this.BottomPnl_Resize);
@@ -363,7 +363,7 @@ namespace ZiTyLot.GUI.Screens
             this.pnlNext.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlNext.Location = new System.Drawing.Point(126, 0);
             this.pnlNext.Name = "pnlNext";
-            this.pnlNext.Padding = new System.Windows.Forms.Padding(3);
+            this.pnlNext.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.pnlNext.Size = new System.Drawing.Size(40, 40);
             this.pnlNext.TabIndex = 1;
             // 
@@ -401,7 +401,7 @@ namespace ZiTyLot.GUI.Screens
             this.pnlCurrentPage.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlCurrentPage.Location = new System.Drawing.Point(40, 0);
             this.pnlCurrentPage.Name = "pnlCurrentPage";
-            this.pnlCurrentPage.Padding = new System.Windows.Forms.Padding(3);
+            this.pnlCurrentPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.pnlCurrentPage.Size = new System.Drawing.Size(86, 40);
             this.pnlCurrentPage.TabIndex = 2;
             // 
@@ -429,7 +429,7 @@ namespace ZiTyLot.GUI.Screens
             this.tbCurrentpage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbCurrentpage.MinimumSize = new System.Drawing.Size(1, 16);
             this.tbCurrentpage.Name = "tbCurrentpage";
-            this.tbCurrentpage.Padding = new System.Windows.Forms.Padding(5);
+            this.tbCurrentpage.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.tbCurrentpage.Radius = 1;
             this.tbCurrentpage.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
             this.tbCurrentpage.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -441,6 +441,7 @@ namespace ZiTyLot.GUI.Screens
             this.tbCurrentpage.Text = "01";
             this.tbCurrentpage.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.tbCurrentpage.Watermark = "";
+            this.tbCurrentpage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCurrentpage_KeyPress_1);
             // 
             // pnlPrevious
             // 
@@ -448,7 +449,7 @@ namespace ZiTyLot.GUI.Screens
             this.pnlPrevious.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlPrevious.Location = new System.Drawing.Point(0, 0);
             this.pnlPrevious.Name = "pnlPrevious";
-            this.pnlPrevious.Padding = new System.Windows.Forms.Padding(3);
+            this.pnlPrevious.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.pnlPrevious.Size = new System.Drawing.Size(40, 40);
             this.pnlPrevious.TabIndex = 0;
             // 
@@ -498,7 +499,7 @@ namespace ZiTyLot.GUI.Screens
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlTop.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.pnlTop.Size = new System.Drawing.Size(1076, 108);
             this.pnlTop.TabIndex = 5;
             this.pnlTop.Resize += new System.EventHandler(this.TopPnl_Resize);
@@ -532,7 +533,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel3.Name = "uiPanel3";
-            this.uiPanel3.Padding = new System.Windows.Forms.Padding(3);
+            this.uiPanel3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.uiPanel3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel3.Size = new System.Drawing.Size(1022, 44);
             this.uiPanel3.TabIndex = 13;
@@ -654,7 +655,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 142F));
             this.uiTableLayoutPanel1.Controls.Add(this.uiPanel8, 2, 0);
             this.uiTableLayoutPanel1.Controls.Add(this.uiPanel6, 0, 0);
             this.uiTableLayoutPanel1.Controls.Add(this.uiPanel9, 1, 0);
@@ -675,13 +676,13 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel8.FillColor = System.Drawing.Color.White;
             this.uiPanel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel8.Location = new System.Drawing.Point(540, 5);
+            this.uiPanel8.Location = new System.Drawing.Point(532, 5);
             this.uiPanel8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel8.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel8.Name = "uiPanel8";
             this.uiPanel8.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.uiPanel8.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel8.Size = new System.Drawing.Size(260, 34);
+            this.uiPanel8.Size = new System.Drawing.Size(256, 34);
             this.uiPanel8.TabIndex = 32;
             this.uiPanel8.Text = null;
             this.uiPanel8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -701,7 +702,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiTableLayoutPanel4.Name = "uiTableLayoutPanel4";
             this.uiTableLayoutPanel4.RowCount = 1;
             this.uiTableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel4.Size = new System.Drawing.Size(250, 34);
+            this.uiTableLayoutPanel4.Size = new System.Drawing.Size(246, 34);
             this.uiTableLayoutPanel4.TabIndex = 2;
             this.uiTableLayoutPanel4.TagString = null;
             // 
@@ -734,7 +735,7 @@ namespace ZiTyLot.GUI.Screens
             this.tbTimeOut.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbTimeOut.RectSize = 2;
             this.tbTimeOut.ShowText = false;
-            this.tbTimeOut.Size = new System.Drawing.Size(80, 34);
+            this.tbTimeOut.Size = new System.Drawing.Size(76, 34);
             this.tbTimeOut.TabIndex = 1;
             this.tbTimeOut.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbTimeOut.Watermark = "";
@@ -748,7 +749,7 @@ namespace ZiTyLot.GUI.Screens
             this.btnTimeOut.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnTimeOut.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnTimeOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnTimeOut.Location = new System.Drawing.Point(213, 0);
+            this.btnTimeOut.Location = new System.Drawing.Point(209, 0);
             this.btnTimeOut.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.btnTimeOut.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnTimeOut.Name = "btnTimeOut";
@@ -775,7 +776,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel6.Name = "uiPanel6";
             this.uiPanel6.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.uiPanel6.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel6.Size = new System.Drawing.Size(260, 34);
+            this.uiPanel6.Size = new System.Drawing.Size(256, 34);
             this.uiPanel6.TabIndex = 31;
             this.uiPanel6.Text = null;
             this.uiPanel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -793,7 +794,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiTableLayoutPanel2.Name = "uiTableLayoutPanel2";
             this.uiTableLayoutPanel2.RowCount = 1;
             this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel2.Size = new System.Drawing.Size(255, 34);
+            this.uiTableLayoutPanel2.Size = new System.Drawing.Size(251, 34);
             this.uiTableLayoutPanel2.TabIndex = 0;
             this.uiTableLayoutPanel2.TagString = null;
             // 
@@ -822,7 +823,7 @@ namespace ZiTyLot.GUI.Screens
             this.cbVehicalType.RectSize = 2;
             this.cbVehicalType.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.cbVehicalType.ScrollBarStyleInherited = false;
-            this.cbVehicalType.Size = new System.Drawing.Size(145, 34);
+            this.cbVehicalType.Size = new System.Drawing.Size(141, 34);
             this.cbVehicalType.Style = Sunny.UI.UIStyle.Custom;
             this.cbVehicalType.SymbolSize = 24;
             this.cbVehicalType.TabIndex = 4;
@@ -853,13 +854,13 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel9.FillColor = System.Drawing.Color.White;
             this.uiPanel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel9.Location = new System.Drawing.Point(272, 5);
+            this.uiPanel9.Location = new System.Drawing.Point(268, 5);
             this.uiPanel9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel9.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel9.Name = "uiPanel9";
             this.uiPanel9.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.uiPanel9.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel9.Size = new System.Drawing.Size(260, 34);
+            this.uiPanel9.Size = new System.Drawing.Size(256, 34);
             this.uiPanel9.TabIndex = 29;
             this.uiPanel9.Text = null;
             this.uiPanel9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -879,7 +880,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiTableLayoutPanel3.Name = "uiTableLayoutPanel3";
             this.uiTableLayoutPanel3.RowCount = 1;
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(250, 34);
+            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(246, 34);
             this.uiTableLayoutPanel3.TabIndex = 1;
             this.uiTableLayoutPanel3.TagString = null;
             // 
@@ -912,7 +913,7 @@ namespace ZiTyLot.GUI.Screens
             this.tbTimeIn.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbTimeIn.RectSize = 2;
             this.tbTimeIn.ShowText = false;
-            this.tbTimeIn.Size = new System.Drawing.Size(90, 34);
+            this.tbTimeIn.Size = new System.Drawing.Size(86, 34);
             this.tbTimeIn.TabIndex = 1;
             this.tbTimeIn.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbTimeIn.Watermark = "";
@@ -926,7 +927,7 @@ namespace ZiTyLot.GUI.Screens
             this.btnTimeIn.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnTimeIn.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnTimeIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnTimeIn.Location = new System.Drawing.Point(213, 0);
+            this.btnTimeIn.Location = new System.Drawing.Point(209, 0);
             this.btnTimeIn.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.btnTimeIn.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnTimeIn.Name = "btnTimeIn";
@@ -945,7 +946,7 @@ namespace ZiTyLot.GUI.Screens
             // 
             this.panel4.Controls.Add(this.btnClear);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(807, 3);
+            this.panel4.Location = new System.Drawing.Point(795, 3);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.panel4.Size = new System.Drawing.Size(124, 38);
@@ -978,15 +979,16 @@ namespace ZiTyLot.GUI.Screens
             this.btnClear.TabIndex = 3;
             this.btnClear.Text = "Clear";
             this.btnClear.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnApply);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(937, 3);
+            this.panel3.Location = new System.Drawing.Point(925, 3);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(126, 38);
+            this.panel3.Size = new System.Drawing.Size(138, 38);
             this.panel3.TabIndex = 25;
             // 
             // btnApply
@@ -1008,11 +1010,12 @@ namespace ZiTyLot.GUI.Screens
             this.btnApply.RectPressColor = System.Drawing.Color.White;
             this.btnApply.RectSelectedColor = System.Drawing.Color.White;
             this.btnApply.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnApply.Size = new System.Drawing.Size(121, 38);
+            this.btnApply.Size = new System.Drawing.Size(133, 38);
             this.btnApply.Symbol = 61616;
             this.btnApply.TabIndex = 3;
             this.btnApply.Text = "Apply";
             this.btnApply.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // uiPanel1
             // 
@@ -1073,7 +1076,7 @@ namespace ZiTyLot.GUI.Screens
             this.customDateTimePicker1.BackColor = System.Drawing.Color.White;
             this.customDateTimePicker1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.customDateTimePicker1.Location = new System.Drawing.Point(0, 0);
-            this.customDateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
+            this.customDateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.customDateTimePicker1.MaximumSize = new System.Drawing.Size(494, 470);
             this.customDateTimePicker1.MinimumSize = new System.Drawing.Size(494, 470);
             this.customDateTimePicker1.Name = "customDateTimePicker1";
@@ -1085,7 +1088,7 @@ namespace ZiTyLot.GUI.Screens
             this.customDateTimePicker.BackColor = System.Drawing.Color.White;
             this.customDateTimePicker.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.customDateTimePicker.Location = new System.Drawing.Point(0, 0);
-            this.customDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.customDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.customDateTimePicker.MaximumSize = new System.Drawing.Size(494, 470);
             this.customDateTimePicker.MinimumSize = new System.Drawing.Size(494, 470);
             this.customDateTimePicker.Name = "customDateTimePicker";
@@ -1102,7 +1105,7 @@ namespace ZiTyLot.GUI.Screens
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.Name = "SessionControl";
-            this.Padding = new System.Windows.Forms.Padding(10);
+            this.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.Size = new System.Drawing.Size(1096, 600);
             this.Load += new System.EventHandler(this.SessionScreen_Load);
             this.Resize += new System.EventHandler(this.SessionControl_Resize);
@@ -1184,7 +1187,6 @@ namespace ZiTyLot.GUI.Screens
         private Sunny.UI.UIPanel uiPanel10;
         private Sunny.UI.UITextBox tbTimeOut;
         private Sunny.UI.UISymbolButton btnTimeOut;
-        private CustomDateTimePicker customDateTimePicker1;
         private CustomDateTimePicker customDateTimePicker;
         private DataGridViewTextBoxColumn colId;
         private DataGridViewTextBoxColumn colType;
@@ -1194,5 +1196,6 @@ namespace ZiTyLot.GUI.Screens
         private DataGridViewTextBoxColumn colTotalTime;
         private DataGridViewTextBoxColumn colTotalPrice;
         private DataGridViewButtonColumn colView;
+        private CustomDateTimePicker customDateTimePicker1;
     }
 }

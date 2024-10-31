@@ -17,8 +17,8 @@ namespace ZiTyLot.GUI
         #region Constants
         private static readonly List<int> SIDEBAR_WIDTH = new List<int> { 60, 245 };
         private static readonly List<int> SIDEBAR_TOP_HEIGHT = new List<int> { 125, 180 };
-        private const int ANIMATION_DURATION = 400;
-        private const int ANIMATION_STEPS = 10;
+        private const int ANIMATION_DURATION = 100;
+        private const int ANIMATION_STEPS = 20;
         private const string LOGO_PATH = @"../../GUI/assets/logo.jpg";
         private const string LOGO_MINI_PATH = @"../../GUI/assets/logo_mini.png";
         #endregion

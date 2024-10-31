@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.ENTITY;
@@ -12,31 +13,18 @@ namespace ZiTyLot.GUI.Screens
 {
     public partial class BillControl : UserControl
     {
+        private readonly Debouncer _debouncer = new Debouncer();
         private readonly BillBUS billBUS = new BillBUS();
         private readonly Pageable pageable = new Pageable();
-        private readonly List<FilterCondition> filters;
+        private readonly List<FilterCondition> filters = new List<FilterCondition>();
         private Page<Bill> page;
+
         public BillControl()
         {
             InitializeComponent();
             cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
-            page = billBUS.GetAllPagination(pageable, filters);
-            tbCurrentpage.Text = "1";
-            lbTotalpage.Text = "/" + page.TotalPages;
-            LoadPageToTable();
         }
-        private void LoadPageToTable()
-        {
-            tableBill.Rows.Clear();
-            foreach (Bill bill in page.Content)
-            {
-
-                tableBill.Rows.Add(bill.Id, billBUS.PopulateResident(bill).Resident.Full_name, billBUS.PopulateResident(bill).Resident.Apartment_id, bill.Issue_quantity, bill.Total_fee.ToString());
-            }
-        }
-
-
 
         private void BillScreen_Load(object sender, EventArgs e)
         {
@@ -50,6 +38,7 @@ namespace ZiTyLot.GUI.Screens
             this.tableBill.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
             this.tableBill.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
         }
+
         // Paint the header cell
         private void table_Paint(object sender, PaintEventArgs e)
         {
@@ -94,6 +83,7 @@ namespace ZiTyLot.GUI.Screens
                 e.Handled = true;
             }
         }
+
         // Cell click event handler
         private void table_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -128,6 +118,23 @@ namespace ZiTyLot.GUI.Screens
             home.LoadForm(BillDetailControl);
         }
 
+        private void LoadPageAndPageable()
+        {
+            if (page == null || pageable == null) return;
+            //update page number
+            tbCurrentpage.Text = pageable.PageNumber.ToString();
+            lbTotalpage.Text = "/" + page.TotalPages;
+            //update table
+            tableBill.Rows.Clear();
+            foreach (Bill bill in page.Content)
+            {
+
+                tableBill.Rows.Add(bill.Id, billBUS.PopulateResident(bill).Resident.Full_name, billBUS.PopulateResident(bill).Resident.Apartment_id, bill.Issue_quantity, bill.Total_fee.ToString());
+            }
+            //update button
+            btnPrevious.Enabled = pageable.PageNumber > 1;
+            btnNext.Enabled = pageable.PageNumber < page.TotalPages;
+        }
 
         private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -136,44 +143,91 @@ namespace ZiTyLot.GUI.Screens
             pageable.PageNumber = 1;
             pageable.PageSize = pageSize;
             page = billBUS.GetAllPagination(pageable, filters);
-            tbCurrentpage.Text = "1";
-            lbTotalpage.Text = "/" + page.TotalPages;
-            LoadPageToTable();
+            LoadPageAndPageable();
         }
+
         private void changePage(int pageNumber)
         {
-            if (pageNumber < 1 || pageNumber > page.TotalPages)
-            {
-                return;
-            }
             pageable.PageNumber = pageNumber;
             page = billBUS.GetAllPagination(pageable, filters);
-            LoadPageToTable();
-            tbCurrentpage.Text = pageNumber.ToString();
+            LoadPageAndPageable();
         }
+
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            int currentPage = int.Parse(tbCurrentpage.Text);
-            changePage(currentPage - 1);
+            changePage(pageable.PageNumber - 1);
         }
+
         private void btnNext_Click(object sender, EventArgs e)
         {
-            int currentPage = int.Parse(tbCurrentpage.Text);
-            changePage(currentPage + 1);
+            changePage(pageable.PageNumber + 1);
         }
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = cbFilter.SelectedIndex;
-            switch (index) {
+            switch (index)
+            {
                 case 0:
                     tableSearch.ColumnStyles[1].Width = 90;
                     break;
                 case 1:
                     tableSearch.ColumnStyles[1].Width = 130;
                     break;
-
             }
+            query();
+        }
+
+        private void tbCurrentpage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow only numbers and control characters in textbox
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) e.Handled = true;
+
+            // Allow enter key to change page
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                string input = tbCurrentpage.Text;
+                int pageNumber;
+
+                if (string.IsNullOrEmpty(input))
+                    pageNumber = 1;
+                else
+                {
+                    pageNumber = int.Parse(input);
+                    pageNumber = pageNumber < 1 ? 1 : pageNumber;
+                    pageNumber = pageNumber > page.TotalPages ? page.TotalPages : pageNumber;
+                }
+                changePage(pageNumber);
+            }
+        }
+
+        private void query()
+        {
+            int inputCboxIndex = cbFilter.SelectedIndex;
+            string inputSearch = tbSearch.Text.Trim();
+            filters.Clear();
+            if (!string.IsNullOrEmpty(inputSearch))
+            {
+                switch (inputCboxIndex)
+                {
+                    case 0:
+                        filters.Add(new FilterCondition("id", CompOp.Equals, inputSearch));
+                        break;
+                    case 1:
+                        filters.Add(new FilterCondition("resident_id", CompOp.Equals, inputSearch));
+                        break;
+                }
+            }
+            changePage(1);
+        }
+
+        private async void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            await _debouncer.DebounceAsync(() =>
+            {
+                query();
+                return Task.CompletedTask;
+            }, 500);
         }
     }
 }
