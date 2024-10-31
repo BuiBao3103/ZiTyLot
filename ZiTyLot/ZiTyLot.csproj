@@ -217,8 +217,12 @@
     <Compile Include="ENTITY\Slot.cs" />
     <Compile Include="ENTITY\VehicleType.cs" />
     <Compile Include="ENTITY\VisitorFee.cs" />
-    <Compile Include="GUI\Screens\LostHistoryScr\LostCardControl.cs" />
-    <Compile Include="GUI\Screens\LostHistoryScr\LostCardControl.Designer.cs" />
+    <Compile Include="GUI\Screens\LostCardScr\LostCardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\LostCardScr\LostCardControl.Designer.cs">
+      <DependentUpon>LostCardControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Screens\PriceScr\DetailVisitorFeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -507,7 +511,9 @@
     <EmbeddedResource Include="GUI\Screens\CardScr\CardCreateForm.resx">
       <DependentUpon>CardCreateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\LostHistoryScr\LostCardControl.resx" />
+    <EmbeddedResource Include="GUI\Screens\LostCardScr\LostCardControl.resx">
+      <DependentUpon>LostCardControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\PriceScr\DetailVisitorFeeForm.resx">
       <DependentUpon>DetailVisitorFeeForm.cs</DependentUpon>
     </EmbeddedResource>

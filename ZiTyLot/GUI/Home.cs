@@ -71,7 +71,7 @@ namespace ZiTyLot.GUI
         {
             panelMapping = new Dictionary<string, UserControl>
             {
-                { "LostHistoryManagement", new LostCardControl() }
+                //{ "LostHistoryManagement", new LostControl() },
                 { "AccountManagement", new AccountControl() },
                 { "BillManagement", new BillControl() },
                 { "ResidentManagement", new ResidentControl() },
@@ -114,7 +114,7 @@ namespace ZiTyLot.GUI
         {
             var menuItems = new[]
             {
-                new { Name = "LostHistoryManagement", Text = "Lost History"},
+                //new { Name = "LostHistoryManagement", Text = "Lost History"},
                 new { Name = "PriceManagement", Text = "Price" },
                 new { Name = "RoleManagement", Text = "Role" },
                 new { Name = "AccountManagement", Text = "Account" },
