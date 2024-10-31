@@ -247,7 +247,6 @@
             this.uiSymbolLabel1.Size = new System.Drawing.Size(876, 30);
             this.uiSymbolLabel1.Symbol = 561417;
             this.uiSymbolLabel1.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiSymbolLabel1.SymbolOffset = new System.Drawing.Point(0, 2);
             this.uiSymbolLabel1.SymbolSize = 32;
             this.uiSymbolLabel1.TabIndex = 1;
             this.uiSymbolLabel1.Text = "Create area";
@@ -387,7 +386,7 @@
             this.cbUserType.RectSize = 2;
             this.cbUserType.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.cbUserType.ScrollBarStyleInherited = false;
-            this.cbUserType.Size = new System.Drawing.Size(414, 34);
+            this.cbUserType.Size = new System.Drawing.Size(0, 34);
             this.cbUserType.SymbolSize = 24;
             this.cbUserType.TabIndex = 1;
             this.cbUserType.Text = "  Resident";
@@ -454,7 +453,7 @@
             this.cbCamera.RectSize = 2;
             this.cbCamera.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.cbCamera.ScrollBarStyleInherited = false;
-            this.cbCamera.Size = new System.Drawing.Size(414, 34);
+            this.cbCamera.Size = new System.Drawing.Size(0, 34);
             this.cbCamera.SymbolSize = 24;
             this.cbCamera.TabIndex = 1;
             this.cbCamera.Text = "  Camera 1";
@@ -521,7 +520,7 @@
             this.cbVehicalType.RectSize = 2;
             this.cbVehicalType.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.cbVehicalType.ScrollBarStyleInherited = false;
-            this.cbVehicalType.Size = new System.Drawing.Size(268, 34);
+            this.cbVehicalType.Size = new System.Drawing.Size(0, 34);
             this.cbVehicalType.SymbolSize = 24;
             this.cbVehicalType.TabIndex = 1;
             this.cbVehicalType.Text = "  Two wheeler";
@@ -670,7 +669,7 @@
             this.tbTotalSlot.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbTotalSlot.RectSize = 2;
             this.tbTotalSlot.ShowText = false;
-            this.tbTotalSlot.Size = new System.Drawing.Size(122, 34);
+            this.tbTotalSlot.Size = new System.Drawing.Size(0, 34);
             this.tbTotalSlot.TabIndex = 0;
             this.tbTotalSlot.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbTotalSlot.Watermark = "";

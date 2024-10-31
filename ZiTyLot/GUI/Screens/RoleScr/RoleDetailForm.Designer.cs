@@ -367,7 +367,7 @@
             this.uiSymbolLabel1.Size = new System.Drawing.Size(556, 30);
             this.uiSymbolLabel1.Symbol = 61459;
             this.uiSymbolLabel1.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiSymbolLabel1.SymbolOffset = new System.Drawing.Point(0, 2);
+            this.uiSymbolLabel1.SymbolOffset = new System.Drawing.Point(0, 1);
             this.uiSymbolLabel1.SymbolSize = 32;
             this.uiSymbolLabel1.TabIndex = 2;
             this.uiSymbolLabel1.Text = "Create role";

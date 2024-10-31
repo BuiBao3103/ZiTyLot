@@ -1834,7 +1834,7 @@
             this.uiSymbolLabel1.Size = new System.Drawing.Size(756, 30);
             this.uiSymbolLabel1.Symbol = 61459;
             this.uiSymbolLabel1.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiSymbolLabel1.SymbolOffset = new System.Drawing.Point(0, 2);
+            this.uiSymbolLabel1.SymbolOffset = new System.Drawing.Point(0, 1);
             this.uiSymbolLabel1.SymbolSize = 32;
             this.uiSymbolLabel1.TabIndex = 3;
             this.uiSymbolLabel1.Text = "Settings";
@@ -1852,7 +1852,7 @@
             this.pnlButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlButton.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlButton.Name = "pnlButton";
-            this.pnlButton.Padding = new System.Windows.Forms.Padding(0, 13, 0, 3);
+            this.pnlButton.Padding = new System.Windows.Forms.Padding(0, 13, 0, 6);
             this.pnlButton.Radius = 0;
             this.pnlButton.RectColor = System.Drawing.SystemColors.ControlLight;
             this.pnlButton.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
@@ -1868,7 +1868,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(506, 13);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(120, 41);
+            this.panel2.Size = new System.Drawing.Size(120, 38);
             this.panel2.TabIndex = 10;
             // 
             // btnCancel
@@ -1890,7 +1890,7 @@
             this.btnCancel.RectPressColor = System.Drawing.Color.White;
             this.btnCancel.RectSelectedColor = System.Drawing.Color.White;
             this.btnCancel.RectSize = 2;
-            this.btnCancel.Size = new System.Drawing.Size(120, 41);
+            this.btnCancel.Size = new System.Drawing.Size(120, 38);
             this.btnCancel.Symbol = 61453;
             this.btnCancel.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCancel.TabIndex = 3;
@@ -1904,7 +1904,7 @@
             this.panel3.Location = new System.Drawing.Point(626, 13);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(130, 41);
+            this.panel3.Size = new System.Drawing.Size(130, 38);
             this.panel3.TabIndex = 9;
             // 
             // btnSave
@@ -1926,7 +1926,7 @@
             this.btnSave.RectPressColor = System.Drawing.Color.White;
             this.btnSave.RectSelectedColor = System.Drawing.Color.White;
             this.btnSave.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnSave.Size = new System.Drawing.Size(120, 41);
+            this.btnSave.Size = new System.Drawing.Size(120, 38);
             this.btnSave.Symbol = 557715;
             this.btnSave.SymbolSize = 20;
             this.btnSave.TabIndex = 3;
