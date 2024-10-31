@@ -71,6 +71,7 @@ namespace ZiTyLot.GUI
         {
             panelMapping = new Dictionary<string, UserControl>
             {
+                { "LostHistoryManagement", new LostCardControl() }
                 { "AccountManagement", new AccountControl() },
                 { "BillManagement", new BillControl() },
                 { "ResidentManagement", new ResidentControl() },
@@ -113,6 +114,7 @@ namespace ZiTyLot.GUI
         {
             var menuItems = new[]
             {
+                new { Name = "LostHistoryManagement", Text = "Lost History"},
                 new { Name = "PriceManagement", Text = "Price" },
                 new { Name = "RoleManagement", Text = "Role" },
                 new { Name = "AccountManagement", Text = "Account" },
@@ -165,7 +167,7 @@ namespace ZiTyLot.GUI
         {
             if (isAnimating) return;
             isAnimating = true;
-            
+
             AnimateMenu(
                 initialWidth: sidebar.Width,
                 targetWidth: SIDEBAR_WIDTH[1],
@@ -265,7 +267,7 @@ namespace ZiTyLot.GUI
             if (isOpening)
             {
 
-               foreach (Button btn in sidebarMid.Controls.OfType<Button>())
+                foreach (Button btn in sidebarMid.Controls.OfType<Button>())
                 {
                     btn.Width = sidebar.Width - 10;
                     btn.Region = CreateButtonRegion(btn.Width, 45);

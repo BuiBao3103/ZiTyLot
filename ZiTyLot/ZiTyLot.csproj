@@ -217,6 +217,8 @@
     <Compile Include="ENTITY\Slot.cs" />
     <Compile Include="ENTITY\VehicleType.cs" />
     <Compile Include="ENTITY\VisitorFee.cs" />
+    <Compile Include="GUI\Screens\LostHistoryScr\LostCardControl.cs" />
+    <Compile Include="GUI\Screens\LostHistoryScr\LostCardControl.Designer.cs" />
     <Compile Include="GUI\Screens\PriceScr\DetailVisitorFeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -505,6 +507,7 @@
     <EmbeddedResource Include="GUI\Screens\CardScr\CardCreateForm.resx">
       <DependentUpon>CardCreateForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\LostHistoryScr\LostCardControl.resx" />
     <EmbeddedResource Include="GUI\Screens\PriceScr\DetailVisitorFeeForm.resx">
       <DependentUpon>DetailVisitorFeeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -675,7 +678,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\components\" />
-    <Folder Include="GUI\Screens\LostHistoryScr\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
