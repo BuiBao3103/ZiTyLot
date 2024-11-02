@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Sunny.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -11,6 +14,7 @@ using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens.CardScr;
 using ZiTyLot.GUI.Screens.SessionScr;
+using ZiTyLot.GUI.Utils;
 using ZiTyLot.Helper;
 
 namespace ZiTyLot.GUI.Screens
@@ -298,6 +302,47 @@ namespace ZiTyLot.GUI.Screens
         {
             pnlPagination.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlPagination.Width, pnlPagination.Height, 10, 10));
 
+        }
+
+        private void menuBtnDownload_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+                saveFileDialog.FileName = "Card-template";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string selectedFileName = saveFileDialog.FileName;
+                    string sourceFilePath = @"../../Resource/Excel-templates/Card-template.xlsx";
+
+                    try
+                    {
+                        File.Copy(sourceFilePath, selectedFileName, true);
+                        DialogResult result = MessageHelper.ShowConfirm("Download successful: " + selectedFileName + "\nDo you want to open the file?");
+
+                        if (result == DialogResult.Yes)
+                        {
+                           Process.Start(selectedFileName);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                        MessageHelper.ShowError("Something went wrong during download. Please try again.");
+                    }
+                }
+            }
+        }
+
+        private void menuBtnImport_Click(object sender, EventArgs e)
+        {
+            MessageHelper.ShowWarning("This feature is not available yet.");
+        }
+
+        private void menuBtnExport_Click(object sender, EventArgs e)
+        {
+            MessageHelper.ShowWarning("This feature is not available yet.");
         }
     }
 }
