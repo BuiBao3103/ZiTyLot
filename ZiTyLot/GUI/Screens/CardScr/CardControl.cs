@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
+using ZiTyLot.Constants;
 using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
@@ -99,21 +100,6 @@ namespace ZiTyLot.GUI.Screens
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
         }
 
-        private void excelMenu_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void downloadTemplateMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void logOutMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void LoadPageAndPageable()
         {
             if (page == null || pageable == null) return;
@@ -142,6 +128,8 @@ namespace ZiTyLot.GUI.Screens
         private void changePage(int pageNumber)
         {
             pageable.PageNumber = pageNumber;
+            pageable.SortBy = nameof(Card.Created_at);
+            pageable.SortOrder = SortOrderPageable.Descending;
             page = cardBUS.GetAllPagination(pageable, filters);
             LoadPageAndPageable();
         }
@@ -337,7 +325,27 @@ namespace ZiTyLot.GUI.Screens
 
         private void menuBtnImport_Click(object sender, EventArgs e)
         {
-            MessageHelper.ShowWarning("This feature is not available yet.");
+            try
+            {
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    openFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx|Excel Files (*.xls)|*.xls";
+                    openFileDialog.Title = "Select an Excel File";
+
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string filePath = openFileDialog.FileName;
+                        cardBUS.ImportCardsFromExcel(filePath);
+                        MessageHelper.ShowSuccess("Import successful.");
+                    }
+                    changePage(1);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                MessageHelper.ShowError("Something went wrong during import. Please try again.");
+            }
         }
 
         private void menuBtnExport_Click(object sender, EventArgs e)

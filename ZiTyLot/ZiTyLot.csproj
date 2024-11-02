@@ -178,6 +178,7 @@
     <Compile Include="Constants\Enum\ParkingLotUserType.cs" />
     <Compile Include="Constants\Enum\SessionType.cs" />
     <Compile Include="Constants\Enum\SlotStatus.cs" />
+    <Compile Include="Constants\SortOrderPageable.cs" />
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\ADAO.cs" />
     <Compile Include="DAO\BDAO.cs" />

@@ -34,6 +34,7 @@ namespace ZiTyLot.BUS
             Validate(item);
             try
             {
+                item.Created_at = DateTime.Now;
                 cardDAO.Add(item);
             }
             catch (Exception ex)
@@ -228,13 +229,9 @@ namespace ZiTyLot.BUS
             try
             {
                 var items = ExcelHelper.ImportFromExcel<Card>(filePath);
-                //validate here
-
-                //add to database
                 foreach (var item in items)
                 {
-                    cardDAO.Add(item);
-                    Debug.WriteLine(item.Vehicle_type_id);
+                    this.Add(item);
                 }
             }
             catch (Exception ex)

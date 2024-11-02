@@ -26,13 +26,13 @@ namespace ZiTyLot.Helper
         public string SortBy
         {
             get => sortBy;
-            set => sortBy = value ?? string.Empty; // Cung cấp giá trị mặc định nếu giá trị null
+            set => sortBy = value ?? string.Empty; 
         }
 
         public string SortOrder
         {
             get => sortOrder;
-            set => sortOrder = value ?? "ASC"; // Cung cấp giá trị mặc định nếu giá trị null
+            set => sortOrder = value ?? "ASC";
         }
 
         public int Offset()
