@@ -21,7 +21,6 @@ namespace ZiTyLot.GUI.Screens.PriceScr
         private static readonly List<int> INIT_DURATION = new List<int> { 1, 2, 3, 6, 9, 12 };
         private readonly VehicleType vehicleType;
 
-        private bool inAddProcess = false;
 
         public event EventHandler ResidentFeeInsertionEvent;
         public AddResidentFeeForm(int vehicle_id)
@@ -54,8 +53,6 @@ namespace ZiTyLot.GUI.Screens.PriceScr
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            inAddProcess = true;
-            btnCancel.Enabled = false;
             if (!ValidateInput()) return;
             try
             {
@@ -84,12 +81,6 @@ namespace ZiTyLot.GUI.Screens.PriceScr
             {
                 MessageHelper.ShowError("An unexpected error occurred. Please try again later.");
             }
-            finally
-            {
-                inAddProcess = false;
-                btnCancel.Enabled = true;
-            }
-
         }
 
         private void tbFee_KeyPress(object sender, KeyPressEventArgs e)
