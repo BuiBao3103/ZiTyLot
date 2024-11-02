@@ -362,7 +362,7 @@ namespace ZiTyLot.GUI
 
             // Update control positions within tableSetting
             tableSetting.Controls.Clear();
-            tableSetting.Controls.Add(pictureBox2, 0, 0);  // pictureBox2 in the first column
+            tableSetting.Controls.Add(lbSymbol, 0, 0);  // pictureBox2 in the first column
             tableSetting.Controls.Add(lbName, 1, 0);       // lbName in the second column
             tableSetting.Controls.Add(btnMore, 2, 0);      // btnMore in the third column
 
@@ -391,7 +391,7 @@ namespace ZiTyLot.GUI
             tableSetting.Controls.Clear();
             tableSetting.Controls.Add(btnMore, 0, 0);          // Add btnMore to first row
             tableSetting.Controls.Add(lbName, 0, 1);           // Add lbName to second row with height 0
-            tableSetting.Controls.Add(pictureBox2, 0, 2);      // Add pictureBox2 to last row
+            tableSetting.Controls.Add(lbSymbol, 0, 2);      // Add pictureBox2 to last row
 
             // Ensure table layout is docked to fill the parent container
             tableSetting.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -460,10 +460,14 @@ namespace ZiTyLot.GUI
             if (sidebar.Width == SIDEBAR_WIDTH[0])
             {
                 OpenMenu();
+                btnToggle.Symbol = 558848;
+                btnToggle.SymbolOffset = new Point(4, 0);
             }
             else
             {
                 CloseMenu();
+                btnToggle.Symbol = 558849;
+                btnToggle.SymbolOffset = new Point(0, 0);
             }
         }
         private void btnMore_Click(object sender, EventArgs e)

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.sidebar = new System.Windows.Forms.Panel();
             this.sidebarBottom = new Sunny.UI.UIPanel();
             this.uiPanel2 = new Sunny.UI.UIPanel();
@@ -43,9 +42,9 @@
             this.uiPanel1 = new Sunny.UI.UIPanel();
             this.btnToggle = new Sunny.UI.UISymbolButton();
             this.tableSetting = new Sunny.UI.UITableLayoutPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbName = new Sunny.UI.UILabel();
             this.btnMore = new Sunny.UI.UISymbolButton();
+            this.lbSymbol = new Sunny.UI.UISymbolLabel();
             this.sidebar.SuspendLayout();
             this.sidebarBottom.SuspendLayout();
             this.uiPanel2.SuspendLayout();
@@ -55,7 +54,6 @@
             this.menuSetting.SuspendLayout();
             this.uiPanel1.SuspendLayout();
             this.tableSetting.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // sidebar
@@ -246,9 +244,10 @@
             this.btnToggle.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnToggle.RectSize = 2;
             this.btnToggle.Size = new System.Drawing.Size(15, 699);
-            this.btnToggle.Symbol = 558849;
+            this.btnToggle.Symbol = 558848;
             this.btnToggle.SymbolColor = System.Drawing.SystemColors.ControlDark;
             this.btnToggle.SymbolHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnToggle.SymbolOffset = new System.Drawing.Point(4, 0);
             this.btnToggle.SymbolPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnToggle.SymbolSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnToggle.SymbolSize = 20;
@@ -262,9 +261,9 @@
             this.tableSetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableSetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSetting.Controls.Add(this.pictureBox2, 0, 0);
             this.tableSetting.Controls.Add(this.lbName, 1, 0);
             this.tableSetting.Controls.Add(this.btnMore, 2, 0);
+            this.tableSetting.Controls.Add(this.lbSymbol, 0, 0);
             this.tableSetting.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableSetting.Location = new System.Drawing.Point(0, 10);
             this.tableSetting.Name = "tableSetting";
@@ -274,18 +273,6 @@
             this.tableSetting.Size = new System.Drawing.Size(205, 40);
             this.tableSetting.TabIndex = 0;
             this.tableSetting.TagString = null;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
             // 
             // lbName
             // 
@@ -329,6 +316,19 @@
             this.btnMore.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.btnMore.Click += new System.EventHandler(this.btnMore_Click);
             // 
+            // lbSymbol
+            // 
+            this.lbSymbol.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSymbol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbSymbol.Location = new System.Drawing.Point(3, 3);
+            this.lbSymbol.MinimumSize = new System.Drawing.Size(1, 1);
+            this.lbSymbol.Name = "lbSymbol";
+            this.lbSymbol.Size = new System.Drawing.Size(34, 34);
+            this.lbSymbol.Symbol = 559389;
+            this.lbSymbol.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.lbSymbol.SymbolSize = 32;
+            this.lbSymbol.TabIndex = 3;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,7 +352,6 @@
             this.menuSetting.ResumeLayout(false);
             this.uiPanel1.ResumeLayout(false);
             this.tableSetting.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -373,8 +372,8 @@
         private Sunny.UI.UIPanel uiPanel3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Sunny.UI.UITableLayoutPanel tableSetting;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private Sunny.UI.UILabel lbName;
         private Sunny.UI.UISymbolButton btnMore;
+        private Sunny.UI.UISymbolLabel lbSymbol;
     }
 }
