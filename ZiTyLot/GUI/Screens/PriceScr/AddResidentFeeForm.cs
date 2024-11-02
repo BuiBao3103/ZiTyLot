@@ -52,35 +52,41 @@ namespace ZiTyLot.GUI.Screens.PriceScr
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            if (!ValidateInput()) return;
             try
             {
-                if(double.TryParse(InputFormatter.GetRawNumericValue(tbFee.Text),out double fee))
+
+                ResidentFee residentFee = new ResidentFee
                 {
-                    ResidentFee residentFee = new ResidentFee
-                    {
-                        Vehicle_type_id = vehicleType.Id,
-                        Month = int.Parse(cbDuration.Text.Split(' ')[0]),
-                        Fee = fee
-                    };
-                    residentFeeBUS.Add(residentFee);
-                    ResidentFeeInsertionEvent?.Invoke(this, EventArgs.Empty);
-                    this.Close();
-                }
-                else
-                {
-                   MessageBox.Show("Invalid fee value", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                    Month = int.Parse(cbDuration.Text.Split(' ')[0]),
+                    Fee = double.Parse(InputFormatter.GetRawNumericValue(tbFee.Text)),
+                    Vehicle_type_id = vehicleType.Id,
+                };
+                residentFeeBUS.Add(residentFee);
+                MessageHelper.ShowSuccess(" Resident Fee added successfully!");
+                ResidentFeeInsertionEvent?.Invoke(this, EventArgs.Empty);
+                this.Close();
+
             }
-            catch (ArgumentException ex)
+            catch (ValidationException ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageHelper.ShowWarning(ex.Message);
+                //// Focus vào control tương ứng với field lỗi
+                //if (!string.IsNullOrEmpty(ex.FieldName) &&
+                //    fieldControls.TryGetValue(ex.FieldName, out Control control))
+                //{
+                //    control.Focus();
+                //}
             }
-            catch (Exception ex)
+            catch (BusinessException ex)
             {
-                Console.WriteLine(ex.Message);
-                MessageBox.Show("An error occurred while adding resident fee", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageHelper.ShowWarning(ex.Message);
             }
-            
+            catch (Exception)
+            {
+                MessageHelper.ShowError("An unexpected error occurred. Please try again later.");
+            }
+
         }
 
         private void tbFee_KeyPress(object sender, KeyPressEventArgs e)
@@ -92,6 +98,25 @@ namespace ZiTyLot.GUI.Screens.PriceScr
         {
             tbFee.Text = InputFormatter.FormatNumericText(tbFee.Text);
             tbFee.SelectionStart = tbFee.Text.Length;
+        }
+
+        private bool ValidateInput()
+        {
+            if (string.IsNullOrWhiteSpace(tbFee.Text))
+            {
+                MessageHelper.ShowWarning("Please enter fee amount");
+                tbFee.Focus();
+                return false;
+            }
+
+            if (!double.TryParse(InputFormatter.GetRawNumericValue(tbFee.Text), out double fee))
+            {
+                MessageHelper.ShowWarning("Please enter a valid fee amount");
+                tbFee.Focus();
+                return false;
+            }
+
+            return true;
         }
     }
 }

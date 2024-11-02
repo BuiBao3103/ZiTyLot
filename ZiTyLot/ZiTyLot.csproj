@@ -241,6 +241,7 @@
     <Compile Include="GUI\Screens\RoleScr\RoleCreateForm.Designer.cs">
       <DependentUpon>RoleCreateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Utils\BusinessException.cs" />
     <Compile Include="GUI\Utils\InputFormatter.cs" />
     <Compile Include="GUI\Utils\InputValidator.cs" />
     <Compile Include="GUI\component-extensions\RoundedBorder.cs" />
@@ -454,6 +455,8 @@
     <Compile Include="GUI\Screens\ResidentScr\ResidentControl.Designer.cs">
       <DependentUpon>ResidentControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Utils\MessageHelper.cs" />
+    <Compile Include="GUI\Utils\ValidationException.cs" />
     <Compile Include="Helper\Arduino.cs" />
     <Compile Include="Helper\Debouncer.cs" />
     <Compile Include="Helper\ExcelHelper.cs" />

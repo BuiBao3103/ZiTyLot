@@ -29,3 +29,4 @@ namespace ZiTyLot.GUI.Utils
             return MessageBox.Show(message, "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
     }
+}
