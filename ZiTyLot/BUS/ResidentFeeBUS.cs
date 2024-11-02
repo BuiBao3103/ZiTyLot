@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ZiTyLot.DAO;
 using ZiTyLot.ENTITY;
+using ZiTyLot.GUI.Utils;
 using ZiTyLot.Helper;
 
 namespace ZiTyLot.BUS
@@ -22,15 +23,34 @@ namespace ZiTyLot.BUS
 
         public void Add(ResidentFee item)
         {
-            Validate(item);
             try
             {
+                Validate(item);
+                // Kiểm tra trùng lặp
+                var existingFee = residentFeeDAO.GetAll(new List<FilterCondition>
+                {
+                    new FilterCondition("Vehicle_type_id", CompOp.Equals,item.Vehicle_type_id ),
+                    new FilterCondition ("Month", CompOp.Equals, item.Month)
+                });
+
+                if (existingFee.Any())
+                {
+                    throw new ValidationException(
+                        "Fee configuration already exists for this vehicle type and duration"
+                    );
+                }
+
                 item.Created_at = DateTime.Now;
                 residentFeeDAO.Add(item);
             }
+            catch (ValidationException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                Console.WriteLine(ex.Message);
+                throw new BusinessException("Unable to save resident fee. Please try again later.");
             }
         }
 
@@ -103,12 +123,27 @@ namespace ZiTyLot.BUS
         private void Validate(ResidentFee item)
         {
 
-            //if (string.IsNullOrWhiteSpace(item.Name))
-            //{
-            //    throw new ArgumentException("Name cannot be null or empty.", nameof(item.Name));
-            //}
+            if (!item.Vehicle_type_id.HasValue || item.Vehicle_type_id <= 0)
+            {
+                throw new ValidationException("Invalid vehicle type");
+            }
 
-            // Add other validation rules as needed
+            if (item.Month <= 0 || item.Month > 12)
+            {
+                throw new ValidationException("Month must be between 1 and 12");
+            }
+
+            if (item.Fee < 0)
+            {
+                throw new ValidationException("Fee cannot be negative");
+            }
+
+            Console.WriteLine(item.Vehicle_type_id);
+            // Kiểm tra vehicle type có tồn tại
+            if (item.Vehicle_type_id != null && vehicleTypeDAO.GetById(item.Vehicle_type_id) == null)
+            {
+                throw new ValidationException("Selected vehicle type does not exist");
+            }
         }
 
         private void EnsureRecordExists(object id)
