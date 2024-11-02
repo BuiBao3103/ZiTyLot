@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
+using ZiTyLot.GUI.Utils;
 
 namespace ZiTyLot.GUI
 {
@@ -117,15 +118,15 @@ namespace ZiTyLot.GUI
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         string filePath = openFileDialog.FileName;
-                        cardBus.ImportCardsFromExcel(filePath);
-                        MessageBox.Show("Import successful");
+                        //cardBUS.ImportCardsFromExcel(filePath);
+                        MessageHelper.ShowSuccess("Import successful.");
                     }
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex);
-                MessageBox.Show("Error during import: " + ex.Message);
+                Console.WriteLine(ex.ToString());
+                MessageHelper.ShowError("Something went wrong during import. Please try again.");
             }
         }
     }

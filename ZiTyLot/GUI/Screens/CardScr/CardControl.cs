@@ -311,7 +311,7 @@ namespace ZiTyLot.GUI.Screens
                 saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
                 saveFileDialog.FileName = "Card-template";
 
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
                 {
                     string selectedFileName = saveFileDialog.FileName;
                     string sourceFilePath = @"../../Resource/Excel-templates/Card-template.xlsx";
@@ -342,7 +342,33 @@ namespace ZiTyLot.GUI.Screens
 
         private void menuBtnExport_Click(object sender, EventArgs e)
         {
-            MessageHelper.ShowWarning("This feature is not available yet.");
+            try
+            {
+                    using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                    {
+                        saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+                        saveFileDialog.Title = "Save an Excel File";
+
+                        saveFileDialog.FileName = "Card-data-" + DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
+                 
+                        if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
+                        {
+                            string filePath = saveFileDialog.FileName;
+                            cardBUS.ExportCardsToExcel(filePath);
+                            DialogResult result = MessageHelper.ShowConfirm("Export successful: " + filePath + "\nDo you want to open the file?");
+
+                            if (result == DialogResult.Yes)
+                            {
+                                Process.Start(filePath);
+                            }
+                        }
+                    }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                MessageHelper.ShowError("Something went wrong during export. Please try again.");
+            }
         }
     }
 }
