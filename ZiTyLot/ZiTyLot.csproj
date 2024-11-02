@@ -217,6 +217,12 @@
     <Compile Include="ENTITY\Slot.cs" />
     <Compile Include="ENTITY\VehicleType.cs" />
     <Compile Include="ENTITY\VisitorFee.cs" />
+    <Compile Include="GUI\Login2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Login2.Designer.cs">
+      <DependentUpon>Login2.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Screens\LostCardScr\LostCardControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -472,6 +478,9 @@
     <EmbeddedResource Include="GUI\ExcelExample.resx">
       <DependentUpon>ExcelExample.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Login2.resx">
+      <DependentUpon>Login2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -608,6 +617,33 @@
     <None Include="Resource\Excel-templates\Card-template.xlsx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="GUI\assets\animation\debut.jpg" />
+    <Content Include="GUI\assets\animation\textbox_password.png" />
+    <Content Include="GUI\assets\animation\textbox_user_1.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_10.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_11.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_12.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_13.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_14.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_15.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_16.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_17.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_18.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_19.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_2.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_20.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_21.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_22.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_23.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_24.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_3.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_4.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_5.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_6.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_7.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_8.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_9.jpg" />
+    <Content Include="GUI\assets\animation\textbox_user_Clicked.JPG" />
     <Content Include="GUI\assets\hero-image.jpg" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Active-Active.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Active.png" />

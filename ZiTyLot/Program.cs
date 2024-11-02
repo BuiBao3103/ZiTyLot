@@ -15,25 +15,21 @@ namespace ZiTyLot
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Home());
-
-            // Attempt to connect to the database and fetch data using MyDao
             try
             {
                 using (var connection = DBConfig.GetConnection())
                 {
-                    connection.Open(); // Open connection here
-                    Console.WriteLine("Database connection successful.");
+                    connection.Open(); 
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Database connection failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // Terminate the application
+                return;
             }
-
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Home());
             // Start the main form of the application
             //Application.Run(new Login());
 
