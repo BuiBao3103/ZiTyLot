@@ -723,6 +723,16 @@ namespace ZiTyLot.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo_mini {
+            get {
+                object obj = ResourceManager.GetObject("logo_mini", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap scan {
             get {
                 object obj = ResourceManager.GetObject("scan", resourceCulture);
@@ -766,6 +776,36 @@ namespace ZiTyLot.Properties {
         internal static System.Drawing.Bitmap search {
             get {
                 object obj = ResourceManager.GetObject("search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Zity_logo_256x256px {
+            get {
+                object obj = ResourceManager.GetObject("Zity-logo-256x256px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Zity_logo_NoZtech_02 {
+            get {
+                object obj = ResourceManager.GetObject("Zity-logo-NoZtech-02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Zity_logo_NoZtech_021 {
+            get {
+                object obj = ResourceManager.GetObject("Zity-logo-NoZtech-021", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

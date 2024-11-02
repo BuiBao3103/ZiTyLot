@@ -46,9 +46,9 @@ namespace ZiTyLot.GUI.Screens
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.panel2.Controls.Add(this.uiPanel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(10, 10);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1151, 580);
+            this.panel2.Size = new System.Drawing.Size(1171, 600);
             this.panel2.TabIndex = 2;
             // 
             // uiPanel1
@@ -58,7 +58,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel1.Controls.Add(this.btnCheckOut);
             this.uiPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel1.Location = new System.Drawing.Point(288, 151);
+            this.uiPanel1.Location = new System.Drawing.Point(298, 161);
             this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel1.Name = "uiPanel1";
@@ -153,7 +153,6 @@ namespace ZiTyLot.GUI.Screens
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.Name = "ScanningControl";
-            this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(1171, 600);
             this.Load += new System.EventHandler(this.ScanningScreen_Load);
             this.Resize += new System.EventHandler(this.ScanningScreen_Resize);
