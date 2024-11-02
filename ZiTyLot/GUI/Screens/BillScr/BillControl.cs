@@ -28,6 +28,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void BillScreen_Load(object sender, EventArgs e)
         {
+            pnlPagination.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlPagination.Width, pnlPagination.Height, 10, 10));
             ResumeLayout();
             pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
@@ -155,7 +156,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            changePage(pageable.PageNumber - 1);
+
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -228,6 +229,12 @@ namespace ZiTyLot.GUI.Screens
                 query();
                 return Task.CompletedTask;
             }, 500);
+        }
+
+        private void pnlPagination_Resize(object sender, EventArgs e)
+        {
+            pnlPagination.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlPagination.Width, pnlPagination.Height, 10, 10));
+
         }
     }
 }

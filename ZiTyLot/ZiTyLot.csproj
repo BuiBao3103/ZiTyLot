@@ -674,6 +674,8 @@
     <Content Include="GUI\assets\logo_mini.png" />
     <Content Include="GUI\assets\logo.jpg" />
     <Content Include="GUI\assets\search.png" />
+    <Content Include="GUI\assets\Zity-logo-256x256px.png" />
+    <Content Include="GUI\assets\Zity-logo-NoZtech-02.png" />
     <Content Include="GUI\assets\ZityLot-Logo-120x60px.ico" />
     <Content Include="GUI\assets\scan.png" />
     <Content Include="GUI\assets\ZityLot-Logo-120x60px.png" />

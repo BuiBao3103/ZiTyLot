@@ -10,18 +10,32 @@ using System.Windows.Forms;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens;
 using ZiTyLot.GUI.Screens.LostCardScr;
+using Sunny.UI.Win32;
 
 namespace ZiTyLot.GUI
 {
     public partial class Home : Form
     {
         #region Constants
-        private static readonly List<int> SIDEBAR_WIDTH = new List<int> { 60, 245 };
-        private static readonly List<int> SIDEBAR_TOP_HEIGHT = new List<int> { 125, 180 };
+        private static readonly List<int> SIDEBAR_WIDTH = new List<int> { 80, 245 };
+        private static readonly List<int> SIDEBAR_TOP_HEIGHT = new List<int> { 60, 120 };
         private const int ANIMATION_DURATION = 100;
         private const int ANIMATION_STEPS = 20;
-        private const string LOGO_PATH = @"../../GUI/assets/logo.jpg";
+        private const string LOGO_PATH = @"../../GUI/assets/Zity-logo-256x256px.png";
         private const string LOGO_MINI_PATH = @"../../GUI/assets/logo_mini.png";
+        private readonly dynamic[] menuItems = new[]
+        {
+            new { Name = "LostCardManagement", Text = "Lost Card" ,Icon=61553, X = -50,X_Collapsed=0, Y_Collapsed=2},
+            new { Name = "PriceManagement", Text = "Price" ,Icon=362778 , X = -53,X_Collapsed=-3 , Y_Collapsed=1},
+            new { Name = "RoleManagement", Text = "Role", Icon = 61459, X = -50, X_Collapsed = 0, Y_Collapsed = 2 },
+            new { Name = "AccountManagement", Text = "Account", Icon = 559389, X = -50, X_Collapsed = 0, Y_Collapsed = 2 },
+            new { Name = "BillManagement", Text = "Bill", Icon = 362833, X = -49, X_Collapsed = 1, Y_Collapsed = 1 },
+            new { Name = "CardManagement", Text = "Card", Icon = 559504, X = -50, X_Collapsed = 0, Y_Collapsed = 2 },
+            new { Name = "ResidentManagement", Text = "Resident", Icon = 358675, X = -53, X_Collapsed = -3, Y_Collapsed = 1 },
+            new { Name = "AreaManagement", Text = "Area", Icon = 559505, X = -50, X_Collapsed = 0, Y_Collapsed = 1 },
+            new { Name = "SessionManagement", Text = "Session", Icon = 361914, X = -50, X_Collapsed = -1, Y_Collapsed = 0 },
+            new { Name = "Scanning", Text = "Scanning", Icon = 61767, X = -48 ,X_Collapsed=1, Y_Collapsed=2}
+        };
         #endregion
 
         #region Private Fields
@@ -40,6 +54,7 @@ namespace ZiTyLot.GUI
             InitializeGraphics();
             InitializeFormSettings();
             InitializeMenuIcons();
+
         }
 
         private void InitializeGraphics()
@@ -57,15 +72,11 @@ namespace ZiTyLot.GUI
         private void InitializeFormSettings()
         {
             this.CenterToScreen();
-            pictureBox2.Region = Region.FromHrgn(
-                RoundedBorder.CreateRoundRectRgn(0, 0, pictureBox2.Width,
-                pictureBox2.Height, 10, 10));
         }
 
         private void InitializeMenuIcons()
         {
             InitializePanelMapping();
-            InitializeMenuIconDictionaries();
         }
 
         private void InitializePanelMapping()
@@ -84,84 +95,65 @@ namespace ZiTyLot.GUI
                 { "Scanning", new ScanningControl() }
             };
         }
-
-        private void InitializeMenuIconDictionaries()
-        {
-            menuIcon = CreateMenuIconDictionary(false);
-            menuIconActive = CreateMenuIconDictionary(true);
-        }
-
-        private Dictionary<string, Image> CreateMenuIconDictionary(bool isActive)
-        {
-            var iconDictionary = new Dictionary<string, Image>
-    {
-        { "LostCardManagement", isActive ? ZiTyLot.Properties.Resources.Icon_24x24px_LostCard_Active : ZiTyLot.Properties.Resources.Icon_24x24px_LostCard },
-        { "PriceManagement", isActive ? ZiTyLot.Properties.Resources.Icon_24x24px_Price_Active : ZiTyLot.Properties.Resources.Icon_24x24px_Price },
-        { "RoleManagement", isActive ? ZiTyLot.Properties.Resources.Icon_24x24px_Role_Active : ZiTyLot.Properties.Resources.Icon_24x24px_Role },
-        { "AccountManagement", isActive ? ZiTyLot.Properties.Resources.Icon_24x24px_Account_Active : ZiTyLot.Properties.Resources.Icon_24x24px_Account },
-        { "BillManagement", isActive ? ZiTyLot.Properties.Resources.Icon_24x24px_Bill_Active : ZiTyLot.Properties.Resources.Icon_24x24px_Bill },
-        { "CardManagement", isActive ? ZiTyLot.Properties.Resources.Icon_24x24px_Card_Active : ZiTyLot.Properties.Resources.Icon_24x24px_Card },
-        { "ResidentManagement", isActive ? ZiTyLot.Properties.Resources.Icon_24x24px_Resident_Active : ZiTyLot.Properties.Resources.Icon_24x24px_Resident },
-        { "AreaManagement", isActive ? ZiTyLot.Properties.Resources.Icon_24x24px_Area_Active : ZiTyLot.Properties.Resources.Icon_24x24px_Area },
-        { "SessionManagement", isActive ? ZiTyLot.Properties.Resources.Icon_24x24px_Session_Active : ZiTyLot.Properties.Resources.Icon_24x24px_Session },
-        { "Scanning", isActive ? ZiTyLot.Properties.Resources.Icon_24x24px_Scanning_Active : ZiTyLot.Properties.Resources.Icon_24x24px_Scanning }
-    };
-
-            return iconDictionary;
-        }
-        #endregion
-
-        #region Menu Creation and Management
         private void AddMenuToSidebar()
         {
-            var menuItems = new[]
-            {
-                new { Name = "LostCardManagement", Text = "Lost Card" },
-                new { Name = "PriceManagement", Text = "Price" },
-                new { Name = "RoleManagement", Text = "Role" },
-                new { Name = "AccountManagement", Text = "Account" },
-                new { Name = "BillManagement", Text = "Bill" },
-                new { Name = "CardManagement", Text = "Card" },
-                new { Name = "ResidentManagement", Text = "Resident" },
-                new { Name = "AreaManagement", Text = "Area" },
-                new { Name = "SessionManagement", Text = "Session" },
-                new { Name = "Scanning", Text = "Scanning" }
-            };
-
             foreach (var item in menuItems)
             {
-                CreateMenuButton(item.Name, item.Text);
+                CreateMenuButton(item.Name, item.Icon, item.Text, item.X);
             }
         }
 
-        private void CreateMenuButton(string name, string text)
+        private void CreateMenuButton(string name,int icon, string text, int xOffset)
         {
-            Button button = new Button
+            // Create a panel white fill, no rect and radius 0 and padding bottom 10 with sunny ui
+            Sunny.UI.UIPanel panel = new Sunny.UI.UIPanel
+            {
+                Dock = DockStyle.Top,
+                AutoSize = true,
+                FillColor = Color.White,
+                Radius = 0,
+                RectSize = 1,
+                RectColor = Color.White,
+                Padding = new Padding(0, 5, 0, 5)
+            };
+            Sunny.UI.UISymbolButton button = new Sunny.UI.UISymbolButton
             {
                 Name = name,
-                FlatStyle = FlatStyle.Flat,
-                Size = new Size(sidebar.Width - 10, 45),
-                Image = menuIcon[name],
+                Size = new Size(sidebar.Width - 20, 40),
+                Symbol = icon,
+                SymbolColor = Color.Black,
+                SymbolHoverColor = Color.White,
+                SymbolSize = 28,
+                SymbolPressColor = Color.White,
+                SymbolSelectedColor = Color.White,
                 BackColor = Color.White,
-                ForeColor = Color.Black,
                 Dock = DockStyle.Top,
                 Font = new Font("Helvetica", 12F, FontStyle.Bold),
                 ImageAlign = ContentAlignment.MiddleLeft,
-                TextAlign = ContentAlignment.MiddleCenter,
-                Padding = new Padding(20, 0, 0, 0),
+                TextAlign = ContentAlignment.MiddleLeft,
+                Padding = new Padding(70, 3, 3, 3),
+                SymbolOffset = new Point(xOffset, 1),
+                RectSize = 2,
+                Radius = 10,
+                RectColor = Color.FromArgb(255,255,255),
+                RectHoverColor = Color.FromArgb(240, 118, 54),
+                RectSelectedColor = Color.FromArgb(240, 118, 54),
+                RectPressColor = Color.FromArgb(240, 118, 54),
+                FillColor = Color.FromArgb(255,255,255),
+                FillHoverColor = Color.FromArgb(240,118,54),
+                FillSelectedColor = Color.FromArgb(240, 118, 54),
+                FillPressColor = Color.FromArgb(240, 118, 54),
+                ForeColor = Color.Black,
+                ForeHoverColor = Color.White,
+                ForeSelectedColor = Color.White,
+                ForePressColor = Color.White,
                 Text = text
             };
-
-            button.FlatAppearance.BorderSize = 0;
-            button.Region = CreateButtonRegion(button.Width, button.Height);
             button.Click += (sender, e) => MenuButton_Click(button);
-            sidebarMid.Controls.Add(button);
+            panel.Controls.Add(button);
+            sidebarMid.Controls.Add(panel);
         }
 
-        private Region CreateButtonRegion(int width, int height)
-        {
-            return Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, width, height, 14, 14));
-        }
         #endregion
 
         #region Menu Animation and State Management
@@ -268,22 +260,47 @@ namespace ZiTyLot.GUI
             );
             if (isOpening)
             {
-
-                foreach (Button btn in sidebarMid.Controls.OfType<Button>())
+                foreach (Sunny.UI.UIPanel panel in sidebarMid.Controls.OfType<Sunny.UI.UIPanel>())
                 {
-                    btn.Width = sidebar.Width - 10;
-                    btn.Region = CreateButtonRegion(btn.Width, 45);
+                    foreach (Sunny.UI.UISymbolButton btn in panel.Controls.OfType<Sunny.UI.UISymbolButton>())
+                    {
+                        btn.Width = sidebar.Width - 10;
+                    }
                 }
             }
             if (isOpening && currentStep >= ANIMATION_STEPS / 2)
             {
-                UpdateButtonsForExpandedState();
+                foreach (Sunny.UI.UIPanel panel in sidebarMid.Controls.OfType<Sunny.UI.UIPanel>())
+                {
+                    foreach (Sunny.UI.UISymbolButton btn in panel.Controls.OfType<Sunny.UI.UISymbolButton>())
+                    {
+                        // Find the corresponding menu item by button name
+                        var menuItem = Array.Find(menuItems, item => item.Name == btn.Name);
+
+                        if (menuItem != null)
+                        {
+                            // Use menuItem.X_Collapsed as the X_Collapsed value for this button
+                            UpdateButtonsForExpandedState(btn, menuItem.X);
+                        }
+                    }
+                }
+
             }
             if (!isOpening && currentStep >= ANIMATION_STEPS / 2)
             {
-                foreach (Button btn in sidebarMid.Controls.OfType<Button>())
+                foreach (Sunny.UI.UIPanel panel in sidebarMid.Controls.OfType<Sunny.UI.UIPanel>())
                 {
-                    ResetButtonForCollapsedState(btn);
+                    foreach (Sunny.UI.UISymbolButton btn in panel.Controls.OfType<Sunny.UI.UISymbolButton>())
+                    {
+                        // Find the corresponding menu item by button name
+                        var menuItem = Array.Find(menuItems, item => item.Name == btn.Name);
+
+                        if (menuItem != null)
+                        {
+                            // Use menuItem.X_Collapsed as the X_Collapsed value for this button
+                            ResetButtonForCollapsedState(btn, menuItem.X_Collapsed, menuItem.Y_Collapsed);
+                        }
+                    }
                 }
             }
 
@@ -292,10 +309,12 @@ namespace ZiTyLot.GUI
 
         private void UpdateButtonsAfterAnimation(bool isOpening)
         {
-            foreach (Button btn in sidebarMid.Controls.OfType<Button>())
+            foreach (Sunny.UI.UIPanel panel in sidebarMid.Controls.OfType<Sunny.UI.UIPanel>())
             {
-                btn.Width = sidebar.Width - 10;
-                btn.Region = CreateButtonRegion(btn.Width, 45);
+                foreach (Sunny.UI.UISymbolButton btn in panel.Controls.OfType<Sunny.UI.UISymbolButton>())
+                {
+                    btn.Width = sidebar.Width - 10;
+                }
             }
         }
 
@@ -315,7 +334,6 @@ namespace ZiTyLot.GUI
         {
             pictureBox1.Image = Image.FromFile(LOGO_PATH);
             sidebarTop.Height = SIDEBAR_TOP_HEIGHT[1];
-            sidebarTop.Padding = new Padding(25, 25, 25, 27);
             SetupExpandedProfileSection();
         }
 
@@ -323,59 +341,84 @@ namespace ZiTyLot.GUI
         {
             pictureBox1.Image = Image.FromFile(LOGO_MINI_PATH);
             sidebarTop.Height = SIDEBAR_TOP_HEIGHT[0];
-            sidebarTop.Padding = new Padding(10);
             SetupCollapsedProfileSection();
         }
 
         private void SetupExpandedProfileSection()
         {
-            pictureBox2.Visible = true;
-            nameLb.Visible = true;
-            roleLb.Visible = true;
-            pictureBox2.Dock = DockStyle.Left;
-            nameLb.Dock = DockStyle.Top;
-            roleLb.Dock = DockStyle.Fill;
-            settingBtn.Dock = DockStyle.Right;
+            lbName.Visible = true;
+            sidebarBottom.Height = 60;
+
+            // Reset tableSetting to 3 columns and 1 row
+            tableSetting.ColumnCount = 3;
+            tableSetting.ColumnStyles.Clear();
+            tableSetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));  // First column for pictureBox2
+            tableSetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));   // Second column for lbName
+            tableSetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));  // Third column for btnMore
+
+            tableSetting.RowCount = 1;
+            tableSetting.RowStyles.Clear();
+            tableSetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+
+            // Update control positions within tableSetting
+            tableSetting.Controls.Clear();
+            tableSetting.Controls.Add(lbSymbol, 0, 0);  // pictureBox2 in the first column
+            tableSetting.Controls.Add(lbName, 1, 0);       // lbName in the second column
+            tableSetting.Controls.Add(btnMore, 2, 0);      // btnMore in the third column
+
+            // Dock tableSetting to fill the parent container
+            tableSetting.Dock = System.Windows.Forms.DockStyle.Fill;
         }
+
 
         private void SetupCollapsedProfileSection()
         {
-            pictureBox2.Visible = false;
-            nameLb.Visible = false;
-            roleLb.Visible = false;
-            ResetProfileControlsDocking();
-            settingBtn.Dock = DockStyle.Fill;
-            settingBtn.BringToFront();
-            settingBtn.SetToTheCenterOfParent();
+            lbName.Visible = false;
+            sidebarBottom.Height = 120;
+
+            // Update tableSetting to be 1 column and 3 rows, with lbName hidden in a 0-height row
+            tableSetting.ColumnCount = 1;
+            tableSetting.ColumnStyles.Clear();
+            tableSetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+
+            tableSetting.RowCount = 3;
+            tableSetting.RowStyles.Clear();
+            tableSetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));  // First row for btnMore
+            tableSetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));   // Second row for lbName with height 0
+            tableSetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F)); // Last row for pictureBox2
+
+            // Update control positions within tableSetting
+            tableSetting.Controls.Clear();
+            tableSetting.Controls.Add(btnMore, 0, 0);          // Add btnMore to first row
+            tableSetting.Controls.Add(lbName, 0, 1);           // Add lbName to second row with height 0
+            tableSetting.Controls.Add(lbSymbol, 0, 2);      // Add pictureBox2 to last row
+
+            // Ensure table layout is docked to fill the parent container
+            tableSetting.Dock = System.Windows.Forms.DockStyle.Fill;
         }
 
-        private void ResetProfileControlsDocking()
-        {
-            pictureBox2.Dock = DockStyle.None;
-            nameLb.Dock = DockStyle.None;
-            roleLb.Dock = DockStyle.None;
-        }
 
-        private void ResetButtonForCollapsedState(Button btn)
+
+        private void ResetButtonForCollapsedState(Sunny.UI.UISymbolButton btn, int x_collapsed, int y_collapsed)
         {
             btn.Text = string.Empty;
             btn.ImageAlign = ContentAlignment.MiddleCenter;
             btn.Padding = new Padding(0);
+            btn.SymbolOffset = new Point(x_collapsed, y_collapsed);
         }
 
-        private void UpdateButtonsForExpandedState()
+        private void UpdateButtonsForExpandedState(Sunny.UI.UISymbolButton btn, int x_offset)
         {
-            foreach (Button btn in sidebarMid.Controls.OfType<Button>())
-            {
-                btn.Text = btn.Name.Replace("Management", "");
-                btn.ImageAlign = ContentAlignment.MiddleLeft;
-                btn.Padding = new Padding(20, 0, 0, 0);
-            }
+            btn.Text = btn.Name.Replace("Management", "");
+            btn.ImageAlign = ContentAlignment.MiddleLeft;
+            btn.TextAlign = ContentAlignment.MiddleLeft;
+            btn.Padding = new Padding(70, 3, 3, 3);
+            btn.SymbolOffset = new Point(x_offset, 1);       
         }
         #endregion
 
         #region Event Handlers
-        private void MenuButton_Click(Button clickedButton)
+        private void MenuButton_Click(Sunny.UI.UISymbolButton clickedButton)
         {
             if (panelMapping.TryGetValue(clickedButton.Name, out UserControl control))
             {
@@ -384,19 +427,31 @@ namespace ZiTyLot.GUI
             }
         }
 
-        private void UpdateButtonStyles(Button activeButton)
+        private void UpdateButtonStyles(Sunny.UI.UISymbolButton activeButton)
         {
-            foreach (Button btn in sidebarMid.Controls.OfType<Button>())
+            // Update the style of the clicked button
+            foreach (Sunny.UI.UIPanel panel in sidebarMid.Controls.OfType<Sunny.UI.UIPanel>())
             {
-                UpdateButtonStyle(btn, btn == activeButton);
+                foreach (Sunny.UI.UISymbolButton btn in panel.Controls.OfType<Sunny.UI.UISymbolButton>())
+                {
+                    UpdateButtonStyle(btn, btn == activeButton);
+                }
             }
         }
 
-        private void UpdateButtonStyle(Button button, bool isActive)
+        private void UpdateButtonStyle(Sunny.UI.UISymbolButton button, bool isActive)
         {
             button.ForeColor = isActive ? Color.White : Color.Black;
-            button.BackColor = isActive ? Color.FromArgb(240, 118, 54) : Color.White;
-            button.Image = isActive ? menuIconActive[button.Name] : menuIcon[button.Name];
+            button.FillColor = isActive ? Color.FromArgb(240, 118, 54) : Color.White;
+            button.RectColor = isActive ? Color.FromArgb(240, 118, 54) : Color.White;
+            button.RectHoverColor = isActive ? Color.FromArgb(240, 118, 54) : Color.White;
+            button.Radius = 10;
+            button.RectSize = 2;
+            button.RectSelectedColor = isActive ? Color.FromArgb(240, 118, 54) : Color.White;
+            button.RectPressColor = isActive ? Color.FromArgb(240, 118, 54) : Color.White;
+            button.SymbolColor = isActive ? Color.White : Color.Black;
+            button.Padding = new Padding(70, 3, 3, 3);
+            
         }
 
         private void btnToggleMenu_Click(object sender, EventArgs e)
@@ -405,25 +460,26 @@ namespace ZiTyLot.GUI
             if (sidebar.Width == SIDEBAR_WIDTH[0])
             {
                 OpenMenu();
+                btnToggle.Symbol = 558848;
+                btnToggle.SymbolOffset = new Point(4, 0);
             }
             else
             {
                 CloseMenu();
+                btnToggle.Symbol = 558849;
+                btnToggle.SymbolOffset = new Point(0, 0);
             }
         }
-
-        private void settingBtn_Click(object sender, EventArgs e)
+        private void btnMore_Click(object sender, EventArgs e)
         {
-            settingMenu.Show(settingBtn, new Point(35, settingBtn.Height - 55));
+            this.menuSetting.Show(btnMore, new Point(btnMore.Width + 25, btnMore.Height - 60));
         }
 
         private void Home_Load(object sender, EventArgs e)
         {
             AddMenuToSidebar();
             LoadForm(new ScanningControl());
-            var scanningButton = sidebarMid.Controls.OfType<Button>()
-                                    .FirstOrDefault(btn => btn.Name == "Scanning");
-            scanningButton?.PerformClick();
+            UpdateButtonStyle(sidebarMid.Controls.OfType<Sunny.UI.UIPanel>().Last().Controls.OfType<Sunny.UI.UISymbolButton>().First(), true);
         }
         #endregion
 
@@ -522,5 +578,7 @@ namespace ZiTyLot.GUI
             }
         }
         #endregion
+
+        
     }
 }
