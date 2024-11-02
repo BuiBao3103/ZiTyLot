@@ -63,6 +63,11 @@ namespace ZiTyLot.GUI.Screens
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnMotorbikeResidentFee = new Sunny.UI.UISymbolButton();
             this.tableMotorbike = new System.Windows.Forms.DataGridView();
+            this.colMotorbikeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMotorbikeFee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMotorbikeDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMotorbikeView = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colMotorbikeDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tpCar = new System.Windows.Forms.TabPage();
             this.uiPanel5 = new Sunny.UI.UIPanel();
             this.uiPanel6 = new Sunny.UI.UIPanel();
@@ -83,8 +88,12 @@ namespace ZiTyLot.GUI.Screens
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnCarResidentFee = new Sunny.UI.UISymbolButton();
             this.tableCar = new System.Windows.Forms.DataGridView();
+            this.colCarID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCarFee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCarDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCarView = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colCarDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tpBicycle = new System.Windows.Forms.TabPage();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.uiPanel8 = new Sunny.UI.UIPanel();
             this.uiPanel9 = new Sunny.UI.UIPanel();
             this.uiTableLayoutPanel7 = new Sunny.UI.UITableLayoutPanel();
@@ -104,21 +113,12 @@ namespace ZiTyLot.GUI.Screens
             this.panel8 = new System.Windows.Forms.Panel();
             this.btnBicycleResidentFee = new Sunny.UI.UISymbolButton();
             this.tableBicycle = new System.Windows.Forms.DataGridView();
-            this.colCarID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCarFee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCarDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCarView = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.colCarDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.colMotorbikeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMotorbikeFee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMotorbikeDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMotorbikeView = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.colMotorbikeDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colBicycleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBicycleFee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBicycleDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBicycleView = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colBicycleDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.pnlTab.SuspendLayout();
             this.tpMotorbike.SuspendLayout();
@@ -175,9 +175,9 @@ namespace ZiTyLot.GUI.Screens
             // 
             this.panel2.Controls.Add(this.pnlTab);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(10, 10);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1003, 519);
+            this.panel2.Size = new System.Drawing.Size(1023, 539);
             this.panel2.TabIndex = 2;
             // 
             // pnlTab
@@ -196,7 +196,7 @@ namespace ZiTyLot.GUI.Screens
             this.pnlTab.Name = "pnlTab";
             this.pnlTab.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.pnlTab.SelectedIndex = 0;
-            this.pnlTab.Size = new System.Drawing.Size(1003, 519);
+            this.pnlTab.Size = new System.Drawing.Size(1023, 539);
             this.pnlTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.pnlTab.TabBackColor = System.Drawing.Color.White;
             this.pnlTab.TabIndex = 0;
@@ -213,7 +213,7 @@ namespace ZiTyLot.GUI.Screens
             this.tpMotorbike.Controls.Add(this.uiPanel1);
             this.tpMotorbike.Location = new System.Drawing.Point(0, 40);
             this.tpMotorbike.Name = "tpMotorbike";
-            this.tpMotorbike.Size = new System.Drawing.Size(1003, 479);
+            this.tpMotorbike.Size = new System.Drawing.Size(1023, 499);
             this.tpMotorbike.TabIndex = 0;
             this.tpMotorbike.Text = "Motorbike";
             // 
@@ -232,7 +232,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel1.RectSize = 2;
-            this.uiPanel1.Size = new System.Drawing.Size(1003, 479);
+            this.uiPanel1.Size = new System.Drawing.Size(1023, 499);
             this.uiPanel1.TabIndex = 0;
             this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -248,7 +248,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel2.Name = "uiPanel2";
             this.uiPanel2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel2.Size = new System.Drawing.Size(1003, 474);
+            this.uiPanel2.Size = new System.Drawing.Size(1023, 494);
             this.uiPanel2.TabIndex = 0;
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -268,7 +268,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiTableLayoutPanel1.Name = "uiTableLayoutPanel1";
             this.uiTableLayoutPanel1.RowCount = 1;
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel1.Size = new System.Drawing.Size(1003, 474);
+            this.uiTableLayoutPanel1.Size = new System.Drawing.Size(1023, 494);
             this.uiTableLayoutPanel1.TabIndex = 1;
             this.uiTableLayoutPanel1.TagString = null;
             // 
@@ -278,7 +278,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel4.FillColor = System.Drawing.Color.White;
             this.uiPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel4.Location = new System.Drawing.Point(507, 5);
+            this.uiPanel4.Location = new System.Drawing.Point(517, 5);
             this.uiPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel4.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel4.Name = "uiPanel4";
@@ -286,7 +286,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel4.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.uiPanel4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel4.RectSize = 2;
-            this.uiPanel4.Size = new System.Drawing.Size(492, 464);
+            this.uiPanel4.Size = new System.Drawing.Size(502, 484);
             this.uiPanel4.TabIndex = 2;
             this.uiPanel4.Text = null;
             this.uiPanel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -305,7 +305,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiGroupBox2.Padding = new System.Windows.Forms.Padding(0, 32, 0, 0);
             this.uiGroupBox2.Radius = 0;
             this.uiGroupBox2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox2.Size = new System.Drawing.Size(472, 464);
+            this.uiGroupBox2.Size = new System.Drawing.Size(482, 484);
             this.uiGroupBox2.TabIndex = 0;
             this.uiGroupBox2.Text = "Visitor Fee";
             this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -322,7 +322,7 @@ namespace ZiTyLot.GUI.Screens
             this.pnlMotorbikePrice.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlMotorbikePrice.Name = "pnlMotorbikePrice";
             this.pnlMotorbikePrice.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlMotorbikePrice.Size = new System.Drawing.Size(472, 432);
+            this.pnlMotorbikePrice.Size = new System.Drawing.Size(482, 452);
             this.pnlMotorbikePrice.TabIndex = 0;
             this.pnlMotorbikePrice.Text = null;
             this.pnlMotorbikePrice.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -340,7 +340,7 @@ namespace ZiTyLot.GUI.Screens
             this.pnlMotorbikeAnnounce.Radius = 0;
             this.pnlMotorbikeAnnounce.RectColor = System.Drawing.Color.White;
             this.pnlMotorbikeAnnounce.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlMotorbikeAnnounce.Size = new System.Drawing.Size(455, 106);
+            this.pnlMotorbikeAnnounce.Size = new System.Drawing.Size(465, 106);
             this.pnlMotorbikeAnnounce.TabIndex = 0;
             this.pnlMotorbikeAnnounce.Text = null;
             this.pnlMotorbikeAnnounce.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -359,7 +359,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiTableLayoutPanel3.RowCount = 2;
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(455, 106);
+            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(465, 106);
             this.uiTableLayoutPanel3.TabIndex = 0;
             this.uiTableLayoutPanel3.TagString = null;
             // 
@@ -367,7 +367,7 @@ namespace ZiTyLot.GUI.Screens
             // 
             this.panel4.Controls.Add(this.btnMotorbikeVisitorFee);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(145, 56);
+            this.panel4.Location = new System.Drawing.Point(150, 56);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(0, 6, 0, 3);
             this.panel4.Size = new System.Drawing.Size(164, 47);
@@ -407,7 +407,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.uiLabel1.Location = new System.Drawing.Point(3, 0);
             this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(449, 53);
+            this.uiLabel1.Size = new System.Drawing.Size(459, 53);
             this.uiLabel1.TabIndex = 0;
             this.uiLabel1.Text = "This vehical doesn\'t have a price";
             this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -417,13 +417,13 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel3.Location = new System.Drawing.Point(499, 0);
+            this.uiPanel3.Location = new System.Drawing.Point(509, 0);
             this.uiPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel3.Name = "uiPanel3";
             this.uiPanel3.Radius = 1;
             this.uiPanel3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel3.Size = new System.Drawing.Size(4, 474);
+            this.uiPanel3.Size = new System.Drawing.Size(4, 494);
             this.uiPanel3.TabIndex = 1;
             this.uiPanel3.Text = null;
             this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -440,7 +440,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel33.Name = "uiPanel33";
             this.uiPanel33.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.uiPanel33.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel33.Size = new System.Drawing.Size(491, 464);
+            this.uiPanel33.Size = new System.Drawing.Size(501, 484);
             this.uiPanel33.TabIndex = 0;
             this.uiPanel33.Text = null;
             this.uiPanel33.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -459,7 +459,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiGroupBox1.Padding = new System.Windows.Forms.Padding(0, 32, 0, 0);
             this.uiGroupBox1.Radius = 0;
             this.uiGroupBox1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox1.Size = new System.Drawing.Size(471, 464);
+            this.uiGroupBox1.Size = new System.Drawing.Size(481, 484);
             this.uiGroupBox1.TabIndex = 0;
             this.uiGroupBox1.Text = "Resident Fee";
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -476,7 +476,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiTableLayoutPanel2.RowCount = 2;
             this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
-            this.uiTableLayoutPanel2.Size = new System.Drawing.Size(471, 432);
+            this.uiTableLayoutPanel2.Size = new System.Drawing.Size(481, 452);
             this.uiTableLayoutPanel2.TabIndex = 0;
             this.uiTableLayoutPanel2.TagString = null;
             // 
@@ -486,7 +486,7 @@ namespace ZiTyLot.GUI.Screens
             this.pnlButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlButton.FillColor = System.Drawing.Color.White;
             this.pnlButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlButton.Location = new System.Drawing.Point(4, 373);
+            this.pnlButton.Location = new System.Drawing.Point(4, 393);
             this.pnlButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlButton.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlButton.Name = "pnlButton";
@@ -495,7 +495,7 @@ namespace ZiTyLot.GUI.Screens
             this.pnlButton.RectColor = System.Drawing.SystemColors.ControlLight;
             this.pnlButton.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
             this.pnlButton.RectSize = 2;
-            this.pnlButton.Size = new System.Drawing.Size(463, 54);
+            this.pnlButton.Size = new System.Drawing.Size(473, 54);
             this.pnlButton.TabIndex = 17;
             this.pnlButton.Text = null;
             this.pnlButton.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -504,7 +504,7 @@ namespace ZiTyLot.GUI.Screens
             // 
             this.panel3.Controls.Add(this.btnMotorbikeResidentFee);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(293, 13);
+            this.panel3.Location = new System.Drawing.Point(303, 13);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(170, 38);
             this.panel3.TabIndex = 9;
@@ -588,11 +588,57 @@ namespace ZiTyLot.GUI.Screens
             this.tableMotorbike.RowHeadersVisible = false;
             this.tableMotorbike.RowHeadersWidth = 30;
             this.tableMotorbike.RowTemplate.Height = 40;
-            this.tableMotorbike.Size = new System.Drawing.Size(471, 368);
+            this.tableMotorbike.Size = new System.Drawing.Size(481, 388);
             this.tableMotorbike.TabIndex = 2;
-            this.tableMotorbike.Paint += table_PaintMotorbike;
-            this.tableMotorbike.CellPainting += table_CellPaintingMotorbike;
-            this.tableMotorbike.CellClick += table_CellClickMotorbike;
+            this.tableMotorbike.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClickMotorbike);
+            this.tableMotorbike.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPaintingMotorbike);
+            this.tableMotorbike.Paint += new System.Windows.Forms.PaintEventHandler(this.table_PaintMotorbike);
+            // 
+            // colMotorbikeID
+            // 
+            this.colMotorbikeID.HeaderText = "ID";
+            this.colMotorbikeID.MinimumWidth = 6;
+            this.colMotorbikeID.Name = "colMotorbikeID";
+            this.colMotorbikeID.ReadOnly = true;
+            this.colMotorbikeID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colMotorbikeID.Width = 50;
+            // 
+            // colMotorbikeFee
+            // 
+            this.colMotorbikeFee.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colMotorbikeFee.HeaderText = "Fee";
+            this.colMotorbikeFee.MinimumWidth = 80;
+            this.colMotorbikeFee.Name = "colMotorbikeFee";
+            this.colMotorbikeFee.ReadOnly = true;
+            this.colMotorbikeFee.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colMotorbikeDuration
+            // 
+            this.colMotorbikeDuration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colMotorbikeDuration.HeaderText = "Duration";
+            this.colMotorbikeDuration.MinimumWidth = 6;
+            this.colMotorbikeDuration.Name = "colMotorbikeDuration";
+            this.colMotorbikeDuration.ReadOnly = true;
+            // 
+            // colMotorbikeView
+            // 
+            this.colMotorbikeView.HeaderText = "";
+            this.colMotorbikeView.MinimumWidth = 6;
+            this.colMotorbikeView.Name = "colMotorbikeView";
+            this.colMotorbikeView.ReadOnly = true;
+            this.colMotorbikeView.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMotorbikeView.Text = "View";
+            this.colMotorbikeView.Width = 45;
+            // 
+            // colMotorbikeDelete
+            // 
+            this.colMotorbikeDelete.HeaderText = "";
+            this.colMotorbikeDelete.MinimumWidth = 6;
+            this.colMotorbikeDelete.Name = "colMotorbikeDelete";
+            this.colMotorbikeDelete.ReadOnly = true;
+            this.colMotorbikeDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMotorbikeDelete.Text = "Delete";
+            this.colMotorbikeDelete.Width = 45;
             // 
             // tpCar
             // 
@@ -600,7 +646,7 @@ namespace ZiTyLot.GUI.Screens
             this.tpCar.Controls.Add(this.uiPanel5);
             this.tpCar.Location = new System.Drawing.Point(0, 40);
             this.tpCar.Name = "tpCar";
-            this.tpCar.Size = new System.Drawing.Size(1003, 479);
+            this.tpCar.Size = new System.Drawing.Size(1023, 499);
             this.tpCar.TabIndex = 1;
             this.tpCar.Text = "Car";
             // 
@@ -619,7 +665,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel5.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.uiPanel5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel5.RectSize = 2;
-            this.uiPanel5.Size = new System.Drawing.Size(1003, 479);
+            this.uiPanel5.Size = new System.Drawing.Size(1023, 499);
             this.uiPanel5.TabIndex = 1;
             this.uiPanel5.Text = null;
             this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -635,7 +681,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel6.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel6.Name = "uiPanel6";
             this.uiPanel6.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel6.Size = new System.Drawing.Size(1003, 474);
+            this.uiPanel6.Size = new System.Drawing.Size(1023, 494);
             this.uiPanel6.TabIndex = 0;
             this.uiPanel6.Text = null;
             this.uiPanel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -655,7 +701,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiTableLayoutPanel4.Name = "uiTableLayoutPanel4";
             this.uiTableLayoutPanel4.RowCount = 1;
             this.uiTableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel4.Size = new System.Drawing.Size(1003, 474);
+            this.uiTableLayoutPanel4.Size = new System.Drawing.Size(1023, 494);
             this.uiTableLayoutPanel4.TabIndex = 1;
             this.uiTableLayoutPanel4.TagString = null;
             // 
@@ -665,7 +711,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel7.FillColor = System.Drawing.Color.White;
             this.uiPanel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel7.Location = new System.Drawing.Point(507, 5);
+            this.uiPanel7.Location = new System.Drawing.Point(517, 5);
             this.uiPanel7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel7.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel7.Name = "uiPanel7";
@@ -673,7 +719,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel7.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.uiPanel7.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel7.RectSize = 2;
-            this.uiPanel7.Size = new System.Drawing.Size(492, 464);
+            this.uiPanel7.Size = new System.Drawing.Size(502, 484);
             this.uiPanel7.TabIndex = 2;
             this.uiPanel7.Text = null;
             this.uiPanel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -692,7 +738,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiGroupBox3.Padding = new System.Windows.Forms.Padding(0, 32, 0, 0);
             this.uiGroupBox3.Radius = 0;
             this.uiGroupBox3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox3.Size = new System.Drawing.Size(472, 464);
+            this.uiGroupBox3.Size = new System.Drawing.Size(482, 484);
             this.uiGroupBox3.TabIndex = 0;
             this.uiGroupBox3.Text = "Visitor Fee";
             this.uiGroupBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -709,7 +755,7 @@ namespace ZiTyLot.GUI.Screens
             this.pnlCarPrice.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlCarPrice.Name = "pnlCarPrice";
             this.pnlCarPrice.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlCarPrice.Size = new System.Drawing.Size(472, 432);
+            this.pnlCarPrice.Size = new System.Drawing.Size(482, 452);
             this.pnlCarPrice.TabIndex = 0;
             this.pnlCarPrice.Text = null;
             this.pnlCarPrice.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -727,7 +773,7 @@ namespace ZiTyLot.GUI.Screens
             this.pnlCarAnnoucement.Radius = 0;
             this.pnlCarAnnoucement.RectColor = System.Drawing.Color.White;
             this.pnlCarAnnoucement.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlCarAnnoucement.Size = new System.Drawing.Size(455, 106);
+            this.pnlCarAnnoucement.Size = new System.Drawing.Size(465, 106);
             this.pnlCarAnnoucement.TabIndex = 0;
             this.pnlCarAnnoucement.Text = null;
             this.pnlCarAnnoucement.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -746,7 +792,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiTableLayoutPanel5.RowCount = 2;
             this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiTableLayoutPanel5.Size = new System.Drawing.Size(455, 106);
+            this.uiTableLayoutPanel5.Size = new System.Drawing.Size(465, 106);
             this.uiTableLayoutPanel5.TabIndex = 0;
             this.uiTableLayoutPanel5.TagString = null;
             // 
@@ -754,7 +800,7 @@ namespace ZiTyLot.GUI.Screens
             // 
             this.panel1.Controls.Add(this.btnCarVisitorFee);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(145, 56);
+            this.panel1.Location = new System.Drawing.Point(150, 56);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 6, 0, 3);
             this.panel1.Size = new System.Drawing.Size(164, 47);
@@ -794,7 +840,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiLabel2.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.uiLabel2.Location = new System.Drawing.Point(3, 0);
             this.uiLabel2.Name = "uiLabel2";
-            this.uiLabel2.Size = new System.Drawing.Size(449, 53);
+            this.uiLabel2.Size = new System.Drawing.Size(459, 53);
             this.uiLabel2.TabIndex = 0;
             this.uiLabel2.Text = "This vehical doesn\'t have a price";
             this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -804,13 +850,13 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiPanel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel10.Location = new System.Drawing.Point(499, 0);
+            this.uiPanel10.Location = new System.Drawing.Point(509, 0);
             this.uiPanel10.Margin = new System.Windows.Forms.Padding(0);
             this.uiPanel10.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel10.Name = "uiPanel10";
             this.uiPanel10.Radius = 1;
             this.uiPanel10.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel10.Size = new System.Drawing.Size(4, 474);
+            this.uiPanel10.Size = new System.Drawing.Size(4, 494);
             this.uiPanel10.TabIndex = 1;
             this.uiPanel10.Text = null;
             this.uiPanel10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -827,7 +873,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel11.Name = "uiPanel11";
             this.uiPanel11.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.uiPanel11.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel11.Size = new System.Drawing.Size(491, 464);
+            this.uiPanel11.Size = new System.Drawing.Size(501, 484);
             this.uiPanel11.TabIndex = 0;
             this.uiPanel11.Text = null;
             this.uiPanel11.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -846,7 +892,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiGroupBox4.Padding = new System.Windows.Forms.Padding(0, 32, 0, 0);
             this.uiGroupBox4.Radius = 0;
             this.uiGroupBox4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox4.Size = new System.Drawing.Size(471, 464);
+            this.uiGroupBox4.Size = new System.Drawing.Size(481, 484);
             this.uiGroupBox4.TabIndex = 0;
             this.uiGroupBox4.Text = "Resident Fee";
             this.uiGroupBox4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -863,7 +909,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiTableLayoutPanel6.RowCount = 2;
             this.uiTableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.uiTableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
-            this.uiTableLayoutPanel6.Size = new System.Drawing.Size(471, 432);
+            this.uiTableLayoutPanel6.Size = new System.Drawing.Size(481, 452);
             this.uiTableLayoutPanel6.TabIndex = 0;
             this.uiTableLayoutPanel6.TagString = null;
             // 
@@ -873,7 +919,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel12.FillColor = System.Drawing.Color.White;
             this.uiPanel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel12.Location = new System.Drawing.Point(4, 373);
+            this.uiPanel12.Location = new System.Drawing.Point(4, 393);
             this.uiPanel12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel12.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel12.Name = "uiPanel12";
@@ -882,7 +928,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel12.RectColor = System.Drawing.SystemColors.ControlLight;
             this.uiPanel12.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
             this.uiPanel12.RectSize = 2;
-            this.uiPanel12.Size = new System.Drawing.Size(463, 54);
+            this.uiPanel12.Size = new System.Drawing.Size(473, 54);
             this.uiPanel12.TabIndex = 17;
             this.uiPanel12.Text = null;
             this.uiPanel12.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -891,7 +937,7 @@ namespace ZiTyLot.GUI.Screens
             // 
             this.panel6.Controls.Add(this.btnCarResidentFee);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(293, 13);
+            this.panel6.Location = new System.Drawing.Point(303, 13);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(170, 38);
             this.panel6.TabIndex = 9;
@@ -975,11 +1021,57 @@ namespace ZiTyLot.GUI.Screens
             this.tableCar.RowHeadersVisible = false;
             this.tableCar.RowHeadersWidth = 30;
             this.tableCar.RowTemplate.Height = 40;
-            this.tableCar.Size = new System.Drawing.Size(471, 368);
+            this.tableCar.Size = new System.Drawing.Size(481, 388);
             this.tableCar.TabIndex = 2;
-            this.tableCar.Paint += table_PaintCar;
-            this.tableCar.CellPainting += table_CellPaintingCar;
-            this.tableCar.CellClick += table_CellClickCar;
+            this.tableCar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClickCar);
+            this.tableCar.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPaintingCar);
+            this.tableCar.Paint += new System.Windows.Forms.PaintEventHandler(this.table_PaintCar);
+            // 
+            // colCarID
+            // 
+            this.colCarID.HeaderText = "ID";
+            this.colCarID.MinimumWidth = 6;
+            this.colCarID.Name = "colCarID";
+            this.colCarID.ReadOnly = true;
+            this.colCarID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colCarID.Width = 50;
+            // 
+            // colCarFee
+            // 
+            this.colCarFee.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colCarFee.HeaderText = "Fee";
+            this.colCarFee.MinimumWidth = 80;
+            this.colCarFee.Name = "colCarFee";
+            this.colCarFee.ReadOnly = true;
+            this.colCarFee.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colCarDuration
+            // 
+            this.colCarDuration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colCarDuration.HeaderText = "Duration";
+            this.colCarDuration.MinimumWidth = 6;
+            this.colCarDuration.Name = "colCarDuration";
+            this.colCarDuration.ReadOnly = true;
+            // 
+            // colCarView
+            // 
+            this.colCarView.HeaderText = "";
+            this.colCarView.MinimumWidth = 6;
+            this.colCarView.Name = "colCarView";
+            this.colCarView.ReadOnly = true;
+            this.colCarView.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCarView.Text = "View";
+            this.colCarView.Width = 45;
+            // 
+            // colCarDelete
+            // 
+            this.colCarDelete.HeaderText = "";
+            this.colCarDelete.MinimumWidth = 6;
+            this.colCarDelete.Name = "colCarDelete";
+            this.colCarDelete.ReadOnly = true;
+            this.colCarDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCarDelete.Text = "Delete";
+            this.colCarDelete.Width = 45;
             // 
             // tpBicycle
             // 
@@ -987,18 +1079,9 @@ namespace ZiTyLot.GUI.Screens
             this.tpBicycle.Controls.Add(this.uiPanel8);
             this.tpBicycle.Location = new System.Drawing.Point(0, 40);
             this.tpBicycle.Name = "tpBicycle";
-            this.tpBicycle.Size = new System.Drawing.Size(1003, 479);
+            this.tpBicycle.Size = new System.Drawing.Size(1023, 499);
             this.tpBicycle.TabIndex = 2;
             this.tpBicycle.Text = "Bicycle";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(110, 34);
-            this.panel5.TabIndex = 0;
             // 
             // uiPanel8
             // 
@@ -1015,7 +1098,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel8.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.uiPanel8.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel8.RectSize = 2;
-            this.uiPanel8.Size = new System.Drawing.Size(1003, 479);
+            this.uiPanel8.Size = new System.Drawing.Size(1023, 499);
             this.uiPanel8.TabIndex = 2;
             this.uiPanel8.Text = null;
             this.uiPanel8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1031,7 +1114,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel9.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel9.Name = "uiPanel9";
             this.uiPanel9.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel9.Size = new System.Drawing.Size(1003, 474);
+            this.uiPanel9.Size = new System.Drawing.Size(1023, 494);
             this.uiPanel9.TabIndex = 0;
             this.uiPanel9.Text = null;
             this.uiPanel9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1051,7 +1134,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiTableLayoutPanel7.Name = "uiTableLayoutPanel7";
             this.uiTableLayoutPanel7.RowCount = 1;
             this.uiTableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel7.Size = new System.Drawing.Size(1003, 474);
+            this.uiTableLayoutPanel7.Size = new System.Drawing.Size(1023, 494);
             this.uiTableLayoutPanel7.TabIndex = 1;
             this.uiTableLayoutPanel7.TagString = null;
             // 
@@ -1061,7 +1144,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel13.FillColor = System.Drawing.Color.White;
             this.uiPanel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel13.Location = new System.Drawing.Point(507, 5);
+            this.uiPanel13.Location = new System.Drawing.Point(517, 5);
             this.uiPanel13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel13.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel13.Name = "uiPanel13";
@@ -1069,7 +1152,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel13.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.uiPanel13.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel13.RectSize = 2;
-            this.uiPanel13.Size = new System.Drawing.Size(492, 464);
+            this.uiPanel13.Size = new System.Drawing.Size(502, 484);
             this.uiPanel13.TabIndex = 2;
             this.uiPanel13.Text = null;
             this.uiPanel13.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1088,7 +1171,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiGroupBox5.Padding = new System.Windows.Forms.Padding(0, 32, 0, 0);
             this.uiGroupBox5.Radius = 0;
             this.uiGroupBox5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox5.Size = new System.Drawing.Size(472, 464);
+            this.uiGroupBox5.Size = new System.Drawing.Size(482, 484);
             this.uiGroupBox5.TabIndex = 0;
             this.uiGroupBox5.Text = "Visitor Fee";
             this.uiGroupBox5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1105,7 +1188,7 @@ namespace ZiTyLot.GUI.Screens
             this.pnlBicyclePrice.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlBicyclePrice.Name = "pnlBicyclePrice";
             this.pnlBicyclePrice.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlBicyclePrice.Size = new System.Drawing.Size(472, 432);
+            this.pnlBicyclePrice.Size = new System.Drawing.Size(482, 452);
             this.pnlBicyclePrice.TabIndex = 0;
             this.pnlBicyclePrice.Text = null;
             this.pnlBicyclePrice.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1123,7 +1206,7 @@ namespace ZiTyLot.GUI.Screens
             this.pnlBicycleAnnoucement.Radius = 0;
             this.pnlBicycleAnnoucement.RectColor = System.Drawing.Color.White;
             this.pnlBicycleAnnoucement.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlBicycleAnnoucement.Size = new System.Drawing.Size(455, 106);
+            this.pnlBicycleAnnoucement.Size = new System.Drawing.Size(465, 106);
             this.pnlBicycleAnnoucement.TabIndex = 0;
             this.pnlBicycleAnnoucement.Text = null;
             this.pnlBicycleAnnoucement.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1142,7 +1225,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiTableLayoutPanel8.RowCount = 2;
             this.uiTableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.uiTableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiTableLayoutPanel8.Size = new System.Drawing.Size(455, 106);
+            this.uiTableLayoutPanel8.Size = new System.Drawing.Size(465, 106);
             this.uiTableLayoutPanel8.TabIndex = 0;
             this.uiTableLayoutPanel8.TagString = null;
             // 
@@ -1150,7 +1233,7 @@ namespace ZiTyLot.GUI.Screens
             // 
             this.panel7.Controls.Add(this.btnBicycleVisitorFee);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(145, 56);
+            this.panel7.Location = new System.Drawing.Point(150, 56);
             this.panel7.Name = "panel7";
             this.panel7.Padding = new System.Windows.Forms.Padding(0, 6, 0, 3);
             this.panel7.Size = new System.Drawing.Size(164, 47);
@@ -1190,7 +1273,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiLabel3.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.uiLabel3.Location = new System.Drawing.Point(3, 0);
             this.uiLabel3.Name = "uiLabel3";
-            this.uiLabel3.Size = new System.Drawing.Size(449, 53);
+            this.uiLabel3.Size = new System.Drawing.Size(459, 53);
             this.uiLabel3.TabIndex = 0;
             this.uiLabel3.Text = "This vehical doesn\'t have a price";
             this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1200,13 +1283,13 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel16.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiPanel16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel16.Location = new System.Drawing.Point(499, 0);
+            this.uiPanel16.Location = new System.Drawing.Point(509, 0);
             this.uiPanel16.Margin = new System.Windows.Forms.Padding(0);
             this.uiPanel16.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel16.Name = "uiPanel16";
             this.uiPanel16.Radius = 1;
             this.uiPanel16.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel16.Size = new System.Drawing.Size(4, 474);
+            this.uiPanel16.Size = new System.Drawing.Size(4, 494);
             this.uiPanel16.TabIndex = 1;
             this.uiPanel16.Text = null;
             this.uiPanel16.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1223,7 +1306,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel17.Name = "uiPanel17";
             this.uiPanel17.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.uiPanel17.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel17.Size = new System.Drawing.Size(491, 464);
+            this.uiPanel17.Size = new System.Drawing.Size(501, 484);
             this.uiPanel17.TabIndex = 0;
             this.uiPanel17.Text = null;
             this.uiPanel17.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1242,7 +1325,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiGroupBox6.Padding = new System.Windows.Forms.Padding(0, 32, 0, 0);
             this.uiGroupBox6.Radius = 0;
             this.uiGroupBox6.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox6.Size = new System.Drawing.Size(471, 464);
+            this.uiGroupBox6.Size = new System.Drawing.Size(481, 484);
             this.uiGroupBox6.TabIndex = 0;
             this.uiGroupBox6.Text = "Resident Fee";
             this.uiGroupBox6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1259,7 +1342,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiTableLayoutPanel9.RowCount = 2;
             this.uiTableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.uiTableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
-            this.uiTableLayoutPanel9.Size = new System.Drawing.Size(471, 432);
+            this.uiTableLayoutPanel9.Size = new System.Drawing.Size(481, 452);
             this.uiTableLayoutPanel9.TabIndex = 0;
             this.uiTableLayoutPanel9.TagString = null;
             // 
@@ -1269,7 +1352,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel18.FillColor = System.Drawing.Color.White;
             this.uiPanel18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel18.Location = new System.Drawing.Point(4, 373);
+            this.uiPanel18.Location = new System.Drawing.Point(4, 393);
             this.uiPanel18.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel18.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel18.Name = "uiPanel18";
@@ -1278,7 +1361,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel18.RectColor = System.Drawing.SystemColors.ControlLight;
             this.uiPanel18.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
             this.uiPanel18.RectSize = 2;
-            this.uiPanel18.Size = new System.Drawing.Size(463, 54);
+            this.uiPanel18.Size = new System.Drawing.Size(473, 54);
             this.uiPanel18.TabIndex = 17;
             this.uiPanel18.Text = null;
             this.uiPanel18.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1287,7 +1370,7 @@ namespace ZiTyLot.GUI.Screens
             // 
             this.panel8.Controls.Add(this.btnBicycleResidentFee);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(293, 13);
+            this.panel8.Location = new System.Drawing.Point(303, 13);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(170, 38);
             this.panel8.TabIndex = 9;
@@ -1371,103 +1454,11 @@ namespace ZiTyLot.GUI.Screens
             this.tableBicycle.RowHeadersVisible = false;
             this.tableBicycle.RowHeadersWidth = 30;
             this.tableBicycle.RowTemplate.Height = 40;
-            this.tableBicycle.Size = new System.Drawing.Size(471, 368);
+            this.tableBicycle.Size = new System.Drawing.Size(481, 388);
             this.tableBicycle.TabIndex = 2;
-            this.tableBicycle.Paint += table_PaintBicycle;
-            this.tableBicycle.CellPainting += table_CellPaintingBicycle;
-            this.tableBicycle.CellClick += table_CellClickBicycle;
-            // 
-            // colCarID
-            // 
-            this.colCarID.HeaderText = "ID";
-            this.colCarID.MinimumWidth = 6;
-            this.colCarID.Name = "colCarID";
-            this.colCarID.ReadOnly = true;
-            this.colCarID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colCarID.Width = 50;
-            // 
-            // colCarFee
-            // 
-            this.colCarFee.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colCarFee.HeaderText = "Fee";
-            this.colCarFee.MinimumWidth = 80;
-            this.colCarFee.Name = "colCarFee";
-            this.colCarFee.ReadOnly = true;
-            this.colCarFee.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colCarDuration
-            // 
-            this.colCarDuration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colCarDuration.HeaderText = "Duration";
-            this.colCarDuration.MinimumWidth = 6;
-            this.colCarDuration.Name = "colCarDuration";
-            this.colCarDuration.ReadOnly = true;
-            // 
-            // colCarView
-            // 
-            this.colCarView.HeaderText = "";
-            this.colCarView.MinimumWidth = 6;
-            this.colCarView.Name = "colCarView";
-            this.colCarView.ReadOnly = true;
-            this.colCarView.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colCarView.Text = "View";
-            this.colCarView.Width = 45;
-            // 
-            // colCarDelete
-            // 
-            this.colCarDelete.HeaderText = "";
-            this.colCarDelete.MinimumWidth = 6;
-            this.colCarDelete.Name = "colCarDelete";
-            this.colCarDelete.ReadOnly = true;
-            this.colCarDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colCarDelete.Text = "Delete";
-            this.colCarDelete.Width = 45;
-            // 
-            // colMotorbikeID
-            // 
-            this.colMotorbikeID.HeaderText = "ID";
-            this.colMotorbikeID.MinimumWidth = 6;
-            this.colMotorbikeID.Name = "colMotorbikeID";
-            this.colMotorbikeID.ReadOnly = true;
-            this.colMotorbikeID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colMotorbikeID.Width = 50;
-            // 
-            // colMotorbikeFee
-            // 
-            this.colMotorbikeFee.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colMotorbikeFee.HeaderText = "Fee";
-            this.colMotorbikeFee.MinimumWidth = 80;
-            this.colMotorbikeFee.Name = "colMotorbikeFee";
-            this.colMotorbikeFee.ReadOnly = true;
-            this.colMotorbikeFee.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colMotorbikeDuration
-            // 
-            this.colMotorbikeDuration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colMotorbikeDuration.HeaderText = "Duration";
-            this.colMotorbikeDuration.MinimumWidth = 6;
-            this.colMotorbikeDuration.Name = "colMotorbikeDuration";
-            this.colMotorbikeDuration.ReadOnly = true;
-            // 
-            // colMotorbikeView
-            // 
-            this.colMotorbikeView.HeaderText = "";
-            this.colMotorbikeView.MinimumWidth = 6;
-            this.colMotorbikeView.Name = "colMotorbikeView";
-            this.colMotorbikeView.ReadOnly = true;
-            this.colMotorbikeView.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMotorbikeView.Text = "View";
-            this.colMotorbikeView.Width = 45;
-            // 
-            // colMotorbikeDelete
-            // 
-            this.colMotorbikeDelete.HeaderText = "";
-            this.colMotorbikeDelete.MinimumWidth = 6;
-            this.colMotorbikeDelete.Name = "colMotorbikeDelete";
-            this.colMotorbikeDelete.ReadOnly = true;
-            this.colMotorbikeDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMotorbikeDelete.Text = "Delete";
-            this.colMotorbikeDelete.Width = 45;
+            this.tableBicycle.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClickBicycle);
+            this.tableBicycle.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPaintingBicycle);
+            this.tableBicycle.Paint += new System.Windows.Forms.PaintEventHandler(this.table_PaintBicycle);
             // 
             // colBicycleID
             // 
@@ -1515,6 +1506,15 @@ namespace ZiTyLot.GUI.Screens
             this.colBicycleDelete.Text = "Delete";
             this.colBicycleDelete.Width = 45;
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(110, 34);
+            this.panel5.TabIndex = 0;
+            // 
             // PriceControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1523,7 +1523,6 @@ namespace ZiTyLot.GUI.Screens
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.Name = "PriceControl";
-            this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(1023, 539);
             this.panel2.ResumeLayout(false);
             this.pnlTab.ResumeLayout(false);

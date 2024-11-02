@@ -23,11 +23,12 @@ namespace ZiTyLot.GUI.Screens
         public AreaControl()
         {
             InitializeComponent();
-            cbNumberOfItem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
-            cbNumberOfItem.SelectedIndex = 0;
+            cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
+            cbNumberofitem.SelectedIndex = 0;
         }
         private void AreaScreen_Load(object sender, EventArgs e)
         {
+            pnlPagination.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlPagination.Width, pnlPagination.Height, 10, 10));
             pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
             pnlTop.Height = 54;
@@ -133,8 +134,8 @@ namespace ZiTyLot.GUI.Screens
         {
             if (page == null || pageable == null) return;
 
-            tbCurrentPage.Text = pageable.PageNumber.ToString();
-            lbTotalPage.Text = "/" + page.TotalPages;
+            tbCurrentpage.Text = pageable.PageNumber.ToString();
+            lbTotalpage.Text = "/" + page.TotalPages;
 
             tableArea.Rows.Clear();
             foreach (ParkingLot parkingLot in page.Content)
@@ -214,7 +215,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedValue = cbNumberOfItem.SelectedItem.ToString();
+            string selectedValue = cbNumberofitem.SelectedItem.ToString();
             int pageSize = int.Parse(selectedValue.Split(' ')[0]);
             pageable.PageSize = pageSize;
             ChangePage(1);
@@ -253,7 +254,7 @@ namespace ZiTyLot.GUI.Screens
             // Allow enter key to change page
             if (e.KeyChar == (char)Keys.Enter)
             {
-                string input = tbCurrentPage.Text;
+                string input = tbCurrentpage.Text;
                 int pageNumber;
 
                 if (string.IsNullOrEmpty(input))
@@ -275,6 +276,12 @@ namespace ZiTyLot.GUI.Screens
                 Query();
                 return Task.CompletedTask;
             }, 500);
+        }
+
+        private void pnlPagination_Resize(object sender, EventArgs e)
+        {
+            pnlPagination.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlPagination.Width, pnlPagination.Height, 10, 10));
+
         }
     }
 }

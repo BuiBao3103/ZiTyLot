@@ -42,6 +42,7 @@ namespace ZiTyLot.GUI.Screens
             this.tableCard.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
             this.tableCard.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
             pnlTop.Height = 54;
+            pnlPagination.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlPagination.Width, pnlPagination.Height, 10, 10));
 
         }
 
@@ -144,6 +145,7 @@ namespace ZiTyLot.GUI.Screens
         private void btnPrevious_Click(object sender, EventArgs e)
         {
             changePage(pageable.PageNumber - 1);
+
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -290,6 +292,12 @@ namespace ZiTyLot.GUI.Screens
             Point point = new Point(0, btnMore.Height);
             point = btnMore.PointToScreen(point);
             menuMore.Show(point);
+        }
+
+        private void pnlPagination_Resize(object sender, EventArgs e)
+        {
+            pnlPagination.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlPagination.Width, pnlPagination.Height, 10, 10));
+
         }
     }
 }
