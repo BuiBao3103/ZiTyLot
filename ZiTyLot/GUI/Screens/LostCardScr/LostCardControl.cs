@@ -104,6 +104,7 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
 
         private void LostCardControl_Load(object sender, EventArgs e)
         {
+            pnlPagination.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlPagination.Width, pnlPagination.Height, 10, 10));
             this.pnlTop.Height = 54;
             this.pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
             this.pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
@@ -119,6 +120,32 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
             {
                 pnlTop.Height = 54;
             }   
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbNumberofitem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbCurrentpage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void pnlPagination_Resize(object sender, EventArgs e)
+        {
+            pnlPagination.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlPagination.Width, pnlPagination.Height, 10, 10));
+
         }
     }
 

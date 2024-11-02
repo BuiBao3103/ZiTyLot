@@ -35,6 +35,7 @@ namespace ZiTyLot.GUI.Screens
         {
             pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
+            pnlPagination.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlPagination.Width, pnlPagination.Height, 10, 10));
             this.tableAccount.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
             this.tableAccount.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
             this.tableAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
@@ -260,6 +261,11 @@ namespace ZiTyLot.GUI.Screens
                 }
                 ChangePage(pageNumber);
             }
+        }
+
+        private void pnlPagination_Resize(object sender, EventArgs e)
+        {
+            pnlPagination.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlPagination.Width, pnlPagination.Height, 10, 10));
         }
     }
 }

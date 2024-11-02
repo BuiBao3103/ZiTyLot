@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.tableLostCard = new System.Windows.Forms.DataGridView();
@@ -65,6 +65,7 @@
             this.btnClear = new Sunny.UI.UISymbolButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnApply = new Sunny.UI.UISymbolButton();
+            this.separtorBottom = new System.Windows.Forms.Panel();
             this.pnlPagination = new System.Windows.Forms.Panel();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.uiPanel2 = new Sunny.UI.UIPanel();
@@ -107,6 +108,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.separtorBottom);
+            this.panel2.Controls.Add(this.pnlPagination);
             this.panel2.Controls.Add(this.pnlBottom);
             this.panel2.Controls.Add(this.separator);
             this.panel2.Controls.Add(this.pnlTop);
@@ -119,7 +122,6 @@
             // pnlBottom
             // 
             this.pnlBottom.BackColor = System.Drawing.Color.White;
-            this.pnlBottom.Controls.Add(this.pnlPagination);
             this.pnlBottom.Controls.Add(this.tableLostCard);
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBottom.Location = new System.Drawing.Point(0, 112);
@@ -136,27 +138,27 @@
             this.tableLostCard.AllowUserToDeleteRows = false;
             this.tableLostCard.AllowUserToResizeColumns = false;
             this.tableLostCard.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.tableLostCard.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.tableLostCard.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tableLostCard.BackgroundColor = System.Drawing.Color.White;
             this.tableLostCard.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tableLostCard.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.tableLostCard.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableLostCard.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableLostCard.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.tableLostCard.ColumnHeadersHeight = 34;
             this.tableLostCard.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
@@ -167,15 +169,15 @@
             this.colStatus,
             this.colRestore});
             this.tableLostCard.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableLostCard.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableLostCard.DefaultCellStyle = dataGridViewCellStyle6;
             this.tableLostCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLostCard.GridColor = System.Drawing.Color.White;
             this.tableLostCard.Location = new System.Drawing.Point(10, 10);
@@ -720,25 +722,36 @@
             this.btnApply.Text = "Apply";
             this.btnApply.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // separtorBottom
+            // 
+            this.separtorBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.separtorBottom.Location = new System.Drawing.Point(0, 704);
+            this.separtorBottom.Margin = new System.Windows.Forms.Padding(4);
+            this.separtorBottom.MaximumSize = new System.Drawing.Size(2160, 5);
+            this.separtorBottom.Name = "separtorBottom";
+            this.separtorBottom.Size = new System.Drawing.Size(1225, 4);
+            this.separtorBottom.TabIndex = 10;
+            // 
             // pnlPagination
             // 
             this.pnlPagination.BackColor = System.Drawing.Color.White;
             this.pnlPagination.Controls.Add(this.pnlLeft);
             this.pnlPagination.Controls.Add(this.pnlRight);
             this.pnlPagination.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlPagination.Location = new System.Drawing.Point(10, 590);
+            this.pnlPagination.Location = new System.Drawing.Point(0, 708);
             this.pnlPagination.Name = "pnlPagination";
-            this.pnlPagination.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.pnlPagination.Size = new System.Drawing.Size(1205, 50);
-            this.pnlPagination.TabIndex = 5;
+            this.pnlPagination.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.pnlPagination.Size = new System.Drawing.Size(1225, 54);
+            this.pnlPagination.TabIndex = 9;
+            this.pnlPagination.Resize += new System.EventHandler(this.pnlPagination_Resize);
             // 
             // pnlLeft
             // 
             this.pnlLeft.Controls.Add(this.uiPanel2);
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlLeft.Location = new System.Drawing.Point(0, 5);
+            this.pnlLeft.Location = new System.Drawing.Point(10, 5);
             this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(140, 40);
+            this.pnlLeft.Size = new System.Drawing.Size(140, 44);
             this.pnlLeft.TabIndex = 2;
             // 
             // uiPanel2
@@ -756,7 +769,7 @@
             this.uiPanel2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiPanel2.RectDisableColor = System.Drawing.Color.White;
             this.uiPanel2.RectSize = 2;
-            this.uiPanel2.Size = new System.Drawing.Size(140, 40);
+            this.uiPanel2.Size = new System.Drawing.Size(140, 44);
             this.uiPanel2.TabIndex = 2;
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -775,11 +788,6 @@
             this.cbNumberofitem.ItemHeight = 24;
             this.cbNumberofitem.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(235)))), ((int)(((byte)(212)))));
             this.cbNumberofitem.ItemRectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.cbNumberofitem.Items.AddRange(new object[] {
-            "3 items",
-            "25 items",
-            "50 items",
-            "100 items"});
             this.cbNumberofitem.ItemSelectBackColor = System.Drawing.Color.White;
             this.cbNumberofitem.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.cbNumberofitem.Location = new System.Drawing.Point(10, 0);
@@ -794,15 +802,15 @@
             this.cbNumberofitem.ScrollBarBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
             this.cbNumberofitem.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.cbNumberofitem.ScrollBarStyleInherited = false;
-            this.cbNumberofitem.Size = new System.Drawing.Size(120, 40);
+            this.cbNumberofitem.Size = new System.Drawing.Size(120, 44);
             this.cbNumberofitem.Style = Sunny.UI.UIStyle.Custom;
             this.cbNumberofitem.SymbolDropDown = 560247;
             this.cbNumberofitem.SymbolNormal = 557682;
             this.cbNumberofitem.SymbolSize = 24;
             this.cbNumberofitem.TabIndex = 1;
-            this.cbNumberofitem.Text = "3 items";
             this.cbNumberofitem.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cbNumberofitem.Watermark = "";
+            this.cbNumberofitem.SelectedIndexChanged += new System.EventHandler(this.cbNumberofitem_SelectedIndexChanged);
             // 
             // pnlRight
             // 
@@ -810,9 +818,9 @@
             this.pnlRight.Controls.Add(this.pnlCurrentPage);
             this.pnlRight.Controls.Add(this.pnlPrevious);
             this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlRight.Location = new System.Drawing.Point(1037, 5);
+            this.pnlRight.Location = new System.Drawing.Point(1047, 5);
             this.pnlRight.Name = "pnlRight";
-            this.pnlRight.Size = new System.Drawing.Size(168, 40);
+            this.pnlRight.Size = new System.Drawing.Size(168, 44);
             this.pnlRight.TabIndex = 1;
             // 
             // pnlNext
@@ -822,7 +830,7 @@
             this.pnlNext.Location = new System.Drawing.Point(126, 0);
             this.pnlNext.Name = "pnlNext";
             this.pnlNext.Padding = new System.Windows.Forms.Padding(3);
-            this.pnlNext.Size = new System.Drawing.Size(40, 40);
+            this.pnlNext.Size = new System.Drawing.Size(40, 44);
             this.pnlNext.TabIndex = 1;
             // 
             // btnNext
@@ -847,9 +855,10 @@
             this.btnNext.RectSelectedColor = System.Drawing.Color.White;
             this.btnNext.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnNext.RectSize = 2;
-            this.btnNext.Size = new System.Drawing.Size(34, 34);
+            this.btnNext.Size = new System.Drawing.Size(34, 38);
             this.btnNext.TabIndex = 4;
             this.btnNext.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // pnlCurrentPage
             // 
@@ -858,7 +867,7 @@
             this.pnlCurrentPage.Location = new System.Drawing.Point(40, 0);
             this.pnlCurrentPage.Name = "pnlCurrentPage";
             this.pnlCurrentPage.Padding = new System.Windows.Forms.Padding(3);
-            this.pnlCurrentPage.Size = new System.Drawing.Size(86, 40);
+            this.pnlCurrentPage.Size = new System.Drawing.Size(86, 44);
             this.pnlCurrentPage.TabIndex = 2;
             // 
             // uiTableLayoutPanel3
@@ -873,7 +882,7 @@
             this.uiTableLayoutPanel3.Name = "uiTableLayoutPanel3";
             this.uiTableLayoutPanel3.RowCount = 1;
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(80, 34);
+            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(80, 38);
             this.uiTableLayoutPanel3.TabIndex = 0;
             this.uiTableLayoutPanel3.TagString = null;
             // 
@@ -894,11 +903,12 @@
             this.tbCurrentpage.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom;
             this.tbCurrentpage.RectSize = 2;
             this.tbCurrentpage.ShowText = false;
-            this.tbCurrentpage.Size = new System.Drawing.Size(40, 34);
+            this.tbCurrentpage.Size = new System.Drawing.Size(40, 38);
             this.tbCurrentpage.TabIndex = 0;
             this.tbCurrentpage.Text = "1";
             this.tbCurrentpage.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.tbCurrentpage.Watermark = "";
+            this.tbCurrentpage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCurrentpage_KeyPress);
             // 
             // lbTotalpage
             // 
@@ -908,7 +918,7 @@
             this.lbTotalpage.Location = new System.Drawing.Point(40, 0);
             this.lbTotalpage.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.lbTotalpage.Name = "lbTotalpage";
-            this.lbTotalpage.Size = new System.Drawing.Size(40, 32);
+            this.lbTotalpage.Size = new System.Drawing.Size(40, 36);
             this.lbTotalpage.TabIndex = 1;
             this.lbTotalpage.Text = "/100";
             this.lbTotalpage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -920,7 +930,7 @@
             this.pnlPrevious.Location = new System.Drawing.Point(0, 0);
             this.pnlPrevious.Name = "pnlPrevious";
             this.pnlPrevious.Padding = new System.Windows.Forms.Padding(3);
-            this.pnlPrevious.Size = new System.Drawing.Size(40, 40);
+            this.pnlPrevious.Size = new System.Drawing.Size(40, 44);
             this.pnlPrevious.TabIndex = 0;
             // 
             // btnPrevious
@@ -945,9 +955,10 @@
             this.btnPrevious.RectSelectedColor = System.Drawing.Color.White;
             this.btnPrevious.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnPrevious.RectSize = 2;
-            this.btnPrevious.Size = new System.Drawing.Size(34, 34);
+            this.btnPrevious.Size = new System.Drawing.Size(34, 38);
             this.btnPrevious.TabIndex = 4;
             this.btnPrevious.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // LostCardControl
             // 
@@ -1023,6 +1034,7 @@
         private System.Windows.Forms.DataGridViewButtonColumn colRestore;
         private System.Windows.Forms.Panel panel6;
         private Sunny.UI.UISymbolButton btnFilter;
+        private System.Windows.Forms.Panel separtorBottom;
         private System.Windows.Forms.Panel pnlPagination;
         private System.Windows.Forms.Panel pnlLeft;
         private Sunny.UI.UIPanel uiPanel2;

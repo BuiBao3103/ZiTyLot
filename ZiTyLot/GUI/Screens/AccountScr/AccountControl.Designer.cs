@@ -43,7 +43,7 @@ namespace ZiTyLot.GUI.Screens
             this.tableSearch = new System.Windows.Forms.TableLayoutPanel();
             this.cbFilter = new Sunny.UI.UIComboBox();
             this.tbSearch = new Sunny.UI.UITextBox();
-            this.separator = new System.Windows.Forms.Panel();
+            this.separatorTop = new System.Windows.Forms.Panel();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.tableAccount = new System.Windows.Forms.DataGridView();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,6 +72,7 @@ namespace ZiTyLot.GUI.Screens
             this.lbTotalpage = new Sunny.UI.UILabel();
             this.pnlPrevious = new System.Windows.Forms.Panel();
             this.btnPrevious = new Sunny.UI.UISymbolButton();
+            this.separtorBottom = new System.Windows.Forms.Panel();
             this.pnlTop.SuspendLayout();
             this.tableTop.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -271,27 +272,26 @@ namespace ZiTyLot.GUI.Screens
             this.tbSearch.Watermark = "";
             this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
             // 
-            // separator
+            // separatorTop
             // 
-            this.separator.Dock = System.Windows.Forms.DockStyle.Top;
-            this.separator.Location = new System.Drawing.Point(0, 54);
-            this.separator.Margin = new System.Windows.Forms.Padding(4);
-            this.separator.MaximumSize = new System.Drawing.Size(2160, 5);
-            this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(1171, 4);
-            this.separator.TabIndex = 2;
+            this.separatorTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.separatorTop.Location = new System.Drawing.Point(0, 54);
+            this.separatorTop.Margin = new System.Windows.Forms.Padding(4);
+            this.separatorTop.MaximumSize = new System.Drawing.Size(2160, 5);
+            this.separatorTop.Name = "separatorTop";
+            this.separatorTop.Size = new System.Drawing.Size(1171, 4);
+            this.separatorTop.TabIndex = 2;
             // 
             // pnlBottom
             // 
             this.pnlBottom.BackColor = System.Drawing.Color.White;
-            this.pnlBottom.Controls.Add(this.pnlPagination);
             this.pnlBottom.Controls.Add(this.tableAccount);
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBottom.Location = new System.Drawing.Point(0, 58);
             this.pnlBottom.Margin = new System.Windows.Forms.Padding(0);
             this.pnlBottom.Name = "pnlBottom";
             this.pnlBottom.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlBottom.Size = new System.Drawing.Size(1171, 494);
+            this.pnlBottom.Size = new System.Drawing.Size(1171, 436);
             this.pnlBottom.TabIndex = 3;
             this.pnlBottom.Resize += new System.EventHandler(this.BottomPnl_Resize);
             // 
@@ -351,7 +351,7 @@ namespace ZiTyLot.GUI.Screens
             this.tableAccount.RowHeadersWidth = 30;
             this.tableAccount.RowTemplate.Height = 40;
             this.tableAccount.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableAccount.Size = new System.Drawing.Size(1151, 474);
+            this.tableAccount.Size = new System.Drawing.Size(1151, 416);
             this.tableAccount.TabIndex = 1;
             // 
             // colId
@@ -419,7 +419,9 @@ namespace ZiTyLot.GUI.Screens
             // panel2
             // 
             this.panel2.Controls.Add(this.pnlBottom);
-            this.panel2.Controls.Add(this.separator);
+            this.panel2.Controls.Add(this.separtorBottom);
+            this.panel2.Controls.Add(this.pnlPagination);
+            this.panel2.Controls.Add(this.separatorTop);
             this.panel2.Controls.Add(this.pnlTop);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -503,19 +505,20 @@ namespace ZiTyLot.GUI.Screens
             this.pnlPagination.Controls.Add(this.pnlLeft);
             this.pnlPagination.Controls.Add(this.pnlRight);
             this.pnlPagination.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlPagination.Location = new System.Drawing.Point(10, 434);
+            this.pnlPagination.Location = new System.Drawing.Point(0, 498);
             this.pnlPagination.Name = "pnlPagination";
-            this.pnlPagination.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.pnlPagination.Size = new System.Drawing.Size(1151, 50);
-            this.pnlPagination.TabIndex = 4;
+            this.pnlPagination.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.pnlPagination.Size = new System.Drawing.Size(1171, 54);
+            this.pnlPagination.TabIndex = 5;
+            this.pnlPagination.Resize += new System.EventHandler(this.pnlPagination_Resize);
             // 
             // pnlLeft
             // 
             this.pnlLeft.Controls.Add(this.uiPanel2);
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlLeft.Location = new System.Drawing.Point(0, 5);
+            this.pnlLeft.Location = new System.Drawing.Point(10, 5);
             this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(140, 40);
+            this.pnlLeft.Size = new System.Drawing.Size(140, 44);
             this.pnlLeft.TabIndex = 2;
             // 
             // uiPanel2
@@ -533,7 +536,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiPanel2.RectDisableColor = System.Drawing.Color.White;
             this.uiPanel2.RectSize = 2;
-            this.uiPanel2.Size = new System.Drawing.Size(140, 40);
+            this.uiPanel2.Size = new System.Drawing.Size(140, 44);
             this.uiPanel2.TabIndex = 2;
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -552,11 +555,6 @@ namespace ZiTyLot.GUI.Screens
             this.cbNumberofitem.ItemHeight = 24;
             this.cbNumberofitem.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(235)))), ((int)(((byte)(212)))));
             this.cbNumberofitem.ItemRectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.cbNumberofitem.Items.AddRange(new object[] {
-            "3 items",
-            "25 items",
-            "50 items",
-            "100 items"});
             this.cbNumberofitem.ItemSelectBackColor = System.Drawing.Color.White;
             this.cbNumberofitem.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.cbNumberofitem.Location = new System.Drawing.Point(10, 0);
@@ -571,15 +569,15 @@ namespace ZiTyLot.GUI.Screens
             this.cbNumberofitem.ScrollBarBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
             this.cbNumberofitem.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.cbNumberofitem.ScrollBarStyleInherited = false;
-            this.cbNumberofitem.Size = new System.Drawing.Size(120, 40);
+            this.cbNumberofitem.Size = new System.Drawing.Size(120, 44);
             this.cbNumberofitem.Style = Sunny.UI.UIStyle.Custom;
             this.cbNumberofitem.SymbolDropDown = 560247;
             this.cbNumberofitem.SymbolNormal = 557682;
             this.cbNumberofitem.SymbolSize = 24;
             this.cbNumberofitem.TabIndex = 1;
-            this.cbNumberofitem.Text = "3 items";
             this.cbNumberofitem.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cbNumberofitem.Watermark = "";
+            this.cbNumberofitem.SelectedIndexChanged += new System.EventHandler(this.numberofitemsCb_SelectedIndexChanged);
             // 
             // pnlRight
             // 
@@ -587,9 +585,9 @@ namespace ZiTyLot.GUI.Screens
             this.pnlRight.Controls.Add(this.pnlCurrentPage);
             this.pnlRight.Controls.Add(this.pnlPrevious);
             this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlRight.Location = new System.Drawing.Point(983, 5);
+            this.pnlRight.Location = new System.Drawing.Point(993, 5);
             this.pnlRight.Name = "pnlRight";
-            this.pnlRight.Size = new System.Drawing.Size(168, 40);
+            this.pnlRight.Size = new System.Drawing.Size(168, 44);
             this.pnlRight.TabIndex = 1;
             // 
             // pnlNext
@@ -599,7 +597,7 @@ namespace ZiTyLot.GUI.Screens
             this.pnlNext.Location = new System.Drawing.Point(126, 0);
             this.pnlNext.Name = "pnlNext";
             this.pnlNext.Padding = new System.Windows.Forms.Padding(3);
-            this.pnlNext.Size = new System.Drawing.Size(40, 40);
+            this.pnlNext.Size = new System.Drawing.Size(40, 44);
             this.pnlNext.TabIndex = 1;
             // 
             // btnNext
@@ -624,9 +622,10 @@ namespace ZiTyLot.GUI.Screens
             this.btnNext.RectSelectedColor = System.Drawing.Color.White;
             this.btnNext.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnNext.RectSize = 2;
-            this.btnNext.Size = new System.Drawing.Size(34, 34);
+            this.btnNext.Size = new System.Drawing.Size(34, 38);
             this.btnNext.TabIndex = 4;
             this.btnNext.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // pnlCurrentPage
             // 
@@ -635,7 +634,7 @@ namespace ZiTyLot.GUI.Screens
             this.pnlCurrentPage.Location = new System.Drawing.Point(40, 0);
             this.pnlCurrentPage.Name = "pnlCurrentPage";
             this.pnlCurrentPage.Padding = new System.Windows.Forms.Padding(3);
-            this.pnlCurrentPage.Size = new System.Drawing.Size(86, 40);
+            this.pnlCurrentPage.Size = new System.Drawing.Size(86, 44);
             this.pnlCurrentPage.TabIndex = 2;
             // 
             // uiTableLayoutPanel3
@@ -650,7 +649,7 @@ namespace ZiTyLot.GUI.Screens
             this.uiTableLayoutPanel3.Name = "uiTableLayoutPanel3";
             this.uiTableLayoutPanel3.RowCount = 1;
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(80, 34);
+            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(80, 38);
             this.uiTableLayoutPanel3.TabIndex = 0;
             this.uiTableLayoutPanel3.TagString = null;
             // 
@@ -671,11 +670,12 @@ namespace ZiTyLot.GUI.Screens
             this.tbCurrentpage.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom;
             this.tbCurrentpage.RectSize = 2;
             this.tbCurrentpage.ShowText = false;
-            this.tbCurrentpage.Size = new System.Drawing.Size(40, 34);
+            this.tbCurrentpage.Size = new System.Drawing.Size(40, 38);
             this.tbCurrentpage.TabIndex = 0;
             this.tbCurrentpage.Text = "1";
             this.tbCurrentpage.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.tbCurrentpage.Watermark = "";
+            this.tbCurrentpage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCurrentpage_KeyPress);
             // 
             // lbTotalpage
             // 
@@ -685,7 +685,7 @@ namespace ZiTyLot.GUI.Screens
             this.lbTotalpage.Location = new System.Drawing.Point(40, 0);
             this.lbTotalpage.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.lbTotalpage.Name = "lbTotalpage";
-            this.lbTotalpage.Size = new System.Drawing.Size(40, 32);
+            this.lbTotalpage.Size = new System.Drawing.Size(40, 36);
             this.lbTotalpage.TabIndex = 1;
             this.lbTotalpage.Text = "/100";
             this.lbTotalpage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -697,7 +697,7 @@ namespace ZiTyLot.GUI.Screens
             this.pnlPrevious.Location = new System.Drawing.Point(0, 0);
             this.pnlPrevious.Name = "pnlPrevious";
             this.pnlPrevious.Padding = new System.Windows.Forms.Padding(3);
-            this.pnlPrevious.Size = new System.Drawing.Size(40, 40);
+            this.pnlPrevious.Size = new System.Drawing.Size(40, 44);
             this.pnlPrevious.TabIndex = 0;
             // 
             // btnPrevious
@@ -722,9 +722,20 @@ namespace ZiTyLot.GUI.Screens
             this.btnPrevious.RectSelectedColor = System.Drawing.Color.White;
             this.btnPrevious.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnPrevious.RectSize = 2;
-            this.btnPrevious.Size = new System.Drawing.Size(34, 34);
+            this.btnPrevious.Size = new System.Drawing.Size(34, 38);
             this.btnPrevious.TabIndex = 4;
             this.btnPrevious.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            // 
+            // separtorBottom
+            // 
+            this.separtorBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.separtorBottom.Location = new System.Drawing.Point(0, 494);
+            this.separtorBottom.Margin = new System.Windows.Forms.Padding(4);
+            this.separtorBottom.MaximumSize = new System.Drawing.Size(2160, 5);
+            this.separtorBottom.Name = "separtorBottom";
+            this.separtorBottom.Size = new System.Drawing.Size(1171, 4);
+            this.separtorBottom.TabIndex = 6;
             // 
             // AccountControl
             // 
@@ -759,7 +770,7 @@ namespace ZiTyLot.GUI.Screens
 
         #endregion
         private System.Windows.Forms.Panel pnlTop;
-        private System.Windows.Forms.Panel separator;
+        private System.Windows.Forms.Panel separatorTop;
         private System.Windows.Forms.Panel pnlBottom;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
@@ -796,5 +807,6 @@ namespace ZiTyLot.GUI.Screens
         private Sunny.UI.UILabel lbTotalpage;
         private Panel pnlPrevious;
         private Sunny.UI.UISymbolButton btnPrevious;
+        private Panel separtorBottom;
     }
 }

@@ -29,6 +29,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void ResidentScreen_Load(object sender, EventArgs e)
         {
+            pnlPagination.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlPagination.Width, pnlPagination.Height, 10, 10));
             pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
             this.tableResident.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
@@ -244,6 +245,12 @@ namespace ZiTyLot.GUI.Screens
                 Query();
                 return Task.CompletedTask;
             }, 500);
+        }
+
+        private void pnlPagination_Resize(object sender, EventArgs e)
+        {
+            pnlPagination.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlPagination.Width, pnlPagination.Height, 10, 10));
+
         }
     }
 }
