@@ -26,7 +26,6 @@ namespace ZiTyLot.BUS
             try
             {
                 Validate(item);
-
                 // Kiểm tra trùng lặp
                 var existingFee = residentFeeDAO.GetAll(new List<FilterCondition>
                 {
@@ -36,7 +35,6 @@ namespace ZiTyLot.BUS
 
                 if (existingFee.Any())
                 {
-                    // Ném lỗi với tên field
                     throw new ValidationException(
                         "Fee configuration already exists for this vehicle type and duration"
                     );
@@ -51,6 +49,7 @@ namespace ZiTyLot.BUS
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 throw new BusinessException("Unable to save resident fee. Please try again later.");
             }
         }
