@@ -50,7 +50,7 @@ namespace ZiTyLot.BUS
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                throw new BusinessException("Unable to save resident fee. Please try again later.");
+                throw new BusinessException("Unable to add resident fee. Please try again later.");
             }
         }
 
@@ -122,7 +122,6 @@ namespace ZiTyLot.BUS
         //
         private void Validate(ResidentFee item)
         {
-
             if (!item.Vehicle_type_id.HasValue || item.Vehicle_type_id <= 0)
             {
                 throw new ValidationException("Invalid vehicle type");
@@ -139,10 +138,10 @@ namespace ZiTyLot.BUS
             }
 
             Console.WriteLine(item.Vehicle_type_id);
-            // Kiểm tra vehicle type có tồn tại
+            // Kiểm tra khóa ngoại
             if (item.Vehicle_type_id != null && vehicleTypeDAO.GetById(item.Vehicle_type_id) == null)
             {
-                throw new ValidationException("Selected vehicle type does not exist");
+                throw new ValidationException("Vehicle type does not exist");
             }
         }
 

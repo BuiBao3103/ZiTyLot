@@ -236,6 +236,7 @@ namespace ZiTyLot.GUI.Screens
                 {
                     _residentFees = _residentFeeBUS.GetAll();
                     LoadResidentFee();
+                    //changePage(1);
                 };
                 _addResidentFeeForm.Show();
             }

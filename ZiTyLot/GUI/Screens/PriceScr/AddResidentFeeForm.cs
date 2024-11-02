@@ -56,7 +56,6 @@ namespace ZiTyLot.GUI.Screens.PriceScr
             if (!ValidateInput()) return;
             try
             {
-                
                 ResidentFee residentFee = new ResidentFee
                 {
                     Month = int.Parse(cbDuration.Text.Split(' ')[0]),
@@ -112,5 +111,7 @@ namespace ZiTyLot.GUI.Screens.PriceScr
 
             return true;
         }
+
+
     }
 }

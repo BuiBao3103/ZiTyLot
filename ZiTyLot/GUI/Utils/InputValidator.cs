@@ -31,6 +31,48 @@
 
                 return false;
             }
+
+           public static bool ValidateEmail(string email)
+           {
+               if (string.IsNullOrEmpty(email))
+               {
+                   return false;
+               }
+               return System.Text.RegularExpressions.Regex.IsMatch(email,
+                   @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+           }
+
+            public static bool ValidatePhoneNumber(string phone)
+              {
+                if (string.IsNullOrEmpty(phone))
+                {
+                     return false;
+                }
+                return System.Text.RegularExpressions.Regex.IsMatch(phone,
+                     @"^(\+[0-9]{9})$");
+              }
+
+            public static bool ValidateRfid(string rfid)
+            {
+                if (string.IsNullOrEmpty(rfid))
+                {
+                    return false;
+                }
+                return System.Text.RegularExpressions.Regex.IsMatch(rfid,
+                    @"^([0-9]{10})$");
+            }
+
+            public static bool ValidateNationalId(string nationalId)
+            {
+                if (string.IsNullOrEmpty(nationalId))
+                {
+                    return false;
+                }
+                return System.Text.RegularExpressions.Regex.IsMatch(nationalId,
+                    @"^([0-9]{12})$");
+            }
+
+           
         }
 
     }
