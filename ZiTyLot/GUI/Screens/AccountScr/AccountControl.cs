@@ -39,6 +39,7 @@ namespace ZiTyLot.GUI.Screens
             this.tableAccount.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
             this.tableAccount.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
             this.tableAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
+            pnlBottom.AutoScrollMinSize = new Size(0, pnlBottom.Height - 40);
         }
         // Paint the header cell
         private void table_Paint(object sender, PaintEventArgs e)
