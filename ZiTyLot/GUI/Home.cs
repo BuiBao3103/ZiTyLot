@@ -17,10 +17,13 @@ namespace ZiTyLot.GUI
     public partial class Home : Form
     {
         #region Constants
+
         private static readonly List<int> SIDEBAR_WIDTH = new List<int> { 80, 245 };
         private static readonly List<int> SIDEBAR_TOP_HEIGHT = new List<int> { 60, 120 };
+        private static readonly int MINIMUMSIZE_WIDTH = 1100;
         private const int ANIMATION_DURATION = 400;
         private const int ANIMATION_STEPS = 10;
+        private int previousWidth;
         private const string LOGO_PATH = @"../../GUI/assets/Zity-logo-256x256px.png";
         private const string LOGO_MINI_PATH = @"../../GUI/assets/logo_mini.png";
         private readonly dynamic[] menuItems = new[]
@@ -574,8 +577,29 @@ namespace ZiTyLot.GUI
                 components.Dispose();
             }
         }
+
         #endregion
 
-        
+
+
+        private void Home_ResizeEnd(object sender, EventArgs e)
+        {
+            // Check if the width crossed the minimum size threshold
+            if (this.Width < MINIMUMSIZE_WIDTH && previousWidth >= MINIMUMSIZE_WIDTH)
+            {
+                CloseMenu();
+                btnToggle.Symbol = 558849;
+                btnToggle.SymbolOffset = new Point(0, 0);
+            }
+            else if (this.Width >= MINIMUMSIZE_WIDTH && previousWidth < MINIMUMSIZE_WIDTH)
+            {
+                OpenMenu();
+                btnToggle.Symbol = 558848;
+                btnToggle.SymbolOffset = new Point(4, 0);
+            }
+
+            // Update the previous width
+            previousWidth = this.Width;
+        }
     }
 }

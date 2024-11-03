@@ -151,7 +151,7 @@ namespace ZiTyLot.GUI.Screens
             tableAccount.Rows.Clear();
             foreach (Account account in page.Content)
             {
-                tableAccount.Rows.Add(account.Id, account.Full_name, account.Username, account.Email);
+                tableAccount.Rows.Add(account.Id, account.Full_name, account.Username, account.Email, account.Role);
             }
             //update button
             btnPrevious.Enabled = pageable.PageNumber > 1;

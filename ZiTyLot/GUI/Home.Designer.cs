@@ -343,6 +343,7 @@
             this.Padding = new System.Windows.Forms.Padding(15);
             this.Text = "Zitylot";
             this.Load += new System.EventHandler(this.Home_Load);
+            this.ResizeEnd += new System.EventHandler(this.Home_ResizeEnd);
             this.sidebar.ResumeLayout(false);
             this.sidebarBottom.ResumeLayout(false);
             this.uiPanel2.ResumeLayout(false);

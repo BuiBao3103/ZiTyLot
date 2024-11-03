@@ -86,9 +86,6 @@
             this.uiPanel3 = new Sunny.UI.UIPanel();
             this.uiTableLayoutPanel1 = new Sunny.UI.UITableLayoutPanel();
             this.uiPanel5 = new Sunny.UI.UIPanel();
-            this.pnlSearch = new Sunny.UI.UIPanel();
-            this.tableSearch = new System.Windows.Forms.TableLayoutPanel();
-            this.tbSearch = new Sunny.UI.UITextBox();
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.separator = new System.Windows.Forms.Panel();
             this.pnlTop = new System.Windows.Forms.Panel();
@@ -103,6 +100,10 @@
             this.uiPanel2 = new Sunny.UI.UIPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBack = new Sunny.UI.UISymbolButton();
+            this.pnlSearch = new Sunny.UI.UIPanel();
+            this.tableSearch = new System.Windows.Forms.TableLayoutPanel();
+            this.cbFilter = new Sunny.UI.UIComboBox();
+            this.tbSearch = new Sunny.UI.UITextBox();
             this.panel2.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.pnlMainTable.SuspendLayout();
@@ -145,8 +146,6 @@
             this.uiPanel3.SuspendLayout();
             this.uiTableLayoutPanel1.SuspendLayout();
             this.uiPanel5.SuspendLayout();
-            this.pnlSearch.SuspendLayout();
-            this.tableSearch.SuspendLayout();
             this.pnlTop.SuspendLayout();
             this.uiTableLayoutPanel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -155,6 +154,8 @@
             this.panel9.SuspendLayout();
             this.uiPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.pnlSearch.SuspendLayout();
+            this.tableSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -1136,60 +1137,6 @@
             this.uiPanel5.Text = null;
             this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnlSearch
-            // 
-            this.pnlSearch.Controls.Add(this.tableSearch);
-            this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlSearch.FillColor = System.Drawing.Color.White;
-            this.pnlSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlSearch.Location = new System.Drawing.Point(277, 3);
-            this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlSearch.MinimumSize = new System.Drawing.Size(1, 1);
-            this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlSearch.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.pnlSearch.RectSize = 2;
-            this.pnlSearch.Size = new System.Drawing.Size(365, 38);
-            this.pnlSearch.TabIndex = 2;
-            this.pnlSearch.Text = null;
-            this.pnlSearch.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // tableSearch
-            // 
-            this.tableSearch.ColumnCount = 1;
-            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSearch.Controls.Add(this.tbSearch, 0, 0);
-            this.tableSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.tableSearch.Location = new System.Drawing.Point(5, 5);
-            this.tableSearch.Name = "tableSearch";
-            this.tableSearch.RowCount = 1;
-            this.tableSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableSearch.Size = new System.Drawing.Size(355, 28);
-            this.tableSearch.TabIndex = 0;
-            // 
-            // tbSearch
-            // 
-            this.tbSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tbSearch.Location = new System.Drawing.Point(0, 0);
-            this.tbSearch.Margin = new System.Windows.Forms.Padding(0);
-            this.tbSearch.MinimumSize = new System.Drawing.Size(1, 16);
-            this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Padding = new System.Windows.Forms.Padding(5);
-            this.tbSearch.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.tbSearch.ShowText = false;
-            this.tbSearch.Size = new System.Drawing.Size(355, 28);
-            this.tbSearch.Symbol = 61442;
-            this.tbSearch.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.tbSearch.SymbolSize = 26;
-            this.tbSearch.TabIndex = 0;
-            this.tbSearch.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tbSearch.Watermark = "";
-            // 
             // uiLabel1
             // 
             this.uiLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1413,6 +1360,100 @@
             this.btnBack.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // pnlSearch
+            // 
+            this.pnlSearch.Controls.Add(this.tableSearch);
+            this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlSearch.FillColor = System.Drawing.Color.White;
+            this.pnlSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlSearch.Location = new System.Drawing.Point(277, 3);
+            this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlSearch.MinimumSize = new System.Drawing.Size(1, 1);
+            this.pnlSearch.Name = "pnlSearch";
+            this.pnlSearch.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlSearch.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.pnlSearch.RectSize = 2;
+            this.pnlSearch.Size = new System.Drawing.Size(365, 38);
+            this.pnlSearch.TabIndex = 3;
+            this.pnlSearch.Text = null;
+            this.pnlSearch.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tableSearch
+            // 
+            this.tableSearch.ColumnCount = 2;
+            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableSearch.Controls.Add(this.cbFilter, 1, 0);
+            this.tableSearch.Controls.Add(this.tbSearch, 0, 0);
+            this.tableSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.tableSearch.Location = new System.Drawing.Point(5, 5);
+            this.tableSearch.Name = "tableSearch";
+            this.tableSearch.RowCount = 1;
+            this.tableSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableSearch.Size = new System.Drawing.Size(355, 28);
+            this.tableSearch.TabIndex = 0;
+            // 
+            // cbFilter
+            // 
+            this.cbFilter.DataSource = null;
+            this.cbFilter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbFilter.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.cbFilter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbFilter.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.cbFilter.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFilter.ForeColor = System.Drawing.Color.White;
+            this.cbFilter.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbFilter.ItemRectColor = System.Drawing.Color.White;
+            this.cbFilter.Items.AddRange(new object[] {
+            "  ID",
+            "  Email",
+            "  Phone",
+            "  Full name",
+            "  Apartment ID"});
+            this.cbFilter.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbFilter.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.cbFilter.Location = new System.Drawing.Point(290, 0);
+            this.cbFilter.Margin = new System.Windows.Forms.Padding(0);
+            this.cbFilter.MinimumSize = new System.Drawing.Size(50, 0);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Padding = new System.Windows.Forms.Padding(5, 0, 30, 2);
+            this.cbFilter.RectColor = System.Drawing.Color.White;
+            this.cbFilter.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.cbFilter.RectSize = 2;
+            this.cbFilter.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbFilter.ScrollBarStyleInherited = false;
+            this.cbFilter.Size = new System.Drawing.Size(65, 28);
+            this.cbFilter.Style = Sunny.UI.UIStyle.Custom;
+            this.cbFilter.SymbolSize = 24;
+            this.cbFilter.TabIndex = 2;
+            this.cbFilter.Text = "  ID";
+            this.cbFilter.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cbFilter.TrimFilter = true;
+            this.cbFilter.Watermark = "";
+            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbSearch.Location = new System.Drawing.Point(0, 0);
+            this.tbSearch.Margin = new System.Windows.Forms.Padding(0);
+            this.tbSearch.MinimumSize = new System.Drawing.Size(1, 16);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Padding = new System.Windows.Forms.Padding(5);
+            this.tbSearch.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.tbSearch.ShowText = false;
+            this.tbSearch.Size = new System.Drawing.Size(290, 28);
+            this.tbSearch.Symbol = 61442;
+            this.tbSearch.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.tbSearch.SymbolSize = 26;
+            this.tbSearch.TabIndex = 0;
+            this.tbSearch.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tbSearch.Watermark = "";
+            // 
             // BillDetailControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1464,8 +1505,6 @@
             this.uiPanel3.ResumeLayout(false);
             this.uiTableLayoutPanel1.ResumeLayout(false);
             this.uiPanel5.ResumeLayout(false);
-            this.pnlSearch.ResumeLayout(false);
-            this.tableSearch.ResumeLayout(false);
             this.pnlTop.ResumeLayout(false);
             this.uiTableLayoutPanel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
@@ -1474,6 +1513,8 @@
             this.panel9.ResumeLayout(false);
             this.uiPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.pnlSearch.ResumeLayout(false);
+            this.tableSearch.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1534,9 +1575,6 @@
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel1;
         private Sunny.UI.UILabel uiLabel1;
         private Sunny.UI.UIPanel uiPanel5;
-        private Sunny.UI.UIPanel pnlSearch;
-        private System.Windows.Forms.TableLayoutPanel tableSearch;
-        private Sunny.UI.UITextBox tbSearch;
         private Sunny.UI.UIPanel uiPanel6;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel4;
         private Sunny.UI.UIPanel uiPanel12;
@@ -1555,5 +1593,9 @@
         private Sunny.UI.UISymbolButton btnCancel;
         private System.Windows.Forms.Panel panel9;
         private Sunny.UI.UISymbolButton btnConfirm;
+        private Sunny.UI.UIPanel pnlSearch;
+        private System.Windows.Forms.TableLayoutPanel tableSearch;
+        private Sunny.UI.UIComboBox cbFilter;
+        private Sunny.UI.UITextBox tbSearch;
     }
 }

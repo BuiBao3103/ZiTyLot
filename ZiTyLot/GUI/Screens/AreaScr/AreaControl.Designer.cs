@@ -36,14 +36,21 @@ namespace ZiTyLot.GUI.Screens
             this.separator = new System.Windows.Forms.Panel();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.tableArea = new System.Windows.Forms.DataGridView();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUserType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalSlot = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colView = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.separtorBottom = new System.Windows.Forms.Panel();
+            this.pnlPagination = new System.Windows.Forms.Panel();
+            this.pnlLeft = new System.Windows.Forms.Panel();
+            this.uiPanel2 = new Sunny.UI.UIPanel();
+            this.cbNumberofitem = new Sunny.UI.UIComboBox();
+            this.pnlRight = new System.Windows.Forms.Panel();
+            this.pnlNext = new System.Windows.Forms.Panel();
+            this.btnNext = new Sunny.UI.UISymbolButton();
+            this.pnlCurrentPage = new System.Windows.Forms.Panel();
+            this.uiTableLayoutPanel5 = new Sunny.UI.UITableLayoutPanel();
+            this.tbCurrentpage = new Sunny.UI.UITextBox();
+            this.lbTotalpage = new Sunny.UI.UILabel();
+            this.pnlPrevious = new System.Windows.Forms.Panel();
+            this.btnPrevious = new Sunny.UI.UISymbolButton();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.tableTop = new Sunny.UI.UITableLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -73,23 +80,24 @@ namespace ZiTyLot.GUI.Screens
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAdd = new Sunny.UI.UISymbolButton();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.separtorBottom = new System.Windows.Forms.Panel();
-            this.pnlPagination = new System.Windows.Forms.Panel();
-            this.pnlLeft = new System.Windows.Forms.Panel();
-            this.uiPanel2 = new Sunny.UI.UIPanel();
-            this.cbNumberofitem = new Sunny.UI.UIComboBox();
-            this.pnlRight = new System.Windows.Forms.Panel();
-            this.pnlNext = new System.Windows.Forms.Panel();
-            this.btnNext = new Sunny.UI.UISymbolButton();
-            this.pnlCurrentPage = new System.Windows.Forms.Panel();
-            this.uiTableLayoutPanel5 = new Sunny.UI.UITableLayoutPanel();
-            this.tbCurrentpage = new Sunny.UI.UITextBox();
-            this.lbTotalpage = new Sunny.UI.UILabel();
-            this.pnlPrevious = new System.Windows.Forms.Panel();
-            this.btnPrevious = new Sunny.UI.UISymbolButton();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUserType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalSlot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colView = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableArea)).BeginInit();
             this.panel2.SuspendLayout();
+            this.pnlPagination.SuspendLayout();
+            this.pnlLeft.SuspendLayout();
+            this.uiPanel2.SuspendLayout();
+            this.pnlRight.SuspendLayout();
+            this.pnlNext.SuspendLayout();
+            this.pnlCurrentPage.SuspendLayout();
+            this.uiTableLayoutPanel5.SuspendLayout();
+            this.pnlPrevious.SuspendLayout();
             this.pnlTop.SuspendLayout();
             this.tableTop.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -107,14 +115,6 @@ namespace ZiTyLot.GUI.Screens
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.pnlPagination.SuspendLayout();
-            this.pnlLeft.SuspendLayout();
-            this.uiPanel2.SuspendLayout();
-            this.pnlRight.SuspendLayout();
-            this.pnlNext.SuspendLayout();
-            this.pnlCurrentPage.SuspendLayout();
-            this.uiTableLayoutPanel5.SuspendLayout();
-            this.pnlPrevious.SuspendLayout();
             this.SuspendLayout();
             // 
             // separator
@@ -198,68 +198,6 @@ namespace ZiTyLot.GUI.Screens
             this.tableArea.TabIndex = 1;
             this.tableArea.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableArea_CellContentClick);
             // 
-            // colId
-            // 
-            this.colId.HeaderText = "ID";
-            this.colId.MinimumWidth = 6;
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colId.Width = 125;
-            // 
-            // colName
-            // 
-            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colName.HeaderText = "Vehical type";
-            this.colName.MinimumWidth = 80;
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            this.colName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colUserType
-            // 
-            this.colUserType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colUserType.HeaderText = "User type";
-            this.colUserType.MinimumWidth = 6;
-            this.colUserType.Name = "colUserType";
-            this.colUserType.ReadOnly = true;
-            // 
-            // colTotalSlot
-            // 
-            this.colTotalSlot.HeaderText = "Total slot";
-            this.colTotalSlot.MinimumWidth = 6;
-            this.colTotalSlot.Name = "colTotalSlot";
-            this.colTotalSlot.ReadOnly = true;
-            this.colTotalSlot.Width = 200;
-            // 
-            // colStatus
-            // 
-            this.colStatus.HeaderText = "Status";
-            this.colStatus.MinimumWidth = 6;
-            this.colStatus.Name = "colStatus";
-            this.colStatus.ReadOnly = true;
-            this.colStatus.Width = 200;
-            // 
-            // colView
-            // 
-            this.colView.HeaderText = "";
-            this.colView.MinimumWidth = 6;
-            this.colView.Name = "colView";
-            this.colView.ReadOnly = true;
-            this.colView.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colView.Text = "View";
-            this.colView.Width = 45;
-            // 
-            // colDelete
-            // 
-            this.colDelete.HeaderText = "";
-            this.colDelete.MinimumWidth = 6;
-            this.colDelete.Name = "colDelete";
-            this.colDelete.ReadOnly = true;
-            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colDelete.Text = "Delete";
-            this.colDelete.Width = 45;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.pnlBottom);
@@ -272,6 +210,244 @@ namespace ZiTyLot.GUI.Screens
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1171, 600);
             this.panel2.TabIndex = 2;
+            // 
+            // separtorBottom
+            // 
+            this.separtorBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.separtorBottom.Location = new System.Drawing.Point(0, 542);
+            this.separtorBottom.Margin = new System.Windows.Forms.Padding(4);
+            this.separtorBottom.MaximumSize = new System.Drawing.Size(2160, 5);
+            this.separtorBottom.Name = "separtorBottom";
+            this.separtorBottom.Size = new System.Drawing.Size(1171, 4);
+            this.separtorBottom.TabIndex = 8;
+            // 
+            // pnlPagination
+            // 
+            this.pnlPagination.BackColor = System.Drawing.Color.White;
+            this.pnlPagination.Controls.Add(this.pnlLeft);
+            this.pnlPagination.Controls.Add(this.pnlRight);
+            this.pnlPagination.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlPagination.Location = new System.Drawing.Point(0, 546);
+            this.pnlPagination.Name = "pnlPagination";
+            this.pnlPagination.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.pnlPagination.Size = new System.Drawing.Size(1171, 54);
+            this.pnlPagination.TabIndex = 7;
+            this.pnlPagination.Resize += new System.EventHandler(this.pnlPagination_Resize);
+            // 
+            // pnlLeft
+            // 
+            this.pnlLeft.Controls.Add(this.uiPanel2);
+            this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlLeft.Location = new System.Drawing.Point(10, 5);
+            this.pnlLeft.Name = "pnlLeft";
+            this.pnlLeft.Size = new System.Drawing.Size(140, 44);
+            this.pnlLeft.TabIndex = 2;
+            // 
+            // uiPanel2
+            // 
+            this.uiPanel2.Controls.Add(this.cbNumberofitem);
+            this.uiPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel2.FillColor = System.Drawing.Color.White;
+            this.uiPanel2.FillColor2 = System.Drawing.Color.White;
+            this.uiPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiPanel2.Location = new System.Drawing.Point(0, 0);
+            this.uiPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel2.Name = "uiPanel2";
+            this.uiPanel2.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.uiPanel2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiPanel2.RectDisableColor = System.Drawing.Color.White;
+            this.uiPanel2.RectSize = 2;
+            this.uiPanel2.Size = new System.Drawing.Size(140, 44);
+            this.uiPanel2.TabIndex = 2;
+            this.uiPanel2.Text = null;
+            this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cbNumberofitem
+            // 
+            this.cbNumberofitem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbNumberofitem.DataSource = null;
+            this.cbNumberofitem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbNumberofitem.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.cbNumberofitem.DropDownWidth = 100;
+            this.cbNumberofitem.FillColor = System.Drawing.Color.White;
+            this.cbNumberofitem.FillColor2 = System.Drawing.Color.White;
+            this.cbNumberofitem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbNumberofitem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbNumberofitem.ItemHeight = 24;
+            this.cbNumberofitem.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(235)))), ((int)(((byte)(212)))));
+            this.cbNumberofitem.ItemRectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbNumberofitem.ItemSelectBackColor = System.Drawing.Color.White;
+            this.cbNumberofitem.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbNumberofitem.Location = new System.Drawing.Point(10, 0);
+            this.cbNumberofitem.Margin = new System.Windows.Forms.Padding(0);
+            this.cbNumberofitem.MinimumSize = new System.Drawing.Size(63, 0);
+            this.cbNumberofitem.Name = "cbNumberofitem";
+            this.cbNumberofitem.Padding = new System.Windows.Forms.Padding(4, 0, 30, 2);
+            this.cbNumberofitem.Radius = 0;
+            this.cbNumberofitem.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbNumberofitem.RectSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Top | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.cbNumberofitem.RectSize = 2;
+            this.cbNumberofitem.ScrollBarBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
+            this.cbNumberofitem.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbNumberofitem.ScrollBarStyleInherited = false;
+            this.cbNumberofitem.Size = new System.Drawing.Size(120, 44);
+            this.cbNumberofitem.Style = Sunny.UI.UIStyle.Custom;
+            this.cbNumberofitem.SymbolDropDown = 560247;
+            this.cbNumberofitem.SymbolNormal = 557682;
+            this.cbNumberofitem.SymbolSize = 24;
+            this.cbNumberofitem.TabIndex = 1;
+            this.cbNumberofitem.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cbNumberofitem.Watermark = "";
+            this.cbNumberofitem.SelectedIndexChanged += new System.EventHandler(this.numberofitemsCb_SelectedIndexChanged);
+            // 
+            // pnlRight
+            // 
+            this.pnlRight.Controls.Add(this.pnlNext);
+            this.pnlRight.Controls.Add(this.pnlCurrentPage);
+            this.pnlRight.Controls.Add(this.pnlPrevious);
+            this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlRight.Location = new System.Drawing.Point(993, 5);
+            this.pnlRight.Name = "pnlRight";
+            this.pnlRight.Size = new System.Drawing.Size(168, 44);
+            this.pnlRight.TabIndex = 1;
+            // 
+            // pnlNext
+            // 
+            this.pnlNext.Controls.Add(this.btnNext);
+            this.pnlNext.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlNext.Location = new System.Drawing.Point(126, 0);
+            this.pnlNext.Name = "pnlNext";
+            this.pnlNext.Padding = new System.Windows.Forms.Padding(3);
+            this.pnlNext.Size = new System.Drawing.Size(40, 44);
+            this.pnlNext.TabIndex = 1;
+            // 
+            // btnNext
+            // 
+            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNext.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNext.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.btnNext.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnNext.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Next;
+            this.btnNext.Location = new System.Drawing.Point(3, 3);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(0);
+            this.btnNext.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Padding = new System.Windows.Forms.Padding(20, 0, 22, 0);
+            this.btnNext.Radius = 4;
+            this.btnNext.RectColor = System.Drawing.Color.White;
+            this.btnNext.RectDisableColor = System.Drawing.Color.White;
+            this.btnNext.RectHoverColor = System.Drawing.Color.White;
+            this.btnNext.RectPressColor = System.Drawing.Color.White;
+            this.btnNext.RectSelectedColor = System.Drawing.Color.White;
+            this.btnNext.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnNext.RectSize = 2;
+            this.btnNext.Size = new System.Drawing.Size(34, 38);
+            this.btnNext.TabIndex = 4;
+            this.btnNext.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Click += new System.EventHandler(this.nextBtn_Click);
+            // 
+            // pnlCurrentPage
+            // 
+            this.pnlCurrentPage.Controls.Add(this.uiTableLayoutPanel5);
+            this.pnlCurrentPage.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlCurrentPage.Location = new System.Drawing.Point(40, 0);
+            this.pnlCurrentPage.Name = "pnlCurrentPage";
+            this.pnlCurrentPage.Padding = new System.Windows.Forms.Padding(3);
+            this.pnlCurrentPage.Size = new System.Drawing.Size(86, 44);
+            this.pnlCurrentPage.TabIndex = 2;
+            // 
+            // uiTableLayoutPanel5
+            // 
+            this.uiTableLayoutPanel5.ColumnCount = 2;
+            this.uiTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel5.Controls.Add(this.tbCurrentpage, 0, 0);
+            this.uiTableLayoutPanel5.Controls.Add(this.lbTotalpage, 1, 0);
+            this.uiTableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiTableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.uiTableLayoutPanel5.Name = "uiTableLayoutPanel5";
+            this.uiTableLayoutPanel5.RowCount = 1;
+            this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel5.Size = new System.Drawing.Size(80, 38);
+            this.uiTableLayoutPanel5.TabIndex = 0;
+            this.uiTableLayoutPanel5.TagString = null;
+            // 
+            // tbCurrentpage
+            // 
+            this.tbCurrentpage.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbCurrentpage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbCurrentpage.DoubleValue = 1D;
+            this.tbCurrentpage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCurrentpage.IntValue = 1;
+            this.tbCurrentpage.Location = new System.Drawing.Point(0, 0);
+            this.tbCurrentpage.Margin = new System.Windows.Forms.Padding(0);
+            this.tbCurrentpage.MinimumSize = new System.Drawing.Size(1, 16);
+            this.tbCurrentpage.Name = "tbCurrentpage";
+            this.tbCurrentpage.Padding = new System.Windows.Forms.Padding(5);
+            this.tbCurrentpage.Radius = 0;
+            this.tbCurrentpage.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.tbCurrentpage.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom;
+            this.tbCurrentpage.RectSize = 2;
+            this.tbCurrentpage.ShowText = false;
+            this.tbCurrentpage.Size = new System.Drawing.Size(40, 38);
+            this.tbCurrentpage.TabIndex = 0;
+            this.tbCurrentpage.Text = "1";
+            this.tbCurrentpage.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tbCurrentpage.Watermark = "";
+            this.tbCurrentpage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCurrentPage_KeyPress);
+            // 
+            // lbTotalpage
+            // 
+            this.lbTotalpage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbTotalpage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalpage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.lbTotalpage.Location = new System.Drawing.Point(40, 0);
+            this.lbTotalpage.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.lbTotalpage.Name = "lbTotalpage";
+            this.lbTotalpage.Size = new System.Drawing.Size(40, 36);
+            this.lbTotalpage.TabIndex = 1;
+            this.lbTotalpage.Text = "/100";
+            this.lbTotalpage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlPrevious
+            // 
+            this.pnlPrevious.Controls.Add(this.btnPrevious);
+            this.pnlPrevious.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlPrevious.Location = new System.Drawing.Point(0, 0);
+            this.pnlPrevious.Name = "pnlPrevious";
+            this.pnlPrevious.Padding = new System.Windows.Forms.Padding(3);
+            this.pnlPrevious.Size = new System.Drawing.Size(40, 44);
+            this.pnlPrevious.TabIndex = 0;
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPrevious.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.btnPrevious.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnPrevious.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Previous;
+            this.btnPrevious.Location = new System.Drawing.Point(3, 3);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPrevious.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Padding = new System.Windows.Forms.Padding(20, 0, 22, 0);
+            this.btnPrevious.Radius = 4;
+            this.btnPrevious.RectColor = System.Drawing.Color.White;
+            this.btnPrevious.RectDisableColor = System.Drawing.Color.White;
+            this.btnPrevious.RectHoverColor = System.Drawing.Color.White;
+            this.btnPrevious.RectPressColor = System.Drawing.Color.White;
+            this.btnPrevious.RectSelectedColor = System.Drawing.Color.White;
+            this.btnPrevious.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnPrevious.RectSize = 2;
+            this.btnPrevious.Size = new System.Drawing.Size(34, 38);
+            this.btnPrevious.TabIndex = 4;
+            this.btnPrevious.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.Click += new System.EventHandler(this.previousBtn_Click);
             // 
             // pnlTop
             // 
@@ -831,243 +1007,67 @@ namespace ZiTyLot.GUI.Screens
             this.panel5.Size = new System.Drawing.Size(110, 34);
             this.panel5.TabIndex = 0;
             // 
-            // separtorBottom
+            // colId
             // 
-            this.separtorBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.separtorBottom.Location = new System.Drawing.Point(0, 542);
-            this.separtorBottom.Margin = new System.Windows.Forms.Padding(4);
-            this.separtorBottom.MaximumSize = new System.Drawing.Size(2160, 5);
-            this.separtorBottom.Name = "separtorBottom";
-            this.separtorBottom.Size = new System.Drawing.Size(1171, 4);
-            this.separtorBottom.TabIndex = 8;
+            this.colId.HeaderText = "ID";
+            this.colId.MinimumWidth = 6;
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colId.Width = 125;
             // 
-            // pnlPagination
+            // colName
             // 
-            this.pnlPagination.BackColor = System.Drawing.Color.White;
-            this.pnlPagination.Controls.Add(this.pnlLeft);
-            this.pnlPagination.Controls.Add(this.pnlRight);
-            this.pnlPagination.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlPagination.Location = new System.Drawing.Point(0, 546);
-            this.pnlPagination.Name = "pnlPagination";
-            this.pnlPagination.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.pnlPagination.Size = new System.Drawing.Size(1171, 54);
-            this.pnlPagination.TabIndex = 7;
-            this.pnlPagination.Resize += new System.EventHandler(this.pnlPagination_Resize);
+            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colName.HeaderText = "Vehical type";
+            this.colName.MinimumWidth = 80;
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // pnlLeft
+            // colUserType
             // 
-            this.pnlLeft.Controls.Add(this.uiPanel2);
-            this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlLeft.Location = new System.Drawing.Point(10, 5);
-            this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(140, 44);
-            this.pnlLeft.TabIndex = 2;
+            this.colUserType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colUserType.HeaderText = "User type";
+            this.colUserType.MinimumWidth = 6;
+            this.colUserType.Name = "colUserType";
+            this.colUserType.ReadOnly = true;
             // 
-            // uiPanel2
+            // colTotalSlot
             // 
-            this.uiPanel2.Controls.Add(this.cbNumberofitem);
-            this.uiPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel2.FillColor = System.Drawing.Color.White;
-            this.uiPanel2.FillColor2 = System.Drawing.Color.White;
-            this.uiPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiPanel2.Location = new System.Drawing.Point(0, 0);
-            this.uiPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel2.Name = "uiPanel2";
-            this.uiPanel2.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.uiPanel2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiPanel2.RectDisableColor = System.Drawing.Color.White;
-            this.uiPanel2.RectSize = 2;
-            this.uiPanel2.Size = new System.Drawing.Size(140, 44);
-            this.uiPanel2.TabIndex = 2;
-            this.uiPanel2.Text = null;
-            this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.colTotalSlot.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTotalSlot.HeaderText = "Total slot";
+            this.colTotalSlot.MinimumWidth = 6;
+            this.colTotalSlot.Name = "colTotalSlot";
+            this.colTotalSlot.ReadOnly = true;
             // 
-            // cbNumberofitem
+            // colStatus
             // 
-            this.cbNumberofitem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbNumberofitem.DataSource = null;
-            this.cbNumberofitem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbNumberofitem.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
-            this.cbNumberofitem.DropDownWidth = 100;
-            this.cbNumberofitem.FillColor = System.Drawing.Color.White;
-            this.cbNumberofitem.FillColor2 = System.Drawing.Color.White;
-            this.cbNumberofitem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbNumberofitem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.cbNumberofitem.ItemHeight = 24;
-            this.cbNumberofitem.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(235)))), ((int)(((byte)(212)))));
-            this.cbNumberofitem.ItemRectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.cbNumberofitem.ItemSelectBackColor = System.Drawing.Color.White;
-            this.cbNumberofitem.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.cbNumberofitem.Location = new System.Drawing.Point(10, 0);
-            this.cbNumberofitem.Margin = new System.Windows.Forms.Padding(0);
-            this.cbNumberofitem.MinimumSize = new System.Drawing.Size(63, 0);
-            this.cbNumberofitem.Name = "cbNumberofitem";
-            this.cbNumberofitem.Padding = new System.Windows.Forms.Padding(4, 0, 30, 2);
-            this.cbNumberofitem.Radius = 0;
-            this.cbNumberofitem.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.cbNumberofitem.RectSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Top | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.cbNumberofitem.RectSize = 2;
-            this.cbNumberofitem.ScrollBarBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
-            this.cbNumberofitem.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.cbNumberofitem.ScrollBarStyleInherited = false;
-            this.cbNumberofitem.Size = new System.Drawing.Size(120, 44);
-            this.cbNumberofitem.Style = Sunny.UI.UIStyle.Custom;
-            this.cbNumberofitem.SymbolDropDown = 560247;
-            this.cbNumberofitem.SymbolNormal = 557682;
-            this.cbNumberofitem.SymbolSize = 24;
-            this.cbNumberofitem.TabIndex = 1;
-            this.cbNumberofitem.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cbNumberofitem.Watermark = "";
-            this.cbNumberofitem.SelectedIndexChanged += new System.EventHandler(this.numberofitemsCb_SelectedIndexChanged);
+            this.colStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.MinimumWidth = 6;
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
             // 
-            // pnlRight
+            // colView
             // 
-            this.pnlRight.Controls.Add(this.pnlNext);
-            this.pnlRight.Controls.Add(this.pnlCurrentPage);
-            this.pnlRight.Controls.Add(this.pnlPrevious);
-            this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlRight.Location = new System.Drawing.Point(993, 5);
-            this.pnlRight.Name = "pnlRight";
-            this.pnlRight.Size = new System.Drawing.Size(168, 44);
-            this.pnlRight.TabIndex = 1;
+            this.colView.HeaderText = "";
+            this.colView.MinimumWidth = 6;
+            this.colView.Name = "colView";
+            this.colView.ReadOnly = true;
+            this.colView.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colView.Text = "View";
+            this.colView.Width = 45;
             // 
-            // pnlNext
+            // colDelete
             // 
-            this.pnlNext.Controls.Add(this.btnNext);
-            this.pnlNext.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlNext.Location = new System.Drawing.Point(126, 0);
-            this.pnlNext.Name = "pnlNext";
-            this.pnlNext.Padding = new System.Windows.Forms.Padding(3);
-            this.pnlNext.Size = new System.Drawing.Size(40, 44);
-            this.pnlNext.TabIndex = 1;
-            // 
-            // btnNext
-            // 
-            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNext.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNext.FillColor = System.Drawing.SystemColors.ControlLight;
-            this.btnNext.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.btnNext.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Next;
-            this.btnNext.Location = new System.Drawing.Point(3, 3);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(0);
-            this.btnNext.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Padding = new System.Windows.Forms.Padding(20, 0, 22, 0);
-            this.btnNext.Radius = 4;
-            this.btnNext.RectColor = System.Drawing.Color.White;
-            this.btnNext.RectDisableColor = System.Drawing.Color.White;
-            this.btnNext.RectHoverColor = System.Drawing.Color.White;
-            this.btnNext.RectPressColor = System.Drawing.Color.White;
-            this.btnNext.RectSelectedColor = System.Drawing.Color.White;
-            this.btnNext.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnNext.RectSize = 2;
-            this.btnNext.Size = new System.Drawing.Size(34, 38);
-            this.btnNext.TabIndex = 4;
-            this.btnNext.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Click += new System.EventHandler(this.nextBtn_Click);
-            // 
-            // pnlCurrentPage
-            // 
-            this.pnlCurrentPage.Controls.Add(this.uiTableLayoutPanel5);
-            this.pnlCurrentPage.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlCurrentPage.Location = new System.Drawing.Point(40, 0);
-            this.pnlCurrentPage.Name = "pnlCurrentPage";
-            this.pnlCurrentPage.Padding = new System.Windows.Forms.Padding(3);
-            this.pnlCurrentPage.Size = new System.Drawing.Size(86, 44);
-            this.pnlCurrentPage.TabIndex = 2;
-            // 
-            // uiTableLayoutPanel5
-            // 
-            this.uiTableLayoutPanel5.ColumnCount = 2;
-            this.uiTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiTableLayoutPanel5.Controls.Add(this.tbCurrentpage, 0, 0);
-            this.uiTableLayoutPanel5.Controls.Add(this.lbTotalpage, 1, 0);
-            this.uiTableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiTableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
-            this.uiTableLayoutPanel5.Name = "uiTableLayoutPanel5";
-            this.uiTableLayoutPanel5.RowCount = 1;
-            this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiTableLayoutPanel5.Size = new System.Drawing.Size(80, 38);
-            this.uiTableLayoutPanel5.TabIndex = 0;
-            this.uiTableLayoutPanel5.TagString = null;
-            // 
-            // tbCurrentpage
-            // 
-            this.tbCurrentpage.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbCurrentpage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbCurrentpage.DoubleValue = 1D;
-            this.tbCurrentpage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCurrentpage.IntValue = 1;
-            this.tbCurrentpage.Location = new System.Drawing.Point(0, 0);
-            this.tbCurrentpage.Margin = new System.Windows.Forms.Padding(0);
-            this.tbCurrentpage.MinimumSize = new System.Drawing.Size(1, 16);
-            this.tbCurrentpage.Name = "tbCurrentpage";
-            this.tbCurrentpage.Padding = new System.Windows.Forms.Padding(5);
-            this.tbCurrentpage.Radius = 0;
-            this.tbCurrentpage.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.tbCurrentpage.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom;
-            this.tbCurrentpage.RectSize = 2;
-            this.tbCurrentpage.ShowText = false;
-            this.tbCurrentpage.Size = new System.Drawing.Size(40, 38);
-            this.tbCurrentpage.TabIndex = 0;
-            this.tbCurrentpage.Text = "1";
-            this.tbCurrentpage.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.tbCurrentpage.Watermark = "";
-            this.tbCurrentpage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCurrentPage_KeyPress);
-            // 
-            // lbTotalpage
-            // 
-            this.lbTotalpage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbTotalpage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalpage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.lbTotalpage.Location = new System.Drawing.Point(40, 0);
-            this.lbTotalpage.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.lbTotalpage.Name = "lbTotalpage";
-            this.lbTotalpage.Size = new System.Drawing.Size(40, 36);
-            this.lbTotalpage.TabIndex = 1;
-            this.lbTotalpage.Text = "/100";
-            this.lbTotalpage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnlPrevious
-            // 
-            this.pnlPrevious.Controls.Add(this.btnPrevious);
-            this.pnlPrevious.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlPrevious.Location = new System.Drawing.Point(0, 0);
-            this.pnlPrevious.Name = "pnlPrevious";
-            this.pnlPrevious.Padding = new System.Windows.Forms.Padding(3);
-            this.pnlPrevious.Size = new System.Drawing.Size(40, 44);
-            this.pnlPrevious.TabIndex = 0;
-            // 
-            // btnPrevious
-            // 
-            this.btnPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPrevious.FillColor = System.Drawing.SystemColors.ControlLight;
-            this.btnPrevious.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.btnPrevious.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrevious.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Previous;
-            this.btnPrevious.Location = new System.Drawing.Point(3, 3);
-            this.btnPrevious.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPrevious.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Padding = new System.Windows.Forms.Padding(20, 0, 22, 0);
-            this.btnPrevious.Radius = 4;
-            this.btnPrevious.RectColor = System.Drawing.Color.White;
-            this.btnPrevious.RectDisableColor = System.Drawing.Color.White;
-            this.btnPrevious.RectHoverColor = System.Drawing.Color.White;
-            this.btnPrevious.RectPressColor = System.Drawing.Color.White;
-            this.btnPrevious.RectSelectedColor = System.Drawing.Color.White;
-            this.btnPrevious.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnPrevious.RectSize = 2;
-            this.btnPrevious.Size = new System.Drawing.Size(34, 38);
-            this.btnPrevious.TabIndex = 4;
-            this.btnPrevious.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrevious.Click += new System.EventHandler(this.previousBtn_Click);
+            this.colDelete.HeaderText = "";
+            this.colDelete.MinimumWidth = 6;
+            this.colDelete.Name = "colDelete";
+            this.colDelete.ReadOnly = true;
+            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colDelete.Text = "Delete";
+            this.colDelete.Width = 45;
             // 
             // AreaControl
             // 
@@ -1082,6 +1082,14 @@ namespace ZiTyLot.GUI.Screens
             this.pnlBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tableArea)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.pnlPagination.ResumeLayout(false);
+            this.pnlLeft.ResumeLayout(false);
+            this.uiPanel2.ResumeLayout(false);
+            this.pnlRight.ResumeLayout(false);
+            this.pnlNext.ResumeLayout(false);
+            this.pnlCurrentPage.ResumeLayout(false);
+            this.uiTableLayoutPanel5.ResumeLayout(false);
+            this.pnlPrevious.ResumeLayout(false);
             this.pnlTop.ResumeLayout(false);
             this.tableTop.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
@@ -1099,14 +1107,6 @@ namespace ZiTyLot.GUI.Screens
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.pnlPagination.ResumeLayout(false);
-            this.pnlLeft.ResumeLayout(false);
-            this.uiPanel2.ResumeLayout(false);
-            this.pnlRight.ResumeLayout(false);
-            this.pnlNext.ResumeLayout(false);
-            this.pnlCurrentPage.ResumeLayout(false);
-            this.uiTableLayoutPanel5.ResumeLayout(false);
-            this.pnlPrevious.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1127,13 +1127,6 @@ namespace ZiTyLot.GUI.Screens
         private Sunny.UI.UIPanel pnlSearch;
         private TableLayoutPanel tableSearch;
         private Sunny.UI.UITextBox tbSearch;
-        private DataGridViewTextBoxColumn colId;
-        private DataGridViewTextBoxColumn colName;
-        private DataGridViewTextBoxColumn colUserType;
-        private DataGridViewTextBoxColumn colTotalSlot;
-        private DataGridViewTextBoxColumn colStatus;
-        private DataGridViewButtonColumn colView;
-        private DataGridViewButtonColumn colDelete;
         private Panel panel3;
         private Sunny.UI.UISymbolButton btnApply;
         private Sunny.UI.UIPanel uiPanel6;
@@ -1166,5 +1159,12 @@ namespace ZiTyLot.GUI.Screens
         private Sunny.UI.UILabel lbTotalpage;
         private Panel pnlPrevious;
         private Sunny.UI.UISymbolButton btnPrevious;
+        private DataGridViewTextBoxColumn colId;
+        private DataGridViewTextBoxColumn colName;
+        private DataGridViewTextBoxColumn colUserType;
+        private DataGridViewTextBoxColumn colTotalSlot;
+        private DataGridViewTextBoxColumn colStatus;
+        private DataGridViewButtonColumn colView;
+        private DataGridViewButtonColumn colDelete;
     }
 }
