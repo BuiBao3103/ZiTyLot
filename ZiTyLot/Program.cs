@@ -14,7 +14,7 @@ namespace ZiTyLot
         [STAThread]
         static void Main()
         {
-            ANPR.test();
+            ANPR.Test();
             //try
             //{
             //    using (var connection = DBConfig.GetConnection())
