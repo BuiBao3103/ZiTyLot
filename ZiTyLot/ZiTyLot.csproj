@@ -744,8 +744,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Content Include="App.config" />
-    <None Include=".env" />
+    <None Include="App.config" />
+    <None Include="App.config.example" />
     <None Include="App.Designer.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
