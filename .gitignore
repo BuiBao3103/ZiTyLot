@@ -386,4 +386,4 @@ InteropTests/NativeTests/out
 **/ScratchProject/
 **/ScratchProjectWithInternals/
 
-App.config
+.env
