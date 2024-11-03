@@ -31,6 +31,10 @@
             this.sidebar = new System.Windows.Forms.Panel();
             this.sidebarBottom = new Sunny.UI.UIPanel();
             this.uiPanel2 = new Sunny.UI.UIPanel();
+            this.tableSetting = new Sunny.UI.UITableLayoutPanel();
+            this.lbName = new Sunny.UI.UILabel();
+            this.btnMore = new Sunny.UI.UISymbolButton();
+            this.lbSymbol = new Sunny.UI.UISymbolLabel();
             this.sidebarMid = new System.Windows.Forms.Panel();
             this.sidebarTop = new Sunny.UI.UIPanel();
             this.uiPanel3 = new Sunny.UI.UIPanel();
@@ -41,19 +45,15 @@
             this.menuBtnProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.uiPanel1 = new Sunny.UI.UIPanel();
             this.btnToggle = new Sunny.UI.UISymbolButton();
-            this.tableSetting = new Sunny.UI.UITableLayoutPanel();
-            this.lbName = new Sunny.UI.UILabel();
-            this.btnMore = new Sunny.UI.UISymbolButton();
-            this.lbSymbol = new Sunny.UI.UISymbolLabel();
             this.sidebar.SuspendLayout();
             this.sidebarBottom.SuspendLayout();
             this.uiPanel2.SuspendLayout();
+            this.tableSetting.SuspendLayout();
             this.sidebarTop.SuspendLayout();
             this.uiPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuSetting.SuspendLayout();
             this.uiPanel1.SuspendLayout();
-            this.tableSetting.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidebar
@@ -106,13 +106,87 @@
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tableSetting
+            // 
+            this.tableSetting.ColumnCount = 3;
+            this.tableSetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableSetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableSetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableSetting.Controls.Add(this.lbName, 1, 0);
+            this.tableSetting.Controls.Add(this.btnMore, 2, 0);
+            this.tableSetting.Controls.Add(this.lbSymbol, 0, 0);
+            this.tableSetting.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableSetting.Location = new System.Drawing.Point(0, 10);
+            this.tableSetting.Name = "tableSetting";
+            this.tableSetting.RowCount = 1;
+            this.tableSetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableSetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSetting.Size = new System.Drawing.Size(205, 40);
+            this.tableSetting.TabIndex = 0;
+            this.tableSetting.TagString = null;
+            // 
+            // lbName
+            // 
+            this.lbName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lbName.Location = new System.Drawing.Point(43, 0);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(119, 40);
+            this.lbName.TabIndex = 1;
+            this.lbName.Text = "Administrator";
+            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnMore
+            // 
+            this.btnMore.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMore.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMore.FillColor = System.Drawing.Color.White;
+            this.btnMore.FillHoverColor = System.Drawing.Color.White;
+            this.btnMore.FillPressColor = System.Drawing.Color.White;
+            this.btnMore.FillSelectedColor = System.Drawing.Color.White;
+            this.btnMore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnMore.Location = new System.Drawing.Point(168, 3);
+            this.btnMore.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnMore.Name = "btnMore";
+            this.btnMore.Radius = 0;
+            this.btnMore.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.btnMore.RectHoverColor = System.Drawing.SystemColors.ControlLight;
+            this.btnMore.RectPressColor = System.Drawing.SystemColors.ControlLight;
+            this.btnMore.RectSelectedColor = System.Drawing.SystemColors.ControlLight;
+            this.btnMore.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnMore.RectSize = 2;
+            this.btnMore.Size = new System.Drawing.Size(34, 34);
+            this.btnMore.Symbol = 61459;
+            this.btnMore.SymbolColor = System.Drawing.SystemColors.ControlDark;
+            this.btnMore.SymbolHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnMore.SymbolOffset = new System.Drawing.Point(0, 1);
+            this.btnMore.SymbolPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnMore.SymbolSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnMore.TabIndex = 2;
+            this.btnMore.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnMore.Click += new System.EventHandler(this.btnMore_Click);
+            // 
+            // lbSymbol
+            // 
+            this.lbSymbol.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSymbol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbSymbol.Location = new System.Drawing.Point(3, 3);
+            this.lbSymbol.MinimumSize = new System.Drawing.Size(1, 1);
+            this.lbSymbol.Name = "lbSymbol";
+            this.lbSymbol.Size = new System.Drawing.Size(34, 34);
+            this.lbSymbol.Symbol = 559389;
+            this.lbSymbol.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.lbSymbol.SymbolSize = 32;
+            this.lbSymbol.TabIndex = 3;
+            // 
             // sidebarMid
             // 
             this.sidebarMid.BackColor = System.Drawing.Color.White;
             this.sidebarMid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sidebarMid.Location = new System.Drawing.Point(0, 120);
             this.sidebarMid.Name = "sidebarMid";
-            this.sidebarMid.Padding = new System.Windows.Forms.Padding(20, 10, 20, 10);
+            this.sidebarMid.Padding = new System.Windows.Forms.Padding(20, 5, 20, 5);
             this.sidebarMid.Size = new System.Drawing.Size(245, 579);
             this.sidebarMid.TabIndex = 1;
             // 
@@ -255,80 +329,6 @@
             this.btnToggle.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.btnToggle.Click += new System.EventHandler(this.btnToggleMenu_Click);
             // 
-            // tableSetting
-            // 
-            this.tableSetting.ColumnCount = 3;
-            this.tableSetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableSetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSetting.Controls.Add(this.lbName, 1, 0);
-            this.tableSetting.Controls.Add(this.btnMore, 2, 0);
-            this.tableSetting.Controls.Add(this.lbSymbol, 0, 0);
-            this.tableSetting.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableSetting.Location = new System.Drawing.Point(0, 10);
-            this.tableSetting.Name = "tableSetting";
-            this.tableSetting.RowCount = 1;
-            this.tableSetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableSetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSetting.Size = new System.Drawing.Size(205, 40);
-            this.tableSetting.TabIndex = 0;
-            this.tableSetting.TagString = null;
-            // 
-            // lbName
-            // 
-            this.lbName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.lbName.Location = new System.Drawing.Point(43, 0);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(119, 40);
-            this.lbName.TabIndex = 1;
-            this.lbName.Text = "Administrator";
-            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnMore
-            // 
-            this.btnMore.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMore.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnMore.FillColor = System.Drawing.Color.White;
-            this.btnMore.FillHoverColor = System.Drawing.Color.White;
-            this.btnMore.FillPressColor = System.Drawing.Color.White;
-            this.btnMore.FillSelectedColor = System.Drawing.Color.White;
-            this.btnMore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnMore.Location = new System.Drawing.Point(168, 3);
-            this.btnMore.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnMore.Name = "btnMore";
-            this.btnMore.Radius = 0;
-            this.btnMore.RectColor = System.Drawing.SystemColors.ControlLight;
-            this.btnMore.RectHoverColor = System.Drawing.SystemColors.ControlLight;
-            this.btnMore.RectPressColor = System.Drawing.SystemColors.ControlLight;
-            this.btnMore.RectSelectedColor = System.Drawing.SystemColors.ControlLight;
-            this.btnMore.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnMore.RectSize = 2;
-            this.btnMore.Size = new System.Drawing.Size(34, 34);
-            this.btnMore.Symbol = 61459;
-            this.btnMore.SymbolColor = System.Drawing.SystemColors.ControlDark;
-            this.btnMore.SymbolHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnMore.SymbolOffset = new System.Drawing.Point(0, 1);
-            this.btnMore.SymbolPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnMore.SymbolSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnMore.TabIndex = 2;
-            this.btnMore.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnMore.Click += new System.EventHandler(this.btnMore_Click);
-            // 
-            // lbSymbol
-            // 
-            this.lbSymbol.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbSymbol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbSymbol.Location = new System.Drawing.Point(3, 3);
-            this.lbSymbol.MinimumSize = new System.Drawing.Size(1, 1);
-            this.lbSymbol.Name = "lbSymbol";
-            this.lbSymbol.Size = new System.Drawing.Size(34, 34);
-            this.lbSymbol.Symbol = 559389;
-            this.lbSymbol.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.lbSymbol.SymbolSize = 32;
-            this.lbSymbol.TabIndex = 3;
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,7 +338,7 @@
             this.Controls.Add(this.uiPanel1);
             this.Controls.Add(this.pnlCardLayout);
             this.Controls.Add(this.sidebar);
-            this.MinimumSize = new System.Drawing.Size(1365, 766);
+            this.MinimumSize = new System.Drawing.Size(900, 700);
             this.Name = "Home";
             this.Padding = new System.Windows.Forms.Padding(15);
             this.Text = "Zitylot";
@@ -346,12 +346,12 @@
             this.sidebar.ResumeLayout(false);
             this.sidebarBottom.ResumeLayout(false);
             this.uiPanel2.ResumeLayout(false);
+            this.tableSetting.ResumeLayout(false);
             this.sidebarTop.ResumeLayout(false);
             this.uiPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuSetting.ResumeLayout(false);
             this.uiPanel1.ResumeLayout(false);
-            this.tableSetting.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

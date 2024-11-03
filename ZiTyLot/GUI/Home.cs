@@ -114,7 +114,7 @@ namespace ZiTyLot.GUI
                 Radius = 0,
                 RectSize = 1,
                 RectColor = Color.White,
-                Padding = new Padding(0, 5, 0, 5)
+                Padding = new Padding(0, 3, 0, 3)
             };
             Sunny.UI.UISymbolButton button = new Sunny.UI.UISymbolButton
             {
@@ -374,24 +374,21 @@ namespace ZiTyLot.GUI
         private void SetupCollapsedProfileSection()
         {
             lbName.Visible = false;
-            sidebarBottom.Height = 120;
+            sidebarBottom.Height = 60;
 
             // Update tableSetting to be 1 column and 3 rows, with lbName hidden in a 0-height row
             tableSetting.ColumnCount = 1;
             tableSetting.ColumnStyles.Clear();
             tableSetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
 
-            tableSetting.RowCount = 3;
+            tableSetting.RowCount = 1;
             tableSetting.RowStyles.Clear();
-            tableSetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));  // First row for btnMore
-            tableSetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));   // Second row for lbName with height 0
+            
             tableSetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F)); // Last row for pictureBox2
 
             // Update control positions within tableSetting
             tableSetting.Controls.Clear();
-            tableSetting.Controls.Add(btnMore, 0, 0);          // Add btnMore to first row
-            tableSetting.Controls.Add(lbName, 0, 1);           // Add lbName to second row with height 0
-            tableSetting.Controls.Add(lbSymbol, 0, 2);      // Add pictureBox2 to last row
+            tableSetting.Controls.Add(btnMore, 0, 0);          
 
             // Ensure table layout is docked to fill the parent container
             tableSetting.Dock = System.Windows.Forms.DockStyle.Fill;
