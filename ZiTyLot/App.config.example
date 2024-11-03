@@ -8,6 +8,12 @@
              connectionString="Server=your_server;Database=your_database;User Id=your_username;Password=your_password;"
              providerName="MySql.Data.MySqlClient" />
 	</connectionStrings>
+	<appSettings>
+		<add key="ApiKey" value="your_roboflow_api_key"></add>
+		<add key="LPD_Endpoint" value="license-plate-recognition-rxg4e/6"></add>
+		<add key="LP_OCR_Endpoint" value="license-ocr-qqq6v/3"></add>
+		<add key="RoboflowEndpoint" value="https://detect.roboflow.com/"></add>
+	</appSettings>
 	<runtime>
 		<assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
 			<dependentAssembly>
