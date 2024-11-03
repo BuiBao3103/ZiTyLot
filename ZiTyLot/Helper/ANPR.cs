@@ -105,7 +105,7 @@ namespace ZiTyLot.Helper
         public static void Test()
         {
             DateTime startTime = DateTime.Now;
-            string imagePath = @"../../Helper/images/motorbike2.jpg";
+            string imagePath = @"../../Helper/images/bikecycle.jpg";
             string outputDirectory = @"../../Helper/images/cropped_plates";
 
             Console.WriteLine("Starting ANPR processing...");

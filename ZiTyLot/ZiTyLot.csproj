@@ -868,6 +868,7 @@
     <None Include="Resources\Screenshot 2024-08-30 230542.png" />
     <None Include="Resources\Screenshot 2024-08-30 101445.png" />
     <None Include="Resources\Screenshot 2024-10-11 121017.png" />
+    <Content Include="Helper\images\bikecycle.jpg" />
     <Content Include="Helper\images\car.jpg" />
     <Content Include="Helper\images\car2.jpg" />
     <Content Include="Helper\images\motobike.jpg" />
