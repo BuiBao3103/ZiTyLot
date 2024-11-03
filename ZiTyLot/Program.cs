@@ -29,9 +29,11 @@ namespace ZiTyLot
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Home());
+            Application.Run(new Home());
             // Start the main form of the application
-            Application.Run(new Login2());
+            //Application.Run(new Login2());
+            //Application.Run(new Login());
+
 
             // Example usage of BUS
             //Example.GetAllRecords();

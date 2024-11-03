@@ -31,326 +31,384 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.uiPanel3 = new Sunny.UI.UIPanel();
+            this.uiPanel2 = new Sunny.UI.UIPanel();
+            this.uiPanel1 = new Sunny.UI.UIPanel();
+            this.uiPanel4 = new Sunny.UI.UIPanel();
+            this.uiLabel1 = new Sunny.UI.UILabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.cbHienMatKhau = new System.Windows.Forms.CheckBox();
-            this.btnSignin = new System.Windows.Forms.Button();
-            this.pnlPassword = new System.Windows.Forms.Panel();
-            this.pnlInputPassword = new System.Windows.Forms.Panel();
-            this.inputPassword = new System.Windows.Forms.TextBox();
-            this.inputPasswordLabel = new System.Windows.Forms.Label();
-            this.pnlUsername = new System.Windows.Forms.Panel();
-            this.inputUsernameLabel = new System.Windows.Forms.Label();
-            this.pnlInputUsername = new System.Windows.Forms.Panel();
-            this.inputUsername = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.rightImage = new System.Windows.Forms.PictureBox();
+            this.txtUsername = new Sunny.UI.UITextBox();
+            this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
+            this.inputUsername = new Sunny.UI.UITextBox();
+            this.uiGroupBox2 = new Sunny.UI.UIGroupBox();
+            this.inputPassword = new Sunny.UI.UITextBox();
+            this.uiPanel5 = new Sunny.UI.UIPanel();
+            this.btnSignin = new Sunny.UI.UIButton();
+            this.cbHienMatKhau = new Sunny.UI.UICheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.uiPanel3.SuspendLayout();
+            this.uiPanel2.SuspendLayout();
+            this.uiPanel1.SuspendLayout();
+            this.uiPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.pnlPassword.SuspendLayout();
-            this.pnlInputPassword.SuspendLayout();
-            this.pnlUsername.SuspendLayout();
-            this.pnlInputUsername.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rightImage)).BeginInit();
+            this.uiGroupBox1.SuspendLayout();
+            this.uiGroupBox2.SuspendLayout();
+            this.uiPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(804, 450);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(934, 561);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.uiPanel5);
+            this.panel1.Controls.Add(this.uiPanel3);
+            this.panel1.Controls.Add(this.uiPanel2);
+            this.panel1.Controls.Add(this.uiPanel1);
+            this.panel1.Controls.Add(this.uiPanel4);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(396, 444);
+            this.panel1.Padding = new System.Windows.Forms.Padding(10, 40, 10, 10);
+            this.panel1.Size = new System.Drawing.Size(367, 555);
             this.panel1.TabIndex = 0;
             // 
-            // panel4
+            // uiPanel3
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(10, 10);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(376, 67);
-            this.panel4.TabIndex = 2;
+            this.uiPanel3.Controls.Add(this.cbHienMatKhau);
+            this.uiPanel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uiPanel3.FillColor = System.Drawing.Color.White;
+            this.uiPanel3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiPanel3.Location = new System.Drawing.Point(10, 313);
+            this.uiPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel3.Name = "uiPanel3";
+            this.uiPanel3.Padding = new System.Windows.Forms.Padding(52, 0, 52, 0);
+            this.uiPanel3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiPanel3.Size = new System.Drawing.Size(347, 54);
+            this.uiPanel3.TabIndex = 5;
+            this.uiPanel3.Text = null;
+            this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiPanel2
+            // 
+            this.uiPanel2.Controls.Add(this.uiGroupBox2);
+            this.uiPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uiPanel2.FillColor = System.Drawing.Color.White;
+            this.uiPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel2.Location = new System.Drawing.Point(10, 243);
+            this.uiPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel2.Name = "uiPanel2";
+            this.uiPanel2.Padding = new System.Windows.Forms.Padding(40, 0, 40, 0);
+            this.uiPanel2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiPanel2.Size = new System.Drawing.Size(347, 70);
+            this.uiPanel2.TabIndex = 4;
+            this.uiPanel2.Text = null;
+            this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiPanel1
+            // 
+            this.uiPanel1.Controls.Add(this.uiGroupBox1);
+            this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uiPanel1.FillColor = System.Drawing.Color.White;
+            this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel1.Location = new System.Drawing.Point(10, 163);
+            this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel1.Name = "uiPanel1";
+            this.uiPanel1.Padding = new System.Windows.Forms.Padding(40, 0, 40, 0);
+            this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiPanel1.Size = new System.Drawing.Size(347, 80);
+            this.uiPanel1.TabIndex = 3;
+            this.uiPanel1.Text = null;
+            this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiPanel4
+            // 
+            this.uiPanel4.Controls.Add(this.uiLabel1);
+            this.uiPanel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uiPanel4.FillColor = System.Drawing.Color.White;
+            this.uiPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel4.Location = new System.Drawing.Point(10, 82);
+            this.uiPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel4.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel4.Name = "uiPanel4";
+            this.uiPanel4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiPanel4.Size = new System.Drawing.Size(347, 81);
+            this.uiPanel4.TabIndex = 6;
+            this.uiPanel4.Text = null;
+            this.uiPanel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiLabel1
+            // 
+            this.uiLabel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.uiLabel1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiLabel1.Location = new System.Drawing.Point(0, 22);
+            this.uiLabel1.Name = "uiLabel1";
+            this.uiLabel1.Size = new System.Drawing.Size(347, 59);
+            this.uiLabel1.TabIndex = 2;
+            this.uiLabel1.Text = "Welcome to Zitylot";
+            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::ZiTyLot.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox1.Image = global::ZiTyLot.Properties.Resources.logo_mini;
+            this.pictureBox1.Location = new System.Drawing.Point(10, 40);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(107, 67);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.Size = new System.Drawing.Size(347, 42);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.panel5);
-            this.panel3.Controls.Add(this.pnlPassword);
-            this.panel3.Controls.Add(this.pnlUsername);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(10, 83);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(10);
-            this.panel3.Size = new System.Drawing.Size(376, 351);
-            this.panel3.TabIndex = 1;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.cbHienMatKhau);
-            this.panel5.Controls.Add(this.btnSignin);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(10, 219);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(356, 72);
-            this.panel5.TabIndex = 8;
-            // 
-            // cbHienMatKhau
-            // 
-            this.cbHienMatKhau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.cbHienMatKhau.AutoSize = true;
-            this.cbHienMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbHienMatKhau.Location = new System.Drawing.Point(43, 6);
-            this.cbHienMatKhau.Name = "cbHienMatKhau";
-            this.cbHienMatKhau.Size = new System.Drawing.Size(121, 20);
-            this.cbHienMatKhau.TabIndex = 3;
-            this.cbHienMatKhau.Text = "Show password";
-            this.cbHienMatKhau.UseVisualStyleBackColor = true;
-            this.cbHienMatKhau.CheckedChanged += new System.EventHandler(this.cbHienMatKhau_CheckedChanged);
-            // 
-            // btnSignin
-            // 
-            this.btnSignin.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSignin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(0)))));
-            this.btnSignin.FlatAppearance.BorderSize = 0;
-            this.btnSignin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignin.Location = new System.Drawing.Point(43, 37);
-            this.btnSignin.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSignin.Name = "btnSignin";
-            this.btnSignin.Size = new System.Drawing.Size(269, 35);
-            this.btnSignin.TabIndex = 4;
-            this.btnSignin.Text = "Sign in";
-            this.btnSignin.UseVisualStyleBackColor = false;
-            this.btnSignin.Click += new System.EventHandler(this.btnSignin_Click);
-            // 
-            // pnlPassword
-            // 
-            this.pnlPassword.BackColor = System.Drawing.Color.White;
-            this.pnlPassword.Controls.Add(this.pnlInputPassword);
-            this.pnlPassword.Controls.Add(this.inputPasswordLabel);
-            this.pnlPassword.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlPassword.Location = new System.Drawing.Point(10, 140);
-            this.pnlPassword.Name = "pnlPassword";
-            this.pnlPassword.Padding = new System.Windows.Forms.Padding(40, 5, 40, 5);
-            this.pnlPassword.Size = new System.Drawing.Size(356, 79);
-            this.pnlPassword.TabIndex = 6;
-            // 
-            // pnlInputPassword
-            // 
-            this.pnlInputPassword.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.pnlInputPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.pnlInputPassword.Controls.Add(this.inputPassword);
-            this.pnlInputPassword.Location = new System.Drawing.Point(40, 36);
-            this.pnlInputPassword.Name = "pnlInputPassword";
-            this.pnlInputPassword.Padding = new System.Windows.Forms.Padding(8, 8, 8, 0);
-            this.pnlInputPassword.Size = new System.Drawing.Size(276, 35);
-            this.pnlInputPassword.TabIndex = 10;
-            // 
-            // inputPassword
-            // 
-            this.inputPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.inputPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.inputPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.inputPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputPassword.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.inputPassword.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.inputPassword.Location = new System.Drawing.Point(8, 8);
-            this.inputPassword.Margin = new System.Windows.Forms.Padding(0);
-            this.inputPassword.Name = "inputPassword";
-            this.inputPassword.Size = new System.Drawing.Size(260, 19);
-            this.inputPassword.TabIndex = 2;
-            this.inputPassword.Text = "Enter password";
-            this.inputPassword.Enter += new System.EventHandler(this.inputPassword_Enter);
-            this.inputPassword.Leave += new System.EventHandler(this.inputPassword_Leave);
-            // 
-            // inputPasswordLabel
-            // 
-            this.inputPasswordLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.inputPasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.inputPasswordLabel.Location = new System.Drawing.Point(40, 14);
-            this.inputPasswordLabel.Name = "inputPasswordLabel";
-            this.inputPasswordLabel.Size = new System.Drawing.Size(276, 23);
-            this.inputPasswordLabel.TabIndex = 1;
-            this.inputPasswordLabel.Text = "Password";
-            // 
-            // pnlUsername
-            // 
-            this.pnlUsername.BackColor = System.Drawing.Color.White;
-            this.pnlUsername.Controls.Add(this.inputUsernameLabel);
-            this.pnlUsername.Controls.Add(this.pnlInputUsername);
-            this.pnlUsername.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlUsername.Location = new System.Drawing.Point(10, 52);
-            this.pnlUsername.Name = "pnlUsername";
-            this.pnlUsername.Padding = new System.Windows.Forms.Padding(40, 5, 40, 5);
-            this.pnlUsername.Size = new System.Drawing.Size(356, 88);
-            this.pnlUsername.TabIndex = 7;
-            // 
-            // inputUsernameLabel
-            // 
-            this.inputUsernameLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.inputUsernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.inputUsernameLabel.Location = new System.Drawing.Point(37, 19);
-            this.inputUsernameLabel.Name = "inputUsernameLabel";
-            this.inputUsernameLabel.Size = new System.Drawing.Size(279, 23);
-            this.inputUsernameLabel.TabIndex = 1;
-            this.inputUsernameLabel.Text = "Username";
-            // 
-            // pnlInputUsername
-            // 
-            this.pnlInputUsername.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.pnlInputUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.pnlInputUsername.Controls.Add(this.inputUsername);
-            this.pnlInputUsername.Location = new System.Drawing.Point(40, 45);
-            this.pnlInputUsername.Name = "pnlInputUsername";
-            this.pnlInputUsername.Padding = new System.Windows.Forms.Padding(8, 8, 8, 0);
-            this.pnlInputUsername.Size = new System.Drawing.Size(276, 35);
-            this.pnlInputUsername.TabIndex = 9;
-            // 
-            // inputUsername
-            // 
-            this.inputUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.inputUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.inputUsername.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.inputUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputUsername.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.inputUsername.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.inputUsername.Location = new System.Drawing.Point(8, 8);
-            this.inputUsername.Margin = new System.Windows.Forms.Padding(0);
-            this.inputUsername.Name = "inputUsername";
-            this.inputUsername.Size = new System.Drawing.Size(260, 19);
-            this.inputUsername.TabIndex = 1;
-            this.inputUsername.Text = "Enter username";
-            this.inputUsername.Enter += new System.EventHandler(this.inputUsername_Enter);
-            this.inputUsername.Leave += new System.EventHandler(this.inputUsername_Leave);
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(10, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(356, 42);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome back";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.rightImage);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(405, 3);
+            this.panel2.Location = new System.Drawing.Point(376, 3);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.panel2.Size = new System.Drawing.Size(396, 444);
+            this.panel2.Size = new System.Drawing.Size(555, 555);
             this.panel2.TabIndex = 2;
             // 
             // rightImage
             // 
-            this.rightImage.BackgroundImage = global::ZiTyLot.Properties.Resources.hero_image;
             this.rightImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.rightImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rightImage.Image = ((System.Drawing.Image)(resources.GetObject("rightImage.Image")));
             this.rightImage.Location = new System.Drawing.Point(10, 10);
             this.rightImage.Name = "rightImage";
             this.rightImage.Padding = new System.Windows.Forms.Padding(10);
-            this.rightImage.Size = new System.Drawing.Size(376, 424);
+            this.rightImage.Size = new System.Drawing.Size(535, 535);
+            this.rightImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.rightImage.TabIndex = 1;
             this.rightImage.TabStop = false;
-            this.rightImage.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox2_Paint);
-            this.rightImage.Resize += new System.EventHandler(this.pictureBox2_Resize);
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUsername.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtUsername.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(8, 32);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtUsername.MaximumSize = new System.Drawing.Size(0, 34);
+            this.txtUsername.MinimumSize = new System.Drawing.Size(0, 34);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
+            this.txtUsername.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.txtUsername.RectSize = 2;
+            this.txtUsername.ShowText = false;
+            this.txtUsername.Size = new System.Drawing.Size(262, 34);
+            this.txtUsername.TabIndex = 0;
+            this.txtUsername.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtUsername.Watermark = "";
+            // 
+            // uiGroupBox1
+            // 
+            this.uiGroupBox1.Controls.Add(this.inputUsername);
+            this.uiGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiGroupBox1.FillColor = System.Drawing.Color.White;
+            this.uiGroupBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(198)))), ((int)(((byte)(238)))));
+            this.uiGroupBox1.ForeDisableColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.uiGroupBox1.Location = new System.Drawing.Point(40, 0);
+            this.uiGroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiGroupBox1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiGroupBox1.Name = "uiGroupBox1";
+            this.uiGroupBox1.Padding = new System.Windows.Forms.Padding(15, 32, 15, 4);
+            this.uiGroupBox1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiGroupBox1.Size = new System.Drawing.Size(267, 80);
+            this.uiGroupBox1.TabIndex = 1;
+            this.uiGroupBox1.Text = "Username";
+            this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // inputUsername
+            // 
+            this.inputUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.inputUsername.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inputUsername.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputUsername.Location = new System.Drawing.Point(15, 32);
+            this.inputUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.inputUsername.MaximumSize = new System.Drawing.Size(0, 34);
+            this.inputUsername.MinimumSize = new System.Drawing.Size(0, 34);
+            this.inputUsername.Name = "inputUsername";
+            this.inputUsername.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
+            this.inputUsername.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.inputUsername.RectSize = 2;
+            this.inputUsername.ShowText = false;
+            this.inputUsername.Size = new System.Drawing.Size(237, 34);
+            this.inputUsername.TabIndex = 0;
+            this.inputUsername.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.inputUsername.Watermark = "Enter your username";
+            this.inputUsername.WatermarkActiveColor = System.Drawing.Color.DimGray;
+            this.inputUsername.WatermarkColor = System.Drawing.SystemColors.ControlDark;
+            this.inputUsername.Leave += new System.EventHandler(this.inputUsername_Leave);
+            this.inputUsername.Enter += new System.EventHandler(this.inputUsername_Enter);
+            // 
+            // uiGroupBox2
+            // 
+            this.uiGroupBox2.Controls.Add(this.inputPassword);
+            this.uiGroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiGroupBox2.FillColor = System.Drawing.Color.White;
+            this.uiGroupBox2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(198)))), ((int)(((byte)(238)))));
+            this.uiGroupBox2.ForeDisableColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.uiGroupBox2.Location = new System.Drawing.Point(40, 0);
+            this.uiGroupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiGroupBox2.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiGroupBox2.Name = "uiGroupBox2";
+            this.uiGroupBox2.Padding = new System.Windows.Forms.Padding(15, 32, 15, 4);
+            this.uiGroupBox2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiGroupBox2.Size = new System.Drawing.Size(267, 70);
+            this.uiGroupBox2.TabIndex = 2;
+            this.uiGroupBox2.Text = "Password";
+            this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // inputPassword
+            // 
+            this.inputPassword.ButtonSymbol = 361552;
+            this.inputPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.inputPassword.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inputPassword.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputPassword.Location = new System.Drawing.Point(15, 32);
+            this.inputPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.inputPassword.MaximumSize = new System.Drawing.Size(0, 34);
+            this.inputPassword.MinimumSize = new System.Drawing.Size(0, 34);
+            this.inputPassword.Name = "inputPassword";
+            this.inputPassword.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
+            this.inputPassword.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.inputPassword.RectSize = 2;
+            this.inputPassword.ShowText = false;
+            this.inputPassword.Size = new System.Drawing.Size(237, 34);
+            this.inputPassword.TabIndex = 0;
+            this.inputPassword.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.inputPassword.Watermark = "Enter your password";
+            this.inputPassword.WatermarkActiveColor = System.Drawing.Color.DimGray;
+            this.inputPassword.WatermarkColor = System.Drawing.SystemColors.ControlDark;
+            this.inputPassword.Leave += new System.EventHandler(this.inputPassword_Leave);
+            this.inputPassword.Enter += new System.EventHandler(this.inputPassword_Enter);
+            // 
+            // uiPanel5
+            // 
+            this.uiPanel5.Controls.Add(this.btnSignin);
+            this.uiPanel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uiPanel5.FillColor = System.Drawing.Color.White;
+            this.uiPanel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel5.Location = new System.Drawing.Point(10, 367);
+            this.uiPanel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel5.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel5.Name = "uiPanel5";
+            this.uiPanel5.Padding = new System.Windows.Forms.Padding(50, 0, 50, 0);
+            this.uiPanel5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiPanel5.Size = new System.Drawing.Size(347, 40);
+            this.uiPanel5.TabIndex = 7;
+            this.uiPanel5.Text = null;
+            this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnSignin
+            // 
+            this.btnSignin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSignin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSignin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnSignin.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnSignin.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnSignin.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnSignin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignin.Location = new System.Drawing.Point(50, 0);
+            this.btnSignin.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnSignin.Name = "btnSignin";
+            this.btnSignin.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnSignin.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnSignin.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnSignin.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnSignin.RectSize = 2;
+            this.btnSignin.Size = new System.Drawing.Size(247, 40);
+            this.btnSignin.TabIndex = 0;
+            this.btnSignin.Text = "Login";
+            this.btnSignin.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnSignin.Click += new System.EventHandler(this.btnSignin_Click);
+            // 
+            // cbHienMatKhau
+            // 
+            this.cbHienMatKhau.CheckBoxColor = System.Drawing.SystemColors.ControlDark;
+            this.cbHienMatKhau.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbHienMatKhau.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbHienMatKhau.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbHienMatKhau.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.cbHienMatKhau.Location = new System.Drawing.Point(52, 0);
+            this.cbHienMatKhau.MinimumSize = new System.Drawing.Size(1, 1);
+            this.cbHienMatKhau.Name = "cbHienMatKhau";
+            this.cbHienMatKhau.Size = new System.Drawing.Size(243, 25);
+            this.cbHienMatKhau.TabIndex = 0;
+            this.cbHienMatKhau.Text = "Show password";
+            this.cbHienMatKhau.CheckedChanged += new System.EventHandler(this.cbHienMatKhau_CheckedChanged);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(804, 450);
+            this.ClientSize = new System.Drawing.Size(934, 561);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "Login";
-            this.Text = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
+            this.uiPanel3.ResumeLayout(false);
+            this.uiPanel2.ResumeLayout(false);
+            this.uiPanel1.ResumeLayout(false);
+            this.uiPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.pnlPassword.ResumeLayout(false);
-            this.pnlInputPassword.ResumeLayout(false);
-            this.pnlInputPassword.PerformLayout();
-            this.pnlUsername.ResumeLayout(false);
-            this.pnlInputUsername.ResumeLayout(false);
-            this.pnlInputUsername.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rightImage)).EndInit();
+            this.uiGroupBox1.ResumeLayout(false);
+            this.uiGroupBox2.ResumeLayout(false);
+            this.uiPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox rightImage;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label inputPasswordLabel;
-        private System.Windows.Forms.Button btnSignin;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel pnlPassword;
-        private System.Windows.Forms.Panel pnlUsername;
-        private System.Windows.Forms.Label inputUsernameLabel;
-        private System.Windows.Forms.TextBox inputUsername;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.CheckBox cbHienMatKhau;
-        private System.Windows.Forms.Panel pnlInputUsername;
-        private System.Windows.Forms.Panel pnlInputPassword;
-        private System.Windows.Forms.TextBox inputPassword;
+        private System.Windows.Forms.Panel panel1;
+        private Sunny.UI.UITextBox txtUsername;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Sunny.UI.UIPanel uiPanel1;
+        private Sunny.UI.UIPanel uiPanel2;
+        private Sunny.UI.UIPanel uiPanel3;
+        private Sunny.UI.UIPanel uiPanel4;
+        private Sunny.UI.UILabel uiLabel1;
+        private Sunny.UI.UIGroupBox uiGroupBox2;
+        private Sunny.UI.UITextBox inputPassword;
+        private Sunny.UI.UIGroupBox uiGroupBox1;
+        private Sunny.UI.UITextBox inputUsername;
+        private Sunny.UI.UIPanel uiPanel5;
+        private Sunny.UI.UIButton btnSignin;
+        private Sunny.UI.UICheckBox cbHienMatKhau;
     }
 }

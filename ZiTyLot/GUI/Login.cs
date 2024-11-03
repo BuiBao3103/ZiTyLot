@@ -12,12 +12,10 @@ namespace ZiTyLot.GUI
         AuthManager authManager = new AuthManager();
         public Login()
         {
+            this.MaximizeBox = false;
             InitializeComponent();
             this.CenterToScreen();
             this.ActiveControl = inputUsername;
-            this.pnlInputUsername.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlInputUsername.Width, pnlInputUsername.Height, 5, 5));
-            this.pnlInputPassword.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlInputPassword.Width, pnlInputPassword.Height, 5, 5));
-            this.btnSignin.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnSignin.Width, btnSignin.Height, 5, 5));
         }
 
         private void cbHienMatKhau_CheckedChanged(object sender, EventArgs e)
@@ -30,16 +28,6 @@ namespace ZiTyLot.GUI
             {
                 inputPassword.PasswordChar = '*';   // Mask password
             }
-        }
-
-        private void pictureBox2_Resize(object sender, EventArgs e)
-        {
-            this.rightImage.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, rightImage.Width, rightImage.Height, 5, 5));
-        }
-
-        private void pictureBox2_Paint(object sender, PaintEventArgs e)
-        {
-            this.rightImage.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, rightImage.Width, rightImage.Height, 5, 5));
         }
 
         private void inputUsername_Enter(object sender, EventArgs e)
@@ -89,10 +77,11 @@ namespace ZiTyLot.GUI
             try
             {
                 authManager.Login(inputUsername.Text, inputPassword.Text);
-               
+
                 this.Hide();
                 new Home().Show();
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
