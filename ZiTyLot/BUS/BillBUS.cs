@@ -33,6 +33,8 @@ namespace ZiTyLot.BUS
                     issue.Bill_id = newBill.Id;
                     issueDAO.Add(issue);
                 }
+
+                //UPDATE STATUS OF SLOT
                 return newBill;
             }
             catch (Exception ex)

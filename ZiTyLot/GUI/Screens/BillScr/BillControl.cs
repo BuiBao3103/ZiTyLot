@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
+using ZiTyLot.Constants;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens.BillScr;
@@ -144,24 +145,22 @@ namespace ZiTyLot.GUI.Screens
         {
             string selectedValue = cbNumberofitem.SelectedItem.ToString();
             int pageSize = int.Parse(selectedValue.Split(' ')[0]);
-            pageable.PageNumber = 1;
             pageable.PageSize = pageSize;
-            page = billBUS.GetAllPagination(pageable, filters);
-            LoadPageAndPageable();
+            changePage(1);
         }
 
         private void changePage(int pageNumber)
         {
             pageable.PageNumber = pageNumber;
             pageable.SortBy = nameof(Bill.Created_at);
-            pageable.SortBy = "ASC";
+            pageable.SortOrder = SortOrderPageable.Descending;
             page = billBUS.GetAllPagination(pageable, filters);
             LoadPageAndPageable();
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-
+            changePage(pageable.PageNumber - 1);
         }
 
         private void btnNext_Click(object sender, EventArgs e)
