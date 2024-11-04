@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 public static class PdfHelper
 {
-    public static void ExportBillToPdf(Resident resident, Bill bill, ICollection<Issue> issues, string outputPath, string logoPath)
+    public static void ExportBillToPdf(Bill bill, string outputPath, string logoPath)
     {
         // Create new document
         using (Document document = new Document(PageSize.A4, 25, 25, 30, 30))
@@ -52,10 +52,10 @@ public static class PdfHelper
 
                 // Resident Information
                 document.Add(new Paragraph("RESIDENT INFORMATION:", boldFont));
-                document.Add(new Paragraph($"Full Name: {resident.Full_name}", normalFont));
-                document.Add(new Paragraph($"Phone Number: {resident.Phone}", normalFont));
-                document.Add(new Paragraph($"Email: {resident.Email}", normalFont));
-                document.Add(new Paragraph($"Apartment ID: {resident.Apartment_id}", normalFont));
+                document.Add(new Paragraph($"Full Name: {bill.Resident.Full_name}", normalFont));
+                document.Add(new Paragraph($"Phone Number: {bill.Resident.Phone}", normalFont));
+                document.Add(new Paragraph($"Email: {bill.Resident.Email}", normalFont));
+                document.Add(new Paragraph($"Apartment ID: {bill.Resident.Apartment_id}", normalFont));
                 document.Add(new Paragraph("\n"));
 
                 // Bill Information
@@ -87,7 +87,7 @@ public static class PdfHelper
 
                 // Add data to table
                 int stt = 1;
-                foreach (Issue issue in issues)
+                foreach (Issue issue in bill.Issues)
                 {
                     // Number
                     PdfPCell cell = new PdfPCell(new Phrase(stt++.ToString(), normalFont));
@@ -134,7 +134,7 @@ public static class PdfHelper
         {
             // Generate PDF
             string logoPath = @"../../GUI/assets/Zity-logo-256x256px.png";
-            ExportBillToPdf(bill.Resident, bill, bill.Issues, tempPdfPath, logoPath);
+            ExportBillToPdf(bill, tempPdfPath, logoPath);
             // Print the PDF
             PrintPdf(tempPdfPath);
         }

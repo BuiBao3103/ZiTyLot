@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using MySql.Data.MySqlClient;
 using ZiTyLot.Config;
@@ -286,6 +287,86 @@ namespace ZiTyLot.DAO
             {
                 // Throw a new exception with a custom message if an error occurs
                 throw new Exception(ex.Message);
+            }
+        }
+        public T AddAndGet(T item)
+        {
+            try
+            {
+                // Establish a connection to the database
+                using (var connection = DBConfig.GetConnection())
+                {
+                    connection.Open(); // Open the connection
+
+                    // Start building the SQL query for inserting data
+                    var query = new StringBuilder($"INSERT INTO {tableName} (");
+
+                    // Get the properties of the type T
+                    var properties = typeof(T).GetProperties();
+                    var validProperties = new List<string>(); // List to hold valid property names
+
+                    // Append property names to the query
+                    foreach (var prop in properties)
+                    {
+                        if (ShouldSkipProperty(prop)) continue; // Skip properties that should be ignored
+
+                        query.Append($"{prop.Name},");
+                        validProperties.Add(prop.Name); // Add valid property names to the list
+                    }
+                    query.Length--; // Remove the last comma
+                    query.Append(") VALUES (");
+
+                    // Append parameter placeholders to the query
+                    foreach (var propName in validProperties)
+                    {
+                        query.Append($"@{propName},");
+                    }
+                    query.Length--; // Remove the last comma
+                    query.Append("); SELECT LAST_INSERT_ID();"); // Get the last inserted ID
+
+                    // Create a MySqlCommand with the constructed query
+                    using (var command = new MySqlCommand(query.ToString(), connection))
+                    {
+                        // Add parameters for each property to the command
+                        foreach (var prop in properties)
+                        {
+                            if (ShouldSkipProperty(prop)) continue; // Skip properties that should be ignored
+
+                            var value = prop.GetValue(item) ?? DBNull.Value; // Get the property value or set to DBNull if null
+
+                            if (prop.PropertyType.IsEnum && value != DBNull.Value)
+                            {
+                                value = value.ToString(); // Convert enum to string
+                            }
+
+                            command.Parameters.AddWithValue($"@{prop.Name}", value); // Add the parameter to the command
+                        }
+
+                        // Execute the query and get the new ID
+                        var newId = command.ExecuteScalar(); // Execute and get the ID
+
+                        // Set the ID of the item if it has an Id property
+                        var idProperty = properties.FirstOrDefault(p => p.Name.Equals("Id", StringComparison.OrdinalIgnoreCase));
+                        if (idProperty != null)
+                        {
+                            if (idProperty.PropertyType == typeof(int))
+                            {
+                                idProperty.SetValue(item, Convert.ToInt32(newId)); // Set the new ID to the item as int
+                            }
+                            else if (idProperty.PropertyType == typeof(string))
+                            {
+                                idProperty.SetValue(item, newId.ToString()); // Set the new ID to the item as string
+                            }
+                        }
+                    }
+                }
+
+                return item; // Return the item with the new ID
+            }
+            catch (Exception ex)
+            {
+                // Throw a new exception with a custom message if an error occurs
+                throw new Exception("Error adding item: " + ex.Message, ex);
             }
         }
 

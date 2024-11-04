@@ -63,7 +63,17 @@ namespace ZiTyLot.DAO
                 throw new Exception(ex.Message);
             }
         }
-
+        public Bill AddAndGet(Bill item)
+        {
+            try
+            {
+                return daoFactory.AddAndGet(item);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         public void Update(Bill item)
         {
             try

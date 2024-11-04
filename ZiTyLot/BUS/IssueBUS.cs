@@ -33,6 +33,7 @@ namespace ZiTyLot.BUS
             Validate(item);
             try
             {
+                item.Created_at = DateTime.Now;
                 issueDAO.Add(item);
             }
             catch (Exception ex)
