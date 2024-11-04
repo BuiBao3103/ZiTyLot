@@ -12,18 +12,19 @@ namespace ZiTyLot.GUI.Screens.BillScr
     {
         int rows = 0;
         Home home = new Home();
+        private ListBox listBox;
         public BillDetailControl()
         {
             InitializeComponent();
             pnlBillDetail.RowStyles[1] = new RowStyle(SizeType.Absolute, 0);
             listIssue.AutoScroll = true;
-            
+
 
         }
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
-            
+
             IssueDetailForm issueDetailForm = new IssueDetailForm();
             issueDetailForm.Show();
 
@@ -114,6 +115,43 @@ namespace ZiTyLot.GUI.Screens.BillScr
                     break;
             }
         }
+
+        private void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            //if (listBox == null)
+            //{
+            //    // Khởi tạo ListBox nếu chưa có
+            //    listBox = new ListBox
+            //    {
+            //        Width = tableSearch.Width, // Đặt chiều rộng bằng tbSearch
+            //        Visible = true
+            //    };
+            //    this.Font = new Font("Arial", 12, FontStyle.Regular);
+
+            //    // Thêm ListBox vào form
+            //    this.Controls.Add(listBox);
+            //}
+
+            //// Lấy vị trí của tbSearch trong màn hình và chuyển đổi nó thành vị trí trong form
+            //var textBoxScreenPosition = tableSearch.PointToScreen(System.Drawing.Point.Empty);
+            //var textBoxFormPosition = this.PointToClient(textBoxScreenPosition);
+
+            //// Cập nhật vị trí của ListBox để nằm ngay dưới tbSearch
+            //listBox.Location = new System.Drawing.Point(textBoxFormPosition.X, textBoxFormPosition.Y + tableSearch.Height + 2);
+
+            //// Hiển thị ListBox và thêm các mục ví dụ
+            //listBox.Visible = true;
+            //listBox.BringToFront(); // Đảm bảo ListBox nằm trên các control khác
+            //listBox.Items.Clear();
+            //listBox.Items.Add("Item 1");
+            //listBox.Items.Add("Item 2");
+            //listBox.Items.Add("Item 3");
+
+            //// Điều chỉnh chiều cao của ListBox dựa trên các mục
+            //listBox.Height = Math.Min(100, listBox.PreferredHeight);
+        }
+
+       
     }
 
 }
