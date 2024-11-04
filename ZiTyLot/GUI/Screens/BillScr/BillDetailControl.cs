@@ -24,7 +24,6 @@ namespace ZiTyLot.GUI.Screens.BillScr
         private IssueDetailForm _AddIssueForm;
 
         int rows = 0;
-        //Home home = new Home();
         private ListBox listBox;
         public BillDetailControl()
         {
@@ -70,21 +69,21 @@ namespace ZiTyLot.GUI.Screens.BillScr
             this.Controls.Add(listBox);
         }
 
-        private void ListBox_MouseEnter(object sender, EventArgs e)
-        {
-            if (sender is ListBox lb)
-            {
-                lb.BackColor = Color.LightGray;
-            }
-        }
+        //private void ListBox_MouseEnter(object sender, EventArgs e)
+        //{
+        //    if (sender is ListBox lb)
+        //    {
+        //        lb.BackColor = Color.LightGray;
+        //    }
+        //}
 
-        private void ListBox_MouseLeave(object sender, EventArgs e)
-        {
-            if (sender is ListBox lb)
-            {
-                lb.BackColor = SystemColors.Window; // Reset the color to the default
-            }
-        }
+        //private void ListBox_MouseLeave(object sender, EventArgs e)
+        //{
+        //    if (sender is ListBox lb)
+        //    {
+        //        lb.BackColor = SystemColors.Window; // Reset the color to the default
+        //    }
+        //}
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
@@ -153,16 +152,11 @@ namespace ZiTyLot.GUI.Screens.BillScr
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            //if (home != null)
-            //{
-            //    this.Dispose();
-            //    BillControl billControl = new BillControl();
-            //    home.LoadForm(billControl);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Home form is not assigned.");
-            //}
+            Home home = (Home)ParentForm;
+            if (home.panelMapping.TryGetValue("BillManagement", out UserControl control))
+            {
+                home.LoadForm(control);
+            }
         }
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -221,13 +215,10 @@ namespace ZiTyLot.GUI.Screens.BillScr
                         break;
                 }
             }
-            ChangePage(1);
-        }
-        private void ChangePage(int pageNumber)
-        {
             _residents = _residentBUS.GetAll(_filters);
             LoadResidentSearch();
         }
+      
         private void LoadResidentSearch()
         {
             var textBoxScreenPosition = tbSearch.PointToScreen(System.Drawing.Point.Empty);
@@ -242,6 +233,15 @@ namespace ZiTyLot.GUI.Screens.BillScr
             listBox.BringToFront();
             listBox.Height = 250;
             listBox.Visible = true;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Home home = (Home)ParentForm;
+            if (home.panelMapping.TryGetValue("BillManagement", out UserControl control))
+            {
+                home.LoadForm(control);
+            }
         }
     }
 }
