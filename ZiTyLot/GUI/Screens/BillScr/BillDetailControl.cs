@@ -9,6 +9,7 @@ using ZiTyLot.Helper;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Threading.Tasks;
 using System.Linq;
+using ZiTyLot.GUI.Utils;
 
 
 namespace ZiTyLot.GUI.Screens.BillScr
@@ -17,6 +18,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
     {
         private readonly Debouncer _debouncer = new Debouncer();
         private readonly ResidentBUS _residentBUS = new ResidentBUS();
+        private readonly BillBUS _billBUS = new BillBUS();
         private readonly List<FilterCondition> _filters = new List<FilterCondition>();
         private List<Resident> _residents;
         private Resident _residentSelected;
@@ -258,5 +260,43 @@ namespace ZiTyLot.GUI.Screens.BillScr
                 home.LoadForm(control);
             }
         }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+                Bill bill = _billBUS.GetById(2);
+                bill = _billBUS.PopulateResident(bill);
+                bill = _billBUS.PopulateIssues(bill);
+                DialogResult resultSaveBill = MessageHelper.ShowConfirm("Do you want save this bill?");
+                if (resultSaveBill == DialogResult.Yes)
+                {
+                    SaveFileDialog saveFileDialog = new SaveFileDialog
+                    {
+                        Filter = "PDF files (.pdf)|*.pdf",
+                        FilterIndex = 1,
+                        RestoreDirectory = true
+                    };
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            string logoPath = @"../../GUI/assets/Zity-logo-256x256px.png";
+                            PdfHelper.ExportBillToPdf(bill.Resident, bill, bill.Issues, saveFileDialog.FileName, logoPath);
+                            MessageHelper.ShowSuccess("Bill exported to PDF successfully!");
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                            MessageHelper.ShowError("Some error occurred while exporting bill to PDF. Please try again later.");
+                        }
+                    }
+                }
+                DialogResult result = MessageHelper.ShowConfirm("Do you want to print this bill?");
+                if (result == DialogResult.Yes)
+                {
+                    PdfHelper.PrintBill(bill);
+                    MessageHelper.ShowSuccess("Bill sent to printer successfully!");
+                }
+            }
+
     }
 }
