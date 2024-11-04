@@ -24,6 +24,8 @@ namespace ZiTyLot.GUI.Screens
             InitializeComponent();
             cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
+            TopPnl_Resize(null, null);
+            BottomPnl_Resize(null, null);
         }
 
         private void BillScreen_Load(object sender, EventArgs e)
