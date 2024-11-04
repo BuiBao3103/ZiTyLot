@@ -8,6 +8,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
         public IssueDetailRow()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Top;
         }
 
         private void btnDeleteRow_Click(object sender, EventArgs e)
@@ -16,7 +17,6 @@ namespace ZiTyLot.GUI.Screens.BillScr
             OnRowDeleted();  
         }
 
-        // Custom event to notify parent control about row deletion
         public event EventHandler RowDeleted;
 
         protected virtual void OnRowDeleted()

@@ -21,6 +21,8 @@ namespace ZiTyLot.GUI.Screens.BillScr
         private List<Resident> _residents;
         private Resident _residentSelected;
 
+        private IssueDetailForm _AddIssueForm;
+
         int rows = 0;
         //Home home = new Home();
         private ListBox listBox;
@@ -86,27 +88,32 @@ namespace ZiTyLot.GUI.Screens.BillScr
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
-
-            IssueDetailForm issueDetailForm = new IssueDetailForm();
-            issueDetailForm.Show();
-
+            if (_AddIssueForm == null || _AddIssueForm.IsDisposed)
+            {
+                _AddIssueForm = new IssueDetailForm();
+                _AddIssueForm.IssueInsertionEvent += (s, ev) => AddRow();
+                _AddIssueForm.Show();
+            }
+            else
+            {
+                if (_AddIssueForm.WindowState == FormWindowState.Minimized)
+                    _AddIssueForm.WindowState = FormWindowState.Normal;
+                _AddIssueForm.BringToFront();
+            }
+        }
+        private void AddRow()
+        {
             IssueDetailRow newRow = new IssueDetailRow();
-            newRow.Dock = DockStyle.Top;
-
-            // Listen for the RowDeleted event from the new row
             newRow.RowDeleted += (s, ev) => RemoveRow(newRow);
-
             listIssue.Controls.Add(newRow);
             rows += 1;
             listIssue_ResizeAutoScrollMinSize(rows);
-
         }
-
         private void RemoveRow(IssueDetailRow row)
         {
             listIssue.Controls.Remove(row);  // Remove the row from the panel
             rows -= 1;  // Decrease the row count
-            listIssue_ResizeAutoScrollMinSize(rows);  // Adjust scroll area
+            listIssue_ResizeAutoScrollMinSize(rows);  
         }
 
         private void listIssue_ResizeAutoScrollMinSize(int rows)
