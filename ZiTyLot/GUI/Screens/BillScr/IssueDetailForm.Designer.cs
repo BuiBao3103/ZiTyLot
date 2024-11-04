@@ -38,8 +38,8 @@
             this.uiPanel11 = new Sunny.UI.UIPanel();
             this.uiSymbolLabel1 = new Sunny.UI.UISymbolLabel();
             this.uiPanel10 = new Sunny.UI.UIPanel();
-            this.dtpToDate = new Sunny.UI.UIGroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.uiGroupBox = new Sunny.UI.UIGroupBox();
+            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.uiPanel9 = new Sunny.UI.UIPanel();
             this.uiGroupBox8 = new Sunny.UI.UIGroupBox();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
@@ -57,7 +57,7 @@
             this.cbMonth = new Sunny.UI.UIComboBox();
             this.uiPanel4 = new Sunny.UI.UIPanel();
             this.uiGroupBox3 = new Sunny.UI.UIGroupBox();
-            this.cbVehical = new Sunny.UI.UIComboBox();
+            this.cbVehicleType = new Sunny.UI.UIComboBox();
             this.uiPanel3 = new Sunny.UI.UIPanel();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
             this.tbPlate = new Sunny.UI.UITextBox();
@@ -68,7 +68,7 @@
             this.uiPanel1.SuspendLayout();
             this.uiPanel11.SuspendLayout();
             this.uiPanel10.SuspendLayout();
-            this.dtpToDate.SuspendLayout();
+            this.uiGroupBox.SuspendLayout();
             this.uiPanel9.SuspendLayout();
             this.uiGroupBox8.SuspendLayout();
             this.uiPanel8.SuspendLayout();
@@ -268,7 +268,7 @@
             // 
             // uiPanel10
             // 
-            this.uiPanel10.Controls.Add(this.dtpToDate);
+            this.uiPanel10.Controls.Add(this.uiGroupBox);
             this.uiPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel10.FillColor = System.Drawing.Color.White;
             this.uiPanel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -283,32 +283,33 @@
             this.uiPanel10.Text = null;
             this.uiPanel10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // uiGroupBox
+            // 
+            this.uiGroupBox.Controls.Add(this.dtpToDate);
+            this.uiGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiGroupBox.FillColor = System.Drawing.Color.White;
+            this.uiGroupBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox.Location = new System.Drawing.Point(0, 0);
+            this.uiGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiGroupBox.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiGroupBox.Name = "uiGroupBox";
+            this.uiGroupBox.Padding = new System.Windows.Forms.Padding(4, 32, 4, 4);
+            this.uiGroupBox.RectColor = System.Drawing.Color.White;
+            this.uiGroupBox.Size = new System.Drawing.Size(367, 87);
+            this.uiGroupBox.TabIndex = 0;
+            this.uiGroupBox.Text = "To date";
+            this.uiGroupBox.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // dtpToDate
             // 
-            this.dtpToDate.Controls.Add(this.dateTimePicker2);
             this.dtpToDate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpToDate.FillColor = System.Drawing.Color.White;
-            this.dtpToDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpToDate.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.dtpToDate.Location = new System.Drawing.Point(0, 0);
-            this.dtpToDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dtpToDate.MinimumSize = new System.Drawing.Size(1, 1);
+            this.dtpToDate.Enabled = false;
+            this.dtpToDate.Location = new System.Drawing.Point(4, 32);
+            this.dtpToDate.MinimumSize = new System.Drawing.Size(0, 34);
             this.dtpToDate.Name = "dtpToDate";
-            this.dtpToDate.Padding = new System.Windows.Forms.Padding(4, 32, 4, 4);
-            this.dtpToDate.RectColor = System.Drawing.Color.White;
-            this.dtpToDate.Size = new System.Drawing.Size(367, 87);
-            this.dtpToDate.TabIndex = 0;
-            this.dtpToDate.Text = "To date";
-            this.dtpToDate.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePicker2.Location = new System.Drawing.Point(4, 32);
-            this.dateTimePicker2.MinimumSize = new System.Drawing.Size(0, 34);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(359, 34);
-            this.dateTimePicker2.TabIndex = 1;
+            this.dtpToDate.Size = new System.Drawing.Size(359, 34);
+            this.dtpToDate.TabIndex = 1;
             // 
             // uiPanel9
             // 
@@ -348,6 +349,7 @@
             // dtpFromDate
             // 
             this.dtpFromDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpFromDate.Enabled = false;
             this.dtpFromDate.Location = new System.Drawing.Point(4, 32);
             this.dtpFromDate.MinimumSize = new System.Drawing.Size(0, 34);
             this.dtpFromDate.Name = "dtpFromDate";
@@ -393,20 +395,10 @@
             // 
             this.cbSlot.DataSource = null;
             this.cbSlot.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbSlot.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbSlot.FillColor = System.Drawing.Color.White;
             this.cbSlot.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSlot.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.cbSlot.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10"});
             this.cbSlot.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.cbSlot.Location = new System.Drawing.Point(8, 32);
             this.cbSlot.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -419,7 +411,6 @@
             this.cbSlot.Size = new System.Drawing.Size(351, 34);
             this.cbSlot.SymbolSize = 24;
             this.cbSlot.TabIndex = 1;
-            this.cbSlot.Text = "Null";
             this.cbSlot.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cbSlot.Watermark = "";
             // 
@@ -462,19 +453,10 @@
             // 
             this.cbArea.DataSource = null;
             this.cbArea.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbArea.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbArea.FillColor = System.Drawing.Color.White;
             this.cbArea.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbArea.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.cbArea.Items.AddRange(new object[] {
-            "A1",
-            "A2",
-            "A3",
-            "B1",
-            "B2",
-            "B3",
-            "C",
-            "D",
-            "E"});
             this.cbArea.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.cbArea.Location = new System.Drawing.Point(8, 32);
             this.cbArea.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -487,9 +469,9 @@
             this.cbArea.Size = new System.Drawing.Size(350, 34);
             this.cbArea.SymbolSize = 24;
             this.cbArea.TabIndex = 1;
-            this.cbArea.Text = "A1";
             this.cbArea.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cbArea.Watermark = "";
+            this.cbArea.SelectedIndexChanged += new System.EventHandler(this.cbArea_SelectedIndexChanged);
             // 
             // uiPanel6
             // 
@@ -530,6 +512,7 @@
             // 
             this.tbTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbTotal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbTotal.Enabled = false;
             this.tbTotal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTotal.Location = new System.Drawing.Point(8, 32);
             this.tbTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -584,15 +567,10 @@
             // 
             this.cbMonth.DataSource = null;
             this.cbMonth.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbMonth.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbMonth.FillColor = System.Drawing.Color.White;
             this.cbMonth.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMonth.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.cbMonth.Items.AddRange(new object[] {
-            "1 month",
-            "2 months",
-            "3 months",
-            "6 months",
-            "12 months"});
             this.cbMonth.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.cbMonth.Location = new System.Drawing.Point(8, 32);
             this.cbMonth.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -605,9 +583,9 @@
             this.cbMonth.Size = new System.Drawing.Size(350, 34);
             this.cbMonth.SymbolSize = 24;
             this.cbMonth.TabIndex = 1;
-            this.cbMonth.Text = "1 month";
             this.cbMonth.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cbMonth.Watermark = "";
+            this.cbMonth.SelectedIndexChanged += new System.EventHandler(this.cbMonth_SelectedIndexChanged);
             // 
             // uiPanel4
             // 
@@ -628,7 +606,7 @@
             // 
             // uiGroupBox3
             // 
-            this.uiGroupBox3.Controls.Add(this.cbVehical);
+            this.uiGroupBox3.Controls.Add(this.cbVehicleType);
             this.uiGroupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox3.FillColor = System.Drawing.Color.White;
             this.uiGroupBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -641,37 +619,32 @@
             this.uiGroupBox3.RectColor = System.Drawing.Color.White;
             this.uiGroupBox3.Size = new System.Drawing.Size(367, 87);
             this.uiGroupBox3.TabIndex = 0;
-            this.uiGroupBox3.Text = "Vehical";
+            this.uiGroupBox3.Text = "Vehicle";
             this.uiGroupBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // cbVehical
+            // cbVehicleType
             // 
-            this.cbVehical.DataSource = null;
-            this.cbVehical.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbVehical.FillColor = System.Drawing.Color.White;
-            this.cbVehical.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbVehical.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.cbVehical.Items.AddRange(new object[] {
-            "Bike",
-            "Car",
-            "Bicycle",
-            "Mini Van",
-            "Motorbike"});
-            this.cbVehical.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.cbVehical.Location = new System.Drawing.Point(8, 32);
-            this.cbVehical.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cbVehical.MaximumSize = new System.Drawing.Size(0, 34);
-            this.cbVehical.MinimumSize = new System.Drawing.Size(0, 34);
-            this.cbVehical.Name = "cbVehical";
-            this.cbVehical.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
-            this.cbVehical.RectColor = System.Drawing.SystemColors.ControlDark;
-            this.cbVehical.RectSize = 2;
-            this.cbVehical.Size = new System.Drawing.Size(351, 34);
-            this.cbVehical.SymbolSize = 24;
-            this.cbVehical.TabIndex = 0;
-            this.cbVehical.Text = "Bike";
-            this.cbVehical.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cbVehical.Watermark = "";
+            this.cbVehicleType.DataSource = null;
+            this.cbVehicleType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbVehicleType.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.cbVehicleType.FillColor = System.Drawing.Color.White;
+            this.cbVehicleType.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbVehicleType.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.cbVehicleType.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.cbVehicleType.Location = new System.Drawing.Point(8, 32);
+            this.cbVehicleType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbVehicleType.MaximumSize = new System.Drawing.Size(0, 34);
+            this.cbVehicleType.MinimumSize = new System.Drawing.Size(0, 34);
+            this.cbVehicleType.Name = "cbVehicleType";
+            this.cbVehicleType.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
+            this.cbVehicleType.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.cbVehicleType.RectSize = 2;
+            this.cbVehicleType.Size = new System.Drawing.Size(351, 34);
+            this.cbVehicleType.SymbolSize = 24;
+            this.cbVehicleType.TabIndex = 0;
+            this.cbVehicleType.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cbVehicleType.Watermark = "";
+            this.cbVehicleType.SelectedIndexChanged += new System.EventHandler(this.cbVehicleType_SelectedIndexChanged);
             // 
             // uiPanel3
             // 
@@ -726,6 +699,7 @@
             this.tbPlate.TabIndex = 0;
             this.tbPlate.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbPlate.Watermark = "";
+            this.tbPlate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPlate_KeyPress);
             // 
             // IssueDetailForm
             // 
@@ -746,7 +720,7 @@
             this.uiPanel1.ResumeLayout(false);
             this.uiPanel11.ResumeLayout(false);
             this.uiPanel10.ResumeLayout(false);
-            this.dtpToDate.ResumeLayout(false);
+            this.uiGroupBox.ResumeLayout(false);
             this.uiPanel9.ResumeLayout(false);
             this.uiGroupBox8.ResumeLayout(false);
             this.uiPanel8.ResumeLayout(false);
@@ -772,7 +746,7 @@
         private Sunny.UI.UIGroupBox uiGroupBox1;
         private Sunny.UI.UITextBox tbPlate;
         private Sunny.UI.UIPanel uiPanel10;
-        private Sunny.UI.UIGroupBox dtpToDate;
+        private Sunny.UI.UIGroupBox uiGroupBox;
         private Sunny.UI.UIPanel uiPanel9;
         private Sunny.UI.UIGroupBox uiGroupBox8;
         private Sunny.UI.UIPanel uiPanel8;
@@ -789,8 +763,8 @@
         private Sunny.UI.UIComboBox cbArea;
         private Sunny.UI.UITextBox tbTotal;
         private Sunny.UI.UIComboBox cbMonth;
-        private Sunny.UI.UIComboBox cbVehical;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private Sunny.UI.UIComboBox cbVehicleType;
+        private System.Windows.Forms.DateTimePicker dtpToDate;
         private System.Windows.Forms.DateTimePicker dtpFromDate;
         private Sunny.UI.UIPanel uiPanel1;
         private Sunny.UI.UIPanel uiPanel11;
