@@ -17,9 +17,8 @@ namespace ZiTyLot.GUI.Screens.BillScr
     {
         private readonly Debouncer _debouncer = new Debouncer();
         private readonly ResidentBUS _residentBUS = new ResidentBUS();
-        private readonly Pageable _pageable = new Pageable();
         private readonly List<FilterCondition> _filters = new List<FilterCondition>();
-        private Page<Resident> _page;
+        private List<Resident> _residents;
         private Resident _residentSelected;
 
         int rows = 0;
@@ -56,7 +55,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
                     return;
                 }
                 int residentId = int.Parse(listBox.SelectedItem.ToString().Split('-')[0]);
-                _residentSelected = _page.Content.Where(x => x.Id == residentId).FirstOrDefault();
+                _residentSelected = _residents.Where(x => x.Id == residentId).FirstOrDefault();
                 tbID.Text = _residentSelected.Id.ToString();
                 tbFullname.Text = _residentSelected.Full_name;
                 tbApartment.Text = _residentSelected.Apartment_id;
@@ -219,8 +218,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
         }
         private void ChangePage(int pageNumber)
         {
-            _pageable.PageNumber = pageNumber;
-            _page = _residentBUS.GetAllPagination(_pageable, _filters);
+            _residents = _residentBUS.GetAll(_filters);
             LoadResidentSearch();
         }
         private void LoadResidentSearch()
@@ -229,7 +227,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
             var textBoxFormPosition = this.PointToClient(textBoxScreenPosition);
             listBox.Location = new System.Drawing.Point(textBoxFormPosition.X, textBoxFormPosition.Y + tbSearch.Height + 2);
             listBox.Items.Clear();
-            foreach (var resident in _page.Content)
+            foreach (var resident in _residents)
             {
                 string content = $"{resident.Id} - {resident.Full_name} - {resident.Apartment_id} - {resident.Phone}";
                 listBox.Items.Add(content);
@@ -238,6 +236,5 @@ namespace ZiTyLot.GUI.Screens.BillScr
             listBox.Height = 250;
             listBox.Visible = true;
         }
-
     }
 }
