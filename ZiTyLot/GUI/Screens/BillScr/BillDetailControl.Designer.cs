@@ -34,7 +34,7 @@
             this.pnlTotal = new Sunny.UI.UIPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.uiPanel32 = new Sunny.UI.UIPanel();
-            this.uiLabel4 = new Sunny.UI.UILabel();
+            this.tbTotalBill = new Sunny.UI.UILabel();
             this.uiPanel33 = new Sunny.UI.UIPanel();
             this.uiLabel3 = new Sunny.UI.UILabel();
             this.pnlBill = new Sunny.UI.UIPanel();
@@ -212,7 +212,7 @@
             // 
             // uiPanel32
             // 
-            this.uiPanel32.Controls.Add(this.uiLabel4);
+            this.uiPanel32.Controls.Add(this.tbTotalBill);
             this.uiPanel32.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel32.FillColor = System.Drawing.Color.White;
             this.uiPanel32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -227,17 +227,17 @@
             this.uiPanel32.Text = null;
             this.uiPanel32.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // uiLabel4
+            // tbTotalBill
             // 
-            this.uiLabel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiLabel4.Location = new System.Drawing.Point(0, 0);
-            this.uiLabel4.Name = "uiLabel4";
-            this.uiLabel4.Size = new System.Drawing.Size(858, 64);
-            this.uiLabel4.TabIndex = 3;
-            this.uiLabel4.Text = "{total}";
-            this.uiLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbTotalBill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbTotalBill.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTotalBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.tbTotalBill.Location = new System.Drawing.Point(0, 0);
+            this.tbTotalBill.Name = "tbTotalBill";
+            this.tbTotalBill.Size = new System.Drawing.Size(858, 64);
+            this.tbTotalBill.TabIndex = 3;
+            this.tbTotalBill.Text = "0 ₫";
+            this.tbTotalBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // uiPanel33
             // 
@@ -1279,7 +1279,7 @@
         private Sunny.UI.UIPanel uiPanel32;
         private Sunny.UI.UIPanel uiPanel33;
         private Sunny.UI.UILabel uiLabel3;
-        private Sunny.UI.UILabel uiLabel4;
+        private Sunny.UI.UILabel tbTotalBill;
         private Sunny.UI.UITextBox tbSearch;
         private Sunny.UI.UIComboBox cbFilter;
         private Sunny.UI.UIPanel uiPanel1;

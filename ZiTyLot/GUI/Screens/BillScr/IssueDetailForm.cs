@@ -21,6 +21,8 @@ namespace ZiTyLot.GUI.Screens.BillScr
         private List<ParkingLot> _parkingLots;
         private List<Slot> _slots;
 
+        private VehicleType _selectedVehicleType;
+
         public event EventHandler IssueInsertionEvent;
         public IssueDetailForm()
         {
@@ -57,7 +59,6 @@ namespace ZiTyLot.GUI.Screens.BillScr
         private void btnCreate_Click(object sender, EventArgs e)
         {
             if (!validateForm()) return;
-            int selectedVehicleTypeId = _vehicleTypes.Find(x => x.Name == cbVehicleType.SelectedItem.ToString()).Id;
             string selectedSlotId = cbSlot.SelectedItem?.ToString();
             _newIssue = new Issue()
             {
@@ -65,7 +66,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
                 End_date = dtpToDate.Value,
                 License_plate = tbPlate.Text,
                 Fee = double.Parse(tbTotal.Text.Replace("₫", "").Replace(".", "")),
-                Vehicle_type_id = selectedVehicleTypeId,
+                Vehicle_type_id = _selectedVehicleType.Id,
                 Parking_lot_id = cbArea.SelectedItem.ToString(),
                 Slot_id = selectedSlotId,
             };
@@ -76,7 +77,8 @@ namespace ZiTyLot.GUI.Screens.BillScr
 
         private bool validateForm()
         {
-            if (string.IsNullOrEmpty(tbPlate.Text))
+          
+            if (_selectedVehicleType.Has_vehicle_plate && string.IsNullOrEmpty(tbPlate.Text))
             {
                 MessageHelper.ShowWarning("Plate is required");
                 tbPlate.Focus();
@@ -87,7 +89,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
                 MessageHelper.ShowWarning("Month is required");
                 return false;
             }
-            if (cbSlot.SelectedIndex == -1)
+            if (_selectedVehicleType.Has_slot && cbSlot.SelectedIndex == -1)
             {
                 MessageHelper.ShowWarning("Slot is required");
                 return false;
@@ -98,11 +100,11 @@ namespace ZiTyLot.GUI.Screens.BillScr
         {
             tbTotal.Text = "";
             string selectedVehicleType = cbVehicleType.SelectedItem.ToString();
-            VehicleType vehicleType = _vehicleTypes.Find(x => x.Name == selectedVehicleType);
+            _selectedVehicleType = _vehicleTypes.Find(x => x.Name == selectedVehicleType);
             cbMonth.Items.Clear();
             foreach (ResidentFee residentFee in _residentFees)
             {
-                if (residentFee.Vehicle_type_id == vehicleType.Id)
+                if (residentFee.Vehicle_type_id == _selectedVehicleType.Id)
                 {
                     string monthFormat = residentFee.Month == 1 ? residentFee.Month + " month" : residentFee.Month + " months";
                     cbMonth.Items.Add(monthFormat);
@@ -110,9 +112,15 @@ namespace ZiTyLot.GUI.Screens.BillScr
             }
             cbMonth.SelectedIndex = 0;
 
+            tbPlate.Enabled = _selectedVehicleType.Has_vehicle_plate;
+            if (!_selectedVehicleType.Has_vehicle_plate)
+            {
+                tbPlate.Text = "";
+            }
+
 
             cbArea.Items.Clear();
-            ParkingLotType parkingLotType = vehicleType.Has_slot ? ParkingLotType.FOUR_WHEELER : ParkingLotType.TWO_WHEELER;
+            ParkingLotType parkingLotType = _selectedVehicleType.Has_slot ? ParkingLotType.FOUR_WHEELER : ParkingLotType.TWO_WHEELER;
             foreach (ParkingLot parkingLot in _parkingLots)
             {
                 if (parkingLot.Parking_lot_type == parkingLotType)
@@ -121,6 +129,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
                 }
             }
             cbArea.SelectedIndex = 0;
+
         }
 
         private void cbMonth_SelectedIndexChanged(object sender, EventArgs e)
@@ -129,11 +138,9 @@ namespace ZiTyLot.GUI.Screens.BillScr
             {
                 return;
             }
-            string selectedVehicleType = cbVehicleType.SelectedItem.ToString();
-            int selectedVehicleTypeId = _vehicleTypes.Find(x => x.Name == selectedVehicleType).Id;
             string selectedMonth = cbMonth.SelectedItem.ToString();
             int month = int.Parse(selectedMonth.Split(' ')[0]);
-            ResidentFee residentFee = _residentFees.Find(x => x.Vehicle_type_id == selectedVehicleTypeId && x.Month == month);
+            ResidentFee residentFee = _residentFees.Find(x => x.Vehicle_type_id == _selectedVehicleType.Id && x.Month == month);
             tbTotal.Text = residentFee.Fee.ToString("C0", new System.Globalization.CultureInfo("vi-VN"));
             dtpToDate.Value = dtpFromDate.Value.AddMonths(month);
         }

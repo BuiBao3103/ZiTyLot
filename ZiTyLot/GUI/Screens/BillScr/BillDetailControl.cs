@@ -22,13 +22,14 @@ namespace ZiTyLot.GUI.Screens.BillScr
         private Resident _residentSelected;
 
         private IssueDetailForm _AddIssueForm;
-        private List<Issue> _issues;
+        private readonly List<Issue> _issues;
 
         int rows = 0;
         private ListBox listBox;
         public BillDetailControl()
         {
             _residentBUS = new ResidentBUS();
+            _issues = new List<Issue>();
             InitializeComponent();
             pnlBillDetail.RowStyles[1] = new RowStyle(SizeType.Absolute, 0);
             listIssue.AutoScroll = true;
@@ -109,13 +110,24 @@ namespace ZiTyLot.GUI.Screens.BillScr
             listIssue.Controls.Add(newRow);
             rows += 1;
             listIssue_ResizeAutoScrollMinSize(rows);
+            updateTotalBill();
         }
         private void RemoveRow(IssueDetailRow issueDetailRow)
         {
             _issues.RemoveAt(_issues.FindIndex(x => x.Id == issueDetailRow._issue.Id));
             listIssue.Controls.Remove(issueDetailRow); 
             rows -= 1;  
-            listIssue_ResizeAutoScrollMinSize(rows);  
+            listIssue_ResizeAutoScrollMinSize(rows);
+            updateTotalBill();
+        }
+        private void updateTotalBill()
+        {
+            double total = 0;
+            foreach (Issue issue in _issues)
+            {
+                total += issue.Fee;
+            }
+            tbTotalBill.Text = total.ToString("C0", new System.Globalization.CultureInfo("vi-VN"));
         }
 
         private void listIssue_ResizeAutoScrollMinSize(int rows)
