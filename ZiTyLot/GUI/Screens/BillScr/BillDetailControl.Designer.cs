@@ -569,7 +569,6 @@
             this.tbID.ShowText = false;
             this.tbID.Size = new System.Drawing.Size(155, 34);
             this.tbID.TabIndex = 0;
-            this.tbID.Text = "{ID}";
             this.tbID.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbID.Watermark = "";
             // 
@@ -625,7 +624,6 @@
             this.tbPhone.ShowText = false;
             this.tbPhone.Size = new System.Drawing.Size(373, 34);
             this.tbPhone.TabIndex = 0;
-            this.tbPhone.Text = "{phone}";
             this.tbPhone.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbPhone.Watermark = "";
             // 
@@ -681,7 +679,6 @@
             this.tbEmail.ShowText = false;
             this.tbEmail.Size = new System.Drawing.Size(501, 34);
             this.tbEmail.TabIndex = 0;
-            this.tbEmail.Text = "{email}";
             this.tbEmail.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbEmail.Watermark = "";
             // 
@@ -737,7 +734,6 @@
             this.tbApartment.ShowText = false;
             this.tbApartment.Size = new System.Drawing.Size(241, 34);
             this.tbApartment.TabIndex = 0;
-            this.tbApartment.Text = "{apartment}";
             this.tbApartment.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbApartment.Watermark = "";
             // 
@@ -793,7 +789,6 @@
             this.tbFullname.ShowText = false;
             this.tbFullname.Size = new System.Drawing.Size(371, 34);
             this.tbFullname.TabIndex = 0;
-            this.tbFullname.Text = "{fullname}";
             this.tbFullname.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbFullname.Watermark = "";
             // 
