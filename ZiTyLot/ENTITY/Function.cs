@@ -29,5 +29,8 @@ namespace ZiTyLot.ENTITY
         public string Icon { get => icon; set => icon = value; }
         public string Active_icon { get => active_icon; set => active_icon = value; }
         public ICollection<Role> Roles { get => roles; set => roles = value; }
+
+        // Override ToString để fix lỗi hiển thị trong listBox của RoleCreateForm
+        public override string ToString() { return Name; }
     }
 }

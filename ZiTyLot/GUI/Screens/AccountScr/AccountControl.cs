@@ -117,6 +117,12 @@ namespace ZiTyLot.GUI.Screens
         {
             AccountCreateForm accountCreateForm = new AccountCreateForm();
             accountCreateForm.Show();
+            accountCreateForm.AccountCreated += (s, args) =>
+            {
+                page = accountBUS.GetAllPagination(pageable, filters);
+                LoadPageAndPageable();
+                //ChangePage(1);
+            };
         }
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)

@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
+using ZiTyLot.GUI.Screens.CardScr;
 using ZiTyLot.GUI.Screens.RoleScr;
 using ZiTyLot.Helper;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -136,6 +137,11 @@ namespace ZiTyLot.GUI.Screens
         {
             RoleCreateForm roleCreateForm = new RoleCreateForm();
             roleCreateForm.Show();
+            roleCreateForm.RoleCreated += (s, args) =>
+            {
+                roleList = roleBUS.GetAll();
+                LoadDataToTable();
+            };
         }
 
         private void LoadDataToTable()
