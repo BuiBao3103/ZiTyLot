@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
+using ZiTyLot.GUI.Utils;
 
 namespace ZiTyLot.GUI.Screens.BillScr
 {
@@ -52,19 +53,49 @@ namespace ZiTyLot.GUI.Screens.BillScr
             cbVehicleType.SelectedIndex = 0;
         }
 
-        private void btnConfirm_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            if (!validateForm()) return;
+            int selectedVehicleTypeId = _vehicleTypes.Find(x => x.Name == cbVehicleType.SelectedItem.ToString()).Id;
+            string selectedSlotId = cbSlot.SelectedItem?.ToString();
+            Issue newIssue = new Issue()
+            {
+                Start_date = dtpFromDate.Value,
+                End_date = dtpToDate.Value,
+                License_plate = tbPlate.Text,
+                Fee = double.Parse(tbTotal.Text.Replace("₫", "").Replace(".", "")),
+                Vehicle_type_id = selectedVehicleTypeId,
+                Parking_lot_id = cbArea.SelectedItem.ToString(),
+                Slot_id = selectedSlotId,
+            };
+
             IssueInsertionEvent?.Invoke(this, EventArgs.Empty);
             this.Dispose();
         }
 
+        private bool validateForm()
+        {
+            if (string.IsNullOrEmpty(tbPlate.Text))
+            {
+                MessageHelper.ShowWarning("Plate is required");
+                tbPlate.Focus();
+                return false;
+            }
+            if(cbMonth.SelectedIndex == -1)
+            {
+                MessageHelper.ShowWarning("Month is required");
+                return false;
+            }
+            if (cbSlot.SelectedIndex == -1)
+            {
+                MessageHelper.ShowWarning("Slot is required");
+                return false;
+            }
+            return true;
+        }
         private void cbVehicleType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            tbTotal.Text = "";
             string selectedVehicleType = cbVehicleType.SelectedItem.ToString();
             VehicleType vehicleType = _vehicleTypes.Find(x => x.Name == selectedVehicleType);
             cbMonth.Items.Clear();
@@ -108,12 +139,15 @@ namespace ZiTyLot.GUI.Screens.BillScr
 
         private void cbArea_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbArea.SelectedIndex == -1)
-            {
-                return;
-            }
+            if (cbArea.SelectedIndex == -1) return;
+              
             string selectedParkingLot = cbArea.SelectedItem.ToString();
             cbSlot.Items.Clear();
+            ParkingLot parkingLot = _parkingLots.Find(x => x.Id == selectedParkingLot);
+
+            cbSlot.Enabled = parkingLot.Parking_lot_type == ParkingLotType.FOUR_WHEELER;
+            if (parkingLot.Parking_lot_type != ParkingLotType.FOUR_WHEELER) return;
+
             foreach (var slot in _slots)
             {
                 if (slot.Parking_lot_id == selectedParkingLot)
