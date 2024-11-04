@@ -106,6 +106,11 @@ namespace ZiTyLot.BUS
                 throw new ArgumentException("Name cannot be null or empty.", nameof(item.Id));
             }
 
+            if (item.Total_slot <= 0)
+            {
+                throw new InvalidOperationException("Slots must > 0");
+            }
+
             // Add other validation rules as needed
         }
 
