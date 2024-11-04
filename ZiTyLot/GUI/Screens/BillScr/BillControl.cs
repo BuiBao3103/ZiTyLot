@@ -117,8 +117,9 @@ namespace ZiTyLot.GUI.Screens
         {
             SuspendLayout();
             Home home = (Home)ParentForm;
-            BillDetailControl BillDetailControl = new BillDetailControl();
-            home.LoadForm(BillDetailControl);
+            BillDetailControl billDetailControl = new BillDetailControl();
+            billDetailControl.billInsertionEvent += (s, ev) => changePage(1); 
+            home.LoadForm(billDetailControl);
         }
 
         private void LoadPageAndPageable()
@@ -152,6 +153,8 @@ namespace ZiTyLot.GUI.Screens
         private void changePage(int pageNumber)
         {
             pageable.PageNumber = pageNumber;
+            pageable.SortBy = nameof(Bill.Created_at);
+            pageable.SortBy = "ASC";
             page = billBUS.GetAllPagination(pageable, filters);
             LoadPageAndPageable();
         }

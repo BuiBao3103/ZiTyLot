@@ -28,6 +28,8 @@ namespace ZiTyLot.GUI.Screens.BillScr
 
         int rows = 0;
         private ListBox listBox;
+
+        public event EventHandler billInsertionEvent;
         public BillDetailControl()
         {
             _residentBUS = new ResidentBUS();
@@ -264,52 +266,68 @@ namespace ZiTyLot.GUI.Screens.BillScr
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             if (!validate()) return;
-            Bill newBill = new Bill
+            try
             {
-                Issue_quantity = _issues.Count,
-                Total_fee = _issues.Sum(x => x.Fee),
-                Resident_id = _residentSelected.Id,
-                Account_id = 1,
-            };
-
-            newBill = _billBUS.Create(newBill, _issues);
-            newBill.Resident = _residentSelected;
-            newBill.Issues = _issues;
-            DialogResult resultSaveBill = MessageHelper.ShowConfirm("Do you want save this bill?");
-            if (resultSaveBill == DialogResult.Yes)
-            {
-                SaveFileDialog saveFileDialog = new SaveFileDialog
+                Bill newBill = new Bill
                 {
-                    Filter = "PDF files (.pdf)|*.pdf",
-                    FilterIndex = 1,
-                    RestoreDirectory = true
+                    Issue_quantity = _issues.Count,
+                    Total_fee = _issues.Sum(x => x.Fee),
+                    Resident_id = _residentSelected.Id,
+                    Account_id = 1,
                 };
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+
+                newBill = _billBUS.Create(newBill, _issues);
+                newBill.Resident = _residentSelected;
+                newBill.Issues = _issues;
+                MessageHelper.ShowSuccess("Bill created successfully!");
+                DialogResult resultSaveBill = MessageHelper.ShowConfirm("Do you want save this bill?");
+                if (resultSaveBill == DialogResult.Yes)
                 {
-                    try
+                    SaveFileDialog saveFileDialog = new SaveFileDialog
                     {
-                        string logoPath = @"../../GUI/assets/Zity-logo-256x256px.png";
-                        PdfHelper.ExportBillToPdf(newBill, saveFileDialog.FileName, logoPath);
-                        MessageHelper.ShowSuccess("Bill exported to PDF successfully!");
-                    }
-                    catch (Exception ex)
+                        Filter = "PDF files (.pdf)|*.pdf",
+                        FilterIndex = 1,
+                        RestoreDirectory = true
+                    };
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
-                        Console.WriteLine(ex.Message);
-                        MessageHelper.ShowError("Some error occurred while exporting bill to PDF. Please try again later.");
+                        try
+                        {
+                            string logoPath = @"../../GUI/assets/Zity-logo-256x256px.png";
+                            PdfHelper.ExportBillToPdf(newBill, saveFileDialog.FileName, logoPath);
+                            MessageHelper.ShowSuccess("Bill exported to PDF successfully!");
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                            MessageHelper.ShowError("Some error occurred while exporting bill to PDF. Please try again later.");
+                        }
                     }
                 }
+                DialogResult result = MessageHelper.ShowConfirm("Do you want to print this bill?");
+                if (result == DialogResult.Yes)
+                {
+                    PdfHelper.PrintBill(newBill);
+                    MessageHelper.ShowSuccess("Bill sent to printer successfully!");
+                }
+                Home home = (Home)ParentForm;
+                billInsertionEvent?.Invoke(this, EventArgs.Empty);
+                if (home.panelMapping.TryGetValue("BillManagement", out UserControl control))
+                {
+                    home.LoadForm(control);
+                }
             }
-            DialogResult result = MessageHelper.ShowConfirm("Do you want to print this bill?");
-            if (result == DialogResult.Yes)
+            catch (Exception ex)
             {
-                PdfHelper.PrintBill(newBill);
-                MessageHelper.ShowSuccess("Bill sent to printer successfully!");
+                Console.WriteLine(ex.Message);
+                MessageHelper.ShowError("Some error occurred while creating bill. Please try again later.");
             }
+           
         }
 
         private bool validate()
         {
-           if (_residentSelected == null)
+            if (_residentSelected == null)
             {
                 MessageHelper.ShowWarning("Please select a resident to create bill.");
                 return false;
