@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Windows.Forms;
+using ZiTyLot.ENTITY;
 
 namespace ZiTyLot.GUI.Screens.BillScr
 {
     public partial class IssueDetailRow : UserControl
     {
-        public IssueDetailRow()
+        public Issue _issue;
+        public IssueDetailRow(Issue newIssue)
         {
+            _issue = newIssue;
             InitializeComponent();
             this.Dock = DockStyle.Top;
+
+
         }
 
         private void btnDeleteRow_Click(object sender, EventArgs e)

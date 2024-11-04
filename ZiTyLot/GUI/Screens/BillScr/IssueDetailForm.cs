@@ -10,6 +10,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
 {
     public partial class IssueDetailForm : Form
     {
+        public Issue _newIssue;
         private readonly ResidentFeeBUS _residentFeeBUS;
         private readonly VehicleTypeBUS _vehicleTypeBUS;
         private readonly ParkingLotBUS _parkingLotBUS;
@@ -58,7 +59,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
             if (!validateForm()) return;
             int selectedVehicleTypeId = _vehicleTypes.Find(x => x.Name == cbVehicleType.SelectedItem.ToString()).Id;
             string selectedSlotId = cbSlot.SelectedItem?.ToString();
-            Issue newIssue = new Issue()
+            _newIssue = new Issue()
             {
                 Start_date = dtpFromDate.Value,
                 End_date = dtpToDate.Value,

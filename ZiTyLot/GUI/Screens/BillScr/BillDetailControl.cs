@@ -22,6 +22,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
         private Resident _residentSelected;
 
         private IssueDetailForm _AddIssueForm;
+        private List<Issue> _issues;
 
         int rows = 0;
         private ListBox listBox;
@@ -90,7 +91,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
             if (_AddIssueForm == null || _AddIssueForm.IsDisposed)
             {
                 _AddIssueForm = new IssueDetailForm();
-                _AddIssueForm.IssueInsertionEvent += (s, ev) => AddRow();
+                _AddIssueForm.IssueInsertionEvent += (s, ev) => AddRow(_AddIssueForm._newIssue);
                 _AddIssueForm.Show();
             }
             else
@@ -100,18 +101,20 @@ namespace ZiTyLot.GUI.Screens.BillScr
                 _AddIssueForm.BringToFront();
             }
         }
-        private void AddRow()
+        private void AddRow(Issue newIssue)
         {
-            IssueDetailRow newRow = new IssueDetailRow();
+            IssueDetailRow newRow = new IssueDetailRow(newIssue);
+            _issues.Add(newIssue);
             newRow.RowDeleted += (s, ev) => RemoveRow(newRow);
             listIssue.Controls.Add(newRow);
             rows += 1;
             listIssue_ResizeAutoScrollMinSize(rows);
         }
-        private void RemoveRow(IssueDetailRow row)
+        private void RemoveRow(IssueDetailRow issueDetailRow)
         {
-            listIssue.Controls.Remove(row);  // Remove the row from the panel
-            rows -= 1;  // Decrease the row count
+            _issues.RemoveAt(_issues.FindIndex(x => x.Id == issueDetailRow._issue.Id));
+            listIssue.Controls.Remove(issueDetailRow); 
+            rows -= 1;  
             listIssue_ResizeAutoScrollMinSize(rows);  
         }
 
