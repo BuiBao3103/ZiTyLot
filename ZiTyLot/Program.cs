@@ -7,7 +7,6 @@ using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
 using ZiTyLot.Helper;
 using ZiTyLot.GUI;
-using ZiTyLot.GUI.Screens;
 namespace ZiTyLot
 {
     internal static class Program
@@ -15,21 +14,22 @@ namespace ZiTyLot
         [STAThread]
         static void Main()
         {
-            try
-            {
-                using (var connection = DBConfig.GetConnection())
-                {
-                    connection.Open(); 
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Database connection failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Home());
+            ANPR.Test();
+            //try
+            //{
+            //    using (var connection = DBConfig.GetConnection())
+            //    {
+            //        connection.Open(); 
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show($"Database connection failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new Home());
             // Start the main form of the application
             //Application.Run(new Login2());
             //Application.Run(new Login());
