@@ -196,6 +196,7 @@ namespace ZiTyLot.GUI.Screens
             ChangePage(1);
         }
 
+
         private void cbNumberofitem_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedValue = cbNumberofitem.SelectedItem.ToString();

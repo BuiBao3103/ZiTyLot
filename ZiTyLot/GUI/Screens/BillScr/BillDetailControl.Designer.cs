@@ -51,6 +51,9 @@
             this.uiPanel4 = new Sunny.UI.UIPanel();
             this.uiPanel7 = new Sunny.UI.UIPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.uiPanel1 = new Sunny.UI.UIPanel();
+            this.uiGroupBox5 = new Sunny.UI.UIGroupBox();
+            this.tbID = new Sunny.UI.UITextBox();
             this.uiPanel11 = new Sunny.UI.UIPanel();
             this.uiGroupBox4 = new Sunny.UI.UIGroupBox();
             this.tbPhone = new Sunny.UI.UITextBox();
@@ -68,6 +71,7 @@
             this.uiPanel5 = new Sunny.UI.UIPanel();
             this.pnlSearch = new Sunny.UI.UIPanel();
             this.tableSearch = new System.Windows.Forms.TableLayoutPanel();
+            this.cbFilter = new Sunny.UI.UIComboBox();
             this.tbSearch = new Sunny.UI.UITextBox();
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.separator = new System.Windows.Forms.Panel();
@@ -83,10 +87,6 @@
             this.uiPanel2 = new Sunny.UI.UIPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBack = new Sunny.UI.UISymbolButton();
-            this.cbFilter = new Sunny.UI.UIComboBox();
-            this.uiPanel1 = new Sunny.UI.UIPanel();
-            this.uiGroupBox5 = new Sunny.UI.UIGroupBox();
-            this.uiTextBox1 = new Sunny.UI.UITextBox();
             this.panel2.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.pnlMainTable.SuspendLayout();
@@ -105,6 +105,8 @@
             this.uiPanel4.SuspendLayout();
             this.uiPanel7.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.uiPanel1.SuspendLayout();
+            this.uiGroupBox5.SuspendLayout();
             this.uiPanel11.SuspendLayout();
             this.uiGroupBox4.SuspendLayout();
             this.uiPanel10.SuspendLayout();
@@ -126,8 +128,6 @@
             this.panel9.SuspendLayout();
             this.uiPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.uiPanel1.SuspendLayout();
-            this.uiGroupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -501,8 +501,8 @@
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.5F));
             this.tableLayoutPanel1.Controls.Add(this.uiPanel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.uiPanel11, 4, 0);
@@ -516,6 +516,62 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1731, 142);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // uiPanel1
+            // 
+            this.uiPanel1.Controls.Add(this.uiGroupBox5);
+            this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel1.FillColor = System.Drawing.Color.White;
+            this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel1.Location = new System.Drawing.Point(4, 5);
+            this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel1.Name = "uiPanel1";
+            this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiPanel1.Size = new System.Drawing.Size(165, 132);
+            this.uiPanel1.TabIndex = 6;
+            this.uiPanel1.Text = null;
+            this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiGroupBox5
+            // 
+            this.uiGroupBox5.Controls.Add(this.tbID);
+            this.uiGroupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiGroupBox5.FillColor = System.Drawing.Color.White;
+            this.uiGroupBox5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox5.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox5.Location = new System.Drawing.Point(0, 0);
+            this.uiGroupBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiGroupBox5.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiGroupBox5.Name = "uiGroupBox5";
+            this.uiGroupBox5.Padding = new System.Windows.Forms.Padding(5, 32, 5, 5);
+            this.uiGroupBox5.RectColor = System.Drawing.SystemColors.ButtonFace;
+            this.uiGroupBox5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiGroupBox5.Size = new System.Drawing.Size(165, 132);
+            this.uiGroupBox5.TabIndex = 1;
+            this.uiGroupBox5.Text = "ID";
+            this.uiGroupBox5.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tbID
+            // 
+            this.tbID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbID.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tbID.Enabled = false;
+            this.tbID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbID.Location = new System.Drawing.Point(5, 32);
+            this.tbID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbID.MaximumSize = new System.Drawing.Size(0, 34);
+            this.tbID.MinimumSize = new System.Drawing.Size(1, 34);
+            this.tbID.Name = "tbID";
+            this.tbID.Padding = new System.Windows.Forms.Padding(5);
+            this.tbID.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbID.RectSize = 2;
+            this.tbID.ShowText = false;
+            this.tbID.Size = new System.Drawing.Size(155, 34);
+            this.tbID.TabIndex = 0;
+            this.tbID.Text = "{ID}";
+            this.tbID.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tbID.Watermark = "";
             // 
             // uiPanel11
             // 
@@ -579,12 +635,12 @@
             this.uiPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel10.FillColor = System.Drawing.Color.White;
             this.uiPanel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel10.Location = new System.Drawing.Point(955, 5);
+            this.uiPanel10.Location = new System.Drawing.Point(825, 5);
             this.uiPanel10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel10.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel10.Name = "uiPanel10";
             this.uiPanel10.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel10.Size = new System.Drawing.Size(381, 132);
+            this.uiPanel10.Size = new System.Drawing.Size(511, 132);
             this.uiPanel10.TabIndex = 4;
             this.uiPanel10.Text = null;
             this.uiPanel10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -603,7 +659,7 @@
             this.uiGroupBox3.Padding = new System.Windows.Forms.Padding(5, 32, 5, 5);
             this.uiGroupBox3.RectColor = System.Drawing.SystemColors.ButtonFace;
             this.uiGroupBox3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox3.Size = new System.Drawing.Size(381, 132);
+            this.uiGroupBox3.Size = new System.Drawing.Size(511, 132);
             this.uiGroupBox3.TabIndex = 1;
             this.uiGroupBox3.Text = "Email";
             this.uiGroupBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -623,7 +679,7 @@
             this.tbEmail.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbEmail.RectSize = 2;
             this.tbEmail.ShowText = false;
-            this.tbEmail.Size = new System.Drawing.Size(371, 34);
+            this.tbEmail.Size = new System.Drawing.Size(501, 34);
             this.tbEmail.TabIndex = 0;
             this.tbEmail.Text = "{email}";
             this.tbEmail.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -640,7 +696,7 @@
             this.uiPanel9.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel9.Name = "uiPanel9";
             this.uiPanel9.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel9.Size = new System.Drawing.Size(381, 132);
+            this.uiPanel9.Size = new System.Drawing.Size(251, 132);
             this.uiPanel9.TabIndex = 3;
             this.uiPanel9.Text = null;
             this.uiPanel9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -659,7 +715,7 @@
             this.uiGroupBox2.Padding = new System.Windows.Forms.Padding(5, 32, 5, 5);
             this.uiGroupBox2.RectColor = System.Drawing.SystemColors.ButtonFace;
             this.uiGroupBox2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox2.Size = new System.Drawing.Size(381, 132);
+            this.uiGroupBox2.Size = new System.Drawing.Size(251, 132);
             this.uiGroupBox2.TabIndex = 1;
             this.uiGroupBox2.Text = "Apartment";
             this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -679,7 +735,7 @@
             this.tbApartment.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbApartment.RectSize = 2;
             this.tbApartment.ShowText = false;
-            this.tbApartment.Size = new System.Drawing.Size(371, 34);
+            this.tbApartment.Size = new System.Drawing.Size(241, 34);
             this.tbApartment.TabIndex = 0;
             this.tbApartment.Text = "{apartment}";
             this.tbApartment.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -829,6 +885,44 @@
             this.tableSearch.Size = new System.Drawing.Size(355, 28);
             this.tableSearch.TabIndex = 0;
             // 
+            // cbFilter
+            // 
+            this.cbFilter.AutoSize = true;
+            this.cbFilter.DataSource = null;
+            this.cbFilter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbFilter.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.cbFilter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbFilter.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.cbFilter.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFilter.ForeColor = System.Drawing.Color.White;
+            this.cbFilter.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbFilter.ItemRectColor = System.Drawing.Color.White;
+            this.cbFilter.Items.AddRange(new object[] {
+            "  ID",
+            "  Full name",
+            "  Apartment ID",
+            "  Phone"});
+            this.cbFilter.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbFilter.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.cbFilter.Location = new System.Drawing.Point(290, 0);
+            this.cbFilter.Margin = new System.Windows.Forms.Padding(0);
+            this.cbFilter.MinimumSize = new System.Drawing.Size(50, 0);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
+            this.cbFilter.RectColor = System.Drawing.Color.White;
+            this.cbFilter.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.cbFilter.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbFilter.ScrollBarStyleInherited = false;
+            this.cbFilter.Size = new System.Drawing.Size(65, 28);
+            this.cbFilter.Style = Sunny.UI.UIStyle.Custom;
+            this.cbFilter.SymbolSize = 24;
+            this.cbFilter.TabIndex = 2;
+            this.cbFilter.Text = "  ID";
+            this.cbFilter.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cbFilter.TrimFilter = true;
+            this.cbFilter.Watermark = "";
+            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
+            // 
             // tbSearch
             // 
             this.tbSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -847,7 +941,6 @@
             this.tbSearch.ShowText = false;
             this.tbSearch.Size = new System.Drawing.Size(290, 28);
             this.tbSearch.TabIndex = 3;
-            this.tbSearch.Text = "{email}";
             this.tbSearch.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbSearch.Watermark = "";
             this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
@@ -1079,100 +1172,6 @@
             this.btnBack.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // cbFilter
-            // 
-            this.cbFilter.AutoSize = true;
-            this.cbFilter.DataSource = null;
-            this.cbFilter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbFilter.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
-            this.cbFilter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.cbFilter.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.cbFilter.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFilter.ForeColor = System.Drawing.Color.White;
-            this.cbFilter.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cbFilter.ItemRectColor = System.Drawing.Color.White;
-            this.cbFilter.Items.AddRange(new object[] {
-            "  ID",
-            "  Phone",
-            "  Full name",
-            "  Apartment ID"});
-            this.cbFilter.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cbFilter.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cbFilter.Location = new System.Drawing.Point(290, 0);
-            this.cbFilter.Margin = new System.Windows.Forms.Padding(0);
-            this.cbFilter.MinimumSize = new System.Drawing.Size(50, 0);
-            this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
-            this.cbFilter.RectColor = System.Drawing.Color.White;
-            this.cbFilter.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.cbFilter.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.cbFilter.ScrollBarStyleInherited = false;
-            this.cbFilter.Size = new System.Drawing.Size(65, 28);
-            this.cbFilter.Style = Sunny.UI.UIStyle.Custom;
-            this.cbFilter.SymbolSize = 24;
-            this.cbFilter.TabIndex = 2;
-            this.cbFilter.Text = "  ID";
-            this.cbFilter.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cbFilter.TrimFilter = true;
-            this.cbFilter.Watermark = "";
-            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
-            // 
-            // uiPanel1
-            // 
-            this.uiPanel1.Controls.Add(this.uiGroupBox5);
-            this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel1.FillColor = System.Drawing.Color.White;
-            this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel1.Location = new System.Drawing.Point(4, 5);
-            this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel1.Name = "uiPanel1";
-            this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel1.Size = new System.Drawing.Size(165, 132);
-            this.uiPanel1.TabIndex = 6;
-            this.uiPanel1.Text = null;
-            this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiGroupBox5
-            // 
-            this.uiGroupBox5.Controls.Add(this.uiTextBox1);
-            this.uiGroupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiGroupBox5.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox5.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiGroupBox5.Location = new System.Drawing.Point(0, 0);
-            this.uiGroupBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiGroupBox5.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiGroupBox5.Name = "uiGroupBox5";
-            this.uiGroupBox5.Padding = new System.Windows.Forms.Padding(5, 32, 5, 5);
-            this.uiGroupBox5.RectColor = System.Drawing.SystemColors.ButtonFace;
-            this.uiGroupBox5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox5.Size = new System.Drawing.Size(165, 132);
-            this.uiGroupBox5.TabIndex = 1;
-            this.uiGroupBox5.Text = "ID";
-            this.uiGroupBox5.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // uiTextBox1
-            // 
-            this.uiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.uiTextBox1.Enabled = false;
-            this.uiTextBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiTextBox1.Location = new System.Drawing.Point(5, 32);
-            this.uiTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiTextBox1.MaximumSize = new System.Drawing.Size(0, 34);
-            this.uiTextBox1.MinimumSize = new System.Drawing.Size(1, 34);
-            this.uiTextBox1.Name = "uiTextBox1";
-            this.uiTextBox1.Padding = new System.Windows.Forms.Padding(5);
-            this.uiTextBox1.RectColor = System.Drawing.SystemColors.ControlDark;
-            this.uiTextBox1.RectSize = 2;
-            this.uiTextBox1.ShowText = false;
-            this.uiTextBox1.Size = new System.Drawing.Size(155, 34);
-            this.uiTextBox1.TabIndex = 0;
-            this.uiTextBox1.Text = "{ID}";
-            this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiTextBox1.Watermark = "";
-            // 
             // BillDetailControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1201,6 +1200,8 @@
             this.uiPanel4.ResumeLayout(false);
             this.uiPanel7.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.uiPanel1.ResumeLayout(false);
+            this.uiGroupBox5.ResumeLayout(false);
             this.uiPanel11.ResumeLayout(false);
             this.uiGroupBox4.ResumeLayout(false);
             this.uiPanel10.ResumeLayout(false);
@@ -1223,8 +1224,6 @@
             this.panel9.ResumeLayout(false);
             this.uiPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.uiPanel1.ResumeLayout(false);
-            this.uiGroupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1289,6 +1288,6 @@
         private Sunny.UI.UIComboBox cbFilter;
         private Sunny.UI.UIPanel uiPanel1;
         private Sunny.UI.UIGroupBox uiGroupBox5;
-        private Sunny.UI.UITextBox uiTextBox1;
+        private Sunny.UI.UITextBox tbID;
     }
 }

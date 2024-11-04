@@ -2,22 +2,87 @@
 using System.Windows.Forms;
 using System.Drawing;
 using ZiTyLot.GUI.component_extensions;
+using ZiTyLot.BUS;
+using ZiTyLot.ENTITY;
+using System.Collections.Generic;
+using ZiTyLot.Helper;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Threading.Tasks;
+using System.Linq;
 
 
 namespace ZiTyLot.GUI.Screens.BillScr
 {
     public partial class BillDetailControl : UserControl
     {
+        private readonly Debouncer _debouncer = new Debouncer();
+        private readonly ResidentBUS _residentBUS = new ResidentBUS();
+        private readonly Pageable _pageable = new Pageable();
+        private readonly List<FilterCondition> _filters = new List<FilterCondition>();
+        private Page<Resident> _page;
+        private Resident _residentSelected;
+
         int rows = 0;
         //Home home = new Home();
         private ListBox listBox;
         public BillDetailControl()
         {
+            _residentBUS = new ResidentBUS();
             InitializeComponent();
             pnlBillDetail.RowStyles[1] = new RowStyle(SizeType.Absolute, 0);
             listIssue.AutoScroll = true;
-            CreateListBox();
+            InitListBox();
 
+        }
+        private void InitListBox()
+        {
+            listBox = new ListBox
+            {
+                Width = tableSearch.Width,
+                Visible = false,
+                Height = 250,
+                Font = new Font("Arial", 12)
+            };
+
+            //listBox.MouseEnter += ListBox_MouseEnter;
+            //listBox.MouseLeave += ListBox_MouseLeave;
+
+            listBox.Click += (s, ev) =>
+            {
+                tbSearch.Text = "";
+                listBox.Visible = false;
+                if (listBox.SelectedItem == null)
+                {
+                    return;
+                }
+                int residentId = int.Parse(listBox.SelectedItem.ToString().Split('-')[0]);
+                _residentSelected = _page.Content.Where(x => x.Id == residentId).FirstOrDefault();
+                tbID.Text = _residentSelected.Id.ToString();
+                tbFullname.Text = _residentSelected.Full_name;
+                tbApartment.Text = _residentSelected.Apartment_id;
+                tbPhone.Text = _residentSelected.Phone;
+                tbEmail.Text = _residentSelected.Email;
+            };
+
+            listBox.Height = listBox.PreferredHeight;
+            listBox.BringToFront();
+            this.Controls.Add(listBox);
+        }
+
+        private void ListBox_MouseEnter(object sender, EventArgs e)
+        {
+            if (sender is ListBox lb)
+            {
+                lb.BackColor = Color.LightGray;
+            }
+        }
+
+        private void ListBox_MouseLeave(object sender, EventArgs e)
+        {
+            if (sender is ListBox lb)
+            {
+                lb.BackColor = SystemColors.Window; // Reset the color to the default
+            }
         }
 
         private void btnPlus_Click(object sender, EventArgs e)
@@ -103,46 +168,76 @@ namespace ZiTyLot.GUI.Screens.BillScr
                     tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 65);
                     break;
                 case 1:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 95);
-                    break;
-                case 2:
                     tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 120);
                     break;
-                case 3:
+                case 2:
                     tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 140);
                     break;
+                case 3:
+                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 95);
+                    break;
             }
+            Query();
         }
-        private void CreateListBox()
+        private async void tbSearch_TextChanged(object sender, EventArgs e)
         {
-            listBox = new ListBox
+            await _debouncer.DebounceAsync(() =>
             {
-                Width = tableSearch.Width,
-                Visible = false
-            };
-            listBox.Click += (s, ev) =>
-            {
-                tbSearch.Text = listBox.SelectedItem.ToString();
-                listBox.Visible = false;
-            };
-            listBox.Font = new Font("Arial", 12);
-            listBox.Height = 250;
-            listBox.BringToFront();
-            this.Controls.Add(listBox);
+                Query();
+                return Task.CompletedTask;
+            }, 500);
         }
-        private void tbSearch_TextChanged(object sender, EventArgs e)
+        private void Query()
+        {
+            int inputCboxIndex = cbFilter.SelectedIndex;
+            string inputSearch = tbSearch.Text.Trim();
+            if (string.IsNullOrEmpty(inputSearch))
+            {
+                _filters.Clear();
+                return;
+            }
+            _filters.Clear();
+            if (!string.IsNullOrEmpty(inputSearch))
+            {
+                switch (inputCboxIndex)
+                {
+                    case 0:
+                        _filters.Add(new FilterCondition(nameof(Resident.Id), CompOp.Equals, inputSearch));
+                        break;
+                    case 1:
+                        _filters.Add(new FilterCondition(nameof(Resident.Full_name), CompOp.Like, inputSearch));
+                        break;
+                    case 2:
+                        _filters.Add(new FilterCondition(nameof(Resident.Apartment_id), CompOp.Like, inputSearch));
+                        break;
+                    case 3:
+                        _filters.Add(new FilterCondition(nameof(Resident.Phone), CompOp.Like, inputSearch));
+                        break;
+                }
+            }
+            ChangePage(1);
+        }
+        private void ChangePage(int pageNumber)
+        {
+            _pageable.PageNumber = pageNumber;
+            _page = _residentBUS.GetAllPagination(_pageable, _filters);
+            LoadResidentSearch();
+        }
+        private void LoadResidentSearch()
         {
             var textBoxScreenPosition = tbSearch.PointToScreen(System.Drawing.Point.Empty);
             var textBoxFormPosition = this.PointToClient(textBoxScreenPosition);
-
             listBox.Location = new System.Drawing.Point(textBoxFormPosition.X, textBoxFormPosition.Y + tbSearch.Height + 2);
             listBox.Items.Clear();
-            for(int i = 0; i < 20; i++)
+            foreach (var resident in _page.Content)
             {
-                listBox.Items.Add("Item " + i);
+                string content = $"{resident.Id} - {resident.Full_name} - {resident.Apartment_id} - {resident.Phone}";
+                listBox.Items.Add(content);
             }
-            listBox.Visible = true;
             listBox.BringToFront();
+            listBox.Height = 250;
+            listBox.Visible = true;
         }
+
     }
 }
