@@ -337,7 +337,7 @@
             this.pnlMain.Controls.Add(this.uiPanel2, 0, 1);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(13, 12);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.RowCount = 3;
             this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
@@ -483,47 +483,6 @@
             this.uiPanel3.Text = null;
             this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // uiPanel1
-            // 
-            this.pnlMain.SetColumnSpan(this.uiPanel1, 2);
-            this.uiPanel1.Controls.Add(this.uiPanel3);
-            this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel1.FillColor = System.Drawing.Color.White;
-            this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel1.Location = new System.Drawing.Point(5, 6);
-            this.uiPanel1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel1.Name = "uiPanel1";
-            this.uiPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.uiPanel1.Radius = 0;
-            this.uiPanel1.RectColor = System.Drawing.SystemColors.ControlLight;
-            this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom;
-            this.uiPanel1.RectSize = 2;
-            this.uiPanel1.Size = new System.Drawing.Size(769, 54);
-            this.uiPanel1.TabIndex = 17;
-            this.uiPanel1.Text = null;
-            this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiPanel3
-            // 
-            this.uiPanel3.Controls.Add(this.uiSymbolLabel1);
-            this.uiPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel3.FillColor = System.Drawing.Color.White;
-            this.uiPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel3.Location = new System.Drawing.Point(0, 0);
-            this.uiPanel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel3.Name = "uiPanel3";
-            this.uiPanel3.Padding = new System.Windows.Forms.Padding(0, 2, 0, 10);
-            this.uiPanel3.Radius = 0;
-            this.uiPanel3.RectColor = System.Drawing.SystemColors.ControlLight;
-            this.uiPanel3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel3.RectSize = 2;
-            this.uiPanel3.Size = new System.Drawing.Size(769, 52);
-            this.uiPanel3.TabIndex = 5;
-            this.uiPanel3.Text = null;
-            this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // uiSymbolLabel1
             // 
             this.uiSymbolLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -548,7 +507,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(805, 395);
             this.Controls.Add(this.pnlMain);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(821, 432);
             this.Name = "ResidentCreateForm";
             this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);

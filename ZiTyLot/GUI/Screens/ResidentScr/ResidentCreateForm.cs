@@ -126,7 +126,7 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
 
             if (!InputValidator.ValidatePhoneNumber(tbPhone.Text))
             {
-                MessageHelper.ShowWarning("Phone invalid (phone must have 10 numbers)");
+                MessageHelper.ShowWarning("Phone invalid");
                 return false;
             }
 

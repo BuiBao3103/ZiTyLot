@@ -49,7 +49,7 @@
                      return false;
                 }
                 return System.Text.RegularExpressions.Regex.IsMatch(phone,
-                     @"^(\+[0-9]{9})$");
+                     @"^0(3|5|7|8|9)\d{8}$");
               }
 
             public static bool ValidateRfid(string rfid)

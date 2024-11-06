@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
+using ZiTyLot.Constants;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens.AreaScr;
@@ -148,8 +149,6 @@ namespace ZiTyLot.GUI.Screens
                 _residentCreateForm.ResidentInsertionEvent += (s, args) =>
                 {
                     filters.Clear();
-                    page = residentBUS.GetAllPagination(pageable, filters);
-                    LoadPageAndPageable();
                     ChangePage(1);
                 };
                 _residentCreateForm.Show();
@@ -182,6 +181,8 @@ namespace ZiTyLot.GUI.Screens
         private void ChangePage(int pageNumber)
         {
             pageable.PageNumber = pageNumber;
+            pageable.SortBy = nameof(Resident.Created_at);
+            pageable.SortOrder = SortOrderPageable.Descending;
             page = residentBUS.GetAllPagination(pageable, filters);
             LoadPageAndPageable();
         }
