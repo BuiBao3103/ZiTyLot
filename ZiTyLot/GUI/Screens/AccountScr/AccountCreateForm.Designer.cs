@@ -104,7 +104,7 @@
             this.pnlMain.Controls.Add(this.uiPanel2, 0, 1);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(13, 12);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.RowCount = 4;
             this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
@@ -231,6 +231,7 @@
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // panel3
             // 
@@ -267,6 +268,7 @@
             this.btnCreate.TabIndex = 3;
             this.btnCreate.Text = "Create";
             this.btnCreate.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // uiPanel4
             // 
@@ -430,6 +432,7 @@
             this.cbRole.Text = "Administrator";
             this.cbRole.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cbRole.Watermark = "";
+            this.cbRole.SelectedIndexChanged += new System.EventHandler(this.cbRole_SelectedIndexChanged);
             // 
             // uiPanel5
             // 
@@ -577,6 +580,7 @@
             this.tbPhone.TabIndex = 0;
             this.tbPhone.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbPhone.Watermark = "";
+            this.tbPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPhone_KeyPress);
             // 
             // pnlEmail
             // 
@@ -750,6 +754,7 @@
             this.tbNationalId.TabIndex = 0;
             this.tbNationalId.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbNationalId.Watermark = "";
+            this.tbNationalId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNationalId_KeyPress);
             // 
             // pnlFullname
             // 
@@ -811,7 +816,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(912, 814);
             this.Controls.Add(this.pnlMain);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(927, 851);
             this.Name = "AccountCreateForm";
             this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);

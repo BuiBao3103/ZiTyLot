@@ -176,6 +176,12 @@ namespace ZiTyLot.GUI.Screens
         {
             CardCreateForm cardCreateForm = new CardCreateForm();
             cardCreateForm.Show();
+            cardCreateForm.CardInsertionEvent += (s, args) =>
+            {
+                page = cardBUS.GetAllPagination(pageable, filters);
+                LoadPageAndPageable();
+                //changePage(1);
+            };
         }
 
         private void tbCurrentpage_KeyPress(object sender, KeyPressEventArgs e)
