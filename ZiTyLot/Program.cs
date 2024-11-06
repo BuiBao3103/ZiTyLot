@@ -7,7 +7,6 @@ using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
 using ZiTyLot.Helper;
 using ZiTyLot.GUI;
-using ZiTyLot.GUI.Screens;
 namespace ZiTyLot
 {
     internal static class Program
@@ -15,11 +14,12 @@ namespace ZiTyLot
         [STAThread]
         static void Main()
         {
+            //ANPR.Test();
             try
             {
                 using (var connection = DBConfig.GetConnection())
                 {
-                    connection.Open(); 
+                    connection.Open();
                 }
             }
             catch (Exception ex)

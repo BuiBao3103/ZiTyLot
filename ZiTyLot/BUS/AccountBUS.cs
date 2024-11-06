@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using ZiTyLot.DAO;
 using ZiTyLot.ENTITY;
+using ZiTyLot.GUI.Utils;
 using ZiTyLot.Helper;
 
 namespace ZiTyLot.BUS
@@ -105,6 +106,15 @@ namespace ZiTyLot.BUS
             if (string.IsNullOrWhiteSpace(item.Username))
             {
                 throw new ArgumentException("Username cannot be null or empty.", nameof(item.Username));
+            }
+            // username already exists
+            List<Account> accounts = accountDao.GetAll(new List<FilterCondition>
+            {
+                new FilterCondition("username", CompOp.Equals, item.Username)
+            });
+            if (accounts.Count > 0)
+            {
+                throw new ValidationInputException("Username already exists.");
             }
         }
 

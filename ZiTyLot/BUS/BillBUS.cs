@@ -21,12 +21,37 @@ namespace ZiTyLot.BUS
             this.issueDAO = new IssueDAO();
         }
 
+        public Bill Create(Bill newBill, List<Issue> issues)
+        {
+            try
+            {
+                newBill.Created_at = DateTime.Now;
+                newBill = billDao.AddAndGet(newBill);
+                foreach (Issue issue in issues)
+                {
+                    issue.Created_at = DateTime.Now;
+                    issue.Bill_id = newBill.Id;
+                    issueDAO.Add(issue);
+                }
+
+                //UPDATE STATUS OF SLOT
+                return newBill;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+        }
+
+
         public void Add(Bill item)
         {
             Validate(item); // Kiểm tra tính hợp lệ của dữ liệu
 
             try
             {
+                item.Created_at = DateTime.Now;
                 billDao.Add(item);
             }
             catch (Exception ex)

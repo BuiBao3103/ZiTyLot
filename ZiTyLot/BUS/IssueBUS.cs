@@ -33,6 +33,7 @@ namespace ZiTyLot.BUS
             Validate(item);
             try
             {
+                item.Created_at = DateTime.Now;
                 issueDAO.Add(item);
             }
             catch (Exception ex)
@@ -152,9 +153,9 @@ namespace ZiTyLot.BUS
         {
             try
             {
-                if (item.Parking_lot_id.HasValue)
+                if (!string.IsNullOrEmpty(item.Parking_lot_id))
                 {
-                    ParkingLot parkingLot = parkingLotDAO.GetById(item.Parking_lot_id.Value);
+                    ParkingLot parkingLot = parkingLotDAO.GetById(item.Parking_lot_id);
                     item.Parking_lot = parkingLot;
                     return item;
                 }
@@ -173,9 +174,9 @@ namespace ZiTyLot.BUS
         {
             try
             {
-                if (item.Slot_id.HasValue)
+                if (!string.IsNullOrEmpty(item.Slot_id))
                 {
-                    Slot slot = slotDAO.GetById(item.Slot_id.Value);
+                    Slot slot = slotDAO.GetById(item.Slot_id);
                     item.Slot = slot;
                     return item;
                 }

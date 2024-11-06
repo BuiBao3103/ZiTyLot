@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using ZiTyLot.Constants.Enum;
 using ZiTyLot.DAO;
 using ZiTyLot.ENTITY;
 using ZiTyLot.Helper;
@@ -8,13 +10,13 @@ namespace ZiTyLot.BUS
 {
     public class ParkingLotBUS : IBUS<ParkingLot>
     {
-        private readonly ParkingLotDAO parkinglotDao;
+        private readonly ParkingLotDAO parkingLotDAO;
         private readonly SlotDAO slotDAO;
         private readonly IssueDAO issueDAO;
 
         public ParkingLotBUS()
         {
-            this.parkinglotDao = new ParkingLotDAO();
+            this.parkingLotDAO = new ParkingLotDAO();
             this.slotDAO = new SlotDAO();
             this.issueDAO = new IssueDAO();
         }
@@ -25,7 +27,8 @@ namespace ZiTyLot.BUS
 
             try
             {
-                parkinglotDao.Add(item);
+                item.Created_at = DateTime.Now;
+                parkingLotDAO.Add(item);
             }
             catch (Exception ex)
             {
@@ -39,7 +42,7 @@ namespace ZiTyLot.BUS
 
             try
             {
-                parkinglotDao.Delete(id);
+                parkingLotDAO.Delete(id);
             }
             catch (Exception ex)
             {
@@ -51,7 +54,7 @@ namespace ZiTyLot.BUS
         {
             try
             {
-                return parkinglotDao.GetAll(filters);
+                return parkingLotDAO.GetAll(filters);
             }
             catch (Exception ex)
             {
@@ -63,7 +66,7 @@ namespace ZiTyLot.BUS
         {
             try
             {
-                return parkinglotDao.GetAllPagination(pageable, filters);
+                return parkingLotDAO.GetAllPagination(pageable, filters);
             }
             catch (Exception ex)
             {
@@ -75,7 +78,7 @@ namespace ZiTyLot.BUS
         {
             try
             {
-                return parkinglotDao.GetById(id);
+                return parkingLotDAO.GetById(id);
             }
             catch (Exception ex)
             {
@@ -91,7 +94,7 @@ namespace ZiTyLot.BUS
 
             try
             {
-                parkinglotDao.Update(item);
+                parkingLotDAO.Update(item);
             }
             catch (Exception ex)
             {
@@ -106,13 +109,18 @@ namespace ZiTyLot.BUS
                 throw new ArgumentException("Name cannot be null or empty.", nameof(item.Id));
             }
 
+            if (item.Total_slot <= 0)
+            {
+                throw new InvalidOperationException("Slots must > 0");
+            }
+
             // Add other validation rules as needed
         }
 
         // Kiểm tra sự tồn tại của bản ghi
         private void EnsureRecordExists(string id)
         {
-            var existingItem = parkinglotDao.GetById(id);
+            var existingItem = parkingLotDAO.GetById(id);
             if (existingItem == null)
             {
                 throw new KeyNotFoundException($"Record with ID {id} not found.");
@@ -155,6 +163,18 @@ namespace ZiTyLot.BUS
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+        public string GenerationNewId(ParkingLotType parkingLotType, ParkingLotUserType parkingUserType)
+        {
+            string newId = parkingUserType == ParkingLotUserType.RESIDENT ? "RL" : "VL";
+            newId += parkingLotType == ParkingLotType.TWO_WHEELER ? "2W" : "4W";
+            List<FilterCondition> filters = new List<FilterCondition>()
+            {
+                new FilterCondition(nameof(ParkingLot.Id), CompOp.Like, newId)
+            };
+            int count = parkingLotDAO.Count(filters);
+            return $"{newId}-{count + 1}";
         }
     }
 }

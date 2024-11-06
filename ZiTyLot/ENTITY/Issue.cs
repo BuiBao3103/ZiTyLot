@@ -16,8 +16,8 @@ namespace ZiTyLot.ENTITY
 
         private int? bill_id;
         private int? vehicle_type_id;
-        private int? parking_lot_id;
-        private int? slot_id;
+        private string parking_lot_id;
+        private string slot_id;
 
         //relationships
         private Bill bill = null;
@@ -36,8 +36,8 @@ namespace ZiTyLot.ENTITY
         public DateTime? Deleted_at { get => deleted_at; set => deleted_at = value; }
         public int? Bill_id { get => bill_id; set => bill_id = value; }
         public int? Vehicle_type_id { get => vehicle_type_id; set => vehicle_type_id = value; }
-        public int? Parking_lot_id { get => parking_lot_id; set => parking_lot_id = value; }
-        public int? Slot_id { get => slot_id; set => slot_id = value; }
+        public string Parking_lot_id { get => parking_lot_id; set => parking_lot_id = value; }
+        public string Slot_id { get => slot_id; set => slot_id = value; }
         public Bill Bill { get => bill; set => bill = value; }
         public VehicleType Vehicle_type { get => vehicle_type; set => vehicle_type = value; }
         public ParkingLot Parking_lot { get => parking_lot; set => parking_lot = value; }

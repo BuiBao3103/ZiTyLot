@@ -28,6 +28,7 @@ namespace ZiTyLot.GUI.Screens
         private readonly List<FilterCondition> filters = new List<FilterCondition>();
         private Page<Card> page;
 
+        private CardCreateForm _CardCreateForm;
         public CardControl()
         {
             InitializeComponent();
@@ -172,10 +173,26 @@ namespace ZiTyLot.GUI.Screens
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e) => ShowCardCreateForm();
+
+        private void ShowCardCreateForm()
         {
-            CardCreateForm cardCreateForm = new CardCreateForm();
-            cardCreateForm.Show();
+            if (_CardCreateForm == null || _CardCreateForm.IsDisposed)
+            {
+                _CardCreateForm = new CardCreateForm();
+                _CardCreateForm.CardInsertionEvent += (s, args) =>
+                {
+                    filters.Clear();
+                    changePage(1);
+                };
+                _CardCreateForm.Show();
+            }
+            else
+            {
+                if (_CardCreateForm.WindowState == FormWindowState.Minimized) 
+                    _CardCreateForm.WindowState = FormWindowState.Normal;
+                _CardCreateForm.BringToFront();
+            }
         }
 
         private void tbCurrentpage_KeyPress(object sender, KeyPressEventArgs e)

@@ -48,9 +48,7 @@ namespace ZiTyLot.GUI
         private bool isAnimating;
         private BufferedGraphics bufferGraphics;
         private BufferedGraphicsContext graphicsContext;
-        private Dictionary<string, UserControl> panelMapping;
-        private Dictionary<string, Image> menuIcon;
-        private Dictionary<string, Image> menuIconActive;
+        public Dictionary<string, UserControl> panelMapping;
         #endregion
 
         #region Constructor and Initialization
