@@ -87,5 +87,17 @@ namespace ZiTyLot.DAO
                 throw new Exception(ex.Message);
             }
         }
+
+        public int Count(List<FilterCondition> filters)
+        {
+            try
+            {
+                return daoFactory.Count(filters);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

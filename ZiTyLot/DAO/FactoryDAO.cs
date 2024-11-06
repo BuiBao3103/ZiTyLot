@@ -100,7 +100,7 @@ namespace ZiTyLot.DAO
                     connection.Open(); // Open the connection
 
                     // Get the total number of elements that match the filters
-                    totalElements = GetTotalElements(connection, filters);
+                    totalElements = Count(filters);
 
                     // Start building the SQL query for fetching data
                     var dataQuery = new StringBuilder($"SELECT * FROM {tableName} WHERE deleted_at IS NULL");
@@ -548,34 +548,46 @@ namespace ZiTyLot.DAO
             }
         }
 
-        private int GetTotalElements(MySqlConnection connection, List<FilterCondition> filters)
+        public int Count(List<FilterCondition> filters)
         {
-            // Start building the SQL query to count the total elements
-            var countQuery = new StringBuilder($"SELECT COUNT(*) FROM {tableName} WHERE deleted_at IS NULL");
-
-            // Append filter conditions to the query if any filters are provided
-            if (filters != null)
+            try
             {
-                foreach (var filter in filters)
+                using (var connection = DBConfig.GetConnection())
                 {
-                    countQuery.Append(GetFilterConditionSql(filter));
-                }
-            }
+                    connection.Open(); // Open the connection
 
-            // Create a MySqlCommand with the constructed query
-            using (var countCommand = new MySqlCommand(countQuery.ToString(), connection))
-            {
-                // Add parameters for the filter conditions to the command
-                if (filters != null)
-                {
-                    foreach (var filter in filters)
+                    // Start building the SQL query to count the total elements
+                    var countQuery = new StringBuilder($"SELECT COUNT(*) FROM {tableName} WHERE deleted_at IS NULL");
+
+                    // Append filter conditions to the query if any filters are provided
+                    if (filters != null)
                     {
-                        AddFilterConditionParameters(countCommand, filter);
+                        foreach (var filter in filters)
+                        {
+                            countQuery.Append(GetFilterConditionSql(filter));
+                        }
+                    }
+
+                    // Create a MySqlCommand with the constructed query
+                    using (var countCommand = new MySqlCommand(countQuery.ToString(), connection))
+                    {
+                        // Add parameters for the filter conditions to the command
+                        if (filters != null)
+                        {
+                            foreach (var filter in filters)
+                            {
+                                AddFilterConditionParameters(countCommand, filter);
+                            }
+                        }
+
+                        // Execute the query and return the total count
+                        return Convert.ToInt32(countCommand.ExecuteScalar());
                     }
                 }
-
-                // Execute the query and return the total count
-                return Convert.ToInt32(countCommand.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
     }

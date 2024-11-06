@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
+using ZiTyLot.Constants;
 using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
@@ -137,8 +138,6 @@ namespace ZiTyLot.GUI.Screens
                 _areaCreateForm.AreaInsertionEvent += (s, args) =>
                 {
                     filters.Clear();
-                    page = parkingLotBUS.GetAllPagination(pageable, filters);
-                    LoadPageAndPageable();
                     ChangePage(1);
                 };
                 _areaCreateForm.Show();
@@ -172,6 +171,8 @@ namespace ZiTyLot.GUI.Screens
         private void ChangePage(int pageNumber)
         {
             pageable.PageNumber = pageNumber;
+            pageable.SortBy = nameof(ParkingLot.Created_at);
+            pageable.SortOrder = SortOrderPageable.Descending;
             page = parkingLotBUS.GetAllPagination(pageable, filters);
             LoadPageAndPageable();
         }
@@ -190,10 +191,10 @@ namespace ZiTyLot.GUI.Screens
                 switch (inputCboxIndexVehicleType)
                 {
                     case 1:
-                        filters.Add(new FilterCondition("parking_lot_type", CompOp.Equals, ParkingLotType.TWO_WHEELER));
+                        filters.Add(new FilterCondition(nameof(ParkingLot.Parking_lot_type), CompOp.Equals, ParkingLotType.TWO_WHEELER));
                         break;
                     case 2:
-                        filters.Add(new FilterCondition("parking_lot_type", CompOp.Equals, ParkingLotType.FOUR_WHEELER));
+                        filters.Add(new FilterCondition(nameof(ParkingLot.Parking_lot_type), CompOp.Equals, ParkingLotType.FOUR_WHEELER));
                         break;
                 }
             }
@@ -204,10 +205,10 @@ namespace ZiTyLot.GUI.Screens
                 switch (inputCboxIndexUserType)
                 {
                     case 1:
-                        filters.Add(new FilterCondition("user_type", CompOp.Equals, ParkingLotUserType.RESIDENT));
+                        filters.Add(new FilterCondition(nameof(ParkingLot.User_type), CompOp.Equals, ParkingLotUserType.RESIDENT));
                         break;
                     case 2:
-                        filters.Add(new FilterCondition("user_type", CompOp.Equals, ParkingLotUserType.VISITOR));
+                        filters.Add(new FilterCondition(nameof(ParkingLot.User_type), CompOp.Equals, ParkingLotUserType.VISITOR));
                         break;
                 }
             }
@@ -218,16 +219,16 @@ namespace ZiTyLot.GUI.Screens
                 switch (inputCboxIndexStatus)
                 {
                     case 1:
-                        filters.Add(new FilterCondition("status", CompOp.Equals, ParkingLotStatus.FULL));
+                        filters.Add(new FilterCondition(nameof(ParkingLot.Status), CompOp.Equals, ParkingLotStatus.FULL));
                         break;
                     case 2:
-                        filters.Add(new FilterCondition("status", CompOp.Equals, ParkingLotStatus.AVAILABLE));
+                        filters.Add(new FilterCondition(nameof(ParkingLot.Status), CompOp.Equals, ParkingLotStatus.AVAILABLE));
                         break;
                     case 3:
-                        filters.Add(new FilterCondition("status", CompOp.Equals, ParkingLotStatus.CLOSED));
+                        filters.Add(new FilterCondition(nameof(ParkingLot.Status), CompOp.Equals, ParkingLotStatus.CLOSED));
                         break;
                     case 4:
-                        filters.Add(new FilterCondition("status", CompOp.Equals, ParkingLotStatus.UNDER_MAINTENANCE));
+                        filters.Add(new FilterCondition(nameof(ParkingLot.Status), CompOp.Equals, ParkingLotStatus.UNDER_MAINTENANCE));
                         break;
                 }
             }

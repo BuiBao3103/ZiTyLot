@@ -37,8 +37,6 @@ namespace ZiTyLot.GUI.Screens.AreaScr
             if (!ValidateInput()) return;
             try
             {
-                string id = string.Empty;
-                string idTmp = string.Empty;
                 ParkingLotStatus status = ParkingLotStatus.AVAILABLE;
                 if (rbtnClosed.Checked) status = ParkingLotStatus.CLOSED;
                 if (rbtnMaintenace.Checked) status = ParkingLotStatus.UNDER_MAINTENANCE;
@@ -49,42 +47,13 @@ namespace ZiTyLot.GUI.Screens.AreaScr
                 int vehicleTypeIndex = cbVehicalType.SelectedIndex;
                 ParkingLotType parkingLotType = vehicleTypeIndex == 0 ? ParkingLotType.TWO_WHEELER : ParkingLotType.FOUR_WHEELER;
 
-               
-                if (parkingUserType.Equals(ParkingLotUserType.RESIDENT))
-                {
-                    if (parkingLotType.Equals(ParkingLotType.TWO_WHEELER))
-                    {
-                        idTmp = "RL2W-";
-                        id = generationId(idTmp);
-                    }
-                    else
-                    {
-                        idTmp = "RL4W-";
-                        id = generationId(idTmp);
-                    }
-                }
-                if (parkingUserType.Equals(ParkingLotUserType.VISITOR))
-                {
-                    if (parkingLotType.Equals(ParkingLotType.TWO_WHEELER))
-                    {
-                        idTmp = "VL2W-";
-                        id = generationId(idTmp);
-                    }
-                    else
-                    {
-                        idTmp = "VL4W-";
-                        id = generationId(idTmp);
-                    }
-                }
-
                 ParkingLot parkingLot = new ParkingLot
                 {
-                   Id = id,
-                   Total_slot = int.Parse(tbTotalSlot.Text),
-                   Parking_lot_type = parkingLotType,
-                   User_type = parkingUserType,
-                   Status = status,
-                   Created_at = DateTime.Now
+                    Id = parkingLotBUS.GenerationNewId(parkingLotType ,parkingUserType),
+                    Total_slot = int.Parse(tbTotalSlot.Text),
+                    Parking_lot_type = parkingLotType,
+                    User_type = parkingUserType,
+                    Status = status,
                 };
                 parkingLotBUS.Add(parkingLot);
                 MessageHelper.ShowSuccess("Parking lot added successfully!");
@@ -99,24 +68,13 @@ namespace ZiTyLot.GUI.Screens.AreaScr
             {
                 MessageHelper.ShowWarning(ex.Message);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 MessageHelper.ShowWarning("An unexpected error occurred. Please try again later.");
             }
         }
 
-        private string generationId(string id) 
-        {
-            string idIdentity = string.Empty;
-            List<FilterCondition> filters = new List<FilterCondition>();
-            filters.Add(new FilterCondition("Id", CompOp.Like, id));
-            List<ParkingLot> lists = parkingLotBUS.GetAll(filters);
-            string[] tmp = lists.Last().Id.Split("-");
-            string generate = tmp[1];
-            int generateId = int.Parse(generate[1].ToString()) + 1;
-            idIdentity = id + generate[0].ToString() + generateId.ToString();
-            return idIdentity;
-        }
 
         private bool ValidateInput()
         {
