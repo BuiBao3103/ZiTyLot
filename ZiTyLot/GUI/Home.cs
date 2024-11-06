@@ -11,6 +11,7 @@ using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens;
 using ZiTyLot.GUI.Screens.LostCardScr;
 using Sunny.UI.Win32;
+using ZiTyLot.GUI.Screens.DashboardScr;
 
 namespace ZiTyLot.GUI
 {
@@ -26,8 +27,10 @@ namespace ZiTyLot.GUI
         private int previousWidth;
         private const string LOGO_PATH = @"../../GUI/assets/Zity-logo-256x256px.png";
         private const string LOGO_MINI_PATH = @"../../GUI/assets/logo_mini.png";
+        // the fisrt item in this list is the last item in the sidebarMid
         private readonly dynamic[] menuItems = new[]
         {
+            new { Name = "Dashboard", Text = "Dashboard", Icon = 361950, X = -51, X_Collapsed = -1, Y_Collapsed = 0 },
             new { Name = "LostCardManagement", Text = "Lost Card" ,Icon=61553, X = -50,X_Collapsed=0, Y_Collapsed=2},
             new { Name = "PriceManagement", Text = "Price" ,Icon=362778 , X = -53,X_Collapsed=-3 , Y_Collapsed=1},
             new { Name = "RoleManagement", Text = "Role", Icon = 61459, X = -50, X_Collapsed = 0, Y_Collapsed = 2 },
@@ -37,7 +40,7 @@ namespace ZiTyLot.GUI
             new { Name = "ResidentManagement", Text = "Resident", Icon = 358675, X = -53, X_Collapsed = -3, Y_Collapsed = 1 },
             new { Name = "AreaManagement", Text = "Area", Icon = 559505, X = -50, X_Collapsed = 0, Y_Collapsed = 1 },
             new { Name = "SessionManagement", Text = "Session", Icon = 361914, X = -50, X_Collapsed = -1, Y_Collapsed = 0 },
-            new { Name = "Scanning", Text = "Scanning", Icon = 61767, X = -48 ,X_Collapsed=1, Y_Collapsed=2}
+            new { Name = "Scanning", Text = "Scanning", Icon = 61767, X = -48 ,X_Collapsed=1, Y_Collapsed=2},
         };
         #endregion
 
@@ -57,7 +60,7 @@ namespace ZiTyLot.GUI
             InitializeGraphics();
             InitializeFormSettings();
             InitializeMenuIcons();
-
+            previousWidth = this.Width;
         }
 
         private void InitializeGraphics()
@@ -86,6 +89,7 @@ namespace ZiTyLot.GUI
         {
             panelMapping = new Dictionary<string, UserControl>
             {
+                { "Dashboard", new DashboardControl() },
                 { "LostCardManagement", new LostCardControl()},
                 { "AccountManagement", new AccountControl() },
                 { "BillManagement", new BillControl() },
@@ -95,7 +99,7 @@ namespace ZiTyLot.GUI
                 { "CardManagement", new CardControl() },
                 { "PriceManagement", new PriceControl() },
                 { "AreaManagement", new AreaControl() },
-                { "Scanning", new ScanningControl() }
+                { "Scanning", new ScanningControl() },
             };
         }
         private void AddMenuToSidebar()
@@ -480,6 +484,7 @@ namespace ZiTyLot.GUI
             AddMenuToSidebar();
             LoadForm(new ScanningControl());
             UpdateButtonStyle(sidebarMid.Controls.OfType<Sunny.UI.UIPanel>().Last().Controls.OfType<Sunny.UI.UISymbolButton>().First(), true);
+            previousWidth = this.Width;
         }
         #endregion
 
@@ -581,24 +586,22 @@ namespace ZiTyLot.GUI
         #endregion
 
 
+        
 
         private void Home_ResizeEnd(object sender, EventArgs e)
         {
-            // Check if the width crossed the minimum size threshold
-            if (this.Width < MINIMUMSIZE_WIDTH && previousWidth >= MINIMUMSIZE_WIDTH)
+            if (this.Width < MINIMUMSIZE_WIDTH && previousWidth != this.Width && previousWidth >= MINIMUMSIZE_WIDTH)
             {
                 CloseMenu();
                 btnToggle.Symbol = 558849;
                 btnToggle.SymbolOffset = new Point(0, 0);
             }
-            else if (this.Width >= MINIMUMSIZE_WIDTH && previousWidth < MINIMUMSIZE_WIDTH)
+            else if (this.Width >= MINIMUMSIZE_WIDTH && previousWidth != this.Width && previousWidth < MINIMUMSIZE_WIDTH)
             {
                 OpenMenu();
                 btnToggle.Symbol = 558848;
                 btnToggle.SymbolOffset = new Point(4, 0);
             }
-
-            // Update the previous width
             previousWidth = this.Width;
         }
     }
