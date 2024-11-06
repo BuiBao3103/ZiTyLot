@@ -22,6 +22,8 @@ namespace ZiTyLot.GUI.Screens
         private readonly List<FilterCondition> filters = new List<FilterCondition>();
         private List<Role> roleList;
 
+        private RoleCreateForm _roleCreateForm;
+
         public RoleControl()
         {
             InitializeComponent();
@@ -128,26 +130,35 @@ namespace ZiTyLot.GUI.Screens
                     break;
                 case 1:
                     tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 95);
-                    break;      
+                    break;
             }
             query();
         }
 
-        private void btnAdd_Click_1(object sender, EventArgs e)
+        private void btnAdd_Click_1(object sender, EventArgs e) => ShowRoleCreateForm();
+
+        private void ShowRoleCreateForm()
         {
-            RoleCreateForm roleCreateForm = new RoleCreateForm();
-            roleCreateForm.Show();
-            roleCreateForm.RoleCreated += (s, args) =>
+            if (_roleCreateForm == null || _roleCreateForm.IsDisposed)
             {
-                roleList = roleBUS.GetAll();
-                LoadDataToTable();
-            };
+                _roleCreateForm = new RoleCreateForm();
+                _roleCreateForm.RoleCreated += (s, args) =>
+                {
+                    roleList = roleBUS.GetAll();
+                    LoadDataToTable();
+                };
+                _roleCreateForm.Show();
+            }
+            else
+            {
+                if (_roleCreateForm.WindowState == FormWindowState.Minimized)
+                    _roleCreateForm.WindowState = FormWindowState.Normal;
+                _roleCreateForm.BringToFront();
+            }
         }
 
         private void LoadDataToTable()
         {
-            if (roleList == null) return;
-            //update table
             tableRole.Rows.Clear();
             foreach (Role role in roleList)
             {

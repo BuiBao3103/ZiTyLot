@@ -1,14 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
-using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.Utils;
 
@@ -19,8 +12,8 @@ namespace ZiTyLot.GUI.Screens.RoleScr
         private readonly FunctionBUS functionBUS = new FunctionBUS();
         private readonly RoleBUS roleBUS = new RoleBUS();
         private readonly RoleFunctionBUS roleFunctionBUS = new RoleFunctionBUS();
-        private List<Function> functions = new List<Function>();
-        private List<Function> functionsDo = new List<Function>();
+        private readonly List<Function> functions = new List<Function>();
+        private readonly List<Function> functionsDo = new List<Function>();
 
         public event EventHandler RoleCreated;
 
@@ -31,7 +24,7 @@ namespace ZiTyLot.GUI.Screens.RoleScr
 
             functions = functionBUS.GetAll();
             listFunction.DataSource = functions;
-            listFunction.DisplayMember = "Name";
+            listFunction.DisplayMember = nameof(Function.Name);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -52,7 +45,7 @@ namespace ZiTyLot.GUI.Screens.RoleScr
 
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition("name", CompOp.Like, tbName.Text.Trim())
+                    new FilterCondition(nameof(Function.Name), CompOp.Like, tbName.Text.Trim())
                 };
                 List<Role> roles = roleBUS.GetAll(filters);
                 int roleID = roles[roles.Count - 1].Id;
@@ -109,10 +102,10 @@ namespace ZiTyLot.GUI.Screens.RoleScr
         {
             listFunction.DataSource = null;
             listFunction.DataSource = functions;
-            listFunction.DisplayMember = "Name";
+            listFunction.DisplayMember = nameof(Function.Name);
             listDo.DataSource = null;
             listDo.DataSource = functionsDo;
-            listDo.DisplayMember = "Name";
+            listDo.DisplayMember = nameof(Function.Name);
         }
 
         private bool ValidateInput()
