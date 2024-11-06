@@ -2,30 +2,50 @@
 using System.Collections.Generic;
 using ZiTyLot.DAO;
 using ZiTyLot.ENTITY;
+using ZiTyLot.GUI.Utils;
 using ZiTyLot.Helper;
 
 namespace ZiTyLot.BUS
 {
     public class RoleBUS : IBUS<Role>
     {
-        private readonly RoleDAO roleDao;
+        private readonly RoleDAO roleDAO;
         private readonly RoleFunctionDAO roleFunctionDAO;
         private readonly AccountDAO accountDAO;
 
         public RoleBUS()
         {
-            this.roleDao = new RoleDAO();
+            this.roleDAO = new RoleDAO();
             this.roleFunctionDAO = new RoleFunctionDAO();
             this.accountDAO = new AccountDAO();
         }
+        public Role Create(Role newRole, List<RoleFunction> roleFunctions)
+        {
+            Validate(newRole);
+            try
+            {
+                newRole.Created_at = DateTime.Now;
+                newRole = roleDAO.AddAndGet(newRole);
+                foreach (RoleFunction roleFunction in roleFunctions)
+                {
+                    roleFunction.Role_id = newRole.Id;
+                    roleFunctionDAO.Add(roleFunction);
+                }
 
+                return newRole;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         public void Add(Role item)
         {
-            Validate(item); // Kiểm tra tính hợp lệ của dữ liệu
+            Validate(item);
 
             try
             {
-                roleDao.Add(item);
+                roleDAO.Add(item);
             }
             catch (Exception ex)
             {
@@ -39,7 +59,7 @@ namespace ZiTyLot.BUS
 
             try
             {
-                roleDao.Delete(id);
+                roleDAO.Delete(id);
             }
             catch (Exception ex)
             {
@@ -51,7 +71,7 @@ namespace ZiTyLot.BUS
         {
             try
             {
-                return roleDao.GetAll(filters);
+                return roleDAO.GetAll(filters);
             }
             catch (Exception ex)
             {
@@ -63,7 +83,7 @@ namespace ZiTyLot.BUS
         {
             try
             {
-                return roleDao.GetAllPagination(pageable, filters);
+                return roleDAO.GetAllPagination(pageable, filters);
             }
             catch (Exception ex)
             {
@@ -75,7 +95,7 @@ namespace ZiTyLot.BUS
         {
             try
             {
-                return roleDao.GetById(id);
+                return roleDAO.GetById(id);
             }
             catch (Exception ex)
             {
@@ -91,7 +111,7 @@ namespace ZiTyLot.BUS
 
             try
             {
-                roleDao.Update(item);
+                roleDAO.Update(item);
             }
             catch (Exception ex)
             {
@@ -101,18 +121,23 @@ namespace ZiTyLot.BUS
 
         private void Validate(Role item)
         {
-            if (string.IsNullOrWhiteSpace(item.Name))
+           
+            //check name is existed
+            List<FilterCondition> filters = new List<FilterCondition>
             {
-                throw new ArgumentException("Name cannot be null or empty.", nameof(item.Name));
+                new FilterCondition(nameof(Role.Name), CompOp.Equals, item.Name)
+            };
+            int count = roleDAO.Count(filters);
+            if (count > 0)
+            {
+                throw new ValidationInputException("Role name is existed.");
             }
-
-            // Add other validation rules as needed
         }
 
         // Kiểm tra sự tồn tại của bản ghi
         private void EnsureRecordExists(object id)
         {
-            var existingItem = roleDao.GetById(id);
+            var existingItem = roleDAO.GetById(id);
             if (existingItem == null)
             {
                 throw new KeyNotFoundException($"Record with ID {id} not found.");

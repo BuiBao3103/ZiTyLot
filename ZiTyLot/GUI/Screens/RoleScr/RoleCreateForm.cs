@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.ENTITY;
@@ -41,25 +42,9 @@ namespace ZiTyLot.GUI.Screens.RoleScr
                 {
                     Name = tbName.Text.Trim()
                 };
-                roleBUS.Add(role);
-
-                List<FilterCondition> filters = new List<FilterCondition>
-                {
-                    new FilterCondition(nameof(Function.Name), CompOp.Like, tbName.Text.Trim())
-                };
-                List<Role> roles = roleBUS.GetAll(filters);
-                int roleID = roles[roles.Count - 1].Id;
-
-                foreach (var function in functionsDo)
-                {
-                    RoleFunction roleFunction = new RoleFunction
-                    {
-                        Role_id = roleID,
-                        Function_id = function.Id
-                    };
-                    roleFunctionBUS.Add(roleFunction);
-                }
-
+                List<RoleFunction> roleFunctions = 
+                    functionsDo.Select(function => new RoleFunction { Function_id = function.Id }).ToList();
+                roleBUS.Create(role, roleFunctions);
                 MessageHelper.ShowSuccess("Role added successfully!");
                 RoleCreated?.Invoke(this, EventArgs.Empty);
                 this.Close();
@@ -74,6 +59,7 @@ namespace ZiTyLot.GUI.Screens.RoleScr
             }
             catch (Exception)
             {
+                Console.WriteLine("An unexpected error occurred. Please try again later.");
                 MessageHelper.ShowError("An unexpected error occurred. Please try again later.");
             }
         }
@@ -122,7 +108,6 @@ namespace ZiTyLot.GUI.Screens.RoleScr
                 MessageHelper.ShowWarning("Please add at least 1 function");
                 return false;
             }
-
             return true;
         }
     }

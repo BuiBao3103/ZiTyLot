@@ -88,5 +88,28 @@ namespace ZiTyLot.DAO
             }
         }
 
+        public Role AddAndGet(Role item)
+        {
+            try
+            {
+                return daoFactory.AddAndGet(item);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public int Count(List<FilterCondition> filters = null)
+        {
+            try
+            {
+                return daoFactory.Count(filters);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

@@ -41,7 +41,6 @@ namespace ZiTyLot.BUS
             {
                 throw new Exception(ex.Message);
             }
-
         }
 
 
