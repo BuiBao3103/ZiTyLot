@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
+using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Utils;
 
 namespace ZiTyLot.GUI.Screens.CardScr
@@ -40,14 +41,14 @@ namespace ZiTyLot.GUI.Screens.CardScr
                 {
                     Rfid = tbRFID.Text.Trim(),
                     Status = CardStatus.EMPTY,
-                    Type = cbGender.SelectedIndex == 0 ? CardType.RESIDENT : CardType.VISITOR
+                    Type = cbCardType.SelectedIndex == 0 ? CardType.RESIDENT : CardType.VISITOR
                 };
                 cardBUS.Add(card);
                 MessageHelper.ShowSuccess("Card added successfully!");
                 CardInsertionEvent?.Invoke(this, EventArgs.Empty);
                 this.Close();
             }
-            catch (ValidationException ex)
+            catch (ValidationInputException ex)
             {
                 MessageHelper.ShowWarning(ex.Message);
             }
@@ -55,9 +56,10 @@ namespace ZiTyLot.GUI.Screens.CardScr
             {
                 MessageHelper.ShowWarning(ex.Message);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageHelper.ShowError("RFID already exists.");
+                Console.WriteLine(ex.Message);
+                MessageHelper.ShowError("Some errors occurred. Please try again later.");
             }
         }
 
@@ -70,9 +72,9 @@ namespace ZiTyLot.GUI.Screens.CardScr
                 return false;
             }
 
-            if (!System.Text.RegularExpressions.Regex.IsMatch(tbRFID.Text, @"^RFID\d+$"))
+            if (!InputValidator.ValidateRfid(tbRFID.Text))
             {
-                MessageHelper.ShowWarning("Please enter the correct structure (Example: RFID001)");
+                MessageHelper.ShowWarning("Please enter a valid RFID");
                 tbRFID.Focus();
                 return false;
             }

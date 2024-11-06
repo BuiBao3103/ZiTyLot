@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ZiTyLot.GUI.Utils
 {
-    public class ValidationException : BusinessException
+    public class ValidationInputException : BusinessException
     {
-        public ValidationException(string message) : base(message) { }
+        public ValidationInputException(string message) : base(message) { }
     }
 }

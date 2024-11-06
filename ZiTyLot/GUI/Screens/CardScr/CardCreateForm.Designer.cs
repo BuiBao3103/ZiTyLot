@@ -41,7 +41,7 @@
             this.pnlEmployee = new Sunny.UI.UITableLayoutPanel();
             this.pnlNationalId = new Sunny.UI.UIPanel();
             this.uiGroupBox2 = new Sunny.UI.UIGroupBox();
-            this.cbGender = new Sunny.UI.UIComboBox();
+            this.cbCardType = new Sunny.UI.UIComboBox();
             this.pnlFullname = new Sunny.UI.UIPanel();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
             this.tbRFID = new Sunny.UI.UITextBox();
@@ -288,7 +288,7 @@
             // 
             // uiGroupBox2
             // 
-            this.uiGroupBox2.Controls.Add(this.cbGender);
+            this.uiGroupBox2.Controls.Add(this.cbCardType);
             this.uiGroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox2.FillColor = System.Drawing.Color.White;
             this.uiGroupBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -304,35 +304,35 @@
             this.uiGroupBox2.Text = "Card type";
             this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // cbGender
+            // cbCardType
             // 
-            this.cbGender.DataSource = null;
-            this.cbGender.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbGender.FillColor = System.Drawing.Color.White;
-            this.cbGender.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbGender.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cbGender.ItemRectColor = System.Drawing.Color.White;
-            this.cbGender.Items.AddRange(new object[] {
+            this.cbCardType.DataSource = null;
+            this.cbCardType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbCardType.FillColor = System.Drawing.Color.White;
+            this.cbCardType.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCardType.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbCardType.ItemRectColor = System.Drawing.Color.White;
+            this.cbCardType.Items.AddRange(new object[] {
             "Resident",
             "Visitor"});
-            this.cbGender.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cbGender.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cbGender.Location = new System.Drawing.Point(8, 32);
-            this.cbGender.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cbGender.MaximumSize = new System.Drawing.Size(0, 34);
-            this.cbGender.MinimumSize = new System.Drawing.Size(0, 34);
-            this.cbGender.Name = "cbGender";
-            this.cbGender.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
-            this.cbGender.RectColor = System.Drawing.SystemColors.ControlDark;
-            this.cbGender.RectSize = 2;
-            this.cbGender.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.cbGender.ScrollBarStyleInherited = false;
-            this.cbGender.Size = new System.Drawing.Size(208, 34);
-            this.cbGender.SymbolSize = 24;
-            this.cbGender.TabIndex = 1;
-            this.cbGender.Text = "Resident";
-            this.cbGender.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cbGender.Watermark = "";
+            this.cbCardType.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbCardType.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.cbCardType.Location = new System.Drawing.Point(8, 32);
+            this.cbCardType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbCardType.MaximumSize = new System.Drawing.Size(0, 34);
+            this.cbCardType.MinimumSize = new System.Drawing.Size(0, 34);
+            this.cbCardType.Name = "cbCardType";
+            this.cbCardType.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
+            this.cbCardType.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.cbCardType.RectSize = 2;
+            this.cbCardType.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbCardType.ScrollBarStyleInherited = false;
+            this.cbCardType.Size = new System.Drawing.Size(208, 34);
+            this.cbCardType.SymbolSize = 24;
+            this.cbCardType.TabIndex = 1;
+            this.cbCardType.Text = "Resident";
+            this.cbCardType.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cbCardType.Watermark = "";
             // 
             // pnlFullname
             // 
@@ -428,7 +428,7 @@
         private Sunny.UI.UIPanel pnlFullname;
         private Sunny.UI.UIGroupBox uiGroupBox1;
         private Sunny.UI.UITextBox tbRFID;
-        private Sunny.UI.UIComboBox cbGender;
+        private Sunny.UI.UIComboBox cbCardType;
         private Sunny.UI.UISymbolLabel uiSymbolLabel1;
         private Sunny.UI.UIPanel pnlButton;
         private System.Windows.Forms.Panel panel2;

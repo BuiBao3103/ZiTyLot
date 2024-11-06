@@ -60,7 +60,7 @@ namespace ZiTyLot.GUI.Screens.AreaScr
                 AreaInsertionEvent?.Invoke(this,EventArgs.Empty);
                 this.Close();
             }
-            catch (ValidationException ex) 
+            catch (ValidationInputException ex) 
             {
                 MessageHelper.ShowWarning(ex.Message);
             }

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ZiTyLot.DAO;
 using ZiTyLot.ENTITY;
+using ZiTyLot.GUI.Utils;
 using ZiTyLot.Helper;
 
 namespace ZiTyLot.BUS
@@ -110,12 +111,16 @@ namespace ZiTyLot.BUS
         //
         private void Validate(Card item)
         {
-            if (string.IsNullOrWhiteSpace(item.Rfid))
+            //chec if rfid is existed
+            List<FilterCondition> filters = new List<FilterCondition>
             {
-                throw new ArgumentException("Name cannot be null or empty.", nameof(item.Rfid));
+                new FilterCondition("rfid", CompOp.Equals, item.Rfid)
+            };
+            List<Card> cards = cardDAO.GetAll(filters);
+            if (cards.Count > 0)
+            {
+                throw new ValidationInputException("RFID is already existed");
             }
-
-            // Add other validation rules as needed
         }
 
         private void EnsureRecordExists(object id)

@@ -35,7 +35,7 @@ namespace ZiTyLot.BUS
 
                 if (existingFee.Any())
                 {
-                    throw new ValidationException(
+                    throw new ValidationInputException(
                         "Fee configuration already exists for this vehicle type and duration"
                     );
                 }
@@ -43,7 +43,7 @@ namespace ZiTyLot.BUS
                 item.Created_at = DateTime.Now;
                 residentFeeDAO.Add(item);
             }
-            catch (ValidationException)
+            catch (ValidationInputException)
             {
                 throw;
             }
@@ -124,24 +124,24 @@ namespace ZiTyLot.BUS
         {
             if (!item.Vehicle_type_id.HasValue || item.Vehicle_type_id <= 0)
             {
-                throw new ValidationException("Invalid vehicle type");
+                throw new ValidationInputException("Invalid vehicle type");
             }
 
             if (item.Month <= 0 || item.Month > 12)
             {
-                throw new ValidationException("Month must be between 1 and 12");
+                throw new ValidationInputException("Month must be between 1 and 12");
             }
 
             if (item.Fee < 0)
             {
-                throw new ValidationException("Fee cannot be negative");
+                throw new ValidationInputException("Fee cannot be negative");
             }
 
             Console.WriteLine(item.Vehicle_type_id);
             // Kiểm tra khóa ngoại
             if (item.Vehicle_type_id != null && vehicleTypeDAO.GetById(item.Vehicle_type_id) == null)
             {
-                throw new ValidationException("Vehicle type does not exist");
+                throw new ValidationInputException("Vehicle type does not exist");
             }
         }
 

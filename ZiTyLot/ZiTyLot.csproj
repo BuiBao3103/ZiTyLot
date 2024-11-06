@@ -609,7 +609,7 @@
       <DependentUpon>ResidentControl.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Utils\MessageHelper.cs" />
-    <Compile Include="GUI\Utils\ValidationException.cs" />
+    <Compile Include="GUI\Utils\ValidationInputException.cs" />
     <Compile Include="Helper\ANPR.cs" />
     <Compile Include="Helper\Arduino.cs" />
     <Compile Include="Helper\Debouncer.cs" />

@@ -71,7 +71,7 @@ namespace ZiTyLot.GUI.Screens.RoleScr
                 RoleCreated?.Invoke(this, EventArgs.Empty);
                 this.Close();
             }
-            catch (ValidationException ex)
+            catch (ValidationInputException ex)
             {
                 MessageHelper.ShowWarning(ex.Message);
             }

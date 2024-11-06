@@ -114,7 +114,7 @@ namespace ZiTyLot.BUS
             });
             if (accounts.Count > 0)
             {
-                throw new ValidationException("Username already exists.");
+                throw new ValidationInputException("Username already exists.");
             }
         }
 

@@ -68,7 +68,7 @@ namespace ZiTyLot.GUI.Screens.PriceScr
                 this.Close();
 
             }
-            catch (ValidationException ex)
+            catch (ValidationInputException ex)
             {
                 MessageHelper.ShowWarning(ex.Message);
             }

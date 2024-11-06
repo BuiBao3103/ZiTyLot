@@ -56,7 +56,7 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
                 ResidentInsertionEvent?.Invoke(this, EventArgs.Empty);
                 this.Close();
             }
-            catch (ValidationException ex)
+            catch (ValidationInputException ex)
             {
                 MessageHelper.ShowWarning(ex.Message);
             }
