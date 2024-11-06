@@ -30,7 +30,7 @@ namespace ZiTyLot.DAO
                     connection.Open(); // Open the connection
 
                     // Start building the SQL query
-                    var query = new StringBuilder($"SELECT * FROM {tableName} WHERE deleted_at IS NULL");
+                    var query = new StringBuilder($"SELECT * FROM {tableName} WHERE 1=1");
 
                     // Append filter conditions to the query if any filters are provided
                     if (filters != null)
@@ -103,7 +103,7 @@ namespace ZiTyLot.DAO
                     totalElements = Count(filters);
 
                     // Start building the SQL query for fetching data
-                    var dataQuery = new StringBuilder($"SELECT * FROM {tableName} WHERE deleted_at IS NULL");
+                    var dataQuery = new StringBuilder($"SELECT * FROM {tableName} WHERE 1=1");
 
                     // Append filter conditions to the query if any filters are provided
                     if (filters != null)
@@ -186,7 +186,7 @@ namespace ZiTyLot.DAO
                     connection.Open(); // Open the connection
 
                     // Define the SQL query to fetch the record by ID
-                    var query = $"SELECT * FROM {tableName} WHERE deleted_at IS NULL AND Id = @Id";
+                    var query = $"SELECT * FROM {tableName} WHERE Id = @Id";
 
                     // Create a MySqlCommand with the query
                     using (var command = new MySqlCommand(query, connection))
@@ -557,7 +557,7 @@ namespace ZiTyLot.DAO
                     connection.Open(); // Open the connection
 
                     // Start building the SQL query to count the total elements
-                    var countQuery = new StringBuilder($"SELECT COUNT(*) FROM {tableName} WHERE deleted_at IS NULL");
+                    var countQuery = new StringBuilder($"SELECT COUNT(*) FROM {tableName} WHERE 1=1");
 
                     // Append filter conditions to the query if any filters are provided
                     if (filters != null)

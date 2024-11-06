@@ -295,10 +295,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BUS\ABUS.cs" />
     <Compile Include="BUS\AccountBUS.cs" />
     <Compile Include="BUS\AuthManager.cs" />
-    <Compile Include="BUS\BBUS.cs" />
     <Compile Include="BUS\BillBUS.cs" />
     <Compile Include="BUS\FunctionBUS.cs" />
     <Compile Include="BUS\IBUS.cs" />
@@ -319,7 +317,6 @@
     <Compile Include="Constants\ArduinoAction.cs" />
     <Compile Include="Constants\DatabaseName.cs" />
     <Compile Include="Constants\Enum\AccountGender.cs" />
-    <Compile Include="Constants\Enum\AType.cs" />
     <Compile Include="Constants\Enum\CardStatus.cs" />
     <Compile Include="Constants\Enum\CardType.cs" />
     <Compile Include="Constants\Enum\FeeType.cs" />
@@ -331,8 +328,6 @@
     <Compile Include="Constants\Enum\SlotStatus.cs" />
     <Compile Include="Constants\SortOrderPageable.cs" />
     <Compile Include="DAO\AccountDAO.cs" />
-    <Compile Include="DAO\ADAO.cs" />
-    <Compile Include="DAO\BDAO.cs" />
     <Compile Include="DAO\BillDAO.cs" />
     <Compile Include="DAO\CardDAO.cs" />
     <Compile Include="DAO\FactoryDAO.cs" />
@@ -351,9 +346,7 @@
     <Compile Include="DAO\SessionDAO.cs" />
     <Compile Include="DAO\VehicleTypeDAO.cs" />
     <Compile Include="DAO\VisitorFeeDAO.cs" />
-    <Compile Include="ENTITY\A.cs" />
     <Compile Include="ENTITY\Account.cs" />
-    <Compile Include="ENTITY\B.cs" />
     <Compile Include="ENTITY\Bill.cs" />
     <Compile Include="ENTITY\Card.cs" />
     <Compile Include="ENTITY\Function.cs" />
