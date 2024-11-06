@@ -348,11 +348,6 @@
             this.listAccess.FillColor = System.Drawing.Color.White;
             this.listAccess.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listAccess.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.listAccess.Items.AddRange(new object[] {
-            "Account Management",
-            "Role Management",
-            "Bill Management",
-            "..."});
             this.listAccess.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.listAccess.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.listAccess.Location = new System.Drawing.Point(8, 32);
@@ -410,10 +405,6 @@
             this.cbRole.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRole.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.cbRole.ItemRectColor = System.Drawing.Color.White;
-            this.cbRole.Items.AddRange(new object[] {
-            "Administrator",
-            "Staff",
-            "Accountant"});
             this.cbRole.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.cbRole.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbRole.Location = new System.Drawing.Point(8, 32);
@@ -429,7 +420,6 @@
             this.cbRole.Size = new System.Drawing.Size(414, 34);
             this.cbRole.SymbolSize = 24;
             this.cbRole.TabIndex = 0;
-            this.cbRole.Text = "Administrator";
             this.cbRole.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cbRole.Watermark = "";
             this.cbRole.SelectedIndexChanged += new System.EventHandler(this.cbRole_SelectedIndexChanged);

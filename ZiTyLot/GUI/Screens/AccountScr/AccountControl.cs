@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using Org.BouncyCastle.Bcpg.OpenPgp;
 using ZiTyLot.Constants.Enum;
+using ZiTyLot.Constants;
 
 namespace ZiTyLot.GUI.Screens
 {
@@ -22,13 +23,13 @@ namespace ZiTyLot.GUI.Screens
         private readonly Pageable pageable = new Pageable();
         private readonly List<FilterCondition> filters = new List<FilterCondition>();
         private Page<Account> page;
+
+        private AccountCreateForm _accountCreateForm;
         public AccountControl()
         {
             InitializeComponent();
             cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
-            page = accountBUS.GetAllPagination(pageable, filters);
-            LoadPageAndPageable();
         }
 
         private void AccountScreen_Load(object sender, EventArgs e)
@@ -113,16 +114,26 @@ namespace ZiTyLot.GUI.Screens
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e) => ShowAccountCreateForm();
+
+        private void ShowAccountCreateForm()
         {
-            AccountCreateForm accountCreateForm = new AccountCreateForm();
-            accountCreateForm.Show();
-            accountCreateForm.AccountCreated += (s, args) =>
+            if (_accountCreateForm == null || _accountCreateForm.IsDisposed)
             {
-                page = accountBUS.GetAllPagination(pageable, filters);
-                LoadPageAndPageable();
-                //ChangePage(1);
-            };
+                _accountCreateForm = new AccountCreateForm();
+                _accountCreateForm.Show();
+                _accountCreateForm.AccountCreated += (s, args) =>
+                {
+                    filters.Clear();
+                    ChangePage(1);
+                };
+            }
+            else
+            {
+                if (_accountCreateForm.WindowState == FormWindowState.Minimized)
+                    _accountCreateForm.WindowState = FormWindowState.Normal;
+                _accountCreateForm.BringToFront();
+            }
         }
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -165,11 +176,9 @@ namespace ZiTyLot.GUI.Screens
         }
         private void ChangePage(int pageNumber)
         {
-            if (pageNumber < 1 || pageNumber > page.TotalPages)
-            {
-                return;
-            }
             pageable.PageNumber = pageNumber;
+            pageable.SortBy = nameof(Account.Created_at);
+            pageable.SortOrder = SortOrderPageable.Descending;
             page = accountBUS.GetAllPagination(pageable, filters);
             LoadPageAndPageable();
         }
@@ -187,7 +196,7 @@ namespace ZiTyLot.GUI.Screens
                         break;
                     case 1:
                         filters.Add(new FilterCondition("Full_name", CompOp.Like, inputSearch));
-                       
+
                         break;
                     case 2:
                         filters.Add(new FilterCondition("Username", CompOp.Like, inputSearch));
@@ -197,35 +206,15 @@ namespace ZiTyLot.GUI.Screens
                         break;
                 }
             }
-            //assume have a combobox when query
-            //int inputCboxIndexType = cbFilter.SelectedIndex;
-            //if (inputCboxIndexType != 0)
-            //{
-            //    switch (inputCboxIndexType)
-            //    {
-            //        case 1:
-            //            filters.Add(new FilterCondition("Status", CompOp.Equals, AccountGender.MALE));
-            //            break;
-            //        case 2:
-            //            filters.Add(new FilterCondition("Status", CompOp.Equals, AccountGender.MALE));
-            //            break;
-            //    }
-            //}
-
-
-            pageable.PageNumber = 1;
-            page = accountBUS.GetAllPagination(pageable, filters);
-            LoadPageAndPageable();
+            ChangePage(1);
         }
 
         private void numberofitemsCb_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedValue = cbNumberofitem.SelectedItem.ToString();
             int pageSize = int.Parse(selectedValue.Split(' ')[0]);
-            pageable.PageNumber = 1;
             pageable.PageSize = pageSize;
-            page = accountBUS.GetAllPagination(pageable, filters);
-            LoadPageAndPageable();
+            ChangePage(1);
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)

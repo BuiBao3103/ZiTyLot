@@ -26,6 +26,7 @@ namespace ZiTyLot.BUS
 
             try
             {
+                item.Created_at = DateTime.Now;
                 accountDao.Add(item);
             }
             catch (Exception ex)

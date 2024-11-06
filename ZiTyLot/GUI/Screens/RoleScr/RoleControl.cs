@@ -144,6 +144,7 @@ namespace ZiTyLot.GUI.Screens
                 _roleCreateForm = new RoleCreateForm();
                 _roleCreateForm.RoleCreated += (s, args) =>
                 {
+                    filters.Clear();
                     roleList = roleBUS.GetAll();
                     LoadDataToTable();
                 };

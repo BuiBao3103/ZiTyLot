@@ -13,6 +13,7 @@ using ZiTyLot.BUS;
 using ZiTyLot.Constants.Enum;
 using ZiTyLot.DAO;
 using ZiTyLot.ENTITY;
+using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Utils;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -32,8 +33,8 @@ namespace ZiTyLot.GUI.Screens.AccountScr
 
             List<Role> roles = roleBUS.GetAll();
             cbRole.DataSource = roles;
-            cbRole.DisplayMember = "Name";
-            cbRole.ValueMember = "Id";
+            cbRole.DisplayMember = nameof(Role.Name);
+            cbRole.ValueMember = nameof(Role.Id);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -55,7 +56,6 @@ namespace ZiTyLot.GUI.Screens.AccountScr
                     Username = tbUsername.Text.Trim(),
                     Gender = cbGender.SelectedIndex == 0 ? AccountGender.MALE : AccountGender.FEMALE,
                     Role_id = (int)cbRole.SelectedValue,
-
                     Password = "1"
                 };
                 accountBUS.Add(account);
@@ -71,8 +71,9 @@ namespace ZiTyLot.GUI.Screens.AccountScr
             {
                 MessageHelper.ShowWarning(ex.Message);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 MessageHelper.ShowError("An unexpected error occurred. Please try again later.");
             }
         }
@@ -114,14 +115,14 @@ namespace ZiTyLot.GUI.Screens.AccountScr
                 return false;
             }
 
-            if (!System.Text.RegularExpressions.Regex.IsMatch(tbEmail.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            if (!InputValidator.ValidateEmail(tbEmail.Text))
             {
                 MessageHelper.ShowWarning("Invalid email");
                 tbEmail.Focus();
                 return false;
             }
 
-            if (!System.Text.RegularExpressions.Regex.IsMatch(tbPhone.Text, @"^\d{10}$"))
+            if (!InputValidator.ValidatePhoneNumber(tbPhone.Text))
             {
                 MessageHelper.ShowWarning("Invalid phone number");
                 tbPhone.Focus();
@@ -150,7 +151,7 @@ namespace ZiTyLot.GUI.Screens.AccountScr
                 Role role = roleBUS.PopulateFunctions((Role)cbRole.SelectedItem);
                 listAccess.DataSource = null;
                 listAccess.DataSource = role.Functions;
-                listAccess.DisplayMember = "Name";
+                listAccess.DisplayMember = nameof(Function.Name);
             }
         }
     }
