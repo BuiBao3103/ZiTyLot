@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
+using ZiTyLot.GUI.Screens.AreaScr;
 using ZiTyLot.GUI.Screens.ResidentScr;
 using ZiTyLot.Helper;
 
@@ -20,6 +21,7 @@ namespace ZiTyLot.GUI.Screens
         private readonly List<FilterCondition> filters = new List<FilterCondition>();
         private Page<Resident> page;
 
+        private ResidentCreateForm _residentCreateForm;
         public ResidentControl()
         {
             InitializeComponent();
@@ -136,11 +138,28 @@ namespace ZiTyLot.GUI.Screens
             Query();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            ResidentCreateForm residentCreateForm = new ResidentCreateForm();
-            residentCreateForm.Show();
+        private void btnAdd_Click(object sender, EventArgs e) =>  showResidentCreateForm();
 
+        private void showResidentCreateForm()
+        {
+            if (_residentCreateForm == null || _residentCreateForm.IsDisposed)
+            {
+                _residentCreateForm = new ResidentCreateForm();
+                _residentCreateForm.ResidentInsertionEvent += (s, args) =>
+                {
+                    filters.Clear();
+                    page = residentBUS.GetAllPagination(pageable, filters);
+                    LoadPageAndPageable();
+                    ChangePage(1);
+                };
+                _residentCreateForm.Show();
+            }
+            else
+            {
+                if (_residentCreateForm.WindowState == FormWindowState.Minimized)
+                    _residentCreateForm.WindowState = FormWindowState.Normal;
+                _residentCreateForm.BringToFront();
+            }
         }
 
         private void LoadPageAndPageable()

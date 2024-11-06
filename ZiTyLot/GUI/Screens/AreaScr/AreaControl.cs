@@ -9,6 +9,7 @@ using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens.AreaScr;
+using ZiTyLot.GUI.Screens.PriceScr;
 using ZiTyLot.Helper;
 
 namespace ZiTyLot.GUI.Screens
@@ -20,6 +21,8 @@ namespace ZiTyLot.GUI.Screens
         private readonly Pageable pageable = new Pageable();
         private readonly List<FilterCondition> filters = new List<FilterCondition>();
         private Page<ParkingLot> page;
+
+        private AreaCreateForm _areaCreateForm;
         public AreaControl()
         {
             InitializeComponent();
@@ -124,10 +127,28 @@ namespace ZiTyLot.GUI.Screens
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e) => showAreaCreateForm();
+
+        private void showAreaCreateForm()
         {
-            AreaCreateForm areaCreateForm = new AreaCreateForm();
-            areaCreateForm.Show();
+            if (_areaCreateForm == null || _areaCreateForm.IsDisposed )
+            {
+                _areaCreateForm = new AreaCreateForm();
+                _areaCreateForm.AreaInsertionEvent += (s, args) =>
+                {
+                    filters.Clear();
+                    page = parkingLotBUS.GetAllPagination(pageable, filters);
+                    LoadPageAndPageable();
+                    ChangePage(1);
+                };
+                _areaCreateForm.Show();
+            }
+            else
+            {
+                if (_areaCreateForm.WindowState == FormWindowState.Minimized)
+                    _areaCreateForm.WindowState = FormWindowState.Normal;
+                _areaCreateForm.BringToFront();
+            }    
         }
 
         private void LoadPageAndPageable()

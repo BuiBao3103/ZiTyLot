@@ -161,6 +161,7 @@
             this.tbPhone.TabIndex = 0;
             this.tbPhone.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbPhone.Watermark = "";
+            this.tbPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPhone_KeyPress);
             // 
             // pnlEmail
             // 
@@ -269,6 +270,7 @@
             this.tbApartmentID.TabIndex = 0;
             this.tbApartmentID.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbApartmentID.Watermark = "";
+            this.tbApartmentID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbApartmentID_KeyPress);
             // 
             // pnlFullname
             // 
@@ -323,6 +325,7 @@
             this.tbFullname.TabIndex = 0;
             this.tbFullname.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbFullname.Watermark = "";
+            this.tbFullname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFullname_KeyPress);
             // 
             // pnlMain
             // 
@@ -400,6 +403,7 @@
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // panel3
             // 
@@ -436,6 +440,48 @@
             this.btnCreate.TabIndex = 3;
             this.btnCreate.Text = "Create";
             this.btnCreate.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
+            // uiPanel1
+            // 
+            this.pnlMain.SetColumnSpan(this.uiPanel1, 2);
+            this.uiPanel1.Controls.Add(this.uiPanel3);
+            this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel1.FillColor = System.Drawing.Color.White;
+            this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel1.Location = new System.Drawing.Point(5, 6);
+            this.uiPanel1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel1.Name = "uiPanel1";
+            this.uiPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.uiPanel1.Radius = 0;
+            this.uiPanel1.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom;
+            this.uiPanel1.RectSize = 2;
+            this.uiPanel1.Size = new System.Drawing.Size(769, 54);
+            this.uiPanel1.TabIndex = 17;
+            this.uiPanel1.Text = null;
+            this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiPanel3
+            // 
+            this.uiPanel3.Controls.Add(this.uiSymbolLabel1);
+            this.uiPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel3.FillColor = System.Drawing.Color.White;
+            this.uiPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel3.Location = new System.Drawing.Point(0, 0);
+            this.uiPanel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel3.Name = "uiPanel3";
+            this.uiPanel3.Padding = new System.Windows.Forms.Padding(0, 2, 0, 10);
+            this.uiPanel3.Radius = 0;
+            this.uiPanel3.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.uiPanel3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiPanel3.RectSize = 2;
+            this.uiPanel3.Size = new System.Drawing.Size(769, 52);
+            this.uiPanel3.TabIndex = 5;
+            this.uiPanel3.Text = null;
+            this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // uiPanel1
             // 
