@@ -10,52 +10,49 @@ namespace ZiTyLot.GUI.Screens
         public ScanningControl()
         {
             InitializeComponent();
-            AdjustPanelPosition();
-            btnCheckOut.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnCheckOut.Width, btnCheckOut.Height, 10, 10));
-            btnCheckIn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnCheckIn.Width, btnCheckIn.Height, 10, 10));
-            uiPanel1.Location = new Point(this.panel2.Width / 2 - uiPanel1.Width / 2, this.panel2.Height / 2 - uiPanel1.Height / 2);
+            
 
         }
-        private void AdjustPanelPosition()
+
+        private void btnCarCheckIn_Click(object sender, EventArgs e)
         {
-            var screenBounds = Screen.FromControl(this).WorkingArea;
-
-            if (screenBounds.Width <= 1600)
-            {
-                // For smaller screens, position uiPanel1 accordingly
-                uiPanel1.Location = new System.Drawing.Point(this.panel2.Width / 4, 0);
-            }
-            else
-            {
-                uiPanel1.Location = new System.Drawing.Point(this.panel2.Width / 2 - uiPanel1.Width / 2, this.panel2.Height / 2 - uiPanel1.Height / 2);
-            }
+            CarCheckInForm carCheckInForm = new CarCheckInForm();
+            carCheckInForm.Show();
         }
-        private void ScanningScreen_Resize(object sender, EventArgs e)
+
+        private void btnCarCheckOut_Click(object sender, EventArgs e)
         {
-            AdjustPanelPosition();
+            CarCheckOutForm carCheckOutForm = new CarCheckOutForm();
+            carCheckOutForm.Show();
         }
 
-        private void ScanningScreen_Load(object sender, EventArgs e)
+        private void btnBikeCheckIn_Click(object sender, EventArgs e)
         {
-            //TopPnl.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, TopPnl.Width, TopPnl.Height, 10, 10
+            BikeCheckInForm bikeCheckInForm = new BikeCheckInForm();
+            bikeCheckInForm.Show();
         }
 
-        private void checkinBtn_Click(object sender, EventArgs e)
+        private void btnBikeCheckOut_Click(object sender, EventArgs e)
         {
-            CheckInForm checkInForm = new CheckInForm();
-            //checkInForm.WindowState = FormWindowState.Maximized;
-            //checkInForm.MaximizeBox = false;
-            checkInForm.Show();
+            BikeCheckOutFrom   bikeCheckOutForm = new BikeCheckOutFrom();
+            bikeCheckOutForm.Show();
         }
 
-
-        private void checkoutBtn_Click(object sender, EventArgs e)
+        private void ScanningControl_Load(object sender, EventArgs e)
         {
-            CheckOutForm checkOutForm = new CheckOutForm();
-            //checkOutForm.WindowState = FormWindowState.Maximized;
-            //checkOutForm.MaximizeBox = false;
-            checkOutForm.Show();
+            btnBikeCheckIn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnBikeCheckIn.Width, btnBikeCheckIn.Height, 10, 10));
+            btnBikeCheckOut.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnBikeCheckOut.Width, btnBikeCheckOut.Height, 10, 10));
+            btnCarCheckIn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnCarCheckIn.Width, btnCarCheckIn.Height, 10, 10));
+            btnCarCheckOut.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnCarCheckOut.Width, btnCarCheckOut.Height, 10, 10));
+
         }
 
+        private void ScanningControl_Resize(object sender, EventArgs e)
+        {
+            btnBikeCheckIn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnBikeCheckIn.Width, btnBikeCheckIn.Height, 10, 10));
+            btnBikeCheckOut.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnBikeCheckOut.Width, btnBikeCheckOut.Height, 10, 10));
+            btnCarCheckIn.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnCarCheckIn.Width, btnCarCheckIn.Height, 10, 10));
+            btnCarCheckOut.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnCarCheckOut.Width, btnCarCheckOut.Height, 10, 10));
+        }
     }
 }

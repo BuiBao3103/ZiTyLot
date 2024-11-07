@@ -1,6 +1,6 @@
 ﻿namespace ZiTyLot.GUI.Screens.ScanningScr
 {
-    partial class CheckOutForm
+    partial class BikeCheckOutFrom
     {
         /// <summary>
         /// Required designer variable.
@@ -28,23 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlTop = new Sunny.UI.UIPanel();
-            this.uiLabel1 = new Sunny.UI.UILabel();
-            this.separator = new System.Windows.Forms.Panel();
             this.pnlBottom = new Sunny.UI.UIPanel();
             this.table = new Sunny.UI.UITableLayoutPanel();
             this.pnlCheckInPlate = new Sunny.UI.UIPanel();
             this.uiGroupBox12 = new Sunny.UI.UIGroupBox();
-            this.pbCheckInPlate = new System.Windows.Forms.PictureBox();
             this.pnlCheckInBack = new Sunny.UI.UIPanel();
             this.uiGroupBox11 = new Sunny.UI.UIGroupBox();
-            this.pbCheckInBack = new System.Windows.Forms.PictureBox();
             this.pnlCheckInFront = new Sunny.UI.UIPanel();
             this.uiGroupBox10 = new Sunny.UI.UIGroupBox();
-            this.pbCheckInFront = new System.Windows.Forms.PictureBox();
             this.pnlPlateRecord = new Sunny.UI.UIPanel();
             this.uiGroupBox6 = new Sunny.UI.UIGroupBox();
-            this.pbPlateRecord = new System.Windows.Forms.PictureBox();
             this.pnlPlateCamera = new Sunny.UI.UIPanel();
             this.uiGroupBox5 = new Sunny.UI.UIGroupBox();
             this.uiTableLayoutPanel2 = new Sunny.UI.UITableLayoutPanel();
@@ -56,16 +49,12 @@
             this.lbFrontCameraStatus = new Sunny.UI.UILabel();
             this.pnlBackRecord = new Sunny.UI.UIPanel();
             this.uiGroupBox4 = new Sunny.UI.UIGroupBox();
-            this.pbBackRecord = new System.Windows.Forms.PictureBox();
             this.pnlBackCamera = new Sunny.UI.UIPanel();
             this.uiGroupBox2 = new Sunny.UI.UIGroupBox();
-            this.pbBackCamera = new System.Windows.Forms.PictureBox();
             this.pnlFrontRecord = new Sunny.UI.UIPanel();
             this.uiGroupBox3 = new Sunny.UI.UIGroupBox();
-            this.pbFrontRecord = new System.Windows.Forms.PictureBox();
             this.pnlFrontCamera = new Sunny.UI.UIPanel();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
-            this.pbFrontCamera = new System.Windows.Forms.PictureBox();
             this.pnlInformation = new Sunny.UI.UITableLayoutPanel();
             this.pnlResident = new Sunny.UI.UIPanel();
             this.uiGroupBox8 = new Sunny.UI.UIGroupBox();
@@ -111,36 +100,38 @@
             this.uiLabel35 = new Sunny.UI.UILabel();
             this.uiLabel36 = new Sunny.UI.UILabel();
             this.uiLabel37 = new Sunny.UI.UILabel();
-            this.pnlTop.SuspendLayout();
+            this.pbCheckInPlate = new System.Windows.Forms.PictureBox();
+            this.pbCheckInBack = new System.Windows.Forms.PictureBox();
+            this.pbCheckInFront = new System.Windows.Forms.PictureBox();
+            this.pbPlateRecord = new System.Windows.Forms.PictureBox();
+            this.pbBackRecord = new System.Windows.Forms.PictureBox();
+            this.pbBackCamera = new System.Windows.Forms.PictureBox();
+            this.pbFrontRecord = new System.Windows.Forms.PictureBox();
+            this.pbFrontCamera = new System.Windows.Forms.PictureBox();
+            this.pnlTop = new Sunny.UI.UIPanel();
+            this.uiLabel1 = new Sunny.UI.UILabel();
+            this.separator = new System.Windows.Forms.Panel();
             this.pnlBottom.SuspendLayout();
             this.table.SuspendLayout();
             this.pnlCheckInPlate.SuspendLayout();
             this.uiGroupBox12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCheckInPlate)).BeginInit();
             this.pnlCheckInBack.SuspendLayout();
             this.uiGroupBox11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCheckInBack)).BeginInit();
             this.pnlCheckInFront.SuspendLayout();
             this.uiGroupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCheckInFront)).BeginInit();
             this.pnlPlateRecord.SuspendLayout();
             this.uiGroupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlateRecord)).BeginInit();
             this.pnlPlateCamera.SuspendLayout();
             this.uiGroupBox5.SuspendLayout();
             this.uiTableLayoutPanel2.SuspendLayout();
             this.pnlBackRecord.SuspendLayout();
             this.uiGroupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBackRecord)).BeginInit();
             this.pnlBackCamera.SuspendLayout();
             this.uiGroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBackCamera)).BeginInit();
             this.pnlFrontRecord.SuspendLayout();
             this.uiGroupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFrontRecord)).BeginInit();
             this.pnlFrontCamera.SuspendLayout();
             this.uiGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFrontCamera)).BeginInit();
             this.pnlInformation.SuspendLayout();
             this.pnlResident.SuspendLayout();
             this.uiGroupBox8.SuspendLayout();
@@ -153,47 +144,16 @@
             this.uiPanel7.SuspendLayout();
             this.uiGroupBox9.SuspendLayout();
             this.uiTableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCheckInPlate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCheckInBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCheckInFront)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlateRecord)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackRecord)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackCamera)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFrontRecord)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFrontCamera)).BeginInit();
+            this.pnlTop.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnlTop
-            // 
-            this.pnlTop.BackColor = System.Drawing.Color.White;
-            this.pnlTop.Controls.Add(this.uiLabel1);
-            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTop.FillColor = System.Drawing.Color.White;
-            this.pnlTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlTop.Location = new System.Drawing.Point(10, 10);
-            this.pnlTop.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlTop.MinimumSize = new System.Drawing.Size(1, 1);
-            this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.pnlTop.Radius = 10;
-            this.pnlTop.RectColor = System.Drawing.Color.White;
-            this.pnlTop.Size = new System.Drawing.Size(1330, 50);
-            this.pnlTop.TabIndex = 1;
-            this.pnlTop.Text = null;
-            this.pnlTop.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiLabel1
-            // 
-            this.uiLabel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uiLabel1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiLabel1.Location = new System.Drawing.Point(10, 0);
-            this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(254, 50);
-            this.uiLabel1.TabIndex = 0;
-            this.uiLabel1.Text = "Check Out Session";
-            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // separator
-            // 
-            this.separator.Dock = System.Windows.Forms.DockStyle.Top;
-            this.separator.Location = new System.Drawing.Point(10, 60);
-            this.separator.MaximumSize = new System.Drawing.Size(1620, 4);
-            this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(1330, 4);
-            this.separator.TabIndex = 4;
             // 
             // pnlBottom
             // 
@@ -211,7 +171,7 @@
             this.pnlBottom.RectColor = System.Drawing.Color.White;
             this.pnlBottom.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.pnlBottom.Size = new System.Drawing.Size(1330, 655);
-            this.pnlBottom.TabIndex = 5;
+            this.pnlBottom.TabIndex = 6;
             this.pnlBottom.Text = null;
             this.pnlBottom.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -281,17 +241,6 @@
             this.uiGroupBox12.Text = "Check In Plate Record";
             this.uiGroupBox12.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pbCheckInPlate
-            // 
-            this.pbCheckInPlate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbCheckInPlate.Image = global::ZiTyLot.Properties.Resources.logo;
-            this.pbCheckInPlate.Location = new System.Drawing.Point(10, 32);
-            this.pbCheckInPlate.Name = "pbCheckInPlate";
-            this.pbCheckInPlate.Size = new System.Drawing.Size(297, 117);
-            this.pbCheckInPlate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbCheckInPlate.TabIndex = 0;
-            this.pbCheckInPlate.TabStop = false;
-            // 
             // pnlCheckInBack
             // 
             this.pnlCheckInBack.Controls.Add(this.uiGroupBox11);
@@ -328,17 +277,6 @@
             this.uiGroupBox11.TabIndex = 1;
             this.uiGroupBox11.Text = "Check In Back Record";
             this.uiGroupBox11.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pbCheckInBack
-            // 
-            this.pbCheckInBack.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbCheckInBack.Image = global::ZiTyLot.Properties.Resources.logo;
-            this.pbCheckInBack.Location = new System.Drawing.Point(10, 32);
-            this.pbCheckInBack.Name = "pbCheckInBack";
-            this.pbCheckInBack.Size = new System.Drawing.Size(297, 196);
-            this.pbCheckInBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbCheckInBack.TabIndex = 0;
-            this.pbCheckInBack.TabStop = false;
             // 
             // pnlCheckInFront
             // 
@@ -377,17 +315,6 @@
             this.uiGroupBox10.Text = "Check In Front Record";
             this.uiGroupBox10.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pbCheckInFront
-            // 
-            this.pbCheckInFront.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbCheckInFront.Image = global::ZiTyLot.Properties.Resources.logo;
-            this.pbCheckInFront.Location = new System.Drawing.Point(10, 32);
-            this.pbCheckInFront.Name = "pbCheckInFront";
-            this.pbCheckInFront.Size = new System.Drawing.Size(297, 196);
-            this.pbCheckInFront.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbCheckInFront.TabIndex = 0;
-            this.pbCheckInFront.TabStop = false;
-            // 
             // pnlPlateRecord
             // 
             this.pnlPlateRecord.Controls.Add(this.uiGroupBox6);
@@ -424,17 +351,6 @@
             this.uiGroupBox6.TabIndex = 1;
             this.uiGroupBox6.Text = "Plate Record";
             this.uiGroupBox6.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pbPlateRecord
-            // 
-            this.pbPlateRecord.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbPlateRecord.Image = global::ZiTyLot.Properties.Resources.logo;
-            this.pbPlateRecord.Location = new System.Drawing.Point(10, 32);
-            this.pbPlateRecord.Name = "pbPlateRecord";
-            this.pbPlateRecord.Size = new System.Drawing.Size(297, 117);
-            this.pbPlateRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbPlateRecord.TabIndex = 0;
-            this.pbPlateRecord.TabStop = false;
             // 
             // pnlPlateCamera
             // 
@@ -494,16 +410,15 @@
             this.uiTableLayoutPanel2.Size = new System.Drawing.Size(297, 117);
             this.uiTableLayoutPanel2.TabIndex = 0;
             this.uiTableLayoutPanel2.TagString = null;
-            this.uiTableLayoutPanel2.Resize += new System.EventHandler(this.uiTableLayoutPanel2_Resize);
             // 
             // uiLabel12
             // 
             this.uiLabel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiLabel12.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.uiLabel12.ForeColor = System.Drawing.Color.Gray;
-            this.uiLabel12.Location = new System.Drawing.Point(3, 76);
+            this.uiLabel12.Location = new System.Drawing.Point(3, 78);
             this.uiLabel12.Name = "uiLabel12";
-            this.uiLabel12.Size = new System.Drawing.Size(112, 41);
+            this.uiLabel12.Size = new System.Drawing.Size(112, 39);
             this.uiLabel12.TabIndex = 16;
             this.uiLabel12.Text = "Boom gate:";
             this.uiLabel12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -513,9 +428,9 @@
             this.lbBoomGateStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbBoomGateStatus.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.lbBoomGateStatus.ForeColor = System.Drawing.Color.Red;
-            this.lbBoomGateStatus.Location = new System.Drawing.Point(121, 76);
+            this.lbBoomGateStatus.Location = new System.Drawing.Point(121, 78);
             this.lbBoomGateStatus.Name = "lbBoomGateStatus";
-            this.lbBoomGateStatus.Size = new System.Drawing.Size(173, 41);
+            this.lbBoomGateStatus.Size = new System.Drawing.Size(173, 39);
             this.lbBoomGateStatus.TabIndex = 15;
             this.lbBoomGateStatus.Text = "Disconnected";
             this.lbBoomGateStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -525,9 +440,9 @@
             this.uiLabel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiLabel8.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.uiLabel8.ForeColor = System.Drawing.Color.Gray;
-            this.uiLabel8.Location = new System.Drawing.Point(3, 38);
+            this.uiLabel8.Location = new System.Drawing.Point(3, 39);
             this.uiLabel8.Name = "uiLabel8";
-            this.uiLabel8.Size = new System.Drawing.Size(112, 38);
+            this.uiLabel8.Size = new System.Drawing.Size(112, 39);
             this.uiLabel8.TabIndex = 14;
             this.uiLabel8.Text = "Back camera:";
             this.uiLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -537,9 +452,9 @@
             this.lbBackCameraStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbBackCameraStatus.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.lbBackCameraStatus.ForeColor = System.Drawing.Color.Gray;
-            this.lbBackCameraStatus.Location = new System.Drawing.Point(121, 38);
+            this.lbBackCameraStatus.Location = new System.Drawing.Point(121, 39);
             this.lbBackCameraStatus.Name = "lbBackCameraStatus";
-            this.lbBackCameraStatus.Size = new System.Drawing.Size(173, 38);
+            this.lbBackCameraStatus.Size = new System.Drawing.Size(173, 39);
             this.lbBackCameraStatus.TabIndex = 13;
             this.lbBackCameraStatus.Text = "Not found";
             this.lbBackCameraStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -551,7 +466,7 @@
             this.uiLabel4.ForeColor = System.Drawing.Color.Gray;
             this.uiLabel4.Location = new System.Drawing.Point(3, 0);
             this.uiLabel4.Name = "uiLabel4";
-            this.uiLabel4.Size = new System.Drawing.Size(112, 38);
+            this.uiLabel4.Size = new System.Drawing.Size(112, 39);
             this.uiLabel4.TabIndex = 12;
             this.uiLabel4.Text = "Front camera:";
             this.uiLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -563,7 +478,7 @@
             this.lbFrontCameraStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lbFrontCameraStatus.Location = new System.Drawing.Point(121, 0);
             this.lbFrontCameraStatus.Name = "lbFrontCameraStatus";
-            this.lbFrontCameraStatus.Size = new System.Drawing.Size(173, 38);
+            this.lbFrontCameraStatus.Size = new System.Drawing.Size(173, 39);
             this.lbFrontCameraStatus.TabIndex = 11;
             this.lbFrontCameraStatus.Text = "Connected";
             this.lbFrontCameraStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -605,17 +520,6 @@
             this.uiGroupBox4.Text = "Back Record";
             this.uiGroupBox4.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pbBackRecord
-            // 
-            this.pbBackRecord.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbBackRecord.Image = global::ZiTyLot.Properties.Resources.logo;
-            this.pbBackRecord.Location = new System.Drawing.Point(10, 32);
-            this.pbBackRecord.Name = "pbBackRecord";
-            this.pbBackRecord.Size = new System.Drawing.Size(297, 196);
-            this.pbBackRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbBackRecord.TabIndex = 0;
-            this.pbBackRecord.TabStop = false;
-            // 
             // pnlBackCamera
             // 
             this.pnlBackCamera.Controls.Add(this.uiGroupBox2);
@@ -652,17 +556,6 @@
             this.uiGroupBox2.TabIndex = 1;
             this.uiGroupBox2.Text = "Back Camera";
             this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pbBackCamera
-            // 
-            this.pbBackCamera.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbBackCamera.Image = global::ZiTyLot.Properties.Resources.logo;
-            this.pbBackCamera.Location = new System.Drawing.Point(10, 32);
-            this.pbBackCamera.Name = "pbBackCamera";
-            this.pbBackCamera.Size = new System.Drawing.Size(297, 196);
-            this.pbBackCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbBackCamera.TabIndex = 0;
-            this.pbBackCamera.TabStop = false;
             // 
             // pnlFrontRecord
             // 
@@ -701,17 +594,6 @@
             this.uiGroupBox3.Text = "Front Record";
             this.uiGroupBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pbFrontRecord
-            // 
-            this.pbFrontRecord.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbFrontRecord.Image = global::ZiTyLot.Properties.Resources.logo;
-            this.pbFrontRecord.Location = new System.Drawing.Point(10, 32);
-            this.pbFrontRecord.Name = "pbFrontRecord";
-            this.pbFrontRecord.Size = new System.Drawing.Size(297, 196);
-            this.pbFrontRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbFrontRecord.TabIndex = 0;
-            this.pbFrontRecord.TabStop = false;
-            // 
             // pnlFrontCamera
             // 
             this.pnlFrontCamera.Controls.Add(this.uiGroupBox1);
@@ -749,17 +631,6 @@
             this.uiGroupBox1.Text = "Front Camera";
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pbFrontCamera
-            // 
-            this.pbFrontCamera.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbFrontCamera.Image = global::ZiTyLot.Properties.Resources.scan;
-            this.pbFrontCamera.Location = new System.Drawing.Point(10, 32);
-            this.pbFrontCamera.Name = "pbFrontCamera";
-            this.pbFrontCamera.Size = new System.Drawing.Size(297, 196);
-            this.pbFrontCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbFrontCamera.TabIndex = 0;
-            this.pbFrontCamera.TabStop = false;
-            // 
             // pnlInformation
             // 
             this.pnlInformation.ColumnCount = 1;
@@ -779,7 +650,6 @@
             this.pnlInformation.Size = new System.Drawing.Size(323, 629);
             this.pnlInformation.TabIndex = 9;
             this.pnlInformation.TagString = null;
-            this.pnlInformation.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlInformation_Paint);
             // 
             // pnlResident
             // 
@@ -845,7 +715,6 @@
             this.uiTableLayoutPanel4.Size = new System.Drawing.Size(293, 146);
             this.uiTableLayoutPanel4.TabIndex = 1;
             this.uiTableLayoutPanel4.TagString = null;
-            this.uiTableLayoutPanel4.Resize += new System.EventHandler(this.uiTableLayoutPanel4_Resize);
             // 
             // uiLabel24
             // 
@@ -1040,7 +909,6 @@
             this.uiTableLayoutPanel3.Size = new System.Drawing.Size(293, 241);
             this.uiTableLayoutPanel3.TabIndex = 0;
             this.uiTableLayoutPanel3.TagString = null;
-            this.uiTableLayoutPanel3.Resize += new System.EventHandler(this.uiTableLayoutPanel3_Resize);
             // 
             // uiLabel15
             // 
@@ -1295,7 +1163,6 @@
             this.btnOpen.TabIndex = 0;
             this.btnOpen.Text = "   OPEN \r\nBARRIER\r\n( SPACE )";
             this.btnOpen.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnOpen.Resize += new System.EventHandler(this.btnOpen_Resize);
             // 
             // uiPanel7
             // 
@@ -1354,7 +1221,6 @@
             this.uiTableLayoutPanel5.Size = new System.Drawing.Size(194, 116);
             this.uiTableLayoutPanel5.TabIndex = 2;
             this.uiTableLayoutPanel5.TagString = null;
-            this.uiTableLayoutPanel5.Resize += new System.EventHandler(this.uiTableLayoutPanel5_Resize);
             // 
             // uiLabel22
             // 
@@ -1428,7 +1294,135 @@
             this.uiLabel37.Text = "Open gate:";
             this.uiLabel37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // CheckOutForm
+            // pbCheckInPlate
+            // 
+            this.pbCheckInPlate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbCheckInPlate.Image = global::ZiTyLot.Properties.Resources.logo;
+            this.pbCheckInPlate.Location = new System.Drawing.Point(10, 32);
+            this.pbCheckInPlate.Name = "pbCheckInPlate";
+            this.pbCheckInPlate.Size = new System.Drawing.Size(297, 117);
+            this.pbCheckInPlate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbCheckInPlate.TabIndex = 0;
+            this.pbCheckInPlate.TabStop = false;
+            // 
+            // pbCheckInBack
+            // 
+            this.pbCheckInBack.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbCheckInBack.Image = global::ZiTyLot.Properties.Resources.logo;
+            this.pbCheckInBack.Location = new System.Drawing.Point(10, 32);
+            this.pbCheckInBack.Name = "pbCheckInBack";
+            this.pbCheckInBack.Size = new System.Drawing.Size(297, 196);
+            this.pbCheckInBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbCheckInBack.TabIndex = 0;
+            this.pbCheckInBack.TabStop = false;
+            // 
+            // pbCheckInFront
+            // 
+            this.pbCheckInFront.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbCheckInFront.Image = global::ZiTyLot.Properties.Resources.logo;
+            this.pbCheckInFront.Location = new System.Drawing.Point(10, 32);
+            this.pbCheckInFront.Name = "pbCheckInFront";
+            this.pbCheckInFront.Size = new System.Drawing.Size(297, 196);
+            this.pbCheckInFront.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbCheckInFront.TabIndex = 0;
+            this.pbCheckInFront.TabStop = false;
+            // 
+            // pbPlateRecord
+            // 
+            this.pbPlateRecord.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbPlateRecord.Image = global::ZiTyLot.Properties.Resources.logo;
+            this.pbPlateRecord.Location = new System.Drawing.Point(10, 32);
+            this.pbPlateRecord.Name = "pbPlateRecord";
+            this.pbPlateRecord.Size = new System.Drawing.Size(297, 117);
+            this.pbPlateRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbPlateRecord.TabIndex = 0;
+            this.pbPlateRecord.TabStop = false;
+            // 
+            // pbBackRecord
+            // 
+            this.pbBackRecord.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbBackRecord.Image = global::ZiTyLot.Properties.Resources.logo;
+            this.pbBackRecord.Location = new System.Drawing.Point(10, 32);
+            this.pbBackRecord.Name = "pbBackRecord";
+            this.pbBackRecord.Size = new System.Drawing.Size(297, 196);
+            this.pbBackRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbBackRecord.TabIndex = 0;
+            this.pbBackRecord.TabStop = false;
+            // 
+            // pbBackCamera
+            // 
+            this.pbBackCamera.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbBackCamera.Image = global::ZiTyLot.Properties.Resources.logo;
+            this.pbBackCamera.Location = new System.Drawing.Point(10, 32);
+            this.pbBackCamera.Name = "pbBackCamera";
+            this.pbBackCamera.Size = new System.Drawing.Size(297, 196);
+            this.pbBackCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbBackCamera.TabIndex = 0;
+            this.pbBackCamera.TabStop = false;
+            // 
+            // pbFrontRecord
+            // 
+            this.pbFrontRecord.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbFrontRecord.Image = global::ZiTyLot.Properties.Resources.logo;
+            this.pbFrontRecord.Location = new System.Drawing.Point(10, 32);
+            this.pbFrontRecord.Name = "pbFrontRecord";
+            this.pbFrontRecord.Size = new System.Drawing.Size(297, 196);
+            this.pbFrontRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbFrontRecord.TabIndex = 0;
+            this.pbFrontRecord.TabStop = false;
+            // 
+            // pbFrontCamera
+            // 
+            this.pbFrontCamera.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbFrontCamera.Image = global::ZiTyLot.Properties.Resources.scan;
+            this.pbFrontCamera.Location = new System.Drawing.Point(10, 32);
+            this.pbFrontCamera.Name = "pbFrontCamera";
+            this.pbFrontCamera.Size = new System.Drawing.Size(297, 196);
+            this.pbFrontCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbFrontCamera.TabIndex = 0;
+            this.pbFrontCamera.TabStop = false;
+            // 
+            // pnlTop
+            // 
+            this.pnlTop.BackColor = System.Drawing.Color.White;
+            this.pnlTop.Controls.Add(this.uiLabel1);
+            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTop.FillColor = System.Drawing.Color.White;
+            this.pnlTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.pnlTop.Location = new System.Drawing.Point(10, 10);
+            this.pnlTop.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlTop.MinimumSize = new System.Drawing.Size(1, 1);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.pnlTop.Radius = 10;
+            this.pnlTop.RectColor = System.Drawing.Color.White;
+            this.pnlTop.Size = new System.Drawing.Size(1330, 50);
+            this.pnlTop.TabIndex = 7;
+            this.pnlTop.Text = null;
+            this.pnlTop.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiLabel1
+            // 
+            this.uiLabel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uiLabel1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiLabel1.Location = new System.Drawing.Point(10, 0);
+            this.uiLabel1.Name = "uiLabel1";
+            this.uiLabel1.Size = new System.Drawing.Size(254, 50);
+            this.uiLabel1.TabIndex = 0;
+            this.uiLabel1.Text = "Check Out Session";
+            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // separator
+            // 
+            this.separator.Dock = System.Windows.Forms.DockStyle.Top;
+            this.separator.Location = new System.Drawing.Point(10, 60);
+            this.separator.MaximumSize = new System.Drawing.Size(1620, 4);
+            this.separator.Name = "separator";
+            this.separator.Size = new System.Drawing.Size(1330, 4);
+            this.separator.TabIndex = 8;
+            // 
+            // BikeCheckOutFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1438,40 +1432,30 @@
             this.Controls.Add(this.separator);
             this.Controls.Add(this.pnlTop);
             this.MinimumSize = new System.Drawing.Size(1366, 768);
-            this.Name = "CheckOutForm";
+            this.Name = "BikeCheckOutFrom";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.Text = "CheckOutForm";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CheckOutForm_KeyDown);
-            this.pnlTop.ResumeLayout(false);
+            this.Text = "BikeCheckOutFrom";
             this.pnlBottom.ResumeLayout(false);
             this.table.ResumeLayout(false);
             this.pnlCheckInPlate.ResumeLayout(false);
             this.uiGroupBox12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbCheckInPlate)).EndInit();
             this.pnlCheckInBack.ResumeLayout(false);
             this.uiGroupBox11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbCheckInBack)).EndInit();
             this.pnlCheckInFront.ResumeLayout(false);
             this.uiGroupBox10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbCheckInFront)).EndInit();
             this.pnlPlateRecord.ResumeLayout(false);
             this.uiGroupBox6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlateRecord)).EndInit();
             this.pnlPlateCamera.ResumeLayout(false);
             this.uiGroupBox5.ResumeLayout(false);
             this.uiTableLayoutPanel2.ResumeLayout(false);
             this.pnlBackRecord.ResumeLayout(false);
             this.uiGroupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbBackRecord)).EndInit();
             this.pnlBackCamera.ResumeLayout(false);
             this.uiGroupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbBackCamera)).EndInit();
             this.pnlFrontRecord.ResumeLayout(false);
             this.uiGroupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbFrontRecord)).EndInit();
             this.pnlFrontCamera.ResumeLayout(false);
             this.uiGroupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbFrontCamera)).EndInit();
             this.pnlInformation.ResumeLayout(false);
             this.pnlResident.ResumeLayout(false);
             this.uiGroupBox8.ResumeLayout(false);
@@ -1484,20 +1468,44 @@
             this.uiPanel7.ResumeLayout(false);
             this.uiGroupBox9.ResumeLayout(false);
             this.uiTableLayoutPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbCheckInPlate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCheckInBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCheckInFront)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlateRecord)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackRecord)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackCamera)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFrontRecord)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFrontCamera)).EndInit();
+            this.pnlTop.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Sunny.UI.UIPanel pnlTop;
-        private Sunny.UI.UILabel uiLabel1;
-        private System.Windows.Forms.Panel separator;
+
         private Sunny.UI.UIPanel pnlBottom;
         private Sunny.UI.UITableLayoutPanel table;
+        private Sunny.UI.UIPanel pnlCheckInPlate;
+        private Sunny.UI.UIGroupBox uiGroupBox12;
+        private System.Windows.Forms.PictureBox pbCheckInPlate;
+        private Sunny.UI.UIPanel pnlCheckInBack;
+        private Sunny.UI.UIGroupBox uiGroupBox11;
+        private System.Windows.Forms.PictureBox pbCheckInBack;
+        private Sunny.UI.UIPanel pnlCheckInFront;
+        private Sunny.UI.UIGroupBox uiGroupBox10;
+        private System.Windows.Forms.PictureBox pbCheckInFront;
         private Sunny.UI.UIPanel pnlPlateRecord;
         private Sunny.UI.UIGroupBox uiGroupBox6;
         private System.Windows.Forms.PictureBox pbPlateRecord;
         private Sunny.UI.UIPanel pnlPlateCamera;
+        private Sunny.UI.UIGroupBox uiGroupBox5;
+        private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel2;
+        private Sunny.UI.UILabel uiLabel12;
+        private Sunny.UI.UILabel lbBoomGateStatus;
+        private Sunny.UI.UILabel uiLabel8;
+        private Sunny.UI.UILabel lbBackCameraStatus;
+        private Sunny.UI.UILabel uiLabel4;
+        private Sunny.UI.UILabel lbFrontCameraStatus;
         private Sunny.UI.UIPanel pnlBackRecord;
         private Sunny.UI.UIGroupBox uiGroupBox4;
         private System.Windows.Forms.PictureBox pbBackRecord;
@@ -1511,12 +1519,22 @@
         private Sunny.UI.UIGroupBox uiGroupBox1;
         private System.Windows.Forms.PictureBox pbFrontCamera;
         private Sunny.UI.UITableLayoutPanel pnlInformation;
-        private Sunny.UI.UIPanel pnlCard;
-        private Sunny.UI.UIGroupBox uiGroupBox7;
         private Sunny.UI.UIPanel pnlResident;
         private Sunny.UI.UIGroupBox uiGroupBox8;
+        private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel4;
+        private Sunny.UI.UILabel uiLabel24;
+        private Sunny.UI.UILabel lbRegistedPlate;
+        private Sunny.UI.UILabel uiLabel26;
+        private Sunny.UI.UILabel lbDueDate;
+        private Sunny.UI.UILabel uiLabel28;
+        private Sunny.UI.UILabel lbSignUpDate;
+        private Sunny.UI.UILabel lbApartment;
+        private Sunny.UI.UILabel uiLabel31;
+        private Sunny.UI.UILabel lbFullname;
+        private Sunny.UI.UILabel uiLabel33;
+        private Sunny.UI.UIPanel pnlCard;
+        private Sunny.UI.UIGroupBox uiGroupBox7;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel3;
-        private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UILabel uiLabel15;
         private Sunny.UI.UILabel lbTotalPrice;
         private Sunny.UI.UILabel uiLabel13;
@@ -1532,27 +1550,10 @@
         private Sunny.UI.UILabel lbCardType;
         private Sunny.UI.UILabel uiLabel3;
         private Sunny.UI.UILabel lbCardId;
-        private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel4;
-        private Sunny.UI.UILabel uiLabel24;
-        private Sunny.UI.UILabel lbRegistedPlate;
-        private Sunny.UI.UILabel uiLabel26;
-        private Sunny.UI.UILabel lbDueDate;
-        private Sunny.UI.UILabel uiLabel28;
-        private Sunny.UI.UILabel lbSignUpDate;
-        private Sunny.UI.UILabel lbApartment;
-        private Sunny.UI.UILabel uiLabel31;
-        private Sunny.UI.UILabel lbFullname;
-        private Sunny.UI.UILabel uiLabel33;
-        private Sunny.UI.UIPanel pnlCheckInPlate;
-        private Sunny.UI.UIGroupBox uiGroupBox12;
-        private System.Windows.Forms.PictureBox pbCheckInPlate;
-        private Sunny.UI.UIPanel pnlCheckInBack;
-        private Sunny.UI.UIGroupBox uiGroupBox11;
-        private System.Windows.Forms.PictureBox pbCheckInBack;
-        private Sunny.UI.UIPanel pnlCheckInFront;
-        private Sunny.UI.UIGroupBox uiGroupBox10;
-        private System.Windows.Forms.PictureBox pbCheckInFront;
+        private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel1;
+        private Sunny.UI.UIPanel uiPanel15;
+        private Sunny.UI.UIButton btnOpen;
         private Sunny.UI.UIPanel uiPanel7;
         private Sunny.UI.UIGroupBox uiGroupBox9;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel5;
@@ -1562,15 +1563,8 @@
         private Sunny.UI.UILabel uiLabel35;
         private Sunny.UI.UILabel uiLabel36;
         private Sunny.UI.UILabel uiLabel37;
-        private Sunny.UI.UIPanel uiPanel15;
-        private Sunny.UI.UIButton btnOpen;
-        private Sunny.UI.UIGroupBox uiGroupBox5;
-        private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel2;
-        private Sunny.UI.UILabel uiLabel12;
-        private Sunny.UI.UILabel lbBoomGateStatus;
-        private Sunny.UI.UILabel uiLabel8;
-        private Sunny.UI.UILabel lbBackCameraStatus;
-        private Sunny.UI.UILabel uiLabel4;
-        private Sunny.UI.UILabel lbFrontCameraStatus;
+        private Sunny.UI.UIPanel pnlTop;
+        private Sunny.UI.UILabel uiLabel1;
+        private System.Windows.Forms.Panel separator;
     }
 }
