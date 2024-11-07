@@ -33,108 +33,179 @@ namespace ZiTyLot.GUI.Screens
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
-            this.uiPanel1 = new Sunny.UI.UIPanel();
-            this.btnCheckIn = new Sunny.UI.UIHeaderButton();
-            this.btnCheckOut = new Sunny.UI.UIHeaderButton();
+            this.uiTableLayoutPanel1 = new Sunny.UI.UITableLayoutPanel();
+            this.btnBikeCheckIn = new Sunny.UI.UIHeaderButton();
+            this.btnBikeCheckOut = new Sunny.UI.UIHeaderButton();
+            this.btnCarCheckOut = new Sunny.UI.UIHeaderButton();
+            this.btnCarCheckIn = new Sunny.UI.UIHeaderButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
-            this.uiPanel1.SuspendLayout();
+            this.uiTableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.panel2.Controls.Add(this.uiPanel1);
+            this.panel2.Controls.Add(this.uiTableLayoutPanel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1171, 600);
+            this.panel2.Size = new System.Drawing.Size(1024, 717);
             this.panel2.TabIndex = 2;
             // 
-            // uiPanel1
+            // uiTableLayoutPanel1
             // 
-            this.uiPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.uiPanel1.Controls.Add(this.btnCheckIn);
-            this.uiPanel1.Controls.Add(this.btnCheckOut);
-            this.uiPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel1.Location = new System.Drawing.Point(298, 161);
-            this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel1.Name = "uiPanel1";
-            this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel1.Size = new System.Drawing.Size(566, 250);
-            this.uiPanel1.TabIndex = 0;
-            this.uiPanel1.Text = null;
-            this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.uiTableLayoutPanel1.ColumnCount = 2;
+            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel1.Controls.Add(this.btnBikeCheckIn, 0, 1);
+            this.uiTableLayoutPanel1.Controls.Add(this.btnBikeCheckOut, 1, 1);
+            this.uiTableLayoutPanel1.Controls.Add(this.btnCarCheckOut, 1, 0);
+            this.uiTableLayoutPanel1.Controls.Add(this.btnCarCheckIn, 0, 0);
+            this.uiTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiTableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.uiTableLayoutPanel1.Name = "uiTableLayoutPanel1";
+            this.uiTableLayoutPanel1.RowCount = 2;
+            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel1.Size = new System.Drawing.Size(1024, 717);
+            this.uiTableLayoutPanel1.TabIndex = 0;
+            this.uiTableLayoutPanel1.TagString = null;
             // 
-            // btnCheckIn
+            // btnBikeCheckIn
             // 
-            this.btnCheckIn.CircleColor = System.Drawing.Color.White;
-            this.btnCheckIn.CircleHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCheckIn.CircleSize = 100;
-            this.btnCheckIn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCheckIn.FillColor = System.Drawing.Color.White;
-            this.btnCheckIn.FillDisableColor = System.Drawing.Color.White;
-            this.btnCheckIn.FillHoverColor = System.Drawing.Color.White;
-            this.btnCheckIn.FillPressColor = System.Drawing.Color.White;
-            this.btnCheckIn.FillSelectedColor = System.Drawing.Color.White;
-            this.btnCheckIn.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCheckIn.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCheckIn.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCheckIn.Location = new System.Drawing.Point(316, 0);
-            this.btnCheckIn.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnCheckIn.Name = "btnCheckIn";
-            this.btnCheckIn.Padding = new System.Windows.Forms.Padding(50);
-            this.btnCheckIn.Radius = 14;
-            this.btnCheckIn.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
-            this.btnCheckIn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnCheckIn.RectSize = 2;
-            this.btnCheckIn.Size = new System.Drawing.Size(250, 250);
-            this.btnCheckIn.Symbol = 361579;
-            this.btnCheckIn.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCheckIn.SymbolOffset = new System.Drawing.Point(-4, 0);
-            this.btnCheckIn.SymbolSize = 72;
-            this.btnCheckIn.TabIndex = 1;
-            this.btnCheckIn.Text = "Check Out";
-            this.btnCheckIn.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnCheckIn.TipsForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCheckIn.Click += new System.EventHandler(this.checkoutBtn_Click);
+            this.btnBikeCheckIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBikeCheckIn.CircleColor = System.Drawing.Color.White;
+            this.btnBikeCheckIn.CircleHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnBikeCheckIn.CircleSize = 100;
+            this.btnBikeCheckIn.FillColor = System.Drawing.Color.White;
+            this.btnBikeCheckIn.FillDisableColor = System.Drawing.Color.White;
+            this.btnBikeCheckIn.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnBikeCheckIn.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnBikeCheckIn.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnBikeCheckIn.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBikeCheckIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnBikeCheckIn.Location = new System.Drawing.Point(242, 378);
+            this.btnBikeCheckIn.Margin = new System.Windows.Forms.Padding(20);
+            this.btnBikeCheckIn.MaximumSize = new System.Drawing.Size(250, 250);
+            this.btnBikeCheckIn.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnBikeCheckIn.Name = "btnBikeCheckIn";
+            this.btnBikeCheckIn.Padding = new System.Windows.Forms.Padding(50);
+            this.btnBikeCheckIn.Radius = 14;
+            this.btnBikeCheckIn.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
+            this.btnBikeCheckIn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnBikeCheckIn.RectSize = 2;
+            this.btnBikeCheckIn.Size = new System.Drawing.Size(250, 250);
+            this.btnBikeCheckIn.Symbol = 560023;
+            this.btnBikeCheckIn.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnBikeCheckIn.SymbolOffset = new System.Drawing.Point(-5, 0);
+            this.btnBikeCheckIn.SymbolSize = 72;
+            this.btnBikeCheckIn.TabIndex = 5;
+            this.btnBikeCheckIn.Text = "Check in";
+            this.btnBikeCheckIn.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnBikeCheckIn.TipsForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnBikeCheckIn.Click += new System.EventHandler(this.btnBikeCheckIn_Click);
             // 
-            // btnCheckOut
+            // btnBikeCheckOut
             // 
-            this.btnCheckOut.CircleColor = System.Drawing.Color.White;
-            this.btnCheckOut.CircleHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCheckOut.CircleSize = 100;
-            this.btnCheckOut.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnCheckOut.FillColor = System.Drawing.Color.White;
-            this.btnCheckOut.FillDisableColor = System.Drawing.Color.White;
-            this.btnCheckOut.FillHoverColor = System.Drawing.Color.White;
-            this.btnCheckOut.FillPressColor = System.Drawing.Color.White;
-            this.btnCheckOut.FillSelectedColor = System.Drawing.Color.White;
-            this.btnCheckOut.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCheckOut.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCheckOut.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCheckOut.Location = new System.Drawing.Point(0, 0);
-            this.btnCheckOut.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Padding = new System.Windows.Forms.Padding(50);
-            this.btnCheckOut.Radius = 14;
-            this.btnCheckOut.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
-            this.btnCheckOut.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnCheckOut.RectSize = 2;
-            this.btnCheckOut.Size = new System.Drawing.Size(250, 250);
-            this.btnCheckOut.Symbol = 361584;
-            this.btnCheckOut.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCheckOut.SymbolOffset = new System.Drawing.Point(-10, 0);
-            this.btnCheckOut.SymbolSize = 72;
-            this.btnCheckOut.TabIndex = 0;
-            this.btnCheckOut.Text = "Check in";
-            this.btnCheckOut.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnCheckOut.TipsForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCheckOut.Click += new System.EventHandler(this.checkinBtn_Click);
+            this.btnBikeCheckOut.CircleColor = System.Drawing.Color.White;
+            this.btnBikeCheckOut.CircleHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnBikeCheckOut.CircleSize = 100;
+            this.btnBikeCheckOut.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnBikeCheckOut.FillColor = System.Drawing.Color.White;
+            this.btnBikeCheckOut.FillDisableColor = System.Drawing.Color.White;
+            this.btnBikeCheckOut.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnBikeCheckOut.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnBikeCheckOut.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnBikeCheckOut.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBikeCheckOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnBikeCheckOut.Location = new System.Drawing.Point(532, 378);
+            this.btnBikeCheckOut.Margin = new System.Windows.Forms.Padding(20);
+            this.btnBikeCheckOut.MaximumSize = new System.Drawing.Size(250, 250);
+            this.btnBikeCheckOut.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnBikeCheckOut.Name = "btnBikeCheckOut";
+            this.btnBikeCheckOut.Padding = new System.Windows.Forms.Padding(50);
+            this.btnBikeCheckOut.Radius = 14;
+            this.btnBikeCheckOut.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
+            this.btnBikeCheckOut.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnBikeCheckOut.RectSize = 2;
+            this.btnBikeCheckOut.Size = new System.Drawing.Size(250, 250);
+            this.btnBikeCheckOut.Symbol = 559834;
+            this.btnBikeCheckOut.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnBikeCheckOut.SymbolSize = 72;
+            this.btnBikeCheckOut.TabIndex = 4;
+            this.btnBikeCheckOut.Text = "Check out";
+            this.btnBikeCheckOut.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnBikeCheckOut.TipsForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnBikeCheckOut.Click += new System.EventHandler(this.btnBikeCheckOut_Click);
+            // 
+            // btnCarCheckOut
+            // 
+            this.btnCarCheckOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCarCheckOut.CircleColor = System.Drawing.Color.White;
+            this.btnCarCheckOut.CircleHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCarCheckOut.CircleSize = 100;
+            this.btnCarCheckOut.FillColor = System.Drawing.Color.White;
+            this.btnCarCheckOut.FillDisableColor = System.Drawing.Color.White;
+            this.btnCarCheckOut.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCarCheckOut.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCarCheckOut.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCarCheckOut.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCarCheckOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCarCheckOut.Location = new System.Drawing.Point(532, 88);
+            this.btnCarCheckOut.Margin = new System.Windows.Forms.Padding(20);
+            this.btnCarCheckOut.MaximumSize = new System.Drawing.Size(250, 250);
+            this.btnCarCheckOut.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnCarCheckOut.Name = "btnCarCheckOut";
+            this.btnCarCheckOut.Padding = new System.Windows.Forms.Padding(50);
+            this.btnCarCheckOut.Radius = 14;
+            this.btnCarCheckOut.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
+            this.btnCarCheckOut.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnCarCheckOut.RectSize = 2;
+            this.btnCarCheckOut.Size = new System.Drawing.Size(250, 250);
+            this.btnCarCheckOut.Symbol = 361881;
+            this.btnCarCheckOut.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCarCheckOut.SymbolOffset = new System.Drawing.Point(-5, 0);
+            this.btnCarCheckOut.SymbolSize = 72;
+            this.btnCarCheckOut.TabIndex = 3;
+            this.btnCarCheckOut.Text = "Check out";
+            this.btnCarCheckOut.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnCarCheckOut.TipsForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCarCheckOut.Click += new System.EventHandler(this.btnCarCheckOut_Click);
+            // 
+            // btnCarCheckIn
+            // 
+            this.btnCarCheckIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCarCheckIn.CircleColor = System.Drawing.Color.White;
+            this.btnCarCheckIn.CircleHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCarCheckIn.CircleSize = 100;
+            this.btnCarCheckIn.FillColor = System.Drawing.Color.White;
+            this.btnCarCheckIn.FillDisableColor = System.Drawing.Color.White;
+            this.btnCarCheckIn.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCarCheckIn.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCarCheckIn.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCarCheckIn.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCarCheckIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCarCheckIn.Location = new System.Drawing.Point(242, 88);
+            this.btnCarCheckIn.Margin = new System.Windows.Forms.Padding(20);
+            this.btnCarCheckIn.MaximumSize = new System.Drawing.Size(250, 250);
+            this.btnCarCheckIn.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnCarCheckIn.Name = "btnCarCheckIn";
+            this.btnCarCheckIn.Padding = new System.Windows.Forms.Padding(50);
+            this.btnCarCheckIn.Radius = 14;
+            this.btnCarCheckIn.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
+            this.btnCarCheckIn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnCarCheckIn.RectSize = 2;
+            this.btnCarCheckIn.Size = new System.Drawing.Size(250, 250);
+            this.btnCarCheckIn.Symbol = 362942;
+            this.btnCarCheckIn.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCarCheckIn.SymbolOffset = new System.Drawing.Point(-5, 0);
+            this.btnCarCheckIn.SymbolSize = 72;
+            this.btnCarCheckIn.TabIndex = 2;
+            this.btnCarCheckIn.Text = "Check in";
+            this.btnCarCheckIn.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnCarCheckIn.TipsForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCarCheckIn.Click += new System.EventHandler(this.btnCarCheckIn_Click);
             // 
             // panel5
             // 
@@ -153,11 +224,11 @@ namespace ZiTyLot.GUI.Screens
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.Name = "ScanningControl";
-            this.Size = new System.Drawing.Size(1171, 600);
-            this.Load += new System.EventHandler(this.ScanningScreen_Load);
-            this.Resize += new System.EventHandler(this.ScanningScreen_Resize);
+            this.Size = new System.Drawing.Size(1024, 717);
+            this.Load += new System.EventHandler(this.ScanningControl_Load);
+            this.Resize += new System.EventHandler(this.ScanningControl_Resize);
             this.panel2.ResumeLayout(false);
-            this.uiPanel1.ResumeLayout(false);
+            this.uiTableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -166,8 +237,10 @@ namespace ZiTyLot.GUI.Screens
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
-        private Sunny.UI.UIPanel uiPanel1;
-        private Sunny.UI.UIHeaderButton btnCheckOut;
-        private Sunny.UI.UIHeaderButton btnCheckIn;
+        private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel1;
+        private Sunny.UI.UIHeaderButton btnBikeCheckIn;
+        private Sunny.UI.UIHeaderButton btnBikeCheckOut;
+        private Sunny.UI.UIHeaderButton btnCarCheckOut;
+        private Sunny.UI.UIHeaderButton btnCarCheckIn;
     }
 }
