@@ -1,4 +1,7 @@
-﻿namespace ZiTyLot.GUI
+﻿using Sunny.UI;
+using System.Windows.Forms;
+
+namespace ZiTyLot.GUI
 {
     partial class ProfileForm
     {
@@ -971,6 +974,8 @@
         private Sunny.UI.UIPanel uiPanel2;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel2;
         private Sunny.UI.UIPanel uiPanel10;
+        private Panel panel2;
+        private UISymbolButton uiSymbolButton2;
         private System.Windows.Forms.Panel panel3;
         private Sunny.UI.UISymbolButton btnSaveProfile;
         private Sunny.UI.UIPanel uiPanel6;

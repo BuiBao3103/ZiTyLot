@@ -7,12 +7,10 @@ using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.Helper;
 using ZiTyLot.GUI.Screens.AccountScr;
-using System.Drawing.Text;
 using System.Threading.Tasks;
 using System.Linq;
-using Org.BouncyCastle.Bcpg.OpenPgp;
-using ZiTyLot.Constants.Enum;
 using ZiTyLot.Constants;
+using ZiTyLot.GUI.Screens.PriceScr;
 
 namespace ZiTyLot.GUI.Screens
 {
@@ -25,6 +23,7 @@ namespace ZiTyLot.GUI.Screens
         private Page<Account> page;
 
         private AccountCreateForm _accountCreateForm;
+        private AccountDetailForm _accountDetailForm;
         public AccountControl()
         {
             InitializeComponent();
@@ -92,15 +91,40 @@ namespace ZiTyLot.GUI.Screens
 
             if (e.RowIndex >= 0)
             {
+                int accountId = (int)tableAccount.Rows[e.RowIndex].Cells[0].Value;
                 if (e.ColumnIndex == tableAccount.Columns["colView"].Index)
                 {
-                    AccountDetailForm accountDetailForm = new AccountDetailForm();
-                    accountDetailForm.ShowDialog();
+                    ShowAccountDetailForm(accountId);
                 }
                 else if (e.ColumnIndex == tableAccount.Columns["colDelete"].Index)
                 {
                     MessageBox.Show("Delete button clicked for row " + e.RowIndex);
                 }
+            }
+        }
+
+        private void ShowAccountDetailForm(int accountId)
+        {
+            if (_accountDetailForm != null && accountId != _accountDetailForm.account.Id)
+            {
+                _accountDetailForm.Close();
+            }
+            if (_accountDetailForm == null || _accountDetailForm.IsDisposed)
+            {
+
+                _accountDetailForm = new AccountDetailForm(accountId);
+                _accountDetailForm.AccountUpdateEvent += (s, args) =>
+                {
+                    filters.Clear();
+                    ChangePage(1);
+                };
+                _accountDetailForm.Show();
+            }
+            else
+            {
+                if (_accountDetailForm.WindowState == FormWindowState.Minimized)
+                    _accountDetailForm.WindowState = FormWindowState.Normal;
+                _accountDetailForm.BringToFront();
             }
         }
 
