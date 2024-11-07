@@ -48,7 +48,7 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
             this.Visible = false;
 
             DateConfirmed?.Invoke(this, combine);
-
+            Console.WriteLine(combine);
             MessageBox.Show(combine);
         }
 
@@ -78,52 +78,15 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
                 return;
             }
 
-            switch (monthFromValue)
-            {
-                case 1: monthFrom = "January"; break;
-                case 2: monthFrom = "February"; break;
-                case 3: monthFrom = "March"; break;
-                case 4: monthFrom = "April"; break;
-                case 5: monthFrom = "May"; break;
-                case 6: monthFrom = "June"; break;
-                case 7: monthFrom = "July"; break;
-                case 8: monthFrom = "August"; break;
-                case 9: monthFrom = "September"; break;
-                case 10: monthFrom = "October"; break;
-                case 11: monthFrom = "November"; break;
-                case 12: monthFrom = "December"; break;
-                default:
-                    MessageBox.Show("Invalid month selection.");
-                    return;
-            }
-
-            switch (monthToValue)
-            {
-                case 1: monthTo = "January"; break;
-                case 2: monthTo = "February"; break;
-                case 3: monthTo = "March"; break;
-                case 4: monthTo = "April"; break;
-                case 5: monthTo = "May"; break;
-                case 6: monthTo = "June"; break;
-                case 7: monthTo = "July"; break;
-                case 8: monthTo = "August"; break;
-                case 9: monthTo = "September"; break;
-                case 10: monthTo = "October"; break;
-                case 11: monthTo = "November"; break;
-                case 12: monthTo = "December"; break;
-                default:
-                    MessageBox.Show("Invalid month selection.");
-                    return;
-            }
-
-            string from = yearFrom + "-" + monthFrom;
-            string to = yearTo + "-" + monthTo;
+            string from = yearFrom + "-" + monthFromValue;
+            string to = yearTo + "-" + monthToValue;
             string combine = from + " to " + to;
 
             this.Visible = false;
 
             MonthConfirmed?.Invoke(this, combine);
 
+            Console.WriteLine(combine);
             MessageBox.Show(combine);
         }
 
@@ -134,6 +97,7 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
             string combine = yearFrom + " to " + yearTo;
             this.Visible = false;
             YearConfirmed?.Invoke(this, combine);
+            Console.WriteLine(combine);
             MessageBox.Show(combine);
         }
     }

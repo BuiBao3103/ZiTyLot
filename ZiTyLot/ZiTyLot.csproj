@@ -344,6 +344,7 @@
     <Compile Include="DAO\LostHistoryDAO.cs" />
     <Compile Include="DAO\ResidentFeeDAO.cs" />
     <Compile Include="DAO\SessionDAO.cs" />
+    <Compile Include="DAO\StatisticDAO.cs" />
     <Compile Include="DAO\VehicleTypeDAO.cs" />
     <Compile Include="DAO\VisitorFeeDAO.cs" />
     <Compile Include="ENTITY\Account.cs" />
@@ -356,6 +357,7 @@
     <Compile Include="ENTITY\ParkingLot.cs" />
     <Compile Include="ENTITY\Resident.cs" />
     <Compile Include="ENTITY\ResidentFee.cs" />
+    <Compile Include="ENTITY\RevenueStatistic.cs" />
     <Compile Include="ENTITY\Role.cs" />
     <Compile Include="ENTITY\RoleFunction.cs" />
     <Compile Include="ENTITY\Session.cs" />

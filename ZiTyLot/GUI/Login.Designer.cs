@@ -70,10 +70,11 @@
             this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(934, 561);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1245, 690);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // panel1
@@ -85,10 +86,11 @@
             this.panel1.Controls.Add(this.uiPanel4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10, 40, 10, 10);
-            this.panel1.Size = new System.Drawing.Size(367, 555);
+            this.panel1.Padding = new System.Windows.Forms.Padding(13, 49, 13, 12);
+            this.panel1.Size = new System.Drawing.Size(490, 682);
             this.panel1.TabIndex = 0;
             // 
             // uiPanel5
@@ -97,13 +99,13 @@
             this.uiPanel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.uiPanel5.FillColor = System.Drawing.Color.White;
             this.uiPanel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel5.Location = new System.Drawing.Point(10, 367);
-            this.uiPanel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel5.Location = new System.Drawing.Point(13, 451);
+            this.uiPanel5.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.uiPanel5.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel5.Name = "uiPanel5";
-            this.uiPanel5.Padding = new System.Windows.Forms.Padding(50, 0, 50, 0);
+            this.uiPanel5.Padding = new System.Windows.Forms.Padding(67, 0, 67, 0);
             this.uiPanel5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel5.Size = new System.Drawing.Size(347, 40);
+            this.uiPanel5.Size = new System.Drawing.Size(464, 49);
             this.uiPanel5.TabIndex = 7;
             this.uiPanel5.Text = null;
             this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -117,7 +119,7 @@
             this.btnSignin.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.btnSignin.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnSignin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignin.Location = new System.Drawing.Point(50, 0);
+            this.btnSignin.Location = new System.Drawing.Point(67, 0);
             this.btnSignin.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnSignin.Name = "btnSignin";
             this.btnSignin.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -125,7 +127,7 @@
             this.btnSignin.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.btnSignin.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnSignin.RectSize = 2;
-            this.btnSignin.Size = new System.Drawing.Size(247, 40);
+            this.btnSignin.Size = new System.Drawing.Size(330, 49);
             this.btnSignin.TabIndex = 0;
             this.btnSignin.Text = "Login";
             this.btnSignin.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -137,13 +139,13 @@
             this.uiPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.uiPanel3.FillColor = System.Drawing.Color.White;
             this.uiPanel3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiPanel3.Location = new System.Drawing.Point(10, 313);
-            this.uiPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel3.Location = new System.Drawing.Point(13, 385);
+            this.uiPanel3.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel3.Name = "uiPanel3";
-            this.uiPanel3.Padding = new System.Windows.Forms.Padding(52, 0, 52, 0);
+            this.uiPanel3.Padding = new System.Windows.Forms.Padding(69, 0, 69, 0);
             this.uiPanel3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel3.Size = new System.Drawing.Size(347, 54);
+            this.uiPanel3.Size = new System.Drawing.Size(464, 66);
             this.uiPanel3.TabIndex = 5;
             this.uiPanel3.Text = null;
             this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -155,10 +157,10 @@
             this.cbHienMatKhau.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbHienMatKhau.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbHienMatKhau.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.cbHienMatKhau.Location = new System.Drawing.Point(52, 0);
+            this.cbHienMatKhau.Location = new System.Drawing.Point(69, 0);
             this.cbHienMatKhau.MinimumSize = new System.Drawing.Size(1, 1);
             this.cbHienMatKhau.Name = "cbHienMatKhau";
-            this.cbHienMatKhau.Size = new System.Drawing.Size(243, 25);
+            this.cbHienMatKhau.Size = new System.Drawing.Size(326, 25);
             this.cbHienMatKhau.TabIndex = 0;
             this.cbHienMatKhau.Text = "Show password";
             this.cbHienMatKhau.CheckedChanged += new System.EventHandler(this.cbHienMatKhau_CheckedChanged);
@@ -169,13 +171,13 @@
             this.uiPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.uiPanel2.FillColor = System.Drawing.Color.White;
             this.uiPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel2.Location = new System.Drawing.Point(10, 243);
-            this.uiPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel2.Location = new System.Drawing.Point(13, 299);
+            this.uiPanel2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel2.Name = "uiPanel2";
-            this.uiPanel2.Padding = new System.Windows.Forms.Padding(40, 0, 40, 0);
+            this.uiPanel2.Padding = new System.Windows.Forms.Padding(53, 0, 53, 0);
             this.uiPanel2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel2.Size = new System.Drawing.Size(347, 70);
+            this.uiPanel2.Size = new System.Drawing.Size(464, 86);
             this.uiPanel2.TabIndex = 4;
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -188,13 +190,13 @@
             this.uiGroupBox2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(198)))), ((int)(((byte)(238)))));
             this.uiGroupBox2.ForeDisableColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiGroupBox2.Location = new System.Drawing.Point(40, 0);
+            this.uiGroupBox2.Location = new System.Drawing.Point(53, 0);
             this.uiGroupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox2.Name = "uiGroupBox2";
             this.uiGroupBox2.Padding = new System.Windows.Forms.Padding(15, 32, 15, 4);
             this.uiGroupBox2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox2.Size = new System.Drawing.Size(267, 70);
+            this.uiGroupBox2.Size = new System.Drawing.Size(358, 86);
             this.uiGroupBox2.TabIndex = 2;
             this.uiGroupBox2.Text = "Password";
             this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -214,7 +216,7 @@
             this.inputPassword.RectColor = System.Drawing.SystemColors.ControlDark;
             this.inputPassword.RectSize = 2;
             this.inputPassword.ShowText = false;
-            this.inputPassword.Size = new System.Drawing.Size(237, 34);
+            this.inputPassword.Size = new System.Drawing.Size(328, 34);
             this.inputPassword.TabIndex = 0;
             this.inputPassword.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.inputPassword.Watermark = "Enter your password";
@@ -229,13 +231,13 @@
             this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.uiPanel1.FillColor = System.Drawing.Color.White;
             this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel1.Location = new System.Drawing.Point(10, 163);
-            this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel1.Location = new System.Drawing.Point(13, 201);
+            this.uiPanel1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel1.Name = "uiPanel1";
-            this.uiPanel1.Padding = new System.Windows.Forms.Padding(40, 0, 40, 0);
+            this.uiPanel1.Padding = new System.Windows.Forms.Padding(53, 0, 53, 0);
             this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel1.Size = new System.Drawing.Size(347, 80);
+            this.uiPanel1.Size = new System.Drawing.Size(464, 98);
             this.uiPanel1.TabIndex = 3;
             this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -248,13 +250,13 @@
             this.uiGroupBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(198)))), ((int)(((byte)(238)))));
             this.uiGroupBox1.ForeDisableColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiGroupBox1.Location = new System.Drawing.Point(40, 0);
+            this.uiGroupBox1.Location = new System.Drawing.Point(53, 0);
             this.uiGroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox1.Name = "uiGroupBox1";
             this.uiGroupBox1.Padding = new System.Windows.Forms.Padding(15, 32, 15, 4);
             this.uiGroupBox1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox1.Size = new System.Drawing.Size(267, 80);
+            this.uiGroupBox1.Size = new System.Drawing.Size(358, 98);
             this.uiGroupBox1.TabIndex = 1;
             this.uiGroupBox1.Text = "Username";
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -273,7 +275,7 @@
             this.inputUsername.RectColor = System.Drawing.SystemColors.ControlDark;
             this.inputUsername.RectSize = 2;
             this.inputUsername.ShowText = false;
-            this.inputUsername.Size = new System.Drawing.Size(237, 34);
+            this.inputUsername.Size = new System.Drawing.Size(328, 34);
             this.inputUsername.TabIndex = 0;
             this.inputUsername.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.inputUsername.Watermark = "Enter your username";
@@ -288,12 +290,12 @@
             this.uiPanel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.uiPanel4.FillColor = System.Drawing.Color.White;
             this.uiPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel4.Location = new System.Drawing.Point(10, 82);
-            this.uiPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel4.Location = new System.Drawing.Point(13, 101);
+            this.uiPanel4.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.uiPanel4.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel4.Name = "uiPanel4";
             this.uiPanel4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel4.Size = new System.Drawing.Size(347, 81);
+            this.uiPanel4.Size = new System.Drawing.Size(464, 100);
             this.uiPanel4.TabIndex = 6;
             this.uiPanel4.Text = null;
             this.uiPanel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -303,9 +305,9 @@
             this.uiLabel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.uiLabel1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiLabel1.Location = new System.Drawing.Point(0, 22);
+            this.uiLabel1.Location = new System.Drawing.Point(0, 41);
             this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(347, 59);
+            this.uiLabel1.Size = new System.Drawing.Size(464, 59);
             this.uiLabel1.TabIndex = 2;
             this.uiLabel1.Text = "Welcome to Zitylot";
             this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -314,9 +316,10 @@
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox1.Image = global::ZiTyLot.Properties.Resources.logo_mini;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 40);
+            this.pictureBox1.Location = new System.Drawing.Point(13, 49);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(347, 42);
+            this.pictureBox1.Size = new System.Drawing.Size(464, 52);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -325,10 +328,11 @@
             // 
             this.panel2.Controls.Add(this.rightImage);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(376, 3);
+            this.panel2.Location = new System.Drawing.Point(502, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
-            this.panel2.Size = new System.Drawing.Size(555, 555);
+            this.panel2.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.panel2.Size = new System.Drawing.Size(739, 682);
             this.panel2.TabIndex = 2;
             // 
             // rightImage
@@ -336,10 +340,11 @@
             this.rightImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.rightImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rightImage.Image = ((System.Drawing.Image)(resources.GetObject("rightImage.Image")));
-            this.rightImage.Location = new System.Drawing.Point(10, 10);
+            this.rightImage.Location = new System.Drawing.Point(13, 12);
+            this.rightImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rightImage.Name = "rightImage";
-            this.rightImage.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
-            this.rightImage.Size = new System.Drawing.Size(535, 535);
+            this.rightImage.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.rightImage.Size = new System.Drawing.Size(713, 658);
             this.rightImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.rightImage.TabIndex = 1;
             this.rightImage.TabStop = false;
@@ -365,14 +370,15 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(934, 561);
+            this.ClientSize = new System.Drawing.Size(1245, 690);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(800, 499);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(1061, 603);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.tableLayoutPanel1.ResumeLayout(false);
