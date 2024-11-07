@@ -312,6 +312,7 @@
     <Compile Include="BUS\LostHistoryBUS.cs" />
     <Compile Include="BUS\ResidentFeeBUS.cs" />
     <Compile Include="BUS\SessionBUS.cs" />
+    <Compile Include="BUS\StatisticBUS.cs" />
     <Compile Include="BUS\VehicleTypeBUS.cs" />
     <Compile Include="BUS\VisitorFeeBUS.cs" />
     <Compile Include="Constants\ArduinoAction.cs" />

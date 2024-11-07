@@ -34,8 +34,6 @@
             this.uiPanel2 = new Sunny.UI.UIPanel();
             this.uiTableLayoutPanel2 = new Sunny.UI.UITableLayoutPanel();
             this.uiPanel10 = new Sunny.UI.UIPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.uiSymbolButton2 = new Sunny.UI.UISymbolButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSaveProfile = new Sunny.UI.UISymbolButton();
             this.uiPanel6 = new Sunny.UI.UIPanel();
@@ -211,41 +209,7 @@
             this.uiPanel10.TabIndex = 19;
             this.uiPanel10.Text = null;
             this.uiPanel10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.uiSymbolButton2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(511, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.panel2.Size = new System.Drawing.Size(200, 37);
-            this.panel2.TabIndex = 11;
-            // 
-            // uiSymbolButton2
-            // 
-            this.uiSymbolButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiSymbolButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiSymbolButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiSymbolButton2.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.uiSymbolButton2.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.uiSymbolButton2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiSymbolButton2.Location = new System.Drawing.Point(0, 0);
-            this.uiSymbolButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.uiSymbolButton2.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiSymbolButton2.Name = "uiSymbolButton2";
-            this.uiSymbolButton2.RectColor = System.Drawing.Color.White;
-            this.uiSymbolButton2.RectDisableColor = System.Drawing.Color.White;
-            this.uiSymbolButton2.RectHoverColor = System.Drawing.Color.White;
-            this.uiSymbolButton2.RectPressColor = System.Drawing.Color.White;
-            this.uiSymbolButton2.RectSelectedColor = System.Drawing.Color.White;
-            this.uiSymbolButton2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiSymbolButton2.RectSize = 2;
-            this.uiSymbolButton2.Size = new System.Drawing.Size(190, 37);
-            this.uiSymbolButton2.Symbol = 361666;
-            this.uiSymbolButton2.TabIndex = 3;
-            this.uiSymbolButton2.Text = "Change password";
-            this.uiSymbolButton2.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             // 
             // panel3
             // 
