@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.ENTITY;
@@ -23,6 +24,22 @@ namespace ZiTyLot.GUI.Screens.BillScr
                 lbIssueParkingLot.Text += $"({_issue.Slot_id})";
             lbIssueDate.Text = _issue.Start_date.ToString("dd/MM/yyyy") + " - " + _issue.End_date.ToString("dd/MM/yyyy");
             lbIssueTotal.Text = _issue.Fee.ToString("C0", new System.Globalization.CultureInfo("vi-VN"));
+
+            switch (newIssue.Vehicle_type_id)
+            {
+                case 1:
+                    lbIcon.Symbol = 362948;
+                    lbIcon.SymbolOffset = new Point(-4, 0);
+                    break;
+                case 2:
+                    lbIcon.Symbol = 361980;
+                    lbIcon.SymbolOffset = new Point(-4, 0);
+                    break;
+                case 3:
+                    lbIcon.Symbol = 560201;
+                    lbIcon.SymbolOffset = new Point(0, 0);
+                    break;
+            }
         }
 
         private void btnDeleteRow_Click(object sender, EventArgs e)
