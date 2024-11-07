@@ -9,12 +9,15 @@ namespace ZiTyLot.ENTITY
     public class RevenueStatistic
     {
         public string Period { get; set; }
-        public decimal TotalAmount { get; set; }
+        public decimal ResidentAmount { get; set; }
+        public decimal VisitorAmount { get; set; }
+        public decimal totalAmount => ResidentAmount + VisitorAmount;
 
-        public RevenueStatistic(string period, decimal totalAmount)
+        public RevenueStatistic(string period, decimal residentAmount, decimal bisitorAmount)
         {
             Period = period;
-            TotalAmount = totalAmount;
+            ResidentAmount = residentAmount;
+            VisitorAmount = bisitorAmount;
         }
     }
 }

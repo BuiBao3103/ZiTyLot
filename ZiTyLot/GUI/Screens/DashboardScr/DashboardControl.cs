@@ -8,11 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZiTyLot.BUS;
+using ZiTyLot.ENTITY;
 
 namespace ZiTyLot.GUI.Screens.DashboardScr
 {
     public partial class DashboardControl : UserControl
     {
+        private readonly StatisticBUS _statisticBUS = new StatisticBUS();
+        private List<RevenueStatistic> _revenueStatistics = new List<RevenueStatistic>();
         public DashboardControl()
         {
             InitializeComponent();
@@ -40,22 +44,28 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
             this.pnlBtnSessionDuration.Width = 250;
             this.btnSessionDuration.Text = combine;
         }
-        private void pickerDuration_DateConfirmed (object sender, string combine)
+        private void pickerDuration_DateConfirmed(object sender, string combine)
         {
             this.pnlBtnDuration.Width = 250;
             this.btnDuration.Text = combine;
+            _revenueStatistics = _statisticBUS.GetRevenueStatistics(combine);
+            LoadCharts();
         }
 
         private void pickerDuration_MonthConfirmed(object sender, string combine)
         {
-            this.pnlBtnDuration.Width = 320;
+            this.pnlBtnDuration.Width = 200;
             this.btnDuration.Text = combine;
+            _revenueStatistics = _statisticBUS.GetRevenueStatistics(combine);
+            LoadCharts();
         }
 
         private void pickerDuration_YearConfirmed(object sender, string combine)
         {
             this.pnlBtnDuration.Width = 170;
             this.btnDuration.Text = combine;
+            _revenueStatistics = _statisticBUS.GetRevenueStatistics(combine);
+            LoadCharts();
         }
         private void btnDuration_Click(object sender, EventArgs e)
         {
@@ -72,39 +82,6 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
 
         private void DashboardControl_Load(object sender, EventArgs e)
         {
-            Random random = new Random();
-            int columnCount = 10;
-            for (int i = 0; i < columnCount; i++)
-            {
-                this.chartOverview.Series[1].Points.AddXY(i + 1, random.Next(1, 1000));
-                this.chartOverview.Series[2].Points.AddXY(i + 1, random.Next(1, 1000));
-                int sum = (int)(this.chartOverview.Series[1].Points[i].YValues[0] + this.chartOverview.Series[2].Points[i].YValues[0]);
-                this.chartOverview.Series[0].Points.AddXY(i + 1, sum);
-                //put lable on top of the column
-                this.chartOverview.Series[0].Points[i].Label = sum.ToString();
-                this.chartOverview.Series[1].Points[i].Label = this.chartOverview.Series[1].Points[i].YValues[0].ToString();
-                this.chartOverview.Series[2].Points[i].Label = this.chartOverview.Series[2].Points[i].YValues[0].ToString();
-            }
-
-            for (int i = 0; i < columnCount; i++)
-            {
-                this.chartSessionOverview.Series[1].Points.AddXY(i + 1, random.Next(1, 100));
-                this.chartSessionOverview.Series[2].Points.AddXY(i + 1, random.Next(1, 100));
-
-                this.chartSessionOverview.Series[0].Points.AddXY(i + 1, random.Next(1, 100));
-                //put lable on top of the column
-                this.chartSessionOverview.Series[0].Points[i].Label = this.chartSessionOverview.Series[0].Points[i].YValues[0].ToString();
-                this.chartSessionOverview.Series[1].Points[i].Label = this.chartSessionOverview.Series[1].Points[i].YValues[0].ToString();
-                this.chartSessionOverview.Series[2].Points[i].Label = this.chartSessionOverview.Series[2].Points[i].YValues[0].ToString();
-            }
-
-            // generate data for pie chartCorrelate with Resident 30% and Vistor 70%
-            this.chartCorrelate.Series[0].Points.AddXY("Resident", 30);
-            this.chartCorrelate.Series[0].Points.AddXY("Vistor", 70);
-            this.chartCorrelate.Series[0].LabelForeColor = Color.White;
-            this.chartCorrelate.Series[0].Font = new Font("Arial", 11F ,FontStyle.Bold);
-            this.chartCorrelate.Series[0].Points[0].Label = "Resident - 30%";
-            this.chartCorrelate.Series[0].Points[1].Label = "Visitor - 70%";
         }
 
         private void btnSessionDuration_Click(object sender, EventArgs e)
@@ -118,6 +95,56 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
         {
             this.pickerSessionDuration.Visible = false;
             this.pickerDuration.Visible = false;
+        }
+
+        private void LoadCharts()
+        {
+            //clear all data
+            _revenueStatistics.Clear();
+            for (int i = 1; i < 30; i++)
+            {
+                _revenueStatistics.Add(new RevenueStatistic($"2024-10-{i}", 1000000, 2000000));
+            }
+            this.chartOverview.Series[0].Points.Clear();
+            this.chartOverview.Series[1].Points.Clear();
+            this.chartOverview.Series[2].Points.Clear();
+            this.chartSessionOverview.Series[0].Points.Clear();
+            this.chartSessionOverview.Series[1].Points.Clear();
+            this.chartSessionOverview.Series[2].Points.Clear();
+            this.chartCorrelate.Series[0].Points.Clear();
+
+            this.chartOverview.ChartAreas[0].AxisX.LabelStyle.Angle = -45;
+
+            foreach (var (revenueStatistic, i) in _revenueStatistics.Select((value, index) => (value, index)))
+            {
+                this.chartOverview.Series[0].Points.AddXY(i + 1, revenueStatistic.totalAmount / 1000);
+                this.chartOverview.Series[1].Points.AddXY(i + 1, revenueStatistic.ResidentAmount / 1000);
+                this.chartOverview.Series[2].Points.AddXY(i + 1, revenueStatistic.VisitorAmount / 1000);
+                this.chartOverview.Series[0].Points[i].Label = (revenueStatistic.totalAmount / 1000).ToString();
+                this.chartOverview.Series[1].Points[i].Label = (revenueStatistic.ResidentAmount / 1000).ToString();
+                this.chartOverview.Series[2].Points[i].Label = (revenueStatistic.VisitorAmount / 1000).ToString();
+
+                //put Period on X axis
+                this.chartOverview.Series[1].Points[i].AxisLabel = revenueStatistic.Period;
+
+            }
+
+
+            decimal totalResident = _revenueStatistics.Sum(x => x.ResidentAmount);
+            decimal totalVisitor = _revenueStatistics.Sum(x => x.VisitorAmount);
+            decimal total = totalResident + totalVisitor;
+            decimal percentResident = Math.Round(totalResident / total * 100, 2);
+            decimal percentVisitor = Math.Round(totalVisitor / total * 100, 2);
+            this.chartCorrelate.Series[0].Points.AddXY("Resident", percentResident);
+            this.chartCorrelate.Series[0].Points.AddXY("Vistor", percentVisitor);
+            this.chartCorrelate.Series[0].LabelForeColor = Color.White;
+            this.chartCorrelate.Series[0].Font = new Font("Arial", 11F, FontStyle.Bold);
+            this.chartCorrelate.Series[0].Points[0].Label = $"Resident - {percentResident}%";
+            this.chartCorrelate.Series[0].Points[1].Label = $"Visitor - {percentVisitor}%";
+
+            lbTotalRevenue.Text = $"{(total / 1000).ToString("N0")}K ₫";
+            lbTotalResidentRevenue.Text = $"{(totalResident / 1000).ToString("N0")}K ₫";
+            lbTotalVisitorRevenue.Text = $"{(totalVisitor / 1000).ToString("N0")}K ₫";
         }
     }
 }

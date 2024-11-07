@@ -159,7 +159,7 @@
             this.pnlTab.ItemSize = new System.Drawing.Size(150, 54);
             this.pnlTab.Location = new System.Drawing.Point(0, 0);
             this.pnlTab.MainPage = "";
-            this.pnlTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlTab.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTab.MenuStyle = Sunny.UI.UIMenuStyle.Custom;
             this.pnlTab.Name = "pnlTab";
             this.pnlTab.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -179,7 +179,7 @@
             this.tpDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.tpDate.Controls.Add(this.uiPanel2);
             this.tpDate.Location = new System.Drawing.Point(0, 54);
-            this.tpDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpDate.Margin = new System.Windows.Forms.Padding(4);
             this.tpDate.Name = "tpDate";
             this.tpDate.Size = new System.Drawing.Size(667, 377);
             this.tpDate.TabIndex = 0;
@@ -447,7 +447,7 @@
             this.tpMonth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.tpMonth.Controls.Add(this.uiPanel1);
             this.tpMonth.Location = new System.Drawing.Point(0, 54);
-            this.tpMonth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpMonth.Margin = new System.Windows.Forms.Padding(4);
             this.tpMonth.Name = "tpMonth";
             this.tpMonth.Size = new System.Drawing.Size(667, 377);
             this.tpMonth.TabIndex = 1;
@@ -1107,7 +1107,7 @@
             this.tpYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.tpYear.Controls.Add(this.uiPanel17);
             this.tpYear.Location = new System.Drawing.Point(0, 54);
-            this.tpYear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpYear.Margin = new System.Windows.Forms.Padding(4);
             this.tpYear.Name = "tpYear";
             this.tpYear.Size = new System.Drawing.Size(667, 377);
             this.tpYear.TabIndex = 2;
