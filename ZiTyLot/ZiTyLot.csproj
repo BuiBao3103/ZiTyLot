@@ -375,6 +375,18 @@
     <Compile Include="GUI\Login2.Designer.cs">
       <DependentUpon>Login2.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ProfileForm.Designer.cs">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\BillScr\BillDetailControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\BillScr\BillDetailControl.Designer.cs">
+      <DependentUpon>BillDetailControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Screens\DashboardScr\CustomDurationPicker.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -493,11 +505,11 @@
     <Compile Include="GUI\Screens\BillScr\BillControl.Designer.cs">
       <DependentUpon>BillControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\BillScr\BillDetailControl.cs">
+    <Compile Include="GUI\Screens\BillScr\BillCreateControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\BillScr\BillDetailControl.Designer.cs">
-      <DependentUpon>BillDetailControl.cs</DependentUpon>
+    <Compile Include="GUI\Screens\BillScr\BillCreateControl.Designer.cs">
+      <DependentUpon>BillCreateControl.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\BillScr\IssueDetailForm.cs">
       <SubType>Form</SubType>
@@ -659,6 +671,9 @@
     <EmbeddedResource Include="GUI\ArduinoRFIDReader.resx">
       <DependentUpon>ArduinoRFIDReader.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ProfileForm.resx">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\AccountScr\AccountCreateForm.resx">
       <DependentUpon>AccountCreateForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -671,6 +686,9 @@
     <EmbeddedResource Include="GUI\Screens\AreaScr\AreaCreateForm.resx">
       <DependentUpon>AreaCreateForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\BillScr\BillDetailControl.resx">
+      <DependentUpon>BillDetailControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\BillScr\IssueDetailRow.resx">
       <DependentUpon>IssueDetailRow.cs</DependentUpon>
     </EmbeddedResource>
@@ -680,8 +698,8 @@
     <EmbeddedResource Include="GUI\Screens\BillScr\BillControl.resx">
       <DependentUpon>BillControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\BillScr\BillDetailControl.resx">
-      <DependentUpon>BillDetailControl.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Screens\BillScr\BillCreateControl.resx">
+      <DependentUpon>BillCreateControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\BillScr\IssueDetailForm.resx">
       <DependentUpon>IssueDetailForm.cs</DependentUpon>

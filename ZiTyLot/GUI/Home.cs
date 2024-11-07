@@ -602,5 +602,11 @@ namespace ZiTyLot.GUI
             }
             previousWidth = this.Width;
         }
+
+        private void menuBtnProfile_Click(object sender, EventArgs e)
+        {
+            ProfileForm profileForm = new ProfileForm();
+            profileForm.ShowDialog();
+        }
     }
 }

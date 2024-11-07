@@ -72,7 +72,7 @@ namespace ZiTyLot.GUI.Screens
                 }
                 else if (e.ColumnIndex == tableAccount.Columns["colDelete"].Index)
                 {
-                    icon = Properties.Resources.Icon_18x18px_Delete;
+                    icon = Properties.Resources.Icon_18x18px_Remove;
                 }
                 int iconWidth = 16;
                 int iconHeight = 16;

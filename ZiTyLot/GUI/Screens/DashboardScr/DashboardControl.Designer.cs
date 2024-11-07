@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea22 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series50 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea23 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series51 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series52 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series53 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea24 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series54 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series55 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series56 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlTab = new Sunny.UI.UITabControl();
             this.tpRevenue = new System.Windows.Forms.TabPage();
@@ -49,6 +49,8 @@
             this.uiPanel18 = new Sunny.UI.UIPanel();
             this.uiTableLayoutPanel6 = new Sunny.UI.UITableLayoutPanel();
             this.uiPanel20 = new Sunny.UI.UIPanel();
+            this.uiPanel21 = new Sunny.UI.UIPanel();
+            this.lbCorrelatePercentRate = new Sunny.UI.UISymbolLabel();
             this.uiLabel11 = new Sunny.UI.UILabel();
             this.uiPanel19 = new Sunny.UI.UIPanel();
             this.chartCorrelate = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -59,6 +61,8 @@
             this.uiPanel15 = new Sunny.UI.UIPanel();
             this.pnlBtnDuration = new System.Windows.Forms.Panel();
             this.btnDuration = new Sunny.UI.UISymbolButton();
+            this.uiPanel16 = new Sunny.UI.UIPanel();
+            this.lbOverviewPercentRate = new Sunny.UI.UISymbolLabel();
             this.uiPanel25 = new Sunny.UI.UIPanel();
             this.cbQuickFilter = new Sunny.UI.UIComboBox();
             this.uiLabel10 = new Sunny.UI.UILabel();
@@ -102,6 +106,8 @@
             this.uiPanel30 = new Sunny.UI.UIPanel();
             this.pnlBtnSessionDuration = new System.Windows.Forms.Panel();
             this.btnSessionDuration = new Sunny.UI.UISymbolButton();
+            this.uiPanel31 = new Sunny.UI.UIPanel();
+            this.lbSessionOverviewPercentRate = new Sunny.UI.UISymbolLabel();
             this.uiPanel32 = new Sunny.UI.UIPanel();
             this.cbSessionQuickFilter = new Sunny.UI.UIComboBox();
             this.uiLabel5 = new Sunny.UI.UILabel();
@@ -112,19 +118,13 @@
             this.uiSymbolLabel9 = new Sunny.UI.UISymbolLabel();
             this.uiPanel39 = new Sunny.UI.UIPanel();
             this.uiTableLayoutPanel12 = new Sunny.UI.UITableLayoutPanel();
+            this.uiSymbolLabel3 = new Sunny.UI.UISymbolLabel();
             this.uiPanel40 = new Sunny.UI.UIPanel();
             this.lbTotalMotorbike = new Sunny.UI.UILabel();
             this.uiLabel18 = new Sunny.UI.UILabel();
             this.uiSymbolLabel11 = new Sunny.UI.UISymbolLabel();
             this.pickerDuration = new ZiTyLot.GUI.Screens.DashboardScr.CustomDurationPicker();
             this.pickerSessionDuration = new ZiTyLot.GUI.Screens.DashboardScr.CustomDurationPicker();
-            this.uiPanel21 = new Sunny.UI.UIPanel();
-            this.lbCorrelatePercentRate = new Sunny.UI.UISymbolLabel();
-            this.uiPanel16 = new Sunny.UI.UIPanel();
-            this.lbOverviewPercentRate = new Sunny.UI.UISymbolLabel();
-            this.uiPanel31 = new Sunny.UI.UIPanel();
-            this.lbSessionOverviewPercentRate = new Sunny.UI.UISymbolLabel();
-            this.uiSymbolLabel3 = new Sunny.UI.UISymbolLabel();
             this.panel2.SuspendLayout();
             this.pnlTab.SuspendLayout();
             this.tpRevenue.SuspendLayout();
@@ -134,6 +134,7 @@
             this.uiPanel18.SuspendLayout();
             this.uiTableLayoutPanel6.SuspendLayout();
             this.uiPanel20.SuspendLayout();
+            this.uiPanel21.SuspendLayout();
             this.uiPanel19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartCorrelate)).BeginInit();
             this.pnlOverview.SuspendLayout();
@@ -142,6 +143,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartOverview)).BeginInit();
             this.uiPanel15.SuspendLayout();
             this.pnlBtnDuration.SuspendLayout();
+            this.uiPanel16.SuspendLayout();
             this.uiPanel25.SuspendLayout();
             this.uiPanel11.SuspendLayout();
             this.uiTableLayoutPanel4.SuspendLayout();
@@ -166,15 +168,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartSessionOverview)).BeginInit();
             this.uiPanel30.SuspendLayout();
             this.pnlBtnSessionDuration.SuspendLayout();
+            this.uiPanel31.SuspendLayout();
             this.uiPanel32.SuspendLayout();
             this.uiPanel36.SuspendLayout();
             this.uiTableLayoutPanel11.SuspendLayout();
             this.uiPanel39.SuspendLayout();
             this.uiTableLayoutPanel12.SuspendLayout();
             this.uiPanel40.SuspendLayout();
-            this.uiPanel21.SuspendLayout();
-            this.uiPanel16.SuspendLayout();
-            this.uiPanel31.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -340,6 +340,39 @@
             this.uiPanel20.Text = null;
             this.uiPanel20.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // uiPanel21
+            // 
+            this.uiPanel21.Controls.Add(this.lbCorrelatePercentRate);
+            this.uiPanel21.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uiPanel21.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.uiPanel21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel21.Location = new System.Drawing.Point(87, 0);
+            this.uiPanel21.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel21.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel21.Name = "uiPanel21";
+            this.uiPanel21.Padding = new System.Windows.Forms.Padding(4);
+            this.uiPanel21.Radius = 14;
+            this.uiPanel21.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.uiPanel21.RectSize = 2;
+            this.uiPanel21.Size = new System.Drawing.Size(77, 30);
+            this.uiPanel21.TabIndex = 5;
+            this.uiPanel21.Text = null;
+            this.uiPanel21.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbCorrelatePercentRate
+            // 
+            this.lbCorrelatePercentRate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lbCorrelatePercentRate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbCorrelatePercentRate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCorrelatePercentRate.Location = new System.Drawing.Point(4, 4);
+            this.lbCorrelatePercentRate.MinimumSize = new System.Drawing.Size(1, 1);
+            this.lbCorrelatePercentRate.Name = "lbCorrelatePercentRate";
+            this.lbCorrelatePercentRate.Size = new System.Drawing.Size(69, 22);
+            this.lbCorrelatePercentRate.Symbol = 361814;
+            this.lbCorrelatePercentRate.SymbolSize = 18;
+            this.lbCorrelatePercentRate.TabIndex = 0;
+            this.lbCorrelatePercentRate.Text = "10%";
+            // 
             // uiLabel11
             // 
             this.uiLabel11.Dock = System.Windows.Forms.DockStyle.Left;
@@ -375,22 +408,22 @@
             // 
             // chartCorrelate
             // 
-            chartArea22.AxisX.IsLabelAutoFit = false;
-            chartArea22.AxisX.LabelStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea22.AxisX.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea22.AxisY.IsLabelAutoFit = false;
-            chartArea22.AxisY.LabelStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea22.AxisY.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea22.Name = "ChartArea1";
-            this.chartCorrelate.ChartAreas.Add(chartArea22);
+            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisX.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisY.IsLabelAutoFit = false;
+            chartArea1.AxisY.LabelStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisY.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.Name = "ChartArea1";
+            this.chartCorrelate.ChartAreas.Add(chartArea1);
             this.chartCorrelate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartCorrelate.Location = new System.Drawing.Point(10, 10);
             this.chartCorrelate.Name = "chartCorrelate";
             this.chartCorrelate.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series50.ChartArea = "ChartArea1";
-            series50.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series50.Name = "Total";
-            this.chartCorrelate.Series.Add(series50);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Name = "Total";
+            this.chartCorrelate.Series.Add(series1);
             this.chartCorrelate.Size = new System.Drawing.Size(258, 412);
             this.chartCorrelate.TabIndex = 0;
             this.chartCorrelate.Text = "chart2";
@@ -455,40 +488,40 @@
             // 
             // chartOverview
             // 
-            chartArea23.AxisX.IsLabelAutoFit = false;
-            chartArea23.AxisX.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea23.AxisX.Title = "Months";
-            chartArea23.AxisX.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea23.AxisX.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            chartArea23.AxisY.IsLabelAutoFit = false;
-            chartArea23.AxisY.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea23.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            chartArea23.AxisY.Title = "kVNĐ";
-            chartArea23.AxisY.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea23.AxisY.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            chartArea23.Name = "ChartArea1";
-            this.chartOverview.ChartAreas.Add(chartArea23);
+            chartArea2.AxisX.IsLabelAutoFit = false;
+            chartArea2.AxisX.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisX.Title = "Months";
+            chartArea2.AxisX.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisX.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            chartArea2.AxisY.IsLabelAutoFit = false;
+            chartArea2.AxisY.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea2.AxisY.Title = "kVNĐ";
+            chartArea2.AxisY.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisY.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            chartArea2.Name = "ChartArea1";
+            this.chartOverview.ChartAreas.Add(chartArea2);
             this.chartOverview.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend15.Name = "Legend1";
-            this.chartOverview.Legends.Add(legend15);
+            legend1.Name = "Legend1";
+            this.chartOverview.Legends.Add(legend1);
             this.chartOverview.Location = new System.Drawing.Point(0, 0);
             this.chartOverview.Name = "chartOverview";
             this.chartOverview.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series51.ChartArea = "ChartArea1";
-            series51.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series51.Legend = "Legend1";
-            series51.Name = "Total";
-            series52.ChartArea = "ChartArea1";
-            series52.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series52.Legend = "Legend1";
-            series52.Name = "Resident";
-            series53.ChartArea = "ChartArea1";
-            series53.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series53.Legend = "Legend1";
-            series53.Name = "Visitor";
-            this.chartOverview.Series.Add(series51);
-            this.chartOverview.Series.Add(series52);
-            this.chartOverview.Series.Add(series53);
+            series2.ChartArea = "ChartArea1";
+            series2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series2.Legend = "Legend1";
+            series2.Name = "Total";
+            series3.ChartArea = "ChartArea1";
+            series3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series3.Legend = "Legend1";
+            series3.Name = "Resident";
+            series4.ChartArea = "ChartArea1";
+            series4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series4.Legend = "Legend1";
+            series4.Name = "Visitor";
+            this.chartOverview.Series.Add(series2);
+            this.chartOverview.Series.Add(series3);
+            this.chartOverview.Series.Add(series4);
             this.chartOverview.Size = new System.Drawing.Size(590, 432);
             this.chartOverview.TabIndex = 0;
             // 
@@ -554,6 +587,39 @@
             this.btnDuration.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDuration.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDuration.Click += new System.EventHandler(this.btnDuration_Click);
+            // 
+            // uiPanel16
+            // 
+            this.uiPanel16.Controls.Add(this.lbOverviewPercentRate);
+            this.uiPanel16.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uiPanel16.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.uiPanel16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel16.Location = new System.Drawing.Point(87, 0);
+            this.uiPanel16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel16.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel16.Name = "uiPanel16";
+            this.uiPanel16.Padding = new System.Windows.Forms.Padding(4);
+            this.uiPanel16.Radius = 14;
+            this.uiPanel16.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.uiPanel16.RectSize = 2;
+            this.uiPanel16.Size = new System.Drawing.Size(77, 30);
+            this.uiPanel16.TabIndex = 7;
+            this.uiPanel16.Text = null;
+            this.uiPanel16.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbOverviewPercentRate
+            // 
+            this.lbOverviewPercentRate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lbOverviewPercentRate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbOverviewPercentRate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOverviewPercentRate.Location = new System.Drawing.Point(4, 4);
+            this.lbOverviewPercentRate.MinimumSize = new System.Drawing.Size(1, 1);
+            this.lbOverviewPercentRate.Name = "lbOverviewPercentRate";
+            this.lbOverviewPercentRate.Size = new System.Drawing.Size(69, 22);
+            this.lbOverviewPercentRate.Symbol = 361814;
+            this.lbOverviewPercentRate.SymbolSize = 18;
+            this.lbOverviewPercentRate.TabIndex = 0;
+            this.lbOverviewPercentRate.Text = "10%";
             // 
             // uiPanel25
             // 
@@ -1220,46 +1286,46 @@
             // chartSessionOverview
             // 
             this.chartSessionOverview.BorderlineWidth = 0;
-            chartArea24.AxisX.IsLabelAutoFit = false;
-            chartArea24.AxisX.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea24.AxisX.Title = "Months";
-            chartArea24.AxisX.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea24.AxisX.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            chartArea24.AxisY.IsLabelAutoFit = false;
-            chartArea24.AxisY.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea24.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            chartArea24.AxisY.Title = "Vehicals";
-            chartArea24.AxisY.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea24.AxisY.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            chartArea24.Name = "ChartArea1";
-            this.chartSessionOverview.ChartAreas.Add(chartArea24);
+            chartArea3.AxisX.IsLabelAutoFit = false;
+            chartArea3.AxisX.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea3.AxisX.Title = "Months";
+            chartArea3.AxisX.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea3.AxisX.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            chartArea3.AxisY.IsLabelAutoFit = false;
+            chartArea3.AxisY.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea3.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea3.AxisY.Title = "Vehicals";
+            chartArea3.AxisY.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea3.AxisY.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            chartArea3.Name = "ChartArea1";
+            this.chartSessionOverview.ChartAreas.Add(chartArea3);
             this.chartSessionOverview.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend16.Name = "Legend1";
-            this.chartSessionOverview.Legends.Add(legend16);
+            legend2.Name = "Legend1";
+            this.chartSessionOverview.Legends.Add(legend2);
             this.chartSessionOverview.Location = new System.Drawing.Point(0, 0);
             this.chartSessionOverview.Name = "chartSessionOverview";
             this.chartSessionOverview.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series54.BorderWidth = 3;
-            series54.ChartArea = "ChartArea1";
-            series54.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series54.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series54.Legend = "Legend1";
-            series54.Name = "Motorbike";
-            series55.BorderWidth = 3;
-            series55.ChartArea = "ChartArea1";
-            series55.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series55.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series55.Legend = "Legend1";
-            series55.Name = "Car";
-            series56.BorderWidth = 3;
-            series56.ChartArea = "ChartArea1";
-            series56.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series56.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series56.Legend = "Legend1";
-            series56.Name = "Bicycle";
-            this.chartSessionOverview.Series.Add(series54);
-            this.chartSessionOverview.Series.Add(series55);
-            this.chartSessionOverview.Series.Add(series56);
+            series5.BorderWidth = 3;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series5.Legend = "Legend1";
+            series5.Name = "Motorbike";
+            series6.BorderWidth = 3;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series6.Legend = "Legend1";
+            series6.Name = "Car";
+            series7.BorderWidth = 3;
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series7.Legend = "Legend1";
+            series7.Name = "Bicycle";
+            this.chartSessionOverview.Series.Add(series5);
+            this.chartSessionOverview.Series.Add(series6);
+            this.chartSessionOverview.Series.Add(series7);
             this.chartSessionOverview.Size = new System.Drawing.Size(904, 432);
             this.chartSessionOverview.TabIndex = 0;
             // 
@@ -1325,6 +1391,39 @@
             this.btnSessionDuration.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSessionDuration.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSessionDuration.Click += new System.EventHandler(this.btnSessionDuration_Click);
+            // 
+            // uiPanel31
+            // 
+            this.uiPanel31.Controls.Add(this.lbSessionOverviewPercentRate);
+            this.uiPanel31.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uiPanel31.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.uiPanel31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel31.Location = new System.Drawing.Point(87, 0);
+            this.uiPanel31.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel31.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel31.Name = "uiPanel31";
+            this.uiPanel31.Padding = new System.Windows.Forms.Padding(4);
+            this.uiPanel31.Radius = 14;
+            this.uiPanel31.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.uiPanel31.RectSize = 2;
+            this.uiPanel31.Size = new System.Drawing.Size(77, 30);
+            this.uiPanel31.TabIndex = 7;
+            this.uiPanel31.Text = null;
+            this.uiPanel31.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSessionOverviewPercentRate
+            // 
+            this.lbSessionOverviewPercentRate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lbSessionOverviewPercentRate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSessionOverviewPercentRate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSessionOverviewPercentRate.Location = new System.Drawing.Point(4, 4);
+            this.lbSessionOverviewPercentRate.MinimumSize = new System.Drawing.Size(1, 1);
+            this.lbSessionOverviewPercentRate.Name = "lbSessionOverviewPercentRate";
+            this.lbSessionOverviewPercentRate.Size = new System.Drawing.Size(69, 22);
+            this.lbSessionOverviewPercentRate.Symbol = 361814;
+            this.lbSessionOverviewPercentRate.SymbolSize = 18;
+            this.lbSessionOverviewPercentRate.TabIndex = 0;
+            this.lbSessionOverviewPercentRate.Text = "10%";
             // 
             // uiPanel32
             // 
@@ -1513,6 +1612,19 @@
             this.uiTableLayoutPanel12.TabIndex = 0;
             this.uiTableLayoutPanel12.TagString = null;
             // 
+            // uiSymbolLabel3
+            // 
+            this.uiSymbolLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiSymbolLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiSymbolLabel3.Location = new System.Drawing.Point(431, 43);
+            this.uiSymbolLabel3.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiSymbolLabel3.Name = "uiSymbolLabel3";
+            this.uiSymbolLabel3.Size = new System.Drawing.Size(102, 124);
+            this.uiSymbolLabel3.Symbol = 560201;
+            this.uiSymbolLabel3.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiSymbolLabel3.SymbolSize = 110;
+            this.uiSymbolLabel3.TabIndex = 8;
+            // 
             // uiPanel40
             // 
             this.uiPanel40.Controls.Add(this.lbTotalMotorbike);
@@ -1592,118 +1704,6 @@
             this.pickerSessionDuration.TabIndex = 7;
             this.pickerSessionDuration.Visible = false;
             // 
-            // uiPanel21
-            // 
-            this.uiPanel21.Controls.Add(this.lbCorrelatePercentRate);
-            this.uiPanel21.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uiPanel21.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.uiPanel21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel21.Location = new System.Drawing.Point(87, 0);
-            this.uiPanel21.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel21.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel21.Name = "uiPanel21";
-            this.uiPanel21.Padding = new System.Windows.Forms.Padding(4);
-            this.uiPanel21.Radius = 14;
-            this.uiPanel21.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.uiPanel21.RectSize = 2;
-            this.uiPanel21.Size = new System.Drawing.Size(77, 30);
-            this.uiPanel21.TabIndex = 5;
-            this.uiPanel21.Text = null;
-            this.uiPanel21.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbCorrelatePercentRate
-            // 
-            this.lbCorrelatePercentRate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lbCorrelatePercentRate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbCorrelatePercentRate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCorrelatePercentRate.Location = new System.Drawing.Point(4, 4);
-            this.lbCorrelatePercentRate.MinimumSize = new System.Drawing.Size(1, 1);
-            this.lbCorrelatePercentRate.Name = "lbCorrelatePercentRate";
-            this.lbCorrelatePercentRate.Size = new System.Drawing.Size(69, 22);
-            this.lbCorrelatePercentRate.Symbol = 361814;
-            this.lbCorrelatePercentRate.SymbolSize = 18;
-            this.lbCorrelatePercentRate.TabIndex = 0;
-            this.lbCorrelatePercentRate.Text = "10%";
-            // 
-            // uiPanel16
-            // 
-            this.uiPanel16.Controls.Add(this.lbOverviewPercentRate);
-            this.uiPanel16.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uiPanel16.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.uiPanel16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel16.Location = new System.Drawing.Point(87, 0);
-            this.uiPanel16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel16.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel16.Name = "uiPanel16";
-            this.uiPanel16.Padding = new System.Windows.Forms.Padding(4);
-            this.uiPanel16.Radius = 14;
-            this.uiPanel16.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.uiPanel16.RectSize = 2;
-            this.uiPanel16.Size = new System.Drawing.Size(77, 30);
-            this.uiPanel16.TabIndex = 7;
-            this.uiPanel16.Text = null;
-            this.uiPanel16.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbOverviewPercentRate
-            // 
-            this.lbOverviewPercentRate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lbOverviewPercentRate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbOverviewPercentRate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbOverviewPercentRate.Location = new System.Drawing.Point(4, 4);
-            this.lbOverviewPercentRate.MinimumSize = new System.Drawing.Size(1, 1);
-            this.lbOverviewPercentRate.Name = "lbOverviewPercentRate";
-            this.lbOverviewPercentRate.Size = new System.Drawing.Size(69, 22);
-            this.lbOverviewPercentRate.Symbol = 361814;
-            this.lbOverviewPercentRate.SymbolSize = 18;
-            this.lbOverviewPercentRate.TabIndex = 0;
-            this.lbOverviewPercentRate.Text = "10%";
-            // 
-            // uiPanel31
-            // 
-            this.uiPanel31.Controls.Add(this.lbSessionOverviewPercentRate);
-            this.uiPanel31.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uiPanel31.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.uiPanel31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel31.Location = new System.Drawing.Point(87, 0);
-            this.uiPanel31.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel31.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel31.Name = "uiPanel31";
-            this.uiPanel31.Padding = new System.Windows.Forms.Padding(4);
-            this.uiPanel31.Radius = 14;
-            this.uiPanel31.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.uiPanel31.RectSize = 2;
-            this.uiPanel31.Size = new System.Drawing.Size(77, 30);
-            this.uiPanel31.TabIndex = 7;
-            this.uiPanel31.Text = null;
-            this.uiPanel31.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbSessionOverviewPercentRate
-            // 
-            this.lbSessionOverviewPercentRate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lbSessionOverviewPercentRate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbSessionOverviewPercentRate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSessionOverviewPercentRate.Location = new System.Drawing.Point(4, 4);
-            this.lbSessionOverviewPercentRate.MinimumSize = new System.Drawing.Size(1, 1);
-            this.lbSessionOverviewPercentRate.Name = "lbSessionOverviewPercentRate";
-            this.lbSessionOverviewPercentRate.Size = new System.Drawing.Size(69, 22);
-            this.lbSessionOverviewPercentRate.Symbol = 361814;
-            this.lbSessionOverviewPercentRate.SymbolSize = 18;
-            this.lbSessionOverviewPercentRate.TabIndex = 0;
-            this.lbSessionOverviewPercentRate.Text = "10%";
-            // 
-            // uiSymbolLabel3
-            // 
-            this.uiSymbolLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiSymbolLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiSymbolLabel3.Location = new System.Drawing.Point(431, 43);
-            this.uiSymbolLabel3.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiSymbolLabel3.Name = "uiSymbolLabel3";
-            this.uiSymbolLabel3.Size = new System.Drawing.Size(102, 124);
-            this.uiSymbolLabel3.Symbol = 560201;
-            this.uiSymbolLabel3.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiSymbolLabel3.SymbolSize = 110;
-            this.uiSymbolLabel3.TabIndex = 8;
-            // 
             // DashboardControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1723,6 +1723,7 @@
             this.uiPanel18.ResumeLayout(false);
             this.uiTableLayoutPanel6.ResumeLayout(false);
             this.uiPanel20.ResumeLayout(false);
+            this.uiPanel21.ResumeLayout(false);
             this.uiPanel19.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartCorrelate)).EndInit();
             this.pnlOverview.ResumeLayout(false);
@@ -1731,6 +1732,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartOverview)).EndInit();
             this.uiPanel15.ResumeLayout(false);
             this.pnlBtnDuration.ResumeLayout(false);
+            this.uiPanel16.ResumeLayout(false);
             this.uiPanel25.ResumeLayout(false);
             this.uiPanel11.ResumeLayout(false);
             this.uiTableLayoutPanel4.ResumeLayout(false);
@@ -1755,15 +1757,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartSessionOverview)).EndInit();
             this.uiPanel30.ResumeLayout(false);
             this.pnlBtnSessionDuration.ResumeLayout(false);
+            this.uiPanel31.ResumeLayout(false);
             this.uiPanel32.ResumeLayout(false);
             this.uiPanel36.ResumeLayout(false);
             this.uiTableLayoutPanel11.ResumeLayout(false);
             this.uiPanel39.ResumeLayout(false);
             this.uiTableLayoutPanel12.ResumeLayout(false);
             this.uiPanel40.ResumeLayout(false);
-            this.uiPanel21.ResumeLayout(false);
-            this.uiPanel16.ResumeLayout(false);
-            this.uiPanel31.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

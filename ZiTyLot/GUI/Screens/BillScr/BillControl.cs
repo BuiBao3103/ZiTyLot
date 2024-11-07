@@ -74,7 +74,7 @@ namespace ZiTyLot.GUI.Screens
                 }
                 else if (e.ColumnIndex == tableBill.Columns["colDelete"].Index)
                 {
-                    icon = Properties.Resources.Icon_18x18px_Delete;
+                    icon = Properties.Resources.Icon_18x18px_Remove;
                 }
                 int iconWidth = 16;
                 int iconHeight = 16;
@@ -95,7 +95,11 @@ namespace ZiTyLot.GUI.Screens
             {
                 if (e.ColumnIndex == tableBill.Columns["colView"].Index)
                 {
-                    MessageBox.Show("View button clicked for row " + e.RowIndex);
+                    SuspendLayout();
+                    Home home = (Home)ParentForm;
+                    BillDetailControl billDetailControl = new BillDetailControl();
+                    home.LoadForm(billDetailControl);
+
                 }
                 else if (e.ColumnIndex == tableBill.Columns["colDelete"].Index)
                 {
@@ -118,9 +122,9 @@ namespace ZiTyLot.GUI.Screens
         {
             SuspendLayout();
             Home home = (Home)ParentForm;
-            BillDetailControl billDetailControl = new BillDetailControl();
-            billDetailControl.billInsertionEvent += (s, ev) => changePage(1); 
-            home.LoadForm(billDetailControl);
+            BillCreateControl billCreateControl = new BillCreateControl();
+            billCreateControl.billInsertionEvent += (s, ev) => changePage(1); 
+            home.LoadForm(billCreateControl);
         }
 
         private void LoadPageAndPageable()

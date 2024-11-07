@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.sidebar = new System.Windows.Forms.Panel();
             this.sidebarBottom = new Sunny.UI.UIPanel();
             this.uiPanel2 = new Sunny.UI.UIPanel();
@@ -38,22 +39,22 @@
             this.sidebarMid = new System.Windows.Forms.Panel();
             this.sidebarTop = new Sunny.UI.UIPanel();
             this.uiPanel3 = new Sunny.UI.UIPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlCardLayout = new System.Windows.Forms.Panel();
             this.menuSetting = new Sunny.UI.UIContextMenuStrip();
             this.menuBtnLogOut = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.uiPanel1 = new Sunny.UI.UIPanel();
             this.btnToggle = new Sunny.UI.UISymbolButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sidebar.SuspendLayout();
             this.sidebarBottom.SuspendLayout();
             this.uiPanel2.SuspendLayout();
             this.tableSetting.SuspendLayout();
             this.sidebarTop.SuspendLayout();
             this.uiPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuSetting.SuspendLayout();
             this.uiPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // sidebar
@@ -120,7 +121,7 @@
             this.tableSetting.Name = "tableSetting";
             this.tableSetting.RowCount = 1;
             this.tableSetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableSetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSetting.Size = new System.Drawing.Size(205, 40);
             this.tableSetting.TabIndex = 0;
             this.tableSetting.TagString = null;
@@ -230,17 +231,6 @@
             this.uiPanel3.Text = null;
             this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::ZiTyLot.Properties.Resources.Zity_logo_256x256px;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(205, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // pnlCardLayout
             // 
             this.pnlCardLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
@@ -280,6 +270,7 @@
             this.menuBtnProfile.Name = "menuBtnProfile";
             this.menuBtnProfile.Size = new System.Drawing.Size(112, 24);
             this.menuBtnProfile.Text = "Profile";
+            this.menuBtnProfile.Click += new System.EventHandler(this.menuBtnProfile_Click);
             // 
             // uiPanel1
             // 
@@ -329,6 +320,17 @@
             this.btnToggle.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.btnToggle.Click += new System.EventHandler(this.btnToggleMenu_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::ZiTyLot.Properties.Resources.Zity_logo_256x256px;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(205, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,6 +340,7 @@
             this.Controls.Add(this.uiPanel1);
             this.Controls.Add(this.pnlCardLayout);
             this.Controls.Add(this.sidebar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(900, 700);
             this.Name = "Home";
             this.Padding = new System.Windows.Forms.Padding(15);
@@ -350,9 +353,9 @@
             this.tableSetting.ResumeLayout(false);
             this.sidebarTop.ResumeLayout(false);
             this.uiPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuSetting.ResumeLayout(false);
             this.uiPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
