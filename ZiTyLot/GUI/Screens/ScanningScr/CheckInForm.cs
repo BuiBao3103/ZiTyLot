@@ -80,5 +80,20 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 
             }
         }
+
+        private void uiTableLayoutPanel2_Resize(object sender, EventArgs e)
+        {
+            foreach (Label lable in uiTableLayoutPanel2.Controls)
+            {
+                if (this.Size.Width > 1800)
+                {
+                    lable.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }
+                else
+                {
+                    lable.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }
+            }
+        }
     }
 }

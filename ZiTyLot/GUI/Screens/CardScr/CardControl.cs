@@ -67,7 +67,7 @@ namespace ZiTyLot.GUI.Screens
                     e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
                 }
                 System.Drawing.Image icon = null;
-                icon = Properties.Resources.Icon_18x18px_Delete;
+                icon = Properties.Resources.Icon_18x18px_Remove;
                 int iconWidth = 16;
                 int iconHeight = 16;
                 int x = e.CellBounds.Left + (e.CellBounds.Width - iconWidth) / 2;

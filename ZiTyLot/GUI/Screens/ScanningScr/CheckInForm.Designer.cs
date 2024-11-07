@@ -38,7 +38,6 @@
             this.pbPlateRecord = new System.Windows.Forms.PictureBox();
             this.pnlPlateCamera = new Sunny.UI.UIPanel();
             this.uiGroupBox5 = new Sunny.UI.UIGroupBox();
-            this.pbPlateCamera = new System.Windows.Forms.PictureBox();
             this.pnlBackRecord = new Sunny.UI.UIPanel();
             this.uiGroupBox4 = new Sunny.UI.UIGroupBox();
             this.pbBackRecord = new System.Windows.Forms.PictureBox();
@@ -96,6 +95,13 @@
             this.uiLabel35 = new Sunny.UI.UILabel();
             this.uiLabel36 = new Sunny.UI.UILabel();
             this.uiLabel37 = new Sunny.UI.UILabel();
+            this.uiTableLayoutPanel2 = new Sunny.UI.UITableLayoutPanel();
+            this.uiLabel4 = new Sunny.UI.UILabel();
+            this.lbFrontCameraStatus = new Sunny.UI.UILabel();
+            this.uiLabel8 = new Sunny.UI.UILabel();
+            this.lbBackCameraStatus = new Sunny.UI.UILabel();
+            this.uiLabel12 = new Sunny.UI.UILabel();
+            this.lbBoomGateStatus = new Sunny.UI.UILabel();
             this.pnlTop.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.table.SuspendLayout();
@@ -104,7 +110,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPlateRecord)).BeginInit();
             this.pnlPlateCamera.SuspendLayout();
             this.uiGroupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlateCamera)).BeginInit();
             this.pnlBackRecord.SuspendLayout();
             this.uiGroupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBackRecord)).BeginInit();
@@ -129,6 +134,7 @@
             this.uiPanel7.SuspendLayout();
             this.uiGroupBox9.SuspendLayout();
             this.uiTableLayoutPanel5.SuspendLayout();
+            this.uiTableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -283,7 +289,7 @@
             // 
             // uiGroupBox5
             // 
-            this.uiGroupBox5.Controls.Add(this.pbPlateCamera);
+            this.uiGroupBox5.Controls.Add(this.uiTableLayoutPanel2);
             this.uiGroupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox5.FillColor = System.Drawing.Color.White;
             this.uiGroupBox5.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -297,19 +303,8 @@
             this.uiGroupBox5.RectColor = System.Drawing.SystemColors.AppWorkspace;
             this.uiGroupBox5.Size = new System.Drawing.Size(481, 159);
             this.uiGroupBox5.TabIndex = 1;
-            this.uiGroupBox5.Text = "Plate Camera";
+            this.uiGroupBox5.Text = "Connection Status";
             this.uiGroupBox5.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pbPlateCamera
-            // 
-            this.pbPlateCamera.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbPlateCamera.Image = global::ZiTyLot.Properties.Resources.logo;
-            this.pbPlateCamera.Location = new System.Drawing.Point(10, 32);
-            this.pbPlateCamera.Name = "pbPlateCamera";
-            this.pbPlateCamera.Size = new System.Drawing.Size(461, 117);
-            this.pbPlateCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbPlateCamera.TabIndex = 0;
-            this.pbPlateCamera.TabStop = false;
             // 
             // pnlBackRecord
             // 
@@ -592,7 +587,7 @@
             // uiLabel24
             // 
             this.uiLabel24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel24.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel24.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.uiLabel24.ForeColor = System.Drawing.Color.Gray;
             this.uiLabel24.Location = new System.Drawing.Point(3, 116);
             this.uiLabel24.Name = "uiLabel24";
@@ -604,7 +599,7 @@
             // lbRegistedPlate
             // 
             this.lbRegistedPlate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbRegistedPlate.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRegistedPlate.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.lbRegistedPlate.ForeColor = System.Drawing.Color.Black;
             this.lbRegistedPlate.Location = new System.Drawing.Point(149, 116);
             this.lbRegistedPlate.Name = "lbRegistedPlate";
@@ -616,7 +611,7 @@
             // uiLabel26
             // 
             this.uiLabel26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel26.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel26.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.uiLabel26.ForeColor = System.Drawing.Color.Gray;
             this.uiLabel26.Location = new System.Drawing.Point(3, 87);
             this.uiLabel26.Name = "uiLabel26";
@@ -628,7 +623,7 @@
             // lbDueDate
             // 
             this.lbDueDate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbDueDate.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDueDate.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.lbDueDate.ForeColor = System.Drawing.Color.Black;
             this.lbDueDate.Location = new System.Drawing.Point(149, 87);
             this.lbDueDate.Name = "lbDueDate";
@@ -640,7 +635,7 @@
             // uiLabel28
             // 
             this.uiLabel28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel28.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel28.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.uiLabel28.ForeColor = System.Drawing.Color.Gray;
             this.uiLabel28.Location = new System.Drawing.Point(3, 58);
             this.uiLabel28.Name = "uiLabel28";
@@ -652,7 +647,7 @@
             // lbSignUpDate
             // 
             this.lbSignUpDate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbSignUpDate.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSignUpDate.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.lbSignUpDate.ForeColor = System.Drawing.Color.Black;
             this.lbSignUpDate.Location = new System.Drawing.Point(149, 58);
             this.lbSignUpDate.Name = "lbSignUpDate";
@@ -664,7 +659,7 @@
             // lbApartment
             // 
             this.lbApartment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbApartment.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbApartment.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.lbApartment.ForeColor = System.Drawing.Color.Black;
             this.lbApartment.Location = new System.Drawing.Point(149, 29);
             this.lbApartment.Name = "lbApartment";
@@ -676,7 +671,7 @@
             // uiLabel31
             // 
             this.uiLabel31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel31.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel31.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.uiLabel31.ForeColor = System.Drawing.Color.Gray;
             this.uiLabel31.Location = new System.Drawing.Point(3, 29);
             this.uiLabel31.Name = "uiLabel31";
@@ -688,7 +683,7 @@
             // lbFullname
             // 
             this.lbFullname.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbFullname.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFullname.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.lbFullname.ForeColor = System.Drawing.Color.Black;
             this.lbFullname.Location = new System.Drawing.Point(149, 0);
             this.lbFullname.Name = "lbFullname";
@@ -700,7 +695,7 @@
             // uiLabel33
             // 
             this.uiLabel33.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel33.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel33.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.uiLabel33.ForeColor = System.Drawing.Color.Gray;
             this.uiLabel33.Location = new System.Drawing.Point(3, 0);
             this.uiLabel33.Name = "uiLabel33";
@@ -787,7 +782,7 @@
             // uiLabel15
             // 
             this.uiLabel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel15.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel15.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.uiLabel15.ForeColor = System.Drawing.Color.Gray;
             this.uiLabel15.Location = new System.Drawing.Point(3, 210);
             this.uiLabel15.Name = "uiLabel15";
@@ -799,7 +794,7 @@
             // lbTotalPrice
             // 
             this.lbTotalPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbTotalPrice.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalPrice.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.lbTotalPrice.ForeColor = System.Drawing.Color.Black;
             this.lbTotalPrice.Location = new System.Drawing.Point(149, 210);
             this.lbTotalPrice.Name = "lbTotalPrice";
@@ -811,7 +806,7 @@
             // uiLabel13
             // 
             this.uiLabel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel13.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel13.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.uiLabel13.ForeColor = System.Drawing.Color.Gray;
             this.uiLabel13.Location = new System.Drawing.Point(3, 180);
             this.uiLabel13.Name = "uiLabel13";
@@ -823,7 +818,7 @@
             // lbTotalTime
             // 
             this.lbTotalTime.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbTotalTime.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalTime.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.lbTotalTime.ForeColor = System.Drawing.Color.Black;
             this.lbTotalTime.Location = new System.Drawing.Point(149, 180);
             this.lbTotalTime.Name = "lbTotalTime";
@@ -835,7 +830,7 @@
             // uiLabel11
             // 
             this.uiLabel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel11.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel11.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.uiLabel11.ForeColor = System.Drawing.Color.Gray;
             this.uiLabel11.Location = new System.Drawing.Point(3, 150);
             this.uiLabel11.Name = "uiLabel11";
@@ -847,7 +842,7 @@
             // lbCheckOutTime
             // 
             this.lbCheckOutTime.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbCheckOutTime.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCheckOutTime.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.lbCheckOutTime.ForeColor = System.Drawing.Color.Black;
             this.lbCheckOutTime.Location = new System.Drawing.Point(149, 150);
             this.lbCheckOutTime.Name = "lbCheckOutTime";
@@ -859,7 +854,7 @@
             // uiLabel9
             // 
             this.uiLabel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel9.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel9.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.uiLabel9.ForeColor = System.Drawing.Color.Gray;
             this.uiLabel9.Location = new System.Drawing.Point(3, 120);
             this.uiLabel9.Name = "uiLabel9";
@@ -871,7 +866,7 @@
             // lbCheckInTime
             // 
             this.lbCheckInTime.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbCheckInTime.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCheckInTime.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.lbCheckInTime.ForeColor = System.Drawing.Color.Black;
             this.lbCheckInTime.Location = new System.Drawing.Point(149, 120);
             this.lbCheckInTime.Name = "lbCheckInTime";
@@ -883,7 +878,7 @@
             // uiLabel7
             // 
             this.uiLabel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel7.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel7.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.uiLabel7.ForeColor = System.Drawing.Color.Gray;
             this.uiLabel7.Location = new System.Drawing.Point(3, 90);
             this.uiLabel7.Name = "uiLabel7";
@@ -895,7 +890,7 @@
             // lbVehicalPlate
             // 
             this.lbVehicalPlate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbVehicalPlate.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVehicalPlate.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.lbVehicalPlate.ForeColor = System.Drawing.Color.Black;
             this.lbVehicalPlate.Location = new System.Drawing.Point(149, 90);
             this.lbVehicalPlate.Name = "lbVehicalPlate";
@@ -907,7 +902,7 @@
             // uiLabel5
             // 
             this.uiLabel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel5.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel5.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.uiLabel5.ForeColor = System.Drawing.Color.Gray;
             this.uiLabel5.Location = new System.Drawing.Point(3, 60);
             this.uiLabel5.Name = "uiLabel5";
@@ -919,7 +914,7 @@
             // lbVehicalType
             // 
             this.lbVehicalType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbVehicalType.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVehicalType.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.lbVehicalType.ForeColor = System.Drawing.Color.Black;
             this.lbVehicalType.Location = new System.Drawing.Point(149, 60);
             this.lbVehicalType.Name = "lbVehicalType";
@@ -931,7 +926,7 @@
             // lbCardType
             // 
             this.lbCardType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbCardType.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCardType.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.lbCardType.ForeColor = System.Drawing.Color.Black;
             this.lbCardType.Location = new System.Drawing.Point(149, 30);
             this.lbCardType.Name = "lbCardType";
@@ -943,7 +938,7 @@
             // uiLabel3
             // 
             this.uiLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel3.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel3.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.uiLabel3.ForeColor = System.Drawing.Color.Gray;
             this.uiLabel3.Location = new System.Drawing.Point(3, 30);
             this.uiLabel3.Name = "uiLabel3";
@@ -955,7 +950,7 @@
             // lbCardId
             // 
             this.lbCardId.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbCardId.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCardId.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.lbCardId.ForeColor = System.Drawing.Color.Black;
             this.lbCardId.Location = new System.Drawing.Point(149, 0);
             this.lbCardId.Name = "lbCardId";
@@ -967,7 +962,7 @@
             // uiLabel2
             // 
             this.uiLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel2.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel2.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.uiLabel2.ForeColor = System.Drawing.Color.Gray;
             this.uiLabel2.Location = new System.Drawing.Point(3, 0);
             this.uiLabel2.Name = "uiLabel2";
@@ -1101,7 +1096,7 @@
             // uiLabel22
             // 
             this.uiLabel22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel22.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel22.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.uiLabel22.ForeColor = System.Drawing.Color.Gray;
             this.uiLabel22.Location = new System.Drawing.Point(3, 76);
             this.uiLabel22.Name = "uiLabel22";
@@ -1113,7 +1108,7 @@
             // uiLabel23
             // 
             this.uiLabel23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel23.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel23.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.uiLabel23.ForeColor = System.Drawing.Color.Black;
             this.uiLabel23.Location = new System.Drawing.Point(99, 76);
             this.uiLabel23.Name = "uiLabel23";
@@ -1125,7 +1120,7 @@
             // uiLabel34
             // 
             this.uiLabel34.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel34.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel34.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.uiLabel34.ForeColor = System.Drawing.Color.Black;
             this.uiLabel34.Location = new System.Drawing.Point(99, 38);
             this.uiLabel34.Name = "uiLabel34";
@@ -1137,7 +1132,7 @@
             // uiLabel35
             // 
             this.uiLabel35.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel35.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel35.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.uiLabel35.ForeColor = System.Drawing.Color.Gray;
             this.uiLabel35.Location = new System.Drawing.Point(3, 38);
             this.uiLabel35.Name = "uiLabel35";
@@ -1149,7 +1144,7 @@
             // uiLabel36
             // 
             this.uiLabel36.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel36.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel36.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.uiLabel36.ForeColor = System.Drawing.Color.Black;
             this.uiLabel36.Location = new System.Drawing.Point(99, 0);
             this.uiLabel36.Name = "uiLabel36";
@@ -1161,7 +1156,7 @@
             // uiLabel37
             // 
             this.uiLabel37.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel37.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel37.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
             this.uiLabel37.ForeColor = System.Drawing.Color.Gray;
             this.uiLabel37.Location = new System.Drawing.Point(3, 0);
             this.uiLabel37.Name = "uiLabel37";
@@ -1169,6 +1164,101 @@
             this.uiLabel37.TabIndex = 1;
             this.uiLabel37.Text = "Open gate:";
             this.uiLabel37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiTableLayoutPanel2
+            // 
+            this.uiTableLayoutPanel2.ColumnCount = 2;
+            this.uiTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.uiTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.uiTableLayoutPanel2.Controls.Add(this.uiLabel12, 0, 2);
+            this.uiTableLayoutPanel2.Controls.Add(this.lbBoomGateStatus, 1, 2);
+            this.uiTableLayoutPanel2.Controls.Add(this.uiLabel8, 0, 1);
+            this.uiTableLayoutPanel2.Controls.Add(this.lbBackCameraStatus, 1, 1);
+            this.uiTableLayoutPanel2.Controls.Add(this.uiLabel4, 0, 0);
+            this.uiTableLayoutPanel2.Controls.Add(this.lbFrontCameraStatus, 1, 0);
+            this.uiTableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiTableLayoutPanel2.Location = new System.Drawing.Point(10, 32);
+            this.uiTableLayoutPanel2.Name = "uiTableLayoutPanel2";
+            this.uiTableLayoutPanel2.RowCount = 3;
+            this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.uiTableLayoutPanel2.Size = new System.Drawing.Size(461, 117);
+            this.uiTableLayoutPanel2.TabIndex = 0;
+            this.uiTableLayoutPanel2.TagString = null;
+            this.uiTableLayoutPanel2.Resize += new System.EventHandler(this.uiTableLayoutPanel2_Resize);
+            // 
+            // uiLabel4
+            // 
+            this.uiLabel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiLabel4.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
+            this.uiLabel4.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel4.Location = new System.Drawing.Point(3, 0);
+            this.uiLabel4.Name = "uiLabel4";
+            this.uiLabel4.Size = new System.Drawing.Size(109, 38);
+            this.uiLabel4.TabIndex = 12;
+            this.uiLabel4.Text = "Front camera:";
+            this.uiLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbFrontCameraStatus
+            // 
+            this.lbFrontCameraStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbFrontCameraStatus.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
+            this.lbFrontCameraStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lbFrontCameraStatus.Location = new System.Drawing.Point(118, 0);
+            this.lbFrontCameraStatus.Name = "lbFrontCameraStatus";
+            this.lbFrontCameraStatus.Size = new System.Drawing.Size(340, 38);
+            this.lbFrontCameraStatus.TabIndex = 11;
+            this.lbFrontCameraStatus.Text = "Connected";
+            this.lbFrontCameraStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLabel8
+            // 
+            this.uiLabel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiLabel8.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
+            this.uiLabel8.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel8.Location = new System.Drawing.Point(3, 38);
+            this.uiLabel8.Name = "uiLabel8";
+            this.uiLabel8.Size = new System.Drawing.Size(109, 38);
+            this.uiLabel8.TabIndex = 14;
+            this.uiLabel8.Text = "Back camera:";
+            this.uiLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbBackCameraStatus
+            // 
+            this.lbBackCameraStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbBackCameraStatus.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
+            this.lbBackCameraStatus.ForeColor = System.Drawing.Color.Gray;
+            this.lbBackCameraStatus.Location = new System.Drawing.Point(118, 38);
+            this.lbBackCameraStatus.Name = "lbBackCameraStatus";
+            this.lbBackCameraStatus.Size = new System.Drawing.Size(340, 38);
+            this.lbBackCameraStatus.TabIndex = 13;
+            this.lbBackCameraStatus.Text = "Not found";
+            this.lbBackCameraStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLabel12
+            // 
+            this.uiLabel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiLabel12.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
+            this.uiLabel12.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel12.Location = new System.Drawing.Point(3, 76);
+            this.uiLabel12.Name = "uiLabel12";
+            this.uiLabel12.Size = new System.Drawing.Size(109, 41);
+            this.uiLabel12.TabIndex = 16;
+            this.uiLabel12.Text = "Boom gate:";
+            this.uiLabel12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbBoomGateStatus
+            // 
+            this.lbBoomGateStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbBoomGateStatus.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold);
+            this.lbBoomGateStatus.ForeColor = System.Drawing.Color.Red;
+            this.lbBoomGateStatus.Location = new System.Drawing.Point(118, 76);
+            this.lbBoomGateStatus.Name = "lbBoomGateStatus";
+            this.lbBoomGateStatus.Size = new System.Drawing.Size(340, 41);
+            this.lbBoomGateStatus.TabIndex = 15;
+            this.lbBoomGateStatus.Text = "Disconnected";
+            this.lbBoomGateStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CheckInForm
             // 
@@ -1191,7 +1281,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPlateRecord)).EndInit();
             this.pnlPlateCamera.ResumeLayout(false);
             this.uiGroupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlateCamera)).EndInit();
             this.pnlBackRecord.ResumeLayout(false);
             this.uiGroupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbBackRecord)).EndInit();
@@ -1216,6 +1305,7 @@
             this.uiPanel7.ResumeLayout(false);
             this.uiGroupBox9.ResumeLayout(false);
             this.uiTableLayoutPanel5.ResumeLayout(false);
+            this.uiTableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1249,7 +1339,6 @@
         private Sunny.UI.UIGroupBox uiGroupBox6;
         private System.Windows.Forms.PictureBox pbPlateRecord;
         private Sunny.UI.UIGroupBox uiGroupBox5;
-        private System.Windows.Forms.PictureBox pbPlateCamera;
         private Sunny.UI.UIGroupBox uiGroupBox4;
         private System.Windows.Forms.PictureBox pbBackRecord;
         private Sunny.UI.UIGroupBox uiGroupBox2;
@@ -1290,5 +1379,12 @@
         private Sunny.UI.UILabel uiLabel31;
         private Sunny.UI.UILabel lbFullname;
         private Sunny.UI.UILabel uiLabel33;
+        private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel2;
+        private Sunny.UI.UILabel uiLabel12;
+        private Sunny.UI.UILabel lbBoomGateStatus;
+        private Sunny.UI.UILabel uiLabel8;
+        private Sunny.UI.UILabel lbBackCameraStatus;
+        private Sunny.UI.UILabel uiLabel4;
+        private Sunny.UI.UILabel lbFrontCameraStatus;
     }
 }
