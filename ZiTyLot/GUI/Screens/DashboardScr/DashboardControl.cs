@@ -18,6 +18,7 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
     {
         private readonly StatisticBUS _statisticBUS = new StatisticBUS();
         private List<RevenueStatistic> _revenueStatistics = new List<RevenueStatistic>();
+        private List<SessionStatistic> _sessionStatistics = new List<SessionStatistic>();
         public DashboardControl()
         {
             InitializeComponent();
@@ -34,18 +35,21 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
         {
             this.pnlBtnSessionDuration.Width = 170;
             this.btnSessionDuration.Text = combine;
+            _sessionStatistics = _statisticBUS.GetSessionStatistics(combine);
             LoadSessionCharts();
         }
         private void pickerSessionDuration_MonthConfirmed(object sender, string combine)
         {
             this.pnlBtnSessionDuration.Width = 320;
             this.btnSessionDuration.Text = combine;
+            _sessionStatistics = _statisticBUS.GetSessionStatistics(combine);
             LoadSessionCharts();
         }
         private void pickerSessionDuration_DateConfirmed(object sender, string combine)
         {
             this.pnlBtnSessionDuration.Width = 250;
             this.btnSessionDuration.Text = combine;
+            _sessionStatistics = _statisticBUS.GetSessionStatistics(combine);
             LoadSessionCharts();
         }
         private void pickerDuration_DateConfirmed(object sender, string combine)
@@ -106,9 +110,6 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
             this.chartOverview.Series[0].Points.Clear();
             this.chartOverview.Series[1].Points.Clear();
             this.chartOverview.Series[2].Points.Clear();
-            this.chartSessionOverview.Series[0].Points.Clear();
-            this.chartSessionOverview.Series[1].Points.Clear();
-            this.chartSessionOverview.Series[2].Points.Clear();
             this.chartCorrelate.Series[0].Points.Clear();
 
 
@@ -152,16 +153,18 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
 
         private void LoadSessionCharts()
         {
-            Random random = new Random();
-            for (int i = 0; i < 12; i++)
+            this.chartSessionOverview.Series[0].Points.Clear();
+            this.chartSessionOverview.Series[1].Points.Clear();
+            this.chartSessionOverview.Series[2].Points.Clear();
+            foreach (var (sessionStatistic, i) in _sessionStatistics.Select((value, index) => (value, index)))
             {
-                this.chartSessionOverview.Series[0].Points.AddXY(i + 1, random.Next(100, 1000));
-                this.chartSessionOverview.Series[1].Points.AddXY(i + 1, random.Next(100, 1000));
-                this.chartSessionOverview.Series[2].Points.AddXY(i + 1, random.Next(100, 1000));
-                this.chartSessionOverview.Series[0].Points[i].Label = random.Next(100, 1000).ToString();
-                this.chartSessionOverview.Series[1].Points[i].Label = random.Next(100, 1000).ToString();
-                this.chartSessionOverview.Series[2].Points[i].Label = random.Next(100, 1000).ToString();
-                this.chartSessionOverview.Series[1].Points[i].AxisLabel = $"Session {i + 1}";
+                this.chartSessionOverview.Series[0].Points.AddXY(i + 1, sessionStatistic.CountMotorbike);
+                this.chartSessionOverview.Series[1].Points.AddXY(i + 1, sessionStatistic.CountCar);
+                this.chartSessionOverview.Series[2].Points.AddXY(i + 1, sessionStatistic.CountBikecycle);
+                this.chartSessionOverview.Series[0].Points[i].Label = sessionStatistic.CountMotorbike.ToString();
+                this.chartSessionOverview.Series[1].Points[i].Label = sessionStatistic.CountCar.ToString();
+                this.chartSessionOverview.Series[2].Points[i].Label = sessionStatistic.CountBikecycle.ToString();
+                this.chartSessionOverview.Series[1].Points[i].AxisLabel = sessionStatistic.Period;
             }
         }
     }

@@ -27,6 +27,12 @@ namespace ZiTyLot.BUS
             return _statisticDAO.GetRevenueStatistics(startDate, endDate, groupingType);
         }
 
+        public List<SessionStatistic> GetSessionStatistics(string dateRangeInput)
+        {
+            var (startDate, endDate, groupingType) = ParseDateRange(dateRangeInput);
+            return _statisticDAO.GetSessionStatistics(startDate, endDate, groupingType);
+        }
+
         private (DateTime startDate, DateTime endDate, string groupingType) ParseDateRange(string input)
         {
             if (Regex.IsMatch(input, @"^\d{4}-\d{2}-\d{2} to \d{4}-\d{2}-\d{2}$"))
@@ -56,7 +62,7 @@ namespace ZiTyLot.BUS
                     "YEAR"
                 );
             }
-
+            Console.WriteLine(input);
             throw new ValidationInputException("Invalid date range format");
         }
     }

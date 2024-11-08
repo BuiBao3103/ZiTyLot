@@ -362,6 +362,7 @@
     <Compile Include="ENTITY\Role.cs" />
     <Compile Include="ENTITY\RoleFunction.cs" />
     <Compile Include="ENTITY\Session.cs" />
+    <Compile Include="ENTITY\SessionStatistic.cs" />
     <Compile Include="ENTITY\Slot.cs" />
     <Compile Include="ENTITY\VehicleType.cs" />
     <Compile Include="ENTITY\VisitorFee.cs" />

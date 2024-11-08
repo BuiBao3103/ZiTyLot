@@ -1,10 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
-using Sunny.UI;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Threading.Tasks;
 using ZiTyLot.Config;
 using ZiTyLot.ENTITY;
 
@@ -12,6 +9,10 @@ namespace ZiTyLot.DAO
 {
     public class StatisticDAO
     {
+        private const int CAR_ID = 1;
+        private const int BIKECYCLE_ID = 2;
+        private const int MOTORBIKE_ID = 3;
+
         public List<RevenueStatistic> GetRevenueStatistics(DateTime startDate, DateTime endDate, string groupingType)
         {
             Console.WriteLine($"Processing date range: {startDate} to {endDate}, type: {groupingType}");
@@ -58,7 +59,87 @@ namespace ZiTyLot.DAO
                 .CompareTo(DateTime.ParseExact(b.Period, periodFormat, CultureInfo.InvariantCulture)));
             return result;
         }
+        public List<SessionStatistic> GetSessionStatistics(DateTime startDate, DateTime endDate, string groupingType)
+        {
+            Console.WriteLine($"Processing date range: {startDate} to {endDate}, type: {groupingType}");
+            var (dateFormat, periodFormat) = GetDateFormatAndPeriodFormat(groupingType, "sessions");
 
+            var carData = GetVehicleData(startDate, endDate, groupingType, CAR_ID);
+            var motorbikeData = GetVehicleData(startDate, endDate, groupingType, MOTORBIKE_ID);
+            var bikecycleData = GetVehicleData(startDate, endDate, groupingType, BIKECYCLE_ID);
+
+            List<SessionStatistic> result = new List<SessionStatistic>();
+            foreach (var car in carData)
+            {
+                var motorbike = motorbikeData.Find(v => v.Period == car.Period);
+                var bikecycle = bikecycleData.Find(v => v.Period == car.Period);
+                if (motorbike == null)
+                {
+                    motorbike = new SessionStatistic
+                    {
+                        Period = car.Period,
+                        CountMotorbike = 0,
+                        CountCar = 0,
+                        CountBikecycle = 0
+                    };
+                }
+                if (bikecycle == null)
+                {
+                    bikecycle = new SessionStatistic
+                    {
+                        Period = car.Period,
+                        CountMotorbike = 0,
+                        CountCar = 0,
+                        CountBikecycle = 0
+                    };
+                }
+                result.Add(new SessionStatistic
+                {
+                    Period = car.Period,
+                    CountCar = car.CountCar,
+                    CountMotorbike = motorbike.CountMotorbike,
+                    CountBikecycle = bikecycle.CountBikecycle
+                });
+                motorbikeData.Remove(motorbike);
+                bikecycleData.Remove(bikecycle);
+            }
+            foreach (var motorbike in motorbikeData)
+            {
+                var bikecycle = bikecycleData.Find(v => v.Period == motorbike.Period);
+                if (bikecycle == null)
+                {
+                    bikecycle = new SessionStatistic
+                    {
+                        Period = motorbike.Period,
+                        CountMotorbike = 0,
+                        CountCar = 0,
+                        CountBikecycle = 0
+                    };
+                }
+                result.Add(new SessionStatistic
+                {
+                    Period = motorbike.Period,
+                    CountCar = 0,
+                    CountMotorbike = motorbike.CountMotorbike,
+                    CountBikecycle = bikecycle.CountBikecycle
+                });
+                bikecycleData.Remove(bikecycle);
+            }
+            foreach (var bikecycle in bikecycleData)
+            {
+                result.Add(new SessionStatistic
+                {
+                    Period = bikecycle.Period,
+                    CountCar = 0,
+                    CountMotorbike = 0,
+                    CountBikecycle = bikecycle.CountBikecycle
+                });
+            }
+            result.Sort((a, b) => DateTime.ParseExact(a.Period, periodFormat, CultureInfo.InvariantCulture)
+                .CompareTo(DateTime.ParseExact(b.Period, periodFormat, CultureInfo.InvariantCulture)));
+
+            return result;
+        }
         private (string, string) GetDateFormatAndPeriodFormat(string groupingType, string source)
         {
             string dateFormat;
@@ -131,10 +212,7 @@ namespace ZiTyLot.DAO
                     }
                 }
             }
-            for (int i = 0; i < result.Count; i++)
-            {
-                Console.WriteLine(result[i].Period);
-            }
+           
             return result;
         }
 
@@ -178,10 +256,53 @@ namespace ZiTyLot.DAO
                     }
                 }
             }
-            for (int i = 0; i < result.Count; i++)
+            
+            return result;
+        }
+
+        private List<SessionStatistic> GetVehicleData(DateTime startDate, DateTime endDate, string groupingType, int vehicle_id)
+        {
+            var (dateFormat, periodFormat) = GetDateFormatAndPeriodFormat(groupingType, "sessions");
+            List<SessionStatistic> result = new List<SessionStatistic>();
+            string sessionsQuery = $@"
+                    SELECT 
+                        {dateFormat} AS period,
+                        Count(s.id) AS vehicle_count
+                    FROM 
+                        sessions s JOIN cards c ON s.card_id = c.id
+                    WHERE 
+                        s.checkout_time BETWEEN @startDate AND @endDate AND s.type = 'VISITOR' AND c.vehicle_type_id = @vehicleTypeId
+                    GROUP BY 
+                        period
+                    ORDER BY 
+                        period;";
+
+            using (var connection = DBConfig.GetConnection())
             {
-               Console.WriteLine(result[i].Period);
+                connection.Open();
+                using (var sessionsCommand = new MySqlCommand(sessionsQuery, connection))
+                {
+                    sessionsCommand.Parameters.AddWithValue("@startDate", startDate);
+                    sessionsCommand.Parameters.AddWithValue("@endDate", endDate.AddDays(1).ToUniversalTime());
+                    sessionsCommand.Parameters.AddWithValue("@vehicleTypeId", vehicle_id);
+                    using (var sessionsReader = sessionsCommand.ExecuteReader())
+                    {
+                        while (sessionsReader.Read())
+                        {
+                            string periodString = sessionsReader.GetString("period");
+                            int vehicle_count = sessionsReader.GetInt32("vehicle_count");
+                            result.Add(new SessionStatistic
+                            {
+                                Period = periodString,
+                                CountBikecycle = vehicle_id == BIKECYCLE_ID ? vehicle_count : 0,
+                                CountCar = vehicle_id == CAR_ID ? vehicle_count : 0,
+                                CountMotorbike = vehicle_id == MOTORBIKE_ID ? vehicle_count : 0
+                            });
+                        }
+                    }
+                }
             }
+        
             return result;
         }
     }
