@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
-using ZiTyLot.BUS;
 using ZiTyLot.Config;
-using ZiTyLot.Constants.Enum;
-using ZiTyLot.ENTITY;
-using ZiTyLot.Helper;
 using ZiTyLot.GUI;
-using ZiTyLot.GUI.Utils;
 namespace ZiTyLot
 {
     internal static class Program

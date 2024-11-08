@@ -19,6 +19,7 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
         private readonly StatisticBUS _statisticBUS = new StatisticBUS();
         private List<RevenueStatistic> _revenueStatistics = new List<RevenueStatistic>();
         private List<SessionStatistic> _sessionStatistics = new List<SessionStatistic>();
+        private SlotStatistic _slotStatistic = new SlotStatistic();
         public DashboardControl()
         {
             InitializeComponent();
@@ -28,7 +29,8 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
             this.pickerSessionDuration.DateConfirmed += pickerSessionDuration_DateConfirmed;
             this.pickerSessionDuration.MonthConfirmed += pickerSessionDuration_MonthConfirmed;
             this.pickerSessionDuration.YearConfirmed += pickerSessionDuration_YearConfirmed;
-
+            _slotStatistic = _statisticBUS.GetSlotStatistics();
+            LoadSlotStatistic();
         }
 
         private void pickerSessionDuration_YearConfirmed(object sender, string combine)
@@ -166,6 +168,17 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
                 this.chartSessionOverview.Series[2].Points[i].Label = sessionStatistic.CountBikecycle.ToString();
                 this.chartSessionOverview.Series[1].Points[i].AxisLabel = sessionStatistic.Period;
             }
+        }
+
+        private void LoadSlotStatistic()
+        {
+            int current2Wheels = _slotStatistic.CurrentMotorbike + _slotStatistic.CurrentBikecycle;
+            int current4Wheels = _slotStatistic.CurrentCar;
+            int currentBikecycle = _slotStatistic.CurrentBikecycle;
+            int total2Wheels = _slotStatistic.Total2Wheels;
+            int total4Wheels = _slotStatistic.Total4Wheels;
+            lbTotal2Wheels.Text = $"{current2Wheels}/{total2Wheels} slots ({currentBikecycle} bikecycles)";
+            lbTotal4Wheels.Text = $"{current4Wheels}/{total4Wheels} slots";
         }
     }
 }

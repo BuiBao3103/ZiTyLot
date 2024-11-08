@@ -96,13 +96,13 @@
             this.uiPanel36 = new Sunny.UI.UIPanel();
             this.uiTableLayoutPanel11 = new Sunny.UI.UITableLayoutPanel();
             this.uiLabel14 = new Sunny.UI.UILabel();
-            this.lbTotalCars = new Sunny.UI.UILabel();
+            this.lbTotal4Wheels = new Sunny.UI.UILabel();
             this.uiSymbolLabel9 = new Sunny.UI.UISymbolLabel();
             this.uiPanel39 = new Sunny.UI.UIPanel();
             this.uiTableLayoutPanel12 = new Sunny.UI.UITableLayoutPanel();
             this.uiSymbolLabel3 = new Sunny.UI.UISymbolLabel();
             this.uiPanel40 = new Sunny.UI.UIPanel();
-            this.lbTotalMotorbike = new Sunny.UI.UILabel();
+            this.lbTotal2Wheels = new Sunny.UI.UILabel();
             this.uiLabel18 = new Sunny.UI.UILabel();
             this.uiSymbolLabel11 = new Sunny.UI.UISymbolLabel();
             this.pickerDuration = new ZiTyLot.GUI.Screens.DashboardScr.CustomDurationPicker();
@@ -1195,7 +1195,7 @@
             this.uiTableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.uiTableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.uiTableLayoutPanel11.Controls.Add(this.uiLabel14, 0, 0);
-            this.uiTableLayoutPanel11.Controls.Add(this.lbTotalCars, 0, 1);
+            this.uiTableLayoutPanel11.Controls.Add(this.lbTotal4Wheels, 0, 1);
             this.uiTableLayoutPanel11.Controls.Add(this.uiSymbolLabel9, 1, 1);
             this.uiTableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTableLayoutPanel11.Location = new System.Drawing.Point(10, 10);
@@ -1219,17 +1219,17 @@
             this.uiLabel14.Text = "4 Wheels (Car)";
             this.uiLabel14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lbTotalCars
+            // lbTotal4Wheels
             // 
-            this.lbTotalCars.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbTotalCars.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalCars.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.lbTotalCars.Location = new System.Drawing.Point(3, 40);
-            this.lbTotalCars.Name = "lbTotalCars";
-            this.lbTotalCars.Size = new System.Drawing.Size(325, 130);
-            this.lbTotalCars.TabIndex = 1;
-            this.lbTotalCars.Text = "20 /50 slots";
-            this.lbTotalCars.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbTotal4Wheels.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbTotal4Wheels.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotal4Wheels.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lbTotal4Wheels.Location = new System.Drawing.Point(3, 40);
+            this.lbTotal4Wheels.Name = "lbTotal4Wheels";
+            this.lbTotal4Wheels.Size = new System.Drawing.Size(325, 130);
+            this.lbTotal4Wheels.TabIndex = 1;
+            this.lbTotal4Wheels.Text = "20 /50 slots";
+            this.lbTotal4Wheels.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiSymbolLabel9
             // 
@@ -1300,7 +1300,7 @@
             // 
             // uiPanel40
             // 
-            this.uiPanel40.Controls.Add(this.lbTotalMotorbike);
+            this.uiPanel40.Controls.Add(this.lbTotal2Wheels);
             this.uiPanel40.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel40.FillColor = System.Drawing.Color.White;
             this.uiPanel40.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -1316,17 +1316,17 @@
             this.uiPanel40.Text = null;
             this.uiPanel40.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbTotalMotorbike
+            // lbTotal2Wheels
             // 
-            this.lbTotalMotorbike.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbTotalMotorbike.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalMotorbike.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.lbTotalMotorbike.Location = new System.Drawing.Point(0, 0);
-            this.lbTotalMotorbike.Name = "lbTotalMotorbike";
-            this.lbTotalMotorbike.Size = new System.Drawing.Size(425, 120);
-            this.lbTotalMotorbike.TabIndex = 2;
-            this.lbTotalMotorbike.Text = "50 /100 slots (10 bicycles)";
-            this.lbTotalMotorbike.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbTotal2Wheels.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbTotal2Wheels.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotal2Wheels.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lbTotal2Wheels.Location = new System.Drawing.Point(0, 0);
+            this.lbTotal2Wheels.Name = "lbTotal2Wheels";
+            this.lbTotal2Wheels.Size = new System.Drawing.Size(425, 120);
+            this.lbTotal2Wheels.TabIndex = 2;
+            this.lbTotal2Wheels.Text = "50 /100 slots (10 bicycles)";
+            this.lbTotal2Wheels.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel18
             // 
@@ -1492,12 +1492,12 @@
         private Sunny.UI.UIPanel uiPanel36;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel11;
         private Sunny.UI.UILabel uiLabel14;
-        private Sunny.UI.UILabel lbTotalCars;
+        private Sunny.UI.UILabel lbTotal4Wheels;
         private Sunny.UI.UISymbolLabel uiSymbolLabel9;
         private Sunny.UI.UIPanel uiPanel39;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel12;
         private Sunny.UI.UIPanel uiPanel40;
-        private Sunny.UI.UILabel lbTotalMotorbike;
+        private Sunny.UI.UILabel lbTotal2Wheels;
         private Sunny.UI.UILabel uiLabel18;
         private Sunny.UI.UISymbolLabel uiSymbolLabel11;
         private CustomDurationPicker pickerSessionDuration;
