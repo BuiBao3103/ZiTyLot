@@ -364,6 +364,7 @@
     <Compile Include="ENTITY\Session.cs" />
     <Compile Include="ENTITY\SessionStatistic.cs" />
     <Compile Include="ENTITY\Slot.cs" />
+    <Compile Include="ENTITY\SlotStatistic.cs" />
     <Compile Include="ENTITY\VehicleType.cs" />
     <Compile Include="ENTITY\VisitorFee.cs" />
     <Compile Include="GUI\Login2.cs">

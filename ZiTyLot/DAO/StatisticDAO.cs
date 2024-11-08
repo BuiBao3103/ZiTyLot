@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Runtime.InteropServices.ComTypes;
 using ZiTyLot.Config;
 using ZiTyLot.ENTITY;
 
@@ -140,6 +141,59 @@ namespace ZiTyLot.DAO
 
             return result;
         }
+        public SlotStatistic GetSlotStatistics()
+        {
+            SlotStatistic result = new SlotStatistic();
+            string querySlot = @"
+                SELECT 
+                    SUM(CASE WHEN parking_lot_type = 'TWO_WHEELER' THEN total_slot END) AS two_wheeler_slot,
+                    SUM(CASE WHEN parking_lot_type = 'FOUR_WHEELER' THEN total_slot END) AS four_wheeler_slot
+                FROM 
+                    parking_lots 
+                WHERE 
+                     user_type = 'VISITOR' AND status = 'AVAILABLE';";
+            string currentSlot = @"
+                SELECT 
+                    Count(CASE WHEN c.vehicle_type_id = @carId THEN 1 END) AS current_car,
+                    Count(CASE WHEN c.vehicle_type_id = @bikecycleId THEN 1 END) AS current_bikecycle,
+                    Count(CASE WHEN c.vehicle_type_id = @motorbikeId THEN 1 END) AS current_motorbike
+                FROM 
+                    sessions s join cards c on s.card_id = c.id
+                WHERE 
+                     s.type = 'VISITOR' AND s.checkout_time IS NULL;";
+
+            using (var connection = DBConfig.GetConnection())
+            {
+                connection.Open();
+                using (var totalSlotsCommand = new MySqlCommand(querySlot, connection))
+                {
+                    using (var totalSlotsReader = totalSlotsCommand.ExecuteReader())
+                    {
+                        while (totalSlotsReader.Read())
+                        {
+                            result.Total2Wheels = totalSlotsReader.GetInt32("two_wheeler_slot");
+                            result.Total4Wheels = totalSlotsReader.GetInt32("four_wheeler_slot");
+                        }
+                    }
+                }
+                using (var currentSlotsCommand = new MySqlCommand(currentSlot, connection))
+                {
+                    currentSlotsCommand.Parameters.AddWithValue("@carId", CAR_ID);
+                    currentSlotsCommand.Parameters.AddWithValue("@bikecycleId", BIKECYCLE_ID);
+                    currentSlotsCommand.Parameters.AddWithValue("@motorbikeId", MOTORBIKE_ID);
+                    using (var currentSlotsReader = currentSlotsCommand.ExecuteReader())
+                    {
+                        while (currentSlotsReader.Read())
+                        {
+                            result.CurrentCar = currentSlotsReader.GetInt32("current_car");
+                            result.CurrentBikecycle = currentSlotsReader.GetInt32("current_bikecycle");
+                            result.CurrentMotorbike = currentSlotsReader.GetInt32("current_motorbike");
+                        }
+                    }
+                }
+            }
+            return result;
+        }
         private (string, string) GetDateFormatAndPeriodFormat(string groupingType, string source)
         {
             string dateFormat;
@@ -212,7 +266,7 @@ namespace ZiTyLot.DAO
                     }
                 }
             }
-           
+
             return result;
         }
 
@@ -256,7 +310,7 @@ namespace ZiTyLot.DAO
                     }
                 }
             }
-            
+
             return result;
         }
 
@@ -302,7 +356,7 @@ namespace ZiTyLot.DAO
                     }
                 }
             }
-        
+
             return result;
         }
     }
