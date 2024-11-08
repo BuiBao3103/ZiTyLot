@@ -108,7 +108,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
         }
         private void AddRow(Issue newIssue)
         {
-            IssueDetailRow newRow = new IssueDetailRow(newIssue);
+            IssueDetailRow newRow = new IssueDetailRow(newIssue, false);
             _issues.Add(newIssue);
             newRow.RowDeleted += (s, ev) => RemoveRow(newRow);
             listIssue.Controls.Add(newRow);

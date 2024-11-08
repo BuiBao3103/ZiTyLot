@@ -93,11 +93,12 @@ namespace ZiTyLot.GUI.Screens
         {
             if (e.RowIndex >= 0)
             {
+                int id = (int)tableBill.Rows[e.RowIndex].Cells["colId"].Value;
                 if (e.ColumnIndex == tableBill.Columns["colView"].Index)
                 {
                     SuspendLayout();
                     Home home = (Home)ParentForm;
-                    BillDetailControl billDetailControl = new BillDetailControl();
+                    BillDetailControl billDetailControl = new BillDetailControl(id);
                     home.LoadForm(billDetailControl);
 
                 }
@@ -242,7 +243,6 @@ namespace ZiTyLot.GUI.Screens
         private void pnlPagination_Resize(object sender, EventArgs e)
         {
             pnlPagination.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlPagination.Width, pnlPagination.Height, 10, 10));
-
         }
     }
 }

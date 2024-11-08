@@ -39,7 +39,7 @@
             this.uiPanel4 = new Sunny.UI.UIPanel();
             this.lbIssueParkingLot = new Sunny.UI.UILabel();
             this.uiPanel7 = new Sunny.UI.UIPanel();
-            this.btnDeteteRow = new Sunny.UI.UISymbolButton();
+            this.lbDelete = new Sunny.UI.UISymbolButton();
             this.uiPanel3 = new Sunny.UI.UIPanel();
             this.lbIssueVehicleType = new Sunny.UI.UILabel();
             this.uiPanel2 = new Sunny.UI.UIPanel();
@@ -70,7 +70,7 @@
             this.uiPanel1.Radius = 10;
             this.uiPanel1.RectColor = System.Drawing.Color.White;
             this.uiPanel1.RectSize = 2;
-            this.uiPanel1.Size = new System.Drawing.Size(2070, 50);
+            this.uiPanel1.Size = new System.Drawing.Size(2090, 50);
             this.uiPanel1.TabIndex = 0;
             this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -99,7 +99,7 @@
             this.uiTableLayoutPanel1.Name = "uiTableLayoutPanel1";
             this.uiTableLayoutPanel1.RowCount = 1;
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel1.Size = new System.Drawing.Size(2060, 40);
+            this.uiTableLayoutPanel1.Size = new System.Drawing.Size(2080, 40);
             this.uiTableLayoutPanel1.TabIndex = 0;
             this.uiTableLayoutPanel1.TagString = null;
             // 
@@ -109,12 +109,12 @@
             this.uiPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel8.FillColor = System.Drawing.Color.White;
             this.uiPanel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel8.Location = new System.Drawing.Point(107, 5);
+            this.uiPanel8.Location = new System.Drawing.Point(108, 5);
             this.uiPanel8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel8.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel8.Name = "uiPanel8";
             this.uiPanel8.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel8.Size = new System.Drawing.Size(239, 30);
+            this.uiPanel8.Size = new System.Drawing.Size(241, 30);
             this.uiPanel8.TabIndex = 9;
             this.uiPanel8.Text = null;
             this.uiPanel8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -126,7 +126,7 @@
             this.lbIssuePlate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.lbIssuePlate.Location = new System.Drawing.Point(0, 0);
             this.lbIssuePlate.Name = "lbIssuePlate";
-            this.lbIssuePlate.Size = new System.Drawing.Size(239, 30);
+            this.lbIssuePlate.Size = new System.Drawing.Size(241, 30);
             this.lbIssuePlate.TabIndex = 0;
             this.lbIssuePlate.Text = "{plate}";
             this.lbIssuePlate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -137,12 +137,12 @@
             this.uiPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel6.FillColor = System.Drawing.Color.White;
             this.uiPanel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel6.Location = new System.Drawing.Point(1651, 5);
+            this.uiPanel6.Location = new System.Drawing.Point(1666, 5);
             this.uiPanel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel6.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel6.Name = "uiPanel6";
             this.uiPanel6.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel6.Size = new System.Drawing.Size(301, 30);
+            this.uiPanel6.Size = new System.Drawing.Size(304, 30);
             this.uiPanel6.TabIndex = 8;
             this.uiPanel6.Text = null;
             this.uiPanel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -154,7 +154,7 @@
             this.lbIssueTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.lbIssueTotal.Location = new System.Drawing.Point(0, 0);
             this.lbIssueTotal.Name = "lbIssueTotal";
-            this.lbIssueTotal.Size = new System.Drawing.Size(301, 30);
+            this.lbIssueTotal.Size = new System.Drawing.Size(304, 30);
             this.lbIssueTotal.TabIndex = 0;
             this.lbIssueTotal.Text = "{total}";
             this.lbIssueTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -165,12 +165,12 @@
             this.uiPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel5.FillColor = System.Drawing.Color.White;
             this.uiPanel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel5.Location = new System.Drawing.Point(1157, 5);
+            this.uiPanel5.Location = new System.Drawing.Point(1167, 5);
             this.uiPanel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel5.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel5.Name = "uiPanel5";
             this.uiPanel5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel5.Size = new System.Drawing.Size(486, 30);
+            this.uiPanel5.Size = new System.Drawing.Size(491, 30);
             this.uiPanel5.TabIndex = 7;
             this.uiPanel5.Text = null;
             this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -182,7 +182,7 @@
             this.lbIssueDate.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbIssueDate.Location = new System.Drawing.Point(0, 0);
             this.lbIssueDate.Name = "lbIssueDate";
-            this.lbIssueDate.Size = new System.Drawing.Size(486, 30);
+            this.lbIssueDate.Size = new System.Drawing.Size(491, 30);
             this.lbIssueDate.TabIndex = 0;
             this.lbIssueDate.Text = "{date}";
             this.lbIssueDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -193,12 +193,12 @@
             this.uiPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel4.FillColor = System.Drawing.Color.White;
             this.uiPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel4.Location = new System.Drawing.Point(601, 5);
+            this.uiPanel4.Location = new System.Drawing.Point(606, 5);
             this.uiPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel4.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel4.Name = "uiPanel4";
             this.uiPanel4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel4.Size = new System.Drawing.Size(548, 30);
+            this.uiPanel4.Size = new System.Drawing.Size(553, 30);
             this.uiPanel4.TabIndex = 6;
             this.uiPanel4.Text = null;
             this.uiPanel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -210,49 +210,49 @@
             this.lbIssueParkingLot.ForeColor = System.Drawing.Color.Black;
             this.lbIssueParkingLot.Location = new System.Drawing.Point(0, 0);
             this.lbIssueParkingLot.Name = "lbIssueParkingLot";
-            this.lbIssueParkingLot.Size = new System.Drawing.Size(548, 30);
+            this.lbIssueParkingLot.Size = new System.Drawing.Size(553, 30);
             this.lbIssueParkingLot.TabIndex = 0;
             this.lbIssueParkingLot.Text = "{area}";
             this.lbIssueParkingLot.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // uiPanel7
             // 
-            this.uiPanel7.Controls.Add(this.btnDeteteRow);
+            this.uiPanel7.Controls.Add(this.lbDelete);
             this.uiPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel7.FillColor = System.Drawing.Color.White;
             this.uiPanel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel7.Location = new System.Drawing.Point(1960, 5);
+            this.uiPanel7.Location = new System.Drawing.Point(1978, 5);
             this.uiPanel7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel7.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel7.Name = "uiPanel7";
             this.uiPanel7.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel7.Size = new System.Drawing.Size(96, 30);
+            this.uiPanel7.Size = new System.Drawing.Size(98, 30);
             this.uiPanel7.TabIndex = 5;
             this.uiPanel7.Text = null;
             this.uiPanel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnDeteteRow
+            // lbDelete
             // 
-            this.btnDeteteRow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeteteRow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeteteRow.FillColor = System.Drawing.Color.Transparent;
-            this.btnDeteteRow.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnDeteteRow.Location = new System.Drawing.Point(0, 0);
-            this.btnDeteteRow.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnDeteteRow.Name = "btnDeteteRow";
-            this.btnDeteteRow.Radius = 2;
-            this.btnDeteteRow.RectColor = System.Drawing.Color.White;
-            this.btnDeteteRow.RectHoverColor = System.Drawing.Color.White;
-            this.btnDeteteRow.RectPressColor = System.Drawing.Color.White;
-            this.btnDeteteRow.RectSelectedColor = System.Drawing.Color.White;
-            this.btnDeteteRow.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnDeteteRow.Size = new System.Drawing.Size(96, 30);
-            this.btnDeteteRow.Symbol = 79;
-            this.btnDeteteRow.SymbolColor = System.Drawing.Color.Gray;
-            this.btnDeteteRow.SymbolHoverColor = System.Drawing.Color.Black;
-            this.btnDeteteRow.TabIndex = 0;
-            this.btnDeteteRow.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnDeteteRow.Click += new System.EventHandler(this.btnDeleteRow_Click);
+            this.lbDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbDelete.FillColor = System.Drawing.Color.Transparent;
+            this.lbDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbDelete.Location = new System.Drawing.Point(0, 0);
+            this.lbDelete.MinimumSize = new System.Drawing.Size(1, 1);
+            this.lbDelete.Name = "lbDelete";
+            this.lbDelete.Radius = 2;
+            this.lbDelete.RectColor = System.Drawing.Color.White;
+            this.lbDelete.RectHoverColor = System.Drawing.Color.White;
+            this.lbDelete.RectPressColor = System.Drawing.Color.White;
+            this.lbDelete.RectSelectedColor = System.Drawing.Color.White;
+            this.lbDelete.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.lbDelete.Size = new System.Drawing.Size(98, 30);
+            this.lbDelete.Symbol = 79;
+            this.lbDelete.SymbolColor = System.Drawing.Color.Gray;
+            this.lbDelete.SymbolHoverColor = System.Drawing.Color.Black;
+            this.lbDelete.TabIndex = 0;
+            this.lbDelete.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lbDelete.Click += new System.EventHandler(this.btnDeleteRow_Click);
             // 
             // uiPanel3
             // 
@@ -260,12 +260,12 @@
             this.uiPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel3.FillColor = System.Drawing.Color.White;
             this.uiPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel3.Location = new System.Drawing.Point(354, 5);
+            this.uiPanel3.Location = new System.Drawing.Point(357, 5);
             this.uiPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel3.Name = "uiPanel3";
             this.uiPanel3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel3.Size = new System.Drawing.Size(239, 30);
+            this.uiPanel3.Size = new System.Drawing.Size(241, 30);
             this.uiPanel3.TabIndex = 1;
             this.uiPanel3.Text = null;
             this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -277,7 +277,7 @@
             this.lbIssueVehicleType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.lbIssueVehicleType.Location = new System.Drawing.Point(0, 0);
             this.lbIssueVehicleType.Name = "lbIssueVehicleType";
-            this.lbIssueVehicleType.Size = new System.Drawing.Size(239, 30);
+            this.lbIssueVehicleType.Size = new System.Drawing.Size(241, 30);
             this.lbIssueVehicleType.TabIndex = 0;
             this.lbIssueVehicleType.Text = "{VehicleType}";
             this.lbIssueVehicleType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -293,7 +293,7 @@
             this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel2.Name = "uiPanel2";
             this.uiPanel2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel2.Size = new System.Drawing.Size(95, 30);
+            this.uiPanel2.Size = new System.Drawing.Size(96, 30);
             this.uiPanel2.TabIndex = 0;
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -305,7 +305,7 @@
             this.lbIcon.Location = new System.Drawing.Point(0, 0);
             this.lbIcon.MinimumSize = new System.Drawing.Size(1, 1);
             this.lbIcon.Name = "lbIcon";
-            this.lbIcon.Size = new System.Drawing.Size(95, 30);
+            this.lbIcon.Size = new System.Drawing.Size(96, 30);
             this.lbIcon.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.lbIcon.SymbolSize = 32;
             this.lbIcon.TabIndex = 0;
@@ -321,7 +321,7 @@
             this.MaximumSize = new System.Drawing.Size(0, 74);
             this.Name = "IssueDetailRow";
             this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.Size = new System.Drawing.Size(2096, 74);
+            this.Size = new System.Drawing.Size(2116, 74);
             this.uiPanel1.ResumeLayout(false);
             this.uiPanel1.PerformLayout();
             this.uiTableLayoutPanel1.ResumeLayout(false);
@@ -351,7 +351,7 @@
         private Sunny.UI.UIPanel uiPanel7;
         private Sunny.UI.UIPanel uiPanel3;
         private Sunny.UI.UILabel lbIssueVehicleType;
-        private Sunny.UI.UISymbolButton btnDeteteRow;
+        private Sunny.UI.UISymbolButton lbDelete;
         private Sunny.UI.UIPanel uiPanel8;
         private Sunny.UI.UILabel lbIssuePlate;
         private Sunny.UI.UISymbolLabel lbIcon;

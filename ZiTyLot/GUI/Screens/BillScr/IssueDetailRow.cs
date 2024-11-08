@@ -10,7 +10,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
     {
         public Issue _issue;
         private readonly VehicleTypeBUS _vehicleTypeBUS;
-        public IssueDetailRow(Issue newIssue)
+        public IssueDetailRow(Issue newIssue, bool isDetail)
         {
             _vehicleTypeBUS = new VehicleTypeBUS();
             _issue = newIssue;
@@ -40,6 +40,12 @@ namespace ZiTyLot.GUI.Screens.BillScr
                     lbIcon.SymbolOffset = new Point(0, 0);
                     break;
             }
+
+            if (isDetail)
+            {
+                lbDelete.Visible = false;
+            }
+
         }
 
         private void btnDeleteRow_Click(object sender, EventArgs e)
