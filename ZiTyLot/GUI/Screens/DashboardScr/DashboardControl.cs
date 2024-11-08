@@ -1,4 +1,5 @@
-﻿using Sunny.UI;
+﻿using Google.Protobuf.WellKnownTypes;
+using Sunny.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,23 +34,26 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
         {
             this.pnlBtnSessionDuration.Width = 170;
             this.btnSessionDuration.Text = combine;
+            LoadSessionCharts();
         }
         private void pickerSessionDuration_MonthConfirmed(object sender, string combine)
         {
             this.pnlBtnSessionDuration.Width = 320;
             this.btnSessionDuration.Text = combine;
+            LoadSessionCharts();
         }
         private void pickerSessionDuration_DateConfirmed(object sender, string combine)
         {
             this.pnlBtnSessionDuration.Width = 250;
             this.btnSessionDuration.Text = combine;
+            LoadSessionCharts();
         }
         private void pickerDuration_DateConfirmed(object sender, string combine)
         {
             this.pnlBtnDuration.Width = 250;
             this.btnDuration.Text = combine;
             _revenueStatistics = _statisticBUS.GetRevenueStatistics(combine);
-            LoadCharts();
+            LoadRevenueCharts();
         }
 
         private void pickerDuration_MonthConfirmed(object sender, string combine)
@@ -57,7 +61,7 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
             this.pnlBtnDuration.Width = 200;
             this.btnDuration.Text = combine;
             _revenueStatistics = _statisticBUS.GetRevenueStatistics(combine);
-            LoadCharts();
+            LoadRevenueCharts();
         }
 
         private void pickerDuration_YearConfirmed(object sender, string combine)
@@ -65,7 +69,7 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
             this.pnlBtnDuration.Width = 170;
             this.btnDuration.Text = combine;
             _revenueStatistics = _statisticBUS.GetRevenueStatistics(combine);
-            LoadCharts();
+            LoadRevenueCharts();
         }
         private void btnDuration_Click(object sender, EventArgs e)
         {
@@ -97,7 +101,7 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
             this.pickerDuration.Visible = false;
         }
 
-        private void LoadCharts()
+        private void LoadRevenueCharts()
         {
             this.chartOverview.Series[0].Points.Clear();
             this.chartOverview.Series[1].Points.Clear();
@@ -107,7 +111,6 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
             this.chartSessionOverview.Series[2].Points.Clear();
             this.chartCorrelate.Series[0].Points.Clear();
 
-            this.chartOverview.ChartAreas[0].AxisX.LabelStyle.Angle = -45;
 
             foreach (var (revenueStatistic, i) in _revenueStatistics.Select((value, index) => (value, index)))
             {
@@ -122,6 +125,8 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
                 this.chartOverview.Series[1].Points[i].AxisLabel = revenueStatistic.Period;
 
             }
+
+          
 
 
             decimal totalResident = _revenueStatistics.Sum(x => x.ResidentAmount);
@@ -143,6 +148,21 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
             lbTotalRevenue.Text = $"{(total / 1000).ToString("N0")}K ₫";
             lbTotalResidentRevenue.Text = $"{(totalResident / 1000).ToString("N0")}K ₫";
             lbTotalVisitorRevenue.Text = $"{(totalVisitor / 1000).ToString("N0")}K ₫";
+        }
+
+        private void LoadSessionCharts()
+        {
+            Random random = new Random();
+            for (int i = 0; i < 12; i++)
+            {
+                this.chartSessionOverview.Series[0].Points.AddXY(i + 1, random.Next(100, 1000));
+                this.chartSessionOverview.Series[1].Points.AddXY(i + 1, random.Next(100, 1000));
+                this.chartSessionOverview.Series[2].Points.AddXY(i + 1, random.Next(100, 1000));
+                this.chartSessionOverview.Series[0].Points[i].Label = random.Next(100, 1000).ToString();
+                this.chartSessionOverview.Series[1].Points[i].Label = random.Next(100, 1000).ToString();
+                this.chartSessionOverview.Series[2].Points[i].Label = random.Next(100, 1000).ToString();
+                this.chartSessionOverview.Series[1].Points[i].AxisLabel = $"Session {i + 1}";
+            }
         }
     }
 }
