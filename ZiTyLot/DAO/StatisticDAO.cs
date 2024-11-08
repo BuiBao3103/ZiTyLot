@@ -3,6 +3,7 @@ using Sunny.UI;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Threading.Tasks;
 using ZiTyLot.Config;
 using ZiTyLot.ENTITY;
@@ -19,13 +20,42 @@ namespace ZiTyLot.DAO
             var residentData = GetResidentRevenueData(startDate, endDate, groupingType);
             var visitorData = GetVisitorRevenueData(startDate, endDate, groupingType);
 
-            var result = new List<RevenueStatistic>();
-            result.AddRange(residentData);
-            result.AddRange(visitorData);
 
+            List<RevenueStatistic> result = new List<RevenueStatistic>();
+            foreach (var resident in residentData)
+            {
+                var visitor = visitorData.Find(v => v.Period == resident.Period);
+                if (visitor == null)
+                {
+                    result.Add(new RevenueStatistic
+                    {
+                        Period = resident.Period,
+                        ResidentAmount = resident.ResidentAmount,
+                        VisitorAmount = 0
+                    });
+                }
+                else
+                {
+                    result.Add(new RevenueStatistic
+                    {
+                        Period = resident.Period,
+                        ResidentAmount = resident.ResidentAmount,
+                        VisitorAmount = visitor.VisitorAmount
+                    });
+                    visitorData.Remove(visitor);
+                }
+            }
+            foreach (var visitor in visitorData)
+            {
+                result.Add(new RevenueStatistic
+                {
+                    Period = visitor.Period,
+                    ResidentAmount = 0,
+                    VisitorAmount = visitor.VisitorAmount
+                });
+            }
             result.Sort((a, b) => DateTime.ParseExact(a.Period, periodFormat, CultureInfo.InvariantCulture)
                 .CompareTo(DateTime.ParseExact(b.Period, periodFormat, CultureInfo.InvariantCulture)));
-
             return result;
         }
 
@@ -66,17 +96,17 @@ namespace ZiTyLot.DAO
             var (dateFormat, periodFormat) = GetDateFormatAndPeriodFormat(groupingType, "bills");
             List<RevenueStatistic> result = new List<RevenueStatistic>();
             string billsQuery = $@"
-        SELECT 
-            {dateFormat} AS period,
-            SUM(total_fee) AS resident_amount
-        FROM 
-            bills
-        WHERE 
-            created_at BETWEEN @startDate AND @endDate
-        GROUP BY 
-            period
-        ORDER BY 
-            period;";
+                    SELECT 
+                        {dateFormat} AS period,
+                        SUM(total_fee) AS resident_amount
+                    FROM 
+                        bills
+                    WHERE 
+                        created_at BETWEEN @startDate AND @endDate
+                    GROUP BY 
+                        period
+                    ORDER BY 
+                        period;";
 
             using (var connection = DBConfig.GetConnection())
             {
@@ -91,10 +121,19 @@ namespace ZiTyLot.DAO
                         {
                             string periodString = billsReader.GetString("period");
                             decimal residentAmount = billsReader.GetDecimal("resident_amount");
-                            result.Add(new RevenueStatistic(periodString, residentAmount, 0));
+                            result.Add(new RevenueStatistic
+                            {
+                                Period = periodString,
+                                ResidentAmount = residentAmount,
+                                VisitorAmount = 0
+                            });
                         }
                     }
                 }
+            }
+            for (int i = 0; i < result.Count; i++)
+            {
+                Console.WriteLine(result[i].Period);
             }
             return result;
         }
@@ -104,17 +143,17 @@ namespace ZiTyLot.DAO
             var (dateFormat, periodFormat) = GetDateFormatAndPeriodFormat(groupingType, "sessions");
             List<RevenueStatistic> result = new List<RevenueStatistic>();
             string sessionsQuery = $@"
-        SELECT 
-            {dateFormat} AS period,
-            SUM(fee) AS visitor_amount
-        FROM 
-            sessions
-        WHERE 
-            checkout_time BETWEEN @startDate AND @endDate AND type = 'VISITOR'
-        GROUP BY 
-            period
-        ORDER BY 
-            period;";
+                    SELECT 
+                        {dateFormat} AS period,
+                        SUM(fee) AS visitor_amount
+                    FROM 
+                        sessions
+                    WHERE 
+                        checkout_time BETWEEN @startDate AND @endDate AND type = 'VISITOR'
+                    GROUP BY 
+                        period
+                    ORDER BY 
+                        period;";
 
             using (var connection = DBConfig.GetConnection())
             {
@@ -129,10 +168,19 @@ namespace ZiTyLot.DAO
                         {
                             string periodString = sessionsReader.GetString("period");
                             decimal visitorAmount = sessionsReader.GetDecimal("visitor_amount");
-                            result.Add(new RevenueStatistic(periodString, 0, visitorAmount));
+                            result.Add(new RevenueStatistic
+                            {
+                                Period = periodString,
+                                ResidentAmount = 0,
+                                VisitorAmount = visitorAmount
+                            });
                         }
                     }
                 }
+            }
+            for (int i = 0; i < result.Count; i++)
+            {
+               Console.WriteLine(result[i].Period);
             }
             return result;
         }

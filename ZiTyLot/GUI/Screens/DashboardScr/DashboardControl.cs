@@ -99,12 +99,6 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
 
         private void LoadCharts()
         {
-            //clear all data
-            _revenueStatistics.Clear();
-            for (int i = 1; i < 30; i++)
-            {
-                _revenueStatistics.Add(new RevenueStatistic($"2024-10-{i}", 1000000, 2000000));
-            }
             this.chartOverview.Series[0].Points.Clear();
             this.chartOverview.Series[1].Points.Clear();
             this.chartOverview.Series[2].Points.Clear();
@@ -133,6 +127,10 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
             decimal totalResident = _revenueStatistics.Sum(x => x.ResidentAmount);
             decimal totalVisitor = _revenueStatistics.Sum(x => x.VisitorAmount);
             decimal total = totalResident + totalVisitor;
+            if (total == 0)
+            {
+                return;
+            }
             decimal percentResident = Math.Round(totalResident / total * 100, 2);
             decimal percentVisitor = Math.Round(totalVisitor / total * 100, 2);
             this.chartCorrelate.Series[0].Points.AddXY("Resident", percentResident);

@@ -48,8 +48,6 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
             this.Visible = false;
 
             DateConfirmed?.Invoke(this, combine);
-            Console.WriteLine(combine);
-            MessageBox.Show(combine);
         }
 
         private void btnMonthConfirm_Click(object sender, EventArgs e)
@@ -85,9 +83,6 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
             this.Visible = false;
 
             MonthConfirmed?.Invoke(this, combine);
-
-            Console.WriteLine(combine);
-            MessageBox.Show(combine);
         }
 
         private void btnYearConfirm_Click(object sender, EventArgs e)
@@ -97,8 +92,6 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
             string combine = yearFrom + " to " + yearTo;
             this.Visible = false;
             YearConfirmed?.Invoke(this, combine);
-            Console.WriteLine(combine);
-            MessageBox.Show(combine);
         }
     }
 }
