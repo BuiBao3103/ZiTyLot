@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
+using ZiTyLot.GUI.component_extensions;
+using ZiTyLot.GUI.Utils;
 
 namespace ZiTyLot.GUI.Screens.ResidentScr
 {
@@ -18,6 +20,7 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
         private readonly ResidentBUS _residentBUS = new ResidentBUS();
         private readonly IssueBUS _issueBUS = new IssueBUS();
         private readonly BillBUS _billBus = new BillBUS();
+        private readonly CardBUS _cardBUS = new CardBUS();
         public readonly Resident _resident;
 
         public event EventHandler ResidentUpdateEvent;
@@ -50,6 +53,11 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
             }
 
             _resident = _residentBUS.PopulateCard(_resident);
+            
+            LoadCardUI();
+        }
+        private void LoadCardUI()
+        {
             if (_resident.Card != null)
             {
                 tbCardID.Text = _resident.Card.Id.ToString();
@@ -58,17 +66,13 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
             }
             else
             {
-                tbCodeRFID.Enabled = true;
                 tbStatus.Text = "Has not been issued";
             }
-            UpdateEnableButtons();
-        }
-        private void UpdateEnableButtons() { 
             btnRestoreCard.Enabled = _resident.Card != null && _resident.Card.Status == CardStatus.BLOCKED;
             btnLockCard.Enabled = _resident.Card != null && _resident.Card.Status == CardStatus.ACTIVE;
             btnLostCard.Enabled = _resident.Card != null && _resident.Card.Status == CardStatus.LOST;
             btnSaveCard.Enabled = _resident.Card == null;
-
+            tbCodeRFID.Enabled = _resident.Card == null;
         }
         private void btnRestoreCard_Click(object sender, EventArgs e)
         {
@@ -84,5 +88,39 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
         {
 
         }
+
+        private void btnSaveCard_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(tbCodeRFID.Text))
+            {
+                MessageHelper.ShowWarning("Please enter RFID code");
+                tbCodeRFID.Focus();
+                return;
+            }
+            if(!InputValidator.ValidateRfid(tbCodeRFID.Text))
+            {
+                MessageHelper.ShowWarning("RFID code is invalid");
+                tbCodeRFID.Focus();
+                return;
+            }
+            try
+            {
+                Card cardIssue = _cardBUS.IssueCard(tbCodeRFID.Text, _resident.Id);
+                _resident.Card = cardIssue;
+                LoadCardUI();
+                MessageHelper.ShowInfo("Issue card successfully");
+            }
+            catch (ValidationInputException ex)
+            {
+                MessageHelper.ShowWarning(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageHelper.ShowError("Save card failed. Please try again later.");
+            }
+        }
+
+
     }
 }
