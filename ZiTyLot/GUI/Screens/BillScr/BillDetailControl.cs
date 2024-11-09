@@ -23,7 +23,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
             tbTotalBill.Text = _bill.Total_fee.ToString("C0", new System.Globalization.CultureInfo("vi-VN"));
 
 
-            tbID.Text = _bill.Id.ToString();
+            tbID.Text = _bill.Resident.Id.ToString();
             tbFullname.Text = _bill.Resident.Full_name;
             tbApartment.Text = _bill.Resident.Apartment_id;
             tbPhone.Text = _bill.Resident.Phone;

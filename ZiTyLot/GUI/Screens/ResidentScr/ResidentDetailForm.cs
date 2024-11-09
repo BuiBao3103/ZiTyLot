@@ -8,56 +8,68 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
+using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
 
 namespace ZiTyLot.GUI.Screens.ResidentScr
-{   
+{
     public partial class ResidentDetailForm : Form
     {
-        private readonly ResidentBUS residentBUS = new ResidentBUS();
-        public readonly Resident resident;
-        private readonly IssueBUS issueBUS = new IssueBUS();
-        private readonly BillBUS billBus = new BillBUS();
+        private readonly ResidentBUS _residentBUS = new ResidentBUS();
+        private readonly IssueBUS _issueBUS = new IssueBUS();
+        private readonly BillBUS _billBus = new BillBUS();
+        public readonly Resident _resident;
 
         public event EventHandler ResidentUpdateEvent;
-        private  readonly List<Bill> bills;
+        private readonly List<Bill> bills;
         private readonly List<Issue> issues;
-       
+
         public ResidentDetailForm(int residentId)
         {
             InitializeComponent();
             this.CenterToScreen();
-            
-            resident = residentBUS.GetById(residentId);
-            tbFullname.Text = resident.Full_name;
-            tbApartmentId.Text = resident.Apartment_id;
-            tbEmail.Text = resident.Email;
-            tbPhone.Text = resident.Phone;
 
-            bills = new List<Bill>(residentBUS.PopulateBills(resident).Bills);
-            foreach (Bill bill in bills)
+            _resident = _residentBUS.GetById(residentId);
+            tbFullname.Text = _resident.Full_name;
+            tbApartmentId.Text = _resident.Apartment_id;
+            tbEmail.Text = _resident.Email;
+            tbPhone.Text = _resident.Phone;
+
+            _resident = _residentBUS.PopulateBills(_resident);
+
+            for (int i = 0; i < _resident.Bills.Count; i++)
             {
-                issues = new List<Issue>(billBus.PopulateIssues(bill).Issues);
-                if (bill.Issue_quantity == 1)
+                _resident.Bills[i] = _billBus.PopulateIssues(_resident.Bills[i]);
+                foreach (Issue issue in _resident.Bills[i].Issues)
                 {
-                    tableIssue.Rows.Add(issues[0].Id, issues[0].License_plate
-                        , issueBUS.PopulateVehicleType(issues[0]).Vehicle_type.Name
-                        , issues[0].Start_date, issues[0].End_date);
-
-                }
-                else
-                {
-                    foreach (Issue issue in issues)
-                    {
-                        tableIssue.Rows.Add(issue.Id, issue.License_plate
-                        , issueBUS.PopulateVehicleType(issue).Vehicle_type.Name
-                        , issue.Start_date, issues[0].End_date);
-                    }
+                    VehicleType vehicleType = _issueBUS.PopulateVehicleType(issue).Vehicle_type;
+                    tableIssue.Rows.Add(issue.Id, issue.License_plate
+                    , vehicleType.Name
+                    , issue.Start_date, issue.End_date);
                 }
             }
 
+            _resident = _residentBUS.PopulateCard(_resident);
+            if (_resident.Card != null)
+            {
+                tbCardID.Text = _resident.Card.Id.ToString();
+                tbCodeRFID.Text = _resident.Card.Rfid;
+                tbStatus.Text = _resident.Card.Status.ToString();
+            }
+            else
+            {
+                tbCardID.Text = "N/A";
+                tbCodeRFID.Text = "N/A";
+                tbStatus.Text = "N/A";
+            }
+            UpdateEnableButtons();
         }
+        private void UpdateEnableButtons() { 
+            btnLockCard.Enabled = _resident.Card != null && _resident.Card.Status == CardStatus.ACTIVE;
+            btnLostCard.Enabled = _resident.Card != null && _resident.Card.Status == CardStatus.ACTIVE;
+            btnRestoreCard.Enabled = _resident.Card != null && _resident.Card.Status == CardStatus.LOST;
 
+        }
         private void btnRestoreCard_Click(object sender, EventArgs e)
         {
 

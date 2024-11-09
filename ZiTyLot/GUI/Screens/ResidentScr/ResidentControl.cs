@@ -108,7 +108,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void ShowResidentDetailForm(int residentId)
         {
-            if (_residentDetailForm != null && residentId != _residentDetailForm.resident.Id)
+            if (_residentDetailForm != null && residentId != _residentDetailForm._resident.Id)
             {
                 _residentDetailForm.Close();
             }
