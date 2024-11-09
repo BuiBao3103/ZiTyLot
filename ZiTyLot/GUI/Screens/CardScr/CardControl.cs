@@ -99,6 +99,7 @@ namespace ZiTyLot.GUI.Screens
         private void BottomPnl_Resize(object sender, EventArgs e)
         {
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
+            menuFunction.Visible = false;
         }
 
         private void LoadPageAndPageable()
@@ -297,10 +298,9 @@ namespace ZiTyLot.GUI.Screens
 
         private void btnMore_Click(object sender, EventArgs e)
         {
-            // show menuMore below the btnMore
-            Point point = new Point(0, btnMore.Height);
-            point = btnMore.PointToScreen(point);
-            menuMore.Show(point);
+            menuFunction.SetMode(1);
+            menuFunction.Visible = !menuFunction.Visible;
+            menuFunction.Location = new Point(pnlTop.Width - menuFunction.Width - 12, btnMore.Height + 10);
         }
 
         private void pnlPagination_Resize(object sender, EventArgs e)
