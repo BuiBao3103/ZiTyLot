@@ -17,6 +17,7 @@ namespace ZiTyLot.GUI
     public partial class CustomContextMenuStrip : UserControl
     { 
         private int _flag;
+        private string _page;
         const int MODEl_INFO = 0;
         const int MODEL_FUNCTION = 1;
         public CustomContextMenuStrip()
@@ -26,6 +27,11 @@ namespace ZiTyLot.GUI
         public void SetMode(int mode)
         {
             _flag = mode;
+        }
+
+        public void SetControl(string page)
+        {
+            _page = page;
         }
 
         private void CustomContextMenuStrip_Load(object sender, EventArgs e)

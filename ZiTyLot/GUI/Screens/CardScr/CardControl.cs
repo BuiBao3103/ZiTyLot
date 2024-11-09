@@ -49,6 +49,7 @@ namespace ZiTyLot.GUI.Screens
             this.tableCard.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
             pnlTop.Height = 54;
             pnlPagination.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlPagination.Width, pnlPagination.Height, 10, 10));
+            menuFunction.Visible = false;
 
         }
 
@@ -99,7 +100,6 @@ namespace ZiTyLot.GUI.Screens
         private void BottomPnl_Resize(object sender, EventArgs e)
         {
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
-            menuFunction.Visible = false;
         }
 
         private void LoadPageAndPageable()
@@ -299,8 +299,9 @@ namespace ZiTyLot.GUI.Screens
         private void btnMore_Click(object sender, EventArgs e)
         {
             menuFunction.SetMode(1);
+            menuFunction.BringToFront();
             menuFunction.Visible = !menuFunction.Visible;
-            menuFunction.Location = new Point(pnlTop.Width - menuFunction.Width - 12, btnMore.Height + 10);
+            menuFunction.Location = new Point(pnlTop.Width - menuFunction.Width - 8, btnMore.Height + 10);
         }
 
         private void pnlPagination_Resize(object sender, EventArgs e)
@@ -394,6 +395,11 @@ namespace ZiTyLot.GUI.Screens
                 Console.WriteLine(ex.ToString());
                 MessageHelper.ShowError("Something went wrong during export. Please try again.");
             }
+        }
+
+        private void btnMore_LocationChanged(object sender, EventArgs e)
+        {
+            menuFunction.Visible = false;
         }
     }
 }
