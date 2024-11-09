@@ -58,16 +58,16 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
             }
             else
             {
-                tbCardID.Text = "N/A";
-                tbCodeRFID.Text = "N/A";
-                tbStatus.Text = "N/A";
+                tbCodeRFID.Enabled = true;
+                tbStatus.Text = "Has not been issued";
             }
             UpdateEnableButtons();
         }
         private void UpdateEnableButtons() { 
+            btnRestoreCard.Enabled = _resident.Card != null && _resident.Card.Status == CardStatus.BLOCKED;
             btnLockCard.Enabled = _resident.Card != null && _resident.Card.Status == CardStatus.ACTIVE;
-            btnLostCard.Enabled = _resident.Card != null && _resident.Card.Status == CardStatus.ACTIVE;
-            btnRestoreCard.Enabled = _resident.Card != null && _resident.Card.Status == CardStatus.LOST;
+            btnLostCard.Enabled = _resident.Card != null && _resident.Card.Status == CardStatus.LOST;
+            btnSaveCard.Enabled = _resident.Card == null;
 
         }
         private void btnRestoreCard_Click(object sender, EventArgs e)

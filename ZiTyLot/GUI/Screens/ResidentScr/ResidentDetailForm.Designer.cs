@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.uiTableLayoutPanel1 = new Sunny.UI.UITableLayoutPanel();
             this.uiTabControlMenu1 = new Sunny.UI.UITabControlMenu();
             this.tpProfile = new System.Windows.Forms.TabPage();
@@ -63,6 +63,7 @@
             this.tpCard = new System.Windows.Forms.TabPage();
             this.uiPanel8 = new Sunny.UI.UIPanel();
             this.uiTableLayoutPanel3 = new Sunny.UI.UITableLayoutPanel();
+            this.uiPanel3 = new Sunny.UI.UIPanel();
             this.uiTableLayoutPanel4 = new Sunny.UI.UITableLayoutPanel();
             this.uiGroupBox7 = new Sunny.UI.UIGroupBox();
             this.tbCodeRFID = new Sunny.UI.UITextBox();
@@ -81,6 +82,8 @@
             this.uiSymbolLabel1 = new Sunny.UI.UISymbolLabel();
             this.tbRFID = new Sunny.UI.UITextBox();
             this.uiTextBox1 = new Sunny.UI.UITextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSaveCard = new Sunny.UI.UISymbolButton();
             this.uiTableLayoutPanel1.SuspendLayout();
             this.uiTabControlMenu1.SuspendLayout();
             this.tpProfile.SuspendLayout();
@@ -103,6 +106,7 @@
             this.tpCard.SuspendLayout();
             this.uiPanel8.SuspendLayout();
             this.uiTableLayoutPanel3.SuspendLayout();
+            this.uiPanel3.SuspendLayout();
             this.uiTableLayoutPanel4.SuspendLayout();
             this.uiGroupBox7.SuspendLayout();
             this.uiGroupBox6.SuspendLayout();
@@ -112,6 +116,7 @@
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.uiPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // uiTableLayoutPanel1
@@ -539,27 +544,27 @@
             this.tableIssue.AllowUserToDeleteRows = false;
             this.tableIssue.AllowUserToResizeColumns = false;
             this.tableIssue.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.tableIssue.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.tableIssue.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tableIssue.BackgroundColor = System.Drawing.Color.White;
             this.tableIssue.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tableIssue.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.tableIssue.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableIssue.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableIssue.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.tableIssue.ColumnHeadersHeight = 34;
             this.tableIssue.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
@@ -568,15 +573,15 @@
             this.colStartDate,
             this.colEndDate});
             this.tableIssue.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableIssue.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableIssue.DefaultCellStyle = dataGridViewCellStyle6;
             this.tableIssue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableIssue.GridColor = System.Drawing.Color.White;
             this.tableIssue.Location = new System.Drawing.Point(1, 1);
@@ -666,6 +671,7 @@
             // 
             this.uiTableLayoutPanel3.ColumnCount = 1;
             this.uiTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.uiTableLayoutPanel3.Controls.Add(this.uiPanel3, 0, 3);
             this.uiTableLayoutPanel3.Controls.Add(this.uiTableLayoutPanel4, 0, 0);
             this.uiTableLayoutPanel3.Controls.Add(this.uiGroupBox5, 0, 1);
             this.uiTableLayoutPanel3.Controls.Add(this.uiPanel11, 0, 2);
@@ -678,9 +684,32 @@
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.uiTableLayoutPanel3.Size = new System.Drawing.Size(882, 266);
             this.uiTableLayoutPanel3.TabIndex = 0;
             this.uiTableLayoutPanel3.TagString = null;
+            // 
+            // uiPanel3
+            // 
+            this.uiTableLayoutPanel3.SetColumnSpan(this.uiPanel3, 2);
+            this.uiPanel3.Controls.Add(this.panel1);
+            this.uiPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel3.FillColor = System.Drawing.Color.White;
+            this.uiPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel3.Location = new System.Drawing.Point(4, 221);
+            this.uiPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel3.Name = "uiPanel3";
+            this.uiPanel3.Padding = new System.Windows.Forms.Padding(0, 4, 10, 4);
+            this.uiPanel3.Radius = 0;
+            this.uiPanel3.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
+            this.uiPanel3.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.uiPanel3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiPanel3.RectSize = 2;
+            this.uiPanel3.Size = new System.Drawing.Size(874, 46);
+            this.uiPanel3.TabIndex = 27;
+            this.uiPanel3.Text = null;
+            this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // uiTableLayoutPanel4
             // 
@@ -1031,6 +1060,40 @@
             this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiTextBox1.Watermark = "";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnSaveCard);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(724, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(140, 38);
+            this.panel1.TabIndex = 11;
+            // 
+            // btnSaveCard
+            // 
+            this.btnSaveCard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSaveCard.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnSaveCard.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnSaveCard.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnSaveCard.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveCard.Location = new System.Drawing.Point(0, 0);
+            this.btnSaveCard.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSaveCard.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnSaveCard.Name = "btnSaveCard";
+            this.btnSaveCard.RectColor = System.Drawing.Color.White;
+            this.btnSaveCard.RectDisableColor = System.Drawing.Color.White;
+            this.btnSaveCard.RectHoverColor = System.Drawing.Color.White;
+            this.btnSaveCard.RectPressColor = System.Drawing.Color.White;
+            this.btnSaveCard.RectSelectedColor = System.Drawing.Color.White;
+            this.btnSaveCard.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnSaveCard.RectSize = 2;
+            this.btnSaveCard.Size = new System.Drawing.Size(140, 38);
+            this.btnSaveCard.Symbol = 557715;
+            this.btnSaveCard.TabIndex = 3;
+            this.btnSaveCard.Text = "Save change";
+            this.btnSaveCard.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
             // ResidentDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1065,6 +1128,7 @@
             this.tpCard.ResumeLayout(false);
             this.uiPanel8.ResumeLayout(false);
             this.uiTableLayoutPanel3.ResumeLayout(false);
+            this.uiPanel3.ResumeLayout(false);
             this.uiTableLayoutPanel4.ResumeLayout(false);
             this.uiGroupBox7.ResumeLayout(false);
             this.uiGroupBox6.ResumeLayout(false);
@@ -1074,6 +1138,7 @@
             this.panel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.uiPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1130,5 +1195,8 @@
         private Sunny.UI.UITextBox tbCodeRFID;
         private Sunny.UI.UIGroupBox uiGroupBox6;
         private Sunny.UI.UITextBox tbCardID;
+        private Sunny.UI.UIPanel uiPanel3;
+        private System.Windows.Forms.Panel panel1;
+        private Sunny.UI.UISymbolButton btnSaveCard;
     }
 }
