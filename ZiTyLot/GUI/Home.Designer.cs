@@ -39,22 +39,19 @@
             this.sidebarMid = new System.Windows.Forms.Panel();
             this.sidebarTop = new Sunny.UI.UIPanel();
             this.uiPanel3 = new Sunny.UI.UIPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlCardLayout = new System.Windows.Forms.Panel();
-            this.menuSetting = new Sunny.UI.UIContextMenuStrip();
-            this.menuBtnLogOut = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuBtnProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.uiPanel1 = new Sunny.UI.UIPanel();
             this.btnToggle = new Sunny.UI.UISymbolButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.menuInfo = new ZiTyLot.GUI.CustomContextMenuStrip();
             this.sidebar.SuspendLayout();
             this.sidebarBottom.SuspendLayout();
             this.uiPanel2.SuspendLayout();
             this.tableSetting.SuspendLayout();
             this.sidebarTop.SuspendLayout();
             this.uiPanel3.SuspendLayout();
-            this.menuSetting.SuspendLayout();
-            this.uiPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.uiPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidebar
@@ -231,6 +228,17 @@
             this.uiPanel3.Text = null;
             this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::ZiTyLot.Properties.Resources.Zity_logo_256x256px;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(205, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // pnlCardLayout
             // 
             this.pnlCardLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
@@ -240,37 +248,6 @@
             this.pnlCardLayout.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.pnlCardLayout.Size = new System.Drawing.Size(1075, 699);
             this.pnlCardLayout.TabIndex = 1;
-            // 
-            // menuSetting
-            // 
-            this.menuSetting.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.menuSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.menuSetting.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuSetting.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuBtnLogOut,
-            this.menuBtnProfile});
-            this.menuSetting.Name = "settingMenu";
-            this.menuSetting.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuSetting.ShowImageMargin = false;
-            this.menuSetting.Size = new System.Drawing.Size(113, 52);
-            // 
-            // menuBtnLogOut
-            // 
-            this.menuBtnLogOut.BackColor = System.Drawing.Color.White;
-            this.menuBtnLogOut.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuBtnLogOut.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.menuBtnLogOut.Name = "menuBtnLogOut";
-            this.menuBtnLogOut.Size = new System.Drawing.Size(112, 24);
-            this.menuBtnLogOut.Text = "Log out";
-            // 
-            // menuBtnProfile
-            // 
-            this.menuBtnProfile.BackColor = System.Drawing.Color.White;
-            this.menuBtnProfile.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuBtnProfile.Name = "menuBtnProfile";
-            this.menuBtnProfile.Size = new System.Drawing.Size(112, 24);
-            this.menuBtnProfile.Text = "Profile";
-            this.menuBtnProfile.Click += new System.EventHandler(this.menuBtnProfile_Click);
             // 
             // uiPanel1
             // 
@@ -320,16 +297,16 @@
             this.btnToggle.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.btnToggle.Click += new System.EventHandler(this.btnToggleMenu_Click);
             // 
-            // pictureBox1
+            // menuInfo
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::ZiTyLot.Properties.Resources.Zity_logo_256x256px;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(205, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.menuInfo.AutoSize = true;
+            this.menuInfo.BackColor = System.Drawing.Color.White;
+            this.menuInfo.Location = new System.Drawing.Point(0, 0);
+            this.menuInfo.MaximumSize = new System.Drawing.Size(240, 500);
+            this.menuInfo.Name = "menuInfo";
+            this.menuInfo.Size = new System.Drawing.Size(240, 104);
+            this.menuInfo.TabIndex = 0;
+            this.menuInfo.Visible = false;
             // 
             // Home
             // 
@@ -337,6 +314,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.menuInfo);
             this.Controls.Add(this.uiPanel1);
             this.Controls.Add(this.pnlCardLayout);
             this.Controls.Add(this.sidebar);
@@ -347,16 +325,17 @@
             this.Text = "Zitylot";
             this.Load += new System.EventHandler(this.Home_Load);
             this.ResizeEnd += new System.EventHandler(this.Home_ResizeEnd);
+            this.Resize += new System.EventHandler(this.Home_Resize);
             this.sidebar.ResumeLayout(false);
             this.sidebarBottom.ResumeLayout(false);
             this.uiPanel2.ResumeLayout(false);
             this.tableSetting.ResumeLayout(false);
             this.sidebarTop.ResumeLayout(false);
             this.uiPanel3.ResumeLayout(false);
-            this.menuSetting.ResumeLayout(false);
-            this.uiPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.uiPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -365,9 +344,6 @@
         private System.Windows.Forms.Panel sidebar;
         private System.Windows.Forms.Panel sidebarMid;
         private System.Windows.Forms.Panel pnlCardLayout;
-        private Sunny.UI.UIContextMenuStrip menuSetting;
-        private System.Windows.Forms.ToolStripMenuItem menuBtnLogOut;
-        private System.Windows.Forms.ToolStripMenuItem menuBtnProfile;
         private Sunny.UI.UIPanel sidebarTop;
         private Sunny.UI.UIPanel uiPanel1;
         private Sunny.UI.UISymbolButton btnToggle;
@@ -379,5 +355,6 @@
         private Sunny.UI.UILabel lbName;
         private Sunny.UI.UISymbolButton btnMore;
         private Sunny.UI.UISymbolLabel lbSymbol;
+        private CustomContextMenuStrip menuInfo;
     }
 }

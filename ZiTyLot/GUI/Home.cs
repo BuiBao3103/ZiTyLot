@@ -1,5 +1,4 @@
 ﻿using Sunny.UI;
-using Sunny.UI.Win32;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,11 +6,10 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens;
 using ZiTyLot.GUI.Screens.LostCardScr;
-using Sunny.UI.Win32;
 using ZiTyLot.GUI.Screens.DashboardScr;
+using System.Drawing.Text;
 
 namespace ZiTyLot.GUI
 {
@@ -426,6 +424,7 @@ namespace ZiTyLot.GUI
             {
                 LoadForm(control);
                 UpdateButtonStyles(clickedButton);
+                menuInfo.Visible = false;
             }
         }
 
@@ -464,17 +463,22 @@ namespace ZiTyLot.GUI
                 OpenMenu();
                 btnToggle.Symbol = 558848;
                 btnToggle.SymbolOffset = new Point(4, 0);
+                menuInfo.Visible = false;
             }
             else
             {
                 CloseMenu();
                 btnToggle.Symbol = 558849;
                 btnToggle.SymbolOffset = new Point(0, 0);
+                menuInfo.Visible = false;
+
             }
         }
         private void btnMore_Click(object sender, EventArgs e)
         {
-            this.menuSetting.Show(btnMore, new Point(btnMore.Width + 25, btnMore.Height - 60));
+            this.menuInfo.SetMode(0);
+            this.menuInfo.Visible = !this.menuInfo.Visible;
+            this.menuInfo.Location = new Point(sidebar.Width + 20, sidebar.Height - menuInfo.Height + 10);
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -608,5 +612,11 @@ namespace ZiTyLot.GUI
             ProfileForm profileForm = new ProfileForm();
             profileForm.ShowDialog();
         }
+
+        private void Home_Resize(object sender, EventArgs e)
+        {
+            this.menuInfo.Visible = false;
+        }
+
     }
 }

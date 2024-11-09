@@ -367,6 +367,12 @@
     <Compile Include="ENTITY\SlotStatistic.cs" />
     <Compile Include="ENTITY\VehicleType.cs" />
     <Compile Include="ENTITY\VisitorFee.cs" />
+    <Compile Include="GUI\CustomContextMenuStrip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\CustomContextMenuStrip.Designer.cs">
+      <DependentUpon>CustomContextMenuStrip.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Login2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -660,6 +666,9 @@
     <Compile Include="Helper\RFIDReader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\CustomContextMenuStrip.resx">
+      <DependentUpon>CustomContextMenuStrip.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\CustomDateTimePicker.resx">
       <DependentUpon>CustomDateTimePicker.cs</DependentUpon>
     </EmbeddedResource>
