@@ -16,9 +16,7 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
     {
         private readonly ResidentBUS residentBUS = new ResidentBUS();
         public readonly Resident resident;
-
         private readonly IssueBUS issueBUS = new IssueBUS();
-
         private readonly BillBUS billBus = new BillBUS();
 
         public event EventHandler ResidentUpdateEvent;
@@ -32,9 +30,9 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
             
             resident = residentBUS.GetById(residentId);
             tbFullname.Text = resident.Full_name;
-            uiTextBox1.Text = resident.Apartment_id;
-            uiTextBox2.Text = resident.Email;
-            uiTextBox3.Text = resident.Phone;
+            tbApartmentId.Text = resident.Apartment_id;
+            tbEmail.Text = resident.Email;
+            tbPhone.Text = resident.Phone;
 
             bills = new List<Bill>(residentBUS.PopulateBills(resident).Bills);
             foreach (Bill bill in bills)
@@ -42,7 +40,7 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
                 issues = new List<Issue>(billBus.PopulateIssues(bill).Issues);
                 if (bill.Issue_quantity == 1)
                 {
-                    tableAccount.Rows.Add(issues[0].Id, issues[0].License_plate
+                    tableIssue.Rows.Add(issues[0].Id, issues[0].License_plate
                         , issueBUS.PopulateVehicleType(issues[0]).Vehicle_type.Name
                         , issues[0].Start_date, issues[0].End_date);
 
@@ -51,7 +49,7 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
                 {
                     foreach (Issue issue in issues)
                     {
-                        tableAccount.Rows.Add(issue.Id, issue.License_plate
+                        tableIssue.Rows.Add(issue.Id, issue.License_plate
                         , issueBUS.PopulateVehicleType(issue).Vehicle_type.Name
                         , issue.Start_date, issues[0].End_date);
                     }
@@ -60,6 +58,19 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
 
         }
 
-       
+        private void btnRestoreCard_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLockCard_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLostCard_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

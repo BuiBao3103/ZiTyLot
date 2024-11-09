@@ -41,20 +41,20 @@
             this.btnSaveProfile = new Sunny.UI.UISymbolButton();
             this.uiPanel6 = new Sunny.UI.UIPanel();
             this.uiGroupBox4 = new Sunny.UI.UIGroupBox();
-            this.uiTextBox3 = new Sunny.UI.UITextBox();
+            this.tbPhone = new Sunny.UI.UITextBox();
             this.uiPanel5 = new Sunny.UI.UIPanel();
             this.uiGroupBox3 = new Sunny.UI.UIGroupBox();
-            this.uiTextBox2 = new Sunny.UI.UITextBox();
+            this.tbEmail = new Sunny.UI.UITextBox();
             this.uiPanel4 = new Sunny.UI.UIPanel();
             this.uiGroupBox2 = new Sunny.UI.UIGroupBox();
-            this.uiTextBox1 = new Sunny.UI.UITextBox();
+            this.tbApartmentId = new Sunny.UI.UITextBox();
             this.pnlFullname = new Sunny.UI.UIPanel();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
             this.tbFullname = new Sunny.UI.UITextBox();
             this.tpIssue = new System.Windows.Forms.TabPage();
             this.uiPanel7 = new Sunny.UI.UIPanel();
             this.uiPanel9 = new Sunny.UI.UIPanel();
-            this.tableAccount = new System.Windows.Forms.DataGridView();
+            this.tableIssue = new System.Windows.Forms.DataGridView();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPlate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVehical = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,10 +75,15 @@
             this.uiPanel3 = new Sunny.UI.UIPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSaveCard = new Sunny.UI.UISymbolButton();
-            this.uiGroupBox7 = new Sunny.UI.UIGroupBox();
-            this.uiTextBox6 = new Sunny.UI.UITextBox();
             this.uiPanel1 = new Sunny.UI.UIPanel();
             this.uiSymbolLabel1 = new Sunny.UI.UISymbolLabel();
+            this.uiTableLayoutPanel4 = new Sunny.UI.UITableLayoutPanel();
+            this.tbRFID = new Sunny.UI.UITextBox();
+            this.uiTextBox1 = new Sunny.UI.UITextBox();
+            this.uiGroupBox6 = new Sunny.UI.UIGroupBox();
+            this.tbCardID = new Sunny.UI.UITextBox();
+            this.uiGroupBox7 = new Sunny.UI.UIGroupBox();
+            this.tbCodeRFID = new Sunny.UI.UITextBox();
             this.uiTableLayoutPanel1.SuspendLayout();
             this.uiTabControlMenu1.SuspendLayout();
             this.tpProfile.SuspendLayout();
@@ -97,7 +102,7 @@
             this.tpIssue.SuspendLayout();
             this.uiPanel7.SuspendLayout();
             this.uiPanel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tableAccount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableIssue)).BeginInit();
             this.tpCard.SuspendLayout();
             this.uiPanel8.SuspendLayout();
             this.uiTableLayoutPanel3.SuspendLayout();
@@ -108,8 +113,10 @@
             this.panel6.SuspendLayout();
             this.uiPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.uiGroupBox7.SuspendLayout();
             this.uiPanel1.SuspendLayout();
+            this.uiTableLayoutPanel4.SuspendLayout();
+            this.uiGroupBox6.SuspendLayout();
+            this.uiGroupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // uiTableLayoutPanel1
@@ -121,7 +128,7 @@
             this.uiTableLayoutPanel1.Controls.Add(this.uiPanel1, 0, 0);
             this.uiTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTableLayoutPanel1.Location = new System.Drawing.Point(13, 12);
-            this.uiTableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiTableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.uiTableLayoutPanel1.Name = "uiTableLayoutPanel1";
             this.uiTableLayoutPanel1.RowCount = 2;
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
@@ -158,14 +165,13 @@
             this.uiTabControlMenu1.TabSelectedHighColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiTabControlMenu1.TabUnSelectedForeColor = System.Drawing.Color.Black;
             this.uiTabControlMenu1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-
             // 
             // tpProfile
             // 
             this.tpProfile.BackColor = System.Drawing.Color.White;
             this.tpProfile.Controls.Add(this.uiPanel2);
             this.tpProfile.Location = new System.Drawing.Point(151, 0);
-            this.tpProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpProfile.Margin = new System.Windows.Forms.Padding(4);
             this.tpProfile.Name = "tpProfile";
             this.tpProfile.Size = new System.Drawing.Size(895, 600);
             this.tpProfile.TabIndex = 0;
@@ -287,7 +293,7 @@
             // 
             // uiGroupBox4
             // 
-            this.uiGroupBox4.Controls.Add(this.uiTextBox3);
+            this.uiGroupBox4.Controls.Add(this.tbPhone);
             this.uiGroupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox4.FillColor = System.Drawing.Color.White;
             this.uiGroupBox4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -303,24 +309,24 @@
             this.uiGroupBox4.Text = "Phone number";
             this.uiGroupBox4.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiTextBox3
+            // tbPhone
             // 
-            this.uiTextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiTextBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiTextBox3.Location = new System.Drawing.Point(8, 32);
-            this.uiTextBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiTextBox3.MaximumSize = new System.Drawing.Size(0, 34);
-            this.uiTextBox3.MinimumSize = new System.Drawing.Size(0, 34);
-            this.uiTextBox3.Name = "uiTextBox3";
-            this.uiTextBox3.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.uiTextBox3.RectColor = System.Drawing.SystemColors.ControlDark;
-            this.uiTextBox3.RectSize = 2;
-            this.uiTextBox3.ShowText = false;
-            this.uiTextBox3.Size = new System.Drawing.Size(858, 34);
-            this.uiTextBox3.TabIndex = 0;
-            this.uiTextBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiTextBox3.Watermark = "";
+            this.tbPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbPhone.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbPhone.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPhone.Location = new System.Drawing.Point(8, 32);
+            this.tbPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbPhone.MaximumSize = new System.Drawing.Size(0, 34);
+            this.tbPhone.MinimumSize = new System.Drawing.Size(0, 34);
+            this.tbPhone.Name = "tbPhone";
+            this.tbPhone.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
+            this.tbPhone.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbPhone.RectSize = 2;
+            this.tbPhone.ShowText = false;
+            this.tbPhone.Size = new System.Drawing.Size(858, 34);
+            this.tbPhone.TabIndex = 0;
+            this.tbPhone.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tbPhone.Watermark = "";
             // 
             // uiPanel5
             // 
@@ -340,7 +346,7 @@
             // 
             // uiGroupBox3
             // 
-            this.uiGroupBox3.Controls.Add(this.uiTextBox2);
+            this.uiGroupBox3.Controls.Add(this.tbEmail);
             this.uiGroupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox3.FillColor = System.Drawing.Color.White;
             this.uiGroupBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -356,24 +362,24 @@
             this.uiGroupBox3.Text = "Email address";
             this.uiGroupBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiTextBox2
+            // tbEmail
             // 
-            this.uiTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiTextBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiTextBox2.Location = new System.Drawing.Point(8, 32);
-            this.uiTextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiTextBox2.MaximumSize = new System.Drawing.Size(0, 34);
-            this.uiTextBox2.MinimumSize = new System.Drawing.Size(0, 34);
-            this.uiTextBox2.Name = "uiTextBox2";
-            this.uiTextBox2.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.uiTextBox2.RectColor = System.Drawing.SystemColors.ControlDark;
-            this.uiTextBox2.RectSize = 2;
-            this.uiTextBox2.ShowText = false;
-            this.uiTextBox2.Size = new System.Drawing.Size(858, 34);
-            this.uiTextBox2.TabIndex = 0;
-            this.uiTextBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiTextBox2.Watermark = "";
+            this.tbEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbEmail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbEmail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEmail.Location = new System.Drawing.Point(8, 32);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbEmail.MaximumSize = new System.Drawing.Size(0, 34);
+            this.tbEmail.MinimumSize = new System.Drawing.Size(0, 34);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
+            this.tbEmail.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbEmail.RectSize = 2;
+            this.tbEmail.ShowText = false;
+            this.tbEmail.Size = new System.Drawing.Size(858, 34);
+            this.tbEmail.TabIndex = 0;
+            this.tbEmail.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tbEmail.Watermark = "";
             // 
             // uiPanel4
             // 
@@ -393,7 +399,7 @@
             // 
             // uiGroupBox2
             // 
-            this.uiGroupBox2.Controls.Add(this.uiTextBox1);
+            this.uiGroupBox2.Controls.Add(this.tbApartmentId);
             this.uiGroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox2.FillColor = System.Drawing.Color.White;
             this.uiGroupBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -409,24 +415,24 @@
             this.uiGroupBox2.Text = "Apartment ID";
             this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiTextBox1
+            // tbApartmentId
             // 
-            this.uiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiTextBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiTextBox1.Location = new System.Drawing.Point(8, 32);
-            this.uiTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiTextBox1.MaximumSize = new System.Drawing.Size(0, 34);
-            this.uiTextBox1.MinimumSize = new System.Drawing.Size(0, 34);
-            this.uiTextBox1.Name = "uiTextBox1";
-            this.uiTextBox1.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.uiTextBox1.RectColor = System.Drawing.SystemColors.ControlDark;
-            this.uiTextBox1.RectSize = 2;
-            this.uiTextBox1.ShowText = false;
-            this.uiTextBox1.Size = new System.Drawing.Size(858, 34);
-            this.uiTextBox1.TabIndex = 0;
-            this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiTextBox1.Watermark = "";
+            this.tbApartmentId.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbApartmentId.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbApartmentId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbApartmentId.Location = new System.Drawing.Point(8, 32);
+            this.tbApartmentId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbApartmentId.MaximumSize = new System.Drawing.Size(0, 34);
+            this.tbApartmentId.MinimumSize = new System.Drawing.Size(0, 34);
+            this.tbApartmentId.Name = "tbApartmentId";
+            this.tbApartmentId.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
+            this.tbApartmentId.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbApartmentId.RectSize = 2;
+            this.tbApartmentId.ShowText = false;
+            this.tbApartmentId.Size = new System.Drawing.Size(858, 34);
+            this.tbApartmentId.TabIndex = 0;
+            this.tbApartmentId.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tbApartmentId.Watermark = "";
             // 
             // pnlFullname
             // 
@@ -486,7 +492,7 @@
             this.tpIssue.BackColor = System.Drawing.Color.White;
             this.tpIssue.Controls.Add(this.uiPanel7);
             this.tpIssue.Location = new System.Drawing.Point(151, 0);
-            this.tpIssue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpIssue.Margin = new System.Windows.Forms.Padding(4);
             this.tpIssue.Name = "tpIssue";
             this.tpIssue.Size = new System.Drawing.Size(895, 600);
             this.tpIssue.TabIndex = 1;
@@ -514,7 +520,7 @@
             // 
             // uiPanel9
             // 
-            this.uiPanel9.Controls.Add(this.tableAccount);
+            this.uiPanel9.Controls.Add(this.tableIssue);
             this.uiPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel9.FillColor = System.Drawing.Color.White;
             this.uiPanel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -532,12 +538,12 @@
             this.uiPanel9.Text = "uiPanel9";
             this.uiPanel9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tableAccount
+            // tableIssue
             // 
-            this.tableAccount.AllowUserToAddRows = false;
-            this.tableAccount.AllowUserToDeleteRows = false;
-            this.tableAccount.AllowUserToResizeColumns = false;
-            this.tableAccount.AllowUserToResizeRows = false;
+            this.tableIssue.AllowUserToAddRows = false;
+            this.tableIssue.AllowUserToDeleteRows = false;
+            this.tableIssue.AllowUserToResizeColumns = false;
+            this.tableIssue.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -545,11 +551,11 @@
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.tableAccount.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.tableAccount.BackgroundColor = System.Drawing.Color.White;
-            this.tableAccount.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tableAccount.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.tableAccount.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.tableIssue.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tableIssue.BackgroundColor = System.Drawing.Color.White;
+            this.tableIssue.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tableIssue.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.tableIssue.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -558,15 +564,15 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableAccount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.tableAccount.ColumnHeadersHeight = 34;
-            this.tableAccount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tableIssue.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tableIssue.ColumnHeadersHeight = 34;
+            this.tableIssue.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
             this.colPlate,
             this.colVehical,
             this.colStartDate,
             this.colEndDate});
-            this.tableAccount.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tableIssue.Cursor = System.Windows.Forms.Cursors.Default;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -575,19 +581,19 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableAccount.DefaultCellStyle = dataGridViewCellStyle3;
-            this.tableAccount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableAccount.GridColor = System.Drawing.Color.White;
-            this.tableAccount.Location = new System.Drawing.Point(1, 1);
-            this.tableAccount.Margin = new System.Windows.Forms.Padding(0);
-            this.tableAccount.Name = "tableAccount";
-            this.tableAccount.ReadOnly = true;
-            this.tableAccount.RowHeadersVisible = false;
-            this.tableAccount.RowHeadersWidth = 30;
-            this.tableAccount.RowTemplate.Height = 40;
-            this.tableAccount.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableAccount.Size = new System.Drawing.Size(880, 586);
-            this.tableAccount.TabIndex = 3;
+            this.tableIssue.DefaultCellStyle = dataGridViewCellStyle3;
+            this.tableIssue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableIssue.GridColor = System.Drawing.Color.White;
+            this.tableIssue.Location = new System.Drawing.Point(1, 1);
+            this.tableIssue.Margin = new System.Windows.Forms.Padding(0);
+            this.tableIssue.Name = "tableIssue";
+            this.tableIssue.ReadOnly = true;
+            this.tableIssue.RowHeadersVisible = false;
+            this.tableIssue.RowHeadersWidth = 30;
+            this.tableIssue.RowTemplate.Height = 40;
+            this.tableIssue.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableIssue.Size = new System.Drawing.Size(880, 586);
+            this.tableIssue.TabIndex = 3;
             // 
             // colId
             // 
@@ -635,7 +641,7 @@
             this.tpCard.BackColor = System.Drawing.Color.White;
             this.tpCard.Controls.Add(this.uiPanel8);
             this.tpCard.Location = new System.Drawing.Point(151, 0);
-            this.tpCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpCard.Margin = new System.Windows.Forms.Padding(4);
             this.tpCard.Name = "tpCard";
             this.tpCard.Size = new System.Drawing.Size(895, 600);
             this.tpCard.TabIndex = 2;
@@ -665,14 +671,14 @@
             // 
             this.uiTableLayoutPanel3.ColumnCount = 1;
             this.uiTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.uiTableLayoutPanel3.Controls.Add(this.uiTableLayoutPanel4, 0, 0);
             this.uiTableLayoutPanel3.Controls.Add(this.uiGroupBox5, 0, 1);
             this.uiTableLayoutPanel3.Controls.Add(this.uiPanel11, 0, 2);
             this.uiTableLayoutPanel3.Controls.Add(this.uiPanel3, 0, 3);
-            this.uiTableLayoutPanel3.Controls.Add(this.uiGroupBox7, 0, 0);
             this.uiTableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.uiTableLayoutPanel3.Location = new System.Drawing.Point(13, 0);
             this.uiTableLayoutPanel3.Name = "uiTableLayoutPanel3";
-            this.uiTableLayoutPanel3.RowCount = 4;
+            this.uiTableLayoutPanel3.RowCount = 5;
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
@@ -704,6 +710,7 @@
             // 
             this.tbStatus.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbStatus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tbStatus.Enabled = false;
             this.tbStatus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbStatus.ForeColor = System.Drawing.Color.Red;
             this.tbStatus.Location = new System.Drawing.Point(8, 32);
@@ -779,6 +786,7 @@
             this.btnRestoreCard.TabIndex = 3;
             this.btnRestoreCard.Text = "Restore card";
             this.btnRestoreCard.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestoreCard.Click += new System.EventHandler(this.btnRestoreCard_Click);
             // 
             // panel4
             // 
@@ -815,6 +823,7 @@
             this.btnLockCard.TabIndex = 3;
             this.btnLockCard.Text = "Locked card";
             this.btnLockCard.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLockCard.Click += new System.EventHandler(this.btnLockCard_Click);
             // 
             // panel6
             // 
@@ -850,6 +859,7 @@
             this.btnLostCard.TabIndex = 3;
             this.btnLostCard.Text = "Lost card";
             this.btnLostCard.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLostCard.Click += new System.EventHandler(this.btnLostCard_Click);
             // 
             // uiPanel3
             // 
@@ -907,45 +917,6 @@
             this.btnSaveCard.Text = "Save change";
             this.btnSaveCard.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // uiGroupBox7
-            // 
-            this.uiGroupBox7.Controls.Add(this.uiTextBox6);
-            this.uiGroupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiGroupBox7.FillColor = System.Drawing.Color.White;
-            this.uiGroupBox7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox7.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiGroupBox7.Location = new System.Drawing.Point(4, 5);
-            this.uiGroupBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiGroupBox7.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiGroupBox7.Name = "uiGroupBox7";
-            this.uiGroupBox7.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
-            this.uiGroupBox7.RectColor = System.Drawing.SystemColors.ButtonFace;
-            this.uiGroupBox7.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox7.Size = new System.Drawing.Size(874, 70);
-            this.uiGroupBox7.TabIndex = 23;
-            this.uiGroupBox7.Text = "RFID";
-            this.uiGroupBox7.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // uiTextBox6
-            // 
-            this.uiTextBox6.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.uiTextBox6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiTextBox6.Location = new System.Drawing.Point(8, 32);
-            this.uiTextBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiTextBox6.MaximumSize = new System.Drawing.Size(0, 34);
-            this.uiTextBox6.MinimumSize = new System.Drawing.Size(1, 34);
-            this.uiTextBox6.Name = "uiTextBox6";
-            this.uiTextBox6.Padding = new System.Windows.Forms.Padding(5);
-            this.uiTextBox6.RectColor = System.Drawing.SystemColors.ControlDark;
-            this.uiTextBox6.RectSize = 2;
-            this.uiTextBox6.ShowText = false;
-            this.uiTextBox6.Size = new System.Drawing.Size(858, 34);
-            this.uiTextBox6.TabIndex = 0;
-            this.uiTextBox6.Text = "{fullname}";
-            this.uiTextBox6.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiTextBox6.Watermark = "";
-            // 
             // uiPanel1
             // 
             this.uiTableLayoutPanel1.SetColumnSpan(this.uiPanel1, 2);
@@ -984,6 +955,143 @@
             this.uiSymbolLabel1.Text = "Resident details";
             this.uiSymbolLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // uiTableLayoutPanel4
+            // 
+            this.uiTableLayoutPanel4.ColumnCount = 2;
+            this.uiTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.uiTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.uiTableLayoutPanel4.Controls.Add(this.uiGroupBox7, 1, 0);
+            this.uiTableLayoutPanel4.Controls.Add(this.uiGroupBox6, 0, 0);
+            this.uiTableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiTableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.uiTableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
+            this.uiTableLayoutPanel4.Name = "uiTableLayoutPanel4";
+            this.uiTableLayoutPanel4.RowCount = 1;
+            this.uiTableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.uiTableLayoutPanel4.Size = new System.Drawing.Size(882, 80);
+            this.uiTableLayoutPanel4.TabIndex = 1;
+            this.uiTableLayoutPanel4.TagString = null;
+            // 
+            // tbRFID
+            // 
+            this.tbRFID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbRFID.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tbRFID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbRFID.Location = new System.Drawing.Point(4, 5);
+            this.tbRFID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbRFID.MaximumSize = new System.Drawing.Size(0, 34);
+            this.tbRFID.MinimumSize = new System.Drawing.Size(1, 34);
+            this.tbRFID.Name = "tbRFID";
+            this.tbRFID.Padding = new System.Windows.Forms.Padding(5);
+            this.tbRFID.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbRFID.RectSize = 2;
+            this.tbRFID.ShowText = false;
+            this.tbRFID.Size = new System.Drawing.Size(92, 34);
+            this.tbRFID.TabIndex = 0;
+            this.tbRFID.Text = "{fullname}";
+            this.tbRFID.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tbRFID.Watermark = "";
+            // 
+            // uiTextBox1
+            // 
+            this.uiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uiTextBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiTextBox1.Location = new System.Drawing.Point(4, 5);
+            this.uiTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextBox1.MaximumSize = new System.Drawing.Size(0, 34);
+            this.uiTextBox1.MinimumSize = new System.Drawing.Size(1, 34);
+            this.uiTextBox1.Name = "uiTextBox1";
+            this.uiTextBox1.Padding = new System.Windows.Forms.Padding(5);
+            this.uiTextBox1.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.uiTextBox1.RectSize = 2;
+            this.uiTextBox1.ShowText = false;
+            this.uiTextBox1.Size = new System.Drawing.Size(92, 34);
+            this.uiTextBox1.TabIndex = 3;
+            this.uiTextBox1.Text = "{fullname}";
+            this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiTextBox1.Watermark = "";
+            // 
+            // uiGroupBox6
+            // 
+            this.uiGroupBox6.Controls.Add(this.tbCardID);
+            this.uiGroupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiGroupBox6.FillColor = System.Drawing.Color.White;
+            this.uiGroupBox6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox6.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox6.Location = new System.Drawing.Point(4, 5);
+            this.uiGroupBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiGroupBox6.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiGroupBox6.Name = "uiGroupBox6";
+            this.uiGroupBox6.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
+            this.uiGroupBox6.RectColor = System.Drawing.SystemColors.ButtonFace;
+            this.uiGroupBox6.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiGroupBox6.Size = new System.Drawing.Size(212, 70);
+            this.uiGroupBox6.TabIndex = 27;
+            this.uiGroupBox6.Text = "ID";
+            this.uiGroupBox6.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tbCardID
+            // 
+            this.tbCardID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbCardID.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tbCardID.Enabled = false;
+            this.tbCardID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCardID.ForeColor = System.Drawing.Color.Black;
+            this.tbCardID.Location = new System.Drawing.Point(8, 32);
+            this.tbCardID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbCardID.MaximumSize = new System.Drawing.Size(0, 34);
+            this.tbCardID.MinimumSize = new System.Drawing.Size(1, 34);
+            this.tbCardID.Name = "tbCardID";
+            this.tbCardID.Padding = new System.Windows.Forms.Padding(5);
+            this.tbCardID.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbCardID.RectSize = 2;
+            this.tbCardID.ShowText = false;
+            this.tbCardID.Size = new System.Drawing.Size(196, 34);
+            this.tbCardID.TabIndex = 0;
+            this.tbCardID.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tbCardID.Watermark = "";
+            // 
+            // uiGroupBox7
+            // 
+            this.uiGroupBox7.Controls.Add(this.tbCodeRFID);
+            this.uiGroupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiGroupBox7.FillColor = System.Drawing.Color.White;
+            this.uiGroupBox7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox7.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox7.Location = new System.Drawing.Point(224, 5);
+            this.uiGroupBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiGroupBox7.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiGroupBox7.Name = "uiGroupBox7";
+            this.uiGroupBox7.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
+            this.uiGroupBox7.RectColor = System.Drawing.SystemColors.ButtonFace;
+            this.uiGroupBox7.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiGroupBox7.Size = new System.Drawing.Size(654, 70);
+            this.uiGroupBox7.TabIndex = 28;
+            this.uiGroupBox7.Text = "RFID";
+            this.uiGroupBox7.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tbCodeRFID
+            // 
+            this.tbCodeRFID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbCodeRFID.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tbCodeRFID.Enabled = false;
+            this.tbCodeRFID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCodeRFID.ForeColor = System.Drawing.Color.Black;
+            this.tbCodeRFID.Location = new System.Drawing.Point(8, 32);
+            this.tbCodeRFID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbCodeRFID.MaximumSize = new System.Drawing.Size(0, 34);
+            this.tbCodeRFID.MinimumSize = new System.Drawing.Size(1, 34);
+            this.tbCodeRFID.Name = "tbCodeRFID";
+            this.tbCodeRFID.Padding = new System.Windows.Forms.Padding(5);
+            this.tbCodeRFID.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbCodeRFID.RectSize = 2;
+            this.tbCodeRFID.ShowText = false;
+            this.tbCodeRFID.Size = new System.Drawing.Size(638, 34);
+            this.tbCodeRFID.TabIndex = 0;
+            this.tbCodeRFID.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tbCodeRFID.Watermark = "";
+            // 
             // ResidentDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -991,7 +1099,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1072, 690);
             this.Controls.Add(this.uiTableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1087, 728);
             this.Name = "ResidentDetailForm";
             this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
@@ -1014,7 +1122,7 @@
             this.tpIssue.ResumeLayout(false);
             this.uiPanel7.ResumeLayout(false);
             this.uiPanel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tableAccount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableIssue)).EndInit();
             this.tpCard.ResumeLayout(false);
             this.uiPanel8.ResumeLayout(false);
             this.uiTableLayoutPanel3.ResumeLayout(false);
@@ -1025,8 +1133,10 @@
             this.panel6.ResumeLayout(false);
             this.uiPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.uiGroupBox7.ResumeLayout(false);
             this.uiPanel1.ResumeLayout(false);
+            this.uiTableLayoutPanel4.ResumeLayout(false);
+            this.uiGroupBox6.ResumeLayout(false);
+            this.uiGroupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1043,19 +1153,19 @@
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel2;
         private Sunny.UI.UIPanel uiPanel6;
         private Sunny.UI.UIGroupBox uiGroupBox4;
-        private Sunny.UI.UITextBox uiTextBox3;
+        private Sunny.UI.UITextBox tbPhone;
         private Sunny.UI.UIPanel uiPanel5;
         private Sunny.UI.UIGroupBox uiGroupBox3;
-        private Sunny.UI.UITextBox uiTextBox2;
+        private Sunny.UI.UITextBox tbEmail;
         private Sunny.UI.UIPanel uiPanel4;
         private Sunny.UI.UIGroupBox uiGroupBox2;
-        private Sunny.UI.UITextBox uiTextBox1;
+        private Sunny.UI.UITextBox tbApartmentId;
         private Sunny.UI.UIPanel pnlFullname;
         private Sunny.UI.UIGroupBox uiGroupBox1;
         private Sunny.UI.UITextBox tbFullname;
         private Sunny.UI.UIPanel uiPanel7;
         private Sunny.UI.UIPanel uiPanel9;
-        private System.Windows.Forms.DataGridView tableAccount;
+        private System.Windows.Forms.DataGridView tableIssue;
         private Sunny.UI.UIPanel uiPanel10;
         private System.Windows.Forms.Panel panel3;
         private Sunny.UI.UISymbolButton btnSaveProfile;
@@ -1076,10 +1186,15 @@
         private Sunny.UI.UIPanel uiPanel3;
         private System.Windows.Forms.Panel panel1;
         private Sunny.UI.UISymbolButton btnSaveCard;
-        private Sunny.UI.UIGroupBox uiGroupBox7;
-        private Sunny.UI.UITextBox uiTextBox6;
         private Sunny.UI.UISymbolLabel uiSymbolLabel1;
         private System.Windows.Forms.Panel panel2;
         private Sunny.UI.UISymbolButton btnRestoreCard;
+        private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel4;
+        private Sunny.UI.UITextBox tbRFID;
+        private Sunny.UI.UITextBox uiTextBox1;
+        private Sunny.UI.UIGroupBox uiGroupBox7;
+        private Sunny.UI.UITextBox tbCodeRFID;
+        private Sunny.UI.UIGroupBox uiGroupBox6;
+        private Sunny.UI.UITextBox tbCardID;
     }
 }
