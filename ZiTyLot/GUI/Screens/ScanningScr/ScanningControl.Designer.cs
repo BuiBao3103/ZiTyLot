@@ -49,8 +49,9 @@ namespace ZiTyLot.GUI.Screens
             this.panel2.Controls.Add(this.uiTableLayoutPanel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1024, 717);
+            this.panel2.Size = new System.Drawing.Size(1365, 882);
             this.panel2.TabIndex = 2;
             // 
             // uiTableLayoutPanel1
@@ -64,11 +65,12 @@ namespace ZiTyLot.GUI.Screens
             this.uiTableLayoutPanel1.Controls.Add(this.btnCarCheckIn, 0, 0);
             this.uiTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.uiTableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiTableLayoutPanel1.Name = "uiTableLayoutPanel1";
             this.uiTableLayoutPanel1.RowCount = 2;
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiTableLayoutPanel1.Size = new System.Drawing.Size(1024, 717);
+            this.uiTableLayoutPanel1.Size = new System.Drawing.Size(1365, 882);
             this.uiTableLayoutPanel1.TabIndex = 0;
             this.uiTableLayoutPanel1.TagString = null;
             // 
@@ -85,17 +87,17 @@ namespace ZiTyLot.GUI.Screens
             this.btnBikeCheckIn.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnBikeCheckIn.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBikeCheckIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnBikeCheckIn.Location = new System.Drawing.Point(242, 378);
-            this.btnBikeCheckIn.Margin = new System.Windows.Forms.Padding(20);
-            this.btnBikeCheckIn.MaximumSize = new System.Drawing.Size(250, 250);
+            this.btnBikeCheckIn.Location = new System.Drawing.Point(322, 466);
+            this.btnBikeCheckIn.Margin = new System.Windows.Forms.Padding(27, 25, 27, 25);
+            this.btnBikeCheckIn.MaximumSize = new System.Drawing.Size(333, 308);
             this.btnBikeCheckIn.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnBikeCheckIn.Name = "btnBikeCheckIn";
-            this.btnBikeCheckIn.Padding = new System.Windows.Forms.Padding(50);
+            this.btnBikeCheckIn.Padding = new System.Windows.Forms.Padding(67, 62, 67, 62);
             this.btnBikeCheckIn.Radius = 14;
             this.btnBikeCheckIn.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
             this.btnBikeCheckIn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnBikeCheckIn.RectSize = 2;
-            this.btnBikeCheckIn.Size = new System.Drawing.Size(250, 250);
+            this.btnBikeCheckIn.Size = new System.Drawing.Size(333, 308);
             this.btnBikeCheckIn.Symbol = 560023;
             this.btnBikeCheckIn.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnBikeCheckIn.SymbolOffset = new System.Drawing.Point(-5, 0);
@@ -119,17 +121,17 @@ namespace ZiTyLot.GUI.Screens
             this.btnBikeCheckOut.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnBikeCheckOut.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBikeCheckOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnBikeCheckOut.Location = new System.Drawing.Point(532, 378);
-            this.btnBikeCheckOut.Margin = new System.Windows.Forms.Padding(20);
-            this.btnBikeCheckOut.MaximumSize = new System.Drawing.Size(250, 250);
+            this.btnBikeCheckOut.Location = new System.Drawing.Point(709, 466);
+            this.btnBikeCheckOut.Margin = new System.Windows.Forms.Padding(27, 25, 27, 25);
+            this.btnBikeCheckOut.MaximumSize = new System.Drawing.Size(333, 308);
             this.btnBikeCheckOut.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnBikeCheckOut.Name = "btnBikeCheckOut";
-            this.btnBikeCheckOut.Padding = new System.Windows.Forms.Padding(50);
+            this.btnBikeCheckOut.Padding = new System.Windows.Forms.Padding(67, 62, 67, 62);
             this.btnBikeCheckOut.Radius = 14;
             this.btnBikeCheckOut.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
             this.btnBikeCheckOut.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnBikeCheckOut.RectSize = 2;
-            this.btnBikeCheckOut.Size = new System.Drawing.Size(250, 250);
+            this.btnBikeCheckOut.Size = new System.Drawing.Size(333, 308);
             this.btnBikeCheckOut.Symbol = 559834;
             this.btnBikeCheckOut.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnBikeCheckOut.SymbolSize = 72;
@@ -152,17 +154,17 @@ namespace ZiTyLot.GUI.Screens
             this.btnCarCheckOut.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCarCheckOut.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCarCheckOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCarCheckOut.Location = new System.Drawing.Point(532, 88);
-            this.btnCarCheckOut.Margin = new System.Windows.Forms.Padding(20);
-            this.btnCarCheckOut.MaximumSize = new System.Drawing.Size(250, 250);
+            this.btnCarCheckOut.Location = new System.Drawing.Point(709, 108);
+            this.btnCarCheckOut.Margin = new System.Windows.Forms.Padding(27, 25, 27, 25);
+            this.btnCarCheckOut.MaximumSize = new System.Drawing.Size(333, 308);
             this.btnCarCheckOut.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnCarCheckOut.Name = "btnCarCheckOut";
-            this.btnCarCheckOut.Padding = new System.Windows.Forms.Padding(50);
+            this.btnCarCheckOut.Padding = new System.Windows.Forms.Padding(67, 62, 67, 62);
             this.btnCarCheckOut.Radius = 14;
             this.btnCarCheckOut.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
             this.btnCarCheckOut.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnCarCheckOut.RectSize = 2;
-            this.btnCarCheckOut.Size = new System.Drawing.Size(250, 250);
+            this.btnCarCheckOut.Size = new System.Drawing.Size(333, 308);
             this.btnCarCheckOut.Symbol = 361881;
             this.btnCarCheckOut.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCarCheckOut.SymbolOffset = new System.Drawing.Point(-5, 0);
@@ -186,17 +188,17 @@ namespace ZiTyLot.GUI.Screens
             this.btnCarCheckIn.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCarCheckIn.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCarCheckIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCarCheckIn.Location = new System.Drawing.Point(242, 88);
-            this.btnCarCheckIn.Margin = new System.Windows.Forms.Padding(20);
-            this.btnCarCheckIn.MaximumSize = new System.Drawing.Size(250, 250);
+            this.btnCarCheckIn.Location = new System.Drawing.Point(322, 108);
+            this.btnCarCheckIn.Margin = new System.Windows.Forms.Padding(27, 25, 27, 25);
+            this.btnCarCheckIn.MaximumSize = new System.Drawing.Size(333, 308);
             this.btnCarCheckIn.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnCarCheckIn.Name = "btnCarCheckIn";
-            this.btnCarCheckIn.Padding = new System.Windows.Forms.Padding(50);
+            this.btnCarCheckIn.Padding = new System.Windows.Forms.Padding(67, 62, 67, 62);
             this.btnCarCheckIn.Radius = 14;
             this.btnCarCheckIn.RadiusSides = Sunny.UI.UICornerRadiusSides.None;
             this.btnCarCheckIn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnCarCheckIn.RectSize = 2;
-            this.btnCarCheckIn.Size = new System.Drawing.Size(250, 250);
+            this.btnCarCheckIn.Size = new System.Drawing.Size(333, 308);
             this.btnCarCheckIn.Symbol = 362942;
             this.btnCarCheckIn.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCarCheckIn.SymbolOffset = new System.Drawing.Point(-5, 0);
@@ -218,13 +220,14 @@ namespace ZiTyLot.GUI.Screens
             // 
             // ScanningControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ScanningControl";
-            this.Size = new System.Drawing.Size(1024, 717);
+            this.Size = new System.Drawing.Size(1365, 882);
             this.Load += new System.EventHandler(this.ScanningControl_Load);
             this.Resize += new System.EventHandler(this.ScanningControl_Resize);
             this.panel2.ResumeLayout(false);
