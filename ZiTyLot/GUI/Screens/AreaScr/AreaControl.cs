@@ -24,6 +24,7 @@ namespace ZiTyLot.GUI.Screens
         private Page<ParkingLot> page;
 
         private AreaCreateForm _areaCreateForm;
+        private AreaDetailForm _areaDetailForm;
         public AreaControl()
         {
             InitializeComponent();
@@ -89,10 +90,10 @@ namespace ZiTyLot.GUI.Screens
         {
             if (e.RowIndex >= 0)
             {
+                string areaId = tableArea.Rows[e.RowIndex].Cells[0].Value.ToString();
                 if (e.ColumnIndex == tableArea.Columns["colView"].Index)
-                {
-                    AreaDetailForm areaDetailForm = new AreaDetailForm();
-                    areaDetailForm.ShowDialog();
+                {                   
+                   ShowAreaDetailForm(areaId);
                 }
                 else if (e.ColumnIndex == tableArea.Columns["colDelete"].Index)
                 {
@@ -100,6 +101,32 @@ namespace ZiTyLot.GUI.Screens
                 }
             }
         }
+
+        private void ShowAreaDetailForm(string areaId)
+        {
+            if (_areaDetailForm != null && areaId != _areaDetailForm.parkingLot.Id)
+            {
+                _areaDetailForm.Close();
+            }
+
+            if (_areaDetailForm == null || _areaDetailForm.IsDisposed)
+            {
+                _areaDetailForm = new AreaDetailForm(areaId);
+                _areaDetailForm.AreaUpdateEvent += (s, args) =>
+                {
+                    filters.Clear();
+                    ChangePage(1);
+                };
+                _areaDetailForm.Show();
+            }
+            else
+            {
+                if (_areaDetailForm.WindowState == FormWindowState.Minimized)
+                    _areaDetailForm.WindowState = FormWindowState.Normal;
+                _areaDetailForm.BringToFront();
+            }
+        }
+
 
         private void TopPnl_Resize(object sender, EventArgs e)
         {

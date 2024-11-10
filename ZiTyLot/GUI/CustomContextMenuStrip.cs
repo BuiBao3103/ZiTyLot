@@ -20,6 +20,11 @@ namespace ZiTyLot.GUI
         private string _page;
         const int MODEl_INFO = 0;
         const int MODEL_FUNCTION = 1;
+
+        public event EventHandler LogoutClick;
+        public event EventHandler DownloadClick;
+        public event EventHandler ExportClick;
+        public event EventHandler ImportClick;
         public CustomContextMenuStrip()
         {
             InitializeComponent();
@@ -62,17 +67,17 @@ namespace ZiTyLot.GUI
 
         private void btnDownload_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Download");
+            DownloadClick?.Invoke(this, e);
         }
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Export");
+            ExportClick?.Invoke(this, e);
         }
 
         private void btnImport_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Import");
+            ImportClick?.Invoke(this, e);
         }
     }
 }

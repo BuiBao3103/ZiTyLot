@@ -9,6 +9,7 @@ using ZiTyLot.BUS;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens.CardScr;
+using ZiTyLot.GUI.Screens.PriceScr;
 using ZiTyLot.GUI.Screens.RoleScr;
 using ZiTyLot.Helper;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -23,7 +24,7 @@ namespace ZiTyLot.GUI.Screens
         private List<Role> roleList;
 
         private RoleCreateForm _roleCreateForm;
-
+        private RoleDetailForm _roleDetailForm;
         public RoleControl()
         {
             InitializeComponent();
@@ -93,14 +94,40 @@ namespace ZiTyLot.GUI.Screens
         {
             if (e.RowIndex >= 0)
             {
+                int roleId = (int) tableRole.Rows[e.RowIndex].Cells[0].Value;
                 if (e.ColumnIndex == tableRole.Columns["colView"].Index)
                 {
-                    MessageBox.Show("View button clicked for row " + e.RowIndex);
+                    ShowRoleDetailForm(roleId);
                 }
                 else if (e.ColumnIndex == tableRole.Columns["colDelete"].Index)
                 {
                     MessageBox.Show("Delete button clicked for row " + e.RowIndex);
                 }
+            }
+        }
+
+        private void ShowRoleDetailForm(int roleId)
+        {
+            if (_roleDetailForm != null && roleId != _roleDetailForm.role.Id)
+            {
+                _roleDetailForm.Close();
+            }
+            if (_roleDetailForm == null || _roleDetailForm.IsDisposed)
+            {
+
+                _roleDetailForm = new RoleDetailForm(roleId);
+                _roleDetailForm.RoleUpdateEvent += (s, args) =>
+                {
+                    roleList = roleBUS.GetAll();
+                    LoadDataToTable();
+                };
+                _roleDetailForm.Show();
+            }
+            else
+            {
+                if (_roleDetailForm.WindowState == FormWindowState.Minimized)
+                    _roleDetailForm.WindowState = FormWindowState.Normal;
+                _roleDetailForm.BringToFront();
             }
         }
 
@@ -114,11 +141,6 @@ namespace ZiTyLot.GUI.Screens
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            RoleDetailForm roleDetailForm = new RoleDetailForm();
-            roleDetailForm.Show();
-        }
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {

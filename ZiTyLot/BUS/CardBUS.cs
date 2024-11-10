@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZiTyLot.Constants.Enum;
 using ZiTyLot.DAO;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.Utils;
@@ -238,6 +239,35 @@ namespace ZiTyLot.BUS
                 {
                     this.Add(item);
                 }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Card IssueCard(string rfid, int residentId)
+        {
+            List<FilterCondition> filters = new List<FilterCondition>
+            {
+                new FilterCondition("rfid", CompOp.Equals, rfid)
+            };
+            List<Card> cards = cardDAO.GetAll(filters);
+            if (cards.Count == 0)
+            {
+                throw new ValidationInputException("RFID is not existed");
+            }
+            Card card = cards[0];
+            if (card.Status != CardStatus.EMPTY)
+            {
+                throw new ValidationInputException("Card is not empty");
+            }
+            try
+            {
+                card.Status = CardStatus.ACTIVE;
+                card.Resident_id = residentId;
+                cardDAO.Update(card);
+                return card;
             }
             catch (Exception ex)
             {

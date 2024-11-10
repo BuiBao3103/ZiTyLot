@@ -9,6 +9,7 @@ using ZiTyLot.Constants;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens.AreaScr;
+using ZiTyLot.GUI.Screens.PriceScr;
 using ZiTyLot.GUI.Screens.ResidentScr;
 using ZiTyLot.Helper;
 
@@ -23,6 +24,7 @@ namespace ZiTyLot.GUI.Screens
         private Page<Resident> page;
 
         private ResidentCreateForm _residentCreateForm;
+        private ResidentDetailForm _residentDetailForm;
         public ResidentControl()
         {
             InitializeComponent();
@@ -92,15 +94,40 @@ namespace ZiTyLot.GUI.Screens
         {
             if (e.RowIndex >= 0)
             {
+                int residentId = (int)tableResident.Rows[e.RowIndex].Cells[0].Value;
                 if (e.ColumnIndex == tableResident.Columns["colView"].Index)
                 {
-                    ResidentDetailForm residentDetailForm = new ResidentDetailForm();
-                    residentDetailForm.Show();
+                    ShowResidentDetailForm(residentId);
                 }
                 else if (e.ColumnIndex == tableResident.Columns["colDelete"].Index)
                 {
                     MessageBox.Show("Delete button clicked for row " + e.RowIndex);
                 }
+            }
+        }
+
+        private void ShowResidentDetailForm(int residentId)
+        {
+            if (_residentDetailForm != null && residentId != _residentDetailForm._resident.Id)
+            {
+                _residentDetailForm.Close();
+            }
+            if (_residentDetailForm == null || _residentDetailForm.IsDisposed)
+            {
+
+                _residentDetailForm = new ResidentDetailForm(residentId);
+                _residentDetailForm.ResidentUpdateEvent += (s, args) =>
+                {
+                   filters.Clear();
+                    ChangePage(1);
+                };
+                _residentDetailForm.Show();
+            }
+            else
+            {
+                if (_residentDetailForm.WindowState == FormWindowState.Minimized)
+                    _residentDetailForm.WindowState = FormWindowState.Normal;
+                _residentDetailForm.BringToFront();
             }
         }
 

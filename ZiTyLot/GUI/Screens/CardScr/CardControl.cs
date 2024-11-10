@@ -34,6 +34,9 @@ namespace ZiTyLot.GUI.Screens
             InitializeComponent();
             cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
+            menuFunction.DownloadClick += menuBtnDownload_Click;
+            menuFunction.ExportClick += menuBtnExport_Click;
+            menuFunction.ImportClick += menuBtnImport_Click;
 
         }
 

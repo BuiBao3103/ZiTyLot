@@ -20,10 +20,12 @@ namespace ZiTyLot.GUI.Screens
     public partial class SessionControl : UserControl
     {
         private readonly Debouncer _debouncer = new Debouncer();
-        private readonly SessionBUS  sessionBUS = new SessionBUS();
+        private readonly SessionBUS sessionBUS = new SessionBUS();
         private readonly Pageable pageable = new Pageable();
         private readonly List<FilterCondition> filters = new List<FilterCondition>();
         private Page<Session> page;
+
+        private SessionDetailForm _sessionDetailForm;
 
         public SessionControl()
         {
@@ -73,8 +75,8 @@ namespace ZiTyLot.GUI.Screens
                 }
                 System.Drawing.Image icon = null;
                 icon = Properties.Resources.Icon_18x18px_View;
-                int iconWidth = 16;  
-                int iconHeight = 16; 
+                int iconWidth = 16;
+                int iconHeight = 16;
                 int x = e.CellBounds.Left + (e.CellBounds.Width - iconWidth) / 2;
                 int y = e.CellBounds.Top + (e.CellBounds.Height - iconHeight) / 2;
                 if (icon != null)
@@ -92,12 +94,31 @@ namespace ZiTyLot.GUI.Screens
             {
                 if (e.ColumnIndex == tableSession.Columns["colView"].Index)
                 {
-                    SessionDetailForm sessionDetailForm = new SessionDetailForm();
-                    sessionDetailForm.Show();
+                    int id = int.Parse(tableSession.Rows[e.RowIndex].Cells["colId"].Value.ToString());
+                    ShowSessionDetailForm(id);
                 }
             }
         }
 
+
+        private void ShowSessionDetailForm(int id)
+        {
+            if (_sessionDetailForm != null && id != _sessionDetailForm._sessionId)
+            {
+                _sessionDetailForm.Close();
+            }
+            if (_sessionDetailForm == null || _sessionDetailForm.IsDisposed)
+            {
+                _sessionDetailForm = new SessionDetailForm(id);
+                _sessionDetailForm.Show();
+            }
+            else
+            {
+                if (_sessionDetailForm.WindowState == FormWindowState.Minimized)
+                    _sessionDetailForm.WindowState = FormWindowState.Normal;
+                _sessionDetailForm.BringToFront();
+            }
+        }
         private void TopPnl_Resize(object sender, EventArgs e)
         {
             pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
@@ -108,7 +129,7 @@ namespace ZiTyLot.GUI.Screens
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
         }
 
-        
+
         private void btnFilter_Click(object sender, EventArgs e)
         {
             if (pnlTop.Height == 108)
@@ -128,7 +149,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void btnTimeIn_Click(object sender, EventArgs e)
         {
-            if(customDateTimePicker.Visible == false)
+            if (customDateTimePicker.Visible == false)
             {
                 if (customDateTimePicker1.Visible == false)
                 {
@@ -144,7 +165,7 @@ namespace ZiTyLot.GUI.Screens
             {
                 customDateTimePicker.Visible = false;
             }
-            
+
             customDateTimePicker.Location = new Point(uiPanel9.Location.X, btnTimeIn.Location.Y + 110);
         }
 
@@ -172,7 +193,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void SessionControl_Resize(object sender, EventArgs e)
         {
-            if(customDateTimePicker.Visible)
+            if (customDateTimePicker.Visible)
             {
                 customDateTimePicker.Location = new Point(uiPanel9.Location.X, btnTimeIn.Location.Y + 110);
             }
@@ -226,8 +247,8 @@ namespace ZiTyLot.GUI.Screens
             filters.Clear();
             if (!string.IsNullOrEmpty(inputSearch))
             {
-                switch (inputCboxIndex) 
-                { 
+                switch (inputCboxIndex)
+                {
                     case 0:
                         filters.Add(new FilterCondition("Id", CompOp.Equals, inputSearch));
                         break;
@@ -265,7 +286,7 @@ namespace ZiTyLot.GUI.Screens
             ChangePage(pageable.PageNumber + 1);
         }
 
-        
+
         private void previousBtn_Click(object sender, EventArgs e)
         {
             ChangePage(pageable.PageNumber - 1);
