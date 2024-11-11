@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 using ZiTyLot.Config;
 using ZiTyLot.GUI;
-using ZiTyLot.GUI.Screens;
 namespace ZiTyLot
 {
     internal static class Program
@@ -10,7 +9,6 @@ namespace ZiTyLot
         [STAThread]
         static void Main()
         {
-            //ANPR.Test();
             try
             {
                 using (var connection = DBConfig.GetConnection())

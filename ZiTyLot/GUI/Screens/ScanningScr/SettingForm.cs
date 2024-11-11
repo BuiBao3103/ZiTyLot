@@ -26,7 +26,8 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         {
             InitializeComponent();
             this.CenterToScreen();
-            GetVideoDevicesAndSerialPort();
+            GetVideoDevices();
+            GetSerialPort();
 
             if (!string.IsNullOrEmpty(frontCameraId))
             {
@@ -57,7 +58,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         public event EventHandler DisconnectCameraBack;
         public event EventHandler<string> ConnectGate;
         public event EventHandler DisconnectGate;
-        private void GetVideoDevicesAndSerialPort()
+        private void GetVideoDevices()
         {
             cameras = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             cbFront.Items.Clear();
@@ -68,18 +69,56 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 cbBack.Items.Add(device.Name);
                 monikerStrings.Add(device.MonikerString);
             }
-            if (cbFront.Items.Count > 0)
+            if (cbFront.Items.Count == 0)
             {
-                cbFront.SelectedIndex = 0;
-                cbBack.SelectedIndex = 0;
+                cbBack.Items.Add("No available camera");
+                cbFront.Items.Add("No available camera");
+                cbBack.Enabled = false;
+                cbFront.Enabled = false;
             }
+            cbFront.SelectedIndex = 0;
+            cbBack.SelectedIndex = 0;
 
+        }
+        private void GetSerialPort()
+        {
             string[] ports = SerialPort.GetPortNames();
             cbGate.Items.Clear();
-            cbGate.Items.AddRange(ports);
-            if (ports.Length > 0)
+            foreach (string port in ports)
             {
-                cbGate.SelectedIndex = 0;
+                if (!IsPortInUse(port))
+                {
+                    cbGate.Items.Add(port);
+                }
+            }
+            if (cbGate.Items.Count == 0)
+            {
+                cbGate.Items.Add("No available port");
+                btnConnectGate.Enabled = false;
+                cbGate.Enabled = false;
+            }
+            cbGate.SelectedIndex = 0;
+
+        }
+        public static bool IsPortInUse(string portName)
+        {
+            try
+            {
+                using (SerialPort port = new SerialPort(portName))
+                {
+                    port.Open();
+                    port.Close();
+                    return false;
+                }
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
             }
         }
         private void btnCancel_Click(object sender, EventArgs e)
@@ -118,7 +157,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             btnDisconnectCameraBack.Enabled = false;
             cbBack.Enabled = true;
         }
-        
+
 
         private void btnCancel_Click_1(object sender, EventArgs e)
         {
