@@ -185,7 +185,6 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
             tableLostCard.Rows.Clear();
             foreach (LostHistory lostHistory in _page.Content)
             {
-                Console.WriteLine(lostHistory.Id);
                 string status = lostHistory.Is_found ? "Found" : "Lost";
                 tableLostCard.Rows.Add(lostHistory.Id, "", lostHistory.Owner_name, lostHistory.Owner_identification_card, "", status);
             }

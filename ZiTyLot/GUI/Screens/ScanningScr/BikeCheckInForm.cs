@@ -329,13 +329,11 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 if (_isGateOpen)
                 {
                     _isGateOpen = false;
-                    Console.WriteLine("Close barrier");
                     Arduino.CloseBarrier(_serialPort);
                 }
                 else
                 {
                     _isGateOpen = true;
-                    Console.WriteLine("Open barrier");
                     Arduino.OpenBarrier(_serialPort);
                 }
             }

@@ -113,11 +113,6 @@ namespace ZiTyLot.GUI.Screens.PriceScr
                    int.TryParse(tbHourFirstPeriod.Text, out int firstHour) &&
                    int.TryParse(tbHourNextPeriod.Text, out int nextHour))
                 {
-                    Console.WriteLine(firstFee);
-                    Console.WriteLine(nextFee);
-                    Console.WriteLine(firstHour);
-                    Console.WriteLine(nextHour);
-
                     VisitorFee visitorFee = new VisitorFee()
                     {
                         Fee_type = FeeType.FIRST_N_AND_NEXT_M_HOUR,

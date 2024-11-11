@@ -81,7 +81,6 @@ namespace ZiTyLot.Helper
                 string detectionResult = await InferenceLocalAsync(base64Image, LPR_ENDPOINT_NAME);
                 if (detectionResult.StartsWith("Error:"))
                 {
-                    Console.WriteLine(detectionResult);
                     return null;
                 }
 
