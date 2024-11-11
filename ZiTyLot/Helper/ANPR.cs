@@ -72,23 +72,23 @@ namespace ZiTyLot.Helper
 
         public class PlateResult
         {
-            public string ImagePath { get; set; }
+            public Image Image { get; set; }
             public string PlateNumber { get; set; }
             public double Confidence { get; set; }
         }
         #endregion
 
-        public static async Task<PlateResult> ProcessImageAsync(string imagePath, string outputDirectory)
+        public static async Task<PlateResult> ProcessImageAsync(Image imagePlate)
         {
-            if (!Directory.Exists(outputDirectory))
-            {
-                throw new DirectoryNotFoundException("Output directory not found");
-            }
-
             try
             {
                 // Đọc file và chuyển thành base64
-                byte[] imageBytes = await ReadFileBytesAsync(imagePath);
+                byte[] imageBytes = null;
+                using (var memoryStream = new MemoryStream())
+                {
+                    imagePlate.Save(memoryStream, ImageFormat.Jpeg);
+                    imageBytes = memoryStream.ToArray();
+                }
                 string base64Image = Convert.ToBase64String(imageBytes);
 
                 // Thực hiện detect plate
@@ -104,7 +104,7 @@ namespace ZiTyLot.Helper
                 {
                     using (var image = Image.FromStream(memoryStream))
                     {
-                        return await ProcessDetectedPlatesAsync(image, detectionResult, outputDirectory);
+                        return await ProcessDetectedPlatesAsync(image, detectionResult);
                     }
                 }
             }
@@ -150,7 +150,7 @@ namespace ZiTyLot.Helper
             }
         }
 
-        private static async Task<PlateResult> ProcessDetectedPlatesAsync(Image originalImage, string detectionJson, string outputDirectory)
+        private static async Task<PlateResult> ProcessDetectedPlatesAsync(Image originalImage, string detectionJson)
         {
             try
             {
@@ -180,14 +180,12 @@ namespace ZiTyLot.Helper
                         if (!ocrResult.StartsWith("Error:"))
                         {
                             var plateInfo = ExtractPlateNumber(ocrResult);
-                            
-                            // Lưu file khi có kết quả OCR thành công
-                            string outputPath = GetOutputFilePath(outputDirectory, prediction.confidence);
-                            File.WriteAllBytes(outputPath, memStream.ToArray());
+
+
 
                             return new PlateResult
                             {
-                                ImagePath = outputPath,
+                                Image = Image.FromStream(memStream),
                                 PlateNumber = plateInfo.Item1,
                                 Confidence = plateInfo.Item2
                             };
