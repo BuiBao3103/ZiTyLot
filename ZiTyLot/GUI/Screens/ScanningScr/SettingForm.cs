@@ -27,17 +27,17 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
 
             if (!string.IsNullOrEmpty(frontCameraId))
             {
-                cbCameraFront.SelectedIndex = monikerStrings.IndexOf(frontCameraId);
+                cbFront.SelectedIndex = monikerStrings.IndexOf(frontCameraId);
                 btnConnectCameraFront.Enabled = false;
                 btnDisconnectCameraFront.Enabled = true;
-                cbCameraFront.Enabled = false;
+                cbFront.Enabled = false;
             }
             if (!string.IsNullOrEmpty(backCameraId))
             {
-                cbCameraBack.SelectedIndex = monikerStrings.IndexOf(backCameraId);
+                cbBack.SelectedIndex = monikerStrings.IndexOf(backCameraId);
                 btnConnectCameraBack.Enabled = false;
                 btnDisconnectCameraBack.Enabled = true;
-                cbCameraBack.Enabled = false;
+                cbBack.Enabled = false;
             }
 
         }
@@ -49,18 +49,18 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         private void GetVideoDevices()
         {
             cameras = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            cbCameraFront.Items.Clear();
-            cbCameraBack.Items.Clear();
+            cbFront.Items.Clear();
+            cbBack.Items.Clear();
             foreach (FilterInfo device in cameras)
             {
-                cbCameraFront.Items.Add(device.Name);
-                cbCameraBack.Items.Add(device.Name);
+                cbFront.Items.Add(device.Name);
+                cbBack.Items.Add(device.Name);
                 monikerStrings.Add(device.MonikerString);
             }
-            if (cbCameraFront.Items.Count > 0)
+            if (cbFront.Items.Count > 0)
             {
-                cbCameraFront.SelectedIndex = 0;
-                cbCameraBack.SelectedIndex = 0;
+                cbFront.SelectedIndex = 0;
+                cbBack.SelectedIndex = 0;
             }
         }
         private void btnCancel_Click(object sender, EventArgs e)
@@ -70,10 +70,10 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
 
         private void btnConnectCameraFront_Click(object sender, EventArgs e)
         {
-            ConnectCameraFront?.Invoke(this, cameras[cbCameraFront.SelectedIndex].MonikerString);
+            ConnectCameraFront?.Invoke(this, cameras[cbFront.SelectedIndex].MonikerString);
             btnConnectCameraFront.Enabled = false;
             btnDisconnectCameraFront.Enabled = true;
-            cbCameraFront.Enabled = false;
+            cbFront.Enabled = false;
         }
 
         private void btnDisconnectCameraFront_Click(object sender, EventArgs e)
@@ -81,15 +81,15 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             DisconnectCameraFront?.Invoke(this, e);
             btnConnectCameraFront.Enabled = true;
             btnDisconnectCameraFront.Enabled = false;
-            cbCameraFront.Enabled = true;
+            cbFront.Enabled = true;
         }
 
         private void btnConnectCameraBack_Click(object sender, EventArgs e)
         {
-            ConnectCameraBack?.Invoke(this, cameras[cbCameraBack.SelectedIndex].MonikerString);
+            ConnectCameraBack?.Invoke(this, cameras[cbBack.SelectedIndex].MonikerString);
             btnConnectCameraBack.Enabled = false;
             btnDisconnectCameraBack.Enabled = true;
-            cbCameraBack.Enabled = false;
+            cbBack.Enabled = false;
         }
 
         private void btnDisconnectCameraBack_Click(object sender, EventArgs e)
@@ -97,61 +97,9 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             DisconnectCameraBack?.Invoke(this, e);
             btnConnectCameraBack.Enabled = true;
             btnDisconnectCameraBack.Enabled = false;
-            cbCameraBack.Enabled = true;
+            cbBack.Enabled = true;
         }
-        private void btnCheckInFrontFolder_Click(object sender, EventArgs e)
-        {
-            if (fbdFolderLocation.ShowDialog() == DialogResult.OK)
-            {
-                // Use the selected folder path, for example:
-                tbCheckInFrontRecord.Text = fbdFolderLocation.SelectedPath;
-            }
-        }
-
-        private void btnCheckInBackFolder_Click(object sender, EventArgs e)
-        {
-            if (fbdFolderLocation.ShowDialog() == DialogResult.OK)
-            {
-                // Use the selected folder path, for example:
-                tbCheckInBackRecord.Text = fbdFolderLocation.SelectedPath;
-            }
-        }
-
-        private void btnCheckInPlateFolder_Click(object sender, EventArgs e)
-        {
-            if (fbdFolderLocation.ShowDialog() == DialogResult.OK)
-            {
-                // Use the selected folder path, for example:
-                tbCheckInPlateRecord.Text = fbdFolderLocation.SelectedPath;
-            }
-        }
-
-        private void btnCheckOutFrontFolder_Click(object sender, EventArgs e)
-        {
-            if (fbdFolderLocation.ShowDialog() == DialogResult.OK)
-            {
-                // Use the selected folder path, for example:
-                tbCheckOutFrontRecord.Text = fbdFolderLocation.SelectedPath;
-            }
-        }
-
-        private void btnCheckOutBackFolder_Click(object sender, EventArgs e)
-        {
-            if (fbdFolderLocation.ShowDialog() == DialogResult.OK)
-            {
-                // Use the selected folder path, for example:
-                tbCheckOutBackRecord.Text = fbdFolderLocation.SelectedPath;
-            }
-        }
-
-        private void btnCheckOutPlateFolder_Click(object sender, EventArgs e)
-        {
-            if (fbdFolderLocation.ShowDialog() == DialogResult.OK)
-            {
-                // Use the selected folder path, for example:
-                tbCheckOutPlateRecord.Text = fbdFolderLocation.SelectedPath;
-            }
-        }
+        
 
         private void btnCancel_Click_1(object sender, EventArgs e)
         {
