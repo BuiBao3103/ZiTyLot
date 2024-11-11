@@ -89,13 +89,13 @@
             this.uiPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel5.FillColor = System.Drawing.Color.White;
             this.uiPanel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel5.Location = new System.Drawing.Point(4, 93);
-            this.uiPanel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel5.Location = new System.Drawing.Point(5, 114);
+            this.uiPanel5.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.uiPanel5.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel5.Name = "uiPanel5";
             this.uiPanel5.RectColor = System.Drawing.Color.White;
             this.uiPanel5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel5.Size = new System.Drawing.Size(456, 81);
+            this.uiPanel5.Size = new System.Drawing.Size(609, 101);
             this.uiPanel5.TabIndex = 5;
             this.uiPanel5.Text = null;
             this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -113,7 +113,7 @@
             this.uiGroupBox3.Name = "uiGroupBox3";
             this.uiGroupBox3.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox3.RectColor = System.Drawing.Color.White;
-            this.uiGroupBox3.Size = new System.Drawing.Size(456, 81);
+            this.uiGroupBox3.Size = new System.Drawing.Size(609, 101);
             this.uiGroupBox3.TabIndex = 1;
             this.uiGroupBox3.Text = "Front camera";
             this.uiGroupBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -133,7 +133,7 @@
             this.uiTableLayoutPanel2.Name = "uiTableLayoutPanel2";
             this.uiTableLayoutPanel2.RowCount = 1;
             this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel2.Size = new System.Drawing.Size(440, 45);
+            this.uiTableLayoutPanel2.Size = new System.Drawing.Size(593, 50);
             this.uiTableLayoutPanel2.TabIndex = 0;
             this.uiTableLayoutPanel2.TagString = null;
             // 
@@ -705,9 +705,9 @@
             // 
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(206, 13);
+            this.panel2.Location = new System.Drawing.Point(359, 16);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(120, 37);
+            this.panel2.Size = new System.Drawing.Size(120, 44);
             this.panel2.TabIndex = 10;
             // 
             // btnCancel
@@ -729,7 +729,7 @@
             this.btnCancel.RectPressColor = System.Drawing.Color.White;
             this.btnCancel.RectSelectedColor = System.Drawing.Color.White;
             this.btnCancel.RectSize = 2;
-            this.btnCancel.Size = new System.Drawing.Size(120, 37);
+            this.btnCancel.Size = new System.Drawing.Size(120, 44);
             this.btnCancel.Symbol = 61453;
             this.btnCancel.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCancel.TabIndex = 3;
@@ -775,12 +775,13 @@
             // 
             // SettingForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(484, 481);
+            this.ClientSize = new System.Drawing.Size(645, 592);
             this.Controls.Add(this.uiTableLayoutPanel1);
-            this.MinimumSize = new System.Drawing.Size(500, 520);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(661, 629);
             this.Name = "SettingForm";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "SettingForm";

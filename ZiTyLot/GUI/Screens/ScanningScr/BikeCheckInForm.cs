@@ -2,14 +2,23 @@
 using AForge.Video.DirectShow;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZiTyLot.BUS;
+using ZiTyLot.ENTITY;
+using ZiTyLot.GUI.Utils;
+using ZiTyLot.Helper;
 
 namespace ZiTyLot.GUI.Screens.ScanningScr
 {
     public partial class BikeCheckInForm : Form
     {
+        private readonly CardBUS _cardBUS = new CardBUS();
+
         private SettingForm _settingForm;
         private readonly FilterInfoCollection cameras;
         private VideoCaptureDevice frontCamera;
@@ -18,6 +27,9 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         private string backCameraId;
         private Dictionary<string, int> cameraUsageCount; // Đếm số lượng camera đang sử dụng cùng một nguồn
         private Dictionary<string, VideoCaptureDevice> sharedDevices; // Quản lý các thiết bị được chia sẻ
+
+        private SerialPort serialPort;
+        private RFIDReader rfidReader;
         public BikeCheckInForm()
         {
             InitializeComponent();
@@ -37,6 +49,12 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             // Cấu hình PictureBox
             this.pbFrontCamera.SizeMode = PictureBoxSizeMode.Zoom;
             this.pbBackCamera.SizeMode = PictureBoxSizeMode.Zoom;
+            this.pbFrontRecord.SizeMode = PictureBoxSizeMode.Zoom;
+            this.pbBackRecord.SizeMode = PictureBoxSizeMode.Zoom;
+            this.pbPlateRecord.SizeMode = PictureBoxSizeMode.Zoom;
+
+            rfidReader = new RFIDReader();
+            rfidReader.RFIDScanned += RfidReader_RFIDScanned; // Đăng ký sự kiện
         }
         private VideoCaptureDevice GetOrCreateDevice(string cameraId)
         {
@@ -280,17 +298,82 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
 
         private void BikeCheckInForm_KeyPress(object sender, KeyPressEventArgs e)
         {
+            rfidReader.ProcessInput(e.KeyChar);
             if (e.KeyChar == (char)Keys.Escape)
             {
                 ShowSettingForm();
             }
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                StartVisitorProgress("rfid");
+            }
+        }
+
+        private async void StartVisitorProgress(string rfid)
+        {
+            //List<FilterCondition> filters = new List<FilterCondition>()
+            //{
+            //    new FilterCondition(nameof(Card.Rfid), CompOp.Equals, rfid)
+            //};
+            //Card card = _cardBUS.GetAll(filters)?.FirstOrDefault();
+            //if (!ValidateVisitorCard(card)) return;
+
+            //take photo from camera front and back at a pbCameraFront and pbCameraBack component
+            if (pbFrontCamera.Image == null || pbBackCamera.Image == null)
+            {
+                MessageHelper.ShowError("Please connect camera before scanning!");
+                return;
+            }
+
+            //take photo from camera front and back
+            System.Drawing.Image frontImage = pbFrontCamera.Image;
+            System.Drawing.Image backImage = pbBackCamera.Image;
+
+            //save image to file and get path
+            string backImagePath = ImageHelper.SaveImage(frontImage);
+            string frontImagePath = ImageHelper.SaveImage(backImage);
+
+            DateTime start = DateTime.Now;
+            var result = await ANPR.ProcessImageAsync(backImagePath, ImageHelper.GetImageDirectory());
+            DateTime end = DateTime.Now;
+           
+            string time = (end - start).TotalSeconds.ToString();
+            MessageBox.Show("Time: " + time);
+            if (result != null)
+            {
+                //setImage to pbPlate
+                pbFrontRecord.Image = frontImage;
+                pbBackRecord.Image = backImage;
+                pbPlateRecord.Image = ImageHelper.LoadImage(result.ImagePath);
+                lbVehicalPlate.Text = result.PlateNumber;
+            }
+         
         }
 
 
-
+        private void RfidReader_RFIDScanned(object sender, string rfidCode)
+        {
+            Debug.WriteLine("RFID Scanned: " + rfidCode);
+            StartVisitorProgress(rfidCode);
+        }
         private void btnOpen_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private bool ValidateVisitorCard(Card card)
+        {
+            if (card == null)
+            {
+                MessageHelper.ShowError("Card not found!");
+                return false;
+            }
+            if (card.Resident_id != null)
+            {
+                MessageHelper.ShowError("This card is not for visitor!");
+                return false;
+            }
+            return true;
         }
     }
 }

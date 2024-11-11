@@ -670,6 +670,7 @@
     <Compile Include="Helper\Debouncer.cs" />
     <Compile Include="Helper\ExcelHelper.cs" />
     <Compile Include="Helper\FilterCondition.cs" />
+    <Compile Include="Helper\ImageHelper.cs" />
     <Compile Include="Helper\Page.cs" />
     <Compile Include="Helper\Pageable.cs" />
     <Compile Include="Helper\PdfHelper.cs" />
@@ -949,17 +950,11 @@
     <None Include="Resources\Screenshot 2024-08-30 230542.png" />
     <None Include="Resources\Screenshot 2024-08-30 101445.png" />
     <None Include="Resources\Screenshot 2024-10-11 121017.png" />
-    <Content Include="Helper\images\bikecycle.jpg" />
-    <Content Include="Helper\images\car.jpg" />
-    <Content Include="Helper\images\car2.jpg" />
-    <Content Include="Helper\images\motobike.jpg" />
-    <Content Include="Helper\images\motorbike2.jpg" />
     <Content Include="Resource\AmongUs.wav" />
     <Content Include="Resource\enter.wav" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\components\" />
-    <Folder Include="Helper\images\cropped_plates\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
