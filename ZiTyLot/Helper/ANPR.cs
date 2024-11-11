@@ -68,10 +68,7 @@ namespace ZiTyLot.Helper
         }
         #endregion
 
-        #region Public Methods
-        /// <summary>
-        /// Processes an image to detect license plates and perform OCR
-        /// </summary>
+
         public static PlateResult ProcessImage(string imagePath, string outputDirectory)
         {
             try
@@ -101,29 +98,6 @@ namespace ZiTyLot.Helper
             }
         }
 
-        /// <summary>
-        /// Test method to demonstrate the ANPR functionality
-        /// </summary>
-        public static void Test()
-        {
-            DateTime startTime = DateTime.Now;
-            string imagePath = @"../../Helper/images/bikecycle.jpg";
-            string outputDirectory = @"../../Helper/images/cropped_plates";
-
-            Console.WriteLine("Starting ANPR processing...");
-            var result = ProcessImage(imagePath, outputDirectory);
-            DateTime endTime = DateTime.Now;
-            TimeSpan duration = endTime - startTime;
-
-            Console.WriteLine($"Plate detected:");
-            Console.WriteLine($"- Number: {result.PlateNumber}");
-            Console.WriteLine($"- Confidence: {result.Confidence:F2}%");
-            Console.WriteLine($"- Image saved at: {result.ImagePath}");
-            Console.WriteLine($"- Duration: {duration.TotalSeconds:F2} seconds");
-        }
-        #endregion
-
-        #region Private Methods
         private static string InferenceLocal(string imagePath, string modelName)
         {
             try
@@ -315,6 +289,5 @@ namespace ZiTyLot.Helper
                 return ("", 0);
             }
         }
-        #endregion
     }
 }

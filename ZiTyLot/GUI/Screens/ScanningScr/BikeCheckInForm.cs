@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.ENTITY;
@@ -308,7 +309,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             }
         }
 
-        private void StartVisitorProgress(string rfid)
+        private async void StartVisitorProgress(string rfid)
         {
             //List<FilterCondition> filters = new List<FilterCondition>()
             //{
@@ -333,7 +334,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             string frontImagePath = ImageHelper.SaveImage(backImage);
 
 
-            var result = ANPR.ProcessImage(backImagePath, ImageHelper.GetImageDirectory());
+            var result = await Task.Run(() => ANPR.ProcessImage(backImagePath, ImageHelper.GetImageDirectory()));
 
             //setImage to pbPlate
             pbFrontRecord.Image = frontImage;
