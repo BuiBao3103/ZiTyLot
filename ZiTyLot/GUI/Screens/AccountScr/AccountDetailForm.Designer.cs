@@ -177,6 +177,7 @@
             this.btnResetPassword.TabIndex = 3;
             this.btnResetPassword.Text = "Reset password";
             this.btnResetPassword.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
             // 
             // panel2
             // 
@@ -249,6 +250,7 @@
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // uiPanel7
             // 
@@ -469,6 +471,7 @@
             this.cbRole.Text = "Administrator";
             this.cbRole.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cbRole.Watermark = "";
+            this.cbRole.SelectedIndexChanged += new System.EventHandler(this.cbRole_SelectedIndexChanged);
             // 
             // uiPanel5
             // 

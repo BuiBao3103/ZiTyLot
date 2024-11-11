@@ -98,7 +98,7 @@ namespace ZiTyLot.BUS
         public void Update(Card item)
         {
             EnsureRecordExists(item.Id);
-            Validate(item);
+            //Validate(item);
             try
             {
                 cardDAO.Update(item);

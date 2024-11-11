@@ -72,7 +72,16 @@
                     @"^([0-9]{12})$");
             }
 
-           
+            public static bool ValidatePassword(string password)
+            {
+                if (string.IsNullOrEmpty(password))
+                {
+                    return false;
+                }
+                // Mật khẩu chỉ gồm chữ cái và số, không chứa ký tự đặc biệt, với độ dài từ 8 đến 20 ký tự
+                return System.Text.RegularExpressions.Regex.IsMatch(password,
+                    @"^[A-Za-z\d]{8,20}$");
+            }
         }
 
     }

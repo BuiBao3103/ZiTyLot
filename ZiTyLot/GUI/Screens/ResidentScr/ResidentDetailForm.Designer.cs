@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.uiTableLayoutPanel1 = new Sunny.UI.UITableLayoutPanel();
             this.uiTabControlMenu1 = new Sunny.UI.UITabControlMenu();
             this.tpProfile = new System.Windows.Forms.TabPage();
@@ -64,6 +64,8 @@
             this.uiPanel8 = new Sunny.UI.UIPanel();
             this.uiTableLayoutPanel3 = new Sunny.UI.UITableLayoutPanel();
             this.uiPanel3 = new Sunny.UI.UIPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSaveCard = new Sunny.UI.UISymbolButton();
             this.uiTableLayoutPanel4 = new Sunny.UI.UITableLayoutPanel();
             this.uiGroupBox7 = new Sunny.UI.UIGroupBox();
             this.tbCodeRFID = new Sunny.UI.UITextBox();
@@ -82,8 +84,6 @@
             this.uiSymbolLabel1 = new Sunny.UI.UISymbolLabel();
             this.tbRFID = new Sunny.UI.UITextBox();
             this.uiTextBox1 = new Sunny.UI.UITextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSaveCard = new Sunny.UI.UISymbolButton();
             this.uiTableLayoutPanel1.SuspendLayout();
             this.uiTabControlMenu1.SuspendLayout();
             this.tpProfile.SuspendLayout();
@@ -107,6 +107,7 @@
             this.uiPanel8.SuspendLayout();
             this.uiTableLayoutPanel3.SuspendLayout();
             this.uiPanel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.uiTableLayoutPanel4.SuspendLayout();
             this.uiGroupBox7.SuspendLayout();
             this.uiGroupBox6.SuspendLayout();
@@ -116,7 +117,6 @@
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.uiPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // uiTableLayoutPanel1
@@ -274,6 +274,7 @@
             this.btnSaveProfile.TabIndex = 3;
             this.btnSaveProfile.Text = "Save change";
             this.btnSaveProfile.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveProfile.Click += new System.EventHandler(this.btnSaveProfile_Click);
             // 
             // uiPanel6
             // 
@@ -544,27 +545,27 @@
             this.tableIssue.AllowUserToDeleteRows = false;
             this.tableIssue.AllowUserToResizeColumns = false;
             this.tableIssue.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            this.tableIssue.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.tableIssue.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.tableIssue.BackgroundColor = System.Drawing.Color.White;
             this.tableIssue.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tableIssue.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.tableIssue.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableIssue.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableIssue.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.tableIssue.ColumnHeadersHeight = 34;
             this.tableIssue.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
@@ -573,15 +574,15 @@
             this.colStartDate,
             this.colEndDate});
             this.tableIssue.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableIssue.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableIssue.DefaultCellStyle = dataGridViewCellStyle3;
             this.tableIssue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableIssue.GridColor = System.Drawing.Color.White;
             this.tableIssue.Location = new System.Drawing.Point(1, 1);
@@ -710,6 +711,41 @@
             this.uiPanel3.TabIndex = 27;
             this.uiPanel3.Text = null;
             this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnSaveCard);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(724, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(140, 38);
+            this.panel1.TabIndex = 11;
+            // 
+            // btnSaveCard
+            // 
+            this.btnSaveCard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSaveCard.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnSaveCard.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnSaveCard.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnSaveCard.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveCard.Location = new System.Drawing.Point(0, 0);
+            this.btnSaveCard.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSaveCard.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnSaveCard.Name = "btnSaveCard";
+            this.btnSaveCard.RectColor = System.Drawing.Color.White;
+            this.btnSaveCard.RectDisableColor = System.Drawing.Color.White;
+            this.btnSaveCard.RectHoverColor = System.Drawing.Color.White;
+            this.btnSaveCard.RectPressColor = System.Drawing.Color.White;
+            this.btnSaveCard.RectSelectedColor = System.Drawing.Color.White;
+            this.btnSaveCard.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnSaveCard.RectSize = 2;
+            this.btnSaveCard.Size = new System.Drawing.Size(140, 38);
+            this.btnSaveCard.Symbol = 557715;
+            this.btnSaveCard.TabIndex = 3;
+            this.btnSaveCard.Text = "Save change";
+            this.btnSaveCard.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveCard.Click += new System.EventHandler(this.btnSaveCard_Click);
             // 
             // uiTableLayoutPanel4
             // 
@@ -1060,41 +1096,6 @@
             this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiTextBox1.Watermark = "";
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnSaveCard);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(724, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(140, 38);
-            this.panel1.TabIndex = 11;
-            // 
-            // btnSaveCard
-            // 
-            this.btnSaveCard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaveCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSaveCard.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnSaveCard.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.btnSaveCard.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnSaveCard.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveCard.Location = new System.Drawing.Point(0, 0);
-            this.btnSaveCard.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSaveCard.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnSaveCard.Name = "btnSaveCard";
-            this.btnSaveCard.RectColor = System.Drawing.Color.White;
-            this.btnSaveCard.RectDisableColor = System.Drawing.Color.White;
-            this.btnSaveCard.RectHoverColor = System.Drawing.Color.White;
-            this.btnSaveCard.RectPressColor = System.Drawing.Color.White;
-            this.btnSaveCard.RectSelectedColor = System.Drawing.Color.White;
-            this.btnSaveCard.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnSaveCard.RectSize = 2;
-            this.btnSaveCard.Size = new System.Drawing.Size(140, 38);
-            this.btnSaveCard.Symbol = 557715;
-            this.btnSaveCard.TabIndex = 3;
-            this.btnSaveCard.Text = "Save change";
-            this.btnSaveCard.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveCard.Click += new System.EventHandler(this.btnSaveCard_Click);
-            // 
             // ResidentDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1130,6 +1131,7 @@
             this.uiPanel8.ResumeLayout(false);
             this.uiTableLayoutPanel3.ResumeLayout(false);
             this.uiPanel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.uiTableLayoutPanel4.ResumeLayout(false);
             this.uiGroupBox7.ResumeLayout(false);
             this.uiGroupBox6.ResumeLayout(false);
@@ -1139,7 +1141,6 @@
             this.panel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.uiPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
