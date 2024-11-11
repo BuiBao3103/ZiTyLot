@@ -87,8 +87,8 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         {
             if (e.KeyCode == Keys.Escape)
             {
-                SettingForm settingForm = new SettingForm();
-                settingForm.Show();
+                //SettingForm settingForm = new SettingForm();
+                //settingForm.Show();
 
             }
         }
