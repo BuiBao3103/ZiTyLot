@@ -29,9 +29,6 @@ namespace ZiTyLot.Helper
         #region Models
         private class PlateDetectionResult
         {
-            public string inference_id { get; set; }
-            public double time { get; set; }
-            public ImageInfo image { get; set; }
             public List<Prediction> predictions { get; set; }
         }
 
@@ -40,29 +37,18 @@ namespace ZiTyLot.Helper
             public List<OcrPrediction> predictions { get; set; }
         }
 
-        private class ImageInfo
-        {
-            public int width { get; set; }
-            public int height { get; set; }
-        }
-
         private class Prediction
         {
             public double x { get; set; }
             public double y { get; set; }
             public double width { get; set; }
             public double height { get; set; }
-            public double confidence { get; set; }
-            public string @class { get; set; }
-            public int class_id { get; set; }
-            public string detection_id { get; set; }
         }
 
         private class OcrPrediction
         {
             public double x { get; set; }
             public double y { get; set; }
-            public double width { get; set; }
             public double height { get; set; }
             public double confidence { get; set; }
             public string @class { get; set; }
@@ -112,16 +98,6 @@ namespace ZiTyLot.Helper
             {
                 Console.WriteLine($"Error processing image: {ex.Message}");
                 return null;
-            }
-        }
-
-        private static async Task<byte[]> ReadFileBytesAsync(string filePath)
-        {
-            using (var sourceStream = File.Open(filePath, FileMode.Open))
-            {
-                var result = new byte[sourceStream.Length];
-                await sourceStream.ReadAsync(result, 0, (int)sourceStream.Length);
-                return result;
             }
         }
 
@@ -200,7 +176,6 @@ namespace ZiTyLot.Helper
 
             return null;
         }
-
         private static Rectangle CalculateCropArea(Prediction prediction, int imageWidth, int imageHeight)
         {
             int x = (int)(prediction.x - (prediction.width / 2));

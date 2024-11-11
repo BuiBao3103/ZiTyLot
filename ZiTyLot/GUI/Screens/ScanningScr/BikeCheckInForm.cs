@@ -28,8 +28,9 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         private Dictionary<string, int> cameraUsageCount; // Đếm số lượng camera đang sử dụng cùng một nguồn
         private Dictionary<string, VideoCaptureDevice> sharedDevices; // Quản lý các thiết bị được chia sẻ
 
-        private SerialPort serialPort;
-        private RFIDReader rfidReader;
+        private SerialPort _serialPort;
+        private readonly RFIDReader _rfidReader;
+        private bool _isGateOpen = false;
         public BikeCheckInForm()
         {
             InitializeComponent();
@@ -53,8 +54,8 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             this.pbBackRecord.SizeMode = PictureBoxSizeMode.Zoom;
             this.pbPlateRecord.SizeMode = PictureBoxSizeMode.Zoom;
 
-            rfidReader = new RFIDReader();
-            rfidReader.RFIDScanned += RfidReader_RFIDScanned; // Đăng ký sự kiện
+            _rfidReader = new RFIDReader();
+            _rfidReader.RFIDScanned += RfidReader_RFIDScanned; // Đăng ký sự kiện
         }
         private VideoCaptureDevice GetOrCreateDevice(string cameraId)
         {
@@ -267,11 +268,13 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         {
             if (_settingForm == null || _settingForm.IsDisposed)
             {
-                _settingForm = new SettingForm(frontCameraId, backCameraId);
+                _settingForm = new SettingForm(frontCameraId, backCameraId, _serialPort?.PortName);
                 _settingForm.ConnectCameraFront += (sender, cameraId) => StartFrontCamera(cameraId);
                 _settingForm.ConnectCameraBack += (sender, cameraId) => StartBackCamera(cameraId);
                 _settingForm.DisconnectCameraFront += (sender, e) => StopFrontCamera();
                 _settingForm.DisconnectCameraBack += (sender, e) => StopBackCamera();
+                _settingForm.ConnectGate += (sender, port) => ConnectGate(port);
+                _settingForm.DisconnectGate += (sender, e) => DisconnectGate();
                 _settingForm.Show();
             }
             else
@@ -280,6 +283,20 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                     _settingForm.WindowState = FormWindowState.Normal;
                 _settingForm.BringToFront();
             }
+        }
+
+        private void ConnectGate(string port)
+        {
+            if (_serialPort != null)
+            {
+                _serialPort.Close();
+            }
+            _serialPort = Arduino.Connect(port);
+        }
+
+        private void DisconnectGate()
+        {
+            Arduino.Disconnect(_serialPort);
         }
         private void uiTableLayoutPanel2_Resize(object sender, EventArgs e)
         {
@@ -298,7 +315,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
 
         private void BikeCheckInForm_KeyPress(object sender, KeyPressEventArgs e)
         {
-            rfidReader.ProcessInput(e.KeyChar);
+            _rfidReader.ProcessInput(e.KeyChar);
             if (e.KeyChar == (char)Keys.Escape)
             {
                 ShowSettingForm();
@@ -307,6 +324,22 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             {
                 StartVisitorProgress("rfid");
             }
+            if (e.KeyChar == (char)Keys.Space)
+            {
+                if (_isGateOpen)
+                {
+                    _isGateOpen = false;
+                    Console.WriteLine("Close barrier");
+                    Arduino.CloseBarrier(_serialPort);
+                }
+                else
+                {
+                    _isGateOpen = true;
+                    Console.WriteLine("Open barrier");
+                    Arduino.OpenBarrier(_serialPort);
+                }
+            }
+
         }
 
         private async void StartVisitorProgress(string rfid)
@@ -341,7 +374,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             if (result != null)
             {
                 //setImage to pbPlate
-            
+
                 pbPlateRecord.Image = result.Image;
                 lbVehicalPlate.Text = result.PlateNumber;
 
@@ -349,6 +382,10 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 ImageHelper.SaveImage(frontImage);
                 ImageHelper.SaveImage(backImage);
                 ImageHelper.SaveImage(result.Image);
+            }
+            else
+            {
+                MessageHelper.ShowError("Cannot detect plate number!");
             }
 
         }

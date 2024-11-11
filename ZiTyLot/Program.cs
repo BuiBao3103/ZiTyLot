@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using ZiTyLot.Config;
 using ZiTyLot.GUI;
+using ZiTyLot.GUI.Screens;
 namespace ZiTyLot
 {
     internal static class Program
