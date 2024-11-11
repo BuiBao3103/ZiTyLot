@@ -35,6 +35,7 @@
             this.table = new Sunny.UI.UITableLayoutPanel();
             this.pnlPlateRecord = new Sunny.UI.UIPanel();
             this.uiGroupBox6 = new Sunny.UI.UIGroupBox();
+            this.pbPlateRecord = new System.Windows.Forms.PictureBox();
             this.pnlPlateCamera = new Sunny.UI.UIPanel();
             this.uiGroupBox5 = new Sunny.UI.UIGroupBox();
             this.uiTableLayoutPanel2 = new Sunny.UI.UITableLayoutPanel();
@@ -46,12 +47,16 @@
             this.lbFrontCameraStatus = new Sunny.UI.UILabel();
             this.pnlBackRecord = new Sunny.UI.UIPanel();
             this.uiGroupBox4 = new Sunny.UI.UIGroupBox();
+            this.pbBackRecord = new System.Windows.Forms.PictureBox();
             this.pnlBackCamera = new Sunny.UI.UIPanel();
             this.uiGroupBox2 = new Sunny.UI.UIGroupBox();
+            this.pbBackCamera = new System.Windows.Forms.PictureBox();
             this.pnlFrontRecord = new Sunny.UI.UIPanel();
             this.uiGroupBox3 = new Sunny.UI.UIGroupBox();
+            this.pbFrontRecord = new System.Windows.Forms.PictureBox();
             this.pnlFrontCamera = new Sunny.UI.UIPanel();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
+            this.pbFrontCamera = new System.Windows.Forms.PictureBox();
             this.pnlInformation = new Sunny.UI.UITableLayoutPanel();
             this.pnlResident = new Sunny.UI.UIPanel();
             this.uiGroupBox8 = new Sunny.UI.UIGroupBox();
@@ -97,27 +102,27 @@
             this.uiLabel35 = new Sunny.UI.UILabel();
             this.uiLabel36 = new Sunny.UI.UILabel();
             this.uiLabel37 = new Sunny.UI.UILabel();
-            this.pbPlateRecord = new System.Windows.Forms.PictureBox();
-            this.pbBackRecord = new System.Windows.Forms.PictureBox();
-            this.pbBackCamera = new System.Windows.Forms.PictureBox();
-            this.pbFrontRecord = new System.Windows.Forms.PictureBox();
-            this.pbFrontCamera = new System.Windows.Forms.PictureBox();
             this.pnlTop.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.table.SuspendLayout();
             this.pnlPlateRecord.SuspendLayout();
             this.uiGroupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlateRecord)).BeginInit();
             this.pnlPlateCamera.SuspendLayout();
             this.uiGroupBox5.SuspendLayout();
             this.uiTableLayoutPanel2.SuspendLayout();
             this.pnlBackRecord.SuspendLayout();
             this.uiGroupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackRecord)).BeginInit();
             this.pnlBackCamera.SuspendLayout();
             this.uiGroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackCamera)).BeginInit();
             this.pnlFrontRecord.SuspendLayout();
             this.uiGroupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFrontRecord)).BeginInit();
             this.pnlFrontCamera.SuspendLayout();
             this.uiGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFrontCamera)).BeginInit();
             this.pnlInformation.SuspendLayout();
             this.pnlResident.SuspendLayout();
             this.uiGroupBox8.SuspendLayout();
@@ -130,11 +135,6 @@
             this.uiPanel7.SuspendLayout();
             this.uiGroupBox9.SuspendLayout();
             this.uiTableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlateRecord)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBackRecord)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBackCamera)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFrontRecord)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFrontCamera)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -257,6 +257,16 @@
             this.uiGroupBox6.TabIndex = 1;
             this.uiGroupBox6.Text = "Plate Record";
             this.uiGroupBox6.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pbPlateRecord
+            // 
+            this.pbPlateRecord.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbPlateRecord.Location = new System.Drawing.Point(10, 32);
+            this.pbPlateRecord.Name = "pbPlateRecord";
+            this.pbPlateRecord.Size = new System.Drawing.Size(461, 117);
+            this.pbPlateRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbPlateRecord.TabIndex = 0;
+            this.pbPlateRecord.TabStop = false;
             // 
             // pnlPlateCamera
             // 
@@ -427,6 +437,16 @@
             this.uiGroupBox4.Text = "Back Record";
             this.uiGroupBox4.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pbBackRecord
+            // 
+            this.pbBackRecord.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbBackRecord.Location = new System.Drawing.Point(10, 32);
+            this.pbBackRecord.Name = "pbBackRecord";
+            this.pbBackRecord.Size = new System.Drawing.Size(461, 196);
+            this.pbBackRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbBackRecord.TabIndex = 0;
+            this.pbBackRecord.TabStop = false;
+            // 
             // pnlBackCamera
             // 
             this.pnlBackCamera.Controls.Add(this.uiGroupBox2);
@@ -463,6 +483,16 @@
             this.uiGroupBox2.TabIndex = 1;
             this.uiGroupBox2.Text = "Back Camera";
             this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pbBackCamera
+            // 
+            this.pbBackCamera.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbBackCamera.Location = new System.Drawing.Point(10, 32);
+            this.pbBackCamera.Name = "pbBackCamera";
+            this.pbBackCamera.Size = new System.Drawing.Size(461, 196);
+            this.pbBackCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbBackCamera.TabIndex = 0;
+            this.pbBackCamera.TabStop = false;
             // 
             // pnlFrontRecord
             // 
@@ -501,6 +531,16 @@
             this.uiGroupBox3.Text = "Front Record";
             this.uiGroupBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pbFrontRecord
+            // 
+            this.pbFrontRecord.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbFrontRecord.Location = new System.Drawing.Point(10, 32);
+            this.pbFrontRecord.Name = "pbFrontRecord";
+            this.pbFrontRecord.Size = new System.Drawing.Size(461, 196);
+            this.pbFrontRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbFrontRecord.TabIndex = 0;
+            this.pbFrontRecord.TabStop = false;
+            // 
             // pnlFrontCamera
             // 
             this.pnlFrontCamera.Controls.Add(this.uiGroupBox1);
@@ -537,6 +577,16 @@
             this.uiGroupBox1.TabIndex = 0;
             this.uiGroupBox1.Text = "Front Camera";
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pbFrontCamera
+            // 
+            this.pbFrontCamera.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbFrontCamera.Location = new System.Drawing.Point(10, 32);
+            this.pbFrontCamera.Name = "pbFrontCamera";
+            this.pbFrontCamera.Size = new System.Drawing.Size(461, 196);
+            this.pbFrontCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbFrontCamera.TabIndex = 0;
+            this.pbFrontCamera.TabStop = false;
             // 
             // pnlInformation
             // 
@@ -1205,61 +1255,6 @@
             this.uiLabel37.Text = "Open gate:";
             this.uiLabel37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pbPlateRecord
-            // 
-            this.pbPlateRecord.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbPlateRecord.Image = global::ZiTyLot.Properties.Resources.logo;
-            this.pbPlateRecord.Location = new System.Drawing.Point(10, 32);
-            this.pbPlateRecord.Name = "pbPlateRecord";
-            this.pbPlateRecord.Size = new System.Drawing.Size(461, 117);
-            this.pbPlateRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbPlateRecord.TabIndex = 0;
-            this.pbPlateRecord.TabStop = false;
-            // 
-            // pbBackRecord
-            // 
-            this.pbBackRecord.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbBackRecord.Image = global::ZiTyLot.Properties.Resources.logo;
-            this.pbBackRecord.Location = new System.Drawing.Point(10, 32);
-            this.pbBackRecord.Name = "pbBackRecord";
-            this.pbBackRecord.Size = new System.Drawing.Size(461, 196);
-            this.pbBackRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbBackRecord.TabIndex = 0;
-            this.pbBackRecord.TabStop = false;
-            // 
-            // pbBackCamera
-            // 
-            this.pbBackCamera.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbBackCamera.Image = global::ZiTyLot.Properties.Resources.logo;
-            this.pbBackCamera.Location = new System.Drawing.Point(10, 32);
-            this.pbBackCamera.Name = "pbBackCamera";
-            this.pbBackCamera.Size = new System.Drawing.Size(461, 196);
-            this.pbBackCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbBackCamera.TabIndex = 0;
-            this.pbBackCamera.TabStop = false;
-            // 
-            // pbFrontRecord
-            // 
-            this.pbFrontRecord.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbFrontRecord.Image = global::ZiTyLot.Properties.Resources.logo;
-            this.pbFrontRecord.Location = new System.Drawing.Point(10, 32);
-            this.pbFrontRecord.Name = "pbFrontRecord";
-            this.pbFrontRecord.Size = new System.Drawing.Size(461, 196);
-            this.pbFrontRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbFrontRecord.TabIndex = 0;
-            this.pbFrontRecord.TabStop = false;
-            // 
-            // pbFrontCamera
-            // 
-            this.pbFrontCamera.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbFrontCamera.Image = global::ZiTyLot.Properties.Resources.scan;
-            this.pbFrontCamera.Location = new System.Drawing.Point(10, 32);
-            this.pbFrontCamera.Name = "pbFrontCamera";
-            this.pbFrontCamera.Size = new System.Drawing.Size(461, 196);
-            this.pbFrontCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbFrontCamera.TabIndex = 0;
-            this.pbFrontCamera.TabStop = false;
-            // 
             // CarCheckInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1278,17 +1273,22 @@
             this.table.ResumeLayout(false);
             this.pnlPlateRecord.ResumeLayout(false);
             this.uiGroupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlateRecord)).EndInit();
             this.pnlPlateCamera.ResumeLayout(false);
             this.uiGroupBox5.ResumeLayout(false);
             this.uiTableLayoutPanel2.ResumeLayout(false);
             this.pnlBackRecord.ResumeLayout(false);
             this.uiGroupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackRecord)).EndInit();
             this.pnlBackCamera.ResumeLayout(false);
             this.uiGroupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackCamera)).EndInit();
             this.pnlFrontRecord.ResumeLayout(false);
             this.uiGroupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbFrontRecord)).EndInit();
             this.pnlFrontCamera.ResumeLayout(false);
             this.uiGroupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbFrontCamera)).EndInit();
             this.pnlInformation.ResumeLayout(false);
             this.pnlResident.ResumeLayout(false);
             this.uiGroupBox8.ResumeLayout(false);
@@ -1301,11 +1301,6 @@
             this.uiPanel7.ResumeLayout(false);
             this.uiGroupBox9.ResumeLayout(false);
             this.uiTableLayoutPanel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlateRecord)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBackRecord)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBackCamera)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFrontRecord)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFrontCamera)).EndInit();
             this.ResumeLayout(false);
 
         }
