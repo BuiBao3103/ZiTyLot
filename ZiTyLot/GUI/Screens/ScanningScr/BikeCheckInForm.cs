@@ -333,14 +333,21 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             string backImagePath = ImageHelper.SaveImage(frontImage);
             string frontImagePath = ImageHelper.SaveImage(backImage);
 
-
-            var result = await Task.Run(() => ANPR.ProcessImage(backImagePath, ImageHelper.GetImageDirectory()));
-
-            //setImage to pbPlate
-            pbFrontRecord.Image = frontImage;
-            pbBackRecord.Image = backImage;
-            pbPlateRecord.Image = ImageHelper.LoadImage(result.ImagePath);
-            lbVehicalPlate.Text = result.PlateNumber;
+            DateTime start = DateTime.Now;
+            var result = await ANPR.ProcessImageAsync(backImagePath, ImageHelper.GetImageDirectory());
+            DateTime end = DateTime.Now;
+           
+            string time = (end - start).TotalSeconds.ToString();
+            MessageBox.Show("Time: " + time);
+            if (result != null)
+            {
+                //setImage to pbPlate
+                pbFrontRecord.Image = frontImage;
+                pbBackRecord.Image = backImage;
+                pbPlateRecord.Image = ImageHelper.LoadImage(result.ImagePath);
+                lbVehicalPlate.Text = result.PlateNumber;
+            }
+         
         }
 
 
