@@ -36,7 +36,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             InitializeComponent();
             this.CenterToScreen();
             this.KeyPreview = true;
-            btnOpen.Resize += btnOpen_Resize;
+            btnOpenGate.Resize += btnOpen_Resize;
             uiTableLayoutPanel4.Resize += uiTableLayoutPanel4_Resize;
             uiTableLayoutPanel5.Resize += uiTableLayoutPanel5_Resize;
             uiTableLayoutPanel3.Resize += uiTableLayoutPanel3_Resize;
@@ -209,11 +209,11 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         {
             if (this.Size.Width > 1800)
             {
-                btnOpen.Font = new System.Drawing.Font("Helvetica", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                btnOpenGate.Font = new System.Drawing.Font("Helvetica", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             }
             else
             {
-                btnOpen.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                btnOpenGate.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             }
         }
 
@@ -320,21 +320,18 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             {
                 ShowSettingForm();
             }
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                StartVisitorProgress("rfid");
-            }
             if (e.KeyChar == (char)Keys.Space)
             {
-                if (_isGateOpen)
-                {
-                    _isGateOpen = false;
-                    Arduino.CloseBarrier(_serialPort);
-                }
-                else
+                if (!_isGateOpen)
                 {
                     _isGateOpen = true;
                     Arduino.OpenBarrier(_serialPort);
+                }
+                else
+                {
+                    _isGateOpen = false;
+                    Arduino.CloseBarrier(_serialPort);
+                    btnOpenGate.Enabled = false;
                 }
             }
 
@@ -342,44 +339,33 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
 
         private async void StartVisitorProgress(string rfid)
         {
-            //List<FilterCondition> filters = new List<FilterCondition>()
-            //{
-            //    new FilterCondition(nameof(Card.Rfid), CompOp.Equals, rfid)
-            //};
-            //Card card = _cardBUS.GetAll(filters)?.FirstOrDefault();
-            //if (!ValidateVisitorCard(card)) return;
+           
 
-            //take photo from camera front and back at a pbCameraFront and pbCameraBack component
             if (pbFrontCamera.Image == null || pbBackCamera.Image == null)
             {
                 MessageHelper.ShowError("Please connect camera before scanning!");
                 return;
             }
 
-            //take photo from camera front and back
             System.Drawing.Image frontImage = pbFrontCamera.Image;
             System.Drawing.Image backImage = pbBackCamera.Image;
             pbFrontRecord.Image = frontImage;
             pbBackRecord.Image = backImage;
 
 
-            DateTime start = DateTime.Now;
             var result = await ANPR.ProcessImageAsync(backImage);
-            DateTime end = DateTime.Now;
 
-            string time = (end - start).TotalSeconds.ToString();
-            MessageBox.Show("Time: " + time);
             if (result != null)
             {
                 //setImage to pbPlate
-
                 pbPlateRecord.Image = result.Image;
                 lbVehicalPlate.Text = result.PlateNumber;
 
                 //save image to file and get path
-                ImageHelper.SaveImage(frontImage);
-                ImageHelper.SaveImage(backImage);
-                ImageHelper.SaveImage(result.Image);
+                //ImageHelper.SaveImage(frontImage);
+                //ImageHelper.SaveImage(backImage);
+                //ImageHelper.SaveImage(result.Image);
+                btnOpenGate.Enabled = true;
             }
             else
             {
@@ -391,7 +377,12 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
 
         private void RfidReader_RFIDScanned(object sender, string rfidCode)
         {
-            Debug.WriteLine("RFID Scanned: " + rfidCode);
+            List<FilterCondition> filters = new List<FilterCondition>()
+            {
+                new FilterCondition(nameof(Card.Rfid), CompOp.Equals, rfidCode)
+            };
+            Card card = _cardBUS.GetAll(filters)?.FirstOrDefault();
+            if (!ValidateVisitorCard(card)) return;
             StartVisitorProgress(rfidCode);
         }
         private void btnOpen_Click(object sender, EventArgs e)
