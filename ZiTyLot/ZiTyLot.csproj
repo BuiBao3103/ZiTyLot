@@ -899,6 +899,7 @@
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Remove.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Resident-Active.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Resident.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Restore.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Setting.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_View.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Visitor.png" />

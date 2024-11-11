@@ -453,6 +453,16 @@ namespace ZiTyLot.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Restore {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Restore", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icon_18x18px_View {
             get {
                 object obj = ResourceManager.GetObject("Icon-18x18px_View", resourceCulture);
