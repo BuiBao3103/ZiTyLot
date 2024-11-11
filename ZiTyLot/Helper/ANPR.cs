@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 
 namespace ZiTyLot.Helper
 {
-    public class ANPR
+    public static class ANPR
     {
         private const string LPR_ENDPOINT_NAME = "LPD_Endpoint";
         private const string LP_OCR_ENDPOINT_NAME = "LP_OCR_Endpoint";
@@ -72,13 +72,15 @@ namespace ZiTyLot.Helper
         /// <summary>
         /// Processes an image to detect license plates and perform OCR
         /// </summary>
-        public static List<PlateResult> ProcessImage(string imagePath, string outputDirectory = null)
+        public static PlateResult ProcessImage(string imagePath, string outputDirectory)
         {
             try
             {
-                // Set default output directory if not provided
-                outputDirectory = outputDirectory ?? Path.Combine(Path.GetDirectoryName(imagePath), "cropped_plates");
-
+                //check output directory is exist
+                if (!Directory.Exists(outputDirectory))
+                {
+                    throw new DirectoryNotFoundException("Output directory not found");
+                }
                 // Detect license plates
                 string detectionResult = InferenceLocal(imagePath, LPR_ENDPOINT_NAME);
 
@@ -86,7 +88,7 @@ namespace ZiTyLot.Helper
                 if (detectionResult.StartsWith("Error:"))
                 {
                     Console.WriteLine(detectionResult);
-                    return new List<PlateResult>();
+                    return null; ;
                 }
 
                 // Extract the license plates and perform OCR
@@ -95,7 +97,7 @@ namespace ZiTyLot.Helper
             catch (Exception ex)
             {
                 Console.WriteLine($"Error processing image: {ex.Message}");
-                return new List<PlateResult>();
+                return null;
             }
         }
 
@@ -109,17 +111,15 @@ namespace ZiTyLot.Helper
             string outputDirectory = @"../../Helper/images/cropped_plates";
 
             Console.WriteLine("Starting ANPR processing...");
-            var results = ProcessImage(imagePath, outputDirectory);
+            var result = ProcessImage(imagePath, outputDirectory);
             DateTime endTime = DateTime.Now;
             TimeSpan duration = endTime - startTime;
-            foreach (var result in results)
-            {
-                Console.WriteLine($"Plate detected:");
-                Console.WriteLine($"- Number: {result.PlateNumber}");
-                Console.WriteLine($"- Confidence: {result.Confidence:F2}%");
-                Console.WriteLine($"- Image saved at: {result.ImagePath}");
-                Console.WriteLine($"- Duration: {duration.TotalSeconds:F2} seconds");
-            }
+
+            Console.WriteLine($"Plate detected:");
+            Console.WriteLine($"- Number: {result.PlateNumber}");
+            Console.WriteLine($"- Confidence: {result.Confidence:F2}%");
+            Console.WriteLine($"- Image saved at: {result.ImagePath}");
+            Console.WriteLine($"- Duration: {duration.TotalSeconds:F2} seconds");
         }
         #endregion
 
@@ -169,10 +169,8 @@ namespace ZiTyLot.Helper
             }
         }
 
-        private static List<PlateResult> ProcessDetectedPlates(string originalImagePath, string detectionJson, string outputDirectory)
+        private static PlateResult ProcessDetectedPlates(string originalImagePath, string detectionJson, string outputDirectory)
         {
-            var results = new List<PlateResult>();
-
             try
             {
                 var detectionResult = JsonConvert.DeserializeObject<PlateDetectionResult>(detectionJson);
@@ -228,12 +226,12 @@ namespace ZiTyLot.Helper
                             if (!ocrResult.StartsWith("Error:"))
                             {
                                 var plateNumber = ExtractPlateNumber(ocrResult);
-                                results.Add(new PlateResult
+                                return new PlateResult
                                 {
                                     ImagePath = outputPath,
                                     PlateNumber = plateNumber.number,
                                     Confidence = plateNumber.confidence
-                                });
+                                };
                             }
                             else
                             {
@@ -248,7 +246,7 @@ namespace ZiTyLot.Helper
                 Console.WriteLine($"Error processing plates: {ex.Message}");
             }
 
-            return results;
+            return null;
         }
 
         private static (string number, double confidence) ExtractPlateNumber(string ocrJson)
