@@ -16,7 +16,9 @@ namespace ZiTyLot.GUI.Screens.SessionScr
 
         private void btnLostCard_Click(object sender, System.EventArgs e)
         {
-
+            this.Close();
+            LostCardCreateForm lostCardCreateForm = new LostCardCreateForm();
+            lostCardCreateForm.ShowDialog();
         }
 
         private void btnClose_Click(object sender, System.EventArgs e)

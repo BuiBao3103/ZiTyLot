@@ -45,7 +45,7 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
                     e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
                 }
                 System.Drawing.Image icon = null;
-                icon = Properties.Resources.Icon_18x18px_View;
+                icon = Properties.Resources.Icon_18x18px_Restore;
                 int iconWidth = 16;
                 int iconHeight = 16;
                 int x = e.CellBounds.Left + (e.CellBounds.Width - iconWidth) / 2;
@@ -185,7 +185,6 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
             tableLostCard.Rows.Clear();
             foreach (LostHistory lostHistory in _page.Content)
             {
-                Console.WriteLine(lostHistory.Id);
                 string status = lostHistory.Is_found ? "Found" : "Lost";
                 tableLostCard.Rows.Add(lostHistory.Id, "", lostHistory.Owner_name, lostHistory.Owner_identification_card, "", status);
             }

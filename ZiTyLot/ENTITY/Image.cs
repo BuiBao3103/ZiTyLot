@@ -20,11 +20,12 @@ namespace ZiTyLot.ENTITY
 
         public int Id { get => id; set => id = value; }
         public string Url { get => url; set => url = value; }
-        public DateTime CreatedAt { get => created_at; set => created_at = value; }
-        public DateTime? UpdatedAt { get => updated_at; set => updated_at = value; }
-        public DateTime? DeletedAt { get => deleted_at; set => deleted_at = value; }
+       
         public Session Session { get => session; set => session = value; }
         public int? Session_id { get => session_id; set => session_id = value; }
         public ImageType Type { get => type; set => type = value; }
+        public DateTime Created_at { get => created_at; set => created_at = value; }
+        public DateTime? Updated_at { get => updated_at; set => updated_at = value; }
+        public DateTime? Deleted_at { get => deleted_at; set => deleted_at = value; }
     }
 }

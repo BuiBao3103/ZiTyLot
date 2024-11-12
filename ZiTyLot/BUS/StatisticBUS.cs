@@ -67,7 +67,6 @@ namespace ZiTyLot.BUS
                     "YEAR"
                 );
             }
-            Console.WriteLine(input);
             throw new ValidationInputException("Invalid date range format");
         }
     }

@@ -34,6 +34,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.tableLostCard = new System.Windows.Forms.DataGridView();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRFID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNationalID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUserType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRestore = new System.Windows.Forms.DataGridViewButtonColumn();
             this.separtorBottom = new System.Windows.Forms.Panel();
             this.pnlPagination = new System.Windows.Forms.Panel();
             this.pnlLeft = new System.Windows.Forms.Panel();
@@ -41,13 +48,11 @@
             this.cbNumberofitem = new Sunny.UI.UIComboBox();
             this.pnlRight = new System.Windows.Forms.Panel();
             this.pnlNext = new System.Windows.Forms.Panel();
-            this.btnNext = new Sunny.UI.UISymbolButton();
             this.pnlCurrentPage = new System.Windows.Forms.Panel();
             this.uiTableLayoutPanel3 = new Sunny.UI.UITableLayoutPanel();
             this.tbCurrentpage = new Sunny.UI.UITextBox();
             this.lbTotalpage = new Sunny.UI.UILabel();
             this.pnlPrevious = new System.Windows.Forms.Panel();
-            this.btnPrevious = new Sunny.UI.UISymbolButton();
             this.separator = new System.Windows.Forms.Panel();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.tableTop = new Sunny.UI.UITableLayoutPanel();
@@ -69,16 +74,11 @@
             this.cbStatus = new Sunny.UI.UIComboBox();
             this.uiPanel8 = new Sunny.UI.UIPanel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnClear = new Sunny.UI.UISymbolButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnApply = new Sunny.UI.UISymbolButton();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRFID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNationalID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUserType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRestore = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnNext = new Sunny.UI.UISymbolButton();
+            this.btnPrevious = new Sunny.UI.UISymbolButton();
+            this.btnClear = new Sunny.UI.UISymbolButton();
             this.panel2.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableLostCard)).BeginInit();
@@ -127,7 +127,7 @@
             this.pnlBottom.Location = new System.Drawing.Point(0, 112);
             this.pnlBottom.Margin = new System.Windows.Forms.Padding(0);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.pnlBottom.Padding = new System.Windows.Forms.Padding(10);
             this.pnlBottom.Size = new System.Drawing.Size(1225, 592);
             this.pnlBottom.TabIndex = 3;
             this.pnlBottom.Resize += new System.EventHandler(this.BottomPnl_Resize);
@@ -192,11 +192,70 @@
             this.tableLostCard.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
             this.tableLostCard.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
             // 
+            // colId
+            // 
+            this.colId.HeaderText = "ID";
+            this.colId.MinimumWidth = 6;
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colId.Width = 50;
+            // 
+            // colRFID
+            // 
+            this.colRFID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRFID.HeaderText = "RFID";
+            this.colRFID.MinimumWidth = 6;
+            this.colRFID.Name = "colRFID";
+            this.colRFID.ReadOnly = true;
+            // 
+            // colFullname
+            // 
+            this.colFullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colFullname.HeaderText = "Full name";
+            this.colFullname.MinimumWidth = 6;
+            this.colFullname.Name = "colFullname";
+            this.colFullname.ReadOnly = true;
+            // 
+            // colNationalID
+            // 
+            this.colNationalID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colNationalID.HeaderText = "National ID";
+            this.colNationalID.MinimumWidth = 100;
+            this.colNationalID.Name = "colNationalID";
+            this.colNationalID.ReadOnly = true;
+            // 
+            // colUserType
+            // 
+            this.colUserType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colUserType.HeaderText = "User type";
+            this.colUserType.MinimumWidth = 6;
+            this.colUserType.Name = "colUserType";
+            this.colUserType.ReadOnly = true;
+            // 
+            // colStatus
+            // 
+            this.colStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.MinimumWidth = 6;
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
+            // 
+            // colRestore
+            // 
+            this.colRestore.HeaderText = "Action";
+            this.colRestore.MinimumWidth = 6;
+            this.colRestore.Name = "colRestore";
+            this.colRestore.ReadOnly = true;
+            this.colRestore.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colRestore.Text = "View";
+            this.colRestore.Width = 90;
+            // 
             // separtorBottom
             // 
             this.separtorBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.separtorBottom.Location = new System.Drawing.Point(0, 704);
-            this.separtorBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.separtorBottom.Margin = new System.Windows.Forms.Padding(4);
             this.separtorBottom.MaximumSize = new System.Drawing.Size(2160, 5);
             this.separtorBottom.Name = "separtorBottom";
             this.separtorBottom.Size = new System.Drawing.Size(1225, 4);
@@ -299,36 +358,9 @@
             this.pnlNext.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlNext.Location = new System.Drawing.Point(126, 0);
             this.pnlNext.Name = "pnlNext";
-            this.pnlNext.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.pnlNext.Padding = new System.Windows.Forms.Padding(3);
             this.pnlNext.Size = new System.Drawing.Size(40, 44);
             this.pnlNext.TabIndex = 1;
-            // 
-            // btnNext
-            // 
-            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNext.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNext.FillColor = System.Drawing.SystemColors.ControlLight;
-            this.btnNext.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.btnNext.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Next;
-            this.btnNext.Location = new System.Drawing.Point(3, 3);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(0);
-            this.btnNext.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Padding = new System.Windows.Forms.Padding(20, 0, 22, 0);
-            this.btnNext.Radius = 4;
-            this.btnNext.RectColor = System.Drawing.Color.White;
-            this.btnNext.RectDisableColor = System.Drawing.Color.White;
-            this.btnNext.RectHoverColor = System.Drawing.Color.White;
-            this.btnNext.RectPressColor = System.Drawing.Color.White;
-            this.btnNext.RectSelectedColor = System.Drawing.Color.White;
-            this.btnNext.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnNext.RectSize = 2;
-            this.btnNext.Size = new System.Drawing.Size(34, 38);
-            this.btnNext.TabIndex = 4;
-            this.btnNext.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // pnlCurrentPage
             // 
@@ -336,7 +368,7 @@
             this.pnlCurrentPage.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlCurrentPage.Location = new System.Drawing.Point(40, 0);
             this.pnlCurrentPage.Name = "pnlCurrentPage";
-            this.pnlCurrentPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.pnlCurrentPage.Padding = new System.Windows.Forms.Padding(3);
             this.pnlCurrentPage.Size = new System.Drawing.Size(86, 44);
             this.pnlCurrentPage.TabIndex = 2;
             // 
@@ -367,7 +399,7 @@
             this.tbCurrentpage.Margin = new System.Windows.Forms.Padding(0);
             this.tbCurrentpage.MinimumSize = new System.Drawing.Size(1, 16);
             this.tbCurrentpage.Name = "tbCurrentpage";
-            this.tbCurrentpage.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbCurrentpage.Padding = new System.Windows.Forms.Padding(5);
             this.tbCurrentpage.Radius = 0;
             this.tbCurrentpage.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.tbCurrentpage.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom;
@@ -399,36 +431,9 @@
             this.pnlPrevious.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlPrevious.Location = new System.Drawing.Point(0, 0);
             this.pnlPrevious.Name = "pnlPrevious";
-            this.pnlPrevious.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.pnlPrevious.Padding = new System.Windows.Forms.Padding(3);
             this.pnlPrevious.Size = new System.Drawing.Size(40, 44);
             this.pnlPrevious.TabIndex = 0;
-            // 
-            // btnPrevious
-            // 
-            this.btnPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPrevious.FillColor = System.Drawing.SystemColors.ControlLight;
-            this.btnPrevious.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.btnPrevious.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrevious.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Previous;
-            this.btnPrevious.Location = new System.Drawing.Point(3, 3);
-            this.btnPrevious.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPrevious.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Padding = new System.Windows.Forms.Padding(20, 0, 22, 0);
-            this.btnPrevious.Radius = 4;
-            this.btnPrevious.RectColor = System.Drawing.Color.White;
-            this.btnPrevious.RectDisableColor = System.Drawing.Color.White;
-            this.btnPrevious.RectHoverColor = System.Drawing.Color.White;
-            this.btnPrevious.RectPressColor = System.Drawing.Color.White;
-            this.btnPrevious.RectSelectedColor = System.Drawing.Color.White;
-            this.btnPrevious.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnPrevious.RectSize = 2;
-            this.btnPrevious.Size = new System.Drawing.Size(34, 38);
-            this.btnPrevious.TabIndex = 4;
-            this.btnPrevious.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // separator
             // 
@@ -447,7 +452,7 @@
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pnlTop.Padding = new System.Windows.Forms.Padding(5);
             this.pnlTop.Size = new System.Drawing.Size(1225, 108);
             this.pnlTop.TabIndex = 5;
             this.pnlTop.Resize += new System.EventHandler(this.TopPnl_Resize);
@@ -524,7 +529,7 @@
             this.uiPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel3.Name = "uiPanel3";
-            this.uiPanel3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.uiPanel3.Padding = new System.Windows.Forms.Padding(3);
             this.uiPanel3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel3.Size = new System.Drawing.Size(1085, 44);
             this.uiPanel3.TabIndex = 13;
@@ -839,36 +844,6 @@
             this.panel4.Size = new System.Drawing.Size(124, 38);
             this.panel4.TabIndex = 26;
             // 
-            // btnClear
-            // 
-            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnClear.FillColor = System.Drawing.Color.White;
-            this.btnClear.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnClear.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnClear.FillSelectedColor = System.Drawing.Color.White;
-            this.btnClear.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnClear.Location = new System.Drawing.Point(5, 0);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(0);
-            this.btnClear.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Padding = new System.Windows.Forms.Padding(14, 0, 12, 0);
-            this.btnClear.RectColor = System.Drawing.SystemColors.ControlLight;
-            this.btnClear.RectDisableColor = System.Drawing.Color.White;
-            this.btnClear.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnClear.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnClear.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnClear.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnClear.RectSize = 2;
-            this.btnClear.Size = new System.Drawing.Size(114, 38);
-            this.btnClear.Symbol = 61453;
-            this.btnClear.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnClear.TabIndex = 3;
-            this.btnClear.Text = "Clear";
-            this.btnClear.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnApply);
@@ -906,64 +881,89 @@
             this.btnApply.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
-            // colId
+            // btnNext
             // 
-            this.colId.HeaderText = "ID";
-            this.colId.MinimumWidth = 6;
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colId.Width = 50;
+            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNext.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNext.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.btnNext.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnNext.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Next;
+            this.btnNext.Location = new System.Drawing.Point(3, 3);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(0);
+            this.btnNext.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Padding = new System.Windows.Forms.Padding(20, 0, 22, 0);
+            this.btnNext.Radius = 4;
+            this.btnNext.RectColor = System.Drawing.Color.White;
+            this.btnNext.RectDisableColor = System.Drawing.Color.White;
+            this.btnNext.RectHoverColor = System.Drawing.Color.White;
+            this.btnNext.RectPressColor = System.Drawing.Color.White;
+            this.btnNext.RectSelectedColor = System.Drawing.Color.White;
+            this.btnNext.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnNext.RectSize = 2;
+            this.btnNext.Size = new System.Drawing.Size(34, 38);
+            this.btnNext.TabIndex = 4;
+            this.btnNext.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // colRFID
+            // btnPrevious
             // 
-            this.colRFID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRFID.HeaderText = "RFID";
-            this.colRFID.MinimumWidth = 6;
-            this.colRFID.Name = "colRFID";
-            this.colRFID.ReadOnly = true;
+            this.btnPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPrevious.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.btnPrevious.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnPrevious.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Previous;
+            this.btnPrevious.Location = new System.Drawing.Point(3, 3);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPrevious.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Padding = new System.Windows.Forms.Padding(20, 0, 22, 0);
+            this.btnPrevious.Radius = 4;
+            this.btnPrevious.RectColor = System.Drawing.Color.White;
+            this.btnPrevious.RectDisableColor = System.Drawing.Color.White;
+            this.btnPrevious.RectHoverColor = System.Drawing.Color.White;
+            this.btnPrevious.RectPressColor = System.Drawing.Color.White;
+            this.btnPrevious.RectSelectedColor = System.Drawing.Color.White;
+            this.btnPrevious.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnPrevious.RectSize = 2;
+            this.btnPrevious.Size = new System.Drawing.Size(34, 38);
+            this.btnPrevious.TabIndex = 4;
+            this.btnPrevious.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
-            // colFullname
+            // btnClear
             // 
-            this.colFullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colFullname.HeaderText = "Full name";
-            this.colFullname.MinimumWidth = 6;
-            this.colFullname.Name = "colFullname";
-            this.colFullname.ReadOnly = true;
-            // 
-            // colNationalID
-            // 
-            this.colNationalID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colNationalID.HeaderText = "National ID";
-            this.colNationalID.MinimumWidth = 100;
-            this.colNationalID.Name = "colNationalID";
-            this.colNationalID.ReadOnly = true;
-            // 
-            // colUserType
-            // 
-            this.colUserType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colUserType.HeaderText = "User type";
-            this.colUserType.MinimumWidth = 6;
-            this.colUserType.Name = "colUserType";
-            this.colUserType.ReadOnly = true;
-            // 
-            // colStatus
-            // 
-            this.colStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colStatus.HeaderText = "Status";
-            this.colStatus.MinimumWidth = 6;
-            this.colStatus.Name = "colStatus";
-            this.colStatus.ReadOnly = true;
-            // 
-            // colRestore
-            // 
-            this.colRestore.HeaderText = "Action";
-            this.colRestore.MinimumWidth = 6;
-            this.colRestore.Name = "colRestore";
-            this.colRestore.ReadOnly = true;
-            this.colRestore.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colRestore.Text = "View";
-            this.colRestore.Width = 90;
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnClear.FillColor = System.Drawing.Color.White;
+            this.btnClear.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnClear.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnClear.FillSelectedColor = System.Drawing.Color.White;
+            this.btnClear.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnClear.Location = new System.Drawing.Point(5, 0);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(0);
+            this.btnClear.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Padding = new System.Windows.Forms.Padding(14, 0, 12, 0);
+            this.btnClear.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.btnClear.RectDisableColor = System.Drawing.Color.White;
+            this.btnClear.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnClear.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnClear.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnClear.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnClear.RectSize = 2;
+            this.btnClear.Size = new System.Drawing.Size(114, 38);
+            this.btnClear.Symbol = 61453;
+            this.btnClear.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnClear.TabIndex = 3;
+            this.btnClear.Text = "Clear";
+            this.btnClear.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // LostCardControl
             // 

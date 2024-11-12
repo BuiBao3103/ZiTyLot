@@ -12,55 +12,116 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using AForge.Video;
 using AForge.Video.DirectShow;
 using System.Windows.Controls;
+using System.IO.Ports;
+using System.ComponentModel.Composition.Primitives;
+using ZiTyLot.Helper;
 namespace ZiTyLot.GUI.Screens.ScanningScr
 {
     public partial class SettingForm : Form
     {
         private FilterInfoCollection cameras;
-        private List<string> monikerStrings = new List<string>();
+        private readonly List<string> monikerStrings = new List<string>();
+        public bool IsFrontCameraConnected { get; private set; }
+        public bool IsBackCameraConnected { get; private set; }
 
-        public SettingForm(string frontCameraId, string backCameraId)
+        public SettingForm(string frontCameraId, string backCameraId, string serialPort)
         {
             InitializeComponent();
             this.CenterToScreen();
+            this.KeyPreview = true;
             GetVideoDevices();
+            GetSerialPort();
 
             if (!string.IsNullOrEmpty(frontCameraId))
             {
-                cbCameraFront.SelectedIndex = monikerStrings.IndexOf(frontCameraId);
+                cbFront.SelectedIndex = monikerStrings.IndexOf(frontCameraId);
                 btnConnectCameraFront.Enabled = false;
                 btnDisconnectCameraFront.Enabled = true;
-                cbCameraFront.Enabled = false;
+                cbFront.Enabled = false;
             }
             if (!string.IsNullOrEmpty(backCameraId))
             {
-                cbCameraBack.SelectedIndex = monikerStrings.IndexOf(backCameraId);
+                cbBack.SelectedIndex = monikerStrings.IndexOf(backCameraId);
                 btnConnectCameraBack.Enabled = false;
                 btnDisconnectCameraBack.Enabled = true;
-                cbCameraBack.Enabled = false;
+                cbBack.Enabled = false;
             }
-
+            if (!string.IsNullOrEmpty(serialPort))
+            {
+                cbGate.SelectedItem = serialPort;
+                btnConnectGate.Enabled = false;
+                btnDisconnectGate.Enabled = true;
+                cbGate.Enabled = false;
+            }
         }
 
         public event EventHandler<string> ConnectCameraFront;
         public event EventHandler<string> ConnectCameraBack;
-        public event EventHandler DisconnectCameraFront;
-        public event EventHandler DisconnectCameraBack;
+        public event Func<object, EventArgs, Task> DisconnectCameraFront;
+        public event Func<object, EventArgs, Task> DisconnectCameraBack;
+        public event EventHandler<string> ConnectGate;
+        public event EventHandler DisconnectGate;
         private void GetVideoDevices()
         {
             cameras = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            cbCameraFront.Items.Clear();
-            cbCameraBack.Items.Clear();
+            cbFront.Items.Clear();
+            cbBack.Items.Clear();
             foreach (FilterInfo device in cameras)
             {
-                cbCameraFront.Items.Add(device.Name);
-                cbCameraBack.Items.Add(device.Name);
+                cbFront.Items.Add(device.Name);
+                cbBack.Items.Add(device.Name);
                 monikerStrings.Add(device.MonikerString);
             }
-            if (cbCameraFront.Items.Count > 0)
+            if (cbFront.Items.Count == 0)
             {
-                cbCameraFront.SelectedIndex = 0;
-                cbCameraBack.SelectedIndex = 0;
+                cbBack.Items.Add("No available camera");
+                cbFront.Items.Add("No available camera");
+                cbBack.Enabled = false;
+                cbFront.Enabled = false;
+            }
+            cbFront.SelectedIndex = 0;
+            cbBack.SelectedIndex = 0;
+
+        }
+        private void GetSerialPort()
+        {
+            string[] ports = SerialPort.GetPortNames();
+            cbGate.Items.Clear();
+            foreach (string port in ports)
+            {
+                if (!IsPortInUse(port))
+                {
+                    cbGate.Items.Add(port);
+                }
+            }
+            if (cbGate.Items.Count == 0)
+            {
+                cbGate.Items.Add("No available port");
+                btnConnectGate.Enabled = false;
+                cbGate.Enabled = false;
+            }
+            cbGate.SelectedIndex = 0;
+
+        }
+        public static bool IsPortInUse(string portName)
+        {
+            try
+            {
+                using (SerialPort port = new SerialPort(portName))
+                {
+                    port.Open();
+                    port.Close();
+                    return false;
+                }
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
             }
         }
         private void btnCancel_Click(object sender, EventArgs e)
@@ -70,92 +131,78 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
 
         private void btnConnectCameraFront_Click(object sender, EventArgs e)
         {
-            ConnectCameraFront?.Invoke(this, cameras[cbCameraFront.SelectedIndex].MonikerString);
+            ConnectCameraFront?.Invoke(this, cameras[cbFront.SelectedIndex].MonikerString);
+            IsFrontCameraConnected = true;
+
             btnConnectCameraFront.Enabled = false;
             btnDisconnectCameraFront.Enabled = true;
-            cbCameraFront.Enabled = false;
+            cbFront.Enabled = false;
         }
 
-        private void btnDisconnectCameraFront_Click(object sender, EventArgs e)
+        private async void btnDisconnectCameraFront_Click(object sender, EventArgs e)
         {
-            DisconnectCameraFront?.Invoke(this, e);
+            if (DisconnectCameraFront != null)
+                await DisconnectCameraFront.Invoke(this, EventArgs.Empty);
+            IsFrontCameraConnected = false;
+
             btnConnectCameraFront.Enabled = true;
             btnDisconnectCameraFront.Enabled = false;
-            cbCameraFront.Enabled = true;
+            cbFront.Enabled = true;
         }
 
         private void btnConnectCameraBack_Click(object sender, EventArgs e)
         {
-            ConnectCameraBack?.Invoke(this, cameras[cbCameraBack.SelectedIndex].MonikerString);
+            ConnectCameraBack?.Invoke(this, cameras[cbBack.SelectedIndex].MonikerString);
+            IsBackCameraConnected = true;
+
             btnConnectCameraBack.Enabled = false;
             btnDisconnectCameraBack.Enabled = true;
-            cbCameraBack.Enabled = false;
+            cbBack.Enabled = false;
         }
 
-        private void btnDisconnectCameraBack_Click(object sender, EventArgs e)
+        private async void btnDisconnectCameraBack_Click(object sender, EventArgs e)
         {
-            DisconnectCameraBack?.Invoke(this, e);
+            if (DisconnectCameraBack != null)
+                await DisconnectCameraBack.Invoke(this, EventArgs.Empty);
+            IsBackCameraConnected = false;
+
             btnConnectCameraBack.Enabled = true;
             btnDisconnectCameraBack.Enabled = false;
-            cbCameraBack.Enabled = true;
-        }
-        private void btnCheckInFrontFolder_Click(object sender, EventArgs e)
-        {
-            if (fbdFolderLocation.ShowDialog() == DialogResult.OK)
-            {
-                // Use the selected folder path, for example:
-                tbCheckInFrontRecord.Text = fbdFolderLocation.SelectedPath;
-            }
+            cbBack.Enabled = true;
         }
 
-        private void btnCheckInBackFolder_Click(object sender, EventArgs e)
-        {
-            if (fbdFolderLocation.ShowDialog() == DialogResult.OK)
-            {
-                // Use the selected folder path, for example:
-                tbCheckInBackRecord.Text = fbdFolderLocation.SelectedPath;
-            }
-        }
-
-        private void btnCheckInPlateFolder_Click(object sender, EventArgs e)
-        {
-            if (fbdFolderLocation.ShowDialog() == DialogResult.OK)
-            {
-                // Use the selected folder path, for example:
-                tbCheckInPlateRecord.Text = fbdFolderLocation.SelectedPath;
-            }
-        }
-
-        private void btnCheckOutFrontFolder_Click(object sender, EventArgs e)
-        {
-            if (fbdFolderLocation.ShowDialog() == DialogResult.OK)
-            {
-                // Use the selected folder path, for example:
-                tbCheckOutFrontRecord.Text = fbdFolderLocation.SelectedPath;
-            }
-        }
-
-        private void btnCheckOutBackFolder_Click(object sender, EventArgs e)
-        {
-            if (fbdFolderLocation.ShowDialog() == DialogResult.OK)
-            {
-                // Use the selected folder path, for example:
-                tbCheckOutBackRecord.Text = fbdFolderLocation.SelectedPath;
-            }
-        }
-
-        private void btnCheckOutPlateFolder_Click(object sender, EventArgs e)
-        {
-            if (fbdFolderLocation.ShowDialog() == DialogResult.OK)
-            {
-                // Use the selected folder path, for example:
-                tbCheckOutPlateRecord.Text = fbdFolderLocation.SelectedPath;
-            }
-        }
 
         private void btnCancel_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnConnectGate_Click(object sender, EventArgs e)
+        {
+            if (cbGate.SelectedItem != null)
+            {
+                string selectedPort = cbGate.SelectedItem.ToString();
+                btnDisconnectGate.Enabled = true;
+                btnConnectGate.Enabled = false;
+                cbGate.Enabled = false;
+                ConnectGate?.Invoke(this, selectedPort);
+            }
+        }
+
+        private void btnDisconnectGate_Click(object sender, EventArgs e)
+        {
+            btnConnectGate.Enabled = true;
+            btnDisconnectGate.Enabled = false;
+            cbGate.Enabled = true;
+            DisconnectGate?.Invoke(this, e);
+        }
+
+        private void SettingForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Escape)
+            {
+                this.Close();
+            }
         }
     }
 }

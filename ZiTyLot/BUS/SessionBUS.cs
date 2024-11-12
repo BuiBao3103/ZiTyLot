@@ -27,6 +27,7 @@ namespace ZiTyLot.BUS
             Validate(item);
             try
             {
+                item.Created_at = DateTime.Now;
                 sessionDAO.Add(item);
             }
             catch (Exception ex)
@@ -102,12 +103,7 @@ namespace ZiTyLot.BUS
         //
         private void Validate(Session item)
         {
-            if (string.IsNullOrWhiteSpace(item.License_plate))
-            {
-                throw new ArgumentException("Name cannot be null or empty.", nameof(item.License_plate));
-            }
-
-            // Add other validation rules as needed
+           
         }
 
         private void EnsureRecordExists(object id)

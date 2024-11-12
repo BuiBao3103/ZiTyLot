@@ -335,9 +335,11 @@
     <Compile Include="Constants\Enum\ParkingLotStatus.cs" />
     <Compile Include="Constants\Enum\ParkingLotType.cs" />
     <Compile Include="Constants\Enum\ParkingLotUserType.cs" />
+    <Compile Include="Constants\Enum\ProcessState.cs" />
     <Compile Include="Constants\Enum\SessionType.cs" />
     <Compile Include="Constants\Enum\SlotStatus.cs" />
     <Compile Include="Constants\SortOrderPageable.cs" />
+    <Compile Include="Constants\VehicleTypeID.cs" />
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\BillDAO.cs" />
     <Compile Include="DAO\CardDAO.cs" />
@@ -437,17 +439,23 @@
     <Compile Include="GUI\Screens\RoleScr\RoleCreateForm.Designer.cs">
       <DependentUpon>RoleCreateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\ScanningScr\BikeCheckInForm.cs">
+    <Compile Include="GUI\Screens\ScanningScr\CheckInForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\ScanningScr\BikeCheckInForm.Designer.cs">
-      <DependentUpon>BikeCheckInForm.cs</DependentUpon>
+    <Compile Include="GUI\Screens\ScanningScr\CheckInForm.Designer.cs">
+      <DependentUpon>CheckInForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\ScanningScr\BikeCheckOutFrom.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Screens\ScanningScr\BikeCheckOutFrom.Designer.cs">
       <DependentUpon>BikeCheckOutFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\SessionScr\LostCardCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\SessionScr\LostCardCreateForm.Designer.cs">
+      <DependentUpon>LostCardCreateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Utils\BusinessException.cs" />
     <Compile Include="GUI\Utils\InputFormatter.cs" />
@@ -667,9 +675,11 @@
     <Compile Include="GUI\Utils\ValidationInputException.cs" />
     <Compile Include="Helper\ANPR.cs" />
     <Compile Include="Helper\Arduino.cs" />
+    <Compile Include="Helper\CameraHelper.cs" />
     <Compile Include="Helper\Debouncer.cs" />
     <Compile Include="Helper\ExcelHelper.cs" />
     <Compile Include="Helper\FilterCondition.cs" />
+    <Compile Include="Helper\ImageHelper.cs" />
     <Compile Include="Helper\Page.cs" />
     <Compile Include="Helper\Pageable.cs" />
     <Compile Include="Helper\PdfHelper.cs" />
@@ -778,8 +788,8 @@
     <EmbeddedResource Include="GUI\Screens\RoleScr\RoleDetailForm.resx">
       <DependentUpon>RoleDetailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\ScanningScr\BikeCheckInForm.resx">
-      <DependentUpon>BikeCheckInForm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Screens\ScanningScr\CheckInForm.resx">
+      <DependentUpon>CheckInForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\ScanningScr\BikeCheckOutFrom.resx">
       <DependentUpon>BikeCheckOutFrom.cs</DependentUpon>
@@ -807,6 +817,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\ScanningScr\SettingForm.resx">
       <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\SessionScr\LostCardCreateForm.resx">
+      <DependentUpon>LostCardCreateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\SessionScr\SessionDetailForm.resx">
       <DependentUpon>SessionDetailForm.cs</DependentUpon>
@@ -908,10 +921,12 @@
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Remove.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Resident-Active.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Resident.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Restore.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Setting.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_View.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Visitor.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Vistor-Active.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Wrench.png" />
     <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Account-Active.png" />
     <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Account.png" />
     <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Area-Active.png" />
@@ -948,17 +963,11 @@
     <None Include="Resources\Screenshot 2024-08-30 230542.png" />
     <None Include="Resources\Screenshot 2024-08-30 101445.png" />
     <None Include="Resources\Screenshot 2024-10-11 121017.png" />
-    <Content Include="Helper\images\bikecycle.jpg" />
-    <Content Include="Helper\images\car.jpg" />
-    <Content Include="Helper\images\car2.jpg" />
-    <Content Include="Helper\images\motobike.jpg" />
-    <Content Include="Helper\images\motorbike2.jpg" />
     <Content Include="Resource\AmongUs.wav" />
     <Content Include="Resource\enter.wav" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\components\" />
-    <Folder Include="Helper\images\cropped_plates\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
