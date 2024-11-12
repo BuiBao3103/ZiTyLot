@@ -27,6 +27,7 @@ namespace ZiTyLot.BUS
             Validate(item);
             try
             {
+                item.Created_at = DateTime.Now;
                 sessionDAO.Add(item);
             }
             catch (Exception ex)

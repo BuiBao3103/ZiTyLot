@@ -20,6 +20,8 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
     public partial class CheckInForm : Form
     {
         private readonly CardBUS _cardBUS = new CardBUS();
+        private readonly SessionBUS _sessionBUS = new SessionBUS();
+        private readonly ImageBUS _imageBUS = new ImageBUS();
 
         private readonly CameraHelper _cameraHelper = new CameraHelper();
         private VideoCaptureDevice _frontCamera;
@@ -36,6 +38,11 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         private bool _isGateClose = true;
         private ProcessState _processState = ProcessState.Ready;
         private ParkingLotType _parkingLotType;
+
+        private Session _currentSession;
+        private System.Drawing.Image _currentFrontImage;
+        private System.Drawing.Image _currentBackImage;
+        private System.Drawing.Image _currentPlateImage;
 
         public CheckInForm(ParkingLotType parkingLotType)
         {
@@ -294,6 +301,25 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                     Arduino.CloseBarrier(_serialPort);
                     btnOpenGate.Enabled = false;
                     btnOpenGate.Text = btnOpenGate.Text.Replace("CLOSE", "OPEN");
+                    _sessionBUS.Add(_currentSession);
+
+                    ENTITY.Image frontImage = new ENTITY.Image();
+                    frontImage.Url = ImageHelper.SaveImage(_currentFrontImage);
+                    frontImage.Type = ImageType.BEFORE_CHECKIN;
+
+                    ENTITY.Image backImage = new ENTITY.Image();
+                    backImage.Url = ImageHelper.SaveImage(_currentBackImage);
+                    backImage.Type = ImageType.AFTER_CHECKIN;
+
+                    ENTITY.Image plateImage = new ENTITY.Image();
+                    plateImage.Url = ImageHelper.SaveImage(_currentPlateImage);
+                    plateImage.Type = ImageType.LICENSE_PLATE_CHECKOUT;
+
+                    _imageBUS.Add(frontImage);
+                    _imageBUS.Add(backImage);
+                    _imageBUS.Add(plateImage);
+
+
                     _processState = ProcessState.Ready;
                 }
             }
@@ -303,37 +329,46 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         {
             _processState = ProcessState.Scanning;
 
-            System.Drawing.Image frontImage = _cameraHelper.GetImageFromPictureBox(pbFrontCamera);
-            System.Drawing.Image backImage = _cameraHelper.GetImageFromPictureBox(pbBackCamera);
+            _currentFrontImage = _cameraHelper.GetImageFromPictureBox(pbFrontCamera);
+            _currentBackImage = _cameraHelper.GetImageFromPictureBox(pbBackCamera);
+            _currentPlateImage = null;
 
-            pbFrontRecord.Image = frontImage;
-            pbBackRecord.Image = backImage;
-            pbPlateRecord.Image = null;
+            pbFrontRecord.Image = _currentFrontImage;
+            pbBackRecord.Image = _currentBackImage;
+            pbPlateRecord.Image = _currentPlateImage;
+
+
+
+            _currentSession = new Session();
+            _currentSession.Checkin_time = DateTime.Now;
+            _currentSession.Card_id = card.Id;
+            _currentSession.Type = card.Resident_id == null ? SessionType.VISITOR : SessionType.RESIDENT;
 
 
             lbCardRfid.Text = card.Rfid;
             lbCardType.Text = card.Type.ToString();
             lbVehicalType.Text = card.Vehicle_type.Name;
             lbVehicalPlate.Text = "Scanning...";
-            lbCheckInTime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            lbCheckInTime.Text = _currentSession.Checkin_time?.ToString("dd/MM/yyyy HH:mm:ss");
             lbCheckOutTime.Text = "";
             lbTotalTime.Text = "";
             lbTotalPrice.Text = "";
 
+
             if (card.Vehicle_type.Id == VehicleTypeID.CAR || card.Vehicle_type.Id == VehicleTypeID.MOTORBIKE)
             {
-                var result = await ANPR.ProcessImageAsync(backImage);
+                var result = await ANPR.ProcessImageAsync(_currentBackImage);
 
                 if (result != null)
                 {
                     //setImage to pbPlate
-                    pbPlateRecord.Image = result.Image;
+                    _currentPlateImage = result.Image;
+                    pbPlateRecord.Image = _currentPlateImage;
                     lbVehicalPlate.Text = result.PlateNumber;
+                    _currentSession.License_plate = result.PlateNumber;
 
                     //save image to file and get path
-                    //ImageHelper.SaveImage(frontImage);
-                    //ImageHelper.SaveImage(backImage);
-                    //ImageHelper.SaveImage(result.Image);
+                   
                     btnOpenGate.Enabled = true;
 
                 }
