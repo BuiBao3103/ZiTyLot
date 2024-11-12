@@ -36,27 +36,40 @@ namespace ZiTyLot.GUI
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Convert selectedDateFrom to DateTime with full time details
+                DateTime selectedDateFrom = calendarFrom.SelectionStart;
+                int hourFrom = Convert.ToInt32(listHourFrom.SelectedItem);
+                int minuteFrom = Convert.ToInt32(listMinuteFrom.SelectedItem);
+                if (listAmPmFrom.SelectedItem.ToString().ToUpper() == "PM" && hourFrom < 12) hourFrom += 12;
+                DateTime dateTimeFrom = new DateTime(selectedDateFrom.Year, selectedDateFrom.Month, selectedDateFrom.Day, hourFrom, minuteFrom, 0);
 
-            DateTime selectedDateFrom = calendarFrom.SelectionStart;
-            string hourFrom = listHourFrom.SelectedItem.ToString().PadLeft(2, '0');
-            string minuteFrom = listMinuteFrom.SelectedItem.ToString().PadLeft(2, '0');
-            string ampmFrom = listAmPmFrom.SelectedItem.ToString().ToUpper();
+                // Convert selectedDateTo to DateTime with full time details
+                DateTime selectedDateTo = calendarTo.SelectionStart;
+                int hourTo = Convert.ToInt32(listHourTo.SelectedItem);
+                int minuteTo = Convert.ToInt32(listMinuteTo.SelectedItem);
+                if (listAmPmTo.SelectedItem.ToString().ToUpper() == "PM" && hourTo < 12) hourTo += 12;
+                DateTime dateTimeTo = new DateTime(selectedDateTo.Year, selectedDateTo.Month, selectedDateTo.Day, hourTo, minuteTo, 0);
 
-            DateTime selectedDateTo = calendarTo.SelectionStart;
-            string hourTo = listHourTo.SelectedItem.ToString().PadLeft(2, '0');
-            string minuteTo = listMinuteTo.SelectedItem.ToString().PadLeft(2, '0');
-            string ampmTo = listAmPmTo.SelectedItem.ToString().ToUpper();
+                // Validate the DateTime range
+                if (dateTimeFrom >= dateTimeTo)
+                {
+                    MessageBox.Show("Invalid date time range. The begin time must be earlier than the end time.");
+                    return;
+                }
 
-            string from = selectedDateFrom.ToString("yyyy-MM-dd") + " " + hourFrom + ":" + minuteFrom + " " + ampmFrom;
-            string to = selectedDateTo.ToString("yyyy-MM-dd") + " " + hourTo + ":" + minuteTo + " " + ampmTo;
-            string combine = from + " - " + to;
-            
-            this.Visible = false;
-
-            DateTimeConfirmed?.Invoke(this, combine);
-            
-            MessageBox.Show(combine);
-
+                // Combine date and time information for display or further processing
+                string combine = $"{dateTimeFrom} - {dateTimeTo}";
+                this.Visible = false;
+                DateTimeConfirmed?.Invoke(this, combine);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid date time range.");
+            }
         }
+
+
     }
 }
