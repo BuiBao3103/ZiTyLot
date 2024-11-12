@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Sunny.UI;
 using iTextSharp.text.pdf.qrcode;
 using System.Windows.Media.Media3D;
+using ZiTyLot.BUS;
 
 namespace ZiTyLot.GUI
 {
@@ -62,7 +63,12 @@ namespace ZiTyLot.GUI
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Logout");
+            AuthManager.Logout();
+            Home home = this.Parent as Home;
+            home.Hide();
+            Login login = new Login();
+            login.FormClosed += (s, args) => home.Close();
+            login.Show();
         }
 
         private void btnDownload_Click(object sender, EventArgs e)

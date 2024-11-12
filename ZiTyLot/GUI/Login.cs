@@ -2,9 +2,8 @@
 using System.Drawing;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
-using ZiTyLot.GUI.component_extensions;
-using ZiTyLot.GUI;
 using System.Diagnostics;
+using ZiTyLot.GUI.Utils;
 namespace ZiTyLot.GUI
 {
     public partial class Login : Form
@@ -30,61 +29,18 @@ namespace ZiTyLot.GUI
             }
         }
 
-        private void inputUsername_Enter(object sender, EventArgs e)
-        {
-            if (inputUsername.Text == "Enter username")
-            {
-                inputUsername.Text = "";
-                inputUsername.ForeColor = Color.Black;
-            }
-        }
-
-        private void inputUsername_Leave(object sender, EventArgs e)
-        {
-            if (inputUsername.Text == "")
-            {
-                inputUsername.Text = "Enter username";
-                inputUsername.ForeColor = Color.Gray;
-            }
-        }
-
-        private void inputPassword_Enter(object sender, EventArgs e)
-        {
-            if (inputPassword.Text == "Enter password")
-            {
-                inputPassword.Text = "";
-                inputPassword.ForeColor = Color.Black;
-            }
-
-        }
-
-        private void inputPassword_Leave(object sender, EventArgs e)
-        {
-            if (inputPassword.Text == "")
-            {
-                inputPassword.Text = "Enter password";
-                inputPassword.ForeColor = Color.Gray;
-            }
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnSignin_Click(object sender, EventArgs e)
         {
             try
             {
                 authManager.Login(inputUsername.Text, inputPassword.Text);
-
                 this.Hide();
                 new Home().Show();
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageHelper.ShowError(ex.Message);
             }
         }
     }

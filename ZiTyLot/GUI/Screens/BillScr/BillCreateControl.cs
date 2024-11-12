@@ -155,7 +155,6 @@ namespace ZiTyLot.GUI.Screens.BillScr
         {
             pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
-            //home = this.ParentForm as Home;
         }
 
         private void pnlTop_Resize(object sender, EventArgs e)

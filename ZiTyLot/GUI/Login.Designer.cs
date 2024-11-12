@@ -70,7 +70,7 @@
             this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -87,7 +87,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(13, 49, 13, 12);
             this.panel1.Size = new System.Drawing.Size(490, 682);
@@ -222,8 +222,6 @@
             this.inputPassword.Watermark = "Enter your password";
             this.inputPassword.WatermarkActiveColor = System.Drawing.Color.DimGray;
             this.inputPassword.WatermarkColor = System.Drawing.SystemColors.ControlDark;
-            this.inputPassword.Leave += new System.EventHandler(this.inputPassword_Leave);
-            this.inputPassword.Enter += new System.EventHandler(this.inputPassword_Enter);
             // 
             // uiPanel1
             // 
@@ -281,8 +279,6 @@
             this.inputUsername.Watermark = "Enter your username";
             this.inputUsername.WatermarkActiveColor = System.Drawing.Color.DimGray;
             this.inputUsername.WatermarkColor = System.Drawing.SystemColors.ControlDark;
-            this.inputUsername.Leave += new System.EventHandler(this.inputUsername_Leave);
-            this.inputUsername.Enter += new System.EventHandler(this.inputUsername_Enter);
             // 
             // uiPanel4
             // 
@@ -317,7 +313,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox1.Image = global::ZiTyLot.Properties.Resources.logo_mini;
             this.pictureBox1.Location = new System.Drawing.Point(13, 49);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(464, 52);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -329,7 +325,7 @@
             this.panel2.Controls.Add(this.rightImage);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(502, 4);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.panel2.Size = new System.Drawing.Size(739, 682);
@@ -341,7 +337,7 @@
             this.rightImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rightImage.Image = ((System.Drawing.Image)(resources.GetObject("rightImage.Image")));
             this.rightImage.Location = new System.Drawing.Point(13, 12);
-            this.rightImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rightImage.Margin = new System.Windows.Forms.Padding(4);
             this.rightImage.Name = "rightImage";
             this.rightImage.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.rightImage.Size = new System.Drawing.Size(713, 658);
@@ -377,7 +373,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1061, 603);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
