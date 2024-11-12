@@ -213,6 +213,7 @@
             this.inputPassword.MinimumSize = new System.Drawing.Size(0, 34);
             this.inputPassword.Name = "inputPassword";
             this.inputPassword.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
+            this.inputPassword.PasswordChar = '*';
             this.inputPassword.RectColor = System.Drawing.SystemColors.ControlDark;
             this.inputPassword.RectSize = 2;
             this.inputPassword.ShowText = false;

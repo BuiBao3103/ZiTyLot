@@ -36,7 +36,9 @@ namespace ZiTyLot.GUI
             {
                 authManager.Login(inputUsername.Text, inputPassword.Text);
                 this.Hide();
-                new Home().Show();
+                Home home = new Home();
+                home.Closed += (s, args) => this.Close();
+                home.Show();
             }
             catch (Exception ex)
             {

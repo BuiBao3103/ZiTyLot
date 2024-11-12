@@ -190,7 +190,7 @@ namespace ZiTyLot.BUS
                 RoleFunctionBUS roleFunctionBUS = new RoleFunctionBUS();
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition("role_id", CompOp.Equals, item.Id)
+                    new FilterCondition(nameof(RoleFunction.Role_id), CompOp.Equals, item.Id)
                 };
                 List<RoleFunction> roleFunctions = roleFunctionDAO.GetAll(filters);
                 List<Function> functions = new List<Function>();
