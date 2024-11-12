@@ -214,4 +214,12 @@ public class CameraHelper : IDisposable
     {
         DisposeAsync().Wait();
     }
+    public Image GetImageFromPictureBox(PictureBox pictureBox)
+    {
+        if (pictureBox.Image != null)
+        {
+            return (Image)pictureBox.Image.Clone();
+        }
+        return null;
+    }
 }

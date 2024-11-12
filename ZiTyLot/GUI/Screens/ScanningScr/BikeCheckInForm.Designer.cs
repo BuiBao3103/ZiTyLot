@@ -327,12 +327,12 @@
             // 
             this.lbBackCameraStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbBackCameraStatus.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.lbBackCameraStatus.ForeColor = System.Drawing.Color.Gray;
+            this.lbBackCameraStatus.ForeColor = System.Drawing.Color.Red;
             this.lbBackCameraStatus.Location = new System.Drawing.Point(159, 51);
             this.lbBackCameraStatus.Name = "lbBackCameraStatus";
             this.lbBackCameraStatus.Size = new System.Drawing.Size(463, 51);
             this.lbBackCameraStatus.TabIndex = 13;
-            this.lbBackCameraStatus.Text = "Not found";
+            this.lbBackCameraStatus.Text = "Disconnected";
             this.lbBackCameraStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel4
@@ -351,12 +351,12 @@
             // 
             this.lbFrontCameraStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbFrontCameraStatus.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.lbFrontCameraStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lbFrontCameraStatus.ForeColor = System.Drawing.Color.Red;
             this.lbFrontCameraStatus.Location = new System.Drawing.Point(159, 0);
             this.lbFrontCameraStatus.Name = "lbFrontCameraStatus";
             this.lbFrontCameraStatus.Size = new System.Drawing.Size(463, 51);
             this.lbFrontCameraStatus.TabIndex = 11;
-            this.lbFrontCameraStatus.Text = "Connected";
+            this.lbFrontCameraStatus.Text = "Disconnected";
             this.lbFrontCameraStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnlBackRecord

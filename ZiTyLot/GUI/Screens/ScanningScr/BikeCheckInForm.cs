@@ -130,16 +130,47 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 _settingForm = new SettingForm(_frontCameraId, _backCameraId, _serialPort?.PortName);
 
                 // Kết nối camera
-                _settingForm.ConnectCameraFront += (sender, cameraId) => StartFrontCamera(cameraId);
-                _settingForm.ConnectCameraBack += (sender, cameraId) => StartBackCamera(cameraId);
+                _settingForm.ConnectCameraFront += (sender, cameraId) =>
+                {
+                    StartFrontCamera(cameraId);
+                    lbFrontCameraStatus.Text = "Connected";
+                    lbFrontCameraStatus.ForeColor = Color.Green;
+
+                };
+                _settingForm.ConnectCameraBack += (sender, cameraId) =>
+                {
+                    StartBackCamera(cameraId);
+                    lbBackCameraStatus.Text = "Connected";
+                    lbBackCameraStatus.ForeColor = Color.Green;
+                };
 
                 // Ngắt kết nối camera - sử dụng async
-                _settingForm.DisconnectCameraFront += async (sender, e) => await StopFrontCameraAsync();
-                _settingForm.DisconnectCameraBack += async (sender, e) => await StopBackCameraAsync();
+                _settingForm.DisconnectCameraFront += async (sender, e) =>
+                {
+                    await StopFrontCameraAsync();
+                    lbFrontCameraStatus.Text = "Disconnected";
+                    lbFrontCameraStatus.ForeColor = Color.Red;
+                };
+                _settingForm.DisconnectCameraBack += async (sender, e) =>
+                {
+                    await StopBackCameraAsync();
+                    lbBackCameraStatus.Text = "Disconnected";
+                    lbBackCameraStatus.ForeColor = Color.Red;
+                };
 
                 // Gate events
-                _settingForm.ConnectGate += (sender, port) => ConnectGate(port);
-                _settingForm.DisconnectGate += (sender, e) => DisconnectGate();
+                _settingForm.ConnectGate += (sender, port) =>
+                {
+                    ConnectGate(port);
+                    lbBoomGateStatus.Text = "Connected";
+                    lbBoomGateStatus.ForeColor = Color.Green;
+                };
+                _settingForm.DisconnectGate += (sender, e) =>
+                {
+                    DisconnectGate();
+                    lbBoomGateStatus.Text = "Disconnected";
+                    lbBoomGateStatus.ForeColor = Color.Red;
+                };
 
                 _settingForm.Show();
             }
@@ -266,9 +297,11 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         }
         private async void StartVisitorProcess(Card card)
         {
+            Console.WriteLine("StartVisitorProcess");
             _processState = ProcessState.Scanning;
-            System.Drawing.Image frontImage = pbFrontCamera.Image;
-            System.Drawing.Image backImage = pbBackCamera.Image;
+
+            System.Drawing.Image frontImage = _cameraHelper.GetImageFromPictureBox(pbFrontCamera);
+            System.Drawing.Image backImage = _cameraHelper.GetImageFromPictureBox(pbBackCamera);
 
             pbFrontRecord.Image = frontImage;
             pbBackRecord.Image = backImage;
