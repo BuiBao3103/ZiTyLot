@@ -20,17 +20,13 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
     public partial class BikeCheckInForm : Form
     {
         private readonly CardBUS _cardBUS = new CardBUS();
-        private readonly VehicleTypeBUS _vehicleTypeBUS = new VehicleTypeBUS();
 
-        private List<VehicleType> _vehicleTypes;
-
-        private readonly FilterInfoCollection cameras;
-        private VideoCaptureDevice frontCamera;
-        private VideoCaptureDevice backCamera;
-        private string frontCameraId;
-        private string backCameraId;
-        private readonly Dictionary<string, int> cameraUsageCount; // Đếm số lượng camera đang sử dụng cùng một nguồn
-        private readonly Dictionary<string, VideoCaptureDevice> sharedDevices; // Quản lý các thiết bị được chia sẻ
+        private readonly CameraHelper _cameraHelper = new CameraHelper();
+        private VideoCaptureDevice _frontCamera;
+        private VideoCaptureDevice _backCamera;
+        private string _frontCameraId;
+        private string _backCameraId;
+        private bool _isClosing = false;
 
         private SettingForm _settingForm;
 
@@ -50,12 +46,6 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             uiTableLayoutPanel3.Resize += uiTableLayoutPanel3_Resize;
             uiTableLayoutPanel2.Resize += uiTableLayoutPanel2_Resize;
 
-            _vehicleTypes = _vehicleTypeBUS.GetAll();
-
-            // Khởi tạo các collection
-            cameras = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            cameraUsageCount = new Dictionary<string, int>();
-            sharedDevices = new Dictionary<string, VideoCaptureDevice>();
 
             // Cấu hình PictureBox
             this.pbFrontCamera.SizeMode = PictureBoxSizeMode.Zoom;
@@ -67,153 +57,98 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             _rfidReader = new RFIDReader();
             _rfidReader.RFIDScanned += RfidReader_RFIDScanned; // Đăng ký sự kiện
         }
-        private VideoCaptureDevice GetOrCreateDevice(string cameraId)
-        {
-            if (!sharedDevices.ContainsKey(cameraId))
-            {
-                var device = new VideoCaptureDevice(cameraId);
-                sharedDevices[cameraId] = device;
-                cameraUsageCount[cameraId] = 0;
-            }
-            cameraUsageCount[cameraId]++;
-            return sharedDevices[cameraId];
-        }
-        private void ReleaseDevice(string cameraId)
-        {
-            if (string.IsNullOrEmpty(cameraId)) return;
 
-            if (cameraUsageCount.ContainsKey(cameraId))
-            {
-                cameraUsageCount[cameraId]--;
-                if (cameraUsageCount[cameraId] <= 0)
-                {
-                    if (sharedDevices.ContainsKey(cameraId))
-                    {
-                        var device = sharedDevices[cameraId];
-                        if (device.IsRunning)
-                        {
-                            device.SignalToStop();
-                            device.WaitForStop();
-                        }
-                        sharedDevices.Remove(cameraId);
-                    }
-                    cameraUsageCount.Remove(cameraId);
-                }
-            }
-        }
+
         public void StartFrontCamera(string cameraId)
         {
-            if (frontCamera != null)
+            if (_frontCamera != null)
             {
-                ReleaseDevice(frontCameraId);
+                Task.Run(() => _cameraHelper.StopCameraAsync(_frontCameraId, _frontCamera, pbFrontCamera));
             }
 
-            frontCameraId = cameraId;
-            frontCamera = GetOrCreateDevice(cameraId);
-
-            if (!frontCamera.IsRunning)
-            {
-                frontCamera.NewFrame += FrontCamera_NewFrame;
-                frontCamera.Start();
-            }
-            else
-            {
-                frontCamera.NewFrame += FrontCamera_NewFrame;
-            }
+            _frontCameraId = cameraId;
+            _cameraHelper.StartCamera(cameraId, pbFrontCamera, out _frontCamera);
         }
 
         public void StartBackCamera(string cameraId)
         {
-            if (backCamera != null)
+            if (_backCamera != null)
             {
-                ReleaseDevice(backCameraId);
+                Task.Run(() => _cameraHelper.StopCameraAsync(_backCameraId, _backCamera, pbBackCamera));
             }
 
-            backCameraId = cameraId;
-            backCamera = GetOrCreateDevice(cameraId);
+            _backCameraId = cameraId;
+            _cameraHelper.StartCamera(cameraId, pbBackCamera, out _backCamera);
+        }
 
-            if (!backCamera.IsRunning)
+        public async Task StopFrontCameraAsync()
+        {
+            await _cameraHelper.StopCameraAsync(_frontCameraId, _frontCamera, pbFrontCamera);
+            _frontCamera = null;
+            _frontCameraId = null;
+        }
+
+        public async Task StopBackCameraAsync()
+        {
+            await _cameraHelper.StopCameraAsync(_backCameraId, _backCamera, pbBackCamera);
+            _backCamera = null;
+            _backCameraId = null;
+        }
+
+        public async Task StopAllCamerasAsync()
+        {
+            var tasks = new List<Task>
+        {
+            StopFrontCameraAsync(),
+            StopBackCameraAsync()
+        };
+            await Task.WhenAll(tasks);
+        }
+
+        private async void BikeCheckInForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (_isClosing) return;
+
+            _isClosing = true;
+            e.Cancel = true; // Tạm thời cancel việc đóng form
+
+            try
             {
-                backCamera.NewFrame += BackCamera_NewFrame;
-                backCamera.Start();
+                await StopAllCamerasAsync();
+                await _cameraHelper.DisposeAsync();
+            }
+            finally
+            {
+                this.Close(); // Đóng form sau khi đã cleanup xong
+            }
+        }
+
+        private async void ShowSettingForm()
+        {
+            if (_settingForm == null || _settingForm.IsDisposed)
+            {
+                _settingForm = new SettingForm(_frontCameraId, _backCameraId, _serialPort?.PortName);
+
+                // Kết nối camera
+                _settingForm.ConnectCameraFront += (sender, cameraId) => StartFrontCamera(cameraId);
+                _settingForm.ConnectCameraBack += (sender, cameraId) => StartBackCamera(cameraId);
+
+                // Ngắt kết nối camera - sử dụng async
+                _settingForm.DisconnectCameraFront += async (sender, e) => await StopFrontCameraAsync();
+                _settingForm.DisconnectCameraBack += async (sender, e) => await StopBackCameraAsync();
+
+                // Gate events
+                _settingForm.ConnectGate += (sender, port) => ConnectGate(port);
+                _settingForm.DisconnectGate += (sender, e) => DisconnectGate();
+
+                _settingForm.Show();
             }
             else
             {
-                backCamera.NewFrame += BackCamera_NewFrame;
+                if (_settingForm.WindowState == FormWindowState.Minimized)
+                    _settingForm.WindowState = FormWindowState.Normal;
+                _settingForm.BringToFront();
             }
-        }
-
-        private void FrontCamera_NewFrame(object sender, NewFrameEventArgs args)
-        {
-            if (pbFrontCamera.IsDisposed) return;
-
-            try
-            {
-                var frame = (Bitmap)args.Frame.Clone();
-                pbFrontCamera.Invoke(new Action(() => pbFrontCamera.Image = frame));
-            }
-            catch (ObjectDisposedException)
-            {
-                StopFrontCamera();
-            }
-        }
-
-        private void BackCamera_NewFrame(object sender, NewFrameEventArgs args)
-        {
-            if (pbBackCamera.IsDisposed) return;
-
-            try
-            {
-                var frame = (Bitmap)args.Frame.Clone();
-                pbBackCamera.Invoke(new Action(() => pbBackCamera.Image = frame));
-            }
-            catch (ObjectDisposedException)
-            {
-                StopBackCamera();
-            }
-        }
-
-        public void StopFrontCamera()
-        {
-            if (frontCamera != null)
-            {
-                frontCamera.NewFrame -= FrontCamera_NewFrame;
-                ReleaseDevice(frontCameraId);
-                frontCamera = null;
-                frontCameraId = null;
-            }
-            if (pbFrontCamera != null && !pbFrontCamera.IsDisposed)
-            {
-                pbFrontCamera.Image = null;
-            }
-        }
-
-        public void StopBackCamera()
-        {
-            if (backCamera != null)
-            {
-                backCamera.NewFrame -= BackCamera_NewFrame;
-                ReleaseDevice(backCameraId);
-                backCamera = null;
-                backCameraId = null;
-            }
-            if (pbBackCamera != null && !pbBackCamera.IsDisposed)
-            {
-                pbBackCamera.Image = null;
-            }
-        }
-
-        public void StopAllCameras()
-        {
-            StopFrontCamera();
-            StopBackCamera();
-        }
-
-        private void BikeCheckInForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-            StopAllCameras();
-            base.OnFormClosing(e);
         }
         private void btnOpen_Resize(object sender, System.EventArgs e)
         {
@@ -274,26 +209,6 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             }
         }
 
-        private void ShowSettingForm()
-        {
-            if (_settingForm == null || _settingForm.IsDisposed)
-            {
-                _settingForm = new SettingForm(frontCameraId, backCameraId, _serialPort?.PortName);
-                _settingForm.ConnectCameraFront += (sender, cameraId) => StartFrontCamera(cameraId);
-                _settingForm.ConnectCameraBack += (sender, cameraId) => StartBackCamera(cameraId);
-                _settingForm.DisconnectCameraFront += (sender, e) => StopFrontCamera();
-                _settingForm.DisconnectCameraBack += (sender, e) => StopBackCamera();
-                _settingForm.ConnectGate += (sender, port) => ConnectGate(port);
-                _settingForm.DisconnectGate += (sender, e) => DisconnectGate();
-                _settingForm.Show();
-            }
-            else
-            {
-                if (_settingForm.WindowState == FormWindowState.Minimized)
-                    _settingForm.WindowState = FormWindowState.Normal;
-                _settingForm.BringToFront();
-            }
-        }
 
         private void ConnectGate(string port)
         {

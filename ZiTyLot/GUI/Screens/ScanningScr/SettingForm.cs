@@ -21,7 +21,9 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
     {
         private FilterInfoCollection cameras;
         private readonly List<string> monikerStrings = new List<string>();
-        private SerialPort serialPort;
+        public bool IsFrontCameraConnected { get; private set; }
+        public bool IsBackCameraConnected { get; private set; }
+
         public SettingForm(string frontCameraId, string backCameraId, string serialPort)
         {
             InitializeComponent();
@@ -54,8 +56,8 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
 
         public event EventHandler<string> ConnectCameraFront;
         public event EventHandler<string> ConnectCameraBack;
-        public event EventHandler DisconnectCameraFront;
-        public event EventHandler DisconnectCameraBack;
+        public event Func<object, EventArgs, Task> DisconnectCameraFront;
+        public event Func<object, EventArgs, Task> DisconnectCameraBack;
         public event EventHandler<string> ConnectGate;
         public event EventHandler DisconnectGate;
         private void GetVideoDevices()
@@ -129,14 +131,19 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         private void btnConnectCameraFront_Click(object sender, EventArgs e)
         {
             ConnectCameraFront?.Invoke(this, cameras[cbFront.SelectedIndex].MonikerString);
+            IsFrontCameraConnected = true;
+
             btnConnectCameraFront.Enabled = false;
             btnDisconnectCameraFront.Enabled = true;
             cbFront.Enabled = false;
         }
 
-        private void btnDisconnectCameraFront_Click(object sender, EventArgs e)
+        private async void btnDisconnectCameraFront_Click(object sender, EventArgs e)
         {
-            DisconnectCameraFront?.Invoke(this, e);
+            if (DisconnectCameraFront != null)
+                await DisconnectCameraFront.Invoke(this, EventArgs.Empty);
+            IsFrontCameraConnected = false;
+
             btnConnectCameraFront.Enabled = true;
             btnDisconnectCameraFront.Enabled = false;
             cbFront.Enabled = true;
@@ -145,14 +152,19 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         private void btnConnectCameraBack_Click(object sender, EventArgs e)
         {
             ConnectCameraBack?.Invoke(this, cameras[cbBack.SelectedIndex].MonikerString);
+            IsBackCameraConnected = true;
+
             btnConnectCameraBack.Enabled = false;
             btnDisconnectCameraBack.Enabled = true;
             cbBack.Enabled = false;
         }
 
-        private void btnDisconnectCameraBack_Click(object sender, EventArgs e)
+        private async void btnDisconnectCameraBack_Click(object sender, EventArgs e)
         {
-            DisconnectCameraBack?.Invoke(this, e);
+            if (DisconnectCameraBack != null)
+                await DisconnectCameraBack.Invoke(this, EventArgs.Empty);
+            IsBackCameraConnected = false;
+
             btnConnectCameraBack.Enabled = true;
             btnDisconnectCameraBack.Enabled = false;
             cbBack.Enabled = true;

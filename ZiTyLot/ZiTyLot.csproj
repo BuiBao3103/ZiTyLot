@@ -675,6 +675,7 @@
     <Compile Include="GUI\Utils\ValidationInputException.cs" />
     <Compile Include="Helper\ANPR.cs" />
     <Compile Include="Helper\Arduino.cs" />
+    <Compile Include="Helper\CameraHelper.cs" />
     <Compile Include="Helper\Debouncer.cs" />
     <Compile Include="Helper\ExcelHelper.cs" />
     <Compile Include="Helper\FilterCondition.cs" />
