@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ZiTyLot.DAO;
 using ZiTyLot.ENTITY;
 using ZiTyLot.Helper;
@@ -20,6 +17,28 @@ namespace ZiTyLot.BUS
             this.sessionDAO = new SessionDAO();
             this.cardDAO = new CardDAO();
             this.imageDAO = new ImageDAO();
+        }
+
+        public Session Create(Session newSession, List<Image> images)
+        {
+            try
+            {
+                newSession.Created_at = DateTime.Now;
+                newSession = sessionDAO.AddAndGet(newSession);
+                foreach (Image image in images)
+                {
+                    image.Created_at = DateTime.Now;
+                    image.Session_id = newSession.Id;
+                    imageDAO.Add(image);
+                }
+
+                //UPDATE STATUS OF SLOT
+                return newSession;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public void Add(Session item)
@@ -103,7 +122,7 @@ namespace ZiTyLot.BUS
         //
         private void Validate(Session item)
         {
-           
+
         }
 
         private void EnsureRecordExists(object id)

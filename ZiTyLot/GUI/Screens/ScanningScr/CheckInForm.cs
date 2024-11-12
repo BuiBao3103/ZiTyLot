@@ -340,31 +340,43 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                     Arduino.CloseBarrier(_serialPort);
                     btnOpenGate.Enabled = false;
                     btnOpenGate.Text = btnOpenGate.Text.Replace("CLOSE", "OPEN");
-                    _sessionBUS.Add(_currentSession);
 
-                    ENTITY.Image frontImage = new ENTITY.Image();
-                    frontImage.Url = ImageHelper.SaveImage(_currentFrontImage);
-                    frontImage.Type = ImageType.BEFORE_CHECKIN;
-                    _imageBUS.Add(frontImage);
-
-                    ENTITY.Image backImage = new ENTITY.Image();
-                    backImage.Url = ImageHelper.SaveImage(_currentBackImage);
-                    backImage.Type = ImageType.AFTER_CHECKIN;
-                    _imageBUS.Add(backImage);
-
-                    if (_currentPlateImage != null)
-                    {
-                        ENTITY.Image plateImage = new ENTITY.Image();
-                        plateImage.Url = ImageHelper.SaveImage(_currentPlateImage);
-                        plateImage.Type = ImageType.LICENSE_PLATE_CHECKOUT;
-                        _imageBUS.Add(plateImage);
-                    }
+                    AddNewSession();
 
                     lbProcessState.Text = ProcessState.Ready.ToString();
                     _processState = ProcessState.Ready;
                 }
             }
 
+        }
+        private void AddNewSession()
+        {
+            List<ENTITY.Image> images = new List<ENTITY.Image>();
+
+            ENTITY.Image frontImage = new ENTITY.Image()
+            {
+                Url = ImageHelper.SaveImage(_currentFrontImage),
+                Type = ImageType.BEFORE_CHECKIN
+            };
+            images.Add(frontImage);
+
+            ENTITY.Image backImage = new ENTITY.Image()
+            {
+                Url = ImageHelper.SaveImage(_currentBackImage),
+                Type = ImageType.AFTER_CHECKIN
+            };
+            images.Add(backImage);
+
+            if (_currentPlateImage != null)
+            {
+                ENTITY.Image plateImage = new ENTITY.Image()
+                {
+                    Url = ImageHelper.SaveImage(_currentPlateImage),
+                    Type = ImageType.LICENSE_PLATE_CHECKIN
+                };
+                images.Add(plateImage);
+            }
+            _sessionBUS.Create(_currentSession, images);
         }
         private async void StartVisitorProcess(Card card)
         {
@@ -462,7 +474,24 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         }
         private void btnOpen_Click(object sender, EventArgs e)
         {
+            if (_isGateClose)
+            {
+                _isGateClose = false;
+                Arduino.OpenBarrier(_serialPort);
+                btnOpenGate.Text = btnOpenGate.Text.Replace("OPEN", "CLOSE");
+            }
+            else
+            {
+                _isGateClose = true;
+                Arduino.CloseBarrier(_serialPort);
+                btnOpenGate.Enabled = false;
+                btnOpenGate.Text = btnOpenGate.Text.Replace("CLOSE", "OPEN");
 
+                AddNewSession();
+
+                lbProcessState.Text = ProcessState.Ready.ToString();
+                _processState = ProcessState.Ready;
+            }
         }
 
         private bool ValidateVisitorCard(Card card)

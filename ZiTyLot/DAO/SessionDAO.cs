@@ -22,6 +22,10 @@ namespace ZiTyLot.DAO
         {
             factoryDAO.Add(item);
         }
+        public Session AddAndGet(Session item)
+        {
+            return factoryDAO.AddAndGet(item);
+        }
 
         public void Delete(object id)
         {

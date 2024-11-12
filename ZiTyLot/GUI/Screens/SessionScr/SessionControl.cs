@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
+using ZiTyLot.Constants;
 using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
@@ -236,6 +237,8 @@ namespace ZiTyLot.GUI.Screens
         private void ChangePage(int pageNumber)
         {
             pageable.PageNumber = pageNumber;
+            pageable.SortBy =nameof(Session.Created_at);
+            pageable.SortOrder = SortOrderPageable.Descending;
             page = sessionBUS.GetAllPagination(pageable, filters);
             LoadPageAndPageable();
         }
