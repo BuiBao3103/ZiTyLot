@@ -923,6 +923,7 @@
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_View.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Visitor.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Vistor-Active.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Wrench.png" />
     <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Account-Active.png" />
     <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Account.png" />
     <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Area-Active.png" />

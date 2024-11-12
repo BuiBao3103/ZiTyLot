@@ -86,7 +86,7 @@ namespace ZiTyLot.GUI.Screens.AreaScr
                 System.Drawing.Image icon = null;
                 if (e.ColumnIndex == tableSlot.Columns["colAction"].Index)
                 {
-                    icon = Properties.Resources.Icon_18x18px_View;
+                    icon = Properties.Resources.Icon_18x18px_Wrench;
                 }
                 else if (e.ColumnIndex == tableSlot.Columns["colDelete"].Index)
                 {
