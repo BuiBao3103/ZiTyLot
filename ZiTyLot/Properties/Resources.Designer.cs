@@ -503,6 +503,16 @@ namespace ZiTyLot.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icon_18x18px_Wrench {
+            get {
+                object obj = ResourceManager.GetObject("Icon-18x18px_Wrench", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icon_24x24px_Account {
             get {
                 object obj = ResourceManager.GetObject("Icon-24x24px_Account", resourceCulture);

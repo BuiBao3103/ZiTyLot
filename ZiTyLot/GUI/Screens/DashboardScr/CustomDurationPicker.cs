@@ -41,57 +41,62 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
             DateTime selectedDateFrom = calendarFrom.SelectionStart;
             DateTime selectedDateTo = calendarTo.SelectionStart;
 
+            if (selectedDateFrom > selectedDateTo)
+            {
+                MessageBox.Show("The start date must be earlier than the end date.");
+                return;
+            }
+
             string from = selectedDateFrom.ToString("yyyy-MM-dd");
             string to = selectedDateTo.ToString("yyyy-MM-dd");
             string combine = from + " to " + to;
 
             this.Visible = false;
-
             DateConfirmed?.Invoke(this, combine);
         }
 
+
         private void btnMonthConfirm_Click(object sender, EventArgs e)
         {
-            string monthFrom;
-            string yearFrom = listYearFrom.SelectedItem?.ToString();
-            string monthTo;
-            string yearTo = listYearTo.SelectedItem?.ToString();
-
-            if (yearFrom == null || yearTo == null)
+            if (!int.TryParse(listYearFrom.SelectedItem?.ToString(), out int yearFrom) ||
+                !int.TryParse(listYearTo.SelectedItem?.ToString(), out int yearTo) ||
+                !int.TryParse(listMonthFrom.SelectedItem?.ToString(), out int monthFrom) ||
+                !int.TryParse(listMonthTo.SelectedItem?.ToString(), out int monthTo) ||
+                monthFrom < 1 || monthFrom > 12 || monthTo < 1 || monthTo > 12)
             {
-                MessageBox.Show("Please select a year.");
+                MessageBox.Show("Please select valid month and year.");
                 return;
             }
 
-            if (!int.TryParse(listMonthFrom.SelectedItem?.ToString(), out int monthFromValue) ||
-                !int.TryParse(listMonthTo.SelectedItem?.ToString(), out int monthToValue))
+            DateTime fromDate = new DateTime(yearFrom, monthFrom, 1);
+            DateTime toDate = new DateTime(yearTo, monthTo, 1);
+
+            if (fromDate > toDate)
             {
-                MessageBox.Show("Invalid month selection.");
+                MessageBox.Show("The start date must be earlier than the end date.");
                 return;
             }
 
-            if (monthFromValue < 1 || monthFromValue > 12 || monthToValue < 1 || monthToValue > 12)
-            {
-                MessageBox.Show("Invalid month selection.");
-                return;
-            }
-
-            string from = yearFrom + "-" + monthFromValue;
-            string to = yearTo + "-" + monthToValue;
-            string combine = from + " to " + to;
-
+            string combine = $"{fromDate:yyyy-MM} to {toDate:yyyy-MM}";
             this.Visible = false;
-
             MonthConfirmed?.Invoke(this, combine);
         }
 
+
         private void btnYearConfirm_Click(object sender, EventArgs e)
         {
-            string yearFrom = listYearYearFrom.SelectedItem?.ToString();
-            string yearTo = listYearYearTo.SelectedItem?.ToString();
-            string combine = yearFrom + " to " + yearTo;
+            if (!int.TryParse(listYearYearFrom.SelectedItem?.ToString(), out int yearFrom) ||
+                !int.TryParse(listYearYearTo.SelectedItem?.ToString(), out int yearTo) ||
+                yearFrom > yearTo)
+            {
+                MessageBox.Show("Please select a valid year range.");
+                return;
+            }
+
+            string combine = $"{yearFrom} to {yearTo}";
             this.Visible = false;
             YearConfirmed?.Invoke(this, combine);
         }
+
     }
 }

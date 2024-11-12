@@ -450,6 +450,12 @@
     <Compile Include="GUI\Screens\ScanningScr\BikeCheckOutFrom.Designer.cs">
       <DependentUpon>BikeCheckOutFrom.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Screens\SessionScr\LostCardCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\SessionScr\LostCardCreateForm.Designer.cs">
+      <DependentUpon>LostCardCreateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Utils\BusinessException.cs" />
     <Compile Include="GUI\Utils\InputFormatter.cs" />
     <Compile Include="GUI\Utils\InputValidator.cs" />
@@ -810,6 +816,9 @@
     <EmbeddedResource Include="GUI\Screens\ScanningScr\SettingForm.resx">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\SessionScr\LostCardCreateForm.resx">
+      <DependentUpon>LostCardCreateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\SessionScr\SessionDetailForm.resx">
       <DependentUpon>SessionDetailForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -915,6 +924,7 @@
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_View.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Visitor.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Vistor-Active.png" />
+    <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Wrench.png" />
     <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Account-Active.png" />
     <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Account.png" />
     <Content Include="GUI\assets\Icon-24x24px\Icon-24x24px_Area-Active.png" />

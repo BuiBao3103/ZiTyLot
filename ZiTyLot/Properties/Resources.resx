@@ -127,8 +127,8 @@
   <data name="Icon-18x18px_Lost-Active" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Lost-Active.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon-24x24px_Resident" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\GUI\assets\Icon-24x24px\Icon-24x24px_Resident.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icon-24x24px_LostCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\GUI\assets\Icon-24x24px\Icon-24x24px_LostCard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icon-24x24px_Logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\Icon-24x24px\Icon-24x24px_Logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,6 +181,12 @@
   <data name="Icon-18x18px_View" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_View.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Icon-18x18px_Visitor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Visitor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon-24x24px_Scanning-Active" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\GUI\assets\Icon-24x24px\Icon-24x24px_Scanning-Active.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Icon-18x18px_Export-41" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Export-41.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -196,11 +202,11 @@
   <data name="Icon-18x18px_Import" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Import.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon-18x18px_Next" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Next.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Icon-18x18px_Import-42" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Import-42.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon-18x18px_Plus-Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Plus-Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icon-18x18px_Vistor-Active" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Vistor-Active.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,17 +220,17 @@
   <data name="Screenshot 2024-08-30 101445" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot 2024-08-30 101445.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon-24x24px_Scanning-Active" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\GUI\assets\Icon-24x24px\Icon-24x24px_Scanning-Active.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Icon-18x18px_CheckOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_CheckOut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icon-24x24px_Dashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\Icon-24x24px\Icon-24x24px_Dashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon-18x18px_Plus-Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Plus-Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icon-24x24px_Resident" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\GUI\assets\Icon-24x24px\Icon-24x24px_Resident.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon-18x18px_Next" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Next.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Zity-logo-NoZtech-02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\Zity-logo-NoZtech-02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,14 +241,14 @@
   <data name="scan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\scan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon-24x24px_LostCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\GUI\assets\Icon-24x24px\Icon-24x24px_LostCard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Icon-18x18px_Male" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Male.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icon-18x18px_CheckIn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_CheckIn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon-18x18px_Restore" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Restore.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icon-24x24px_Session-Active" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\Icon-24x24px\Icon-24x24px_Session-Active.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -313,9 +319,6 @@
   <data name="Icon-24x24px_Role-Active" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\Icon-24x24px\Icon-24x24px_Role-Active.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon-18x18px_Empty-Active" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Empty-Active.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Icon-18x18px_CheckOut-Active" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_CheckOut-Active.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -334,8 +337,8 @@
   <data name="Icon-24x24px_Role" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\Icon-24x24px\Icon-24x24px_Role.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon-18x18px_Visitor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Visitor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icon-18x18px_Empty-Active" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Empty-Active.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icon-18x18px_All" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_All.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -352,7 +355,7 @@
   <data name="Icon-18x18px_Female-Active" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Female-Active.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon-18x18px_Restore" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Restore.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icon-18x18px_Wrench" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\GUI\assets\Icon-18x18px\Icon-18x18px_Wrench.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
