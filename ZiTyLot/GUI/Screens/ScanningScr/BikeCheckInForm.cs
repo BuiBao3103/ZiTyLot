@@ -28,14 +28,15 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         private Dictionary<string, int> cameraUsageCount; // Đếm số lượng camera đang sử dụng cùng một nguồn
         private Dictionary<string, VideoCaptureDevice> sharedDevices; // Quản lý các thiết bị được chia sẻ
 
-        private SerialPort serialPort;
-        private RFIDReader rfidReader;
+        private SerialPort _serialPort;
+        private readonly RFIDReader _rfidReader;
+        private bool _isGateOpen = false;
         public BikeCheckInForm()
         {
             InitializeComponent();
             this.CenterToScreen();
             this.KeyPreview = true;
-            btnOpen.Resize += btnOpen_Resize;
+            btnOpenGate.Resize += btnOpen_Resize;
             uiTableLayoutPanel4.Resize += uiTableLayoutPanel4_Resize;
             uiTableLayoutPanel5.Resize += uiTableLayoutPanel5_Resize;
             uiTableLayoutPanel3.Resize += uiTableLayoutPanel3_Resize;
@@ -53,8 +54,8 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             this.pbBackRecord.SizeMode = PictureBoxSizeMode.Zoom;
             this.pbPlateRecord.SizeMode = PictureBoxSizeMode.Zoom;
 
-            rfidReader = new RFIDReader();
-            rfidReader.RFIDScanned += RfidReader_RFIDScanned; // Đăng ký sự kiện
+            _rfidReader = new RFIDReader();
+            _rfidReader.RFIDScanned += RfidReader_RFIDScanned; // Đăng ký sự kiện
         }
         private VideoCaptureDevice GetOrCreateDevice(string cameraId)
         {
@@ -208,11 +209,11 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         {
             if (this.Size.Width > 1800)
             {
-                btnOpen.Font = new System.Drawing.Font("Helvetica", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                btnOpenGate.Font = new System.Drawing.Font("Helvetica", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             }
             else
             {
-                btnOpen.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                btnOpenGate.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             }
         }
 
@@ -267,11 +268,13 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         {
             if (_settingForm == null || _settingForm.IsDisposed)
             {
-                _settingForm = new SettingForm(frontCameraId, backCameraId);
+                _settingForm = new SettingForm(frontCameraId, backCameraId, _serialPort?.PortName);
                 _settingForm.ConnectCameraFront += (sender, cameraId) => StartFrontCamera(cameraId);
                 _settingForm.ConnectCameraBack += (sender, cameraId) => StartBackCamera(cameraId);
                 _settingForm.DisconnectCameraFront += (sender, e) => StopFrontCamera();
                 _settingForm.DisconnectCameraBack += (sender, e) => StopBackCamera();
+                _settingForm.ConnectGate += (sender, port) => ConnectGate(port);
+                _settingForm.DisconnectGate += (sender, e) => DisconnectGate();
                 _settingForm.Show();
             }
             else
@@ -280,6 +283,20 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                     _settingForm.WindowState = FormWindowState.Normal;
                 _settingForm.BringToFront();
             }
+        }
+
+        private void ConnectGate(string port)
+        {
+            if (_serialPort != null)
+            {
+                _serialPort.Close();
+            }
+            _serialPort = Arduino.Connect(port);
+        }
+
+        private void DisconnectGate()
+        {
+            Arduino.Disconnect(_serialPort);
         }
         private void uiTableLayoutPanel2_Resize(object sender, EventArgs e)
         {
@@ -298,62 +315,74 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
 
         private void BikeCheckInForm_KeyPress(object sender, KeyPressEventArgs e)
         {
-            rfidReader.ProcessInput(e.KeyChar);
+            _rfidReader.ProcessInput(e.KeyChar);
             if (e.KeyChar == (char)Keys.Escape)
             {
                 ShowSettingForm();
             }
-            if (e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Space)
             {
-                StartVisitorProgress("rfid");
+                if (!_isGateOpen)
+                {
+                    _isGateOpen = true;
+                    Arduino.OpenBarrier(_serialPort);
+                }
+                else
+                {
+                    _isGateOpen = false;
+                    Arduino.CloseBarrier(_serialPort);
+                    btnOpenGate.Enabled = false;
+                }
             }
+
         }
 
         private async void StartVisitorProgress(string rfid)
         {
-            //List<FilterCondition> filters = new List<FilterCondition>()
-            //{
-            //    new FilterCondition(nameof(Card.Rfid), CompOp.Equals, rfid)
-            //};
-            //Card card = _cardBUS.GetAll(filters)?.FirstOrDefault();
-            //if (!ValidateVisitorCard(card)) return;
+           
 
-            //take photo from camera front and back at a pbCameraFront and pbCameraBack component
             if (pbFrontCamera.Image == null || pbBackCamera.Image == null)
             {
                 MessageHelper.ShowError("Please connect camera before scanning!");
                 return;
             }
 
-            //take photo from camera front and back
             System.Drawing.Image frontImage = pbFrontCamera.Image;
             System.Drawing.Image backImage = pbBackCamera.Image;
+            pbFrontRecord.Image = frontImage;
+            pbBackRecord.Image = backImage;
 
-            //save image to file and get path
-            string backImagePath = ImageHelper.SaveImage(frontImage);
-            string frontImagePath = ImageHelper.SaveImage(backImage);
 
-            DateTime start = DateTime.Now;
-            var result = await ANPR.ProcessImageAsync(backImagePath, ImageHelper.GetImageDirectory());
-            DateTime end = DateTime.Now;
-           
-            string time = (end - start).TotalSeconds.ToString();
-            MessageBox.Show("Time: " + time);
+            var result = await ANPR.ProcessImageAsync(backImage);
+
             if (result != null)
             {
                 //setImage to pbPlate
-                pbFrontRecord.Image = frontImage;
-                pbBackRecord.Image = backImage;
-                pbPlateRecord.Image = ImageHelper.LoadImage(result.ImagePath);
+                pbPlateRecord.Image = result.Image;
                 lbVehicalPlate.Text = result.PlateNumber;
+
+                //save image to file and get path
+                //ImageHelper.SaveImage(frontImage);
+                //ImageHelper.SaveImage(backImage);
+                //ImageHelper.SaveImage(result.Image);
+                btnOpenGate.Enabled = true;
             }
-         
+            else
+            {
+                MessageHelper.ShowError("Cannot detect plate number!");
+            }
+
         }
 
 
         private void RfidReader_RFIDScanned(object sender, string rfidCode)
         {
-            Debug.WriteLine("RFID Scanned: " + rfidCode);
+            List<FilterCondition> filters = new List<FilterCondition>()
+            {
+                new FilterCondition(nameof(Card.Rfid), CompOp.Equals, rfidCode)
+            };
+            Card card = _cardBUS.GetAll(filters)?.FirstOrDefault();
+            if (!ValidateVisitorCard(card)) return;
             StartVisitorProgress(rfidCode);
         }
         private void btnOpen_Click(object sender, EventArgs e)

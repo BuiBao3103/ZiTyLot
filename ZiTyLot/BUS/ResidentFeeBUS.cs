@@ -137,8 +137,6 @@ namespace ZiTyLot.BUS
                 throw new ValidationInputException("Fee cannot be negative");
             }
 
-            Console.WriteLine(item.Vehicle_type_id);
-            // Kiểm tra khóa ngoại
             if (item.Vehicle_type_id != null && vehicleTypeDAO.GetById(item.Vehicle_type_id) == null)
             {
                 throw new ValidationInputException("Vehicle type does not exist");

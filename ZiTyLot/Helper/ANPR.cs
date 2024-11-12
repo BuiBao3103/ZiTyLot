@@ -29,9 +29,6 @@ namespace ZiTyLot.Helper
         #region Models
         private class PlateDetectionResult
         {
-            public string inference_id { get; set; }
-            public double time { get; set; }
-            public ImageInfo image { get; set; }
             public List<Prediction> predictions { get; set; }
         }
 
@@ -40,29 +37,18 @@ namespace ZiTyLot.Helper
             public List<OcrPrediction> predictions { get; set; }
         }
 
-        private class ImageInfo
-        {
-            public int width { get; set; }
-            public int height { get; set; }
-        }
-
         private class Prediction
         {
             public double x { get; set; }
             public double y { get; set; }
             public double width { get; set; }
             public double height { get; set; }
-            public double confidence { get; set; }
-            public string @class { get; set; }
-            public int class_id { get; set; }
-            public string detection_id { get; set; }
         }
 
         private class OcrPrediction
         {
             public double x { get; set; }
             public double y { get; set; }
-            public double width { get; set; }
             public double height { get; set; }
             public double confidence { get; set; }
             public string @class { get; set; }
@@ -72,30 +58,29 @@ namespace ZiTyLot.Helper
 
         public class PlateResult
         {
-            public string ImagePath { get; set; }
+            public Image Image { get; set; }
             public string PlateNumber { get; set; }
             public double Confidence { get; set; }
         }
         #endregion
 
-        public static async Task<PlateResult> ProcessImageAsync(string imagePath, string outputDirectory)
+        public static async Task<PlateResult> ProcessImageAsync(Image imagePlate)
         {
-            if (!Directory.Exists(outputDirectory))
-            {
-                throw new DirectoryNotFoundException("Output directory not found");
-            }
-
             try
             {
                 // Đọc file và chuyển thành base64
-                byte[] imageBytes = await ReadFileBytesAsync(imagePath);
+                byte[] imageBytes = null;
+                using (var memoryStream = new MemoryStream())
+                {
+                    imagePlate.Save(memoryStream, ImageFormat.Jpeg);
+                    imageBytes = memoryStream.ToArray();
+                }
                 string base64Image = Convert.ToBase64String(imageBytes);
 
                 // Thực hiện detect plate
                 string detectionResult = await InferenceLocalAsync(base64Image, LPR_ENDPOINT_NAME);
                 if (detectionResult.StartsWith("Error:"))
                 {
-                    Console.WriteLine(detectionResult);
                     return null;
                 }
 
@@ -104,7 +89,7 @@ namespace ZiTyLot.Helper
                 {
                     using (var image = Image.FromStream(memoryStream))
                     {
-                        return await ProcessDetectedPlatesAsync(image, detectionResult, outputDirectory);
+                        return await ProcessDetectedPlatesAsync(image, detectionResult);
                     }
                 }
             }
@@ -112,16 +97,6 @@ namespace ZiTyLot.Helper
             {
                 Console.WriteLine($"Error processing image: {ex.Message}");
                 return null;
-            }
-        }
-
-        private static async Task<byte[]> ReadFileBytesAsync(string filePath)
-        {
-            using (var sourceStream = File.Open(filePath, FileMode.Open))
-            {
-                var result = new byte[sourceStream.Length];
-                await sourceStream.ReadAsync(result, 0, (int)sourceStream.Length);
-                return result;
             }
         }
 
@@ -150,7 +125,7 @@ namespace ZiTyLot.Helper
             }
         }
 
-        private static async Task<PlateResult> ProcessDetectedPlatesAsync(Image originalImage, string detectionJson, string outputDirectory)
+        private static async Task<PlateResult> ProcessDetectedPlatesAsync(Image originalImage, string detectionJson)
         {
             try
             {
@@ -180,14 +155,12 @@ namespace ZiTyLot.Helper
                         if (!ocrResult.StartsWith("Error:"))
                         {
                             var plateInfo = ExtractPlateNumber(ocrResult);
-                            
-                            // Lưu file khi có kết quả OCR thành công
-                            string outputPath = GetOutputFilePath(outputDirectory, prediction.confidence);
-                            File.WriteAllBytes(outputPath, memStream.ToArray());
+
+
 
                             return new PlateResult
                             {
-                                ImagePath = outputPath,
+                                Image = Image.FromStream(memStream),
                                 PlateNumber = plateInfo.Item1,
                                 Confidence = plateInfo.Item2
                             };
@@ -202,7 +175,6 @@ namespace ZiTyLot.Helper
 
             return null;
         }
-
         private static Rectangle CalculateCropArea(Prediction prediction, int imageWidth, int imageHeight)
         {
             int x = (int)(prediction.x - (prediction.width / 2));
