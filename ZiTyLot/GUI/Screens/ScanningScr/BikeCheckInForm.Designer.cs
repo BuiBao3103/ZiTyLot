@@ -85,7 +85,7 @@
             this.lbVehicalType = new Sunny.UI.UILabel();
             this.lbCardType = new Sunny.UI.UILabel();
             this.uiLabel3 = new Sunny.UI.UILabel();
-            this.lbCardId = new Sunny.UI.UILabel();
+            this.lbCardRfid = new Sunny.UI.UILabel();
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.uiTableLayoutPanel1 = new Sunny.UI.UITableLayoutPanel();
             this.uiPanel15 = new Sunny.UI.UIPanel();
@@ -808,7 +808,7 @@
             this.uiTableLayoutPanel3.Controls.Add(this.lbVehicalType, 1, 2);
             this.uiTableLayoutPanel3.Controls.Add(this.lbCardType, 1, 1);
             this.uiTableLayoutPanel3.Controls.Add(this.uiLabel3, 0, 1);
-            this.uiTableLayoutPanel3.Controls.Add(this.lbCardId, 1, 0);
+            this.uiTableLayoutPanel3.Controls.Add(this.lbCardRfid, 1, 0);
             this.uiTableLayoutPanel3.Controls.Add(this.uiLabel2, 0, 0);
             this.uiTableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTableLayoutPanel3.Location = new System.Drawing.Point(10, 32);
@@ -847,7 +847,6 @@
             this.lbTotalPrice.Name = "lbTotalPrice";
             this.lbTotalPrice.Size = new System.Drawing.Size(195, 41);
             this.lbTotalPrice.TabIndex = 22;
-            this.lbTotalPrice.Text = "{total_price}";
             this.lbTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel13
@@ -871,7 +870,6 @@
             this.lbTotalTime.Name = "lbTotalTime";
             this.lbTotalTime.Size = new System.Drawing.Size(195, 38);
             this.lbTotalTime.TabIndex = 20;
-            this.lbTotalTime.Text = "{total_time}";
             this.lbTotalTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel11
@@ -895,7 +893,6 @@
             this.lbCheckOutTime.Name = "lbCheckOutTime";
             this.lbCheckOutTime.Size = new System.Drawing.Size(195, 38);
             this.lbCheckOutTime.TabIndex = 18;
-            this.lbCheckOutTime.Text = "{checkout_time}";
             this.lbCheckOutTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel9
@@ -919,7 +916,6 @@
             this.lbCheckInTime.Name = "lbCheckInTime";
             this.lbCheckInTime.Size = new System.Drawing.Size(195, 38);
             this.lbCheckInTime.TabIndex = 16;
-            this.lbCheckInTime.Text = "{checkin_time}";
             this.lbCheckInTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel7
@@ -943,7 +939,6 @@
             this.lbVehicalPlate.Name = "lbVehicalPlate";
             this.lbVehicalPlate.Size = new System.Drawing.Size(195, 38);
             this.lbVehicalPlate.TabIndex = 14;
-            this.lbVehicalPlate.Text = "{vehical_plate}";
             this.lbVehicalPlate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel5
@@ -967,7 +962,6 @@
             this.lbVehicalType.Name = "lbVehicalType";
             this.lbVehicalType.Size = new System.Drawing.Size(195, 38);
             this.lbVehicalType.TabIndex = 12;
-            this.lbVehicalType.Text = "{vehical_type}";
             this.lbVehicalType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbCardType
@@ -979,7 +973,6 @@
             this.lbCardType.Name = "lbCardType";
             this.lbCardType.Size = new System.Drawing.Size(195, 38);
             this.lbCardType.TabIndex = 11;
-            this.lbCardType.Text = "{card_type}";
             this.lbCardType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel3
@@ -994,17 +987,16 @@
             this.uiLabel3.Text = "Card type:";
             this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lbCardId
+            // lbCardRfid
             // 
-            this.lbCardId.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbCardId.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.lbCardId.ForeColor = System.Drawing.Color.Black;
-            this.lbCardId.Location = new System.Drawing.Point(204, 0);
-            this.lbCardId.Name = "lbCardId";
-            this.lbCardId.Size = new System.Drawing.Size(195, 38);
-            this.lbCardId.TabIndex = 9;
-            this.lbCardId.Text = "{card_id}";
-            this.lbCardId.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbCardRfid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbCardRfid.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.lbCardRfid.ForeColor = System.Drawing.Color.Black;
+            this.lbCardRfid.Location = new System.Drawing.Point(204, 0);
+            this.lbCardRfid.Name = "lbCardRfid";
+            this.lbCardRfid.Size = new System.Drawing.Size(195, 38);
+            this.lbCardRfid.TabIndex = 9;
+            this.lbCardRfid.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel2
             // 
@@ -1015,7 +1007,7 @@
             this.uiLabel2.Name = "uiLabel2";
             this.uiLabel2.Size = new System.Drawing.Size(195, 38);
             this.uiLabel2.TabIndex = 1;
-            this.uiLabel2.Text = "Card ID:";
+            this.uiLabel2.Text = "Card RFID:";
             this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiTableLayoutPanel1
@@ -1247,7 +1239,7 @@
             // 
             this.separator.Dock = System.Windows.Forms.DockStyle.Top;
             this.separator.Location = new System.Drawing.Point(13, 74);
-            this.separator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.separator.Margin = new System.Windows.Forms.Padding(4);
             this.separator.MaximumSize = new System.Drawing.Size(2160, 5);
             this.separator.Name = "separator";
             this.separator.Size = new System.Drawing.Size(1774, 5);
@@ -1262,7 +1254,7 @@
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.separator);
             this.Controls.Add(this.pnlTop);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1814, 932);
             this.Name = "BikeCheckInForm";
             this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
@@ -1365,7 +1357,7 @@
         private Sunny.UI.UILabel lbVehicalType;
         private Sunny.UI.UILabel lbCardType;
         private Sunny.UI.UILabel uiLabel3;
-        private Sunny.UI.UILabel lbCardId;
+        private Sunny.UI.UILabel lbCardRfid;
         private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel1;
         private Sunny.UI.UIPanel uiPanel15;

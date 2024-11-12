@@ -19,8 +19,10 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
     public partial class BikeCheckInForm : Form
     {
         private readonly CardBUS _cardBUS = new CardBUS();
+        private readonly VehicleTypeBUS _vehicleTypeBUS = new VehicleTypeBUS();
 
-        private SettingForm _settingForm;
+        private List<VehicleType> _vehicleTypes;
+
         private readonly FilterInfoCollection cameras;
         private VideoCaptureDevice frontCamera;
         private VideoCaptureDevice backCamera;
@@ -28,6 +30,8 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         private string backCameraId;
         private Dictionary<string, int> cameraUsageCount; // Đếm số lượng camera đang sử dụng cùng một nguồn
         private Dictionary<string, VideoCaptureDevice> sharedDevices; // Quản lý các thiết bị được chia sẻ
+
+        private SettingForm _settingForm;
 
         private SerialPort _serialPort;
         private readonly RFIDReader _rfidReader;
@@ -44,6 +48,8 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             uiTableLayoutPanel5.Resize += uiTableLayoutPanel5_Resize;
             uiTableLayoutPanel3.Resize += uiTableLayoutPanel3_Resize;
             uiTableLayoutPanel2.Resize += uiTableLayoutPanel2_Resize;
+
+            _vehicleTypes = _vehicleTypeBUS.GetAll();
 
             // Khởi tạo các collection
             cameras = new FilterInfoCollection(FilterCategory.VideoInputDevice);
@@ -329,25 +335,37 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 {
                     _isGateClose = false;
                     Arduino.OpenBarrier(_serialPort);
+                    btnOpenGate.Text = btnOpenGate.Text.Replace("OPEN", "CLOSE");
                 }
                 else
                 {
                     _isGateClose = true;
                     Arduino.CloseBarrier(_serialPort);
                     btnOpenGate.Enabled = false;
+                    btnOpenGate.Text = btnOpenGate.Text.Replace("CLOSE", "OPEN");
                     _processState = ProcessState.Ready;
                 }
             }
 
         }
-        private async void StartVisitorProcess(string rfid)
+        private async void StartVisitorProcess(Card card)
         {
             _processState = ProcessState.Scanning;
             System.Drawing.Image frontImage = pbFrontCamera.Image;
             System.Drawing.Image backImage = pbBackCamera.Image;
+
             pbFrontRecord.Image = frontImage;
             pbBackRecord.Image = backImage;
+            pbPlateRecord.Image = null;
 
+            lbCardRfid.Text = card.Rfid;
+            lbCardType.Text = card.Type.ToString();
+            lbVehicalType.Text = _vehicleTypes.FirstOrDefault(vt => vt.Id == card.Vehicle_type_id)?.Name;
+            lbVehicalPlate.Text = "Scanning...";
+            lbCheckInTime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            lbCheckOutTime.Text = "";
+            lbTotalTime.Text = "";
+            lbTotalPrice.Text = "";
 
             var result = await ANPR.ProcessImageAsync(backImage);
 
@@ -390,7 +408,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             };
             Card card = _cardBUS.GetAll(filters)?.FirstOrDefault();
             if (!ValidateVisitorCard(card)) return;
-            StartVisitorProcess(rfidCode);
+            StartVisitorProcess(card);  
         }
         private void btnOpen_Click(object sender, EventArgs e)
         {
