@@ -29,8 +29,8 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         private VideoCaptureDevice backCamera;
         private string frontCameraId;
         private string backCameraId;
-        private Dictionary<string, int> cameraUsageCount; // Đếm số lượng camera đang sử dụng cùng một nguồn
-        private Dictionary<string, VideoCaptureDevice> sharedDevices; // Quản lý các thiết bị được chia sẻ
+        private readonly Dictionary<string, int> cameraUsageCount; // Đếm số lượng camera đang sử dụng cùng một nguồn
+        private readonly Dictionary<string, VideoCaptureDevice> sharedDevices; // Quản lý các thiết bị được chia sẻ
 
         private SettingForm _settingForm;
 
