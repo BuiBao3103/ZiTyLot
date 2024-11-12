@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
+using ZiTyLot.Constants;
 using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.Utils;
@@ -358,32 +359,42 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             pbBackRecord.Image = backImage;
             pbPlateRecord.Image = null;
 
+            card = _cardBUS.PopulateVehicleType(card);
+
             lbCardRfid.Text = card.Rfid;
             lbCardType.Text = card.Type.ToString();
-            lbVehicalType.Text = _vehicleTypes.FirstOrDefault(vt => vt.Id == card.Vehicle_type_id)?.Name;
+            lbVehicalType.Text = card.Vehicle_type.Name;
             lbVehicalPlate.Text = "Scanning...";
             lbCheckInTime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
             lbCheckOutTime.Text = "";
             lbTotalTime.Text = "";
             lbTotalPrice.Text = "";
 
-            var result = await ANPR.ProcessImageAsync(backImage);
-
-            if (result != null)
+            if (card.Vehicle_type.Id == VehicleTypeID.CAR || card.Vehicle_type.Id == VehicleTypeID.MOTORBIKE)
             {
-                //setImage to pbPlate
-                pbPlateRecord.Image = result.Image;
-                lbVehicalPlate.Text = result.PlateNumber;
+                var result = await ANPR.ProcessImageAsync(backImage);
 
-                //save image to file and get path
-                //ImageHelper.SaveImage(frontImage);
-                //ImageHelper.SaveImage(backImage);
-                //ImageHelper.SaveImage(result.Image);
-                btnOpenGate.Enabled = true;
+                if (result != null)
+                {
+                    //setImage to pbPlate
+                    pbPlateRecord.Image = result.Image;
+                    lbVehicalPlate.Text = result.PlateNumber;
+
+                    //save image to file and get path
+                    //ImageHelper.SaveImage(frontImage);
+                    //ImageHelper.SaveImage(backImage);
+                    //ImageHelper.SaveImage(result.Image);
+                    btnOpenGate.Enabled = true;
+
+                }
+                else
+                {
+                    MessageHelper.ShowError("Cannot detect plate number!");
+                }
             }
             else
             {
-                MessageHelper.ShowError("Cannot detect plate number!");
+
             }
             _processState = ProcessState.Done;
 
@@ -408,7 +419,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             };
             Card card = _cardBUS.GetAll(filters)?.FirstOrDefault();
             if (!ValidateVisitorCard(card)) return;
-            StartVisitorProcess(card);  
+            StartVisitorProcess(card);
         }
         private void btnOpen_Click(object sender, EventArgs e)
         {
