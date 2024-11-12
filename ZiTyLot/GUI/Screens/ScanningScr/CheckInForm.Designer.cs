@@ -1,6 +1,6 @@
 ﻿namespace ZiTyLot.GUI.Screens.ScanningScr
 {
-    partial class BikeCheckInForm
+    partial class CheckInForm
     {
         /// <summary>
         /// Required designer variable.
@@ -1245,7 +1245,7 @@
             this.separator.Size = new System.Drawing.Size(1774, 5);
             this.separator.TabIndex = 9;
             // 
-            // BikeCheckInForm
+            // CheckInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1256,10 +1256,11 @@
             this.Controls.Add(this.pnlTop);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1814, 932);
-            this.Name = "BikeCheckInForm";
+            this.Name = "CheckInForm";
             this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.Text = "BikeCheckInForm";
+            this.Text = "CheckInForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BikeCheckInForm_FormClosing);
+            this.Load += new System.EventHandler(this.CheckInForm_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BikeCheckInForm_KeyPress);
             this.pnlBottom.ResumeLayout(false);
             this.table.ResumeLayout(false);

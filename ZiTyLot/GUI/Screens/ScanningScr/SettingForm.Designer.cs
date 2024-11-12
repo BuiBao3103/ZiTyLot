@@ -749,6 +749,7 @@
             this.Name = "SettingForm";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "SettingForm";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SettingForm_KeyPress);
             this.uiPanel5.ResumeLayout(false);
             this.uiGroupBox3.ResumeLayout(false);
             this.uiTableLayoutPanel2.ResumeLayout(false);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using ZiTyLot.Constants.Enum;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens.ScanningScr;
 namespace ZiTyLot.GUI.Screens
@@ -16,8 +17,8 @@ namespace ZiTyLot.GUI.Screens
 
         private void btnCarCheckIn_Click(object sender, EventArgs e)
         {
-            CarCheckInForm carCheckInForm = new CarCheckInForm();
-            carCheckInForm.Show();
+            CheckInForm CheckInForm = new CheckInForm(ParkingLotType.FOUR_WHEELER);
+            CheckInForm.Show();
         }
 
         private void btnCarCheckOut_Click(object sender, EventArgs e)
@@ -28,8 +29,8 @@ namespace ZiTyLot.GUI.Screens
 
         private void btnBikeCheckIn_Click(object sender, EventArgs e)
         {
-            BikeCheckInForm bikeCheckInForm = new BikeCheckInForm();
-            bikeCheckInForm.Show();
+            CheckInForm CheckInForm = new CheckInForm(ParkingLotType.TWO_WHEELER);
+            CheckInForm.Show();
         }
 
         private void btnBikeCheckOut_Click(object sender, EventArgs e)

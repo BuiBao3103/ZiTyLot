@@ -28,6 +28,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         {
             InitializeComponent();
             this.CenterToScreen();
+            this.KeyPreview = true;
             GetVideoDevices();
             GetSerialPort();
 
@@ -194,6 +195,14 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             btnDisconnectGate.Enabled = false;
             cbGate.Enabled = true;
             DisconnectGate?.Invoke(this, e);
+        }
+
+        private void SettingForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Escape)
+            {
+                this.Close();
+            }
         }
     }
 }

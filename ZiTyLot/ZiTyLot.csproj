@@ -439,11 +439,11 @@
     <Compile Include="GUI\Screens\RoleScr\RoleCreateForm.Designer.cs">
       <DependentUpon>RoleCreateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\ScanningScr\BikeCheckInForm.cs">
+    <Compile Include="GUI\Screens\ScanningScr\CheckInForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\ScanningScr\BikeCheckInForm.Designer.cs">
-      <DependentUpon>BikeCheckInForm.cs</DependentUpon>
+    <Compile Include="GUI\Screens\ScanningScr\CheckInForm.Designer.cs">
+      <DependentUpon>CheckInForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\ScanningScr\BikeCheckOutFrom.cs">
       <SubType>Form</SubType>
@@ -788,8 +788,8 @@
     <EmbeddedResource Include="GUI\Screens\RoleScr\RoleDetailForm.resx">
       <DependentUpon>RoleDetailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\ScanningScr\BikeCheckInForm.resx">
-      <DependentUpon>BikeCheckInForm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Screens\ScanningScr\CheckInForm.resx">
+      <DependentUpon>CheckInForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\ScanningScr\BikeCheckOutFrom.resx">
       <DependentUpon>BikeCheckOutFrom.cs</DependentUpon>

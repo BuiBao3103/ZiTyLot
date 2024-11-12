@@ -17,7 +17,7 @@ using ZiTyLot.Helper;
 
 namespace ZiTyLot.GUI.Screens.ScanningScr
 {
-    public partial class BikeCheckInForm : Form
+    public partial class CheckInForm : Form
     {
         private readonly CardBUS _cardBUS = new CardBUS();
 
@@ -35,7 +35,9 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
 
         private bool _isGateClose = true;
         private ProcessState _processState = ProcessState.Ready;
-        public BikeCheckInForm()
+        private ParkingLotType _parkingLotType;
+
+        public CheckInForm(ParkingLotType parkingLotType)
         {
             InitializeComponent();
             this.CenterToScreen();
@@ -46,6 +48,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             uiTableLayoutPanel3.Resize += uiTableLayoutPanel3_Resize;
             uiTableLayoutPanel2.Resize += uiTableLayoutPanel2_Resize;
 
+            _parkingLotType = parkingLotType;
 
             // Cấu hình PictureBox
             this.pbFrontCamera.SizeMode = PictureBoxSizeMode.Zoom;
@@ -56,6 +59,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
 
             _rfidReader = new RFIDReader();
             _rfidReader.RFIDScanned += RfidReader_RFIDScanned; // Đăng ký sự kiện
+            _parkingLotType = parkingLotType;
         }
 
 
@@ -297,7 +301,6 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         }
         private async void StartVisitorProcess(Card card)
         {
-            Console.WriteLine("StartVisitorProcess");
             _processState = ProcessState.Scanning;
 
             System.Drawing.Image frontImage = _cameraHelper.GetImageFromPictureBox(pbFrontCamera);
@@ -307,7 +310,6 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             pbBackRecord.Image = backImage;
             pbPlateRecord.Image = null;
 
-            card = _cardBUS.PopulateVehicleType(card);
 
             lbCardRfid.Text = card.Rfid;
             lbCardType.Text = card.Type.ToString();
@@ -342,7 +344,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             }
             else
             {
-
+                MessageHelper.ShowError("Bike only!");
             }
             _processState = ProcessState.Done;
 
@@ -361,12 +363,18 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 MessageHelper.ShowError("Please connect camera before scanning!");
                 return;
             }
+            if (_serialPort == null)
+            {
+                MessageHelper.ShowError("Please connect gate before scanning!");
+                return;
+            }
             List<FilterCondition> filters = new List<FilterCondition>()
             {
                 new FilterCondition(nameof(Card.Rfid), CompOp.Equals, rfidCode)
             };
             Card card = _cardBUS.GetAll(filters)?.FirstOrDefault();
             if (!ValidateVisitorCard(card)) return;
+            card = _cardBUS.PopulateVehicleType(card);
             StartVisitorProcess(card);
         }
         private void btnOpen_Click(object sender, EventArgs e)
@@ -383,10 +391,26 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             }
             if (card.Resident_id != null)
             {
-                MessageHelper.ShowError("This card is not for visitor!");
+                MessageHelper.ShowError("Card is not for visitor!");
+                return false;
+            }
+            if (_parkingLotType == ParkingLotType.TWO_WHEELER && card.Vehicle_type_id == VehicleTypeID.CAR)
+            {
+                MessageHelper.ShowError("This line is for two-wheeler only so this card is not valid!");
+                return false;
+            }
+            if (_parkingLotType == ParkingLotType.FOUR_WHEELER
+                && card.Vehicle_type_id == VehicleTypeID.MOTORBIKE || card.Vehicle_type_id == VehicleTypeID.BIKECYCLE)
+            {
+                MessageHelper.ShowError("This line is for four-wheeler only so this card is not valid!");
                 return false;
             }
             return true;
+        }
+
+        private void CheckInForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
