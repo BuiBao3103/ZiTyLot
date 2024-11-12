@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.Constants.Enum;
@@ -23,9 +16,9 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
         private readonly CardBUS _cardBUS = new CardBUS();
         public readonly Resident _resident;
 
+        private bool _processLostCard = false;
+
         public event EventHandler ResidentUpdateEvent;
-        private readonly List<Bill> bills;
-        private readonly List<Issue> issues;
 
         public ResidentDetailForm(int residentId)
         {
@@ -70,7 +63,7 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
             }
             btnRestoreCard.Enabled = _resident.Card != null && _resident.Card.Status == CardStatus.BLOCKED;
             btnLockCard.Enabled = _resident.Card != null && _resident.Card.Status == CardStatus.ACTIVE;
-            btnLostCard.Enabled = _resident.Card != null && _resident.Card.Status == CardStatus.LOST;
+            btnLostCard.Enabled = _resident.Card != null && _resident.Card.Status == CardStatus.ACTIVE;
             btnSaveCard.Enabled = _resident.Card == null;
             tbCodeRFID.Enabled = _resident.Card == null;
         }
@@ -132,7 +125,15 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
 
         private void btnLostCard_Click(object sender, EventArgs e)
         {
+            _processLostCard = true;
+            btnLostCard.Enabled = false;
+            btnLockCard.Enabled = false;
+            btnCancelLostCard.Visible = true;
+            btnSaveCard.Enabled = true;
 
+            tbCodeRFID.Text = "";
+            tbCodeRFID.Enabled = true;
+            tbCodeRFID.Focus();
         }
 
         private void btnSaveCard_Click(object sender, EventArgs e)
@@ -151,10 +152,23 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
             }
             try
             {
-                Card cardIssue = _cardBUS.IssueCard(tbCodeRFID.Text, _resident.Id);
-                _resident.Card = cardIssue;
-                LoadCardUI();
-                MessageHelper.ShowInfo("Issue card successfully");
+                if (_processLostCard)
+                {
+                    //TODO: Process lost card
+
+                    //_resident.Card = ...
+
+                    LoadCardUI();
+                    btnCancelLostCard.Visible = false;
+                    _processLostCard = false;
+                }
+                else
+                {
+                    Card cardIssue = _cardBUS.IssueCard(tbCodeRFID.Text, _resident.Id);
+                    _resident.Card = cardIssue;
+                    LoadCardUI();
+                    MessageHelper.ShowInfo("Issue card successfully");
+                }
             }
             catch (ValidationInputException ex)
             {
@@ -235,6 +249,17 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
             }
 
             return true;
+        }
+
+        private void btnCancelLostCard_Click(object sender, EventArgs e)
+        {
+            btnLostCard.Enabled = true;
+            btnLockCard.Enabled = true;
+            btnCancelLostCard.Visible = false;
+            btnSaveCard.Enabled = false;
+            tbCodeRFID.Text = _resident.Card.Rfid;
+            tbCodeRFID.Enabled = false;
+            _processLostCard = false;
         }
     }
 }
