@@ -57,13 +57,13 @@ namespace ZiTyLot.GUI
             this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
             this.uiPanel4 = new Sunny.UI.UIPanel();
             this.uiGroupBox2 = new Sunny.UI.UIGroupBox();
-            this.uiTextBox1 = new Sunny.UI.UITextBox();
+            this.tbConfirmPassword = new Sunny.UI.UITextBox();
             this.uiPanel8 = new Sunny.UI.UIPanel();
             this.uiGroupBox5 = new Sunny.UI.UIGroupBox();
-            this.uiTextBox4 = new Sunny.UI.UITextBox();
+            this.tbNewPassword = new Sunny.UI.UITextBox();
             this.uiPanel11 = new Sunny.UI.UIPanel();
             this.uiGroupBox6 = new Sunny.UI.UIGroupBox();
-            this.uiTextBox5 = new Sunny.UI.UITextBox();
+            this.tbCurrentPassword = new Sunny.UI.UITextBox();
             this.uiPanel1 = new Sunny.UI.UIPanel();
             this.uiSymbolLabel1 = new Sunny.UI.UISymbolLabel();
             this.uiTableLayoutPanel1.SuspendLayout();
@@ -553,7 +553,7 @@ namespace ZiTyLot.GUI
             // 
             // uiGroupBox2
             // 
-            this.uiGroupBox2.Controls.Add(this.uiTextBox1);
+            this.uiGroupBox2.Controls.Add(this.tbConfirmPassword);
             this.uiGroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox2.FillColor = System.Drawing.Color.White;
             this.uiGroupBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -569,24 +569,24 @@ namespace ZiTyLot.GUI
             this.uiGroupBox2.Text = "Confirm password";
             this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiTextBox1
+            // tbConfirmPassword
             // 
-            this.uiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiTextBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiTextBox1.Location = new System.Drawing.Point(8, 32);
-            this.uiTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiTextBox1.MaximumSize = new System.Drawing.Size(0, 34);
-            this.uiTextBox1.MinimumSize = new System.Drawing.Size(0, 34);
-            this.uiTextBox1.Name = "uiTextBox1";
-            this.uiTextBox1.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.uiTextBox1.RectColor = System.Drawing.SystemColors.ControlDark;
-            this.uiTextBox1.RectSize = 2;
-            this.uiTextBox1.ShowText = false;
-            this.uiTextBox1.Size = new System.Drawing.Size(843, 34);
-            this.uiTextBox1.TabIndex = 0;
-            this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiTextBox1.Watermark = "";
+            this.tbConfirmPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbConfirmPassword.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbConfirmPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbConfirmPassword.Location = new System.Drawing.Point(8, 32);
+            this.tbConfirmPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbConfirmPassword.MaximumSize = new System.Drawing.Size(0, 34);
+            this.tbConfirmPassword.MinimumSize = new System.Drawing.Size(0, 34);
+            this.tbConfirmPassword.Name = "tbConfirmPassword";
+            this.tbConfirmPassword.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
+            this.tbConfirmPassword.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbConfirmPassword.RectSize = 2;
+            this.tbConfirmPassword.ShowText = false;
+            this.tbConfirmPassword.Size = new System.Drawing.Size(843, 34);
+            this.tbConfirmPassword.TabIndex = 0;
+            this.tbConfirmPassword.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tbConfirmPassword.Watermark = "";
             // 
             // uiPanel8
             // 
@@ -606,7 +606,7 @@ namespace ZiTyLot.GUI
             // 
             // uiGroupBox5
             // 
-            this.uiGroupBox5.Controls.Add(this.uiTextBox4);
+            this.uiGroupBox5.Controls.Add(this.tbNewPassword);
             this.uiGroupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox5.FillColor = System.Drawing.Color.White;
             this.uiGroupBox5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -622,24 +622,24 @@ namespace ZiTyLot.GUI
             this.uiGroupBox5.Text = "New password";
             this.uiGroupBox5.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiTextBox4
+            // tbNewPassword
             // 
-            this.uiTextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiTextBox4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiTextBox4.Location = new System.Drawing.Point(8, 32);
-            this.uiTextBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiTextBox4.MaximumSize = new System.Drawing.Size(0, 34);
-            this.uiTextBox4.MinimumSize = new System.Drawing.Size(0, 34);
-            this.uiTextBox4.Name = "uiTextBox4";
-            this.uiTextBox4.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.uiTextBox4.RectColor = System.Drawing.SystemColors.ControlDark;
-            this.uiTextBox4.RectSize = 2;
-            this.uiTextBox4.ShowText = false;
-            this.uiTextBox4.Size = new System.Drawing.Size(843, 34);
-            this.uiTextBox4.TabIndex = 0;
-            this.uiTextBox4.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiTextBox4.Watermark = "";
+            this.tbNewPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbNewPassword.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbNewPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNewPassword.Location = new System.Drawing.Point(8, 32);
+            this.tbNewPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbNewPassword.MaximumSize = new System.Drawing.Size(0, 34);
+            this.tbNewPassword.MinimumSize = new System.Drawing.Size(0, 34);
+            this.tbNewPassword.Name = "tbNewPassword";
+            this.tbNewPassword.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
+            this.tbNewPassword.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbNewPassword.RectSize = 2;
+            this.tbNewPassword.ShowText = false;
+            this.tbNewPassword.Size = new System.Drawing.Size(843, 34);
+            this.tbNewPassword.TabIndex = 0;
+            this.tbNewPassword.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tbNewPassword.Watermark = "";
             // 
             // uiPanel11
             // 
@@ -659,7 +659,7 @@ namespace ZiTyLot.GUI
             // 
             // uiGroupBox6
             // 
-            this.uiGroupBox6.Controls.Add(this.uiTextBox5);
+            this.uiGroupBox6.Controls.Add(this.tbCurrentPassword);
             this.uiGroupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox6.FillColor = System.Drawing.Color.White;
             this.uiGroupBox6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -675,24 +675,24 @@ namespace ZiTyLot.GUI
             this.uiGroupBox6.Text = "Current password";
             this.uiGroupBox6.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiTextBox5
+            // tbCurrentPassword
             // 
-            this.uiTextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiTextBox5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiTextBox5.Location = new System.Drawing.Point(8, 32);
-            this.uiTextBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiTextBox5.MaximumSize = new System.Drawing.Size(0, 34);
-            this.uiTextBox5.MinimumSize = new System.Drawing.Size(0, 34);
-            this.uiTextBox5.Name = "uiTextBox5";
-            this.uiTextBox5.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.uiTextBox5.RectColor = System.Drawing.SystemColors.ControlDark;
-            this.uiTextBox5.RectSize = 2;
-            this.uiTextBox5.ShowText = false;
-            this.uiTextBox5.Size = new System.Drawing.Size(843, 34);
-            this.uiTextBox5.TabIndex = 0;
-            this.uiTextBox5.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiTextBox5.Watermark = "";
+            this.tbCurrentPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbCurrentPassword.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbCurrentPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCurrentPassword.Location = new System.Drawing.Point(8, 32);
+            this.tbCurrentPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbCurrentPassword.MaximumSize = new System.Drawing.Size(0, 34);
+            this.tbCurrentPassword.MinimumSize = new System.Drawing.Size(0, 34);
+            this.tbCurrentPassword.Name = "tbCurrentPassword";
+            this.tbCurrentPassword.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
+            this.tbCurrentPassword.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbCurrentPassword.RectSize = 2;
+            this.tbCurrentPassword.ShowText = false;
+            this.tbCurrentPassword.Size = new System.Drawing.Size(843, 34);
+            this.tbCurrentPassword.TabIndex = 0;
+            this.tbCurrentPassword.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tbCurrentPassword.Watermark = "";
             // 
             // uiPanel1
             // 
@@ -805,12 +805,12 @@ namespace ZiTyLot.GUI
         private Sunny.UI.UISymbolButton uiSymbolButton1;
         private Sunny.UI.UIPanel uiPanel4;
         private Sunny.UI.UIGroupBox uiGroupBox2;
-        private Sunny.UI.UITextBox uiTextBox1;
+        private Sunny.UI.UITextBox tbConfirmPassword;
         private Sunny.UI.UIPanel uiPanel8;
         private Sunny.UI.UIGroupBox uiGroupBox5;
-        private Sunny.UI.UITextBox uiTextBox4;
+        private Sunny.UI.UITextBox tbNewPassword;
         private Sunny.UI.UIPanel uiPanel11;
         private Sunny.UI.UIGroupBox uiGroupBox6;
-        private Sunny.UI.UITextBox uiTextBox5;
+        private Sunny.UI.UITextBox tbCurrentPassword;
     }
 }

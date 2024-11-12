@@ -65,7 +65,8 @@ namespace ZiTyLot.GUI
         {
             try
             {
-                _accountBUS.ChangePassword(_account, uiTextBox5.Text.Trim(), uiTextBox4.Text.Trim(), uiTextBox1.Text.Trim());
+                _accountBUS.ChangePassword(_account, tbCurrentPassword.Text.Trim(), tbNewPassword.Text.Trim(), tbConfirmPassword.Text.Trim());
+                
                 MessageHelper.ShowSuccess("Change password successfully!");
             }
             catch (Exception ex)

@@ -86,6 +86,7 @@
 
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnCancel = new Sunny.UI.UISymbolButton();
+            this.uiTextBox1 = new Sunny.UI.UITextBox();
 
             this.uiTableLayoutPanel1.SuspendLayout();
             this.uiTabControlMenu1.SuspendLayout();
