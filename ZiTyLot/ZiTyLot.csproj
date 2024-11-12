@@ -335,6 +335,7 @@
     <Compile Include="Constants\Enum\ParkingLotStatus.cs" />
     <Compile Include="Constants\Enum\ParkingLotType.cs" />
     <Compile Include="Constants\Enum\ParkingLotUserType.cs" />
+    <Compile Include="Constants\Enum\ProcessState.cs" />
     <Compile Include="Constants\Enum\SessionType.cs" />
     <Compile Include="Constants\Enum\SlotStatus.cs" />
     <Compile Include="Constants\SortOrderPageable.cs" />

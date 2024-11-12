@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
+using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.Utils;
 using ZiTyLot.Helper;
@@ -30,7 +31,9 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
 
         private SerialPort _serialPort;
         private readonly RFIDReader _rfidReader;
-        private bool _isGateOpen = false;
+
+        private bool _isGateClose = true;
+        private ProcessState _processState = ProcessState.Ready;
         public BikeCheckInForm()
         {
             InitializeComponent();
@@ -320,33 +323,26 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             {
                 ShowSettingForm();
             }
-            if (e.KeyChar == (char)Keys.Space)
+            if (e.KeyChar == (char)Keys.Space && _processState == ProcessState.Done)
             {
-                if (!_isGateOpen)
+                if (_isGateClose)
                 {
-                    _isGateOpen = true;
+                    _isGateClose = false;
                     Arduino.OpenBarrier(_serialPort);
                 }
                 else
                 {
-                    _isGateOpen = false;
+                    _isGateClose = true;
                     Arduino.CloseBarrier(_serialPort);
                     btnOpenGate.Enabled = false;
+                    _processState = ProcessState.Ready;
                 }
             }
 
         }
-
-        private async void StartVisitorProgress(string rfid)
+        private async void StartVisitorProcess(string rfid)
         {
-           
-
-            if (pbFrontCamera.Image == null || pbBackCamera.Image == null)
-            {
-                MessageHelper.ShowError("Please connect camera before scanning!");
-                return;
-            }
-
+            _processState = ProcessState.Scanning;
             System.Drawing.Image frontImage = pbFrontCamera.Image;
             System.Drawing.Image backImage = pbBackCamera.Image;
             pbFrontRecord.Image = frontImage;
@@ -371,19 +367,30 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             {
                 MessageHelper.ShowError("Cannot detect plate number!");
             }
+            _processState = ProcessState.Done;
 
         }
 
 
         private void RfidReader_RFIDScanned(object sender, string rfidCode)
         {
+            if (_processState != ProcessState.Ready)
+            {
+                MessageHelper.ShowError("Please wait for the current process to finish!");
+                return;
+            }
+            if (pbFrontCamera.Image == null || pbBackCamera.Image == null)
+            {
+                MessageHelper.ShowError("Please connect camera before scanning!");
+                return;
+            }
             List<FilterCondition> filters = new List<FilterCondition>()
             {
                 new FilterCondition(nameof(Card.Rfid), CompOp.Equals, rfidCode)
             };
             Card card = _cardBUS.GetAll(filters)?.FirstOrDefault();
             if (!ValidateVisitorCard(card)) return;
-            StartVisitorProgress(rfidCode);
+            StartVisitorProcess(rfidCode);
         }
         private void btnOpen_Click(object sender, EventArgs e)
         {
