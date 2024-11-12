@@ -449,6 +449,12 @@
     <Compile Include="GUI\Screens\ScanningScr\BikeCheckOutFrom.Designer.cs">
       <DependentUpon>BikeCheckOutFrom.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Screens\SessionScr\LostCardCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\SessionScr\LostCardCreateForm.Designer.cs">
+      <DependentUpon>LostCardCreateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Utils\BusinessException.cs" />
     <Compile Include="GUI\Utils\InputFormatter.cs" />
     <Compile Include="GUI\Utils\InputValidator.cs" />
@@ -808,6 +814,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\ScanningScr\SettingForm.resx">
       <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\SessionScr\LostCardCreateForm.resx">
+      <DependentUpon>LostCardCreateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\SessionScr\SessionDetailForm.resx">
       <DependentUpon>SessionDetailForm.cs</DependentUpon>
