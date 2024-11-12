@@ -36,7 +36,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         private readonly RFIDReader _rfidReader;
 
         private bool _isGateClose = true;
-        private ProcessState _processState = ProcessState.Ready;
+        private ProcessState _processState = ProcessState.Preparing;
         private ParkingLotType _parkingLotType;
 
         private Session _currentSession;
@@ -144,43 +144,37 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 _settingForm.ConnectCameraFront += (sender, cameraId) =>
                 {
                     StartFrontCamera(cameraId);
-                    lbFrontCameraStatus.Text = "Connected";
-                    lbFrontCameraStatus.ForeColor = Color.Green;
+                    updateStatusDevice();
 
                 };
                 _settingForm.ConnectCameraBack += (sender, cameraId) =>
                 {
                     StartBackCamera(cameraId);
-                    lbBackCameraStatus.Text = "Connected";
-                    lbBackCameraStatus.ForeColor = Color.Green;
+                    updateStatusDevice();
                 };
 
                 // Ngắt kết nối camera - sử dụng async
                 _settingForm.DisconnectCameraFront += async (sender, e) =>
                 {
                     await StopFrontCameraAsync();
-                    lbFrontCameraStatus.Text = "Disconnected";
-                    lbFrontCameraStatus.ForeColor = Color.Red;
+                    updateStatusDevice();
                 };
                 _settingForm.DisconnectCameraBack += async (sender, e) =>
                 {
                     await StopBackCameraAsync();
-                    lbBackCameraStatus.Text = "Disconnected";
-                    lbBackCameraStatus.ForeColor = Color.Red;
+                    updateStatusDevice();
                 };
 
                 // Gate events
                 _settingForm.ConnectGate += (sender, port) =>
                 {
                     ConnectGate(port);
-                    lbBoomGateStatus.Text = "Connected";
-                    lbBoomGateStatus.ForeColor = Color.Green;
+                    updateStatusDevice();
                 };
                 _settingForm.DisconnectGate += (sender, e) =>
                 {
                     DisconnectGate();
-                    lbBoomGateStatus.Text = "Disconnected";
-                    lbBoomGateStatus.ForeColor = Color.Red;
+                    updateStatusDevice();
                 };
 
                 _settingForm.Show();
@@ -190,6 +184,51 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 if (_settingForm.WindowState == FormWindowState.Minimized)
                     _settingForm.WindowState = FormWindowState.Normal;
                 _settingForm.BringToFront();
+            }
+        }
+
+        private void updateStatusDevice()
+        {
+            if (_frontCameraId != null)
+            {
+                lbFrontCameraStatus.Text = "Connected";
+                lbFrontCameraStatus.ForeColor = Color.Green;
+            }
+            else
+            {
+
+                lbFrontCameraStatus.Text = "Disconnected";
+                lbFrontCameraStatus.ForeColor = Color.Red;
+            }
+            if (_backCameraId != null)
+            {
+                lbBackCameraStatus.Text = "Connected";
+                lbBackCameraStatus.ForeColor = Color.Green;
+            }
+            else
+            {
+                lbBackCameraStatus.Text = "Disconnected";
+                lbBackCameraStatus.ForeColor = Color.Red;
+            }
+            if (_serialPort != null)
+            {
+                lbBoomGateStatus.Text = "Connected";
+                lbBoomGateStatus.ForeColor = Color.Green;
+            }
+            else
+            {
+                lbBoomGateStatus.Text = "Disconnected";
+                lbBoomGateStatus.ForeColor = Color.Red;
+            }
+            if (_frontCameraId != null && _backCameraId != null && _serialPort != null)
+            {
+                lbProcessState.Text = ProcessState.Ready.ToString();
+                _processState = ProcessState.Ready;
+            }
+            else
+            {
+                lbProcessState.Text = ProcessState.Preparing.ToString();
+                _processState = ProcessState.Preparing;
             }
         }
         private void btnOpen_Resize(object sender, System.EventArgs e)
@@ -306,20 +345,22 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                     ENTITY.Image frontImage = new ENTITY.Image();
                     frontImage.Url = ImageHelper.SaveImage(_currentFrontImage);
                     frontImage.Type = ImageType.BEFORE_CHECKIN;
+                    _imageBUS.Add(frontImage);
 
                     ENTITY.Image backImage = new ENTITY.Image();
                     backImage.Url = ImageHelper.SaveImage(_currentBackImage);
                     backImage.Type = ImageType.AFTER_CHECKIN;
-
-                    ENTITY.Image plateImage = new ENTITY.Image();
-                    plateImage.Url = ImageHelper.SaveImage(_currentPlateImage);
-                    plateImage.Type = ImageType.LICENSE_PLATE_CHECKOUT;
-
-                    _imageBUS.Add(frontImage);
                     _imageBUS.Add(backImage);
-                    _imageBUS.Add(plateImage);
 
+                    if (_currentPlateImage != null)
+                    {
+                        ENTITY.Image plateImage = new ENTITY.Image();
+                        plateImage.Url = ImageHelper.SaveImage(_currentPlateImage);
+                        plateImage.Type = ImageType.LICENSE_PLATE_CHECKOUT;
+                        _imageBUS.Add(plateImage);
+                    }
 
+                    lbProcessState.Text = ProcessState.Ready.ToString();
                     _processState = ProcessState.Ready;
                 }
             }
@@ -327,60 +368,65 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         }
         private async void StartVisitorProcess(Card card)
         {
+            lbProcessState.Text = ProcessState.Scanning.ToString();
             _processState = ProcessState.Scanning;
 
             _currentFrontImage = _cameraHelper.GetImageFromPictureBox(pbFrontCamera);
             _currentBackImage = _cameraHelper.GetImageFromPictureBox(pbBackCamera);
             _currentPlateImage = null;
 
+            //set image to record
             pbFrontRecord.Image = _currentFrontImage;
             pbBackRecord.Image = _currentBackImage;
             pbPlateRecord.Image = _currentPlateImage;
 
-
-
             _currentSession = new Session();
             _currentSession.Checkin_time = DateTime.Now;
             _currentSession.Card_id = card.Id;
-            _currentSession.Type = card.Resident_id == null ? SessionType.VISITOR : SessionType.RESIDENT;
-
+            _currentSession.Type = SessionType.VISITOR;
 
             lbCardRfid.Text = card.Rfid;
             lbCardType.Text = card.Type.ToString();
             lbVehicalType.Text = card.Vehicle_type.Name;
-            lbVehicalPlate.Text = "Scanning...";
             lbCheckInTime.Text = _currentSession.Checkin_time?.ToString("dd/MM/yyyy HH:mm:ss");
             lbCheckOutTime.Text = "";
             lbTotalTime.Text = "";
             lbTotalPrice.Text = "";
 
 
-            if (card.Vehicle_type.Id == VehicleTypeID.CAR || card.Vehicle_type.Id == VehicleTypeID.MOTORBIKE)
+
+
+            if (card.Vehicle_type.Id == VehicleTypeID.BIKECYCLE)
             {
-                var result = await ANPR.ProcessImageAsync(_currentBackImage);
-
-                if (result != null)
-                {
-                    //setImage to pbPlate
-                    _currentPlateImage = result.Image;
-                    pbPlateRecord.Image = _currentPlateImage;
-                    lbVehicalPlate.Text = result.PlateNumber;
-                    _currentSession.License_plate = result.PlateNumber;
-
-                    //save image to file and get path
-                   
-                    btnOpenGate.Enabled = true;
-
-                }
-                else
-                {
-                    MessageHelper.ShowError("Cannot detect plate number!");
-                }
+                lbVehicalPlate.Text = "";
             }
             else
             {
-                MessageHelper.ShowError("Bike only!");
+                lbVehicalPlate.Text = "Scanning...";
+                var result = await ANPR.ProcessImageAsync(_currentBackImage);
+                if (result != null)
+                {
+                    //set plate number to record
+                    lbVehicalPlate.Text = result.PlateNumber;
+                    _currentSession.License_plate = result.PlateNumber;
+
+                    //set plate image to record
+                    _currentPlateImage = result.Image;
+                    pbPlateRecord.Image = _currentPlateImage;
+                }
+                else
+                {
+                    MessageHelper.ShowError("Cannot recognize license plate!, please try again!");
+                    lbProcessState.Text = ProcessState.Ready.ToString();
+                    _processState = ProcessState.Ready;
+                    lbVehicalPlate.Text = "";
+                    return;
+                }
+
+
             }
+            btnOpenGate.Enabled = true;
+            lbProcessState.Text = ProcessState.Done.ToString();
             _processState = ProcessState.Done;
 
         }
@@ -388,19 +434,14 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
 
         private void RfidReader_RFIDScanned(object sender, string rfidCode)
         {
+            if (_processState == ProcessState.Preparing)
+            {
+                MessageHelper.ShowError("Please configure all devices before scanning!");
+                return;
+            }
             if (_processState != ProcessState.Ready)
             {
                 MessageHelper.ShowError("Please wait for the current process to finish!");
-                return;
-            }
-            if (pbFrontCamera.Image == null || pbBackCamera.Image == null)
-            {
-                MessageHelper.ShowError("Please connect camera before scanning!");
-                return;
-            }
-            if (_serialPort == null)
-            {
-                MessageHelper.ShowError("Please connect gate before scanning!");
                 return;
             }
             List<FilterCondition> filters = new List<FilterCondition>()
@@ -410,7 +451,14 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             Card card = _cardBUS.GetAll(filters)?.FirstOrDefault();
             if (!ValidateVisitorCard(card)) return;
             card = _cardBUS.PopulateVehicleType(card);
-            StartVisitorProcess(card);
+            if (card.Resident_id == null)
+            {
+                StartVisitorProcess(card);
+            }
+            else
+            {
+
+            }
         }
         private void btnOpen_Click(object sender, EventArgs e)
         {
@@ -435,7 +483,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 return false;
             }
             if (_parkingLotType == ParkingLotType.FOUR_WHEELER
-                && card.Vehicle_type_id == VehicleTypeID.MOTORBIKE || card.Vehicle_type_id == VehicleTypeID.BIKECYCLE)
+                && (card.Vehicle_type_id == VehicleTypeID.MOTORBIKE || card.Vehicle_type_id == VehicleTypeID.BIKECYCLE))
             {
                 MessageHelper.ShowError("This line is for four-wheeler only so this card is not valid!");
                 return false;

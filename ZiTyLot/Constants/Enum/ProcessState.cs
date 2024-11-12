@@ -8,6 +8,7 @@ namespace ZiTyLot.Constants.Enum
 {
     public enum ProcessState
     {
+        Preparing,
         Ready,
         Scanning,
         Done

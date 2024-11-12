@@ -102,6 +102,8 @@
             this.pnlTop = new Sunny.UI.UIPanel();
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.separator = new System.Windows.Forms.Panel();
+            this.uiLabel6 = new Sunny.UI.UILabel();
+            this.lbProcessState = new Sunny.UI.UILabel();
             this.pnlBottom.SuspendLayout();
             this.table.SuspendLayout();
             this.pnlPlateRecord.SuspendLayout();
@@ -1208,6 +1210,8 @@
             // 
             this.pnlTop.BackColor = System.Drawing.Color.White;
             this.pnlTop.Controls.Add(this.uiLabel1);
+            this.pnlTop.Controls.Add(this.lbProcessState);
+            this.pnlTop.Controls.Add(this.uiLabel6);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.FillColor = System.Drawing.Color.White;
             this.pnlTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -1225,14 +1229,14 @@
             // 
             // uiLabel1
             // 
-            this.uiLabel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uiLabel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.uiLabel1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiLabel1.Location = new System.Drawing.Point(13, 0);
+            this.uiLabel1.Location = new System.Drawing.Point(1502, 0);
             this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(254, 62);
+            this.uiLabel1.Size = new System.Drawing.Size(103, 62);
             this.uiLabel1.TabIndex = 0;
-            this.uiLabel1.Text = "Check In Session";
+            this.uiLabel1.Text = "State:";
             this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // separator
@@ -1244,6 +1248,30 @@
             this.separator.Name = "separator";
             this.separator.Size = new System.Drawing.Size(1774, 5);
             this.separator.TabIndex = 9;
+            // 
+            // uiLabel6
+            // 
+            this.uiLabel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uiLabel6.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiLabel6.Location = new System.Drawing.Point(13, 0);
+            this.uiLabel6.Name = "uiLabel6";
+            this.uiLabel6.Size = new System.Drawing.Size(254, 62);
+            this.uiLabel6.TabIndex = 1;
+            this.uiLabel6.Text = "Check In Session";
+            this.uiLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbProcessState
+            // 
+            this.lbProcessState.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbProcessState.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbProcessState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.lbProcessState.Location = new System.Drawing.Point(1605, 0);
+            this.lbProcessState.Name = "lbProcessState";
+            this.lbProcessState.Size = new System.Drawing.Size(169, 62);
+            this.lbProcessState.TabIndex = 2;
+            this.lbProcessState.Text = "Preparing";
+            this.lbProcessState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CheckInForm
             // 
@@ -1375,5 +1403,7 @@
         private Sunny.UI.UIPanel pnlTop;
         private Sunny.UI.UILabel uiLabel1;
         private System.Windows.Forms.Panel separator;
+        private Sunny.UI.UILabel uiLabel6;
+        private Sunny.UI.UILabel lbProcessState;
     }
 }
