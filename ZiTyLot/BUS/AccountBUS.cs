@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using ZiTyLot.DAO;
 using ZiTyLot.ENTITY;
+using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Utils;
 using ZiTyLot.Helper;
 
@@ -18,6 +19,32 @@ namespace ZiTyLot.BUS
             this.accountDao = new AccountDAO();
             this.roleDAO = new RoleDAO();
             this.billDAO = new BillDAO();
+        }
+
+        public void ChangePassword(Account item, string currentPassword, string newPassword, string confirmPassword)
+        {
+            // Validate
+            if (string.IsNullOrWhiteSpace(currentPassword))
+                throw new Exception("Please enter current password");
+
+            if (string.IsNullOrWhiteSpace(newPassword))
+                throw new Exception("Please enter new password");
+
+            if (string.IsNullOrWhiteSpace(confirmPassword))
+                throw new Exception("Please enter confirm password");
+
+            if (!InputValidator.ValidatePassword(newPassword))
+                throw new Exception("Password must be between 8 and 20 characters");
+
+            // Kiểm tra tính hợp lệ của dữ liệu
+            if (!item.Password.Equals(currentPassword))
+                throw new Exception("Current password is incorrect");
+
+            if (!newPassword.Equals(confirmPassword))
+                throw new Exception("Confirm password does not match the new password");
+
+            item.Password = newPassword;
+            Update(item);
         }
 
         public void Add(Account item)
@@ -89,7 +116,7 @@ namespace ZiTyLot.BUS
         {
             EnsureRecordExists(item.Id); // Kiểm tra sự tồn tại của bản ghi
 
-            Validate(item); // Kiểm tra tính hợp lệ của dữ liệu
+            // Validate(item); // Kiểm tra tính hợp lệ của dữ liệu
 
             try
             {

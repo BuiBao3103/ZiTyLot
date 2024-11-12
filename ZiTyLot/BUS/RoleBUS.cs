@@ -107,7 +107,7 @@ namespace ZiTyLot.BUS
         {
             EnsureRecordExists(item.Id); // Kiểm tra sự tồn tại của bản ghi
 
-            Validate(item); // Kiểm tra tính hợp lệ của dữ liệu
+            // Validate(item); // Kiểm tra tính hợp lệ của dữ liệu
 
             try
             {

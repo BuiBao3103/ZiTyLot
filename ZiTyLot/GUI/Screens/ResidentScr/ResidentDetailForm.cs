@@ -76,12 +76,58 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
         }
         private void btnRestoreCard_Click(object sender, EventArgs e)
         {
-
+            DialogResult result = MessageHelper.ShowConfirm("Are you sure you want to restore this card?");
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    _resident.Card.Status = CardStatus.ACTIVE;
+                    _resident.Card.Updated_at = DateTime.Now;
+                    _cardBUS.Update(_resident.Card);
+                    MessageHelper.ShowSuccess("Card updated successfully!");
+                }
+                catch (ValidationInputException ex)
+                {
+                    MessageHelper.ShowWarning(ex.Message);
+                }
+                catch (BusinessException ex)
+                {
+                    MessageHelper.ShowWarning(ex.Message);
+                }
+                catch (Exception)
+                {
+                    MessageHelper.ShowWarning("An unexpected error occurred. Please try again later.");
+                }
+                LoadCardUI();
+            }
         }
 
         private void btnLockCard_Click(object sender, EventArgs e)
         {
-
+            DialogResult result = MessageHelper.ShowConfirm("Are you sure you want to lock this card?");
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    _resident.Card.Status = CardStatus.BLOCKED;
+                    _resident.Card.Updated_at = DateTime.Now;
+                    _cardBUS.Update(_resident.Card);
+                    MessageHelper.ShowSuccess("Card updated successfully!");
+                }
+                catch (ValidationInputException ex)
+                {
+                    MessageHelper.ShowWarning(ex.Message);
+                }
+                catch (BusinessException ex)
+                {
+                    MessageHelper.ShowWarning(ex.Message);
+                }
+                catch (Exception)
+                {
+                    MessageHelper.ShowWarning("An unexpected error occurred. Please try again later.");
+                }
+                LoadCardUI();
+            }
         }
 
         private void btnLostCard_Click(object sender, EventArgs e)
@@ -121,6 +167,74 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
             }
         }
 
+        private void btnSaveProfile_Click(object sender, EventArgs e)
+        {
+            if (!ValidateInput()) return;
+            try
+            {
+                _resident.Full_name = tbFullname.Text;
+                _resident.Apartment_id = tbApartmentId.Text;
+                _resident.Email = tbEmail.Text;
+                _resident.Phone = tbPhone.Text;
+                _resident.Updated_at = DateTime.Now;
+                _residentBUS.Update(_resident);
+                MessageHelper.ShowSuccess("Resident updated successfully!");
+                ResidentUpdateEvent?.Invoke(this, EventArgs.Empty);
+                this.Close();
+            }
+            catch (ValidationInputException ex)
+            {
+                MessageHelper.ShowWarning(ex.Message);
+            }
+            catch (BusinessException ex)
+            {
+                MessageHelper.ShowWarning(ex.Message);
+            }
+            catch (Exception)
+            {
+                MessageHelper.ShowWarning("An unexpected error occurred. Please try again later.");
+            }
+        }
 
+        private bool ValidateInput()
+        {
+            if (string.IsNullOrEmpty(tbFullname.Text))
+            {
+                MessageHelper.ShowWarning("Please enter fullname");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(tbApartmentId.Text))
+            {
+                MessageHelper.ShowWarning("Please enter apartment");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(tbEmail.Text))
+            {
+                MessageHelper.ShowWarning("Please enter email");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(tbPhone.Text))
+            {
+                MessageHelper.ShowWarning("Please enter phone");
+                return false;
+            }
+
+            if (!InputValidator.ValidateEmail(tbEmail.Text))
+            {
+                MessageHelper.ShowWarning("Email invalid");
+                return false;
+            }
+
+            if (!InputValidator.ValidatePhoneNumber(tbPhone.Text))
+            {
+                MessageHelper.ShowWarning("Phone invalid");
+                return false;
+            }
+
+            return true;
+        }
     }
 }

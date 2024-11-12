@@ -466,6 +466,35 @@ namespace ZiTyLot.DAO
             }
         }
 
+        public void DeleteRoleFunction(object role_id)
+        {
+            try
+            {
+                // Establish a connection to the database
+                using (var connection = DBConfig.GetConnection())
+                {
+                    connection.Open(); // Open the connection
+
+                    // Define the SQL query to delete the record by ID
+                    var query = $"DELETE FROM {tableName} WHERE role_id = @role_id";
+
+                    // Create a MySqlCommand with the query
+                    using (var command = new MySqlCommand(query, connection))
+                    {
+                        // Add the ID parameter to the command
+                        command.Parameters.AddWithValue("@role_id", role_id);
+
+                        // Execute the query
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public void SoftDelete (object id)
         {
             try

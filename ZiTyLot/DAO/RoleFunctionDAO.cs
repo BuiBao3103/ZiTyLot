@@ -80,7 +80,7 @@ namespace ZiTyLot.DAO
         {
             try
             {
-                daoFactory.Delete(id);
+                daoFactory.DeleteRoleFunction(id);
             }
             catch (Exception ex)
             {

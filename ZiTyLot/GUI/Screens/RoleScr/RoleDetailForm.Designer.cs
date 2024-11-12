@@ -217,6 +217,7 @@
             this.btnRemove.TabIndex = 3;
             this.btnRemove.Text = "\r\n";
             this.btnRemove.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // uiPanel1
             // 
@@ -260,6 +261,7 @@
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "\r\n";
             this.btnAdd.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // uiGroupBox1
             // 
@@ -411,6 +413,7 @@
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // uiPanel4
             // 
