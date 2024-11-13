@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CarCheckInForm));
             this.pnlTop = new Sunny.UI.UIPanel();
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.separator = new System.Windows.Forms.Panel();
@@ -1264,9 +1265,11 @@
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.separator);
             this.Controls.Add(this.pnlTop);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1366, 768);
             this.Name = "CarCheckInForm";
             this.Padding = new System.Windows.Forms.Padding(10);
+            this.Text = "Car Check In Form";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CheckInForm_KeyDown);
             this.pnlTop.ResumeLayout(false);
             this.pnlBottom.ResumeLayout(false);

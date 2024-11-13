@@ -81,5 +81,24 @@ namespace ZiTyLot.GUI.Screens.CardScr
 
             return true;
         }
+
+        private void cbCardType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = cbCardType.SelectedIndex;
+            switch (index)
+            {
+                case 0: // Resident
+                    pnlMain.RowStyles[2] = new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent ,0);
+                    this.MinimumSize = new Size(0, 280);
+                    this.Height = 280;
+                    break;
+                case 1: // Visitor
+                    pnlMain.RowStyles[2] = new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100);
+                    this.Height = 370;
+                    this.MinimumSize = new Size(0, 370);
+                    break;
+            }
+        }
+        
     }
 }

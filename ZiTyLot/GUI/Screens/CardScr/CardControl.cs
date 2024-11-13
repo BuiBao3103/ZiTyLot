@@ -115,7 +115,7 @@ namespace ZiTyLot.GUI.Screens
             tableCard.Rows.Clear();
             foreach (Card card in page.Content)
             {
-                tableCard.Rows.Add(card.Id, card.Rfid, card.Type, card.Status);
+                tableCard.Rows.Add(card.Id, card.Rfid, card.Type, card.Vehicle_type, card.Status);
             }
             //update button
             btnPrevious.Enabled = pageable.PageNumber > 1;

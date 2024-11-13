@@ -178,5 +178,10 @@ namespace ZiTyLot.GUI.Screens.BillScr
                 e.KeyChar = char.ToUpper(e.KeyChar);
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

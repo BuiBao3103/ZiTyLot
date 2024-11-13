@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlTab = new Sunny.UI.UITabControl();
             this.tpRevenue = new System.Windows.Forms.TabPage();
@@ -157,9 +157,8 @@
             this.panel2.Controls.Add(this.pickerSessionDuration);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1253, 945);
+            this.panel2.Size = new System.Drawing.Size(940, 768);
             this.panel2.TabIndex = 3;
             // 
             // pnlTab
@@ -173,12 +172,11 @@
             this.pnlTab.ItemSize = new System.Drawing.Size(150, 54);
             this.pnlTab.Location = new System.Drawing.Point(0, 0);
             this.pnlTab.MainPage = "";
-            this.pnlTab.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTab.MenuStyle = Sunny.UI.UIMenuStyle.Custom;
             this.pnlTab.Name = "pnlTab";
             this.pnlTab.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.pnlTab.SelectedIndex = 0;
-            this.pnlTab.Size = new System.Drawing.Size(1253, 945);
+            this.pnlTab.Size = new System.Drawing.Size(940, 768);
             this.pnlTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.pnlTab.TabBackColor = System.Drawing.Color.White;
             this.pnlTab.TabIndex = 6;
@@ -194,9 +192,8 @@
             this.tpRevenue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.tpRevenue.Controls.Add(this.uiPanel2);
             this.tpRevenue.Location = new System.Drawing.Point(0, 54);
-            this.tpRevenue.Margin = new System.Windows.Forms.Padding(4);
             this.tpRevenue.Name = "tpRevenue";
-            this.tpRevenue.Size = new System.Drawing.Size(1253, 891);
+            this.tpRevenue.Size = new System.Drawing.Size(940, 714);
             this.tpRevenue.TabIndex = 0;
             this.tpRevenue.Text = "Revenue";
             // 
@@ -215,7 +212,7 @@
             this.uiPanel2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.uiPanel2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel2.RectSize = 2;
-            this.uiPanel2.Size = new System.Drawing.Size(1253, 891);
+            this.uiPanel2.Size = new System.Drawing.Size(940, 714);
             this.uiPanel2.TabIndex = 0;
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -231,7 +228,7 @@
             this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel3.Name = "uiPanel3";
             this.uiPanel3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel3.Size = new System.Drawing.Size(1253, 889);
+            this.uiPanel3.Size = new System.Drawing.Size(940, 712);
             this.uiPanel3.TabIndex = 0;
             this.uiPanel3.Text = null;
             this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -254,7 +251,7 @@
             this.uiTableLayoutPanel1.RowCount = 2;
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel1.Size = new System.Drawing.Size(1253, 889);
+            this.uiTableLayoutPanel1.Size = new System.Drawing.Size(940, 712);
             this.uiTableLayoutPanel1.TabIndex = 0;
             this.uiTableLayoutPanel1.TagString = null;
             // 
@@ -264,7 +261,7 @@
             this.uiPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel18.FillColor = System.Drawing.Color.White;
             this.uiPanel18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel18.Location = new System.Drawing.Point(838, 205);
+            this.uiPanel18.Location = new System.Drawing.Point(630, 205);
             this.uiPanel18.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel18.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel18.Name = "uiPanel18";
@@ -272,7 +269,7 @@
             this.uiPanel18.Radius = 10;
             this.uiPanel18.RectColor = System.Drawing.Color.White;
             this.uiPanel18.RectSize = 2;
-            this.uiPanel18.Size = new System.Drawing.Size(411, 679);
+            this.uiPanel18.Size = new System.Drawing.Size(306, 502);
             this.uiPanel18.TabIndex = 6;
             this.uiPanel18.Text = null;
             this.uiPanel18.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -292,7 +289,7 @@
             this.uiTableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.uiTableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.uiTableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.uiTableLayoutPanel6.Size = new System.Drawing.Size(391, 659);
+            this.uiTableLayoutPanel6.Size = new System.Drawing.Size(286, 482);
             this.uiTableLayoutPanel6.TabIndex = 0;
             this.uiTableLayoutPanel6.TagString = null;
             // 
@@ -310,7 +307,7 @@
             this.uiPanel20.Radius = 0;
             this.uiPanel20.RectColor = System.Drawing.Color.White;
             this.uiPanel20.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel20.Size = new System.Drawing.Size(383, 30);
+            this.uiPanel20.Size = new System.Drawing.Size(278, 30);
             this.uiPanel20.TabIndex = 5;
             this.uiPanel20.Text = null;
             this.uiPanel20.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -343,30 +340,30 @@
             this.uiPanel19.Radius = 0;
             this.uiPanel19.RectColor = System.Drawing.Color.White;
             this.uiPanel19.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel19.Size = new System.Drawing.Size(383, 609);
+            this.uiPanel19.Size = new System.Drawing.Size(278, 432);
             this.uiPanel19.TabIndex = 4;
             this.uiPanel19.Text = null;
             this.uiPanel19.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // chartCorrelate
             // 
-            chartArea4.AxisX.IsLabelAutoFit = false;
-            chartArea4.AxisX.LabelStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea4.AxisX.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea4.AxisY.IsLabelAutoFit = false;
-            chartArea4.AxisY.LabelStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea4.AxisY.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea4.Name = "ChartArea1";
-            this.chartCorrelate.ChartAreas.Add(chartArea4);
+            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisX.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisY.IsLabelAutoFit = false;
+            chartArea1.AxisY.LabelStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisY.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.Name = "ChartArea1";
+            this.chartCorrelate.ChartAreas.Add(chartArea1);
             this.chartCorrelate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartCorrelate.Location = new System.Drawing.Point(10, 10);
             this.chartCorrelate.Name = "chartCorrelate";
             this.chartCorrelate.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series8.Name = "Total";
-            this.chartCorrelate.Series.Add(series8);
-            this.chartCorrelate.Size = new System.Drawing.Size(363, 589);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Name = "Total";
+            this.chartCorrelate.Series.Add(series1);
+            this.chartCorrelate.Size = new System.Drawing.Size(258, 412);
             this.chartCorrelate.TabIndex = 0;
             this.chartCorrelate.Text = "chart2";
             // 
@@ -385,7 +382,7 @@
             this.pnlOverview.Radius = 10;
             this.pnlOverview.RectColor = System.Drawing.Color.White;
             this.pnlOverview.RectSize = 2;
-            this.pnlOverview.Size = new System.Drawing.Size(826, 679);
+            this.pnlOverview.Size = new System.Drawing.Size(618, 502);
             this.pnlOverview.TabIndex = 3;
             this.pnlOverview.Text = null;
             this.pnlOverview.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -405,7 +402,7 @@
             this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.uiTableLayoutPanel5.Size = new System.Drawing.Size(806, 659);
+            this.uiTableLayoutPanel5.Size = new System.Drawing.Size(598, 482);
             this.uiTableLayoutPanel5.TabIndex = 0;
             this.uiTableLayoutPanel5.TagString = null;
             // 
@@ -423,49 +420,49 @@
             this.uiPanel17.Radius = 0;
             this.uiPanel17.RectColor = System.Drawing.Color.White;
             this.uiPanel17.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel17.Size = new System.Drawing.Size(798, 609);
+            this.uiPanel17.Size = new System.Drawing.Size(590, 432);
             this.uiPanel17.TabIndex = 4;
             this.uiPanel17.Text = null;
             this.uiPanel17.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // chartOverview
             // 
-            chartArea5.AxisX.IsLabelAutoFit = false;
-            chartArea5.AxisX.LabelStyle.Angle = -45;
-            chartArea5.AxisX.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea5.AxisX.Title = "Period";
-            chartArea5.AxisX.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea5.AxisX.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            chartArea5.AxisY.IsLabelAutoFit = false;
-            chartArea5.AxisY.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea5.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            chartArea5.AxisY.Title = "kVNĐ";
-            chartArea5.AxisY.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea5.AxisY.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            chartArea5.Name = "ChartArea1";
-            this.chartOverview.ChartAreas.Add(chartArea5);
+            chartArea2.AxisX.IsLabelAutoFit = false;
+            chartArea2.AxisX.LabelStyle.Angle = -45;
+            chartArea2.AxisX.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisX.Title = "Period";
+            chartArea2.AxisX.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisX.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            chartArea2.AxisY.IsLabelAutoFit = false;
+            chartArea2.AxisY.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea2.AxisY.Title = "kVNĐ";
+            chartArea2.AxisY.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisY.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            chartArea2.Name = "ChartArea1";
+            this.chartOverview.ChartAreas.Add(chartArea2);
             this.chartOverview.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Name = "Legend1";
-            this.chartOverview.Legends.Add(legend3);
+            legend1.Name = "Legend1";
+            this.chartOverview.Legends.Add(legend1);
             this.chartOverview.Location = new System.Drawing.Point(0, 0);
             this.chartOverview.Name = "chartOverview";
             this.chartOverview.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series9.ChartArea = "ChartArea1";
-            series9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series9.Legend = "Legend1";
-            series9.Name = "Total";
-            series10.ChartArea = "ChartArea1";
-            series10.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series10.Legend = "Legend1";
-            series10.Name = "Resident";
-            series11.ChartArea = "ChartArea1";
-            series11.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series11.Legend = "Legend1";
-            series11.Name = "Visitor";
-            this.chartOverview.Series.Add(series9);
-            this.chartOverview.Series.Add(series10);
-            this.chartOverview.Series.Add(series11);
-            this.chartOverview.Size = new System.Drawing.Size(798, 609);
+            series2.ChartArea = "ChartArea1";
+            series2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series2.Legend = "Legend1";
+            series2.Name = "Total";
+            series3.ChartArea = "ChartArea1";
+            series3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series3.Legend = "Legend1";
+            series3.Name = "Resident";
+            series4.ChartArea = "ChartArea1";
+            series4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series4.Legend = "Legend1";
+            series4.Name = "Visitor";
+            this.chartOverview.Series.Add(series2);
+            this.chartOverview.Series.Add(series3);
+            this.chartOverview.Series.Add(series4);
+            this.chartOverview.Size = new System.Drawing.Size(590, 432);
             this.chartOverview.TabIndex = 0;
             // 
             // uiPanel15
@@ -484,7 +481,7 @@
             this.uiPanel15.Radius = 0;
             this.uiPanel15.RectColor = System.Drawing.Color.White;
             this.uiPanel15.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel15.Size = new System.Drawing.Size(798, 30);
+            this.uiPanel15.Size = new System.Drawing.Size(590, 30);
             this.uiPanel15.TabIndex = 3;
             this.uiPanel15.Text = null;
             this.uiPanel15.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -493,7 +490,7 @@
             // 
             this.pnlBtnDuration.Controls.Add(this.btnDuration);
             this.pnlBtnDuration.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlBtnDuration.Location = new System.Drawing.Point(514, 0);
+            this.pnlBtnDuration.Location = new System.Drawing.Point(306, 0);
             this.pnlBtnDuration.Name = "pnlBtnDuration";
             this.pnlBtnDuration.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.pnlBtnDuration.Size = new System.Drawing.Size(134, 30);
@@ -536,7 +533,7 @@
             this.uiPanel25.Dock = System.Windows.Forms.DockStyle.Right;
             this.uiPanel25.FillColor = System.Drawing.Color.White;
             this.uiPanel25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel25.Location = new System.Drawing.Point(648, 0);
+            this.uiPanel25.Location = new System.Drawing.Point(440, 0);
             this.uiPanel25.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel25.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel25.Name = "uiPanel25";
@@ -557,8 +554,8 @@
             this.cbQuickFilter.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
             this.cbQuickFilter.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbQuickFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.cbQuickFilter.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(235)))), ((int)(((byte)(212)))));
-            this.cbQuickFilter.ItemRectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
+            this.cbQuickFilter.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbQuickFilter.ItemRectColor = System.Drawing.Color.White;
             this.cbQuickFilter.Items.AddRange(new object[] {
             "Last 7 days",
             "This week",
@@ -568,8 +565,8 @@
             "This year",
             "Last year",
             "Last 3 year"});
-            this.cbQuickFilter.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
-            this.cbQuickFilter.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
+            this.cbQuickFilter.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbQuickFilter.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbQuickFilter.Location = new System.Drawing.Point(5, 3);
             this.cbQuickFilter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbQuickFilter.MinimumSize = new System.Drawing.Size(63, 0);
@@ -608,7 +605,7 @@
             this.uiPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel11.FillColor = System.Drawing.Color.White;
             this.uiPanel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel11.Location = new System.Drawing.Point(838, 5);
+            this.uiPanel11.Location = new System.Drawing.Point(630, 5);
             this.uiPanel11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel11.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel11.Name = "uiPanel11";
@@ -616,7 +613,7 @@
             this.uiPanel11.Radius = 10;
             this.uiPanel11.RectColor = System.Drawing.Color.White;
             this.uiPanel11.RectSize = 2;
-            this.uiPanel11.Size = new System.Drawing.Size(411, 190);
+            this.uiPanel11.Size = new System.Drawing.Size(306, 190);
             this.uiPanel11.TabIndex = 2;
             this.uiPanel11.Text = null;
             this.uiPanel11.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -637,7 +634,7 @@
             this.uiTableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.uiTableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.uiTableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.uiTableLayoutPanel4.Size = new System.Drawing.Size(391, 170);
+            this.uiTableLayoutPanel4.Size = new System.Drawing.Size(286, 170);
             this.uiTableLayoutPanel4.TabIndex = 0;
             this.uiTableLayoutPanel4.TagString = null;
             // 
@@ -648,7 +645,7 @@
             this.uiLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLabel7.Location = new System.Drawing.Point(3, 0);
             this.uiLabel7.Name = "uiLabel7";
-            this.uiLabel7.Size = new System.Drawing.Size(267, 40);
+            this.uiLabel7.Size = new System.Drawing.Size(194, 40);
             this.uiLabel7.TabIndex = 0;
             this.uiLabel7.Text = "Revenue of visitors";
             this.uiLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -660,7 +657,7 @@
             this.lbTotalVisitorRevenue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.lbTotalVisitorRevenue.Location = new System.Drawing.Point(3, 40);
             this.lbTotalVisitorRevenue.Name = "lbTotalVisitorRevenue";
-            this.lbTotalVisitorRevenue.Size = new System.Drawing.Size(267, 130);
+            this.lbTotalVisitorRevenue.Size = new System.Drawing.Size(194, 130);
             this.lbTotalVisitorRevenue.TabIndex = 1;
             this.lbTotalVisitorRevenue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -668,10 +665,10 @@
             // 
             this.uiSymbolLabel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiSymbolLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiSymbolLabel6.Location = new System.Drawing.Point(276, 43);
+            this.uiSymbolLabel6.Location = new System.Drawing.Point(203, 43);
             this.uiSymbolLabel6.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiSymbolLabel6.Name = "uiSymbolLabel6";
-            this.uiSymbolLabel6.Size = new System.Drawing.Size(112, 124);
+            this.uiSymbolLabel6.Size = new System.Drawing.Size(80, 124);
             this.uiSymbolLabel6.Symbol = 559933;
             this.uiSymbolLabel6.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiSymbolLabel6.SymbolSize = 100;
@@ -683,7 +680,7 @@
             this.uiPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel8.FillColor = System.Drawing.Color.White;
             this.uiPanel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel8.Location = new System.Drawing.Point(421, 5);
+            this.uiPanel8.Location = new System.Drawing.Point(317, 5);
             this.uiPanel8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel8.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel8.Name = "uiPanel8";
@@ -691,7 +688,7 @@
             this.uiPanel8.Radius = 10;
             this.uiPanel8.RectColor = System.Drawing.Color.White;
             this.uiPanel8.RectSize = 2;
-            this.uiPanel8.Size = new System.Drawing.Size(409, 190);
+            this.uiPanel8.Size = new System.Drawing.Size(305, 190);
             this.uiPanel8.TabIndex = 1;
             this.uiPanel8.Text = null;
             this.uiPanel8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -712,7 +709,7 @@
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(389, 170);
+            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(285, 170);
             this.uiTableLayoutPanel3.TabIndex = 0;
             this.uiTableLayoutPanel3.TagString = null;
             // 
@@ -723,7 +720,7 @@
             this.uiLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLabel4.Location = new System.Drawing.Point(3, 0);
             this.uiLabel4.Name = "uiLabel4";
-            this.uiLabel4.Size = new System.Drawing.Size(266, 40);
+            this.uiLabel4.Size = new System.Drawing.Size(193, 40);
             this.uiLabel4.TabIndex = 0;
             this.uiLabel4.Text = "Revenue of residents";
             this.uiLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -735,7 +732,7 @@
             this.lbTotalResidentRevenue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.lbTotalResidentRevenue.Location = new System.Drawing.Point(3, 40);
             this.lbTotalResidentRevenue.Name = "lbTotalResidentRevenue";
-            this.lbTotalResidentRevenue.Size = new System.Drawing.Size(266, 130);
+            this.lbTotalResidentRevenue.Size = new System.Drawing.Size(193, 130);
             this.lbTotalResidentRevenue.TabIndex = 1;
             this.lbTotalResidentRevenue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -743,10 +740,10 @@
             // 
             this.uiSymbolLabel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiSymbolLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiSymbolLabel4.Location = new System.Drawing.Point(275, 43);
+            this.uiSymbolLabel4.Location = new System.Drawing.Point(202, 43);
             this.uiSymbolLabel4.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiSymbolLabel4.Name = "uiSymbolLabel4";
-            this.uiSymbolLabel4.Size = new System.Drawing.Size(111, 124);
+            this.uiSymbolLabel4.Size = new System.Drawing.Size(80, 124);
             this.uiSymbolLabel4.Symbol = 358675;
             this.uiSymbolLabel4.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiSymbolLabel4.SymbolOffset = new System.Drawing.Point(-15, 0);
@@ -767,7 +764,7 @@
             this.uiPanel1.Radius = 10;
             this.uiPanel1.RectColor = System.Drawing.Color.White;
             this.uiPanel1.RectSize = 2;
-            this.uiPanel1.Size = new System.Drawing.Size(409, 190);
+            this.uiPanel1.Size = new System.Drawing.Size(305, 190);
             this.uiPanel1.TabIndex = 0;
             this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -789,7 +786,7 @@
             this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.uiTableLayoutPanel2.Size = new System.Drawing.Size(389, 170);
+            this.uiTableLayoutPanel2.Size = new System.Drawing.Size(285, 170);
             this.uiTableLayoutPanel2.TabIndex = 0;
             this.uiTableLayoutPanel2.TagString = null;
             // 
@@ -806,7 +803,7 @@
             this.uiPanel24.Radius = 0;
             this.uiPanel24.RectColor = System.Drawing.Color.White;
             this.uiPanel24.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel24.Size = new System.Drawing.Size(264, 120);
+            this.uiPanel24.Size = new System.Drawing.Size(191, 120);
             this.uiPanel24.TabIndex = 6;
             this.uiPanel24.Text = null;
             this.uiPanel24.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -818,7 +815,7 @@
             this.lbTotalRevenue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.lbTotalRevenue.Location = new System.Drawing.Point(0, 0);
             this.lbTotalRevenue.Name = "lbTotalRevenue";
-            this.lbTotalRevenue.Size = new System.Drawing.Size(264, 120);
+            this.lbTotalRevenue.Size = new System.Drawing.Size(191, 120);
             this.lbTotalRevenue.TabIndex = 2;
             this.lbTotalRevenue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -827,14 +824,14 @@
             this.uiPanel22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel22.FillColor = System.Drawing.Color.White;
             this.uiPanel22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel22.Location = new System.Drawing.Point(276, 5);
+            this.uiPanel22.Location = new System.Drawing.Point(203, 5);
             this.uiPanel22.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel22.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel22.Name = "uiPanel22";
             this.uiPanel22.Radius = 0;
             this.uiPanel22.RectColor = System.Drawing.Color.White;
             this.uiPanel22.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel22.Size = new System.Drawing.Size(109, 30);
+            this.uiPanel22.Size = new System.Drawing.Size(78, 30);
             this.uiPanel22.TabIndex = 5;
             this.uiPanel22.Text = null;
             this.uiPanel22.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -846,7 +843,7 @@
             this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLabel1.Location = new System.Drawing.Point(3, 0);
             this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(266, 40);
+            this.uiLabel1.Size = new System.Drawing.Size(193, 40);
             this.uiLabel1.TabIndex = 0;
             this.uiLabel1.Text = "Revenue";
             this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -855,10 +852,10 @@
             // 
             this.uiSymbolLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiSymbolLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiSymbolLabel2.Location = new System.Drawing.Point(275, 43);
+            this.uiSymbolLabel2.Location = new System.Drawing.Point(202, 43);
             this.uiSymbolLabel2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiSymbolLabel2.Name = "uiSymbolLabel2";
-            this.uiSymbolLabel2.Size = new System.Drawing.Size(111, 124);
+            this.uiSymbolLabel2.Size = new System.Drawing.Size(80, 124);
             this.uiSymbolLabel2.Symbol = 358665;
             this.uiSymbolLabel2.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiSymbolLabel2.SymbolOffset = new System.Drawing.Point(-8, 0);
@@ -870,9 +867,8 @@
             this.tpSession.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.tpSession.Controls.Add(this.uiPanel6);
             this.tpSession.Location = new System.Drawing.Point(0, 54);
-            this.tpSession.Margin = new System.Windows.Forms.Padding(4);
             this.tpSession.Name = "tpSession";
-            this.tpSession.Size = new System.Drawing.Size(1253, 891);
+            this.tpSession.Size = new System.Drawing.Size(940, 714);
             this.tpSession.TabIndex = 1;
             this.tpSession.Text = "Session";
             // 
@@ -891,7 +887,7 @@
             this.uiPanel6.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.uiPanel6.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel6.RectSize = 2;
-            this.uiPanel6.Size = new System.Drawing.Size(1253, 891);
+            this.uiPanel6.Size = new System.Drawing.Size(940, 714);
             this.uiPanel6.TabIndex = 1;
             this.uiPanel6.Text = null;
             this.uiPanel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -907,7 +903,7 @@
             this.uiPanel7.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel7.Name = "uiPanel7";
             this.uiPanel7.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel7.Size = new System.Drawing.Size(1253, 889);
+            this.uiPanel7.Size = new System.Drawing.Size(940, 712);
             this.uiPanel7.TabIndex = 0;
             this.uiPanel7.Text = null;
             this.uiPanel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -927,7 +923,7 @@
             this.uiTableLayoutPanel7.RowCount = 2;
             this.uiTableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.uiTableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel7.Size = new System.Drawing.Size(1253, 889);
+            this.uiTableLayoutPanel7.Size = new System.Drawing.Size(940, 712);
             this.uiTableLayoutPanel7.TabIndex = 0;
             this.uiTableLayoutPanel7.TagString = null;
             // 
@@ -946,7 +942,7 @@
             this.uiPanel28.Radius = 10;
             this.uiPanel28.RectColor = System.Drawing.Color.White;
             this.uiPanel28.RectSize = 2;
-            this.uiPanel28.Size = new System.Drawing.Size(1245, 679);
+            this.uiPanel28.Size = new System.Drawing.Size(932, 502);
             this.uiPanel28.TabIndex = 3;
             this.uiPanel28.Text = null;
             this.uiPanel28.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -966,7 +962,7 @@
             this.uiTableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.uiTableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.uiTableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.uiTableLayoutPanel9.Size = new System.Drawing.Size(1225, 659);
+            this.uiTableLayoutPanel9.Size = new System.Drawing.Size(912, 482);
             this.uiTableLayoutPanel9.TabIndex = 0;
             this.uiTableLayoutPanel9.TagString = null;
             // 
@@ -984,7 +980,7 @@
             this.uiPanel29.Radius = 0;
             this.uiPanel29.RectColor = System.Drawing.Color.White;
             this.uiPanel29.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel29.Size = new System.Drawing.Size(1217, 609);
+            this.uiPanel29.Size = new System.Drawing.Size(904, 432);
             this.uiPanel29.TabIndex = 4;
             this.uiPanel29.Text = null;
             this.uiPanel29.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -992,48 +988,48 @@
             // chartSessionOverview
             // 
             this.chartSessionOverview.BorderlineWidth = 0;
-            chartArea6.AxisX.IsLabelAutoFit = false;
-            chartArea6.AxisX.LabelStyle.Angle = -45;
-            chartArea6.AxisX.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea6.AxisX.Title = "Period";
-            chartArea6.AxisX.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea6.AxisX.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            chartArea6.AxisY.IsLabelAutoFit = false;
-            chartArea6.AxisY.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea6.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            chartArea6.AxisY.Title = "Vehicals";
-            chartArea6.AxisY.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea6.AxisY.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            chartArea6.Name = "ChartArea1";
-            this.chartSessionOverview.ChartAreas.Add(chartArea6);
+            chartArea3.AxisX.IsLabelAutoFit = false;
+            chartArea3.AxisX.LabelStyle.Angle = -45;
+            chartArea3.AxisX.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea3.AxisX.Title = "Period";
+            chartArea3.AxisX.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea3.AxisX.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            chartArea3.AxisY.IsLabelAutoFit = false;
+            chartArea3.AxisY.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea3.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea3.AxisY.Title = "Vehicals";
+            chartArea3.AxisY.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea3.AxisY.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            chartArea3.Name = "ChartArea1";
+            this.chartSessionOverview.ChartAreas.Add(chartArea3);
             this.chartSessionOverview.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Name = "Legend1";
-            this.chartSessionOverview.Legends.Add(legend4);
+            legend2.Name = "Legend1";
+            this.chartSessionOverview.Legends.Add(legend2);
             this.chartSessionOverview.Location = new System.Drawing.Point(0, 0);
             this.chartSessionOverview.Name = "chartSessionOverview";
             this.chartSessionOverview.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series12.BorderWidth = 3;
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series12.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series12.Legend = "Legend1";
-            series12.Name = "Motorbike";
-            series13.BorderWidth = 3;
-            series13.ChartArea = "ChartArea1";
-            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series13.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series13.Legend = "Legend1";
-            series13.Name = "Car";
-            series14.BorderWidth = 3;
-            series14.ChartArea = "ChartArea1";
-            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series14.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series14.Legend = "Legend1";
-            series14.Name = "Bicycle";
-            this.chartSessionOverview.Series.Add(series12);
-            this.chartSessionOverview.Series.Add(series13);
-            this.chartSessionOverview.Series.Add(series14);
-            this.chartSessionOverview.Size = new System.Drawing.Size(1217, 609);
+            series5.BorderWidth = 3;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series5.Legend = "Legend1";
+            series5.Name = "Motorbike";
+            series6.BorderWidth = 3;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series6.Legend = "Legend1";
+            series6.Name = "Car";
+            series7.BorderWidth = 3;
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series7.Legend = "Legend1";
+            series7.Name = "Bicycle";
+            this.chartSessionOverview.Series.Add(series5);
+            this.chartSessionOverview.Series.Add(series6);
+            this.chartSessionOverview.Series.Add(series7);
+            this.chartSessionOverview.Size = new System.Drawing.Size(904, 432);
             this.chartSessionOverview.TabIndex = 0;
             // 
             // uiPanel30
@@ -1052,7 +1048,7 @@
             this.uiPanel30.Radius = 0;
             this.uiPanel30.RectColor = System.Drawing.Color.White;
             this.uiPanel30.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel30.Size = new System.Drawing.Size(1217, 30);
+            this.uiPanel30.Size = new System.Drawing.Size(904, 30);
             this.uiPanel30.TabIndex = 3;
             this.uiPanel30.Text = null;
             this.uiPanel30.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1061,7 +1057,7 @@
             // 
             this.pnlBtnSessionDuration.Controls.Add(this.btnSessionDuration);
             this.pnlBtnSessionDuration.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlBtnSessionDuration.Location = new System.Drawing.Point(933, 0);
+            this.pnlBtnSessionDuration.Location = new System.Drawing.Point(620, 0);
             this.pnlBtnSessionDuration.Name = "pnlBtnSessionDuration";
             this.pnlBtnSessionDuration.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.pnlBtnSessionDuration.Size = new System.Drawing.Size(134, 30);
@@ -1104,7 +1100,7 @@
             this.uiPanel32.Dock = System.Windows.Forms.DockStyle.Right;
             this.uiPanel32.FillColor = System.Drawing.Color.White;
             this.uiPanel32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel32.Location = new System.Drawing.Point(1067, 0);
+            this.uiPanel32.Location = new System.Drawing.Point(754, 0);
             this.uiPanel32.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel32.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel32.Name = "uiPanel32";
@@ -1124,8 +1120,8 @@
             this.cbSessionQuickFilter.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
             this.cbSessionQuickFilter.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSessionQuickFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.cbSessionQuickFilter.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(235)))), ((int)(((byte)(212)))));
-            this.cbSessionQuickFilter.ItemRectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
+            this.cbSessionQuickFilter.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbSessionQuickFilter.ItemRectColor = System.Drawing.Color.White;
             this.cbSessionQuickFilter.Items.AddRange(new object[] {
             "Last 7 days",
             "This month",
@@ -1135,8 +1131,8 @@
             "This year",
             "Last year",
             "Last 3 year"});
-            this.cbSessionQuickFilter.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
-            this.cbSessionQuickFilter.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
+            this.cbSessionQuickFilter.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbSessionQuickFilter.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbSessionQuickFilter.Location = new System.Drawing.Point(5, 3);
             this.cbSessionQuickFilter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbSessionQuickFilter.MinimumSize = new System.Drawing.Size(63, 0);
@@ -1175,7 +1171,7 @@
             this.uiPanel36.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel36.FillColor = System.Drawing.Color.White;
             this.uiPanel36.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel36.Location = new System.Drawing.Point(755, 5);
+            this.uiPanel36.Location = new System.Drawing.Point(568, 5);
             this.uiPanel36.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel36.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel36.Name = "uiPanel36";
@@ -1183,7 +1179,7 @@
             this.uiPanel36.Radius = 10;
             this.uiPanel36.RectColor = System.Drawing.Color.White;
             this.uiPanel36.RectSize = 2;
-            this.uiPanel36.Size = new System.Drawing.Size(494, 190);
+            this.uiPanel36.Size = new System.Drawing.Size(368, 190);
             this.uiPanel36.TabIndex = 1;
             this.uiPanel36.Text = null;
             this.uiPanel36.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1203,7 +1199,7 @@
             this.uiTableLayoutPanel11.RowCount = 2;
             this.uiTableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.uiTableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel11.Size = new System.Drawing.Size(474, 170);
+            this.uiTableLayoutPanel11.Size = new System.Drawing.Size(348, 170);
             this.uiTableLayoutPanel11.TabIndex = 0;
             this.uiTableLayoutPanel11.TagString = null;
             // 
@@ -1214,7 +1210,7 @@
             this.uiLabel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLabel14.Location = new System.Drawing.Point(3, 0);
             this.uiLabel14.Name = "uiLabel14";
-            this.uiLabel14.Size = new System.Drawing.Size(325, 40);
+            this.uiLabel14.Size = new System.Drawing.Size(237, 40);
             this.uiLabel14.TabIndex = 0;
             this.uiLabel14.Text = "4 Wheels (Car)";
             this.uiLabel14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1226,7 +1222,7 @@
             this.lbTotal4Wheels.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.lbTotal4Wheels.Location = new System.Drawing.Point(3, 40);
             this.lbTotal4Wheels.Name = "lbTotal4Wheels";
-            this.lbTotal4Wheels.Size = new System.Drawing.Size(325, 130);
+            this.lbTotal4Wheels.Size = new System.Drawing.Size(237, 130);
             this.lbTotal4Wheels.TabIndex = 1;
             this.lbTotal4Wheels.Text = "20 /50 slots";
             this.lbTotal4Wheels.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1235,10 +1231,10 @@
             // 
             this.uiSymbolLabel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiSymbolLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiSymbolLabel9.Location = new System.Drawing.Point(334, 43);
+            this.uiSymbolLabel9.Location = new System.Drawing.Point(246, 43);
             this.uiSymbolLabel9.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiSymbolLabel9.Name = "uiSymbolLabel9";
-            this.uiSymbolLabel9.Size = new System.Drawing.Size(137, 124);
+            this.uiSymbolLabel9.Size = new System.Drawing.Size(99, 124);
             this.uiSymbolLabel9.Symbol = 362948;
             this.uiSymbolLabel9.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiSymbolLabel9.SymbolOffset = new System.Drawing.Point(-15, 0);
@@ -1259,7 +1255,7 @@
             this.uiPanel39.Radius = 10;
             this.uiPanel39.RectColor = System.Drawing.Color.White;
             this.uiPanel39.RectSize = 2;
-            this.uiPanel39.Size = new System.Drawing.Size(743, 190);
+            this.uiPanel39.Size = new System.Drawing.Size(556, 190);
             this.uiPanel39.TabIndex = 0;
             this.uiPanel39.Text = null;
             this.uiPanel39.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1281,7 +1277,7 @@
             this.uiTableLayoutPanel12.RowCount = 2;
             this.uiTableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.uiTableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel12.Size = new System.Drawing.Size(723, 170);
+            this.uiTableLayoutPanel12.Size = new System.Drawing.Size(536, 170);
             this.uiTableLayoutPanel12.TabIndex = 0;
             this.uiTableLayoutPanel12.TagString = null;
             // 
@@ -1289,10 +1285,10 @@
             // 
             this.uiSymbolLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiSymbolLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiSymbolLabel3.Location = new System.Drawing.Point(580, 43);
+            this.uiSymbolLabel3.Location = new System.Drawing.Point(431, 43);
             this.uiSymbolLabel3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiSymbolLabel3.Name = "uiSymbolLabel3";
-            this.uiSymbolLabel3.Size = new System.Drawing.Size(140, 124);
+            this.uiSymbolLabel3.Size = new System.Drawing.Size(102, 124);
             this.uiSymbolLabel3.Symbol = 560201;
             this.uiSymbolLabel3.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiSymbolLabel3.SymbolSize = 110;
@@ -1311,7 +1307,7 @@
             this.uiPanel40.Radius = 0;
             this.uiPanel40.RectColor = System.Drawing.Color.White;
             this.uiPanel40.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel40.Size = new System.Drawing.Size(425, 120);
+            this.uiPanel40.Size = new System.Drawing.Size(313, 120);
             this.uiPanel40.TabIndex = 6;
             this.uiPanel40.Text = null;
             this.uiPanel40.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1323,7 +1319,7 @@
             this.lbTotal2Wheels.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.lbTotal2Wheels.Location = new System.Drawing.Point(0, 0);
             this.lbTotal2Wheels.Name = "lbTotal2Wheels";
-            this.lbTotal2Wheels.Size = new System.Drawing.Size(425, 120);
+            this.lbTotal2Wheels.Size = new System.Drawing.Size(313, 120);
             this.lbTotal2Wheels.TabIndex = 2;
             this.lbTotal2Wheels.Text = "50 /100 slots (10 bicycles)";
             this.lbTotal2Wheels.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1336,7 +1332,7 @@
             this.uiLabel18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLabel18.Location = new System.Drawing.Point(3, 0);
             this.uiLabel18.Name = "uiLabel18";
-            this.uiLabel18.Size = new System.Drawing.Size(571, 40);
+            this.uiLabel18.Size = new System.Drawing.Size(422, 40);
             this.uiLabel18.TabIndex = 0;
             this.uiLabel18.Text = "2 Wheels  (Motorbike and bicycle)";
             this.uiLabel18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1345,10 +1341,10 @@
             // 
             this.uiSymbolLabel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiSymbolLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiSymbolLabel11.Location = new System.Drawing.Point(436, 43);
+            this.uiSymbolLabel11.Location = new System.Drawing.Point(324, 43);
             this.uiSymbolLabel11.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiSymbolLabel11.Name = "uiSymbolLabel11";
-            this.uiSymbolLabel11.Size = new System.Drawing.Size(138, 124);
+            this.uiSymbolLabel11.Size = new System.Drawing.Size(101, 124);
             this.uiSymbolLabel11.Symbol = 361980;
             this.uiSymbolLabel11.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiSymbolLabel11.SymbolOffset = new System.Drawing.Point(-15, 0);
@@ -1359,10 +1355,10 @@
             // 
             this.pickerDuration.BackColor = System.Drawing.Color.White;
             this.pickerDuration.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pickerDuration.Location = new System.Drawing.Point(7, 6);
+            this.pickerDuration.Location = new System.Drawing.Point(5, 5);
             this.pickerDuration.Margin = new System.Windows.Forms.Padding(0);
             this.pickerDuration.Name = "pickerDuration";
-            this.pickerDuration.Size = new System.Drawing.Size(666, 430);
+            this.pickerDuration.Size = new System.Drawing.Size(500, 350);
             this.pickerDuration.TabIndex = 1;
             this.pickerDuration.Visible = false;
             // 
@@ -1373,19 +1369,18 @@
             this.pickerSessionDuration.Location = new System.Drawing.Point(0, 0);
             this.pickerSessionDuration.Margin = new System.Windows.Forms.Padding(0);
             this.pickerSessionDuration.Name = "pickerSessionDuration";
-            this.pickerSessionDuration.Size = new System.Drawing.Size(666, 430);
+            this.pickerSessionDuration.Size = new System.Drawing.Size(500, 350);
             this.pickerSessionDuration.TabIndex = 7;
             this.pickerSessionDuration.Visible = false;
             // 
             // DashboardControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DashboardControl";
-            this.Size = new System.Drawing.Size(1253, 945);
+            this.Size = new System.Drawing.Size(940, 768);
             this.Load += new System.EventHandler(this.DashboardControl_Load);
             this.Resize += new System.EventHandler(this.DashboardControl_Resize);
             this.panel2.ResumeLayout(false);

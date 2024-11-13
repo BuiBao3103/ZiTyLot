@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingForm));
             this.fbdFolderLocation = new System.Windows.Forms.FolderBrowserDialog();
             this.uiPanel5 = new Sunny.UI.UIPanel();
             this.uiGroupBox3 = new Sunny.UI.UIGroupBox();
@@ -86,13 +87,13 @@
             this.uiPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel5.FillColor = System.Drawing.Color.White;
             this.uiPanel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel5.Location = new System.Drawing.Point(5, 94);
-            this.uiPanel5.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.uiPanel5.Location = new System.Drawing.Point(4, 77);
+            this.uiPanel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel5.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel5.Name = "uiPanel5";
             this.uiPanel5.RectColor = System.Drawing.Color.White;
             this.uiPanel5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel5.Size = new System.Drawing.Size(615, 116);
+            this.uiPanel5.Size = new System.Drawing.Size(460, 94);
             this.uiPanel5.TabIndex = 5;
             this.uiPanel5.Text = null;
             this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -110,7 +111,7 @@
             this.uiGroupBox3.Name = "uiGroupBox3";
             this.uiGroupBox3.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox3.RectColor = System.Drawing.Color.White;
-            this.uiGroupBox3.Size = new System.Drawing.Size(615, 116);
+            this.uiGroupBox3.Size = new System.Drawing.Size(460, 94);
             this.uiGroupBox3.TabIndex = 1;
             this.uiGroupBox3.Text = "Front camera";
             this.uiGroupBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -130,7 +131,7 @@
             this.uiTableLayoutPanel2.Name = "uiTableLayoutPanel2";
             this.uiTableLayoutPanel2.RowCount = 1;
             this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel2.Size = new System.Drawing.Size(599, 50);
+            this.uiTableLayoutPanel2.Size = new System.Drawing.Size(444, 50);
             this.uiTableLayoutPanel2.TabIndex = 0;
             this.uiTableLayoutPanel2.TagString = null;
             // 
@@ -141,13 +142,15 @@
             this.cbFront.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbFront.FillColor = System.Drawing.Color.White;
             this.cbFront.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFront.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.cbFront.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbFront.ItemRectColor = System.Drawing.Color.White;
             this.cbFront.Items.AddRange(new object[] {
             "Camera 1",
             "Camera 2",
             "Camera 3",
             "Camera 4"});
-            this.cbFront.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.cbFront.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbFront.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbFront.Location = new System.Drawing.Point(4, 5);
             this.cbFront.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbFront.MaximumSize = new System.Drawing.Size(0, 40);
@@ -156,7 +159,9 @@
             this.cbFront.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
             this.cbFront.RectColor = System.Drawing.SystemColors.ControlDark;
             this.cbFront.RectSize = 2;
-            this.cbFront.Size = new System.Drawing.Size(491, 40);
+            this.cbFront.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbFront.ScrollBarStyleInherited = false;
+            this.cbFront.Size = new System.Drawing.Size(336, 40);
             this.cbFront.SymbolSize = 24;
             this.cbFront.TabIndex = 6;
             this.cbFront.Text = "Camera 1";
@@ -169,7 +174,7 @@
             this.uiPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel3.FillColor = System.Drawing.Color.White;
             this.uiPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel3.Location = new System.Drawing.Point(553, 5);
+            this.uiPanel3.Location = new System.Drawing.Point(398, 5);
             this.uiPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel3.Name = "uiPanel3";
@@ -215,7 +220,7 @@
             this.uiPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel2.FillColor = System.Drawing.Color.White;
             this.uiPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel2.Location = new System.Drawing.Point(503, 5);
+            this.uiPanel2.Location = new System.Drawing.Point(348, 5);
             this.uiPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel2.Name = "uiPanel2";
@@ -261,13 +266,13 @@
             this.uiGroupBox5.FillColor = System.Drawing.Color.White;
             this.uiGroupBox5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox5.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiGroupBox5.Location = new System.Drawing.Point(4, 221);
-            this.uiGroupBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiGroupBox5.Location = new System.Drawing.Point(3, 180);
+            this.uiGroupBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uiGroupBox5.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox5.Name = "uiGroupBox5";
-            this.uiGroupBox5.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
+            this.uiGroupBox5.Padding = new System.Windows.Forms.Padding(6, 32, 6, 3);
             this.uiGroupBox5.RectColor = System.Drawing.Color.White;
-            this.uiGroupBox5.Size = new System.Drawing.Size(617, 118);
+            this.uiGroupBox5.Size = new System.Drawing.Size(462, 96);
             this.uiGroupBox5.TabIndex = 43;
             this.uiGroupBox5.Text = "Back camera";
             this.uiGroupBox5.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -282,12 +287,12 @@
             this.uiTableLayoutPanel4.Controls.Add(this.uiPanel7, 2, 0);
             this.uiTableLayoutPanel4.Controls.Add(this.uiPanel9, 1, 0);
             this.uiTableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiTableLayoutPanel4.Location = new System.Drawing.Point(8, 32);
+            this.uiTableLayoutPanel4.Location = new System.Drawing.Point(6, 32);
             this.uiTableLayoutPanel4.MaximumSize = new System.Drawing.Size(0, 50);
             this.uiTableLayoutPanel4.Name = "uiTableLayoutPanel4";
             this.uiTableLayoutPanel4.RowCount = 1;
             this.uiTableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel4.Size = new System.Drawing.Size(601, 50);
+            this.uiTableLayoutPanel4.Size = new System.Drawing.Size(450, 50);
             this.uiTableLayoutPanel4.TabIndex = 1;
             this.uiTableLayoutPanel4.TagString = null;
             // 
@@ -298,13 +303,15 @@
             this.cbBack.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbBack.FillColor = System.Drawing.Color.White;
             this.cbBack.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbBack.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.cbBack.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbBack.ItemRectColor = System.Drawing.Color.White;
             this.cbBack.Items.AddRange(new object[] {
             "Camera 1",
             "Camera 2",
             "Camera 3",
             "Camera 4"});
-            this.cbBack.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.cbBack.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbBack.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbBack.Location = new System.Drawing.Point(4, 5);
             this.cbBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbBack.MaximumSize = new System.Drawing.Size(0, 40);
@@ -313,7 +320,9 @@
             this.cbBack.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
             this.cbBack.RectColor = System.Drawing.SystemColors.ControlDark;
             this.cbBack.RectSize = 2;
-            this.cbBack.Size = new System.Drawing.Size(493, 40);
+            this.cbBack.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbBack.ScrollBarStyleInherited = false;
+            this.cbBack.Size = new System.Drawing.Size(342, 40);
             this.cbBack.SymbolSize = 24;
             this.cbBack.TabIndex = 6;
             this.cbBack.Text = "Camera 2";
@@ -326,7 +335,7 @@
             this.uiPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel7.FillColor = System.Drawing.Color.White;
             this.uiPanel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel7.Location = new System.Drawing.Point(555, 5);
+            this.uiPanel7.Location = new System.Drawing.Point(404, 5);
             this.uiPanel7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel7.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel7.Name = "uiPanel7";
@@ -372,7 +381,7 @@
             this.uiPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel9.FillColor = System.Drawing.Color.White;
             this.uiPanel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel9.Location = new System.Drawing.Point(505, 5);
+            this.uiPanel9.Location = new System.Drawing.Point(354, 5);
             this.uiPanel9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel9.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel9.Name = "uiPanel9";
@@ -416,9 +425,10 @@
             this.uiLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiLabel2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiLabel2.Location = new System.Drawing.Point(3, 54);
+            this.uiLabel2.Location = new System.Drawing.Point(2, 44);
+            this.uiLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uiLabel2.Name = "uiLabel2";
-            this.uiLabel2.Size = new System.Drawing.Size(619, 34);
+            this.uiLabel2.Size = new System.Drawing.Size(464, 28);
             this.uiLabel2.TabIndex = 46;
             this.uiLabel2.Text = "Camera connection";
             this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -428,9 +438,10 @@
             this.uiLabel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiLabel4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiLabel4.Location = new System.Drawing.Point(3, 344);
+            this.uiLabel4.Location = new System.Drawing.Point(2, 280);
+            this.uiLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uiLabel4.Name = "uiLabel4";
-            this.uiLabel4.Size = new System.Drawing.Size(619, 34);
+            this.uiLabel4.Size = new System.Drawing.Size(464, 28);
             this.uiLabel4.TabIndex = 48;
             this.uiLabel4.Text = "Boom gate connection";
             this.uiLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -442,13 +453,13 @@
             this.uiGroupBox9.FillColor = System.Drawing.Color.White;
             this.uiGroupBox9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox9.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiGroupBox9.Location = new System.Drawing.Point(4, 383);
-            this.uiGroupBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiGroupBox9.Location = new System.Drawing.Point(3, 312);
+            this.uiGroupBox9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uiGroupBox9.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox9.Name = "uiGroupBox9";
-            this.uiGroupBox9.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
+            this.uiGroupBox9.Padding = new System.Windows.Forms.Padding(6, 32, 6, 3);
             this.uiGroupBox9.RectColor = System.Drawing.Color.White;
-            this.uiGroupBox9.Size = new System.Drawing.Size(617, 118);
+            this.uiGroupBox9.Size = new System.Drawing.Size(462, 96);
             this.uiGroupBox9.TabIndex = 58;
             this.uiGroupBox9.Text = "Boom gate";
             this.uiGroupBox9.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -463,12 +474,12 @@
             this.uiTableLayoutPanel7.Controls.Add(this.cbGate, 0, 0);
             this.uiTableLayoutPanel7.Controls.Add(this.uiPanel19, 1, 0);
             this.uiTableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiTableLayoutPanel7.Location = new System.Drawing.Point(8, 32);
+            this.uiTableLayoutPanel7.Location = new System.Drawing.Point(6, 32);
             this.uiTableLayoutPanel7.MaximumSize = new System.Drawing.Size(0, 50);
             this.uiTableLayoutPanel7.Name = "uiTableLayoutPanel7";
             this.uiTableLayoutPanel7.RowCount = 1;
             this.uiTableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel7.Size = new System.Drawing.Size(601, 50);
+            this.uiTableLayoutPanel7.Size = new System.Drawing.Size(450, 50);
             this.uiTableLayoutPanel7.TabIndex = 0;
             this.uiTableLayoutPanel7.TagString = null;
             // 
@@ -478,7 +489,7 @@
             this.uiPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel15.FillColor = System.Drawing.Color.White;
             this.uiPanel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel15.Location = new System.Drawing.Point(555, 5);
+            this.uiPanel15.Location = new System.Drawing.Point(404, 5);
             this.uiPanel15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel15.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel15.Name = "uiPanel15";
@@ -525,14 +536,16 @@
             this.cbGate.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbGate.FillColor = System.Drawing.Color.White;
             this.cbGate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbGate.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.cbGate.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbGate.ItemRectColor = System.Drawing.Color.White;
             this.cbGate.Items.AddRange(new object[] {
             "1 month",
             "2 months",
             "3 months",
             "6 months",
             "12 months"});
-            this.cbGate.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.cbGate.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbGate.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbGate.Location = new System.Drawing.Point(4, 5);
             this.cbGate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbGate.MaximumSize = new System.Drawing.Size(0, 40);
@@ -541,7 +554,9 @@
             this.cbGate.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
             this.cbGate.RectColor = System.Drawing.SystemColors.ControlDark;
             this.cbGate.RectSize = 2;
-            this.cbGate.Size = new System.Drawing.Size(493, 40);
+            this.cbGate.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbGate.ScrollBarStyleInherited = false;
+            this.cbGate.Size = new System.Drawing.Size(342, 40);
             this.cbGate.SymbolSize = 24;
             this.cbGate.TabIndex = 3;
             this.cbGate.Text = "Boom gate 1";
@@ -554,7 +569,7 @@
             this.uiPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel19.FillColor = System.Drawing.Color.White;
             this.uiPanel19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel19.Location = new System.Drawing.Point(505, 5);
+            this.uiPanel19.Location = new System.Drawing.Point(354, 5);
             this.uiPanel19.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel19.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel19.Name = "uiPanel19";
@@ -599,8 +614,8 @@
             this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel1.FillColor = System.Drawing.Color.White;
             this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel1.Location = new System.Drawing.Point(4, 5);
-            this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel1.Location = new System.Drawing.Point(3, 4);
+            this.uiPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel1.Name = "uiPanel1";
             this.uiPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
@@ -608,7 +623,7 @@
             this.uiPanel1.RectColor = System.Drawing.SystemColors.ControlLight;
             this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom;
             this.uiPanel1.RectSize = 2;
-            this.uiPanel1.Size = new System.Drawing.Size(617, 44);
+            this.uiPanel1.Size = new System.Drawing.Size(462, 36);
             this.uiPanel1.TabIndex = 68;
             this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -628,7 +643,7 @@
             this.uiPanel4.RectColor = System.Drawing.SystemColors.ControlLight;
             this.uiPanel4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel4.RectSize = 2;
-            this.uiPanel4.Size = new System.Drawing.Size(617, 42);
+            this.uiPanel4.Size = new System.Drawing.Size(462, 34);
             this.uiPanel4.TabIndex = 5;
             this.uiPanel4.Text = null;
             this.uiPanel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -641,7 +656,7 @@
             this.uiSymbolLabel1.Location = new System.Drawing.Point(0, 2);
             this.uiSymbolLabel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiSymbolLabel1.Name = "uiSymbolLabel1";
-            this.uiSymbolLabel1.Size = new System.Drawing.Size(617, 30);
+            this.uiSymbolLabel1.Size = new System.Drawing.Size(462, 22);
             this.uiSymbolLabel1.Symbol = 61459;
             this.uiSymbolLabel1.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiSymbolLabel1.SymbolOffset = new System.Drawing.Point(0, 1);
@@ -654,7 +669,7 @@
             // 
             this.uiTableLayoutPanel1.ColumnCount = 1;
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.uiTableLayoutPanel1.Controls.Add(this.pnlButton, 0, 6);
             this.uiTableLayoutPanel1.Controls.Add(this.uiPanel1, 0, 0);
             this.uiTableLayoutPanel1.Controls.Add(this.uiGroupBox9, 0, 5);
@@ -663,21 +678,22 @@
             this.uiTableLayoutPanel1.Controls.Add(this.uiGroupBox5, 0, 3);
             this.uiTableLayoutPanel1.Controls.Add(this.uiPanel5, 0, 2);
             this.uiTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiTableLayoutPanel1.Location = new System.Drawing.Point(10, 10);
+            this.uiTableLayoutPanel1.Location = new System.Drawing.Point(8, 8);
+            this.uiTableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.uiTableLayoutPanel1.Name = "uiTableLayoutPanel1";
             this.uiTableLayoutPanel1.RowCount = 7;
-            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
-            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.uiTableLayoutPanel1.Size = new System.Drawing.Size(625, 572);
+            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.uiTableLayoutPanel1.Size = new System.Drawing.Size(468, 465);
             this.uiTableLayoutPanel1.TabIndex = 1;
             this.uiTableLayoutPanel1.TagString = null;
             // 
@@ -687,16 +703,16 @@
             this.pnlButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlButton.FillColor = System.Drawing.Color.White;
             this.pnlButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlButton.Location = new System.Drawing.Point(4, 511);
-            this.pnlButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlButton.Location = new System.Drawing.Point(3, 416);
+            this.pnlButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlButton.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlButton.Name = "pnlButton";
-            this.pnlButton.Padding = new System.Windows.Forms.Padding(0, 13, 0, 6);
+            this.pnlButton.Padding = new System.Windows.Forms.Padding(0, 11, 0, 5);
             this.pnlButton.Radius = 0;
             this.pnlButton.RectColor = System.Drawing.SystemColors.ControlLight;
             this.pnlButton.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
             this.pnlButton.RectSize = 2;
-            this.pnlButton.Size = new System.Drawing.Size(617, 56);
+            this.pnlButton.Size = new System.Drawing.Size(462, 45);
             this.pnlButton.TabIndex = 69;
             this.pnlButton.Text = null;
             this.pnlButton.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -705,9 +721,9 @@
             // 
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(497, 13);
+            this.panel2.Location = new System.Drawing.Point(342, 11);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(120, 37);
+            this.panel2.Size = new System.Drawing.Size(120, 29);
             this.panel2.TabIndex = 10;
             // 
             // btnCancel
@@ -729,7 +745,7 @@
             this.btnCancel.RectPressColor = System.Drawing.Color.White;
             this.btnCancel.RectSelectedColor = System.Drawing.Color.White;
             this.btnCancel.RectSize = 2;
-            this.btnCancel.Size = new System.Drawing.Size(120, 37);
+            this.btnCancel.Size = new System.Drawing.Size(120, 29);
             this.btnCancel.Symbol = 61453;
             this.btnCancel.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCancel.TabIndex = 3;
@@ -739,13 +755,13 @@
             // 
             // SettingForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(645, 592);
+            this.ClientSize = new System.Drawing.Size(484, 481);
             this.Controls.Add(this.uiTableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(661, 629);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(500, 518);
             this.Name = "SettingForm";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "SettingForm";

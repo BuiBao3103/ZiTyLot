@@ -78,11 +78,11 @@
             this.pnlTop = new System.Windows.Forms.Panel();
             this.uiTableLayoutPanel5 = new Sunny.UI.UITableLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.uiSymbolLabel1 = new Sunny.UI.UISymbolLabel();
             this.uiPanel13 = new Sunny.UI.UIPanel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnConfirm = new Sunny.UI.UISymbolButton();
             this.uiPanel2 = new Sunny.UI.UIPanel();
-            this.uiSymbolLabel1 = new Sunny.UI.UISymbolLabel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.btnCancel = new Sunny.UI.UISymbolButton();
             this.panel2.SuspendLayout();
@@ -147,7 +147,7 @@
             this.pnlBottom.Location = new System.Drawing.Point(0, 58);
             this.pnlBottom.Margin = new System.Windows.Forms.Padding(0);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.pnlBottom.Padding = new System.Windows.Forms.Padding(10);
             this.pnlBottom.Size = new System.Drawing.Size(1366, 710);
             this.pnlBottom.TabIndex = 3;
             this.pnlBottom.Resize += new System.EventHandler(this.pnlBottom_Resize);
@@ -357,9 +357,9 @@
             // 
             this.panel4.Controls.Add(this.btnPlus);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(505, 3);
+            this.panel4.Location = new System.Drawing.Point(495, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(140, 38);
+            this.panel4.Size = new System.Drawing.Size(150, 38);
             this.panel4.TabIndex = 9;
             // 
             // btnPlus
@@ -381,7 +381,7 @@
             this.btnPlus.RectPressColor = System.Drawing.Color.White;
             this.btnPlus.RectSelectedColor = System.Drawing.Color.White;
             this.btnPlus.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnPlus.Size = new System.Drawing.Size(140, 38);
+            this.btnPlus.Size = new System.Drawing.Size(150, 38);
             this.btnPlus.Symbol = 61694;
             this.btnPlus.TabIndex = 3;
             this.btnPlus.Text = "New issue";
@@ -997,6 +997,21 @@
             this.panel6.Size = new System.Drawing.Size(94, 48);
             this.panel6.TabIndex = 23;
             // 
+            // uiSymbolLabel1
+            // 
+            this.uiSymbolLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiSymbolLabel1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiSymbolLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiSymbolLabel1.Location = new System.Drawing.Point(0, 0);
+            this.uiSymbolLabel1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiSymbolLabel1.Name = "uiSymbolLabel1";
+            this.uiSymbolLabel1.Size = new System.Drawing.Size(94, 48);
+            this.uiSymbolLabel1.Symbol = 362833;
+            this.uiSymbolLabel1.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiSymbolLabel1.SymbolOffset = new System.Drawing.Point(0, -1);
+            this.uiSymbolLabel1.TabIndex = 0;
+            this.uiSymbolLabel1.Text = "New Bill";
+            // 
             // uiPanel13
             // 
             this.uiPanel13.Controls.Add(this.panel9);
@@ -1020,9 +1035,9 @@
             // 
             this.panel9.Controls.Add(this.btnConfirm);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel9.Location = new System.Drawing.Point(495, 3);
+            this.panel9.Location = new System.Drawing.Point(485, 3);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(120, 38);
+            this.panel9.Size = new System.Drawing.Size(130, 38);
             this.panel9.TabIndex = 9;
             // 
             // btnConfirm
@@ -1044,7 +1059,7 @@
             this.btnConfirm.RectPressColor = System.Drawing.Color.White;
             this.btnConfirm.RectSelectedColor = System.Drawing.Color.White;
             this.btnConfirm.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnConfirm.Size = new System.Drawing.Size(120, 38);
+            this.btnConfirm.Size = new System.Drawing.Size(130, 38);
             this.btnConfirm.Symbol = 61694;
             this.btnConfirm.TabIndex = 3;
             this.btnConfirm.Text = "Create";
@@ -1070,28 +1085,13 @@
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // uiSymbolLabel1
-            // 
-            this.uiSymbolLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiSymbolLabel1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiSymbolLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiSymbolLabel1.Location = new System.Drawing.Point(0, 0);
-            this.uiSymbolLabel1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiSymbolLabel1.Name = "uiSymbolLabel1";
-            this.uiSymbolLabel1.Size = new System.Drawing.Size(94, 48);
-            this.uiSymbolLabel1.Symbol = 362833;
-            this.uiSymbolLabel1.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiSymbolLabel1.SymbolOffset = new System.Drawing.Point(0, -1);
-            this.uiSymbolLabel1.TabIndex = 0;
-            this.uiSymbolLabel1.Text = "New Bill";
-            // 
             // panel8
             // 
             this.panel8.Controls.Add(this.btnCancel);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel8.Location = new System.Drawing.Point(0, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(120, 38);
+            this.panel8.Size = new System.Drawing.Size(130, 38);
             this.panel8.TabIndex = 11;
             // 
             // btnCancel
@@ -1113,7 +1113,7 @@
             this.btnCancel.RectPressColor = System.Drawing.Color.White;
             this.btnCancel.RectSelectedColor = System.Drawing.Color.White;
             this.btnCancel.RectSize = 2;
-            this.btnCancel.Size = new System.Drawing.Size(120, 38);
+            this.btnCancel.Size = new System.Drawing.Size(130, 38);
             this.btnCancel.Symbol = 61453;
             this.btnCancel.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCancel.TabIndex = 3;

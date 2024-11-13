@@ -32,11 +32,10 @@ namespace ZiTyLot.GUI.Screens
         private void BillScreen_Load(object sender, EventArgs e)
         {
             pnlPagination.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlPagination.Width, pnlPagination.Height, 10, 10));
-            ResumeLayout();
+
             pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
 
-            btnAdd.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, btnAdd.Width, btnAdd.Height, 10, 10));
 
             this.tableBill.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
             this.tableBill.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
@@ -96,7 +95,6 @@ namespace ZiTyLot.GUI.Screens
                 int id = (int)tableBill.Rows[e.RowIndex].Cells["colId"].Value;
                 if (e.ColumnIndex == tableBill.Columns["colView"].Index)
                 {
-                    SuspendLayout();
                     Home home = (Home)ParentForm;
                     BillDetailControl billDetailControl = new BillDetailControl(id);
                     home.LoadForm(billDetailControl);
@@ -121,7 +119,6 @@ namespace ZiTyLot.GUI.Screens
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            SuspendLayout();
             Home home = (Home)ParentForm;
             BillCreateControl billCreateControl = new BillCreateControl();
             billCreateControl.billInsertionEvent += (s, ev) => changePage(1); 
@@ -139,7 +136,7 @@ namespace ZiTyLot.GUI.Screens
             foreach (Bill bill in page.Content)
             {
 
-                tableBill.Rows.Add(bill.Id, billBUS.PopulateResident(bill).Resident.Full_name, billBUS.PopulateResident(bill).Resident.Apartment_id, bill.Issue_quantity, bill.Total_fee.ToString());
+                tableBill.Rows.Add(bill.Id, billBUS.PopulateResident(bill).Resident_id, billBUS.PopulateResident(bill).Resident.Full_name, billBUS.PopulateResident(bill).Resident.Apartment_id, bill.Issue_quantity, bill.Total_fee.ToString());
             }
             //update button
             btnPrevious.Enabled = pageable.PageNumber > 1;
