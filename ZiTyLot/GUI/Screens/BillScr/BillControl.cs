@@ -138,7 +138,7 @@ namespace ZiTyLot.GUI.Screens
             foreach (Bill bill in page.Content)
             {
 
-                tableBill.Rows.Add(bill.Id, billBUS.PopulateResident(bill).Resident.Full_name, billBUS.PopulateResident(bill).Resident.Apartment_id, bill.Issue_quantity, bill.Total_fee.ToString());
+                tableBill.Rows.Add(bill.Id, billBUS.PopulateResident(bill).Resident_id, billBUS.PopulateResident(bill).Resident.Full_name, billBUS.PopulateResident(bill).Resident.Apartment_id, bill.Issue_quantity, bill.Total_fee.ToString());
             }
             //update button
             btnPrevious.Enabled = pageable.PageNumber > 1;
