@@ -10,6 +10,7 @@ using ZiTyLot.GUI.Screens;
 using ZiTyLot.GUI.Screens.LostCardScr;
 using ZiTyLot.GUI.Screens.DashboardScr;
 using System.Drawing.Text;
+using ZiTyLot.BUS;
 
 namespace ZiTyLot.GUI
 {
@@ -100,13 +101,27 @@ namespace ZiTyLot.GUI
         }
         private void AddMenuToSidebar()
         {
-            foreach (var item in menuItems)
+            if (AuthManager.IsAuthenticated == true)
             {
-                CreateMenuButton(item.Name, item.Icon, item.Text, item.X);
+                List<string> functions = AuthManager.Functions.Select(x => x.Name).ToList();
+                foreach (var item in menuItems)
+                {
+                    if (functions.Contains(item.Text))
+                    {
+                        CreateMenuButton(item.Name, item.Icon, item.Text, item.X);
+                    }
+                }
+            }
+            else
+            {
+                foreach (var item in menuItems)
+                {
+                    CreateMenuButton(item.Name, item.Icon, item.Text, item.X);
+                }
             }
         }
 
-        private void CreateMenuButton(string name,int icon, string text, int xOffset)
+        private void CreateMenuButton(string name, int icon, string text, int xOffset)
         {
             // Create a panel white fill, no rect and radius 0 and padding bottom 10 with sunny ui
             Sunny.UI.UIPanel panel = new Sunny.UI.UIPanel
@@ -138,12 +153,12 @@ namespace ZiTyLot.GUI
                 SymbolOffset = new Point(xOffset, 1),
                 RectSize = 2,
                 Radius = 10,
-                RectColor = Color.FromArgb(255,255,255),
+                RectColor = Color.FromArgb(255, 255, 255),
                 RectHoverColor = Color.FromArgb(240, 118, 54),
                 RectSelectedColor = Color.FromArgb(240, 118, 54),
                 RectPressColor = Color.FromArgb(240, 118, 54),
-                FillColor = Color.FromArgb(255,255,255),
-                FillHoverColor = Color.FromArgb(240,118,54),
+                FillColor = Color.FromArgb(255, 255, 255),
+                FillHoverColor = Color.FromArgb(240, 118, 54),
                 FillSelectedColor = Color.FromArgb(240, 118, 54),
                 FillPressColor = Color.FromArgb(240, 118, 54),
                 ForeColor = Color.Black,
@@ -386,12 +401,12 @@ namespace ZiTyLot.GUI
 
             tableSetting.RowCount = 1;
             tableSetting.RowStyles.Clear();
-            
+
             tableSetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F)); // Last row for pictureBox2
 
             // Update control positions within tableSetting
             tableSetting.Controls.Clear();
-            tableSetting.Controls.Add(btnMore, 0, 0);          
+            tableSetting.Controls.Add(btnMore, 0, 0);
 
             // Ensure table layout is docked to fill the parent container
             tableSetting.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -413,7 +428,7 @@ namespace ZiTyLot.GUI
             btn.ImageAlign = ContentAlignment.MiddleLeft;
             btn.TextAlign = ContentAlignment.MiddleLeft;
             btn.Padding = new Padding(70, 3, 3, 3);
-            btn.SymbolOffset = new Point(x_offset, 1);       
+            btn.SymbolOffset = new Point(x_offset, 1);
         }
         #endregion
 
@@ -452,7 +467,7 @@ namespace ZiTyLot.GUI
             button.RectPressColor = isActive ? Color.FromArgb(240, 118, 54) : Color.White;
             button.SymbolColor = isActive ? Color.White : Color.Black;
             button.Padding = new Padding(70, 3, 3, 3);
-            
+
         }
 
         private void btnToggleMenu_Click(object sender, EventArgs e)
@@ -484,8 +499,7 @@ namespace ZiTyLot.GUI
         private void Home_Load(object sender, EventArgs e)
         {
             AddMenuToSidebar();
-            LoadForm(new ScanningControl());
-            UpdateButtonStyle(sidebarMid.Controls.OfType<Sunny.UI.UIPanel>().Last().Controls.OfType<Sunny.UI.UISymbolButton>().First(), true);
+            //UpdateButtonStyle(sidebarMid.Controls.OfType<Sunny.UI.UIPanel>().Last().Controls.OfType<Sunny.UI.UISymbolButton>().First(), true);
             previousWidth = this.Width;
         }
         #endregion
@@ -588,7 +602,7 @@ namespace ZiTyLot.GUI
         #endregion
 
 
-        
+
 
         private void Home_ResizeEnd(object sender, EventArgs e)
         {
