@@ -12,7 +12,6 @@ namespace ZiTyLot.GUI.Screens
         {
             InitializeComponent();
             
-
         }
 
         private void btnCarCheckIn_Click(object sender, EventArgs e)

@@ -32,9 +32,10 @@ namespace ZiTyLot.GUI.Screens
         public CardControl()
         {
             InitializeComponent();
+            cbNumberofitem.SelectedIndexChanged -= cbNumberofitem_SelectedIndexChanged;
             cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
-            menuFunction.DownloadClick += menuBtnDownload_Click;
+            cbNumberofitem.SelectedIndexChanged += cbNumberofitem_SelectedIndexChanged; 
             menuFunction.ExportClick += menuBtnExport_Click;
             menuFunction.ImportClick += menuBtnImport_Click;
 
@@ -130,7 +131,7 @@ namespace ZiTyLot.GUI.Screens
             changePage(1);
         }
 
-        private void changePage(int pageNumber)
+        public void changePage(int pageNumber)
         {
             pageable.PageNumber = pageNumber;
             pageable.SortBy = nameof(Card.Created_at);

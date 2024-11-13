@@ -27,8 +27,10 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
         public LostCardControl()
         {
             InitializeComponent();
+            cbNumberofitem.SelectedIndexChanged -= cbNumberofitem_SelectedIndexChanged;
             cbNumberofitem.Items.AddRange(_pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
+            cbNumberofitem.SelectedIndexChanged += cbNumberofitem_SelectedIndexChanged;
 
         }
 
@@ -182,7 +184,7 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
             btnNext.Enabled = _pageable.PageNumber < _page.TotalPages;
         }
 
-        private void ChangePage(int pageNumber)
+        public void ChangePage(int pageNumber)
         {
             _pageable.PageNumber = pageNumber;
             _page = _lostHistoryBUS.GetAllPagination(_pageable, _filters);

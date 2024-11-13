@@ -28,8 +28,10 @@ namespace ZiTyLot.GUI.Screens
         public AreaControl()
         {
             InitializeComponent();
+            cbNumberofitem.SelectedIndexChanged -= numberofitemsCb_SelectedIndexChanged;
             cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
+            cbNumberofitem.SelectedIndexChanged += numberofitemsCb_SelectedIndexChanged;
         }
         private void AreaScreen_Load(object sender, EventArgs e)
         {
@@ -195,7 +197,7 @@ namespace ZiTyLot.GUI.Screens
             btnNext.Enabled = pageable.PageNumber < page.TotalPages;
         }
 
-        private void ChangePage(int pageNumber)
+        public void ChangePage(int pageNumber)
         {
             pageable.PageNumber = pageNumber;
             pageable.SortBy = nameof(ParkingLot.Created_at);

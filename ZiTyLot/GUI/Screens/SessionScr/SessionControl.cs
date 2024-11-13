@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
@@ -31,8 +32,11 @@ namespace ZiTyLot.GUI.Screens
         public SessionControl()
         {
             InitializeComponent();
+
+            cbNumberofitem.SelectedIndexChanged -= numberofitemsCb_SelectedIndexChanged;
             cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
+            cbNumberofitem.SelectedIndexChanged += numberofitemsCb_SelectedIndexChanged;
             tbSearch.TextChanged += tbSearch_TextChanged;
             customDateTimePicker.DateTimeConfirmed += CustomDateTimePicker_DateTimeConfirmed_In;
             customDateTimePicker1.DateTimeConfirmed += CustomDateTimePicker_DateTimeConfirmed_Out;
@@ -234,7 +238,7 @@ namespace ZiTyLot.GUI.Screens
             btnNext.Enabled = pageable.PageNumber < page.TotalPages;
         }
 
-        private void ChangePage(int pageNumber)
+        public void ChangePage(int pageNumber)
         {
             pageable.PageNumber = pageNumber;
             pageable.SortBy =nameof(Session.Created_at);

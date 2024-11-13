@@ -27,8 +27,10 @@ namespace ZiTyLot.GUI.Screens
         public AccountControl()
         {
             InitializeComponent();
+            cbNumberofitem.SelectedIndexChanged -= numberofitemsCb_SelectedIndexChanged;
             cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
+            cbNumberofitem.SelectedIndexChanged += numberofitemsCb_SelectedIndexChanged;
         }
 
         private void AccountScreen_Load(object sender, EventArgs e)
@@ -198,7 +200,7 @@ namespace ZiTyLot.GUI.Screens
             btnPrevious.Enabled = pageable.PageNumber > 1;
             btnNext.Enabled = pageable.PageNumber < page.TotalPages;
         }
-        private void ChangePage(int pageNumber)
+        public void ChangePage(int pageNumber)
         {
             pageable.PageNumber = pageNumber;
             pageable.SortBy = nameof(Account.Created_at);

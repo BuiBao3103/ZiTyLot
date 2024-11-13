@@ -28,8 +28,10 @@ namespace ZiTyLot.GUI.Screens
         public ResidentControl()
         {
             InitializeComponent();
+            cbNumberofitem.SelectedIndexChanged -= cbNumberofitem_SelectedIndexChanged;
             cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
+            cbNumberofitem.SelectedIndexChanged += cbNumberofitem_SelectedIndexChanged;
         }
 
         private void ResidentScreen_Load(object sender, EventArgs e)
@@ -205,7 +207,7 @@ namespace ZiTyLot.GUI.Screens
             btnNext.Enabled = pageable.PageNumber < page.TotalPages;
         }
 
-        private void ChangePage(int pageNumber)
+        public void ChangePage(int pageNumber)
         {
             pageable.PageNumber = pageNumber;
             pageable.SortBy = nameof(Resident.Created_at);

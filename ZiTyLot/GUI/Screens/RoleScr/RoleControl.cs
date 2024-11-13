@@ -28,8 +28,6 @@ namespace ZiTyLot.GUI.Screens
         public RoleControl()
         {
             InitializeComponent();
-            roleList = roleBUS.GetAll(filters);
-            LoadDataToTable();
         }
 
         private void RoleScreen_Load(object sender, EventArgs e)
@@ -188,7 +186,7 @@ namespace ZiTyLot.GUI.Screens
             }
         }
 
-        private void query()
+        public void query()
         {
             int inputCboxIndex = cbFilter.SelectedIndex;
             string inputSearch = tbSearch.Text.Trim();

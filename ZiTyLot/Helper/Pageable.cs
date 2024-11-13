@@ -6,7 +6,7 @@ namespace ZiTyLot.Helper
     public class Pageable
     {
         private int pageNumber = 1;
-        private int pageSize = 10;
+        private int pageSize = 3;
         private string sortBy = string.Empty;
         private string sortOrder = "ASC";// ASC or DESC
         public readonly List<string> PageNumbersInit  = new List<string>() { "3", "25", "50", "100" };

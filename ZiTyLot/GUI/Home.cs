@@ -438,6 +438,33 @@ namespace ZiTyLot.GUI
             if (panelMapping.TryGetValue(clickedButton.Name, out UserControl control))
             {
                 LoadForm(control);
+                switch (control)
+                {
+                    case SessionControl sessionControl:
+                        sessionControl.ChangePage(1);
+                        break;
+                    case AreaControl areaControl:
+                        areaControl.ChangePage(1); 
+                        break;
+                    case ResidentControl residentControl:
+                        residentControl.ChangePage(1); 
+                        break;
+                    case CardControl cardControl:
+                        cardControl.changePage(1); 
+                        break;
+                    case BillControl billControl:
+                        billControl.changePage(1);  
+                        break;
+                    case AccountControl accountControl:
+                        accountControl.ChangePage(1); 
+                        break;
+                    case RoleControl roleControl:
+                        roleControl.query(); 
+                        break;
+                    case LostCardControl lostCardControl:
+                        lostCardControl.ChangePage(1); 
+                        break;
+                }
                 UpdateButtonStyles(clickedButton);
                 menuInfo.Visible = false;
             }
@@ -499,6 +526,7 @@ namespace ZiTyLot.GUI
         private void Home_Load(object sender, EventArgs e)
         {
             AddMenuToSidebar();
+
             //UpdateButtonStyle(sidebarMid.Controls.OfType<Sunny.UI.UIPanel>().Last().Controls.OfType<Sunny.UI.UISymbolButton>().First(), true);
             previousWidth = this.Width;
         }

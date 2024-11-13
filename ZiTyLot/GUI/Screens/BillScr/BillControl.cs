@@ -23,8 +23,10 @@ namespace ZiTyLot.GUI.Screens
         public BillControl()
         {
             InitializeComponent();
+            cbNumberofitem.SelectedIndexChanged -= numberofitemsCb_SelectedIndexChanged;
             cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
+            cbNumberofitem.SelectedIndexChanged += numberofitemsCb_SelectedIndexChanged;
             TopPnl_Resize(null, null);
             BottomPnl_Resize(null, null);
         }
@@ -151,7 +153,7 @@ namespace ZiTyLot.GUI.Screens
             changePage(1);
         }
 
-        private void changePage(int pageNumber)
+        public void changePage(int pageNumber)
         {
             pageable.PageNumber = pageNumber;
             pageable.SortBy = nameof(Bill.Created_at);
