@@ -174,34 +174,34 @@
             // 
             // pnlButton
             // 
-            this.pnlMain.SetColumnSpan(this.pnlButton, 2);
-            this.pnlButton.Controls.Add(this.panel2);
-            this.pnlButton.Controls.Add(this.panel3);
-            this.pnlButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlButton.FillColor = System.Drawing.Color.White;
-            this.pnlButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlButton.Location = new System.Drawing.Point(4, 581);
-            this.pnlButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pnlButton.MinimumSize = new System.Drawing.Size(1, 1);
-            this.pnlButton.Name = "pnlButton";
-            this.pnlButton.Padding = new System.Windows.Forms.Padding(0, 13, 0, 3);
-            this.pnlButton.Radius = 0;
-            this.pnlButton.RectColor = System.Drawing.SystemColors.ControlLight;
-            this.pnlButton.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
-            this.pnlButton.RectSize = 2;
-            this.pnlButton.Size = new System.Drawing.Size(656, 54);
-            this.pnlButton.TabIndex = 15;
-            this.pnlButton.Text = null;
-            this.pnlButton.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnCancel);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(406, 13);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(120, 38);
-            this.panel2.TabIndex = 10;
+            //this.pnlMain.SetColumnSpan(this.pnlButton, 2);
+            //this.pnlButton.Controls.Add(this.panel2);
+            //this.pnlButton.Controls.Add(this.panel3);
+            //this.pnlButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            //this.pnlButton.FillColor = System.Drawing.Color.White;
+            //this.pnlButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            //this.pnlButton.Location = new System.Drawing.Point(4, 581);
+            //this.pnlButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            //this.pnlButton.MinimumSize = new System.Drawing.Size(1, 1);
+            //this.pnlButton.Name = "pnlButton";
+            //this.pnlButton.Padding = new System.Windows.Forms.Padding(0, 13, 0, 3);
+            //this.pnlButton.Radius = 0;
+            //this.pnlButton.RectColor = System.Drawing.SystemColors.ControlLight;
+            //this.pnlButton.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
+            //this.pnlButton.RectSize = 2;
+            //this.pnlButton.Size = new System.Drawing.Size(656, 54);
+            //this.pnlButton.TabIndex = 15;
+            //this.pnlButton.Text = null;
+            //this.pnlButton.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            //// 
+            //// panel2
+            //// 
+            //this.panel2.Controls.Add(this.btnCancel);
+            //this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            //this.panel2.Location = new System.Drawing.Point(406, 13);
+            //this.panel2.Name = "panel2";
+            //this.panel2.Size = new System.Drawing.Size(120, 38);
+            //this.panel2.TabIndex = 10;
             // 
             // btnCancel
             // 
@@ -232,13 +232,13 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btnCreate);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(526, 13);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(130, 38);
-            this.panel3.TabIndex = 9;
+            //this.panel3.Controls.Add(this.btnCreate);
+            //this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            //this.panel3.Location = new System.Drawing.Point(526, 13);
+            //this.panel3.Name = "panel3";
+            //this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            //this.panel3.Size = new System.Drawing.Size(130, 38);
+            //this.panel3.TabIndex = 9;
             // 
             // btnCreate
             // 

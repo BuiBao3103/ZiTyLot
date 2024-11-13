@@ -116,36 +116,36 @@
             // 
             // pnlButton
             // 
-            this.pnlMain.SetColumnSpan(this.pnlButton, 2);
-            this.pnlButton.Controls.Add(this.panel1);
-            this.pnlButton.Controls.Add(this.panel2);
-            this.pnlButton.Controls.Add(this.panel3);
-            this.pnlButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlButton.FillColor = System.Drawing.Color.White;
-            this.pnlButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlButton.Location = new System.Drawing.Point(5, 717);
-            this.pnlButton.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.pnlButton.MinimumSize = new System.Drawing.Size(1, 1);
-            this.pnlButton.Name = "pnlButton";
-            this.pnlButton.Padding = new System.Windows.Forms.Padding(0, 16, 0, 4);
-            this.pnlButton.Radius = 0;
-            this.pnlButton.RectColor = System.Drawing.SystemColors.ControlLight;
-            this.pnlButton.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
-            this.pnlButton.RectSize = 2;
-            this.pnlButton.Size = new System.Drawing.Size(876, 67);
-            this.pnlButton.TabIndex = 17;
-            this.pnlButton.Text = null;
-            this.pnlButton.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnResetPassword);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(446, 16);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.panel1.Size = new System.Drawing.Size(180, 47);
-            this.panel1.TabIndex = 11;
+            //this.pnlMain.SetColumnSpan(this.pnlButton, 2);
+            //this.pnlButton.Controls.Add(this.panel1);
+            //this.pnlButton.Controls.Add(this.panel2);
+            //this.pnlButton.Controls.Add(this.panel3);
+            //this.pnlButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            //this.pnlButton.FillColor = System.Drawing.Color.White;
+            //this.pnlButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            //this.pnlButton.Location = new System.Drawing.Point(5, 717);
+            //this.pnlButton.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            //this.pnlButton.MinimumSize = new System.Drawing.Size(1, 1);
+            //this.pnlButton.Name = "pnlButton";
+            //this.pnlButton.Padding = new System.Windows.Forms.Padding(0, 16, 0, 4);
+            //this.pnlButton.Radius = 0;
+            //this.pnlButton.RectColor = System.Drawing.SystemColors.ControlLight;
+            //this.pnlButton.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
+            //this.pnlButton.RectSize = 2;
+            //this.pnlButton.Size = new System.Drawing.Size(876, 67);
+            //this.pnlButton.TabIndex = 17;
+            //this.pnlButton.Text = null;
+            //this.pnlButton.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            //// 
+            //// panel1
+            //// 
+            //this.panel1.Controls.Add(this.btnResetPassword);
+            //this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            //this.panel1.Location = new System.Drawing.Point(446, 16);
+            //this.panel1.Name = "panel1";
+            //this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            //this.panel1.Size = new System.Drawing.Size(180, 47);
+            //this.panel1.TabIndex = 11;
             // 
             // btnResetPassword
             // 
@@ -175,12 +175,12 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnCancel);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(626, 16);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(120, 47);
-            this.panel2.TabIndex = 10;
+            //this.panel2.Controls.Add(this.btnCancel);
+            //this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            //this.panel2.Location = new System.Drawing.Point(626, 16);
+            //this.panel2.Name = "panel2";
+            //this.panel2.Size = new System.Drawing.Size(120, 47);
+            //this.panel2.TabIndex = 10;
             // 
             // btnCancel
             // 
@@ -210,14 +210,14 @@
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // panel3
-            // 
-            this.panel3.Controls.Add(this.btnSave);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(746, 16);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(130, 47);
-            this.panel3.TabIndex = 9;
+            //// 
+            //this.panel3.Controls.Add(this.btnSave);
+            //this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            //this.panel3.Location = new System.Drawing.Point(746, 16);
+            //this.panel3.Name = "panel3";
+            //this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            //this.panel3.Size = new System.Drawing.Size(130, 47);
+            //this.panel3.TabIndex = 9;
             // 
             // btnSave
             // 

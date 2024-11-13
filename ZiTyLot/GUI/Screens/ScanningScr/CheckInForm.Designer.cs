@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BikeCheckInForm));
+            //System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BikeCheckInForm));
             this.pnlBottom = new Sunny.UI.UIPanel();
             this.table = new Sunny.UI.UITableLayoutPanel();
             this.pnlPlateRecord = new Sunny.UI.UIPanel();
@@ -991,16 +991,16 @@
             this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbCardRfid
-            // 
-            this.lbCardId.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbCardId.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.lbCardId.ForeColor = System.Drawing.Color.Black;
-            this.lbCardId.Location = new System.Drawing.Point(149, 0);
-            this.lbCardId.Name = "lbCardId";
-            this.lbCardId.Size = new System.Drawing.Size(140, 30);
-            this.lbCardId.TabIndex = 9;
-            this.lbCardId.Text = "{card_id}";
-            this.lbCardId.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            //// 
+            //this.lbCardId.Dock = System.Windows.Forms.DockStyle.Fill;
+            //this.lbCardId.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            //this.lbCardId.ForeColor = System.Drawing.Color.Black;
+            //this.lbCardId.Location = new System.Drawing.Point(149, 0);
+            //this.lbCardId.Name = "lbCardId";
+            //this.lbCardId.Size = new System.Drawing.Size(140, 30);
+            //this.lbCardId.TabIndex = 9;
+            //this.lbCardId.Text = "{card_id}";
+            //this.lbCardId.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel2
             // 

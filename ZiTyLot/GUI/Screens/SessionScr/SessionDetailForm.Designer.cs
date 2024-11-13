@@ -820,7 +820,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(979, 875);
             this.Controls.Add(this.pnlMain);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(750, 748);
             this.Name = "SessionDetailForm";
             this.Padding = new System.Windows.Forms.Padding(10);
