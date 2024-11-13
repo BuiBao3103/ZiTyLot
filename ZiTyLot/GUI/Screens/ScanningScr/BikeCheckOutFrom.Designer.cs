@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BikeCheckOutFrom));
             this.pnlBottom = new Sunny.UI.UIPanel();
             this.table = new Sunny.UI.UITableLayoutPanel();
             this.pnlCheckInPlate = new Sunny.UI.UIPanel();
@@ -1423,10 +1424,11 @@
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.separator);
             this.Controls.Add(this.pnlTop);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1366, 768);
             this.Name = "BikeCheckOutFrom";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.Text = "BikeCheckOutFrom";
+            this.Text = "Bike Check Out From";
             this.pnlBottom.ResumeLayout(false);
             this.table.ResumeLayout(false);
             this.pnlCheckInPlate.ResumeLayout(false);

@@ -38,6 +38,14 @@
             this.pnlInformation = new Sunny.UI.UIPanel();
             this.gbInfomation = new Sunny.UI.UIGroupBox();
             this.uiTableLayoutPanel3 = new Sunny.UI.UITableLayoutPanel();
+            this.uiLabel10 = new Sunny.UI.UILabel();
+            this.lbTotalPrice = new Sunny.UI.UILabel();
+            this.uiLabel13 = new Sunny.UI.UILabel();
+            this.lbTotalTime = new Sunny.UI.UILabel();
+            this.uiLabel1 = new Sunny.UI.UILabel();
+            this.lbRfid = new Sunny.UI.UILabel();
+            this.uiLabel6 = new Sunny.UI.UILabel();
+            this.lbPlate = new Sunny.UI.UILabel();
             this.uiLabel7 = new Sunny.UI.UILabel();
             this.lbSessionType = new Sunny.UI.UILabel();
             this.uiLabel5 = new Sunny.UI.UILabel();
@@ -67,14 +75,6 @@
             this.uiPanel1 = new Sunny.UI.UIPanel();
             this.uiPanel3 = new Sunny.UI.UIPanel();
             this.uiSymbolLabel1 = new Sunny.UI.UISymbolLabel();
-            this.uiLabel1 = new Sunny.UI.UILabel();
-            this.lbRfid = new Sunny.UI.UILabel();
-            this.uiLabel6 = new Sunny.UI.UILabel();
-            this.lbPlate = new Sunny.UI.UILabel();
-            this.uiLabel10 = new Sunny.UI.UILabel();
-            this.lbTotalPrice = new Sunny.UI.UILabel();
-            this.uiLabel13 = new Sunny.UI.UILabel();
-            this.lbTotalTime = new Sunny.UI.UILabel();
             this.pnlMain.SuspendLayout();
             this.pnlButton.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -291,6 +291,102 @@
             this.uiTableLayoutPanel3.TabIndex = 1;
             this.uiTableLayoutPanel3.TagString = null;
             // 
+            // uiLabel10
+            // 
+            this.uiLabel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiLabel10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel10.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel10.Location = new System.Drawing.Point(348, 92);
+            this.uiLabel10.Name = "uiLabel10";
+            this.uiLabel10.Size = new System.Drawing.Size(144, 46);
+            this.uiLabel10.TabIndex = 27;
+            this.uiLabel10.Text = "Total price:";
+            this.uiLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbTotalPrice
+            // 
+            this.lbTotalPrice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbTotalPrice.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalPrice.ForeColor = System.Drawing.Color.Black;
+            this.lbTotalPrice.Location = new System.Drawing.Point(498, 92);
+            this.lbTotalPrice.Name = "lbTotalPrice";
+            this.lbTotalPrice.Size = new System.Drawing.Size(189, 46);
+            this.lbTotalPrice.TabIndex = 26;
+            this.lbTotalPrice.Text = "{total_price}";
+            this.lbTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLabel13
+            // 
+            this.uiLabel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiLabel13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel13.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel13.Location = new System.Drawing.Point(348, 138);
+            this.uiLabel13.Name = "uiLabel13";
+            this.uiLabel13.Size = new System.Drawing.Size(144, 46);
+            this.uiLabel13.TabIndex = 25;
+            this.uiLabel13.Text = "Total time:";
+            this.uiLabel13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbTotalTime
+            // 
+            this.lbTotalTime.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbTotalTime.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalTime.ForeColor = System.Drawing.Color.Black;
+            this.lbTotalTime.Location = new System.Drawing.Point(498, 138);
+            this.lbTotalTime.Name = "lbTotalTime";
+            this.lbTotalTime.Size = new System.Drawing.Size(189, 46);
+            this.lbTotalTime.TabIndex = 24;
+            this.lbTotalTime.Text = "{total_time}";
+            this.lbTotalTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLabel1
+            // 
+            this.uiLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiLabel1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel1.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel1.Location = new System.Drawing.Point(348, 0);
+            this.uiLabel1.Name = "uiLabel1";
+            this.uiLabel1.Size = new System.Drawing.Size(144, 46);
+            this.uiLabel1.TabIndex = 23;
+            this.uiLabel1.Text = "RFID card:";
+            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbRfid
+            // 
+            this.lbRfid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbRfid.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRfid.ForeColor = System.Drawing.Color.Black;
+            this.lbRfid.Location = new System.Drawing.Point(498, 0);
+            this.lbRfid.Name = "lbRfid";
+            this.lbRfid.Size = new System.Drawing.Size(189, 46);
+            this.lbRfid.TabIndex = 22;
+            this.lbRfid.Text = "{total_price}";
+            this.lbRfid.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLabel6
+            // 
+            this.uiLabel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiLabel6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel6.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel6.Location = new System.Drawing.Point(348, 46);
+            this.uiLabel6.Name = "uiLabel6";
+            this.uiLabel6.Size = new System.Drawing.Size(144, 46);
+            this.uiLabel6.TabIndex = 21;
+            this.uiLabel6.Text = "Vehical plate:";
+            this.uiLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbPlate
+            // 
+            this.lbPlate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbPlate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPlate.ForeColor = System.Drawing.Color.Black;
+            this.lbPlate.Location = new System.Drawing.Point(498, 46);
+            this.lbPlate.Name = "lbPlate";
+            this.lbPlate.Size = new System.Drawing.Size(189, 46);
+            this.lbPlate.TabIndex = 20;
+            this.lbPlate.Text = "{total_time}";
+            this.lbPlate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // uiLabel7
             // 
             this.uiLabel7.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -397,7 +493,7 @@
             this.uiPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel4.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel4.Name = "uiPanel4";
-            this.uiPanel4.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.uiPanel4.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel4.RectColor = System.Drawing.Color.White;
             this.uiPanel4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel4.Size = new System.Drawing.Size(349, 336);
@@ -536,7 +632,7 @@
             this.uiPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel2.Name = "uiPanel2";
-            this.uiPanel2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.uiPanel2.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel2.RectColor = System.Drawing.Color.White;
             this.uiPanel2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel2.Size = new System.Drawing.Size(349, 336);
@@ -723,102 +819,6 @@
             this.uiSymbolLabel1.Text = "Session details";
             this.uiSymbolLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiLabel1
-            // 
-            this.uiLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel1.ForeColor = System.Drawing.Color.Gray;
-            this.uiLabel1.Location = new System.Drawing.Point(348, 0);
-            this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(144, 46);
-            this.uiLabel1.TabIndex = 23;
-            this.uiLabel1.Text = "RFID card:";
-            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbRfid
-            // 
-            this.lbRfid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbRfid.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRfid.ForeColor = System.Drawing.Color.Black;
-            this.lbRfid.Location = new System.Drawing.Point(498, 0);
-            this.lbRfid.Name = "lbRfid";
-            this.lbRfid.Size = new System.Drawing.Size(189, 46);
-            this.lbRfid.TabIndex = 22;
-            this.lbRfid.Text = "{total_price}";
-            this.lbRfid.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // uiLabel6
-            // 
-            this.uiLabel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel6.ForeColor = System.Drawing.Color.Gray;
-            this.uiLabel6.Location = new System.Drawing.Point(348, 46);
-            this.uiLabel6.Name = "uiLabel6";
-            this.uiLabel6.Size = new System.Drawing.Size(144, 46);
-            this.uiLabel6.TabIndex = 21;
-            this.uiLabel6.Text = "Vehical plate:";
-            this.uiLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbPlate
-            // 
-            this.lbPlate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbPlate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPlate.ForeColor = System.Drawing.Color.Black;
-            this.lbPlate.Location = new System.Drawing.Point(498, 46);
-            this.lbPlate.Name = "lbPlate";
-            this.lbPlate.Size = new System.Drawing.Size(189, 46);
-            this.lbPlate.TabIndex = 20;
-            this.lbPlate.Text = "{total_time}";
-            this.lbPlate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // uiLabel10
-            // 
-            this.uiLabel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel10.ForeColor = System.Drawing.Color.Gray;
-            this.uiLabel10.Location = new System.Drawing.Point(348, 92);
-            this.uiLabel10.Name = "uiLabel10";
-            this.uiLabel10.Size = new System.Drawing.Size(144, 46);
-            this.uiLabel10.TabIndex = 27;
-            this.uiLabel10.Text = "Total price:";
-            this.uiLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbTotalPrice
-            // 
-            this.lbTotalPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbTotalPrice.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalPrice.ForeColor = System.Drawing.Color.Black;
-            this.lbTotalPrice.Location = new System.Drawing.Point(498, 92);
-            this.lbTotalPrice.Name = "lbTotalPrice";
-            this.lbTotalPrice.Size = new System.Drawing.Size(189, 46);
-            this.lbTotalPrice.TabIndex = 26;
-            this.lbTotalPrice.Text = "{total_price}";
-            this.lbTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // uiLabel13
-            // 
-            this.uiLabel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel13.ForeColor = System.Drawing.Color.Gray;
-            this.uiLabel13.Location = new System.Drawing.Point(348, 138);
-            this.uiLabel13.Name = "uiLabel13";
-            this.uiLabel13.Size = new System.Drawing.Size(144, 46);
-            this.uiLabel13.TabIndex = 25;
-            this.uiLabel13.Text = "Total time:";
-            this.uiLabel13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbTotalTime
-            // 
-            this.lbTotalTime.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbTotalTime.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalTime.ForeColor = System.Drawing.Color.Black;
-            this.lbTotalTime.Location = new System.Drawing.Point(498, 138);
-            this.lbTotalTime.Name = "lbTotalTime";
-            this.lbTotalTime.Size = new System.Drawing.Size(189, 46);
-            this.lbTotalTime.TabIndex = 24;
-            this.lbTotalTime.Text = "{total_time}";
-            this.lbTotalTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // SessionDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -826,10 +826,11 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(734, 711);
             this.Controls.Add(this.pnlMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(750, 748);
             this.Name = "SessionDetailForm";
-            this.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
-            this.Text = "ScanningDetailForm";
+            this.Padding = new System.Windows.Forms.Padding(10);
+            this.Text = "Scanning Details Form";
             this.pnlMain.ResumeLayout(false);
             this.pnlButton.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

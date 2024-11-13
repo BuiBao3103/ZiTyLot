@@ -58,6 +58,8 @@ namespace ZiTyLot.GUI.Screens
             this.btnPrevious = new Sunny.UI.UISymbolButton();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.tableTop = new Sunny.UI.UITableLayoutPanel();
+            this.btnFilter = new Sunny.UI.UISymbolButton();
+            this.btnAdd = new Sunny.UI.UISymbolButton();
             this.btnMore = new Sunny.UI.UISymbolButton();
             this.uiPanel3 = new Sunny.UI.UIPanel();
             this.pnlSearch = new Sunny.UI.UIPanel();
@@ -77,8 +79,6 @@ namespace ZiTyLot.GUI.Screens
             this.cbStatus = new Sunny.UI.UIComboBox();
             this.uiPanel8 = new Sunny.UI.UIPanel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnAdd = new Sunny.UI.UISymbolButton();
-            this.btnFilter = new Sunny.UI.UISymbolButton();
             this.menuFunction = new ZiTyLot.GUI.CustomContextMenuStrip();
             this.pnlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableCard)).BeginInit();
@@ -513,6 +513,57 @@ namespace ZiTyLot.GUI.Screens
             this.tableTop.TabIndex = 0;
             this.tableTop.TagString = null;
             // 
+            // btnFilter
+            // 
+            this.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFilter.FillColor = System.Drawing.Color.White;
+            this.btnFilter.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnFilter.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnFilter.FillSelectedColor = System.Drawing.Color.White;
+            this.btnFilter.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnFilter.Location = new System.Drawing.Point(782, 3);
+            this.btnFilter.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.btnFilter.RectDisableColor = System.Drawing.Color.White;
+            this.btnFilter.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnFilter.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnFilter.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnFilter.RectSize = 2;
+            this.btnFilter.Size = new System.Drawing.Size(124, 38);
+            this.btnFilter.Symbol = 61616;
+            this.btnFilter.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnFilter.TabIndex = 36;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnAdd.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnAdd.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(912, 3);
+            this.btnAdd.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnAdd.RectDisableColor = System.Drawing.Color.White;
+            this.btnAdd.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnAdd.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnAdd.RectSelectedColor = System.Drawing.Color.White;
+            this.btnAdd.RectSize = 2;
+            this.btnAdd.Size = new System.Drawing.Size(144, 38);
+            this.btnAdd.Symbol = 61694;
+            this.btnAdd.TabIndex = 35;
+            this.btnAdd.Text = "New card";
+            this.btnAdd.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // btnMore
             // 
             this.btnMore.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -917,57 +968,6 @@ namespace ZiTyLot.GUI.Screens
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(110, 34);
             this.panel5.TabIndex = 0;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnAdd.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.btnAdd.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(912, 3);
-            this.btnAdd.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnAdd.RectDisableColor = System.Drawing.Color.White;
-            this.btnAdd.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.btnAdd.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnAdd.RectSelectedColor = System.Drawing.Color.White;
-            this.btnAdd.RectSize = 2;
-            this.btnAdd.Size = new System.Drawing.Size(144, 38);
-            this.btnAdd.Symbol = 61694;
-            this.btnAdd.TabIndex = 35;
-            this.btnAdd.Text = "New card";
-            this.btnAdd.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnFilter
-            // 
-            this.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFilter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFilter.FillColor = System.Drawing.Color.White;
-            this.btnFilter.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnFilter.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnFilter.FillSelectedColor = System.Drawing.Color.White;
-            this.btnFilter.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnFilter.Location = new System.Drawing.Point(782, 3);
-            this.btnFilter.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.RectColor = System.Drawing.SystemColors.ControlLight;
-            this.btnFilter.RectDisableColor = System.Drawing.Color.White;
-            this.btnFilter.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnFilter.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnFilter.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnFilter.RectSize = 2;
-            this.btnFilter.Size = new System.Drawing.Size(124, 38);
-            this.btnFilter.Symbol = 61616;
-            this.btnFilter.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnFilter.TabIndex = 36;
-            this.btnFilter.Text = "Filter";
-            this.btnFilter.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // menuFunction
             // 

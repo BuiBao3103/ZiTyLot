@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.tableLostCard = new System.Windows.Forms.DataGridView();
@@ -48,16 +48,16 @@
             this.cbNumberofitem = new Sunny.UI.UIComboBox();
             this.pnlRight = new System.Windows.Forms.Panel();
             this.pnlNext = new System.Windows.Forms.Panel();
+            this.btnNext = new Sunny.UI.UISymbolButton();
             this.pnlCurrentPage = new System.Windows.Forms.Panel();
             this.uiTableLayoutPanel3 = new Sunny.UI.UITableLayoutPanel();
             this.tbCurrentpage = new Sunny.UI.UITextBox();
             this.lbTotalpage = new Sunny.UI.UILabel();
             this.pnlPrevious = new System.Windows.Forms.Panel();
+            this.btnPrevious = new Sunny.UI.UISymbolButton();
             this.separator = new System.Windows.Forms.Panel();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.tableTop = new Sunny.UI.UITableLayoutPanel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.btnFilter = new Sunny.UI.UISymbolButton();
             this.uiPanel3 = new Sunny.UI.UIPanel();
             this.pnlSearch = new Sunny.UI.UIPanel();
             this.tableSearch = new System.Windows.Forms.TableLayoutPanel();
@@ -73,11 +73,8 @@
             this.uiTableLayoutPanel4 = new Sunny.UI.UITableLayoutPanel();
             this.cbStatus = new Sunny.UI.UIComboBox();
             this.uiPanel8 = new Sunny.UI.UIPanel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnFilter = new Sunny.UI.UISymbolButton();
             this.btnApply = new Sunny.UI.UISymbolButton();
-            this.btnNext = new Sunny.UI.UISymbolButton();
-            this.btnPrevious = new Sunny.UI.UISymbolButton();
             this.btnClear = new Sunny.UI.UISymbolButton();
             this.panel2.SuspendLayout();
             this.pnlBottom.SuspendLayout();
@@ -92,7 +89,6 @@
             this.pnlPrevious.SuspendLayout();
             this.pnlTop.SuspendLayout();
             this.tableTop.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.uiPanel3.SuspendLayout();
             this.pnlSearch.SuspendLayout();
             this.tableSearch.SuspendLayout();
@@ -102,8 +98,6 @@
             this.uiTableLayoutPanel2.SuspendLayout();
             this.uiPanel10.SuspendLayout();
             this.uiTableLayoutPanel4.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -138,27 +132,27 @@
             this.tableLostCard.AllowUserToDeleteRows = false;
             this.tableLostCard.AllowUserToResizeColumns = false;
             this.tableLostCard.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.tableLostCard.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            this.tableLostCard.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.tableLostCard.BackgroundColor = System.Drawing.Color.White;
             this.tableLostCard.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tableLostCard.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.tableLostCard.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableLostCard.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableLostCard.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.tableLostCard.ColumnHeadersHeight = 34;
             this.tableLostCard.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
@@ -169,15 +163,15 @@
             this.colStatus,
             this.colRestore});
             this.tableLostCard.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableLostCard.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableLostCard.DefaultCellStyle = dataGridViewCellStyle9;
             this.tableLostCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLostCard.GridColor = System.Drawing.Color.White;
             this.tableLostCard.Location = new System.Drawing.Point(10, 10);
@@ -362,6 +356,33 @@
             this.pnlNext.Size = new System.Drawing.Size(40, 44);
             this.pnlNext.TabIndex = 1;
             // 
+            // btnNext
+            // 
+            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNext.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNext.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.btnNext.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnNext.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Next;
+            this.btnNext.Location = new System.Drawing.Point(3, 3);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(0);
+            this.btnNext.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Padding = new System.Windows.Forms.Padding(20, 0, 22, 0);
+            this.btnNext.Radius = 4;
+            this.btnNext.RectColor = System.Drawing.Color.White;
+            this.btnNext.RectDisableColor = System.Drawing.Color.White;
+            this.btnNext.RectHoverColor = System.Drawing.Color.White;
+            this.btnNext.RectPressColor = System.Drawing.Color.White;
+            this.btnNext.RectSelectedColor = System.Drawing.Color.White;
+            this.btnNext.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnNext.RectSize = 2;
+            this.btnNext.Size = new System.Drawing.Size(34, 38);
+            this.btnNext.TabIndex = 4;
+            this.btnNext.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
             // pnlCurrentPage
             // 
             this.pnlCurrentPage.Controls.Add(this.uiTableLayoutPanel3);
@@ -435,6 +456,33 @@
             this.pnlPrevious.Size = new System.Drawing.Size(40, 44);
             this.pnlPrevious.TabIndex = 0;
             // 
+            // btnPrevious
+            // 
+            this.btnPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPrevious.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.btnPrevious.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnPrevious.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Previous;
+            this.btnPrevious.Location = new System.Drawing.Point(3, 3);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPrevious.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Padding = new System.Windows.Forms.Padding(20, 0, 22, 0);
+            this.btnPrevious.Radius = 4;
+            this.btnPrevious.RectColor = System.Drawing.Color.White;
+            this.btnPrevious.RectDisableColor = System.Drawing.Color.White;
+            this.btnPrevious.RectHoverColor = System.Drawing.Color.White;
+            this.btnPrevious.RectPressColor = System.Drawing.Color.White;
+            this.btnPrevious.RectSelectedColor = System.Drawing.Color.White;
+            this.btnPrevious.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnPrevious.RectSize = 2;
+            this.btnPrevious.Size = new System.Drawing.Size(34, 38);
+            this.btnPrevious.TabIndex = 4;
+            this.btnPrevious.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            // 
             // separator
             // 
             this.separator.Dock = System.Windows.Forms.DockStyle.Top;
@@ -466,7 +514,7 @@
             this.tableTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableTop.Controls.Add(this.panel6, 1, 0);
+            this.tableTop.Controls.Add(this.btnFilter, 1, 0);
             this.tableTop.Controls.Add(this.uiPanel3, 0, 0);
             this.tableTop.Controls.Add(this.uiPanel4, 0, 1);
             this.tableTop.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -478,46 +526,6 @@
             this.tableTop.Size = new System.Drawing.Size(1215, 98);
             this.tableTop.TabIndex = 0;
             this.tableTop.TagString = null;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.btnFilter);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(1088, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.panel6.Size = new System.Drawing.Size(124, 38);
-            this.panel6.TabIndex = 28;
-            // 
-            // btnFilter
-            // 
-            this.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFilter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFilter.FillColor = System.Drawing.Color.White;
-            this.btnFilter.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnFilter.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnFilter.FillSelectedColor = System.Drawing.Color.White;
-            this.btnFilter.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnFilter.Location = new System.Drawing.Point(5, 0);
-            this.btnFilter.Margin = new System.Windows.Forms.Padding(0);
-            this.btnFilter.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Padding = new System.Windows.Forms.Padding(14, 0, 12, 0);
-            this.btnFilter.RectColor = System.Drawing.SystemColors.ControlLight;
-            this.btnFilter.RectDisableColor = System.Drawing.Color.White;
-            this.btnFilter.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnFilter.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnFilter.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnFilter.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnFilter.RectSize = 2;
-            this.btnFilter.Size = new System.Drawing.Size(114, 38);
-            this.btnFilter.Symbol = 61616;
-            this.btnFilter.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnFilter.TabIndex = 3;
-            this.btnFilter.Text = "Filter";
-            this.btnFilter.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click_1);
             // 
             // uiPanel3
             // 
@@ -653,10 +661,10 @@
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 131F));
+            this.uiTableLayoutPanel1.Controls.Add(this.btnClear, 2, 0);
+            this.uiTableLayoutPanel1.Controls.Add(this.btnApply, 3, 0);
             this.uiTableLayoutPanel1.Controls.Add(this.uiPanel6, 0, 0);
             this.uiTableLayoutPanel1.Controls.Add(this.uiPanel10, 1, 0);
-            this.uiTableLayoutPanel1.Controls.Add(this.panel4, 2, 0);
-            this.uiTableLayoutPanel1.Controls.Add(this.panel3, 3, 0);
             this.uiTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.uiTableLayoutPanel1.Name = "uiTableLayoutPanel1";
@@ -834,25 +842,34 @@
             this.uiPanel8.Text = "Status:";
             this.uiPanel8.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // panel4
+            // btnFilter
             // 
-            this.panel4.Controls.Add(this.btnClear);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(957, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.panel4.Size = new System.Drawing.Size(124, 38);
-            this.panel4.TabIndex = 26;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnApply);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(1087, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.panel3.Size = new System.Drawing.Size(125, 38);
-            this.panel3.TabIndex = 25;
+            this.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFilter.FillColor = System.Drawing.Color.White;
+            this.btnFilter.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnFilter.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnFilter.FillSelectedColor = System.Drawing.Color.White;
+            this.btnFilter.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnFilter.Location = new System.Drawing.Point(1088, 3);
+            this.btnFilter.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Padding = new System.Windows.Forms.Padding(14, 0, 12, 0);
+            this.btnFilter.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.btnFilter.RectDisableColor = System.Drawing.Color.White;
+            this.btnFilter.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnFilter.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnFilter.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnFilter.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnFilter.RectSize = 2;
+            this.btnFilter.Size = new System.Drawing.Size(124, 38);
+            this.btnFilter.Symbol = 61616;
+            this.btnFilter.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnFilter.TabIndex = 14;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // btnApply
             // 
@@ -862,11 +879,9 @@
             this.btnApply.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
             this.btnApply.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
             this.btnApply.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApply.Location = new System.Drawing.Point(5, 0);
-            this.btnApply.Margin = new System.Windows.Forms.Padding(0);
+            this.btnApply.Location = new System.Drawing.Point(1087, 3);
             this.btnApply.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnApply.Name = "btnApply";
-            this.btnApply.Padding = new System.Windows.Forms.Padding(14, 0, 12, 0);
             this.btnApply.Radius = 6;
             this.btnApply.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnApply.RectDisableColor = System.Drawing.Color.White;
@@ -874,66 +889,12 @@
             this.btnApply.RectPressColor = System.Drawing.Color.White;
             this.btnApply.RectSelectedColor = System.Drawing.Color.White;
             this.btnApply.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnApply.Size = new System.Drawing.Size(115, 38);
+            this.btnApply.Size = new System.Drawing.Size(125, 38);
             this.btnApply.Symbol = 61616;
-            this.btnApply.TabIndex = 3;
+            this.btnApply.TabIndex = 32;
             this.btnApply.Text = "Apply";
             this.btnApply.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
-            // 
-            // btnNext
-            // 
-            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNext.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNext.FillColor = System.Drawing.SystemColors.ControlLight;
-            this.btnNext.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.btnNext.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Next;
-            this.btnNext.Location = new System.Drawing.Point(3, 3);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(0);
-            this.btnNext.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Padding = new System.Windows.Forms.Padding(20, 0, 22, 0);
-            this.btnNext.Radius = 4;
-            this.btnNext.RectColor = System.Drawing.Color.White;
-            this.btnNext.RectDisableColor = System.Drawing.Color.White;
-            this.btnNext.RectHoverColor = System.Drawing.Color.White;
-            this.btnNext.RectPressColor = System.Drawing.Color.White;
-            this.btnNext.RectSelectedColor = System.Drawing.Color.White;
-            this.btnNext.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnNext.RectSize = 2;
-            this.btnNext.Size = new System.Drawing.Size(34, 38);
-            this.btnNext.TabIndex = 4;
-            this.btnNext.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // btnPrevious
-            // 
-            this.btnPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPrevious.FillColor = System.Drawing.SystemColors.ControlLight;
-            this.btnPrevious.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.btnPrevious.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrevious.Image = global::ZiTyLot.Properties.Resources.Icon_18x18px_Previous;
-            this.btnPrevious.Location = new System.Drawing.Point(3, 3);
-            this.btnPrevious.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPrevious.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Padding = new System.Windows.Forms.Padding(20, 0, 22, 0);
-            this.btnPrevious.Radius = 4;
-            this.btnPrevious.RectColor = System.Drawing.Color.White;
-            this.btnPrevious.RectDisableColor = System.Drawing.Color.White;
-            this.btnPrevious.RectHoverColor = System.Drawing.Color.White;
-            this.btnPrevious.RectPressColor = System.Drawing.Color.White;
-            this.btnPrevious.RectSelectedColor = System.Drawing.Color.White;
-            this.btnPrevious.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnPrevious.RectSize = 2;
-            this.btnPrevious.Size = new System.Drawing.Size(34, 38);
-            this.btnPrevious.TabIndex = 4;
-            this.btnPrevious.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // btnClear
             // 
@@ -945,11 +906,9 @@
             this.btnClear.FillSelectedColor = System.Drawing.Color.White;
             this.btnClear.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnClear.Location = new System.Drawing.Point(5, 0);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(0);
+            this.btnClear.Location = new System.Drawing.Point(957, 3);
             this.btnClear.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Padding = new System.Windows.Forms.Padding(14, 0, 12, 0);
             this.btnClear.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnClear.RectDisableColor = System.Drawing.Color.White;
             this.btnClear.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
@@ -957,10 +916,10 @@
             this.btnClear.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnClear.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnClear.RectSize = 2;
-            this.btnClear.Size = new System.Drawing.Size(114, 38);
+            this.btnClear.Size = new System.Drawing.Size(124, 38);
             this.btnClear.Symbol = 61453;
             this.btnClear.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnClear.TabIndex = 3;
+            this.btnClear.TabIndex = 33;
             this.btnClear.Text = "Clear";
             this.btnClear.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -987,7 +946,6 @@
             this.pnlPrevious.ResumeLayout(false);
             this.pnlTop.ResumeLayout(false);
             this.tableTop.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             this.uiPanel3.ResumeLayout(false);
             this.pnlSearch.ResumeLayout(false);
             this.tableSearch.ResumeLayout(false);
@@ -997,8 +955,6 @@
             this.uiTableLayoutPanel2.ResumeLayout(false);
             this.uiPanel10.ResumeLayout(false);
             this.uiTableLayoutPanel4.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1025,13 +981,7 @@
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel4;
         private Sunny.UI.UIComboBox cbStatus;
         private Sunny.UI.UIPanel uiPanel8;
-        private System.Windows.Forms.Panel panel4;
-        private Sunny.UI.UISymbolButton btnClear;
-        private System.Windows.Forms.Panel panel3;
-        private Sunny.UI.UISymbolButton btnApply;
         private System.Windows.Forms.DataGridView tableLostCard;
-        private System.Windows.Forms.Panel panel6;
-        private Sunny.UI.UISymbolButton btnFilter;
         private System.Windows.Forms.Panel separtorBottom;
         private System.Windows.Forms.Panel pnlPagination;
         private System.Windows.Forms.Panel pnlLeft;
@@ -1053,5 +1003,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colUserType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
         private System.Windows.Forms.DataGridViewButtonColumn colRestore;
+        private Sunny.UI.UISymbolButton btnFilter;
+        private Sunny.UI.UISymbolButton btnClear;
+        private Sunny.UI.UISymbolButton btnApply;
     }
 }

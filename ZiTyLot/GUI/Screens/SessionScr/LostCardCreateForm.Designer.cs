@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LostCardCreateForm));
             this.pnlMain = new Sunny.UI.UITableLayoutPanel();
             this.pnlButton = new Sunny.UI.UIPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -41,6 +42,7 @@
             this.pnlEmployee = new Sunny.UI.UITableLayoutPanel();
             this.pnlPhone = new Sunny.UI.UIPanel();
             this.uiGroupBox5 = new Sunny.UI.UIGroupBox();
+            this.dtpTimeOfLoss = new System.Windows.Forms.DateTimePicker();
             this.pnlEmail = new Sunny.UI.UIPanel();
             this.uiGroupBox4 = new Sunny.UI.UIGroupBox();
             this.tbPhone = new Sunny.UI.UITextBox();
@@ -50,7 +52,6 @@
             this.pnlFullname = new Sunny.UI.UIPanel();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
             this.tbFullname = new Sunny.UI.UITextBox();
-            this.dtpTimeOfLoss = new System.Windows.Forms.DateTimePicker();
             this.pnlMain.SuspendLayout();
             this.pnlButton.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -313,6 +314,15 @@
             this.uiGroupBox5.Text = "Time of loss";
             this.uiGroupBox5.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // dtpTimeOfLoss
+            // 
+            this.dtpTimeOfLoss.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpTimeOfLoss.Location = new System.Drawing.Point(8, 32);
+            this.dtpTimeOfLoss.MinimumSize = new System.Drawing.Size(0, 34);
+            this.dtpTimeOfLoss.Name = "dtpTimeOfLoss";
+            this.dtpTimeOfLoss.Size = new System.Drawing.Size(309, 34);
+            this.dtpTimeOfLoss.TabIndex = 0;
+            // 
             // pnlEmail
             // 
             this.pnlEmail.Controls.Add(this.uiGroupBox4);
@@ -474,15 +484,6 @@
             this.tbFullname.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbFullname.Watermark = "";
             // 
-            // dtpTimeOfLoss
-            // 
-            this.dtpTimeOfLoss.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpTimeOfLoss.Location = new System.Drawing.Point(8, 32);
-            this.dtpTimeOfLoss.MinimumSize = new System.Drawing.Size(0, 34);
-            this.dtpTimeOfLoss.Name = "dtpTimeOfLoss";
-            this.dtpTimeOfLoss.Size = new System.Drawing.Size(309, 34);
-            this.dtpTimeOfLoss.TabIndex = 0;
-            // 
             // LostCardCreateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -490,9 +491,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(583, 328);
             this.Controls.Add(this.pnlMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LostCardCreateForm";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.Text = "LostCardCreateForm";
+            this.Text = "Lost Card Create Form";
             this.pnlMain.ResumeLayout(false);
             this.pnlButton.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

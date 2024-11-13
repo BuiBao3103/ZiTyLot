@@ -118,17 +118,6 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
             this.pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
         }
 
-        private void btnFilter_Click_1(object sender, EventArgs e)
-        {
-            if (pnlTop.Height == 54)
-            {
-                pnlTop.Height = 108;
-            }
-            else
-            {
-                pnlTop.Height = 54;
-            }
-        }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
