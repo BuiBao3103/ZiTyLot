@@ -394,7 +394,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(500, 280);
             this.Name = "DetailResidentFeeForm";
-            this.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "Resident Fee Details Form";
             this.pnlMain.ResumeLayout(false);
             this.uiPanel1.ResumeLayout(false);

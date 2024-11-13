@@ -510,7 +510,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(620, 358);
             this.Name = "ResidentCreateForm";
-            this.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "Resident Create Form";
             this.Load += new System.EventHandler(this.ResidentCreateForm_Load);
             this.uiPanel2.ResumeLayout(false);

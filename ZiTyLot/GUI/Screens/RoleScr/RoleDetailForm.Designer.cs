@@ -106,8 +106,9 @@
             this.listDo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listDo.FillColor = System.Drawing.Color.White;
             this.listDo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listDo.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.listDo.ItemSelectForeColor = System.Drawing.Color.White;
+            this.listDo.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.listDo.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.listDo.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.listDo.Location = new System.Drawing.Point(8, 32);
             this.listDo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listDo.MinimumSize = new System.Drawing.Size(1, 1);
@@ -115,6 +116,8 @@
             this.listDo.Padding = new System.Windows.Forms.Padding(2);
             this.listDo.RectColor = System.Drawing.SystemColors.ControlDark;
             this.listDo.RectSize = 2;
+            this.listDo.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.listDo.ScrollBarStyleInherited = false;
             this.listDo.ShowText = false;
             this.listDo.Size = new System.Drawing.Size(186, 161);
             this.listDo.TabIndex = 1;
@@ -143,8 +146,9 @@
             this.listFunction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listFunction.FillColor = System.Drawing.Color.White;
             this.listFunction.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listFunction.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.listFunction.ItemSelectForeColor = System.Drawing.Color.White;
+            this.listFunction.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.listFunction.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.listFunction.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.listFunction.Location = new System.Drawing.Point(8, 32);
             this.listFunction.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listFunction.MinimumSize = new System.Drawing.Size(1, 1);
@@ -152,6 +156,8 @@
             this.listFunction.Padding = new System.Windows.Forms.Padding(2);
             this.listFunction.RectColor = System.Drawing.SystemColors.ControlDark;
             this.listFunction.RectSize = 2;
+            this.listFunction.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.listFunction.ScrollBarStyleInherited = false;
             this.listFunction.ShowText = false;
             this.listFunction.Size = new System.Drawing.Size(184, 161);
             this.listFunction.TabIndex = 0;
@@ -184,7 +190,7 @@
             this.uiPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel2.Name = "uiPanel2";
-            this.uiPanel2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.uiPanel2.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel2.Size = new System.Drawing.Size(126, 91);
             this.uiPanel2.TabIndex = 1;
@@ -206,6 +212,7 @@
             this.btnRemove.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.btnRemove.RectHoverColor = System.Drawing.SystemColors.ControlLight;
             this.btnRemove.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnRemove.RectSelectedColor = System.Drawing.Color.White;
             this.btnRemove.RectSize = 2;
@@ -227,7 +234,7 @@
             this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel1.Name = "uiPanel1";
-            this.uiPanel1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.uiPanel1.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel1.Size = new System.Drawing.Size(126, 90);
             this.uiPanel1.TabIndex = 0;
@@ -249,6 +256,7 @@
             this.btnAdd.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.btnAdd.RectHoverColor = System.Drawing.SystemColors.ControlLight;
             this.btnAdd.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnAdd.RectSelectedColor = System.Drawing.Color.White;
             this.btnAdd.RectSize = 2;
@@ -477,7 +485,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(600, 479);
             this.Name = "RoleDetailForm";
-            this.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "Role Details Form";
             this.uiTableLayoutPanel2.ResumeLayout(false);
             this.uiGroupBox5.ResumeLayout(false);
