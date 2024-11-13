@@ -142,13 +142,15 @@
             this.cbFront.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbFront.FillColor = System.Drawing.Color.White;
             this.cbFront.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFront.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.cbFront.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbFront.ItemRectColor = System.Drawing.Color.White;
             this.cbFront.Items.AddRange(new object[] {
             "Camera 1",
             "Camera 2",
             "Camera 3",
             "Camera 4"});
-            this.cbFront.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.cbFront.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbFront.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbFront.Location = new System.Drawing.Point(4, 5);
             this.cbFront.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbFront.MaximumSize = new System.Drawing.Size(0, 40);
@@ -157,6 +159,8 @@
             this.cbFront.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
             this.cbFront.RectColor = System.Drawing.SystemColors.ControlDark;
             this.cbFront.RectSize = 2;
+            this.cbFront.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbFront.ScrollBarStyleInherited = false;
             this.cbFront.Size = new System.Drawing.Size(336, 40);
             this.cbFront.SymbolSize = 24;
             this.cbFront.TabIndex = 6;
@@ -299,13 +303,15 @@
             this.cbBack.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbBack.FillColor = System.Drawing.Color.White;
             this.cbBack.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbBack.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.cbBack.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbBack.ItemRectColor = System.Drawing.Color.White;
             this.cbBack.Items.AddRange(new object[] {
             "Camera 1",
             "Camera 2",
             "Camera 3",
             "Camera 4"});
-            this.cbBack.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.cbBack.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbBack.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbBack.Location = new System.Drawing.Point(4, 5);
             this.cbBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbBack.MaximumSize = new System.Drawing.Size(0, 40);
@@ -314,6 +320,8 @@
             this.cbBack.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
             this.cbBack.RectColor = System.Drawing.SystemColors.ControlDark;
             this.cbBack.RectSize = 2;
+            this.cbBack.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbBack.ScrollBarStyleInherited = false;
             this.cbBack.Size = new System.Drawing.Size(342, 40);
             this.cbBack.SymbolSize = 24;
             this.cbBack.TabIndex = 6;
@@ -528,14 +536,16 @@
             this.cbGate.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbGate.FillColor = System.Drawing.Color.White;
             this.cbGate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbGate.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.cbGate.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbGate.ItemRectColor = System.Drawing.Color.White;
             this.cbGate.Items.AddRange(new object[] {
             "1 month",
             "2 months",
             "3 months",
             "6 months",
             "12 months"});
-            this.cbGate.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.cbGate.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbGate.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbGate.Location = new System.Drawing.Point(4, 5);
             this.cbGate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbGate.MaximumSize = new System.Drawing.Size(0, 40);
@@ -544,6 +554,8 @@
             this.cbGate.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
             this.cbGate.RectColor = System.Drawing.SystemColors.ControlDark;
             this.cbGate.RectSize = 2;
+            this.cbGate.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbGate.ScrollBarStyleInherited = false;
             this.cbGate.Size = new System.Drawing.Size(342, 40);
             this.cbGate.SymbolSize = 24;
             this.cbGate.TabIndex = 3;
@@ -667,7 +679,7 @@
             this.uiTableLayoutPanel1.Controls.Add(this.uiPanel5, 0, 2);
             this.uiTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTableLayoutPanel1.Location = new System.Drawing.Point(8, 8);
-            this.uiTableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uiTableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.uiTableLayoutPanel1.Name = "uiTableLayoutPanel1";
             this.uiTableLayoutPanel1.RowCount = 7;
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
@@ -751,7 +763,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(500, 518);
             this.Name = "SettingForm";
-            this.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.Padding = new System.Windows.Forms.Padding(8);
             this.Text = "Setting Form";
             this.uiPanel5.ResumeLayout(false);
             this.uiGroupBox3.ResumeLayout(false);

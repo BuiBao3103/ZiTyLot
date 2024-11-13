@@ -333,7 +333,7 @@
             this.pnlEmployee.Name = "pnlEmployee";
             this.pnlEmployee.RowCount = 1;
             this.pnlEmployee.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.pnlEmployee.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 83F));
+            this.pnlEmployee.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 93F));
             this.pnlEmployee.Size = new System.Drawing.Size(436, 93);
             this.pnlEmployee.TabIndex = 0;
             this.pnlEmployee.TagString = null;

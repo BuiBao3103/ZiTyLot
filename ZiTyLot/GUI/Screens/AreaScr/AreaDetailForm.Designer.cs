@@ -158,7 +158,7 @@
             this.tableSlot.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
@@ -753,7 +753,6 @@
             this.ClientSize = new System.Drawing.Size(924, 416);
             this.Controls.Add(this.uiTableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.MinimumSize = new System.Drawing.Size(940, 455);
             this.Name = "AreaDetailForm";
             this.Padding = new System.Windows.Forms.Padding(10);

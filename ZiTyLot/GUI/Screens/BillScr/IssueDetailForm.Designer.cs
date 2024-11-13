@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IssueDetailForm));
             this.uiTableLayoutPanel1 = new Sunny.UI.UITableLayoutPanel();
+            this.uiPanel2 = new Sunny.UI.UIPanel();
+            this.uiTableLayoutPanel3 = new Sunny.UI.UITableLayoutPanel();
+            this.btnCreate = new Sunny.UI.UISymbolButton();
+            this.btnCancel = new Sunny.UI.UISymbolButton();
             this.uiPanel1 = new Sunny.UI.UIPanel();
             this.uiPanel11 = new Sunny.UI.UIPanel();
             this.uiSymbolLabel1 = new Sunny.UI.UISymbolLabel();
@@ -57,11 +61,9 @@
             this.uiPanel3 = new Sunny.UI.UIPanel();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
             this.tbPlate = new Sunny.UI.UITextBox();
-            this.uiPanel2 = new Sunny.UI.UIPanel();
-            this.uiTableLayoutPanel3 = new Sunny.UI.UITableLayoutPanel();
-            this.btnCreate = new Sunny.UI.UISymbolButton();
-            this.btnCancel = new Sunny.UI.UISymbolButton();
             this.uiTableLayoutPanel1.SuspendLayout();
+            this.uiPanel2.SuspendLayout();
+            this.uiTableLayoutPanel3.SuspendLayout();
             this.uiPanel1.SuspendLayout();
             this.uiPanel11.SuspendLayout();
             this.uiPanel10.SuspendLayout();
@@ -80,8 +82,6 @@
             this.uiGroupBox3.SuspendLayout();
             this.uiPanel3.SuspendLayout();
             this.uiGroupBox1.SuspendLayout();
-            this.uiPanel2.SuspendLayout();
-            this.uiTableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // uiTableLayoutPanel1
@@ -112,6 +112,99 @@
             this.uiTableLayoutPanel1.Size = new System.Drawing.Size(564, 441);
             this.uiTableLayoutPanel1.TabIndex = 0;
             this.uiTableLayoutPanel1.TagString = null;
+            // 
+            // uiPanel2
+            // 
+            this.uiTableLayoutPanel1.SetColumnSpan(this.uiPanel2, 2);
+            this.uiPanel2.Controls.Add(this.uiTableLayoutPanel3);
+            this.uiPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel2.FillColor = System.Drawing.Color.White;
+            this.uiPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel2.Location = new System.Drawing.Point(4, 379);
+            this.uiPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel2.Name = "uiPanel2";
+            this.uiPanel2.Padding = new System.Windows.Forms.Padding(0, 13, 0, 6);
+            this.uiPanel2.Radius = 0;
+            this.uiPanel2.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.uiPanel2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
+            this.uiPanel2.RectSize = 2;
+            this.uiPanel2.Size = new System.Drawing.Size(556, 57);
+            this.uiPanel2.TabIndex = 23;
+            this.uiPanel2.Text = null;
+            this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiTableLayoutPanel3
+            // 
+            this.uiTableLayoutPanel3.ColumnCount = 4;
+            this.uiTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.uiTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.uiTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.uiTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.uiTableLayoutPanel3.Controls.Add(this.btnCreate, 3, 0);
+            this.uiTableLayoutPanel3.Controls.Add(this.btnCancel, 2, 0);
+            this.uiTableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiTableLayoutPanel3.Location = new System.Drawing.Point(0, 13);
+            this.uiTableLayoutPanel3.Name = "uiTableLayoutPanel3";
+            this.uiTableLayoutPanel3.RowCount = 1;
+            this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(556, 38);
+            this.uiTableLayoutPanel3.TabIndex = 0;
+            this.uiTableLayoutPanel3.TagString = null;
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCreate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCreate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCreate.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnCreate.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnCreate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.Location = new System.Drawing.Point(426, 0);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCreate.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Radius = 10;
+            this.btnCreate.RectColor = System.Drawing.Color.White;
+            this.btnCreate.RectDisableColor = System.Drawing.Color.White;
+            this.btnCreate.RectHoverColor = System.Drawing.Color.White;
+            this.btnCreate.RectPressColor = System.Drawing.Color.White;
+            this.btnCreate.RectSelectedColor = System.Drawing.Color.White;
+            this.btnCreate.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnCreate.Size = new System.Drawing.Size(130, 38);
+            this.btnCreate.Symbol = 61694;
+            this.btnCreate.SymbolSize = 20;
+            this.btnCreate.TabIndex = 7;
+            this.btnCreate.Text = "Create";
+            this.btnCreate.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCancel.FillColor = System.Drawing.Color.White;
+            this.btnCancel.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnCancel.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCancel.Location = new System.Drawing.Point(301, 0);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnCancel.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCancel.RectDisableColor = System.Drawing.Color.White;
+            this.btnCancel.RectHoverColor = System.Drawing.Color.White;
+            this.btnCancel.RectPressColor = System.Drawing.Color.White;
+            this.btnCancel.RectSelectedColor = System.Drawing.Color.White;
+            this.btnCancel.RectSize = 2;
+            this.btnCancel.Size = new System.Drawing.Size(120, 38);
+            this.btnCancel.Symbol = 61453;
+            this.btnCancel.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCancel.TabIndex = 4;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // uiPanel1
             // 
@@ -302,8 +395,10 @@
             this.cbSlot.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbSlot.FillColor = System.Drawing.Color.White;
             this.cbSlot.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSlot.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.cbSlot.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.cbSlot.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbSlot.ItemRectColor = System.Drawing.Color.White;
+            this.cbSlot.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbSlot.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbSlot.Location = new System.Drawing.Point(8, 32);
             this.cbSlot.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbSlot.MaximumSize = new System.Drawing.Size(0, 34);
@@ -312,6 +407,8 @@
             this.cbSlot.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
             this.cbSlot.RectColor = System.Drawing.SystemColors.ControlDark;
             this.cbSlot.RectSize = 2;
+            this.cbSlot.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbSlot.ScrollBarStyleInherited = false;
             this.cbSlot.Size = new System.Drawing.Size(258, 34);
             this.cbSlot.SymbolSize = 24;
             this.cbSlot.TabIndex = 1;
@@ -360,8 +457,10 @@
             this.cbArea.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbArea.FillColor = System.Drawing.Color.White;
             this.cbArea.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbArea.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.cbArea.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.cbArea.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbArea.ItemRectColor = System.Drawing.Color.White;
+            this.cbArea.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbArea.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbArea.Location = new System.Drawing.Point(8, 32);
             this.cbArea.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbArea.MaximumSize = new System.Drawing.Size(0, 34);
@@ -370,6 +469,8 @@
             this.cbArea.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
             this.cbArea.RectColor = System.Drawing.SystemColors.ControlDark;
             this.cbArea.RectSize = 2;
+            this.cbArea.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbArea.ScrollBarStyleInherited = false;
             this.cbArea.Size = new System.Drawing.Size(258, 34);
             this.cbArea.SymbolSize = 24;
             this.cbArea.TabIndex = 1;
@@ -474,8 +575,10 @@
             this.cbMonth.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbMonth.FillColor = System.Drawing.Color.White;
             this.cbMonth.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMonth.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.cbMonth.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.cbMonth.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbMonth.ItemRectColor = System.Drawing.Color.White;
+            this.cbMonth.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbMonth.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbMonth.Location = new System.Drawing.Point(8, 32);
             this.cbMonth.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbMonth.MaximumSize = new System.Drawing.Size(0, 34);
@@ -484,6 +587,8 @@
             this.cbMonth.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
             this.cbMonth.RectColor = System.Drawing.SystemColors.ControlDark;
             this.cbMonth.RectSize = 2;
+            this.cbMonth.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbMonth.ScrollBarStyleInherited = false;
             this.cbMonth.Size = new System.Drawing.Size(258, 34);
             this.cbMonth.SymbolSize = 24;
             this.cbMonth.TabIndex = 1;
@@ -533,8 +638,10 @@
             this.cbVehicleType.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbVehicleType.FillColor = System.Drawing.Color.White;
             this.cbVehicleType.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbVehicleType.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.cbVehicleType.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.cbVehicleType.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbVehicleType.ItemRectColor = System.Drawing.Color.White;
+            this.cbVehicleType.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cbVehicleType.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbVehicleType.Location = new System.Drawing.Point(8, 32);
             this.cbVehicleType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbVehicleType.MaximumSize = new System.Drawing.Size(0, 34);
@@ -543,6 +650,8 @@
             this.cbVehicleType.Padding = new System.Windows.Forms.Padding(10, 0, 30, 2);
             this.cbVehicleType.RectColor = System.Drawing.SystemColors.ControlDark;
             this.cbVehicleType.RectSize = 2;
+            this.cbVehicleType.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.cbVehicleType.ScrollBarStyleInherited = false;
             this.cbVehicleType.Size = new System.Drawing.Size(258, 34);
             this.cbVehicleType.SymbolSize = 24;
             this.cbVehicleType.TabIndex = 0;
@@ -605,99 +714,6 @@
             this.tbPlate.Watermark = "";
             this.tbPlate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPlate_KeyPress);
             // 
-            // uiPanel2
-            // 
-            this.uiTableLayoutPanel1.SetColumnSpan(this.uiPanel2, 2);
-            this.uiPanel2.Controls.Add(this.uiTableLayoutPanel3);
-            this.uiPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel2.FillColor = System.Drawing.Color.White;
-            this.uiPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel2.Location = new System.Drawing.Point(4, 379);
-            this.uiPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel2.Name = "uiPanel2";
-            this.uiPanel2.Padding = new System.Windows.Forms.Padding(0, 13, 0, 6);
-            this.uiPanel2.Radius = 0;
-            this.uiPanel2.RectColor = System.Drawing.SystemColors.ControlLight;
-            this.uiPanel2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
-            this.uiPanel2.RectSize = 2;
-            this.uiPanel2.Size = new System.Drawing.Size(556, 57);
-            this.uiPanel2.TabIndex = 23;
-            this.uiPanel2.Text = null;
-            this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiTableLayoutPanel3
-            // 
-            this.uiTableLayoutPanel3.ColumnCount = 4;
-            this.uiTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.uiTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.uiTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.uiTableLayoutPanel3.Controls.Add(this.btnCreate, 3, 0);
-            this.uiTableLayoutPanel3.Controls.Add(this.btnCancel, 2, 0);
-            this.uiTableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiTableLayoutPanel3.Location = new System.Drawing.Point(0, 13);
-            this.uiTableLayoutPanel3.Name = "uiTableLayoutPanel3";
-            this.uiTableLayoutPanel3.RowCount = 1;
-            this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(556, 38);
-            this.uiTableLayoutPanel3.TabIndex = 0;
-            this.uiTableLayoutPanel3.TagString = null;
-            // 
-            // btnCreate
-            // 
-            this.btnCreate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCreate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCreate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCreate.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.btnCreate.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnCreate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.Location = new System.Drawing.Point(426, 0);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCreate.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Radius = 10;
-            this.btnCreate.RectColor = System.Drawing.Color.White;
-            this.btnCreate.RectDisableColor = System.Drawing.Color.White;
-            this.btnCreate.RectHoverColor = System.Drawing.Color.White;
-            this.btnCreate.RectPressColor = System.Drawing.Color.White;
-            this.btnCreate.RectSelectedColor = System.Drawing.Color.White;
-            this.btnCreate.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnCreate.Size = new System.Drawing.Size(130, 38);
-            this.btnCreate.Symbol = 61694;
-            this.btnCreate.SymbolSize = 20;
-            this.btnCreate.TabIndex = 7;
-            this.btnCreate.Text = "Create";
-            this.btnCreate.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancel.FillColor = System.Drawing.Color.White;
-            this.btnCancel.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.btnCancel.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnCancel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCancel.Location = new System.Drawing.Point(301, 0);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.btnCancel.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.RectColor = System.Drawing.SystemColors.ControlLight;
-            this.btnCancel.RectDisableColor = System.Drawing.Color.White;
-            this.btnCancel.RectHoverColor = System.Drawing.Color.White;
-            this.btnCancel.RectPressColor = System.Drawing.Color.White;
-            this.btnCancel.RectSelectedColor = System.Drawing.Color.White;
-            this.btnCancel.RectSize = 2;
-            this.btnCancel.Size = new System.Drawing.Size(120, 38);
-            this.btnCancel.Symbol = 61453;
-            this.btnCancel.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // IssueDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -708,9 +724,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(600, 499);
             this.Name = "IssueDetailForm";
-            this.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "Issue Details From";
             this.uiTableLayoutPanel1.ResumeLayout(false);
+            this.uiPanel2.ResumeLayout(false);
+            this.uiTableLayoutPanel3.ResumeLayout(false);
             this.uiPanel1.ResumeLayout(false);
             this.uiPanel11.ResumeLayout(false);
             this.uiPanel10.ResumeLayout(false);
@@ -729,8 +747,6 @@
             this.uiGroupBox3.ResumeLayout(false);
             this.uiPanel3.ResumeLayout(false);
             this.uiGroupBox1.ResumeLayout(false);
-            this.uiPanel2.ResumeLayout(false);
-            this.uiTableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
