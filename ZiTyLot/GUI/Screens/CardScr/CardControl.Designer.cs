@@ -36,11 +36,6 @@ namespace ZiTyLot.GUI.Screens
             this.separator = new System.Windows.Forms.Panel();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.tableCard = new System.Windows.Forms.DataGridView();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRfid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.separtorBottom = new System.Windows.Forms.Panel();
             this.pnlPagination = new System.Windows.Forms.Panel();
@@ -80,6 +75,12 @@ namespace ZiTyLot.GUI.Screens
             this.uiPanel8 = new Sunny.UI.UIPanel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.menuFunction = new ZiTyLot.GUI.CustomContextMenuStrip();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRfid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVehical = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableCard)).BeginInit();
             this.panel2.SuspendLayout();
@@ -158,6 +159,7 @@ namespace ZiTyLot.GUI.Screens
             this.colId,
             this.colRfid,
             this.colType,
+            this.colVehical,
             this.colStatus,
             this.colDelete});
             this.tableCard.Cursor = System.Windows.Forms.Cursors.Default;
@@ -181,50 +183,6 @@ namespace ZiTyLot.GUI.Screens
             this.tableCard.RowTemplate.Height = 40;
             this.tableCard.Size = new System.Drawing.Size(1093, 410);
             this.tableCard.TabIndex = 1;
-            // 
-            // colId
-            // 
-            this.colId.HeaderText = "ID";
-            this.colId.MinimumWidth = 6;
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colId.Width = 50;
-            // 
-            // colRfid
-            // 
-            this.colRfid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRfid.HeaderText = "RFID";
-            this.colRfid.MinimumWidth = 80;
-            this.colRfid.Name = "colRfid";
-            this.colRfid.ReadOnly = true;
-            this.colRfid.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colType
-            // 
-            this.colType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colType.HeaderText = "Type";
-            this.colType.MinimumWidth = 6;
-            this.colType.Name = "colType";
-            this.colType.ReadOnly = true;
-            // 
-            // colStatus
-            // 
-            this.colStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colStatus.HeaderText = "Status";
-            this.colStatus.MinimumWidth = 6;
-            this.colStatus.Name = "colStatus";
-            this.colStatus.ReadOnly = true;
-            // 
-            // colDelete
-            // 
-            this.colDelete.HeaderText = "Action";
-            this.colDelete.MinimumWidth = 6;
-            this.colDelete.Name = "colDelete";
-            this.colDelete.ReadOnly = true;
-            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colDelete.Text = "Delete";
-            this.colDelete.Width = 90;
             // 
             // panel2
             // 
@@ -980,6 +938,57 @@ namespace ZiTyLot.GUI.Screens
             this.menuFunction.TabIndex = 2;
             this.menuFunction.Visible = false;
             // 
+            // colId
+            // 
+            this.colId.HeaderText = "ID";
+            this.colId.MinimumWidth = 6;
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colId.Width = 50;
+            // 
+            // colRfid
+            // 
+            this.colRfid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRfid.HeaderText = "RFID";
+            this.colRfid.MinimumWidth = 80;
+            this.colRfid.Name = "colRfid";
+            this.colRfid.ReadOnly = true;
+            this.colRfid.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colType
+            // 
+            this.colType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colType.HeaderText = "User type";
+            this.colType.MinimumWidth = 6;
+            this.colType.Name = "colType";
+            this.colType.ReadOnly = true;
+            // 
+            // colVehical
+            // 
+            this.colVehical.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colVehical.HeaderText = "Vehical type";
+            this.colVehical.Name = "colVehical";
+            this.colVehical.ReadOnly = true;
+            // 
+            // colStatus
+            // 
+            this.colStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.MinimumWidth = 6;
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
+            // 
+            // colDelete
+            // 
+            this.colDelete.HeaderText = "Action";
+            this.colDelete.MinimumWidth = 6;
+            this.colDelete.Name = "colDelete";
+            this.colDelete.ReadOnly = true;
+            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colDelete.Text = "Delete";
+            this.colDelete.Width = 90;
+            // 
             // CardControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1032,11 +1041,6 @@ namespace ZiTyLot.GUI.Screens
         private TableLayoutPanel tableSearch;
         private Sunny.UI.UIComboBox cbFilter;
         private Sunny.UI.UITextBox tbSearch;
-        private DataGridViewTextBoxColumn colId;
-        private DataGridViewTextBoxColumn colRfid;
-        private DataGridViewTextBoxColumn colType;
-        private DataGridViewTextBoxColumn colStatus;
-        private DataGridViewButtonColumn colDelete;
         private Panel separtorBottom;
         private Panel pnlPagination;
         private Panel pnlLeft;
@@ -1066,5 +1070,11 @@ namespace ZiTyLot.GUI.Screens
         private Sunny.UI.UIPanel uiPanel8;
         private Sunny.UI.UISymbolButton btnFilter;
         private Sunny.UI.UISymbolButton btnAdd;
+        private DataGridViewTextBoxColumn colId;
+        private DataGridViewTextBoxColumn colRfid;
+        private DataGridViewTextBoxColumn colType;
+        private DataGridViewTextBoxColumn colVehical;
+        private DataGridViewTextBoxColumn colStatus;
+        private DataGridViewButtonColumn colDelete;
     }
 }
