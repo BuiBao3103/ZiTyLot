@@ -1,18 +1,48 @@
-﻿using System;
+﻿using AForge.Video.DirectShow;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZiTyLot.BUS;
+using ZiTyLot.Constants.Enum;
+using ZiTyLot.ENTITY;
+using ZiTyLot.Helper;
 
 namespace ZiTyLot.GUI.Screens.ScanningScr
 {
-    public partial class BikeCheckOutFrom : Form
+    public partial class CheckOutFrom : Form
     {
-        public BikeCheckOutFrom()
+        private readonly CardBUS _cardBUS = new CardBUS();
+        private readonly SessionBUS _sessionBUS = new SessionBUS();
+        private readonly ImageBUS _imageBUS = new ImageBUS();
+
+        private readonly CameraHelper _cameraHelper = new CameraHelper();
+        private VideoCaptureDevice _frontCamera;
+        private VideoCaptureDevice _backCamera;
+        private string _frontCameraId;
+        private string _backCameraId;
+        private bool _isClosing = false;
+
+        private SettingForm _settingForm;
+
+        private SerialPort _serialPort;
+        private readonly RFIDReader _rfidReader;
+
+        private bool _isGateClose = true;
+        private ProcessState _processState = ProcessState.Preparing;
+        private ParkingLotType _parkingLotType;
+
+        private Session _currentSession;
+        private System.Drawing.Image _currentFrontImage;
+        private System.Drawing.Image _currentBackImage;
+        private System.Drawing.Image _currentPlateImage;
+        public CheckOutFrom()
         {
             InitializeComponent();
             this.CenterToScreen();

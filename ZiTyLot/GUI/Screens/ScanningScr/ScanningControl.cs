@@ -34,7 +34,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void btnBikeCheckOut_Click(object sender, EventArgs e)
         {
-            BikeCheckOutFrom   bikeCheckOutForm = new BikeCheckOutFrom();
+            CheckOutFrom   bikeCheckOutForm = new CheckOutFrom();
             bikeCheckOutForm.Show();
         }
 
