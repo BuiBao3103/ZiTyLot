@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Asn1.Cmp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using ZiTyLot.Constants.Enum;
@@ -19,6 +20,25 @@ namespace ZiTyLot.BUS
             this.parkingLotDAO = new ParkingLotDAO();
             this.slotDAO = new SlotDAO();
             this.issueDAO = new IssueDAO();
+        }
+        public ParkingLot Create(ParkingLot newParkingLot)
+        {
+            Console.WriteLine(newParkingLot.Id);
+            newParkingLot.Created_at = DateTime.Now;
+            parkingLotDAO.Add(newParkingLot);
+            for (int i = 0; i < newParkingLot.Total_slot; i++)
+            {
+                Slot slot = new Slot()
+                {
+                    Parking_lot_id = newParkingLot.Id,
+                    Status = SlotStatus.EMPTY,
+                    Id = $"{newParkingLot.Id}-S{i + 1}",
+                    Created_at = newParkingLot.Created_at,
+                };
+                slotDAO.Add(slot);
+            }
+
+            return newParkingLot;
         }
 
         public void Add(ParkingLot item)

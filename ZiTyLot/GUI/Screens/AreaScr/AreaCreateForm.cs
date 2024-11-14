@@ -55,7 +55,7 @@ namespace ZiTyLot.GUI.Screens.AreaScr
                     User_type = parkingUserType,
                     Status = status,
                 };
-                parkingLotBUS.Add(parkingLot);
+                parkingLotBUS.Create(parkingLot);
                 MessageHelper.ShowSuccess("Parking lot added successfully!");
                 AreaInsertionEvent?.Invoke(this,EventArgs.Empty);
                 this.Close();
