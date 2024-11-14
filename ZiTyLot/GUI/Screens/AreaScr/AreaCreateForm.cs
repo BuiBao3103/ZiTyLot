@@ -37,27 +37,27 @@ namespace ZiTyLot.GUI.Screens.AreaScr
             if (!ValidateInput()) return;
             try
             {
-                ParkingLotStatus status = ParkingLotStatus.AVAILABLE;
                 int userTypeIndex = cbUserType.SelectedIndex;
                 ParkingLotUserType parkingUserType = userTypeIndex == 0 ? ParkingLotUserType.RESIDENT : ParkingLotUserType.VISITOR;
 
                 int vehicleTypeIndex = cbVehicalType.SelectedIndex;
                 ParkingLotType parkingLotType = vehicleTypeIndex == 0 ? ParkingLotType.TWO_WHEELER : ParkingLotType.FOUR_WHEELER;
 
+
                 ParkingLot parkingLot = new ParkingLot
                 {
-                    Id = parkingLotBUS.GenerationNewId(parkingLotType ,parkingUserType),
+                    Id = lbPreID.Text + tbID.Text,
                     Total_slot = int.Parse(tbTotalSlot.Text),
                     Parking_lot_type = parkingLotType,
                     User_type = parkingUserType,
-                    Status = status,
+                    Status = ParkingLotStatus.AVAILABLE,
                 };
                 parkingLotBUS.Create(parkingLot);
                 MessageHelper.ShowSuccess("Parking lot added successfully!");
-                AreaInsertionEvent?.Invoke(this,EventArgs.Empty);
+                AreaInsertionEvent?.Invoke(this, EventArgs.Empty);
                 this.Close();
             }
-            catch (ValidationInputException ex) 
+            catch (ValidationInputException ex)
             {
                 MessageHelper.ShowWarning(ex.Message);
             }
@@ -75,6 +75,12 @@ namespace ZiTyLot.GUI.Screens.AreaScr
 
         private bool ValidateInput()
         {
+            if (string.IsNullOrEmpty(tbID.Text))
+            {
+                MessageHelper.ShowWarning("Please enter ID");
+                tbID.Focus();
+                return false;
+            }
             if (string.IsNullOrEmpty(tbTotalSlot.Text))
             {
                 MessageHelper.ShowWarning("Please enter total slot");
@@ -85,5 +91,29 @@ namespace ZiTyLot.GUI.Screens.AreaScr
             return true;
         }
 
+        private void UpdatePreID()
+        {
+            string preID = "";
+
+            int userTypeIndex = cbUserType.SelectedIndex;
+            ParkingLotUserType parkingUserType = userTypeIndex == 0 ? ParkingLotUserType.RESIDENT : ParkingLotUserType.VISITOR;
+            preID += parkingUserType == ParkingLotUserType.RESIDENT ? "RL" : "VL";
+
+            int vehicleTypeIndex = cbVehicalType.SelectedIndex;
+            ParkingLotType parkingLotType = vehicleTypeIndex == 0 ? ParkingLotType.TWO_WHEELER : ParkingLotType.FOUR_WHEELER;
+            preID += parkingLotType == ParkingLotType.TWO_WHEELER ? "2W" : "4W";
+
+            lbPreID.Text = preID + "-";
+        }
+
+        private void cbUserType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdatePreID();
+        }
+
+        private void cbVehicalType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdatePreID();
+        }
     }
 }

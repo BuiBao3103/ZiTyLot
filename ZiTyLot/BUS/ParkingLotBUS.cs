@@ -5,6 +5,7 @@ using System.Linq;
 using ZiTyLot.Constants.Enum;
 using ZiTyLot.DAO;
 using ZiTyLot.ENTITY;
+using ZiTyLot.GUI.Utils;
 using ZiTyLot.Helper;
 
 namespace ZiTyLot.BUS
@@ -23,21 +24,23 @@ namespace ZiTyLot.BUS
         }
         public ParkingLot Create(ParkingLot newParkingLot)
         {
-            Console.WriteLine(newParkingLot.Id);
+            Validate(newParkingLot);
             newParkingLot.Created_at = DateTime.Now;
             parkingLotDAO.Add(newParkingLot);
-            for (int i = 0; i < newParkingLot.Total_slot; i++)
+            if (newParkingLot.Parking_lot_type == ParkingLotType.FOUR_WHEELER)
             {
-                Slot slot = new Slot()
+                for (int i = 0; i < newParkingLot.Total_slot; i++)
                 {
-                    Parking_lot_id = newParkingLot.Id,
-                    Status = SlotStatus.EMPTY,
-                    Id = $"{newParkingLot.Id}-S{i + 1}",
-                    Created_at = newParkingLot.Created_at,
-                };
-                slotDAO.Add(slot);
+                    Slot slot = new Slot()
+                    {
+                        Parking_lot_id = newParkingLot.Id,
+                        Status = SlotStatus.EMPTY,
+                        Id = $"{newParkingLot.Id}-S{i + 1}",
+                        Created_at = newParkingLot.Created_at,
+                    };
+                    slotDAO.Add(slot);
+                }
             }
-
             return newParkingLot;
         }
 
@@ -134,7 +137,17 @@ namespace ZiTyLot.BUS
                 throw new InvalidOperationException("Slots must > 0");
             }
 
-            // Add other validation rules as needed
+            //check id is exist 
+            List<FilterCondition> filters = new List<FilterCondition>
+            {
+                new FilterCondition(nameof(ParkingLot.Id), CompOp.Equals, item.Id)
+            };
+            var parkingLots = parkingLotDAO.GetAll(filters);
+            if (parkingLots.Count != 0)
+            {
+                throw new ValidationInputException("Id is existed");
+            }
+
         }
 
         // Kiểm tra sự tồn tại của bản ghi
@@ -183,18 +196,6 @@ namespace ZiTyLot.BUS
             {
                 throw new Exception(ex.Message);
             }
-        }
-
-        public string GenerationNewId(ParkingLotType parkingLotType, ParkingLotUserType parkingUserType)
-        {
-            string newId = parkingUserType == ParkingLotUserType.RESIDENT ? "RL" : "VL";
-            newId += parkingLotType == ParkingLotType.TWO_WHEELER ? "2W" : "4W";
-            List<FilterCondition> filters = new List<FilterCondition>()
-            {
-                new FilterCondition(nameof(ParkingLot.Id), CompOp.Like, newId)
-            };
-            int count = parkingLotDAO.Count(filters);
-            return $"{newId}-{count + 1}";
         }
     }
 }
