@@ -397,6 +397,12 @@
     <Compile Include="GUI\ProfileForm.Designer.cs">
       <DependentUpon>ProfileForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Screens\AreaScr\AreaDetail2WForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\AreaScr\AreaDetail2WForm.Designer.cs">
+      <DependentUpon>AreaDetail2WForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Screens\BillScr\BillDetailControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -445,11 +451,11 @@
     <Compile Include="GUI\Screens\ScanningScr\CheckInForm.Designer.cs">
       <DependentUpon>CheckInForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\ScanningScr\BikeCheckOutFrom.cs">
+    <Compile Include="GUI\Screens\ScanningScr\CheckOutFrom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\ScanningScr\BikeCheckOutFrom.Designer.cs">
-      <DependentUpon>BikeCheckOutFrom.cs</DependentUpon>
+    <Compile Include="GUI\Screens\ScanningScr\CheckOutFrom.Designer.cs">
+      <DependentUpon>CheckOutFrom.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\SessionScr\LostCardCreateForm.cs">
       <SubType>Form</SubType>
@@ -527,11 +533,11 @@
     <Compile Include="GUI\Screens\BillScr\IssueDetailRow.Designer.cs">
       <DependentUpon>IssueDetailRow.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\AreaScr\AreaDetailForm.cs">
+    <Compile Include="GUI\Screens\AreaScr\AreaDetail4WForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\AreaScr\AreaDetailForm.Designer.cs">
-      <DependentUpon>AreaDetailForm.cs</DependentUpon>
+    <Compile Include="GUI\Screens\AreaScr\AreaDetail4WForm.Designer.cs">
+      <DependentUpon>AreaDetail4WForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\BillScr\BillControl.cs">
       <SubType>UserControl</SubType>
@@ -604,18 +610,6 @@
     </Compile>
     <Compile Include="GUI\Screens\RoleScr\RoleDetailForm.Designer.cs">
       <DependentUpon>RoleDetailForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Screens\ScanningScr\CarCheckInForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Screens\ScanningScr\CarCheckInForm.Designer.cs">
-      <DependentUpon>CarCheckInForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Screens\ScanningScr\CarCheckOutForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Screens\ScanningScr\CarCheckOutForm.Designer.cs">
-      <DependentUpon>CarCheckOutForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\ScanningScr\ScanningControl.cs">
       <SubType>UserControl</SubType>
@@ -725,14 +719,17 @@
     <EmbeddedResource Include="GUI\Screens\AreaScr\AreaCreateForm.resx">
       <DependentUpon>AreaCreateForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\AreaScr\AreaDetail2WForm.resx">
+      <DependentUpon>AreaDetail2WForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\BillScr\BillDetailControl.resx">
       <DependentUpon>BillDetailControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\BillScr\IssueDetailRow.resx">
       <DependentUpon>IssueDetailRow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\AreaScr\AreaDetailForm.resx">
-      <DependentUpon>AreaDetailForm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Screens\AreaScr\AreaDetail4WForm.resx">
+      <DependentUpon>AreaDetail4WForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\BillScr\BillControl.resx">
       <DependentUpon>BillControl.cs</DependentUpon>
@@ -791,14 +788,8 @@
     <EmbeddedResource Include="GUI\Screens\ScanningScr\CheckInForm.resx">
       <DependentUpon>CheckInForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\ScanningScr\BikeCheckOutFrom.resx">
-      <DependentUpon>BikeCheckOutFrom.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\ScanningScr\CarCheckInForm.resx">
-      <DependentUpon>CarCheckInForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\ScanningScr\CarCheckOutForm.resx">
-      <DependentUpon>CarCheckOutForm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Screens\ScanningScr\CheckOutFrom.resx">
+      <DependentUpon>CheckOutFrom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\ScanningScr\ScanningControl.resx">
       <DependentUpon>ScanningControl.cs</DependentUpon>

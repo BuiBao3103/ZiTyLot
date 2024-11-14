@@ -1,23 +1,22 @@
-﻿using AForge.Video;
-using AForge.Video.DirectShow;
+﻿using AForge.Video.DirectShow;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
-using ZiTyLot.Constants;
 using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
-using ZiTyLot.GUI.Utils;
 using ZiTyLot.Helper;
 
 namespace ZiTyLot.GUI.Screens.ScanningScr
 {
-    public partial class CheckInForm : Form
+    public partial class CheckOutFrom : Form
     {
         private readonly CardBUS _cardBUS = new CardBUS();
         private readonly SessionBUS _sessionBUS = new SessionBUS();
@@ -43,33 +42,17 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         private System.Drawing.Image _currentFrontImage;
         private System.Drawing.Image _currentBackImage;
         private System.Drawing.Image _currentPlateImage;
-
-        public CheckInForm(ParkingLotType parkingLotType)
+        public CheckOutFrom(ParkingLotType parkingLotType)
         {
             InitializeComponent();
             this.CenterToScreen();
             this.KeyPreview = true;
-            btnOpenGate.Resize += btnOpen_Resize;
+            btnOpen.Resize += btnOpen_Resize;
             uiTableLayoutPanel4.Resize += uiTableLayoutPanel4_Resize;
             uiTableLayoutPanel5.Resize += uiTableLayoutPanel5_Resize;
             uiTableLayoutPanel3.Resize += uiTableLayoutPanel3_Resize;
             uiTableLayoutPanel2.Resize += uiTableLayoutPanel2_Resize;
-
-            _parkingLotType = parkingLotType;
-
-            // Cấu hình PictureBox
-            this.pbFrontCamera.SizeMode = PictureBoxSizeMode.Zoom;
-            this.pbBackCamera.SizeMode = PictureBoxSizeMode.Zoom;
-            this.pbFrontRecord.SizeMode = PictureBoxSizeMode.Zoom;
-            this.pbBackRecord.SizeMode = PictureBoxSizeMode.Zoom;
-            this.pbPlateRecord.SizeMode = PictureBoxSizeMode.Zoom;
-
-            _rfidReader = new RFIDReader();
-            _rfidReader.RFIDScanned += RfidReader_RFIDScanned; // Đăng ký sự kiện
-            _parkingLotType = parkingLotType;
         }
-
-
         public void StartFrontCamera(string cameraId)
         {
             if (_frontCamera != null)
@@ -186,6 +169,19 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 _settingForm.BringToFront();
             }
         }
+        private void ConnectGate(string port)
+        {
+            if (_serialPort != null)
+            {
+                _serialPort.Close();
+            }
+            _serialPort = Arduino.Connect(port);
+        }
+
+        private void DisconnectGate()
+        {
+            Arduino.Disconnect(_serialPort);
+        }
 
         private void updateStatusDevice()
         {
@@ -231,29 +227,17 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 _processState = ProcessState.Preparing;
             }
         }
+
         private void btnOpen_Resize(object sender, System.EventArgs e)
         {
             if (this.Size.Width > 1800)
             {
-                btnOpenGate.Font = new System.Drawing.Font("Helvetica", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                btnOpen.Font = new System.Drawing.Font("Helvetica", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             }
             else
             {
-                btnOpenGate.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                btnOpen.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             }
-        }
-        private void ConnectGate(string port)
-        {
-            if (_serialPort != null)
-            {
-                _serialPort.Close();
-            }
-            _serialPort = Arduino.Connect(port);
-        }
-
-        private void DisconnectGate()
-        {
-            Arduino.Disconnect(_serialPort);
         }
 
         private void uiTableLayoutPanel4_Resize(object sender, System.EventArgs e)
@@ -303,8 +287,17 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             }
         }
 
+        private void CheckOutForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                //SettingForm settingForm = new SettingForm();
+                //settingForm.Show();
 
-           private void uiTableLayoutPanel2_Resize(object sender, EventArgs e)
+            }
+        }
+
+        private void uiTableLayoutPanel2_Resize(object sender, System.EventArgs e)
         {
             foreach (Label lable in uiTableLayoutPanel2.Controls)
             {
@@ -319,210 +312,12 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             }
         }
 
-        private void BikeCheckInForm_KeyPress(object sender, KeyPressEventArgs e)
+        private void CheckOutFrom_KeyPress(object sender, KeyPressEventArgs e)
         {
-            _rfidReader.ProcessInput(e.KeyChar);
             if (e.KeyChar == (char)Keys.Escape)
             {
                 ShowSettingForm();
             }
-            if (e.KeyChar == (char)Keys.Space && _processState == ProcessState.Done)
-            {
-                if (_isGateClose)
-                {
-                    _isGateClose = false;
-                    Arduino.OpenBarrier(_serialPort);
-                    btnOpenGate.Text = btnOpenGate.Text.Replace("OPEN", "CLOSE");
-                }
-                else
-                {
-                    _isGateClose = true;
-                    Arduino.CloseBarrier(_serialPort);
-                    btnOpenGate.Enabled = false;
-                    btnOpenGate.Text = btnOpenGate.Text.Replace("CLOSE", "OPEN");
-
-                    AddNewSession();
-
-                    lbProcessState.Text = ProcessState.Ready.ToString();
-                    _processState = ProcessState.Ready;
-                }
-            }
-
-        }
-        private void AddNewSession()
-        {
-            List<ENTITY.Image> images = new List<ENTITY.Image>();
-
-            ENTITY.Image frontImage = new ENTITY.Image()
-            {
-                Url = ImageHelper.SaveImage(_currentFrontImage),
-                Type = ImageType.BEFORE_CHECKIN
-            };
-            images.Add(frontImage);
-
-            ENTITY.Image backImage = new ENTITY.Image()
-            {
-                Url = ImageHelper.SaveImage(_currentBackImage),
-                Type = ImageType.AFTER_CHECKIN
-            };
-            images.Add(backImage);
-
-            if (_currentPlateImage != null)
-            {
-                ENTITY.Image plateImage = new ENTITY.Image()
-                {
-                    Url = ImageHelper.SaveImage(_currentPlateImage),
-                    Type = ImageType.LICENSE_PLATE_CHECKIN
-                };
-                images.Add(plateImage);
-            }
-            _sessionBUS.Create(_currentSession, images);
-        }
-        private async void StartVisitorProcess(Card card)
-        {
-            lbProcessState.Text = ProcessState.Scanning.ToString();
-            _processState = ProcessState.Scanning;
-
-            _currentFrontImage = _cameraHelper.GetImageFromPictureBox(pbFrontCamera);
-            _currentBackImage = _cameraHelper.GetImageFromPictureBox(pbBackCamera);
-            _currentPlateImage = null;
-
-            //set image to record
-            pbFrontRecord.Image = _currentFrontImage;
-            pbBackRecord.Image = _currentBackImage;
-            pbPlateRecord.Image = _currentPlateImage;
-
-            _currentSession = new Session();
-            _currentSession.Checkin_time = DateTime.Now;
-            _currentSession.Card_id = card.Id;
-            _currentSession.Type = SessionType.VISITOR;
-
-            lbCardRfid.Text = card.Rfid;
-            lbCardType.Text = card.Type.ToString();
-            lbVehicalType.Text = card.Vehicle_type.Name;
-            lbCheckInTime.Text = _currentSession.Checkin_time?.ToString("dd/MM/yyyy HH:mm:ss");
-            lbCheckOutTime.Text = "";
-            lbTotalTime.Text = "";
-            lbTotalPrice.Text = "";
-
-
-
-
-            if (card.Vehicle_type.Id == VehicleTypeID.BIKECYCLE)
-            {
-                lbVehicalPlate.Text = "";
-            }
-            else
-            {
-                lbVehicalPlate.Text = "Scanning...";
-                var result = await ANPR.ProcessImageAsync(_currentBackImage);
-                if (result != null)
-                {
-                    //set plate number to record
-                    lbVehicalPlate.Text = result.PlateNumber;
-                    _currentSession.License_plate = result.PlateNumber;
-
-                    //set plate image to record
-                    _currentPlateImage = result.Image;
-                    pbPlateRecord.Image = _currentPlateImage;
-                }
-                else
-                {
-                    MessageHelper.ShowError("Cannot recognize license plate!, please try again!");
-                    lbProcessState.Text = ProcessState.Ready.ToString();
-                    _processState = ProcessState.Ready;
-                    lbVehicalPlate.Text = "";
-                    return;
-                }
-
-
-            }
-            btnOpenGate.Enabled = true;
-            lbProcessState.Text = ProcessState.Done.ToString();
-            _processState = ProcessState.Done;
-
-        }
-
-
-        private void RfidReader_RFIDScanned(object sender, string rfidCode)
-        {
-            if (_processState == ProcessState.Preparing)
-            {
-                MessageHelper.ShowError("Please configure all devices before scanning!");
-                return;
-            }
-            if (_processState != ProcessState.Ready)
-            {
-                MessageHelper.ShowError("Please wait for the current process to finish!");
-                return;
-            }
-            List<FilterCondition> filters = new List<FilterCondition>()
-            {
-                new FilterCondition(nameof(Card.Rfid), CompOp.Equals, rfidCode)
-            };
-            Card card = _cardBUS.GetAll(filters)?.FirstOrDefault();
-            if (!ValidateVisitorCard(card)) return;
-            card = _cardBUS.PopulateVehicleType(card);
-            if (card.Resident_id == null)
-            {
-                StartVisitorProcess(card);
-            }
-            else
-            {
-
-            }
-        }
-        private void btnOpen_Click(object sender, EventArgs e)
-        {
-            if (_isGateClose)
-            {
-                _isGateClose = false;
-                Arduino.OpenBarrier(_serialPort);
-                btnOpenGate.Text = btnOpenGate.Text.Replace("OPEN", "CLOSE");
-            }
-            else
-            {
-                _isGateClose = true;
-                Arduino.CloseBarrier(_serialPort);
-                btnOpenGate.Enabled = false;
-                btnOpenGate.Text = btnOpenGate.Text.Replace("CLOSE", "OPEN");
-
-                AddNewSession();
-
-                lbProcessState.Text = ProcessState.Ready.ToString();
-                _processState = ProcessState.Ready;
-            }
-        }
-
-        private bool ValidateVisitorCard(Card card)
-        {
-            if (card == null)
-            {
-                MessageHelper.ShowError("Card not found!");
-                return false;
-            }
-            if (card.Resident_id != null)
-            {
-                MessageHelper.ShowError("Card is not for visitor!");
-                return false;
-            }
-            if (_parkingLotType == ParkingLotType.TWO_WHEELER && card.Vehicle_type_id == VehicleTypeID.CAR)
-            {
-                MessageHelper.ShowError("This line is for two-wheeler only so this card is not valid!");
-                return false;
-            }
-            if (_parkingLotType == ParkingLotType.FOUR_WHEELER
-                && (card.Vehicle_type_id == VehicleTypeID.MOTORBIKE || card.Vehicle_type_id == VehicleTypeID.BIKECYCLE))
-            {
-                MessageHelper.ShowError("This line is for four-wheeler only so this card is not valid!");
-                return false;
-            }
-            return true;
-        }
-
-        private void CheckInForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

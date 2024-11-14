@@ -25,6 +25,7 @@ namespace ZiTyLot.BUS
 
             try
             {
+                item.Created_at = DateTime.Now;
                 slotDao.Add(item);
             }
             catch (Exception ex)

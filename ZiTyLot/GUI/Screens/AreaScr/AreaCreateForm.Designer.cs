@@ -41,6 +41,11 @@
             this.uiTableLayoutPanel2 = new Sunny.UI.UITableLayoutPanel();
             this.uiPanel3 = new Sunny.UI.UIPanel();
             this.pnlInformation = new Sunny.UI.UITableLayoutPanel();
+            this.uiPanel4 = new Sunny.UI.UIPanel();
+            this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
+            this.uiTableLayoutPanel5 = new Sunny.UI.UITableLayoutPanel();
+            this.tbID = new Sunny.UI.UITextBox();
+            this.lbPreID = new Sunny.UI.UILabel();
             this.pnlType = new Sunny.UI.UIPanel();
             this.uiGroupBox2 = new Sunny.UI.UIGroupBox();
             this.cbUserType = new Sunny.UI.UIComboBox();
@@ -50,6 +55,7 @@
             this.pnlTotalSlot = new Sunny.UI.UIPanel();
             this.uiGroupBox4 = new Sunny.UI.UIGroupBox();
             this.tbTotalSlot = new Sunny.UI.UITextBox();
+            this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             this.uiTableLayoutPanel1.SuspendLayout();
             this.uiPanel2.SuspendLayout();
             this.uiTableLayoutPanel3.SuspendLayout();
@@ -59,6 +65,9 @@
             this.uiTableLayoutPanel2.SuspendLayout();
             this.uiPanel3.SuspendLayout();
             this.pnlInformation.SuspendLayout();
+            this.uiPanel4.SuspendLayout();
+            this.uiGroupBox1.SuspendLayout();
+            this.uiTableLayoutPanel5.SuspendLayout();
             this.pnlType.SuspendLayout();
             this.uiGroupBox2.SuspendLayout();
             this.pnlVehical.SuspendLayout();
@@ -288,7 +297,8 @@
             this.pnlInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.pnlInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.pnlInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.pnlInformation.Controls.Add(this.pnlType, 0, 0);
+            this.pnlInformation.Controls.Add(this.uiPanel4, 0, 0);
+            this.pnlInformation.Controls.Add(this.pnlType, 1, 0);
             this.pnlInformation.Controls.Add(this.pnlVehical, 2, 0);
             this.pnlInformation.Controls.Add(this.pnlTotalSlot, 0, 1);
             this.pnlInformation.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -302,19 +312,100 @@
             this.pnlInformation.TabIndex = 0;
             this.pnlInformation.TagString = null;
             // 
+            // uiPanel4
+            // 
+            this.uiPanel4.Controls.Add(this.uiGroupBox1);
+            this.uiPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel4.FillColor = System.Drawing.Color.White;
+            this.uiPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel4.Location = new System.Drawing.Point(4, 5);
+            this.uiPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel4.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel4.Name = "uiPanel4";
+            this.uiPanel4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiPanel4.Size = new System.Drawing.Size(194, 155);
+            this.uiPanel4.TabIndex = 11;
+            this.uiPanel4.Text = null;
+            this.uiPanel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiGroupBox1
+            // 
+            this.uiGroupBox1.Controls.Add(this.uiTableLayoutPanel5);
+            this.uiGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiGroupBox1.FillColor = System.Drawing.Color.White;
+            this.uiGroupBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiGroupBox1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox1.Location = new System.Drawing.Point(0, 0);
+            this.uiGroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiGroupBox1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiGroupBox1.Name = "uiGroupBox1";
+            this.uiGroupBox1.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
+            this.uiGroupBox1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.uiGroupBox1.Size = new System.Drawing.Size(194, 155);
+            this.uiGroupBox1.TabIndex = 0;
+            this.uiGroupBox1.Text = "ID";
+            this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiTableLayoutPanel5
+            // 
+            this.uiTableLayoutPanel5.ColumnCount = 2;
+            this.uiTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel5.Controls.Add(this.tbID, 1, 0);
+            this.uiTableLayoutPanel5.Controls.Add(this.lbPreID, 0, 0);
+            this.uiTableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiTableLayoutPanel5.Location = new System.Drawing.Point(8, 32);
+            this.uiTableLayoutPanel5.Name = "uiTableLayoutPanel5";
+            this.uiTableLayoutPanel5.RowCount = 1;
+            this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel5.Size = new System.Drawing.Size(178, 119);
+            this.uiTableLayoutPanel5.TabIndex = 2;
+            this.uiTableLayoutPanel5.TagString = null;
+            // 
+            // tbID
+            // 
+            this.tbID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbID.Location = new System.Drawing.Point(89, 0);
+            this.tbID.Margin = new System.Windows.Forms.Padding(0);
+            this.tbID.MaximumSize = new System.Drawing.Size(0, 34);
+            this.tbID.MinimumSize = new System.Drawing.Size(0, 34);
+            this.tbID.Name = "tbID";
+            this.tbID.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
+            this.tbID.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbID.RectSize = 2;
+            this.tbID.ShowText = false;
+            this.tbID.Size = new System.Drawing.Size(89, 34);
+            this.tbID.TabIndex = 0;
+            this.tbID.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tbID.Watermark = "";
+            // 
+            // lbPreID
+            // 
+            this.lbPreID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPreID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lbPreID.Location = new System.Drawing.Point(0, 5);
+            this.lbPreID.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.lbPreID.Name = "lbPreID";
+            this.lbPreID.Size = new System.Drawing.Size(88, 23);
+            this.lbPreID.TabIndex = 1;
+            this.lbPreID.Text = "RL2W-";
+            // 
             // pnlType
             // 
-            this.pnlInformation.SetColumnSpan(this.pnlType, 3);
+            this.pnlInformation.SetColumnSpan(this.pnlType, 2);
             this.pnlType.Controls.Add(this.uiGroupBox2);
             this.pnlType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlType.FillColor = System.Drawing.Color.White;
             this.pnlType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlType.Location = new System.Drawing.Point(4, 5);
+            this.pnlType.Location = new System.Drawing.Point(206, 5);
             this.pnlType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlType.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlType.Name = "pnlType";
             this.pnlType.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlType.Size = new System.Drawing.Size(601, 155);
+            this.pnlType.Size = new System.Drawing.Size(399, 155);
             this.pnlType.TabIndex = 10;
             this.pnlType.Text = null;
             this.pnlType.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -332,7 +423,7 @@
             this.uiGroupBox2.Name = "uiGroupBox2";
             this.uiGroupBox2.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox2.Size = new System.Drawing.Size(601, 155);
+            this.uiGroupBox2.Size = new System.Drawing.Size(399, 155);
             this.uiGroupBox2.TabIndex = 1;
             this.uiGroupBox2.Text = "User type";
             this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -361,13 +452,14 @@
             this.cbUserType.RectSize = 2;
             this.cbUserType.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.cbUserType.ScrollBarStyleInherited = false;
-            this.cbUserType.Size = new System.Drawing.Size(585, 34);
+            this.cbUserType.Size = new System.Drawing.Size(383, 34);
             this.cbUserType.SymbolSize = 24;
             this.cbUserType.TabIndex = 1;
             this.cbUserType.Text = "  Resident";
             this.cbUserType.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cbUserType.TrimFilter = true;
             this.cbUserType.Watermark = "";
+            this.cbUserType.SelectedIndexChanged += new System.EventHandler(this.cbUserType_SelectedIndexChanged);
             // 
             // pnlVehical
             // 
@@ -435,6 +527,7 @@
             this.cbVehicalType.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cbVehicalType.TrimFilter = true;
             this.cbVehicalType.Watermark = "";
+            this.cbVehicalType.SelectedIndexChanged += new System.EventHandler(this.cbVehicalType_SelectedIndexChanged);
             // 
             // pnlTotalSlot
             // 
@@ -490,6 +583,13 @@
             this.tbTotalSlot.Watermark = "";
             this.tbTotalSlot.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTotalSlot_KeyPress);
             // 
+            // mySqlCommand1
+            // 
+            this.mySqlCommand1.CacheAge = 0;
+            this.mySqlCommand1.Connection = null;
+            this.mySqlCommand1.EnableCaching = false;
+            this.mySqlCommand1.Transaction = null;
+            // 
             // AreaCreateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -512,6 +612,9 @@
             this.uiTableLayoutPanel2.ResumeLayout(false);
             this.uiPanel3.ResumeLayout(false);
             this.pnlInformation.ResumeLayout(false);
+            this.uiPanel4.ResumeLayout(false);
+            this.uiGroupBox1.ResumeLayout(false);
+            this.uiTableLayoutPanel5.ResumeLayout(false);
             this.pnlType.ResumeLayout(false);
             this.uiGroupBox2.ResumeLayout(false);
             this.pnlVehical.ResumeLayout(false);
@@ -545,5 +648,11 @@
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel3;
         private Sunny.UI.UISymbolButton btnCreate;
         private Sunny.UI.UISymbolButton btnCancel;
+        private Sunny.UI.UIPanel uiPanel4;
+        private Sunny.UI.UIGroupBox uiGroupBox1;
+        private Sunny.UI.UITextBox tbID;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
+        private Sunny.UI.UILabel lbPreID;
+        private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel5;
     }
 }

@@ -226,7 +226,7 @@
             this.pbPlateRecord.Location = new System.Drawing.Point(10, 32);
             this.pbPlateRecord.Name = "pbPlateRecord";
             this.pbPlateRecord.Size = new System.Drawing.Size(669, 200);
-            this.pbPlateRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbPlateRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPlateRecord.TabIndex = 0;
             this.pbPlateRecord.TabStop = false;
             // 
@@ -404,7 +404,7 @@
             this.pbBackRecord.Location = new System.Drawing.Point(10, 32);
             this.pbBackRecord.Name = "pbBackRecord";
             this.pbBackRecord.Size = new System.Drawing.Size(669, 321);
-            this.pbBackRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbBackRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbBackRecord.TabIndex = 0;
             this.pbBackRecord.TabStop = false;
             // 
@@ -451,7 +451,7 @@
             this.pbBackCamera.Location = new System.Drawing.Point(10, 32);
             this.pbBackCamera.Name = "pbBackCamera";
             this.pbBackCamera.Size = new System.Drawing.Size(669, 321);
-            this.pbBackCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbBackCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbBackCamera.TabIndex = 0;
             this.pbBackCamera.TabStop = false;
             // 
@@ -498,7 +498,7 @@
             this.pbFrontRecord.Location = new System.Drawing.Point(10, 32);
             this.pbFrontRecord.Name = "pbFrontRecord";
             this.pbFrontRecord.Size = new System.Drawing.Size(669, 321);
-            this.pbFrontRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbFrontRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbFrontRecord.TabIndex = 0;
             this.pbFrontRecord.TabStop = false;
             // 
@@ -545,7 +545,7 @@
             this.pbFrontCamera.Location = new System.Drawing.Point(10, 32);
             this.pbFrontCamera.Name = "pbFrontCamera";
             this.pbFrontCamera.Size = new System.Drawing.Size(669, 321);
-            this.pbFrontCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbFrontCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbFrontCamera.TabIndex = 0;
             this.pbFrontCamera.TabStop = false;
             // 
@@ -997,6 +997,7 @@
             this.lbCardRfid.Name = "lbCardRfid";
             this.lbCardRfid.Size = new System.Drawing.Size(100, 23);
             this.lbCardRfid.TabIndex = 24;
+            this.lbCardRfid.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel2
             // 
@@ -1265,7 +1266,7 @@
             // 
             this.separator.Dock = System.Windows.Forms.DockStyle.Top;
             this.separator.Location = new System.Drawing.Point(17, 77);
-            this.separator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.separator.Margin = new System.Windows.Forms.Padding(4);
             this.separator.MaximumSize = new System.Drawing.Size(2160, 5);
             this.separator.Name = "separator";
             this.separator.Size = new System.Drawing.Size(1890, 5);
@@ -1280,7 +1281,7 @@
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.separator);
             this.Controls.Add(this.pnlTop);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimumSize = new System.Drawing.Size(1918, 1136);
             this.Name = "CheckInForm";
             this.Padding = new System.Windows.Forms.Padding(17, 15, 17, 15);
