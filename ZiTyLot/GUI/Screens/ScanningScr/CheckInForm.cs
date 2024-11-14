@@ -134,7 +134,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             }
         }
 
-        private async void ShowSettingForm()
+        private void ShowSettingForm()
         {
             if (_settingForm == null || _settingForm.IsDisposed)
             {
@@ -242,6 +242,19 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 btnOpenGate.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             }
         }
+        private void ConnectGate(string port)
+        {
+            if (_serialPort != null)
+            {
+                _serialPort.Close();
+            }
+            _serialPort = Arduino.Connect(port);
+        }
+
+        private void DisconnectGate()
+        {
+            Arduino.Disconnect(_serialPort);
+        }
 
         private void uiTableLayoutPanel4_Resize(object sender, System.EventArgs e)
         {
@@ -291,20 +304,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         }
 
 
-        private void ConnectGate(string port)
-        {
-            if (_serialPort != null)
-            {
-                _serialPort.Close();
-            }
-            _serialPort = Arduino.Connect(port);
-        }
-
-        private void DisconnectGate()
-        {
-            Arduino.Disconnect(_serialPort);
-        }
-        private void uiTableLayoutPanel2_Resize(object sender, EventArgs e)
+           private void uiTableLayoutPanel2_Resize(object sender, EventArgs e)
         {
             foreach (Label lable in uiTableLayoutPanel2.Controls)
             {

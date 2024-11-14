@@ -11,7 +11,7 @@ namespace ZiTyLot.GUI.Screens
         public ScanningControl()
         {
             InitializeComponent();
-            
+
         }
 
         private void btnCarCheckIn_Click(object sender, EventArgs e)
@@ -22,8 +22,8 @@ namespace ZiTyLot.GUI.Screens
 
         private void btnCarCheckOut_Click(object sender, EventArgs e)
         {
-            CarCheckOutForm carCheckOutForm = new CarCheckOutForm();
-            carCheckOutForm.Show();
+            CheckOutFrom CheckOutForm = new CheckOutFrom(ParkingLotType.FOUR_WHEELER);
+            CheckOutForm.Show();
         }
 
         private void btnBikeCheckIn_Click(object sender, EventArgs e)
@@ -34,8 +34,8 @@ namespace ZiTyLot.GUI.Screens
 
         private void btnBikeCheckOut_Click(object sender, EventArgs e)
         {
-            CheckOutFrom   bikeCheckOutForm = new CheckOutFrom();
-            bikeCheckOutForm.Show();
+            CheckOutFrom CheckOutForm = new CheckOutFrom(ParkingLotType.TWO_WHEELER);
+            CheckOutForm.Show();
         }
 
         private void ScanningControl_Load(object sender, EventArgs e)

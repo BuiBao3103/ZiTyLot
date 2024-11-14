@@ -42,7 +42,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         private System.Drawing.Image _currentFrontImage;
         private System.Drawing.Image _currentBackImage;
         private System.Drawing.Image _currentPlateImage;
-        public CheckOutFrom()
+        public CheckOutFrom(ParkingLotType parkingLotType)
         {
             InitializeComponent();
             this.CenterToScreen();
@@ -52,6 +52,180 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             uiTableLayoutPanel5.Resize += uiTableLayoutPanel5_Resize;
             uiTableLayoutPanel3.Resize += uiTableLayoutPanel3_Resize;
             uiTableLayoutPanel2.Resize += uiTableLayoutPanel2_Resize;
+        }
+        public void StartFrontCamera(string cameraId)
+        {
+            if (_frontCamera != null)
+            {
+                Task.Run(() => _cameraHelper.StopCameraAsync(_frontCameraId, _frontCamera, pbFrontCamera));
+            }
+
+            _frontCameraId = cameraId;
+            _cameraHelper.StartCamera(cameraId, pbFrontCamera, out _frontCamera);
+        }
+
+        public void StartBackCamera(string cameraId)
+        {
+            if (_backCamera != null)
+            {
+                Task.Run(() => _cameraHelper.StopCameraAsync(_backCameraId, _backCamera, pbBackCamera));
+            }
+
+            _backCameraId = cameraId;
+            _cameraHelper.StartCamera(cameraId, pbBackCamera, out _backCamera);
+        }
+
+        public async Task StopFrontCameraAsync()
+        {
+            await _cameraHelper.StopCameraAsync(_frontCameraId, _frontCamera, pbFrontCamera);
+            _frontCamera = null;
+            _frontCameraId = null;
+        }
+
+        public async Task StopBackCameraAsync()
+        {
+            await _cameraHelper.StopCameraAsync(_backCameraId, _backCamera, pbBackCamera);
+            _backCamera = null;
+            _backCameraId = null;
+        }
+
+        public async Task StopAllCamerasAsync()
+        {
+            var tasks = new List<Task>
+        {
+            StopFrontCameraAsync(),
+            StopBackCameraAsync()
+        };
+            await Task.WhenAll(tasks);
+        }
+
+        private async void BikeCheckInForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (_isClosing) return;
+
+            _isClosing = true;
+            e.Cancel = true; // Tạm thời cancel việc đóng form
+
+            try
+            {
+                await StopAllCamerasAsync();
+                await _cameraHelper.DisposeAsync();
+            }
+            finally
+            {
+                this.Close(); // Đóng form sau khi đã cleanup xong
+            }
+        }
+
+        private void ShowSettingForm()
+        {
+            if (_settingForm == null || _settingForm.IsDisposed)
+            {
+                _settingForm = new SettingForm(_frontCameraId, _backCameraId, _serialPort?.PortName);
+
+                // Kết nối camera
+                _settingForm.ConnectCameraFront += (sender, cameraId) =>
+                {
+                    StartFrontCamera(cameraId);
+                    updateStatusDevice();
+
+                };
+                _settingForm.ConnectCameraBack += (sender, cameraId) =>
+                {
+                    StartBackCamera(cameraId);
+                    updateStatusDevice();
+                };
+
+                // Ngắt kết nối camera - sử dụng async
+                _settingForm.DisconnectCameraFront += async (sender, e) =>
+                {
+                    await StopFrontCameraAsync();
+                    updateStatusDevice();
+                };
+                _settingForm.DisconnectCameraBack += async (sender, e) =>
+                {
+                    await StopBackCameraAsync();
+                    updateStatusDevice();
+                };
+
+                // Gate events
+                _settingForm.ConnectGate += (sender, port) =>
+                {
+                    ConnectGate(port);
+                    updateStatusDevice();
+                };
+                _settingForm.DisconnectGate += (sender, e) =>
+                {
+                    DisconnectGate();
+                    updateStatusDevice();
+                };
+
+                _settingForm.Show();
+            }
+            else
+            {
+                if (_settingForm.WindowState == FormWindowState.Minimized)
+                    _settingForm.WindowState = FormWindowState.Normal;
+                _settingForm.BringToFront();
+            }
+        }
+        private void ConnectGate(string port)
+        {
+            if (_serialPort != null)
+            {
+                _serialPort.Close();
+            }
+            _serialPort = Arduino.Connect(port);
+        }
+
+        private void DisconnectGate()
+        {
+            Arduino.Disconnect(_serialPort);
+        }
+
+        private void updateStatusDevice()
+        {
+            if (_frontCameraId != null)
+            {
+                lbFrontCameraStatus.Text = "Connected";
+                lbFrontCameraStatus.ForeColor = Color.Green;
+            }
+            else
+            {
+
+                lbFrontCameraStatus.Text = "Disconnected";
+                lbFrontCameraStatus.ForeColor = Color.Red;
+            }
+            if (_backCameraId != null)
+            {
+                lbBackCameraStatus.Text = "Connected";
+                lbBackCameraStatus.ForeColor = Color.Green;
+            }
+            else
+            {
+                lbBackCameraStatus.Text = "Disconnected";
+                lbBackCameraStatus.ForeColor = Color.Red;
+            }
+            if (_serialPort != null)
+            {
+                lbBoomGateStatus.Text = "Connected";
+                lbBoomGateStatus.ForeColor = Color.Green;
+            }
+            else
+            {
+                lbBoomGateStatus.Text = "Disconnected";
+                lbBoomGateStatus.ForeColor = Color.Red;
+            }
+            if (_frontCameraId != null && _backCameraId != null && _serialPort != null)
+            {
+                lbProcessState.Text = ProcessState.Ready.ToString();
+                _processState = ProcessState.Ready;
+            }
+            else
+            {
+                lbProcessState.Text = ProcessState.Preparing.ToString();
+                _processState = ProcessState.Preparing;
+            }
         }
 
         private void btnOpen_Resize(object sender, System.EventArgs e)
@@ -135,6 +309,14 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 {
                     lable.Font = new System.Drawing.Font("Helvetica", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
+            }
+        }
+
+        private void CheckOutFrom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Escape)
+            {
+                ShowSettingForm();
             }
         }
     }

@@ -110,10 +110,10 @@
             this.uiLabel36 = new Sunny.UI.UILabel();
             this.uiLabel37 = new Sunny.UI.UILabel();
             this.pnlTop = new Sunny.UI.UIPanel();
-            this.uiLabel1 = new Sunny.UI.UILabel();
-            this.separator = new System.Windows.Forms.Panel();
             this.uiLabel6 = new Sunny.UI.UILabel();
             this.lbProcessState = new Sunny.UI.UILabel();
+            this.uiLabel1 = new Sunny.UI.UILabel();
+            this.separator = new System.Windows.Forms.Panel();
             this.pnlBottom.SuspendLayout();
             this.table.SuspendLayout();
             this.pnlCheckInPlate.SuspendLayout();
@@ -1390,28 +1390,6 @@
             this.pnlTop.Text = null;
             this.pnlTop.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // uiLabel1
-            // 
-            this.uiLabel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uiLabel1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiLabel1.Location = new System.Drawing.Point(13, 0);
-            this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(254, 62);
-            this.uiLabel1.TabIndex = 0;
-            this.uiLabel1.Text = "Check Out Session";
-            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // separator
-            // 
-            this.separator.Dock = System.Windows.Forms.DockStyle.Top;
-            this.separator.Location = new System.Drawing.Point(13, 74);
-            this.separator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.separator.MaximumSize = new System.Drawing.Size(2160, 5);
-            this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(1774, 5);
-            this.separator.TabIndex = 8;
-            // 
             // uiLabel6
             // 
             this.uiLabel6.Dock = System.Windows.Forms.DockStyle.Right;
@@ -1436,6 +1414,28 @@
             this.lbProcessState.Text = "Preparing";
             this.lbProcessState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // uiLabel1
+            // 
+            this.uiLabel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uiLabel1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiLabel1.Location = new System.Drawing.Point(13, 0);
+            this.uiLabel1.Name = "uiLabel1";
+            this.uiLabel1.Size = new System.Drawing.Size(254, 62);
+            this.uiLabel1.TabIndex = 0;
+            this.uiLabel1.Text = "Check Out Session";
+            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // separator
+            // 
+            this.separator.Dock = System.Windows.Forms.DockStyle.Top;
+            this.separator.Location = new System.Drawing.Point(13, 74);
+            this.separator.Margin = new System.Windows.Forms.Padding(4);
+            this.separator.MaximumSize = new System.Drawing.Size(2160, 5);
+            this.separator.Name = "separator";
+            this.separator.Size = new System.Drawing.Size(1774, 5);
+            this.separator.TabIndex = 8;
+            // 
             // CheckOutFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1446,11 +1446,12 @@
             this.Controls.Add(this.separator);
             this.Controls.Add(this.pnlTop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1815, 934);
             this.Name = "CheckOutFrom";
             this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.Text = "Bike Check Out From";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckOutFrom_KeyPress);
             this.pnlBottom.ResumeLayout(false);
             this.table.ResumeLayout(false);
             this.pnlCheckInPlate.ResumeLayout(false);
