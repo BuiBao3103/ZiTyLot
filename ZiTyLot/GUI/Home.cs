@@ -86,17 +86,17 @@ namespace ZiTyLot.GUI
         {
             panelMapping = new Dictionary<string, UserControl>
             {
-                { "Dashboard", new DashboardControl() },
-                { "LostCardManagement", new LostCardControl()},
-                { "AccountManagement", new AccountControl() },
-                { "BillManagement", new BillControl() },
-                { "ResidentManagement", new ResidentControl() },
-                { "SessionManagement", new SessionControl() },
-                { "RoleManagement", new RoleControl() },
-                { "CardManagement", new CardControl() },
-                { "PriceManagement", new PriceControl() },
-                { "AreaManagement", new AreaControl() },
-                { "Scanning", new ScanningControl() },
+                { "Dashboard", null },
+                { "LostCardManagement", null},
+                { "AccountManagement", null },
+                { "BillManagement", null },
+                { "ResidentManagement", null },
+                { "SessionManagement", null },
+                { "RoleManagement", null},
+                { "CardManagement",  null },
+                { "PriceManagement", null },
+                { "AreaManagement", null },
+                { "Scanning", null },
             };
         }
         private void AddMenuToSidebar()
@@ -437,6 +437,46 @@ namespace ZiTyLot.GUI
         {
             if (panelMapping.TryGetValue(clickedButton.Name, out UserControl control))
             {
+                if (control == null)
+                {
+                    switch (clickedButton.Name)
+                    {
+                        case "Dashboard":
+                            control = new DashboardControl();
+                            break;
+                        case "LostCardManagement":
+                            control = new LostCardControl();
+                            break;
+                        case "AccountManagement":
+                            control = new AccountControl();
+                            break;
+                        case "BillManagement":
+                            control = new BillControl();
+                            break;
+                        case "ResidentManagement":
+                            control = new ResidentControl();
+                            break;
+                        case "SessionManagement":
+                            control = new SessionControl();
+                            break;
+                        case "RoleManagement":
+                            control = new RoleControl();
+                            break;
+                        case "CardManagement":
+                            control = new CardControl();
+                            break;
+                        case "PriceManagement":
+                            control = new PriceControl();
+                            break;
+                        case "AreaManagement":
+                            control = new AreaControl();
+                            break;
+                        case "Scanning":
+                            control = new ScanningControl();
+                            break;
+                    }
+                    panelMapping[clickedButton.Name] = control;
+                }
                 LoadForm(control);
                 switch (control)
                 {
@@ -444,25 +484,25 @@ namespace ZiTyLot.GUI
                         sessionControl.ChangePage(1);
                         break;
                     case AreaControl areaControl:
-                        areaControl.ChangePage(1); 
+                        areaControl.ChangePage(1);
                         break;
                     case ResidentControl residentControl:
-                        residentControl.ChangePage(1); 
+                        residentControl.ChangePage(1);
                         break;
                     case CardControl cardControl:
-                        cardControl.changePage(1); 
+                        cardControl.changePage(1);
                         break;
                     case BillControl billControl:
-                        billControl.changePage(1);  
+                        billControl.changePage(1);
                         break;
                     case AccountControl accountControl:
-                        accountControl.ChangePage(1); 
+                        accountControl.ChangePage(1);
                         break;
                     case RoleControl roleControl:
-                        roleControl.query(); 
+                        roleControl.query();
                         break;
                     case LostCardControl lostCardControl:
-                        lostCardControl.ChangePage(1); 
+                        lostCardControl.ChangePage(1);
                         break;
                 }
                 UpdateButtonStyles(clickedButton);
