@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace ZiTyLot.Helper
 {
-    public class RFIDReader
+    public class RFIDHelper
     {
         private string currentInput = "";
         private const int RFIDLength = 10;

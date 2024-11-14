@@ -531,6 +531,8 @@ namespace ZiTyLot.DAO
             switch (filter.Operator)
             {
                 case CompOp.Equals:
+                    if (filter.Value == null)
+                        return $" AND {filter.Column} IS NULL";
                     return $" AND {filter.Column} = @{filter.Column}";
                 case CompOp.GreaterThan:
                     return $" AND {filter.Column} > @{filter.Column}";
@@ -551,10 +553,10 @@ namespace ZiTyLot.DAO
 
         private void AddFilterConditionParameters(MySqlCommand command, FilterCondition filter)
         {
+            if (filter.Value == null) return;
+            //if filter value is enum, add '' to convert it to string
             // Add the filter condition parameter to the command
             var parameterValue = filter.Operator == CompOp.Like ? $"%{filter.Value}%" : filter.Value.ToString();
-            //if filter value is enum, add '' to convert it to string
-          
             command.Parameters.AddWithValue($"@{filter.Column}", parameterValue);
         }
 

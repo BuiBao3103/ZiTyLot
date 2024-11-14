@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using ZiTyLot.Constants.Enum;
 using ZiTyLot.DAO;
 using ZiTyLot.ENTITY;
 using ZiTyLot.Helper;
@@ -19,7 +21,7 @@ namespace ZiTyLot.BUS
             this.imageDAO = new ImageDAO();
         }
 
-        public Session Create(Session newSession, List<Image> images)
+        public Session CreateFull(Session newSession, List<Image> images)
         {
             try
             {
@@ -168,6 +170,36 @@ namespace ZiTyLot.BUS
                 List<Image> images = imageDAO.GetAll(filters);
                 item.Images = images;
                 return item;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public double CalculateFee(Session item)
+        {
+            try
+            {
+                item = PopulateCard(item);
+                item.Card = (new CardBUS()).PopulateVehicleType(item.Card);
+                item.Card.Vehicle_type = (new VehicleTypeBUS()).PopulateVisitorFee(item.Card.Vehicle_type);
+                VisitorFee visitorFee = item.Card.Vehicle_type.Visitor_fee;
+                TimeSpan total_time = item.Checkout_time.Value - item.Checkin_time.Value;
+                double total_hour = Math.Ceiling(total_time.TotalHours);
+
+                double fee = 100000;
+                switch (visitorFee.Fee_type)
+                {
+                    case FeeType.TURN:
+                        return fee;
+                    case FeeType.HOUR_PER_TURN:
+                        return fee;
+                    case FeeType.FIRST_N_AND_NEXT_M_HOUR:
+                        return fee;
+                    default:
+                        throw new Exception("Fee type is not valid.");
+                }
             }
             catch (Exception ex)
             {

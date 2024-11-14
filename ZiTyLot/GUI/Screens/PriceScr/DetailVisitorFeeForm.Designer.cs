@@ -137,12 +137,13 @@
             this.pnlMain.Controls.Add(this.uiPanel1, 0, 0);
             this.pnlMain.Controls.Add(this.uiPanel2, 0, 1);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(10, 10);
+            this.pnlMain.Location = new System.Drawing.Point(13, 12);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.RowCount = 2;
-            this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
             this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.pnlMain.Size = new System.Drawing.Size(564, 491);
+            this.pnlMain.Size = new System.Drawing.Size(753, 605);
             this.pnlMain.TabIndex = 2;
             this.pnlMain.TagString = null;
             // 
@@ -153,8 +154,8 @@
             this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel1.FillColor = System.Drawing.Color.White;
             this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel1.Location = new System.Drawing.Point(4, 5);
-            this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel1.Location = new System.Drawing.Point(5, 6);
+            this.uiPanel1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel1.Name = "uiPanel1";
             this.uiPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
@@ -162,7 +163,7 @@
             this.uiPanel1.RectColor = System.Drawing.SystemColors.ControlLight;
             this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom;
             this.uiPanel1.RectSize = 2;
-            this.uiPanel1.Size = new System.Drawing.Size(556, 44);
+            this.uiPanel1.Size = new System.Drawing.Size(743, 54);
             this.uiPanel1.TabIndex = 17;
             this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -182,7 +183,7 @@
             this.uiPanel3.RectColor = System.Drawing.SystemColors.ControlLight;
             this.uiPanel3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel3.RectSize = 2;
-            this.uiPanel3.Size = new System.Drawing.Size(556, 42);
+            this.uiPanel3.Size = new System.Drawing.Size(743, 52);
             this.uiPanel3.TabIndex = 5;
             this.uiPanel3.Text = null;
             this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -195,7 +196,7 @@
             this.lbVehicleType.Location = new System.Drawing.Point(0, 2);
             this.lbVehicleType.Margin = new System.Windows.Forms.Padding(0);
             this.lbVehicleType.Name = "lbVehicleType";
-            this.lbVehicleType.Size = new System.Drawing.Size(556, 30);
+            this.lbVehicleType.Size = new System.Drawing.Size(743, 40);
             this.lbVehicleType.TabIndex = 3;
             this.lbVehicleType.Text = "{vehical_type} pricing";
             this.lbVehicleType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -207,13 +208,13 @@
             this.uiPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel2.FillColor = System.Drawing.Color.White;
             this.uiPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel2.Location = new System.Drawing.Point(4, 59);
-            this.uiPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel2.Location = new System.Drawing.Point(5, 72);
+            this.uiPanel2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel2.Name = "uiPanel2";
             this.uiPanel2.RectColor = System.Drawing.Color.White;
             this.uiPanel2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel2.Size = new System.Drawing.Size(556, 427);
+            this.uiPanel2.Size = new System.Drawing.Size(743, 527);
             this.uiPanel2.TabIndex = 3;
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -234,7 +235,7 @@
             this.pnlTab.Name = "pnlTab";
             this.pnlTab.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.pnlTab.SelectedIndex = 0;
-            this.pnlTab.Size = new System.Drawing.Size(556, 427);
+            this.pnlTab.Size = new System.Drawing.Size(743, 527);
             this.pnlTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.pnlTab.TabBackColor = System.Drawing.Color.White;
             this.pnlTab.TabIndex = 1;
@@ -250,7 +251,7 @@
             this.tpTurn.Controls.Add(this.uiPanel4);
             this.tpTurn.Location = new System.Drawing.Point(0, 40);
             this.tpTurn.Name = "tpTurn";
-            this.tpTurn.Size = new System.Drawing.Size(556, 387);
+            this.tpTurn.Size = new System.Drawing.Size(743, 487);
             this.tpTurn.TabIndex = 0;
             this.tpTurn.Text = "Per turn";
             // 
@@ -269,7 +270,7 @@
             this.uiPanel4.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.uiPanel4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel4.RectSize = 2;
-            this.uiPanel4.Size = new System.Drawing.Size(556, 387);
+            this.uiPanel4.Size = new System.Drawing.Size(743, 487);
             this.uiPanel4.TabIndex = 0;
             this.uiPanel4.Text = null;
             this.uiPanel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -287,7 +288,7 @@
             this.uiPanel5.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel5.Name = "uiPanel5";
             this.uiPanel5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel5.Size = new System.Drawing.Size(556, 382);
+            this.uiPanel5.Size = new System.Drawing.Size(743, 482);
             this.uiPanel5.TabIndex = 0;
             this.uiPanel5.Text = null;
             this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -299,7 +300,7 @@
             this.pnlButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlButton.FillColor = System.Drawing.Color.White;
             this.pnlButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlButton.Location = new System.Drawing.Point(0, 328);
+            this.pnlButton.Location = new System.Drawing.Point(0, 428);
             this.pnlButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlButton.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlButton.Name = "pnlButton";
@@ -308,7 +309,7 @@
             this.pnlButton.RectColor = System.Drawing.SystemColors.ControlLight;
             this.pnlButton.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
             this.pnlButton.RectSize = 2;
-            this.pnlButton.Size = new System.Drawing.Size(556, 54);
+            this.pnlButton.Size = new System.Drawing.Size(743, 54);
             this.pnlButton.TabIndex = 17;
             this.pnlButton.Text = null;
             this.pnlButton.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -317,7 +318,7 @@
             // 
             this.panel2.Controls.Add(this.btnCancelPT);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(306, 13);
+            this.panel2.Location = new System.Drawing.Point(493, 13);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(120, 38);
             this.panel2.TabIndex = 10;
@@ -353,7 +354,7 @@
             // 
             this.panel3.Controls.Add(this.btnConfirmPT);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(426, 13);
+            this.panel3.Location = new System.Drawing.Point(613, 13);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.panel3.Size = new System.Drawing.Size(130, 38);
@@ -398,7 +399,7 @@
             this.uiPanel6.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel6.Name = "uiPanel6";
             this.uiPanel6.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel6.Size = new System.Drawing.Size(556, 70);
+            this.uiPanel6.Size = new System.Drawing.Size(743, 70);
             this.uiPanel6.TabIndex = 3;
             this.uiPanel6.Text = null;
             this.uiPanel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -416,7 +417,7 @@
             this.uiGroupBox2.Name = "uiGroupBox2";
             this.uiGroupBox2.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox2.Size = new System.Drawing.Size(556, 70);
+            this.uiGroupBox2.Size = new System.Drawing.Size(743, 70);
             this.uiGroupBox2.TabIndex = 0;
             this.uiGroupBox2.Text = "Night fee per turn";
             this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -435,7 +436,7 @@
             this.tbNightFeePT.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbNightFeePT.RectSize = 2;
             this.tbNightFeePT.ShowText = false;
-            this.tbNightFeePT.Size = new System.Drawing.Size(540, 34);
+            this.tbNightFeePT.Size = new System.Drawing.Size(727, 34);
             this.tbNightFeePT.TabIndex = 0;
             this.tbNightFeePT.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbNightFeePT.Watermark = "";
@@ -453,7 +454,7 @@
             this.pnlFullname.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlFullname.Name = "pnlFullname";
             this.pnlFullname.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlFullname.Size = new System.Drawing.Size(556, 80);
+            this.pnlFullname.Size = new System.Drawing.Size(743, 80);
             this.pnlFullname.TabIndex = 2;
             this.pnlFullname.Text = null;
             this.pnlFullname.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -471,7 +472,7 @@
             this.uiGroupBox1.Name = "uiGroupBox1";
             this.uiGroupBox1.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox1.Size = new System.Drawing.Size(556, 80);
+            this.uiGroupBox1.Size = new System.Drawing.Size(743, 80);
             this.uiGroupBox1.TabIndex = 0;
             this.uiGroupBox1.Text = "Day fee per turn";
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -490,7 +491,7 @@
             this.tbDayFeePT.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbDayFeePT.RectSize = 2;
             this.tbDayFeePT.ShowText = false;
-            this.tbDayFeePT.Size = new System.Drawing.Size(540, 34);
+            this.tbDayFeePT.Size = new System.Drawing.Size(727, 34);
             this.tbDayFeePT.TabIndex = 0;
             this.tbDayFeePT.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbDayFeePT.Watermark = "";
@@ -1170,15 +1171,16 @@
             // 
             // DetailVisitorFeeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(584, 511);
+            this.ClientSize = new System.Drawing.Size(779, 629);
             this.Controls.Add(this.pnlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(600, 548);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(794, 664);
             this.Name = "DetailVisitorFeeForm";
-            this.Padding = new System.Windows.Forms.Padding(10);
+            this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.Text = "Visitor Fee Detail Form";
             this.Load += new System.EventHandler(this.PriceDetailForm_Load);
             this.pnlMain.ResumeLayout(false);

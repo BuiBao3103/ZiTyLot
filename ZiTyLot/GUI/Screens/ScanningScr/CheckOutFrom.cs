@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
@@ -10,8 +11,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
+using ZiTyLot.Constants;
 using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
+using ZiTyLot.GUI.Utils;
 using ZiTyLot.Helper;
 
 namespace ZiTyLot.GUI.Screens.ScanningScr
@@ -32,7 +35,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         private SettingForm _settingForm;
 
         private SerialPort _serialPort;
-        private readonly RFIDReader _rfidReader;
+        private readonly RFIDHelper _rfidReader = new RFIDHelper();
 
         private bool _isGateClose = true;
         private ProcessState _processState = ProcessState.Preparing;
@@ -47,11 +50,14 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             InitializeComponent();
             this.CenterToScreen();
             this.KeyPreview = true;
-            btnOpen.Resize += btnOpen_Resize;
+            btnOpenGate.Resize += btnOpen_Resize;
             uiTableLayoutPanel4.Resize += uiTableLayoutPanel4_Resize;
             uiTableLayoutPanel5.Resize += uiTableLayoutPanel5_Resize;
             uiTableLayoutPanel3.Resize += uiTableLayoutPanel3_Resize;
             uiTableLayoutPanel2.Resize += uiTableLayoutPanel2_Resize;
+
+            _parkingLotType = parkingLotType;
+            _rfidReader.RFIDScanned += RfidReader_RFIDScanned;
         }
         public void StartFrontCamera(string cameraId)
         {
@@ -99,23 +105,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             await Task.WhenAll(tasks);
         }
 
-        private async void BikeCheckInForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (_isClosing) return;
 
-            _isClosing = true;
-            e.Cancel = true; // Tạm thời cancel việc đóng form
-
-            try
-            {
-                await StopAllCamerasAsync();
-                await _cameraHelper.DisposeAsync();
-            }
-            finally
-            {
-                this.Close(); // Đóng form sau khi đã cleanup xong
-            }
-        }
 
         private void ShowSettingForm()
         {
@@ -218,13 +208,11 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             }
             if (_frontCameraId != null && _backCameraId != null && _serialPort != null)
             {
-                lbProcessState.Text = ProcessState.Ready.ToString();
-                _processState = ProcessState.Ready;
+                ChangeState(ProcessState.Ready);
             }
             else
             {
-                lbProcessState.Text = ProcessState.Preparing.ToString();
-                _processState = ProcessState.Preparing;
+                ChangeState(ProcessState.Preparing);
             }
         }
 
@@ -232,11 +220,11 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         {
             if (this.Size.Width > 1800)
             {
-                btnOpen.Font = new System.Drawing.Font("Helvetica", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                btnOpenGate.Font = new System.Drawing.Font("Helvetica", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             }
             else
             {
-                btnOpen.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                btnOpenGate.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             }
         }
 
@@ -287,15 +275,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             }
         }
 
-        private void CheckOutForm_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Escape)
-            {
-                //SettingForm settingForm = new SettingForm();
-                //settingForm.Show();
 
-            }
-        }
 
         private void uiTableLayoutPanel2_Resize(object sender, System.EventArgs e)
         {
@@ -314,9 +294,233 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
 
         private void CheckOutFrom_KeyPress(object sender, KeyPressEventArgs e)
         {
+            _rfidReader.ProcessInput(e.KeyChar);
             if (e.KeyChar == (char)Keys.Escape)
             {
                 ShowSettingForm();
+            }
+            if (e.KeyChar == (char)Keys.Space && _processState == ProcessState.Done)
+            {
+                if (_isGateClose)
+                {
+                    _isGateClose = false;
+                    Arduino.OpenBarrier(_serialPort);
+                    btnOpenGate.Text = btnOpenGate.Text.Replace("OPEN", "CLOSE");
+                }
+                else
+                {
+                    _isGateClose = true;
+                    Arduino.CloseBarrier(_serialPort);
+                    btnOpenGate.Enabled = false;
+                    btnOpenGate.Text = btnOpenGate.Text.Replace("CLOSE", "OPEN");
+
+                    UpdateSession();
+
+                    ChangeState(ProcessState.Ready);
+                }
+            }
+        }
+        private void UpdateSession()
+        {
+
+            ENTITY.Image frontImage = new ENTITY.Image()
+            {
+                Url = ImageHelper.SaveImage(_currentFrontImage),
+                Type = ImageType.BEFORE_CHECKOUT,
+                Session_id = _currentSession.Id
+
+            };
+            _imageBUS.Add(frontImage);
+            ENTITY.Image backImage = new ENTITY.Image()
+            {
+                Url = ImageHelper.SaveImage(_currentBackImage),
+                Type = ImageType.AFTER_CHECKOUT,
+                Session_id = _currentSession.Id
+
+            };
+            _imageBUS.Add(backImage);
+
+            if (_currentPlateImage != null)
+            {
+                ENTITY.Image plateImage = new ENTITY.Image()
+                {
+                    Url = ImageHelper.SaveImage(_currentPlateImage),
+                    Type = ImageType.AFTER_CHECKOUT,
+                    Session_id = _currentSession.Id
+
+                };
+                _imageBUS.Add(plateImage);
+            }
+            _sessionBUS.Update(_currentSession);
+
+        }
+        private void StartVisitorProcess()
+        {
+            ChangeState(ProcessState.Scanning);
+            Debug.WriteLine("StartVisitorProcess");
+
+            _currentFrontImage = _cameraHelper.GetImageFromPictureBox(pbFrontCamera);
+            _currentBackImage = _cameraHelper.GetImageFromPictureBox(pbBackCamera);
+            _currentPlateImage = null;
+
+            //set image to record
+            pbFrontRecord.Image = _currentFrontImage;
+            pbBackRecord.Image = _currentBackImage;
+            pbPlateRecord.Image = _currentPlateImage;
+            pbCheckInPlate.Image = null;
+
+            foreach (ZiTyLot.ENTITY.Image image in _currentSession.Images)
+            {
+                if (image.Type == ImageType.BEFORE_CHECKIN)
+                {
+                    pbCheckInFront.Image = ImageHelper.LoadImage(image.Url);
+                }
+                else if (image.Type == ImageType.AFTER_CHECKIN)
+                {
+                    pbCheckInBack.Image = ImageHelper.LoadImage(image.Url);
+                }
+                else if (image.Type == ImageType.LICENSE_PLATE_CHECKIN)
+                {
+                    pbCheckInPlate.Image = ImageHelper.LoadImage(image.Url);
+                }
+            }
+
+            _currentSession.Checkout_time = DateTime.Now;
+
+            lbCardRfid.Text = _currentSession.Card.Rfid;
+            lbCardType.Text = _currentSession.Card.Type.ToString();
+            lbVehicalType.Text = _currentSession.Card.Vehicle_type.Name;
+            lbCheckInTime.Text = _currentSession.Checkin_time?.ToString("dd/MM/yyyy\nHH:mm:ss");
+            lbCheckOutTime.Text = _currentSession.Checkout_time?.ToString("dd/MM/yyyy\nHH:mm:ss");
+
+            TimeSpan totalTime = _currentSession.Checkout_time.Value - _currentSession.Checkin_time.Value;
+            lbTotalTime.Text = totalTime.ToString(@"hh\:mm\:ss");
+            _currentSession.Fee = _sessionBUS.CalculateFee(_currentSession);
+            lbTotalPrice.Text = _currentSession.Fee?.ToString("C0", new System.Globalization.CultureInfo("vi-VN"));
+
+
+            if (_currentSession.Card.Vehicle_type.Id == VehicleTypeID.BIKECYCLE)
+            {
+                lbVehicalPlate.Text = "";
+            }
+            //else
+            //{
+            //    lbVehicalPlate.Text = "Scanning...";
+            //    var result = await ANPR.ProcessImageAsync(_currentBackImage);
+            //    if (result != null)
+            //    {
+            //        //set plate number to record
+            //        lbVehicalPlate.Text = result.PlateNumber;
+            //        _currentSession.License_plate = result.PlateNumber;
+
+            //        //set plate image to record
+            //        _currentPlateImage = result.Image;
+            //        pbPlateRecord.Image = _currentPlateImage;
+            //    }
+            //    else
+            //    {
+            //        MessageHelper.ShowError("Cannot recognize license plate!, please try again!");
+            //        lbProcessState.Text = ProcessState.Ready.ToString();
+            //        _processState = ProcessState.Ready;
+            //        lbVehicalPlate.Text = "";
+            //        return;
+            //    }
+
+            //}
+            btnOpenGate.Enabled = true;
+            ChangeState(ProcessState.Done);
+        }
+        private void ChangeState(ProcessState state)
+        {
+            lbProcessState.Text = state.ToString();
+            _processState = state;
+        }
+        private void RfidReader_RFIDScanned(object sender, string rfidCode)
+        {
+            Debug.WriteLine("RFID Scanned: " + rfidCode);
+            if (_processState == ProcessState.Preparing)
+            {
+                MessageHelper.ShowError("Please configure all devices before scanning!");
+                return;
+            }
+            if (_processState != ProcessState.Ready)
+            {
+                MessageHelper.ShowError("Please wait for the current process to finish!");
+                return;
+            }
+            List<FilterCondition> cardFilters = new List<FilterCondition>()
+            {
+                new FilterCondition(nameof(Card.Rfid), CompOp.Equals, rfidCode)
+            };
+            Card card = _cardBUS.GetAll(cardFilters)?.FirstOrDefault();
+            if (!ValidateCard(card)) return;
+            card = _cardBUS.PopulateVehicleType(card);
+
+            List<FilterCondition> sessionFilters = new List<FilterCondition>()
+            {
+                new FilterCondition(nameof(Session.Card_id), CompOp.Equals, card.Id),
+                new FilterCondition(nameof(Session.Checkout_time), CompOp.Equals, null)
+            };
+            _currentSession = _sessionBUS.GetAll(sessionFilters)?.FirstOrDefault();
+            if (_currentSession != null)
+            {
+                _currentSession = _sessionBUS.PopulateImages(_currentSession);
+                _currentSession.Card = _cardBUS.PopulateVehicleType(card); ;
+                if (_currentSession.Card.Vehicle_type_id != null)
+                {
+                    StartVisitorProcess();
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+                MessageHelper.ShowError("Session check in not found!");
+            }
+
+        }
+        private bool ValidateCard(Card card)
+        {
+            if (card == null)
+            {
+                MessageHelper.ShowError("Card not found!");
+                return false;
+            }
+            if (_parkingLotType == ParkingLotType.TWO_WHEELER && card.Vehicle_type_id == VehicleTypeID.CAR)
+            {
+                MessageHelper.ShowError("This line is for two-wheeler only so this card is not valid!");
+                return false;
+            }
+            if (_parkingLotType == ParkingLotType.FOUR_WHEELER
+                && (card.Vehicle_type_id == VehicleTypeID.MOTORBIKE || card.Vehicle_type_id == VehicleTypeID.BIKECYCLE))
+            {
+                MessageHelper.ShowError("This line is for four-wheeler only so this card is not valid!");
+                return false;
+            }
+            return true;
+        }
+
+        private void btnOpenGate_Click(object sender, EventArgs e)
+        {
+            if (_isGateClose && _processState == ProcessState.Done)
+            {
+                _isGateClose = false;
+                Arduino.OpenBarrier(_serialPort);
+                btnOpenGate.Text = btnOpenGate.Text.Replace("OPEN", "CLOSE");
+            }
+            else if (!_isGateClose && _processState == ProcessState.Done)
+            {
+                _isGateClose = true;
+                Arduino.CloseBarrier(_serialPort);
+                btnOpenGate.Enabled = false;
+                btnOpenGate.Text = btnOpenGate.Text.Replace("CLOSE", "OPEN");
+
+                UpdateSession();
+
+                lbProcessState.Text = ProcessState.Ready.ToString();
+                _processState = ProcessState.Ready;
             }
         }
     }

@@ -677,7 +677,7 @@
     <Compile Include="Helper\Page.cs" />
     <Compile Include="Helper\Pageable.cs" />
     <Compile Include="Helper\PdfHelper.cs" />
-    <Compile Include="Helper\RFIDReader.cs" />
+    <Compile Include="Helper\RFIDHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\CustomContextMenuStrip.resx">

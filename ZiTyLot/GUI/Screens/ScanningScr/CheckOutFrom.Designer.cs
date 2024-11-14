@@ -99,7 +99,7 @@
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.uiTableLayoutPanel1 = new Sunny.UI.UITableLayoutPanel();
             this.uiPanel15 = new Sunny.UI.UIPanel();
-            this.btnOpen = new Sunny.UI.UIButton();
+            this.btnOpenGate = new Sunny.UI.UIButton();
             this.uiPanel7 = new Sunny.UI.UIPanel();
             this.uiGroupBox9 = new Sunny.UI.UIGroupBox();
             this.uiTableLayoutPanel5 = new Sunny.UI.UITableLayoutPanel();
@@ -1196,7 +1196,7 @@
             // 
             // uiPanel15
             // 
-            this.uiPanel15.Controls.Add(this.btnOpen);
+            this.uiPanel15.Controls.Add(this.btnOpenGate);
             this.uiPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel15.FillColor = System.Drawing.Color.White;
             this.uiPanel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -1211,33 +1211,34 @@
             this.uiPanel15.Text = null;
             this.uiPanel15.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnOpen
+            // btnOpenGate
             // 
-            this.btnOpen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOpen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnOpen.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.FillColor2 = System.Drawing.Color.White;
-            this.btnOpen.FillHoverColor = System.Drawing.Color.White;
-            this.btnOpen.FillPressColor = System.Drawing.Color.White;
-            this.btnOpen.FillSelectedColor = System.Drawing.Color.White;
-            this.btnOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpen.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.ForePressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.Location = new System.Drawing.Point(5, 15);
-            this.btnOpen.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Radius = 10;
-            this.btnOpen.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnOpen.RectSize = 2;
-            this.btnOpen.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnOpen.Size = new System.Drawing.Size(122, 180);
-            this.btnOpen.TabIndex = 0;
-            this.btnOpen.Text = "   OPEN \r\nBARRIER\r\n( SPACE )";
-            this.btnOpen.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnOpenGate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOpenGate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnOpenGate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpenGate.FillColor2 = System.Drawing.Color.White;
+            this.btnOpenGate.FillHoverColor = System.Drawing.Color.White;
+            this.btnOpenGate.FillPressColor = System.Drawing.Color.White;
+            this.btnOpenGate.FillSelectedColor = System.Drawing.Color.White;
+            this.btnOpenGate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenGate.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpenGate.ForePressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpenGate.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpenGate.Location = new System.Drawing.Point(5, 15);
+            this.btnOpenGate.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnOpenGate.Name = "btnOpenGate";
+            this.btnOpenGate.Radius = 10;
+            this.btnOpenGate.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpenGate.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpenGate.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpenGate.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnOpenGate.RectSize = 2;
+            this.btnOpenGate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnOpenGate.Size = new System.Drawing.Size(122, 180);
+            this.btnOpenGate.TabIndex = 0;
+            this.btnOpenGate.Text = "   OPEN \r\nBARRIER\r\n( SPACE )";
+            this.btnOpenGate.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnOpenGate.Click += new System.EventHandler(this.btnOpenGate_Click);
             // 
             // uiPanel7
             // 
@@ -1570,7 +1571,7 @@
         private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel1;
         private Sunny.UI.UIPanel uiPanel15;
-        private Sunny.UI.UIButton btnOpen;
+        private Sunny.UI.UIButton btnOpenGate;
         private Sunny.UI.UIPanel uiPanel7;
         private Sunny.UI.UIGroupBox uiGroupBox9;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel5;

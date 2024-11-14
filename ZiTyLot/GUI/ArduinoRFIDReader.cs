@@ -10,7 +10,7 @@ namespace ZiTyLot.GUI.Screens
     public partial class ArduinoRFIDReader : Form
     {
         private SerialPort serialPort;
-        private RFIDReader rfidReader;
+        private RFIDHelper rfidReader;
 
         public ArduinoRFIDReader()
         {
@@ -18,7 +18,7 @@ namespace ZiTyLot.GUI.Screens
             btnDisconnect.Enabled = false;
             this.KeyPreview = true;
 
-            rfidReader = new RFIDReader();
+            rfidReader = new RFIDHelper();
             rfidReader.RFIDScanned += RfidReader_RFIDScanned; // Đăng ký sự kiện
         }
 

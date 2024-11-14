@@ -33,7 +33,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         private SettingForm _settingForm;
 
         private SerialPort _serialPort;
-        private readonly RFIDReader _rfidReader;
+        private readonly RFIDHelper _rfidReader = new RFIDHelper();
 
         private bool _isGateClose = true;
         private ProcessState _processState = ProcessState.Preparing;
@@ -56,17 +56,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             uiTableLayoutPanel2.Resize += uiTableLayoutPanel2_Resize;
 
             _parkingLotType = parkingLotType;
-
-            // Cấu hình PictureBox
-            this.pbFrontCamera.SizeMode = PictureBoxSizeMode.Zoom;
-            this.pbBackCamera.SizeMode = PictureBoxSizeMode.Zoom;
-            this.pbFrontRecord.SizeMode = PictureBoxSizeMode.Zoom;
-            this.pbBackRecord.SizeMode = PictureBoxSizeMode.Zoom;
-            this.pbPlateRecord.SizeMode = PictureBoxSizeMode.Zoom;
-
-            _rfidReader = new RFIDReader();
-            _rfidReader.RFIDScanned += RfidReader_RFIDScanned; // Đăng ký sự kiện
-            _parkingLotType = parkingLotType;
+            _rfidReader.RFIDScanned += RfidReader_RFIDScanned;
         }
 
 
@@ -120,6 +110,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         {
             if (_isClosing) return;
 
+            DisconnectGate();
             _isClosing = true;
             e.Cancel = true; // Tạm thời cancel việc đóng form
 
@@ -222,13 +213,11 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             }
             if (_frontCameraId != null && _backCameraId != null && _serialPort != null)
             {
-                lbProcessState.Text = ProcessState.Ready.ToString();
-                _processState = ProcessState.Ready;
+                ChangeState(ProcessState.Ready);
             }
             else
             {
-                lbProcessState.Text = ProcessState.Preparing.ToString();
-                _processState = ProcessState.Preparing;
+                ChangeState(ProcessState.Preparing);
             }
         }
         private void btnOpen_Resize(object sender, System.EventArgs e)
@@ -304,7 +293,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         }
 
 
-           private void uiTableLayoutPanel2_Resize(object sender, EventArgs e)
+        private void uiTableLayoutPanel2_Resize(object sender, EventArgs e)
         {
             foreach (Label lable in uiTableLayoutPanel2.Controls)
             {
@@ -343,8 +332,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
 
                     AddNewSession();
 
-                    lbProcessState.Text = ProcessState.Ready.ToString();
-                    _processState = ProcessState.Ready;
+                    ChangeState(ProcessState.Ready);
                 }
             }
 
@@ -376,12 +364,11 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 };
                 images.Add(plateImage);
             }
-            _sessionBUS.Create(_currentSession, images);
+            _sessionBUS.CreateFull(_currentSession, images);
         }
         private async void StartVisitorProcess(Card card)
         {
-            lbProcessState.Text = ProcessState.Scanning.ToString();
-            _processState = ProcessState.Scanning;
+            ChangeState(ProcessState.Scanning);
 
             _currentFrontImage = _cameraHelper.GetImageFromPictureBox(pbFrontCamera);
             _currentBackImage = _cameraHelper.GetImageFromPictureBox(pbBackCamera);
@@ -400,13 +387,10 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             lbCardRfid.Text = card.Rfid;
             lbCardType.Text = card.Type.ToString();
             lbVehicalType.Text = card.Vehicle_type.Name;
-            lbCheckInTime.Text = _currentSession.Checkin_time?.ToString("dd/MM/yyyy HH:mm:ss");
+            lbCheckInTime.Text = _currentSession.Checkin_time?.ToString("dd/MM/yyyy\nHH:mm:ss");
             lbCheckOutTime.Text = "";
             lbTotalTime.Text = "";
             lbTotalPrice.Text = "";
-
-
-
 
             if (card.Vehicle_type.Id == VehicleTypeID.BIKECYCLE)
             {
@@ -438,12 +422,14 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
 
             }
             btnOpenGate.Enabled = true;
-            lbProcessState.Text = ProcessState.Done.ToString();
-            _processState = ProcessState.Done;
-
+            ChangeState(ProcessState.Done);
         }
 
-
+        private void ChangeState(ProcessState state)
+        {
+            lbProcessState.Text = state.ToString();
+            _processState = state;
+        }
         private void RfidReader_RFIDScanned(object sender, string rfidCode)
         {
             if (_processState == ProcessState.Preparing)
@@ -461,9 +447,10 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 new FilterCondition(nameof(Card.Rfid), CompOp.Equals, rfidCode)
             };
             Card card = _cardBUS.GetAll(filters)?.FirstOrDefault();
-            if (!ValidateVisitorCard(card)) return;
+            if (!ValidateCard(card)) return;
+
             card = _cardBUS.PopulateVehicleType(card);
-            if (card.Resident_id == null)
+            if (card.Vehicle_type_id != null)
             {
                 StartVisitorProcess(card);
             }
@@ -474,13 +461,13 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         }
         private void btnOpen_Click(object sender, EventArgs e)
         {
-            if (_isGateClose)
+            if (_isGateClose && _processState == ProcessState.Done)
             {
                 _isGateClose = false;
                 Arduino.OpenBarrier(_serialPort);
                 btnOpenGate.Text = btnOpenGate.Text.Replace("OPEN", "CLOSE");
             }
-            else
+            else if(!_isGateClose && _processState == ProcessState.Done)
             {
                 _isGateClose = true;
                 Arduino.CloseBarrier(_serialPort);
@@ -494,16 +481,11 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             }
         }
 
-        private bool ValidateVisitorCard(Card card)
+        private bool ValidateCard(Card card)
         {
             if (card == null)
             {
                 MessageHelper.ShowError("Card not found!");
-                return false;
-            }
-            if (card.Resident_id != null)
-            {
-                MessageHelper.ShowError("Card is not for visitor!");
                 return false;
             }
             if (_parkingLotType == ParkingLotType.TWO_WHEELER && card.Vehicle_type_id == VehicleTypeID.CAR)
