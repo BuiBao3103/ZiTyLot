@@ -76,7 +76,7 @@
             this.uiTableLayoutPanel1.Controls.Add(this.uiPanel1, 0, 1);
             this.uiTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTableLayoutPanel1.Location = new System.Drawing.Point(13, 12);
-            this.uiTableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiTableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.uiTableLayoutPanel1.Name = "uiTableLayoutPanel1";
             this.uiTableLayoutPanel1.RowCount = 3;
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
@@ -381,7 +381,7 @@
             this.pnlVehical.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlVehical.Name = "pnlVehical";
             this.pnlVehical.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlVehical.Size = new System.Drawing.Size(398, 156);
+            this.pnlVehical.Size = new System.Drawing.Size(396, 156);
             this.pnlVehical.TabIndex = 8;
             this.pnlVehical.Text = null;
             this.pnlVehical.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -399,7 +399,7 @@
             this.uiGroupBox3.Name = "uiGroupBox3";
             this.uiGroupBox3.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox3.Size = new System.Drawing.Size(398, 156);
+            this.uiGroupBox3.Size = new System.Drawing.Size(396, 156);
             this.uiGroupBox3.TabIndex = 1;
             this.uiGroupBox3.Text = "Vehical Type";
             this.uiGroupBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -428,7 +428,7 @@
             this.cbVehicalType.RectSize = 2;
             this.cbVehicalType.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.cbVehicalType.ScrollBarStyleInherited = false;
-            this.cbVehicalType.Size = new System.Drawing.Size(382, 34);
+            this.cbVehicalType.Size = new System.Drawing.Size(380, 34);
             this.cbVehicalType.SymbolSize = 24;
             this.cbVehicalType.TabIndex = 1;
             this.cbVehicalType.Text = "  Two wheeler";
@@ -442,12 +442,12 @@
             this.pnlTotalSlot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTotalSlot.FillColor = System.Drawing.Color.White;
             this.pnlTotalSlot.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlTotalSlot.Location = new System.Drawing.Point(410, 170);
+            this.pnlTotalSlot.Location = new System.Drawing.Point(408, 170);
             this.pnlTotalSlot.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlTotalSlot.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlTotalSlot.Name = "pnlTotalSlot";
             this.pnlTotalSlot.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlTotalSlot.Size = new System.Drawing.Size(195, 156);
+            this.pnlTotalSlot.Size = new System.Drawing.Size(197, 156);
             this.pnlTotalSlot.TabIndex = 4;
             this.pnlTotalSlot.Text = null;
             this.pnlTotalSlot.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -465,7 +465,7 @@
             this.uiGroupBox4.Name = "uiGroupBox4";
             this.uiGroupBox4.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox4.Size = new System.Drawing.Size(195, 156);
+            this.uiGroupBox4.Size = new System.Drawing.Size(197, 156);
             this.uiGroupBox4.TabIndex = 0;
             this.uiGroupBox4.Text = "Total slot";
             this.uiGroupBox4.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -484,7 +484,7 @@
             this.tbTotalSlot.RectColor = System.Drawing.SystemColors.ControlDark;
             this.tbTotalSlot.RectSize = 2;
             this.tbTotalSlot.ShowText = false;
-            this.tbTotalSlot.Size = new System.Drawing.Size(179, 34);
+            this.tbTotalSlot.Size = new System.Drawing.Size(181, 34);
             this.tbTotalSlot.TabIndex = 0;
             this.tbTotalSlot.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbTotalSlot.Watermark = "";
@@ -498,7 +498,7 @@
             this.ClientSize = new System.Drawing.Size(645, 512);
             this.Controls.Add(this.uiTableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(661, 549);
             this.Name = "AreaCreateForm";
             this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);

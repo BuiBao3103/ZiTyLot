@@ -13,15 +13,19 @@ namespace ZiTyLot.GUI.Screens.SessionScr
 
         public int _sessionId;
         private Session _session;
+        private int _cardId;
+        private string  _license;
 
         public SessionDetailForm(int sessionId)
         {
             _sessionId = sessionId;
+           
             _session = _sessionBUS.GetById(sessionId);
             _session = _sessionBUS.PopulateImages(_session);
             _session = _sessionBUS.PopulateCard(_session);
             _session.Card = _cardBUS.PopulateVehicleType(_session.Card);
-
+            _cardId = _session.Card.Id;
+            _license = _session.License_plate;
             InitializeComponent();
             this.CenterToScreen();
 
@@ -32,7 +36,7 @@ namespace ZiTyLot.GUI.Screens.SessionScr
             lbRfid.Text = _session.Card?.Rfid;
             lbSessionType.Text = _session.Type.ToString();
             lbTotalPrice.Text = _session.Fee?.ToString();
-            lbVehicalType.Text = _session.Card.Vehicle_type.Name.ToString();
+            lbVehicalType.Text = _session.Card.Vehicle_type != null ? _session.Card.Vehicle_type.Name.ToString() : "";
             lbTotalTime.Text = _session.Checkout_time != null ? _session.Checkout_time?.Subtract(_session.Checkin_time.Value).ToString("hh\\:mm\\:ss") : "";
 
             this.pbCheckInFront.SizeMode = PictureBoxSizeMode.Zoom;
@@ -77,7 +81,7 @@ namespace ZiTyLot.GUI.Screens.SessionScr
         private void btnLostCard_Click(object sender, System.EventArgs e)
         {
             this.Close();
-            LostCardCreateForm lostCardCreateForm = new LostCardCreateForm();
+            LostCardCreateForm lostCardCreateForm = new LostCardCreateForm(_cardId, _license);
             lostCardCreateForm.ShowDialog();
         }
 

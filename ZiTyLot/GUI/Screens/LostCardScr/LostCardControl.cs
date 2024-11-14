@@ -21,6 +21,7 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
     {
         private readonly Debouncer _debouncer = new Debouncer();
         private readonly LostHistoryBUS _lostHistoryBUS = new LostHistoryBUS();
+        private readonly CardBUS _cardBUS = new CardBUS();
         private readonly Pageable _pageable = new Pageable();
         private readonly List<FilterCondition> _filters = new List<FilterCondition>();
         private Page<LostHistory> _page;
@@ -65,9 +66,23 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
         {
             if (e.RowIndex >= 0)
             {
+                int id = (int)tableLostCard.Rows[e.RowIndex].Cells[0].Value;
                 if (e.ColumnIndex == tableLostCard.Columns["colRestore"].Index)
                 {
-                    Console.WriteLine("Restore");
+                    var confirmResult = System.Windows.Forms.MessageBox.Show("Do you really want restore card?",
+                                                 "Confirm restore",
+                                                 MessageBoxButtons.YesNo);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        LostHistory lostHistory = _lostHistoryBUS.GetById(id);
+                        Card card = _lostHistoryBUS.PopulateCard(lostHistory).Card;
+                        card.Status = Constants.Enum.CardStatus.EMPTY;
+                        _cardBUS.Update(card);
+                        lostHistory.Is_found = true;
+                        _lostHistoryBUS.Update(lostHistory);
+                        ChangePage(1);
+                        System.Windows.Forms.MessageBox.Show("Restore success!");
+                    }
                 }
             }
         }
@@ -177,7 +192,8 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
             foreach (LostHistory lostHistory in _page.Content)
             {
                 string status = lostHistory.Is_found ? "Found" : "Lost";
-                tableLostCard.Rows.Add(lostHistory.Id, "", lostHistory.Owner_name, lostHistory.Owner_identification_card, "", status);
+                String type = _lostHistoryBUS.PopulateCard(lostHistory).Card.Type.ToString();
+                tableLostCard.Rows.Add(lostHistory.Id, lostHistory.Owner_identification_card, lostHistory.Owner_name,"", type, status);
             }
 
             btnPrevious.Enabled = _pageable.PageNumber > 1;
