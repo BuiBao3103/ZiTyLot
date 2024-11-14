@@ -1,46 +1,47 @@
-﻿using System;
+﻿using Mysqlx.Crud;
+using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.Utils;
+using static Sunny.UI.SnowFlakeId;
 
 namespace ZiTyLot.GUI.Screens.AreaScr
 {
-    public partial class AreaDetailForm : Form
+    public partial class AreaDetail4WForm : Form
     {
         private readonly ParkingLotBUS parkingLotBUS = new ParkingLotBUS();
+        private readonly SlotBUS slotBUS = new SlotBUS();
         public readonly ParkingLot parkingLot;
         public event EventHandler AreaUpdateEvent;
-        public AreaDetailForm(string areaId)
+        public AreaDetail4WForm(string areaId)
         {
             InitializeComponent();
             this.CenterToScreen();
             parkingLot = parkingLotBUS.GetById(areaId);
             parkingLot = parkingLotBUS.PopulateSlots(parkingLot);
-            LoadSlots();
-            if (parkingLot.User_type == ParkingLotUserType.VISITOR)
+            switch (parkingLot.Status)
             {
-                cbUserType.SelectedIndex = 1;
+                case ParkingLotStatus.AVAILABLE:
+                    rbtnAvaliable.Checked = true;
+                    break;
+                case ParkingLotStatus.CLOSED:
+                    rbtnClosed.Checked = true;
+                    break;
+                case ParkingLotStatus.UNDER_MAINTENANCE:
+                    rbtnMaintenace.Checked = true;
+                    break;
             }
 
-            if (parkingLot.Parking_lot_type == ParkingLotType.FOUR_WHEELER)
-            {
-                cbVehicalType.SelectedIndex = 1;
-            }
-
-            if (parkingLot.Status == ParkingLotStatus.UNDER_MAINTENANCE)
-            {
-                rbtnMaintenace.Checked = true;
-            }
-
-            if (parkingLot.Status == ParkingLotStatus.CLOSED)
-            {
-                rbtnClosed.Checked = true;
-            }
-
+            lbPreID.Text = parkingLot.Id;
+            lbUserType.Text = parkingLot.User_type.ToString();
+            lbVehicleType.Text = parkingLot.Parking_lot_type.ToString();
             tbTotalSlot.Text = parkingLot.Total_slot.ToString();
+            btnDelSlot.Enabled = parkingLot.Total_slot > 0;
+            LoadSlots();
 
 
         }
@@ -68,16 +69,7 @@ namespace ZiTyLot.GUI.Screens.AreaScr
                 ParkingLotStatus status = ParkingLotStatus.AVAILABLE;
                 if (rbtnClosed.Checked) status = ParkingLotStatus.CLOSED;
                 if (rbtnMaintenace.Checked) status = ParkingLotStatus.UNDER_MAINTENANCE;
-
-                int userTypeIndex = cbUserType.SelectedIndex;
-                ParkingLotUserType parkingUserType = userTypeIndex == 0 ? ParkingLotUserType.RESIDENT : ParkingLotUserType.VISITOR;
-
-                int vehicleTypeIndex = cbVehicalType.SelectedIndex;
-                ParkingLotType parkingLotType = vehicleTypeIndex == 0 ? ParkingLotType.TWO_WHEELER : ParkingLotType.FOUR_WHEELER;
-
                 parkingLot.Total_slot = int.Parse(tbTotalSlot.Text);
-                parkingLot.Parking_lot_type = parkingLotType;
-                parkingLot.User_type = parkingUserType;
                 parkingLot.Status = status;
                 parkingLot.Updated_at = DateTime.Now;
                 parkingLotBUS.Update(parkingLot);
@@ -168,7 +160,9 @@ namespace ZiTyLot.GUI.Screens.AreaScr
             {
                 if (e.ColumnIndex == tableSlot.Columns["colAction"].Index)
                 {
-                    MessageBox.Show("View button clicked for row " + e.RowIndex);
+                    string slotId = tableSlot.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    UpdateStatusSlot(slotId);
+
                 }
                 else if (e.ColumnIndex == tableSlot.Columns["colDelete"].Index)
                 {
@@ -179,7 +173,115 @@ namespace ZiTyLot.GUI.Screens.AreaScr
 
         private void btnAddSlot_Click(object sender, EventArgs e)
         {
+            try
+            {
+                //update database
+                parkingLot.Total_slot += 1;
+                parkingLotBUS.Update(parkingLot);
+                Slot newSlot = new Slot()
+                {
+                    Parking_lot_id = parkingLot.Id,
+                    Status = SlotStatus.EMPTY,
+                    Id = $"{parkingLot.Id}-S{parkingLot.Total_slot}",
+                };
+                slotBUS.Add(newSlot);
+                parkingLot.Slots.Add(newSlot);
+                //update UI
 
+                LoadSlots();
+                tbTotalSlot.Text = parkingLot.Total_slot.ToString();
+                btnDelSlot.Enabled = parkingLot.Total_slot > 0;
+
+                MessageHelper.ShowSuccess("Add slot successfully!");
+                AreaUpdateEvent?.Invoke(this, EventArgs.Empty);
+            }
+            catch (ValidationInputException ex)
+            {
+                MessageHelper.ShowWarning(ex.Message);
+            }
+            catch (BusinessException ex)
+            {
+                MessageHelper.ShowWarning(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageHelper.ShowWarning("An unexpected error occurred. Please try again later.");
+            }
+        }
+
+        private void UpdateStatusSlot(string slotId)
+        {
+            try
+            {
+                Slot slot = parkingLot.Slots.Find(s => s.Id == slotId);
+                if (slot.Status == SlotStatus.IN_USE)
+                {
+                    throw new ValidationInputException("Cannot change status of slot in use");
+                }
+                if (slot.Status == SlotStatus.EMPTY)
+                {
+                    slot.Status = SlotStatus.MAINTENANCE;
+                }
+                else
+                {
+                    slot.Status = SlotStatus.EMPTY;
+                }
+                slotBUS.Update(slot);
+                parkingLot.Slots[parkingLot.Slots.FindIndex(s => s.Id == slotId)] = slot;
+                LoadSlots();
+                MessageHelper.ShowSuccess("Update slot status successfully!");
+                AreaUpdateEvent?.Invoke(this, EventArgs.Empty);
+            }
+            catch (ValidationInputException ex)
+            {
+                MessageHelper.ShowWarning(ex.Message);
+            }
+            catch (BusinessException ex)
+            {
+                MessageHelper.ShowWarning(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageHelper.ShowWarning("An unexpected error occurred. Please try again later.");
+            }
+        }
+
+        private void uiSymbolButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Slot slot = parkingLot.Slots.Last();
+                if (slot.Status == SlotStatus.IN_USE)
+                {
+                    throw new ValidationInputException("Cannot delete slot in use");
+                }
+                slotBUS.Delete(slot.Id);
+                parkingLot.Total_slot -= 1;
+                parkingLotBUS.Update(parkingLot);
+
+                parkingLot.Slots.Remove(slot);
+                LoadSlots();
+                tbTotalSlot.Text = parkingLot.Total_slot.ToString();
+                btnDelSlot.Enabled = parkingLot.Total_slot > 0;
+
+                MessageHelper.ShowSuccess("Delete slot successfully!");
+                AreaUpdateEvent?.Invoke(this, EventArgs.Empty);
+            }
+            catch (ValidationInputException ex)
+            {
+                MessageHelper.ShowWarning(ex.Message);
+            }
+            catch (BusinessException ex)
+            {
+                MessageHelper.ShowWarning(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageHelper.ShowWarning("An unexpected error occurred. Please try again later.");
+            }
         }
     }
 }

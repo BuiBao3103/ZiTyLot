@@ -397,6 +397,12 @@
     <Compile Include="GUI\ProfileForm.Designer.cs">
       <DependentUpon>ProfileForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Screens\AreaScr\AreaDetail2WForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\AreaScr\AreaDetail2WForm.Designer.cs">
+      <DependentUpon>AreaDetail2WForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Screens\BillScr\BillDetailControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -527,11 +533,11 @@
     <Compile Include="GUI\Screens\BillScr\IssueDetailRow.Designer.cs">
       <DependentUpon>IssueDetailRow.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\AreaScr\AreaDetailForm.cs">
+    <Compile Include="GUI\Screens\AreaScr\AreaDetail4WForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\AreaScr\AreaDetailForm.Designer.cs">
-      <DependentUpon>AreaDetailForm.cs</DependentUpon>
+    <Compile Include="GUI\Screens\AreaScr\AreaDetail4WForm.Designer.cs">
+      <DependentUpon>AreaDetail4WForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\BillScr\BillControl.cs">
       <SubType>UserControl</SubType>
@@ -725,14 +731,17 @@
     <EmbeddedResource Include="GUI\Screens\AreaScr\AreaCreateForm.resx">
       <DependentUpon>AreaCreateForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Screens\AreaScr\AreaDetail2WForm.resx">
+      <DependentUpon>AreaDetail2WForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\BillScr\BillDetailControl.resx">
       <DependentUpon>BillDetailControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\BillScr\IssueDetailRow.resx">
       <DependentUpon>IssueDetailRow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Screens\AreaScr\AreaDetailForm.resx">
-      <DependentUpon>AreaDetailForm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Screens\AreaScr\AreaDetail4WForm.resx">
+      <DependentUpon>AreaDetail4WForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Screens\BillScr\BillControl.resx">
       <DependentUpon>BillControl.cs</DependentUpon>

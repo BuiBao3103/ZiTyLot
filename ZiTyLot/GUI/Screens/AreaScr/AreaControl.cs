@@ -11,6 +11,7 @@ using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens.AreaScr;
 using ZiTyLot.GUI.Screens.PriceScr;
+using ZiTyLot.GUI.Utils;
 using ZiTyLot.Helper;
 
 namespace ZiTyLot.GUI.Screens
@@ -24,7 +25,8 @@ namespace ZiTyLot.GUI.Screens
         private Page<ParkingLot> page;
 
         private AreaCreateForm _areaCreateForm;
-        private AreaDetailForm _areaDetailForm;
+        private AreaDetail2WForm _areaDetail2WForm;
+        private AreaDetail4WForm _areaDetail4WForm;
         public AreaControl()
         {
             InitializeComponent();
@@ -94,8 +96,16 @@ namespace ZiTyLot.GUI.Screens
             {
                 string areaId = tableArea.Rows[e.RowIndex].Cells[0].Value.ToString();
                 if (e.ColumnIndex == tableArea.Columns["colView"].Index)
-                {                   
-                   ShowAreaDetailForm(areaId);
+                {
+                    if (areaId.Contains("2W"))
+                    {
+                        ShowArea2WDetailForm(areaId);
+                    }
+                    else
+                    {
+                        ShowArea4WDetailForm(areaId);
+                    }
+                    
                 }
                 else if (e.ColumnIndex == tableArea.Columns["colDelete"].Index)
                 {
@@ -104,28 +114,61 @@ namespace ZiTyLot.GUI.Screens
             }
         }
 
-        private void ShowAreaDetailForm(string areaId)
+        private void ShowArea2WDetailForm(string areaId)
         {
-            if (_areaDetailForm != null && areaId != _areaDetailForm.parkingLot.Id)
+            if (_areaDetail2WForm != null && areaId != _areaDetail2WForm.parkingLot.Id)
             {
-                _areaDetailForm.Close();
+                _areaDetail2WForm.Close();
             }
 
-            if (_areaDetailForm == null || _areaDetailForm.IsDisposed)
+            if (_areaDetail4WForm != null && !_areaDetail4WForm.IsDisposed)
             {
-                _areaDetailForm = new AreaDetailForm(areaId);
-                _areaDetailForm.AreaUpdateEvent += (s, args) =>
+                _areaDetail4WForm.Close();
+            }
+
+            if (_areaDetail2WForm == null || _areaDetail2WForm.IsDisposed)
+            {
+                _areaDetail2WForm = new AreaDetail2WForm(areaId);
+                _areaDetail2WForm.AreaUpdateEvent += (s, args) =>
                 {
                     filters.Clear();
                     ChangePage(1);
                 };
-                _areaDetailForm.Show();
+                _areaDetail2WForm.Show();
             }
             else
             {
-                if (_areaDetailForm.WindowState == FormWindowState.Minimized)
-                    _areaDetailForm.WindowState = FormWindowState.Normal;
-                _areaDetailForm.BringToFront();
+                if (_areaDetail2WForm.WindowState == FormWindowState.Minimized)
+                    _areaDetail2WForm.WindowState = FormWindowState.Normal;
+                _areaDetail2WForm.BringToFront();
+            }
+        }
+
+        private void ShowArea4WDetailForm(string areaId)
+        {
+            if (_areaDetail4WForm != null && areaId != _areaDetail4WForm.parkingLot.Id)
+            {
+                _areaDetail4WForm.Close();
+            }
+            if (_areaDetail2WForm != null && !_areaDetail2WForm.IsDisposed)
+            {
+                _areaDetail2WForm.Close();
+            }
+            if (_areaDetail4WForm == null || _areaDetail4WForm.IsDisposed)
+            {
+                _areaDetail4WForm = new AreaDetail4WForm(areaId);
+                _areaDetail4WForm.AreaUpdateEvent += (s, args) =>
+                {
+                    filters.Clear();
+                    ChangePage(1);
+                };
+                _areaDetail4WForm.Show();
+            }
+            else
+            {
+                if (_areaDetail4WForm.WindowState == FormWindowState.Minimized)
+                    _areaDetail4WForm.WindowState = FormWindowState.Normal;
+                _areaDetail4WForm.BringToFront();
             }
         }
 

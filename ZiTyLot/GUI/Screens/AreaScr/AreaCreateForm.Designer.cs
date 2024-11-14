@@ -43,7 +43,9 @@
             this.pnlInformation = new Sunny.UI.UITableLayoutPanel();
             this.uiPanel4 = new Sunny.UI.UIPanel();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
+            this.uiTableLayoutPanel5 = new Sunny.UI.UITableLayoutPanel();
             this.tbID = new Sunny.UI.UITextBox();
+            this.lbPreID = new Sunny.UI.UILabel();
             this.pnlType = new Sunny.UI.UIPanel();
             this.uiGroupBox2 = new Sunny.UI.UIGroupBox();
             this.cbUserType = new Sunny.UI.UIComboBox();
@@ -54,8 +56,6 @@
             this.uiGroupBox4 = new Sunny.UI.UIGroupBox();
             this.tbTotalSlot = new Sunny.UI.UITextBox();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
-            this.lbPreID = new Sunny.UI.UILabel();
-            this.uiTableLayoutPanel5 = new Sunny.UI.UITableLayoutPanel();
             this.uiTableLayoutPanel1.SuspendLayout();
             this.uiPanel2.SuspendLayout();
             this.uiTableLayoutPanel3.SuspendLayout();
@@ -67,13 +67,13 @@
             this.pnlInformation.SuspendLayout();
             this.uiPanel4.SuspendLayout();
             this.uiGroupBox1.SuspendLayout();
+            this.uiTableLayoutPanel5.SuspendLayout();
             this.pnlType.SuspendLayout();
             this.uiGroupBox2.SuspendLayout();
             this.pnlVehical.SuspendLayout();
             this.uiGroupBox3.SuspendLayout();
             this.pnlTotalSlot.SuspendLayout();
             this.uiGroupBox4.SuspendLayout();
-            this.uiTableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // uiTableLayoutPanel1
@@ -346,6 +346,23 @@
             this.uiGroupBox1.Text = "ID";
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // uiTableLayoutPanel5
+            // 
+            this.uiTableLayoutPanel5.ColumnCount = 2;
+            this.uiTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel5.Controls.Add(this.tbID, 1, 0);
+            this.uiTableLayoutPanel5.Controls.Add(this.lbPreID, 0, 0);
+            this.uiTableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiTableLayoutPanel5.Location = new System.Drawing.Point(8, 32);
+            this.uiTableLayoutPanel5.Name = "uiTableLayoutPanel5";
+            this.uiTableLayoutPanel5.RowCount = 1;
+            this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel5.Size = new System.Drawing.Size(178, 119);
+            this.uiTableLayoutPanel5.TabIndex = 2;
+            this.uiTableLayoutPanel5.TagString = null;
+            // 
             // tbID
             // 
             this.tbID.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -364,6 +381,17 @@
             this.tbID.TabIndex = 0;
             this.tbID.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbID.Watermark = "";
+            // 
+            // lbPreID
+            // 
+            this.lbPreID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPreID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lbPreID.Location = new System.Drawing.Point(0, 5);
+            this.lbPreID.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.lbPreID.Name = "lbPreID";
+            this.lbPreID.Size = new System.Drawing.Size(88, 23);
+            this.lbPreID.TabIndex = 1;
+            this.lbPreID.Text = "RL2W-";
             // 
             // pnlType
             // 
@@ -562,34 +590,6 @@
             this.mySqlCommand1.EnableCaching = false;
             this.mySqlCommand1.Transaction = null;
             // 
-            // lbPreID
-            // 
-            this.lbPreID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPreID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.lbPreID.Location = new System.Drawing.Point(0, 5);
-            this.lbPreID.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.lbPreID.Name = "lbPreID";
-            this.lbPreID.Size = new System.Drawing.Size(88, 23);
-            this.lbPreID.TabIndex = 1;
-            this.lbPreID.Text = "RL2W-";
-            // 
-            // uiTableLayoutPanel5
-            // 
-            this.uiTableLayoutPanel5.ColumnCount = 2;
-            this.uiTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiTableLayoutPanel5.Controls.Add(this.tbID, 1, 0);
-            this.uiTableLayoutPanel5.Controls.Add(this.lbPreID, 0, 0);
-            this.uiTableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiTableLayoutPanel5.Location = new System.Drawing.Point(8, 32);
-            this.uiTableLayoutPanel5.Name = "uiTableLayoutPanel5";
-            this.uiTableLayoutPanel5.RowCount = 1;
-            this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiTableLayoutPanel5.Size = new System.Drawing.Size(178, 119);
-            this.uiTableLayoutPanel5.TabIndex = 2;
-            this.uiTableLayoutPanel5.TagString = null;
-            // 
             // AreaCreateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -614,13 +614,13 @@
             this.pnlInformation.ResumeLayout(false);
             this.uiPanel4.ResumeLayout(false);
             this.uiGroupBox1.ResumeLayout(false);
+            this.uiTableLayoutPanel5.ResumeLayout(false);
             this.pnlType.ResumeLayout(false);
             this.uiGroupBox2.ResumeLayout(false);
             this.pnlVehical.ResumeLayout(false);
             this.uiGroupBox3.ResumeLayout(false);
             this.pnlTotalSlot.ResumeLayout(false);
             this.uiGroupBox4.ResumeLayout(false);
-            this.uiTableLayoutPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

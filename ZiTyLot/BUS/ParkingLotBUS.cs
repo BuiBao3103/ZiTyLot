@@ -24,6 +24,16 @@ namespace ZiTyLot.BUS
         }
         public ParkingLot Create(ParkingLot newParkingLot)
         {
+            //check id is exist 
+            List<FilterCondition> filters = new List<FilterCondition>
+            {
+                new FilterCondition(nameof(ParkingLot.Id), CompOp.Equals, newParkingLot.Id)
+            };
+            var parkingLots = parkingLotDAO.GetAll(filters);
+            if (parkingLots.Count != 0)
+            {
+                throw new ValidationInputException("Id is existed");
+            }
             Validate(newParkingLot);
             newParkingLot.Created_at = DateTime.Now;
             parkingLotDAO.Add(newParkingLot);
@@ -117,6 +127,7 @@ namespace ZiTyLot.BUS
 
             try
             {
+                item.Updated_at = DateTime.Now;
                 parkingLotDAO.Update(item);
             }
             catch (Exception ex)
@@ -131,23 +142,6 @@ namespace ZiTyLot.BUS
             {
                 throw new ArgumentException("Name cannot be null or empty.", nameof(item.Id));
             }
-
-            if (item.Total_slot <= 0)
-            {
-                throw new InvalidOperationException("Slots must > 0");
-            }
-
-            //check id is exist 
-            List<FilterCondition> filters = new List<FilterCondition>
-            {
-                new FilterCondition(nameof(ParkingLot.Id), CompOp.Equals, item.Id)
-            };
-            var parkingLots = parkingLotDAO.GetAll(filters);
-            if (parkingLots.Count != 0)
-            {
-                throw new ValidationInputException("Id is existed");
-            }
-
         }
 
         // Kiểm tra sự tồn tại của bản ghi
