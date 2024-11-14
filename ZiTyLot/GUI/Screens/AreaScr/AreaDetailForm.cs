@@ -18,13 +18,14 @@ namespace ZiTyLot.GUI.Screens.AreaScr
             InitializeComponent();
             this.CenterToScreen();
             parkingLot = parkingLotBUS.GetById(areaId);
-
+            parkingLot = parkingLotBUS.PopulateSlots(parkingLot);
+            LoadSlots();
             if (parkingLot.User_type == ParkingLotUserType.VISITOR)
             {
                 cbUserType.SelectedIndex = 1;
             }
 
-            if (parkingLot.Parking_lot_type == ParkingLotType.FOUR_WHEELER) 
+            if (parkingLot.Parking_lot_type == ParkingLotType.FOUR_WHEELER)
             {
                 cbVehicalType.SelectedIndex = 1;
             }
@@ -40,9 +41,19 @@ namespace ZiTyLot.GUI.Screens.AreaScr
             }
 
             tbTotalSlot.Text = parkingLot.Total_slot.ToString();
-           
+
 
         }
+
+        private void LoadSlots()
+        {
+            tableSlot.Rows.Clear();
+            foreach (Slot slot in parkingLot.Slots)
+            {
+                tableSlot.Rows.Add(slot.Id, slot.Status);
+            }
+        }
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {

@@ -38,9 +38,6 @@ namespace ZiTyLot.GUI.Screens.AreaScr
             try
             {
                 ParkingLotStatus status = ParkingLotStatus.AVAILABLE;
-                if (rbtnClosed.Checked) status = ParkingLotStatus.CLOSED;
-                if (rbtnMaintenace.Checked) status = ParkingLotStatus.UNDER_MAINTENANCE;
-
                 int userTypeIndex = cbUserType.SelectedIndex;
                 ParkingLotUserType parkingUserType = userTypeIndex == 0 ? ParkingLotUserType.RESIDENT : ParkingLotUserType.VISITOR;
 
