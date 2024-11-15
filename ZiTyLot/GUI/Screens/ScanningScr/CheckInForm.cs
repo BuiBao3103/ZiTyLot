@@ -22,6 +22,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         private readonly CardBUS _cardBUS = new CardBUS();
         private readonly SessionBUS _sessionBUS = new SessionBUS();
         private readonly ImageBUS _imageBUS = new ImageBUS();
+        private readonly VehicleTypeBUS _vehicleTypeBUS = new VehicleTypeBUS();
 
         private readonly CameraHelper _cameraHelper = new CameraHelper();
         private VideoCaptureDevice _frontCamera;
@@ -43,6 +44,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         private System.Drawing.Image _currentFrontImage;
         private System.Drawing.Image _currentBackImage;
         private System.Drawing.Image _currentPlateImage;
+        private List<VehicleType> _vehicleTypes;
 
         public CheckInForm(ParkingLotType parkingLotType)
         {
@@ -56,6 +58,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             uiTableLayoutPanel2.Resize += uiTableLayoutPanel2_Resize;
 
             _parkingLotType = parkingLotType;
+            _vehicleTypes = _vehicleTypeBUS.GetAll();
             _rfidReader.RFIDScanned += RfidReader_RFIDScanned;
         }
 
@@ -416,6 +419,9 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             lbTotalTime.Text = "";
             lbTotalPrice.Text = "";
 
+            lbFullname.Text = "";
+            lbApartment.Text = "";
+
             if (card.Vehicle_type.Id == VehicleTypeID.BIKECYCLE)
             {
                 lbVehicalPlate.Text = "";
@@ -452,6 +458,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         {
             ChangeState(ProcessState.Scanning);
 
+            card = _cardBUS.PopulateResident(card);
             _currentFrontImage = _cameraHelper.GetImageFromPictureBox(pbFrontCamera);
             _currentBackImage = _cameraHelper.GetImageFromPictureBox(pbBackCamera);
             _currentPlateImage = null;
@@ -467,15 +474,38 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             _currentSession.Type = SessionType.RESIDENT;
 
             lbCardRfid.Text = card.Rfid;
-            //lbVehicalType.Text = card.Vehicle_type.Name;
+            lbCardType.Text = card.Type.ToString();
             lbCheckInTime.Text = _currentSession.Checkin_time?.ToString("dd/MM/yyyy\nHH:mm:ss");
             lbCheckOutTime.Text = "";
             lbTotalTime.Text = "";
             lbTotalPrice.Text = "";
 
+            lbFullname.Text = card.Resident.Full_name;
+            lbApartment.Text = card.Resident.Apartment_id;
 
 
-            ChangeState(ProcessState.Ready);
+            lbVehicalPlate.Text = "Scanning...";
+            var result = await ANPR.ProcessImageAsync(_currentBackImage);
+            List<Issue> issues = _cardBUS.GetAllValidIssues(card.Id);
+            Debug.WriteLine(issues.Count);
+            if (result == null)
+            {
+                lbVehicalPlate.Text = "";
+                lbVehicalType.Text = _vehicleTypes.Find(v => v.Id == VehicleTypeID.BIKECYCLE).Name;
+                if (false)
+                {
+                    MessageHelper.ShowError("The card hasn't registered a bicycle, or the registration has expired!");
+                    ChangeState(ProcessState.Ready);
+                    return;
+                }
+            }
+            else
+            {
+                
+            }
+
+
+            ChangeState(ProcessState.Done);
 
         }
         private void ChangeState(ProcessState state)
@@ -514,7 +544,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 new FilterCondition(nameof(Session.Checkout_time), CompOp.Equals, null)
             };
             Session session = _sessionBUS.GetAll(sessionFilters)?.FirstOrDefault();
-            if(session != null)
+            if (session != null)
             {
                 MessageHelper.ShowError("This card is already in the parking lot!");
                 return;
@@ -539,7 +569,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 Arduino.OpenBarrier(_serialPort, true);
                 btnOpenGate.Text = btnOpenGate.Text.Replace("OPEN", "CLOSE");
             }
-            else if(!_isGateClose && _processState == ProcessState.Done)
+            else if (!_isGateClose && _processState == ProcessState.Done)
             {
                 _isGateClose = true;
                 Arduino.CloseBarrier(_serialPort);

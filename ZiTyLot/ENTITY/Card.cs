@@ -21,9 +21,9 @@ namespace ZiTyLot.ENTITY
         //relationships
         private VehicleType vehicle_type = null;
         private Resident resident = null;
-        private ICollection<Issue> issues = new List<Issue>();
-        private ICollection<Session> sessions = new List<Session>();
-        private ICollection<LostHistory> lost_histories = new List<LostHistory>();
+        private List<Issue> issues = new List<Issue>();
+        private List<Session> sessions = new List<Session>();
+        private List<LostHistory> lost_histories = new List<LostHistory>();
 
         public int Id { get => id; set => id = value; }
         public string Rfid { get => rfid; set => rfid = value; }
@@ -36,8 +36,8 @@ namespace ZiTyLot.ENTITY
         public int? Resident_id { get => resident_id; set => resident_id = value; }
         public VehicleType Vehicle_type { get => vehicle_type; set => vehicle_type = value; }
         public Resident Resident { get => resident; set => resident = value; }
-        public ICollection<Issue> Issues { get => issues; set => issues = value; }
-        public ICollection<Session> Sessions { get => sessions; set => sessions = value; }
-        public ICollection<LostHistory> Lost_histories { get => lost_histories; set => lost_histories = value; }
+        public List<Issue> Issues { get => issues; set => issues = value; }
+        public List<Session> Sessions { get => sessions; set => sessions = value; }
+        public List<LostHistory> Lost_histories { get => lost_histories; set => lost_histories = value; }
     }
 }

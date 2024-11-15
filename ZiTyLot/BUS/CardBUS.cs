@@ -31,6 +31,17 @@ namespace ZiTyLot.BUS
             this.issueDAO = new IssueDAO();
         }
 
+        public List<Issue> GetAllValidIssues(int card_id)
+        {
+            try
+            {
+                return issueDAO.GetAllValidIssues(card_id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         public void Add(Card item)
         {
             Validate(item);
@@ -199,23 +210,6 @@ namespace ZiTyLot.BUS
             }
         }
 
-        public Card PopulateIssues(Card item)
-        {
-            try
-            {
-                List<FilterCondition> filters = new List<FilterCondition>
-                {
-                    new FilterCondition("card_id", CompOp.Equals, item.Id)
-                };
-                List<Issue> issues = issueDAO.GetAll(filters);
-                item.Issues = issues;
-                return item;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
 
         public void ExportCardsToExcel(string filePath)
         {

@@ -655,7 +655,6 @@
             this.lbRegistedPlate.Name = "lbRegistedPlate";
             this.lbRegistedPlate.Size = new System.Drawing.Size(209, 50);
             this.lbRegistedPlate.TabIndex = 16;
-            this.lbRegistedPlate.Text = "{registed_plate}";
             this.lbRegistedPlate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel26
@@ -679,7 +678,6 @@
             this.lbDueDate.Name = "lbDueDate";
             this.lbDueDate.Size = new System.Drawing.Size(209, 49);
             this.lbDueDate.TabIndex = 14;
-            this.lbDueDate.Text = "{due_date}";
             this.lbDueDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel28
@@ -703,7 +701,6 @@
             this.lbSignUpDate.Name = "lbSignUpDate";
             this.lbSignUpDate.Size = new System.Drawing.Size(209, 49);
             this.lbSignUpDate.TabIndex = 12;
-            this.lbSignUpDate.Text = "{signup_date}";
             this.lbSignUpDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbApartment
@@ -715,7 +712,6 @@
             this.lbApartment.Name = "lbApartment";
             this.lbApartment.Size = new System.Drawing.Size(209, 49);
             this.lbApartment.TabIndex = 11;
-            this.lbApartment.Text = "{apartment}";
             this.lbApartment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel31
@@ -739,7 +735,6 @@
             this.lbFullname.Name = "lbFullname";
             this.lbFullname.Size = new System.Drawing.Size(209, 49);
             this.lbFullname.TabIndex = 9;
-            this.lbFullname.Text = "{fullname}";
             this.lbFullname.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel33
