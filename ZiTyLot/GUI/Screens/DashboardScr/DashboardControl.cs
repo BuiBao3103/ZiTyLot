@@ -29,8 +29,6 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
             this.pickerSessionDuration.DateConfirmed += pickerSessionDuration_DateConfirmed;
             this.pickerSessionDuration.MonthConfirmed += pickerSessionDuration_MonthConfirmed;
             this.pickerSessionDuration.YearConfirmed += pickerSessionDuration_YearConfirmed;
-            _slotStatistic = _statisticBUS.GetSlotStatistics();
-            LoadSlotStatistic();
         }
 
         private void pickerSessionDuration_YearConfirmed(object sender, string combine)
@@ -170,8 +168,9 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
             }
         }
 
-        private void LoadSlotStatistic()
+        public void LoadSlotStatistic()
         {
+            _slotStatistic = _statisticBUS.GetSlotStatistics();
             int current2Wheels = _slotStatistic.CurrentMotorbike + _slotStatistic.CurrentBikecycle;
             int current4Wheels = _slotStatistic.CurrentCar;
             int currentBikecycle = _slotStatistic.CurrentBikecycle;

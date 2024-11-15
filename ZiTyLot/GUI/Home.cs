@@ -504,6 +504,9 @@ namespace ZiTyLot.GUI
                     case LostCardControl lostCardControl:
                         lostCardControl.ChangePage(1);
                         break;
+                    case DashboardControl dashboardControl:
+                        dashboardControl.LoadSlotStatistic();
+                        break;
                 }
                 UpdateButtonStyles(clickedButton);
                 menuInfo.Visible = false;

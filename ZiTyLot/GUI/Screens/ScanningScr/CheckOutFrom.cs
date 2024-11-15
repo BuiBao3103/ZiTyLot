@@ -554,5 +554,24 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             }
             this.Focus();
         }
+
+        private async void CheckOutFrom_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (_isClosing) return;
+
+            DisconnectGate();
+            _isClosing = true;
+            e.Cancel = true; // Tạm thời cancel việc đóng form
+
+            try
+            {
+                await StopAllCamerasAsync();
+                await _cameraHelper.DisposeAsync();
+            }
+            finally
+            {
+                this.Close(); // Đóng form sau khi đã cleanup xong
+            }
+        }
     }
 }
