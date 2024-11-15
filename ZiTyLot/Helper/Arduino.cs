@@ -5,6 +5,7 @@ using System.IO.Ports;
 using System.Media;
 using System.Speech.Synthesis;
 using System.Threading;
+using System.Threading.Tasks;
 using ZiTyLot.Constants;
 
 namespace ZiTyLot.Helper
@@ -30,13 +31,13 @@ namespace ZiTyLot.Helper
             serialPort.Close();
         }
 
-        public static void OpenBarrier(SerialPort serialPort, bool isCheckin)
-        {
+        public static async void OpenBarrier(SerialPort serialPort, bool isCheckin)
+        { 
             if (serialPort == null) return;
 
-            string soundFilePath = isCheckin ? "../../Resource/sound/checkin.mp3" : "../../Resource/sound/checkout.mp3";
+            string fileNameSource = isCheckin ? "checkin.mp3" : "checkout.mp3";
 
-            PlaySound(soundFilePath);
+            await PlaySoundAsync(isCheckin ? "checkin.mp3" : "checkout.mp3");
 
 
             serialPort.WriteLine(ArduinoAction.RED_OFF);
@@ -57,8 +58,11 @@ namespace ZiTyLot.Helper
             serialPort.WriteLine(action);
         }
 
-        private static void PlaySound(string filePath)
+        public static async Task PlaySoundAsync(string fileName)
         {
+            string baseFilePath = @"../../Resource/sound/";
+            string filePath = Path.Combine(baseFilePath, fileName);
+
             if (!File.Exists(filePath))
             {
                 Console.WriteLine($"Sound file not found: {filePath}");
@@ -70,12 +74,18 @@ namespace ZiTyLot.Helper
                 using (var audioFile = new AudioFileReader(filePath))
                 using (var outputDevice = new WaveOutEvent())
                 {
-                    outputDevice.Init(audioFile);
-                    outputDevice.Play(); 
-                    while (outputDevice.PlaybackState == PlaybackState.Playing)
+                    var tcs = new TaskCompletionSource<bool>();
+
+                    outputDevice.PlaybackStopped += (s, e) =>
                     {
-                        System.Threading.Thread.Sleep(100);
-                    }
+                        tcs.SetResult(true);
+                    };
+
+                    outputDevice.Init(audioFile);
+                    outputDevice.Play();
+
+                    // Wait for playback to complete asynchronously
+                    await tcs.Task;
                 }
             }
             catch (Exception ex)

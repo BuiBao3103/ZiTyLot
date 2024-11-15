@@ -450,6 +450,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             }
             btnOpenGate.Enabled = true;
             ChangeState(ProcessState.Done);
+            await Arduino.PlaySoundAsync($"{_currentSession.Fee}.mp3");
         }
         private void ChangeState(ProcessState state)
         {
