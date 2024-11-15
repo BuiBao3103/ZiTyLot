@@ -106,24 +106,13 @@ namespace ZiTyLot.GUI.Screens.AreaScr
 
         private void AreaDetailForm_Load(object sender, EventArgs e)
         {
-            this.tableSlot.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
             this.tableSlot.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
             this.tableSlot.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
         }
 
-        private void table_Paint(object sender, PaintEventArgs e)
-        {
-            Rectangle firstHeaderCellRect = this.tableSlot.GetCellDisplayRectangle(this.tableSlot.Columns["colAction"].Index, -1, true);
-            Rectangle lastHeaderCellRect = this.tableSlot.GetCellDisplayRectangle(this.tableSlot.Columns["colDelete"].Index, -1, true);
-            Rectangle mergedHeaderRect = new Rectangle(firstHeaderCellRect.X, firstHeaderCellRect.Y, lastHeaderCellRect.X + lastHeaderCellRect.Width - firstHeaderCellRect.X, firstHeaderCellRect.Height);
-            e.Graphics.FillRectangle(new SolidBrush(Color.White), mergedHeaderRect);
-            TextRenderer.DrawText(e.Graphics, "Action", this.tableSlot.ColumnHeadersDefaultCellStyle.Font,
-                mergedHeaderRect, this.tableSlot.ColumnHeadersDefaultCellStyle.ForeColor,
-                TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
-        }
         private void table_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if ((e.ColumnIndex == tableSlot.Columns["colAction"].Index || e.ColumnIndex == tableSlot.Columns["colDelete"].Index) && e.RowIndex >= 0)
+            if (e.ColumnIndex == tableSlot.Columns["colAction"].Index && e.RowIndex >= 0)
             {
                 if (e.RowIndex % 2 == 0)
                 {
@@ -137,10 +126,6 @@ namespace ZiTyLot.GUI.Screens.AreaScr
                 if (e.ColumnIndex == tableSlot.Columns["colAction"].Index)
                 {
                     icon = Properties.Resources.Icon_18x18px_Wrench;
-                }
-                else if (e.ColumnIndex == tableSlot.Columns["colDelete"].Index)
-                {
-                    icon = Properties.Resources.Icon_18x18px_Remove;
                 }
                 int iconWidth = 16;
                 int iconHeight = 16;
@@ -162,11 +147,6 @@ namespace ZiTyLot.GUI.Screens.AreaScr
                 {
                     string slotId = tableSlot.Rows[e.RowIndex].Cells[0].Value.ToString();
                     UpdateStatusSlot(slotId);
-
-                }
-                else if (e.ColumnIndex == tableSlot.Columns["colDelete"].Index)
-                {
-                    MessageBox.Show("Delete button clicked for row " + e.RowIndex);
                 }
             }
         }
