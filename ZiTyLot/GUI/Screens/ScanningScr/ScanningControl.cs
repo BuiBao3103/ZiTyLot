@@ -17,24 +17,32 @@ namespace ZiTyLot.GUI.Screens
         private void btnCarCheckIn_Click(object sender, EventArgs e)
         {
             CheckInForm CheckInForm = new CheckInForm(ParkingLotType.FOUR_WHEELER);
+            this.Hide();
+            CheckInForm.Closed += (s, args) => this.Show();
             CheckInForm.Show();
         }
 
         private void btnCarCheckOut_Click(object sender, EventArgs e)
         {
             CheckOutFrom CheckOutForm = new CheckOutFrom(ParkingLotType.FOUR_WHEELER);
+            this.Hide();
+            CheckOutForm.Closed += (s, args) => this.Show();
             CheckOutForm.Show();
         }
 
         private void btnBikeCheckIn_Click(object sender, EventArgs e)
         {
             CheckInForm CheckInForm = new CheckInForm(ParkingLotType.TWO_WHEELER);
+            this.Hide();
+            CheckInForm.Closed += (s, args) => this.Show();
             CheckInForm.Show();
         }
 
         private void btnBikeCheckOut_Click(object sender, EventArgs e)
         {
             CheckOutFrom CheckOutForm = new CheckOutFrom(ParkingLotType.TWO_WHEELER);
+            this.Hide();
+            CheckOutForm.Closed += (s, args) => this.Show();
             CheckOutForm.Show();
         }
 

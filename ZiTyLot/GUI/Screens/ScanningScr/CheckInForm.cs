@@ -355,6 +355,10 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             {
                 RfidReader_RFIDScanned(null, "0000521233");
             }
+            if (e.KeyChar == (char)Keys.D4)
+            {
+                RfidReader_RFIDScanned(null, "0002825150");
+            }
 
         }
         private void AddNewSession()
@@ -444,7 +448,36 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             btnOpenGate.Enabled = true;
             ChangeState(ProcessState.Done);
         }
+        private async void StartResidentProcess(Card card)
+        {
+            ChangeState(ProcessState.Scanning);
 
+            _currentFrontImage = _cameraHelper.GetImageFromPictureBox(pbFrontCamera);
+            _currentBackImage = _cameraHelper.GetImageFromPictureBox(pbBackCamera);
+            _currentPlateImage = null;
+
+            //set image to record
+            pbFrontRecord.Image = _currentFrontImage;
+            pbBackRecord.Image = _currentBackImage;
+            pbPlateRecord.Image = _currentPlateImage;
+
+            _currentSession = new Session();
+            _currentSession.Checkin_time = DateTime.Now;
+            _currentSession.Card_id = card.Id;
+            _currentSession.Type = SessionType.RESIDENT;
+
+            lbCardRfid.Text = card.Rfid;
+            //lbVehicalType.Text = card.Vehicle_type.Name;
+            lbCheckInTime.Text = _currentSession.Checkin_time?.ToString("dd/MM/yyyy\nHH:mm:ss");
+            lbCheckOutTime.Text = "";
+            lbTotalTime.Text = "";
+            lbTotalPrice.Text = "";
+
+
+
+            ChangeState(ProcessState.Ready);
+
+        }
         private void ChangeState(ProcessState state)
         {
             lbProcessState.Text = state.ToString();
@@ -495,7 +528,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             }
             else
             {
-
+                StartResidentProcess(card);
             }
         }
         private void btnOpen_Click(object sender, EventArgs e)

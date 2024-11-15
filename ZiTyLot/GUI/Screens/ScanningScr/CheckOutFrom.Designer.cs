@@ -1453,6 +1453,7 @@
             this.Name = "CheckOutFrom";
             this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.Text = "Bike Check Out From";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CheckOutFrom_FormClosing);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckOutFrom_KeyPress);
             this.pnlBottom.ResumeLayout(false);
             this.table.ResumeLayout(false);

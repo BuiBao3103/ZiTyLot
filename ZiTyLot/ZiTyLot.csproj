@@ -264,6 +264,7 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Speech" />
     <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
     </Reference>
@@ -954,8 +955,6 @@
     <None Include="Resources\Screenshot 2024-08-30 230542.png" />
     <None Include="Resources\Screenshot 2024-08-30 101445.png" />
     <None Include="Resources\Screenshot 2024-10-11 121017.png" />
-    <Content Include="Resource\AmongUs.wav" />
-    <Content Include="Resource\enter.wav" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\components\" />
