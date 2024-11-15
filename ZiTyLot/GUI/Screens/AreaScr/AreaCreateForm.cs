@@ -46,7 +46,7 @@ namespace ZiTyLot.GUI.Screens.AreaScr
 
                 ParkingLot parkingLot = new ParkingLot
                 {
-                    Id = lbPreID.Text + tbID.Text,
+                    Id = tbID.Text,
                     Total_slot = int.Parse(tbTotalSlot.Text),
                     Parking_lot_type = parkingLotType,
                     User_type = parkingUserType,
@@ -97,13 +97,13 @@ namespace ZiTyLot.GUI.Screens.AreaScr
 
             int userTypeIndex = cbUserType.SelectedIndex;
             ParkingLotUserType parkingUserType = userTypeIndex == 0 ? ParkingLotUserType.RESIDENT : ParkingLotUserType.VISITOR;
-            preID += parkingUserType == ParkingLotUserType.RESIDENT ? "RL" : "VL";
+            preID += parkingUserType == ParkingLotUserType.RESIDENT ? "R\\L" : "V\\L";
 
             int vehicleTypeIndex = cbVehicalType.SelectedIndex;
             ParkingLotType parkingLotType = vehicleTypeIndex == 0 ? ParkingLotType.TWO_WHEELER : ParkingLotType.FOUR_WHEELER;
             preID += parkingLotType == ParkingLotType.TWO_WHEELER ? "2W" : "4W";
 
-            lbPreID.Text = preID + "-";
+            tbID.Mask = $"{preID}-00";
         }
 
         private void cbUserType_SelectedIndexChanged(object sender, EventArgs e)
@@ -114,6 +114,11 @@ namespace ZiTyLot.GUI.Screens.AreaScr
         private void cbVehicalType_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdatePreID();
+        }
+
+        private void AreaCreateForm_Load(object sender, EventArgs e)
+        {
+            this.tbID.Mask = "R\\L2W-00";
         }
     }
 }
