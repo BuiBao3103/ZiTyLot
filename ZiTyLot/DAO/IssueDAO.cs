@@ -60,7 +60,7 @@ namespace ZiTyLot.DAO
                         JOIN residents r ON c.resident_id = r.id
                         JOIN bills b ON b.resident_id = r.id
                         JOIN issues i ON i.bill_id = b.id
-                    WHERE c.id = @card_id AND i.end_date <= CURRENT_TIMESTAMP;";
+                    WHERE c.id = @card_id AND i.end_date >= CURRENT_TIMESTAMP;";
 
             try
             {

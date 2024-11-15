@@ -102,7 +102,7 @@
             this.pnlTop = new Sunny.UI.UIPanel();
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.lbProcessState = new Sunny.UI.UILabel();
-            this.uiLabel6 = new Sunny.UI.UILabel();
+            this.lbCheckInSession = new Sunny.UI.UILabel();
             this.separator = new System.Windows.Forms.Panel();
             this.pnlBottom.SuspendLayout();
             this.table.SuspendLayout();
@@ -1205,7 +1205,7 @@
             this.pnlTop.BackColor = System.Drawing.Color.White;
             this.pnlTop.Controls.Add(this.uiLabel1);
             this.pnlTop.Controls.Add(this.lbProcessState);
-            this.pnlTop.Controls.Add(this.uiLabel6);
+            this.pnlTop.Controls.Add(this.lbCheckInSession);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.FillColor = System.Drawing.Color.White;
             this.pnlTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -1245,17 +1245,17 @@
             this.lbProcessState.Text = "Preparing";
             this.lbProcessState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // uiLabel6
+            // lbCheckInSession
             // 
-            this.uiLabel6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uiLabel6.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiLabel6.Location = new System.Drawing.Point(13, 0);
-            this.uiLabel6.Name = "uiLabel6";
-            this.uiLabel6.Size = new System.Drawing.Size(254, 62);
-            this.uiLabel6.TabIndex = 1;
-            this.uiLabel6.Text = "Check In Session";
-            this.uiLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbCheckInSession.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lbCheckInSession.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCheckInSession.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.lbCheckInSession.Location = new System.Drawing.Point(13, 0);
+            this.lbCheckInSession.Name = "lbCheckInSession";
+            this.lbCheckInSession.Size = new System.Drawing.Size(506, 62);
+            this.lbCheckInSession.TabIndex = 1;
+            this.lbCheckInSession.Text = "Check In Session";
+            this.lbCheckInSession.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // separator
             // 
@@ -1397,7 +1397,7 @@
         private Sunny.UI.UIPanel pnlTop;
         private Sunny.UI.UILabel uiLabel1;
         private System.Windows.Forms.Panel separator;
-        private Sunny.UI.UILabel uiLabel6;
+        private Sunny.UI.UILabel lbCheckInSession;
         private Sunny.UI.UILabel lbProcessState;
     }
 }

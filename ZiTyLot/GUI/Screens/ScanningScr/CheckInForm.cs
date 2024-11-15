@@ -44,7 +44,6 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         private System.Drawing.Image _currentFrontImage;
         private System.Drawing.Image _currentBackImage;
         private System.Drawing.Image _currentPlateImage;
-        private List<VehicleType> _vehicleTypes;
 
         public CheckInForm(ParkingLotType parkingLotType)
         {
@@ -58,8 +57,8 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             uiTableLayoutPanel2.Resize += uiTableLayoutPanel2_Resize;
 
             _parkingLotType = parkingLotType;
-            _vehicleTypes = _vehicleTypeBUS.GetAll();
             _rfidReader.RFIDScanned += RfidReader_RFIDScanned;
+            lbCheckInSession.Text += parkingLotType == ParkingLotType.TWO_WHEELER ? " Two-wheeler" : " Four-wheeler";
         }
 
 
@@ -487,21 +486,69 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             lbVehicalPlate.Text = "Scanning...";
             var result = await ANPR.ProcessImageAsync(_currentBackImage);
             List<Issue> issues = _cardBUS.GetAllValidIssues(card.Id);
-            Debug.WriteLine(issues.Count);
-            if (result == null)
+            foreach (Issue issue in issues)
+                Debug.WriteLine(issue.Vehicle_type_id + " " + issue.License_plate);
+            if (_parkingLotType == ParkingLotType.TWO_WHEELER)
             {
-                lbVehicalPlate.Text = "";
-                lbVehicalType.Text = _vehicleTypes.Find(v => v.Id == VehicleTypeID.BIKECYCLE).Name;
-                if (false)
+                if (result == null)
                 {
-                    MessageHelper.ShowError("The card hasn't registered a bicycle, or the registration has expired!");
-                    ChangeState(ProcessState.Ready);
-                    return;
+                    lbVehicalPlate.Text = "";
+                    lbVehicalType.Text = "BIKECYCLE";
+                    if (issues.Find(i => i.Vehicle_type_id == VehicleTypeID.BIKECYCLE) == null)
+                    {
+                        MessageHelper.ShowError("The resident card hasn't registered a bicycle, or the registration has expired!");
+                        ChangeState(ProcessState.Ready);
+                        return;
+                    }
+                }
+                else
+                {
+                    lbVehicalType.Text = "MOTORBIKE";
+                    lbVehicalPlate.Text = result.PlateNumber;
+                    pbPlateRecord.Image = result.Image;
+
+                    if (issues
+                        .Find(i => i.Vehicle_type_id == VehicleTypeID.MOTORBIKE
+                                    && i.License_plate == result.PlateNumber) == null)
+                    {
+                        MessageHelper.ShowError("The resident card hasn't registered a motorbike, or the registration has expired!");
+                        ChangeState(ProcessState.Ready);
+                        return;
+                    }
+
+
+                    _currentSession.License_plate = result.PlateNumber;
+                    _currentPlateImage = result.Image;
                 }
             }
             else
             {
-                
+                lbVehicalType.Text = "CAR";
+                if(result != null)
+                {
+                    lbVehicalPlate.Text = result.PlateNumber;
+                    pbPlateRecord.Image = result.Image;
+
+                    if (issues
+                        .Find(i => i.Vehicle_type_id == VehicleTypeID.CAR
+                                    && i.License_plate == result.PlateNumber) == null)
+                    {
+                        MessageHelper.ShowError("The resident card hasn't registered a car, or the registration has expired!");
+                        ChangeState(ProcessState.Ready);
+                        return;
+                    }
+
+
+                    _currentSession.License_plate = result.PlateNumber;
+                    _currentPlateImage = result.Image;
+                }
+                else
+                {
+                    lbVehicalPlate.Text = "";
+                    MessageHelper.ShowError("Cannot recognize license plate!, please try again!");
+                    ChangeState(ProcessState.Ready);
+                    return;
+                }
             }
 
 
