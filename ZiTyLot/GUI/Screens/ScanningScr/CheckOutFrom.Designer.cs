@@ -1215,6 +1215,7 @@
             // 
             this.btnOpenGate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOpenGate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnOpenGate.Enabled = false;
             this.btnOpenGate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnOpenGate.FillColor2 = System.Drawing.Color.White;
             this.btnOpenGate.FillHoverColor = System.Drawing.Color.White;

@@ -335,6 +335,26 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                     ChangeState(ProcessState.Ready);
                 }
             }
+            if (e.KeyChar == (char)Keys.Back && _processState == ProcessState.Done)
+            {
+                DialogResult result = MessageHelper.ShowConfirm("Are you sure you want to cancel this process?");
+                if (result == DialogResult.Yes)
+                {
+                    ChangeState(ProcessState.Ready);
+                }
+            }
+            if (e.KeyChar == (char)Keys.D1)
+            {
+                RfidReader_RFIDScanned(null, "0000521238");
+            }
+            if (e.KeyChar == (char)Keys.D2)
+            {
+                RfidReader_RFIDScanned(null, "0000519409");
+            }
+            if (e.KeyChar == (char)Keys.D3)
+            {
+                RfidReader_RFIDScanned(null, "0000521233");
+            }
 
         }
         private void AddNewSession()
@@ -429,6 +449,14 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         {
             lbProcessState.Text = state.ToString();
             _processState = state;
+            if (state == ProcessState.Done)
+            {
+                btnOpenGate.Enabled = true;
+            }
+            else
+            {
+                btnOpenGate.Enabled = false;
+            }
         }
         private void RfidReader_RFIDScanned(object sender, string rfidCode)
         {
@@ -447,6 +475,17 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 new FilterCondition(nameof(Card.Rfid), CompOp.Equals, rfidCode)
             };
             Card card = _cardBUS.GetAll(filters)?.FirstOrDefault();
+            List<FilterCondition> sessionFilters = new List<FilterCondition>()
+            {
+                new FilterCondition(nameof(Session.Card_id), CompOp.Equals, card.Id),
+                new FilterCondition(nameof(Session.Checkout_time), CompOp.Equals, null)
+            };
+            Session session = _sessionBUS.GetAll(sessionFilters)?.FirstOrDefault();
+            if(session != null)
+            {
+                MessageHelper.ShowError("This card is already in the parking lot!");
+                return;
+            }
             if (!ValidateCard(card)) return;
 
             card = _cardBUS.PopulateVehicleType(card);
@@ -476,9 +515,9 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
 
                 AddNewSession();
 
-                lbProcessState.Text = ProcessState.Ready.ToString();
-                _processState = ProcessState.Ready;
+                ChangeState(ProcessState.Ready);
             }
+            this.Focus();
         }
 
         private bool ValidateCard(Card card)

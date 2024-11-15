@@ -319,6 +319,26 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                     ChangeState(ProcessState.Ready);
                 }
             }
+            if (e.KeyChar == (char)Keys.Back && _processState == ProcessState.Done)
+            {
+                DialogResult result = MessageHelper.ShowConfirm("Are you sure you want to cancel this process?");
+                if (result == DialogResult.Yes)
+                {
+                    ChangeState(ProcessState.Ready);
+                }
+            }
+            if (e.KeyChar == (char)Keys.D1)
+            {
+                RfidReader_RFIDScanned(null, "0000521238");
+            }
+            if (e.KeyChar == (char)Keys.D2)
+            {
+                RfidReader_RFIDScanned(null, "0000519409");
+            }
+            if (e.KeyChar == (char)Keys.D3)
+            {
+                RfidReader_RFIDScanned(null, "0000521233");
+            }
         }
         private void UpdateSession()
         {
@@ -345,7 +365,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 ENTITY.Image plateImage = new ENTITY.Image()
                 {
                     Url = ImageHelper.SaveImage(_currentPlateImage),
-                    Type = ImageType.AFTER_CHECKOUT,
+                    Type = ImageType.LICENSE_PLATE_CHECKOUT,
                     Session_id = _currentSession.Id
 
                 };
@@ -354,10 +374,9 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             _sessionBUS.Update(_currentSession);
 
         }
-        private void StartVisitorProcess()
+        private async void StartVisitorProcess()
         {
             ChangeState(ProcessState.Scanning);
-            Debug.WriteLine("StartVisitorProcess");
 
             _currentFrontImage = _cameraHelper.GetImageFromPictureBox(pbFrontCamera);
             _currentBackImage = _cameraHelper.GetImageFromPictureBox(pbBackCamera);
@@ -397,36 +416,38 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             lbTotalTime.Text = totalTime.ToString(@"hh\:mm\:ss");
             _currentSession.Fee = _sessionBUS.CalculateFee(_currentSession);
             lbTotalPrice.Text = _currentSession.Fee?.ToString("C0", new System.Globalization.CultureInfo("vi-VN"));
+            lbVehicalPlate.Text = _currentSession.License_plate;
 
 
             if (_currentSession.Card.Vehicle_type.Id == VehicleTypeID.BIKECYCLE)
             {
                 lbVehicalPlate.Text = "";
             }
-            //else
-            //{
-            //    lbVehicalPlate.Text = "Scanning...";
-            //    var result = await ANPR.ProcessImageAsync(_currentBackImage);
-            //    if (result != null)
-            //    {
-            //        //set plate number to record
-            //        lbVehicalPlate.Text = result.PlateNumber;
-            //        _currentSession.License_plate = result.PlateNumber;
+            else
+            {
+                var result = await ANPR.ProcessImageAsync(_currentBackImage);
+                if (result != null)
+                {
 
-            //        //set plate image to record
-            //        _currentPlateImage = result.Image;
-            //        pbPlateRecord.Image = _currentPlateImage;
-            //    }
-            //    else
-            //    {
-            //        MessageHelper.ShowError("Cannot recognize license plate!, please try again!");
-            //        lbProcessState.Text = ProcessState.Ready.ToString();
-            //        _processState = ProcessState.Ready;
-            //        lbVehicalPlate.Text = "";
-            //        return;
-            //    }
+                    _currentPlateImage = result.Image;
+                    pbPlateRecord.Image = _currentPlateImage;
 
-            //}
+                    if (_currentSession.License_plate != result.PlateNumber)
+                    {
+                        MessageHelper.ShowError("License plate does not match with the card!");
+                        ChangeState(ProcessState.Ready);
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageHelper.ShowError("Cannot recognize license plate!, please try again!");
+                    lbProcessState.Text = ProcessState.Ready.ToString();
+                    _processState = ProcessState.Ready;
+                    lbVehicalPlate.Text = "";
+                    return;
+                }
+            }
             btnOpenGate.Enabled = true;
             ChangeState(ProcessState.Done);
         }
@@ -434,6 +455,15 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         {
             lbProcessState.Text = state.ToString();
             _processState = state;
+
+            if (state == ProcessState.Done)
+            {
+                btnOpenGate.Enabled = true;
+            }
+            else
+            {
+                btnOpenGate.Enabled = false;
+            }
         }
         private void RfidReader_RFIDScanned(object sender, string rfidCode)
         {
@@ -522,6 +552,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 lbProcessState.Text = ProcessState.Ready.ToString();
                 _processState = ProcessState.Ready;
             }
+            this.Focus();
         }
     }
 }

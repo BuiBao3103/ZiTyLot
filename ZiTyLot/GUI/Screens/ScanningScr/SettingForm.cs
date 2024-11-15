@@ -137,6 +137,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             btnConnectCameraFront.Enabled = false;
             btnDisconnectCameraFront.Enabled = true;
             cbFront.Enabled = false;
+            this.Focus();
         }
 
         private async void btnDisconnectCameraFront_Click(object sender, EventArgs e)
@@ -148,6 +149,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             btnConnectCameraFront.Enabled = true;
             btnDisconnectCameraFront.Enabled = false;
             cbFront.Enabled = true;
+            this.Focus();
         }
 
         private void btnConnectCameraBack_Click(object sender, EventArgs e)
@@ -158,6 +160,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             btnConnectCameraBack.Enabled = false;
             btnDisconnectCameraBack.Enabled = true;
             cbBack.Enabled = false;
+            this.Focus();
         }
 
         private async void btnDisconnectCameraBack_Click(object sender, EventArgs e)
@@ -169,6 +172,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             btnConnectCameraBack.Enabled = true;
             btnDisconnectCameraBack.Enabled = false;
             cbBack.Enabled = true;
+            this.Focus();
         }
 
 
@@ -187,6 +191,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 cbGate.Enabled = false;
                 ConnectGate?.Invoke(this, selectedPort);
             }
+            this.Focus();
         }
 
         private void btnDisconnectGate_Click(object sender, EventArgs e)
@@ -195,6 +200,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             btnDisconnectGate.Enabled = false;
             cbGate.Enabled = true;
             DisconnectGate?.Invoke(this, e);
+            this.Focus();
         }
 
         private void SettingForm_KeyPress(object sender, KeyPressEventArgs e)
