@@ -320,7 +320,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 if (_isGateClose)
                 {
                     _isGateClose = false;
-                    Arduino.OpenBarrier(_serialPort);
+                    Arduino.OpenBarrier(_serialPort, true);
                     btnOpenGate.Text = btnOpenGate.Text.Replace("OPEN", "CLOSE");
                 }
                 else
@@ -536,7 +536,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             if (_isGateClose && _processState == ProcessState.Done)
             {
                 _isGateClose = false;
-                Arduino.OpenBarrier(_serialPort);
+                Arduino.OpenBarrier(_serialPort, true);
                 btnOpenGate.Text = btnOpenGate.Text.Replace("OPEN", "CLOSE");
             }
             else if(!_isGateClose && _processState == ProcessState.Done)

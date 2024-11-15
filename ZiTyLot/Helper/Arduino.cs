@@ -1,6 +1,10 @@
-﻿using System;
+﻿using NAudio.Wave;
+using System;
+using System.IO;
 using System.IO.Ports;
 using System.Media;
+using System.Speech.Synthesis;
+using System.Threading;
 using ZiTyLot.Constants;
 
 namespace ZiTyLot.Helper
@@ -26,26 +30,15 @@ namespace ZiTyLot.Helper
             serialPort.Close();
         }
 
-        public static void OpenBarrier(SerialPort serialPort)
+        public static void OpenBarrier(SerialPort serialPort, bool isCheckin)
         {
             if (serialPort == null) return;
-            int random = new Random().Next(1, 5);
-            if (random == 1)
-            {
-                using (SoundPlayer player = new SoundPlayer("../../Resource/AmongUs.wav"))
-                {
-                    player.Play();
-                }
-            }
-            else
-            {
-                using (SoundPlayer player = new SoundPlayer("../../Resource/enter.wav"))
-                {
-                    player.Play();
-                }
-            }
-            System.Threading.Thread.Sleep(1000);
-           
+
+            string soundFilePath = isCheckin ? "../../Resource/sound/checkin.mp3" : "../../Resource/sound/checkout.mp3";
+
+            PlaySound(soundFilePath);
+
+
             serialPort.WriteLine(ArduinoAction.RED_OFF);
             serialPort.WriteLine(ArduinoAction.GREEN_ON);
             serialPort.WriteLine(ArduinoAction.BARIE_OPEN);
@@ -62,6 +55,33 @@ namespace ZiTyLot.Helper
         public static void DoAction(SerialPort serialPort, string action)
         {
             serialPort.WriteLine(action);
+        }
+
+        private static void PlaySound(string filePath)
+        {
+            if (!File.Exists(filePath))
+            {
+                Console.WriteLine($"Sound file not found: {filePath}");
+                return;
+            }
+
+            try
+            {
+                using (var audioFile = new AudioFileReader(filePath))
+                using (var outputDevice = new WaveOutEvent())
+                {
+                    outputDevice.Init(audioFile);
+                    outputDevice.Play(); 
+                    while (outputDevice.PlaybackState == PlaybackState.Playing)
+                    {
+                        System.Threading.Thread.Sleep(100);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error playing sound: {ex.Message}");
+            }
         }
     }
 }

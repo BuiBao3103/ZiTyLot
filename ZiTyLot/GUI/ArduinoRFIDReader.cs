@@ -66,7 +66,7 @@ namespace ZiTyLot.GUI.Screens
         {
             Debug.WriteLine("RFID Scanned: " + rfidCode);
             lbRFID.Text = rfidCode;
-            Arduino.OpenBarrier(serialPort);
+            Arduino.OpenBarrier(serialPort, true);
         }
 
     }
