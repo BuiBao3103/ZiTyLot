@@ -524,7 +524,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             else
             {
                 lbVehicalType.Text = "CAR";
-                if(result != null)
+                if (result != null)
                 {
                     lbVehicalPlate.Text = result.PlateNumber;
                     pbPlateRecord.Image = result.Image;
@@ -585,22 +585,23 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 new FilterCondition(nameof(Card.Rfid), CompOp.Equals, rfidCode)
             };
             Card card = _cardBUS.GetAll(filters)?.FirstOrDefault();
-            List<FilterCondition> sessionFilters = new List<FilterCondition>()
-            {
-                new FilterCondition(nameof(Session.Card_id), CompOp.Equals, card.Id),
-                new FilterCondition(nameof(Session.Checkout_time), CompOp.Equals, null)
-            };
-            Session session = _sessionBUS.GetAll(sessionFilters)?.FirstOrDefault();
-            if (session != null)
-            {
-                MessageHelper.ShowError("This card is already in the parking lot!");
-                return;
-            }
+
             if (!ValidateCard(card)) return;
 
             card = _cardBUS.PopulateVehicleType(card);
             if (card.Vehicle_type_id != null)
             {
+                List<FilterCondition> sessionFilters = new List<FilterCondition>()
+                {
+                    new FilterCondition(nameof(Session.Card_id), CompOp.Equals, card.Id),
+                    new FilterCondition(nameof(Session.Checkout_time), CompOp.Equals, null)
+                };
+                Session session = _sessionBUS.GetAll(sessionFilters)?.FirstOrDefault();
+                if (session != null)
+                {
+                    MessageHelper.ShowError("This card is already in the parking lot!");
+                    return;
+                }
                 StartVisitorProcess(card);
             }
             else
