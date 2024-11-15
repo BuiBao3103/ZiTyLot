@@ -112,7 +112,7 @@
             this.pnlTop = new Sunny.UI.UIPanel();
             this.uiLabel6 = new Sunny.UI.UILabel();
             this.lbProcessState = new Sunny.UI.UILabel();
-            this.uiLabel1 = new Sunny.UI.UILabel();
+            this.lbCheckOutSession = new Sunny.UI.UILabel();
             this.separator = new System.Windows.Forms.Panel();
             this.pnlBottom.SuspendLayout();
             this.table.SuspendLayout();
@@ -820,7 +820,6 @@
             this.lbRegistedPlate.Name = "lbRegistedPlate";
             this.lbRegistedPlate.Size = new System.Drawing.Size(195, 38);
             this.lbRegistedPlate.TabIndex = 16;
-            this.lbRegistedPlate.Text = "{registed_plate}";
             this.lbRegistedPlate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel26
@@ -844,7 +843,6 @@
             this.lbDueDate.Name = "lbDueDate";
             this.lbDueDate.Size = new System.Drawing.Size(195, 38);
             this.lbDueDate.TabIndex = 14;
-            this.lbDueDate.Text = "{due_date}";
             this.lbDueDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel28
@@ -868,7 +866,6 @@
             this.lbSignUpDate.Name = "lbSignUpDate";
             this.lbSignUpDate.Size = new System.Drawing.Size(195, 38);
             this.lbSignUpDate.TabIndex = 12;
-            this.lbSignUpDate.Text = "{signup_date}";
             this.lbSignUpDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbApartment
@@ -880,7 +877,6 @@
             this.lbApartment.Name = "lbApartment";
             this.lbApartment.Size = new System.Drawing.Size(195, 38);
             this.lbApartment.TabIndex = 11;
-            this.lbApartment.Text = "{apartment}";
             this.lbApartment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel31
@@ -904,7 +900,6 @@
             this.lbFullname.Name = "lbFullname";
             this.lbFullname.Size = new System.Drawing.Size(195, 38);
             this.lbFullname.TabIndex = 9;
-            this.lbFullname.Text = "{fullname}";
             this.lbFullname.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel33
@@ -1376,7 +1371,7 @@
             this.pnlTop.BackColor = System.Drawing.Color.White;
             this.pnlTop.Controls.Add(this.uiLabel6);
             this.pnlTop.Controls.Add(this.lbProcessState);
-            this.pnlTop.Controls.Add(this.uiLabel1);
+            this.pnlTop.Controls.Add(this.lbCheckOutSession);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.FillColor = System.Drawing.Color.White;
             this.pnlTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -1416,17 +1411,17 @@
             this.lbProcessState.Text = "Preparing";
             this.lbProcessState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // uiLabel1
+            // lbCheckOutSession
             // 
-            this.uiLabel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uiLabel1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.uiLabel1.Location = new System.Drawing.Point(13, 0);
-            this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(254, 62);
-            this.uiLabel1.TabIndex = 0;
-            this.uiLabel1.Text = "Check Out Session";
-            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbCheckOutSession.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lbCheckOutSession.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCheckOutSession.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.lbCheckOutSession.Location = new System.Drawing.Point(13, 0);
+            this.lbCheckOutSession.Name = "lbCheckOutSession";
+            this.lbCheckOutSession.Size = new System.Drawing.Size(566, 62);
+            this.lbCheckOutSession.TabIndex = 0;
+            this.lbCheckOutSession.Text = "Check Out Session";
+            this.lbCheckOutSession.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // separator
             // 
@@ -1584,7 +1579,7 @@
         private Sunny.UI.UILabel uiLabel36;
         private Sunny.UI.UILabel uiLabel37;
         private Sunny.UI.UIPanel pnlTop;
-        private Sunny.UI.UILabel uiLabel1;
+        private Sunny.UI.UILabel lbCheckOutSession;
         private System.Windows.Forms.Panel separator;
         private Sunny.UI.UILabel uiLabel6;
         private Sunny.UI.UILabel lbProcessState;

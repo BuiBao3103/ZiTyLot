@@ -58,6 +58,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
 
             _parkingLotType = parkingLotType;
             _rfidReader.RFIDScanned += RfidReader_RFIDScanned;
+            lbCheckOutSession.Text += parkingLotType == ParkingLotType.TWO_WHEELER ? " Two-wheeler" : " Four-wheeler";
         }
         public void StartFrontCamera(string cameraId)
         {
@@ -339,6 +340,10 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             {
                 RfidReader_RFIDScanned(null, "0000521233");
             }
+            if (e.KeyChar == (char)Keys.D4)
+            {
+                RfidReader_RFIDScanned(null, "0002825150");
+            }
         }
         private void UpdateSession()
         {
@@ -388,21 +393,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             pbPlateRecord.Image = _currentPlateImage;
             pbCheckInPlate.Image = null;
 
-            foreach (ZiTyLot.ENTITY.Image image in _currentSession.Images)
-            {
-                if (image.Type == ImageType.BEFORE_CHECKIN)
-                {
-                    pbCheckInFront.Image = ImageHelper.LoadImage(image.Url);
-                }
-                else if (image.Type == ImageType.AFTER_CHECKIN)
-                {
-                    pbCheckInBack.Image = ImageHelper.LoadImage(image.Url);
-                }
-                else if (image.Type == ImageType.LICENSE_PLATE_CHECKIN)
-                {
-                    pbCheckInPlate.Image = ImageHelper.LoadImage(image.Url);
-                }
-            }
+            SetCurrentSessionCheckinImage();
 
             _currentSession.Checkout_time = DateTime.Now;
 
@@ -416,7 +407,6 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             lbTotalTime.Text = totalTime.ToString(@"hh\:mm\:ss");
             _currentSession.Fee = _sessionBUS.CalculateFee(_currentSession);
             lbTotalPrice.Text = _currentSession.Fee?.ToString("C0", new System.Globalization.CultureInfo("vi-VN"));
-            lbVehicalPlate.Text = _currentSession.License_plate;
 
 
             if (_currentSession.Card.Vehicle_type.Id == VehicleTypeID.BIKECYCLE)
@@ -425,18 +415,30 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             }
             else
             {
+                lbVehicalPlate.Text = "Scanning...";
                 var result = await ANPR.ProcessImageAsync(_currentBackImage);
                 if (result != null)
                 {
 
                     _currentPlateImage = result.Image;
                     pbPlateRecord.Image = _currentPlateImage;
+                    lbVehicalPlate.Text = $"in:{_currentSession.License_plate}\nout:{result.PlateNumber}";
 
                     if (_currentSession.License_plate != result.PlateNumber)
                     {
-                        MessageHelper.ShowError("License plate does not match with the card!");
-                        ChangeState(ProcessState.Ready);
-                        return;
+                        DialogResult dialogResult = MessageBox.Show(
+                              "License plate does not match with the card! Do you want to continue?",
+                              "Warning",
+                              MessageBoxButtons.YesNo,
+                              MessageBoxIcon.Warning,
+                              MessageBoxDefaultButton.Button2
+                          );
+
+                        if (dialogResult == DialogResult.No)
+                        {
+                            ChangeState(ProcessState.Ready);
+                            return;
+                        }
                     }
                 }
                 else
@@ -452,6 +454,128 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             ChangeState(ProcessState.Done);
             await Arduino.PlaySoundAsync($"{_currentSession.Fee}.mp3");
         }
+        private void SetCurrentSessionCheckinImage()
+        {
+            foreach (ZiTyLot.ENTITY.Image image in _currentSession.Images)
+            {
+                if (image.Type == ImageType.BEFORE_CHECKIN)
+                {
+                    pbCheckInFront.Image = ImageHelper.LoadImage(image.Url);
+                }
+                else if (image.Type == ImageType.AFTER_CHECKIN)
+                {
+                    pbCheckInBack.Image = ImageHelper.LoadImage(image.Url);
+                }
+                else if (image.Type == ImageType.LICENSE_PLATE_CHECKIN)
+                {
+                    pbCheckInPlate.Image = ImageHelper.LoadImage(image.Url);
+                }
+            }
+        }
+        private async void StartResidentProcess(Card card, List<Session> sessions)
+        {
+            ChangeState(ProcessState.Scanning);
+            _currentFrontImage = _cameraHelper.GetImageFromPictureBox(pbFrontCamera);
+            _currentBackImage = _cameraHelper.GetImageFromPictureBox(pbBackCamera);
+            _currentPlateImage = null;
+            //set image to record
+            pbFrontRecord.Image = _currentFrontImage;
+            pbBackRecord.Image = _currentBackImage;
+            pbPlateRecord.Image = _currentPlateImage;
+            pbCheckInPlate.Image = null;
+            pbCheckInBack.Image = null;
+            pbCheckInFront.Image = null;
+
+            card = _cardBUS.PopulateResident(card);
+            lbCardRfid.Text = card.Rfid;
+            lbCardType.Text = card.Type.ToString();
+            lbFullname.Text = card.Resident.Full_name;
+            lbApartment.Text = card.Resident.Apartment_id;
+            lbTotalPrice.Text = "";
+
+            lbVehicalPlate.Text = "Scanning...";
+            var result = await ANPR.ProcessImageAsync(_currentBackImage);
+
+
+            if (_parkingLotType == ParkingLotType.TWO_WHEELER)
+            {
+                if (result == null)
+                {
+                    lbVehicalPlate.Text = "";
+                    lbVehicalType.Text = "BIKECYCLE";
+                    _currentSession = sessions.Find(s => s.License_plate == null);
+                    if (_currentSession == null)
+                    {
+                        MessageHelper.ShowError("Session not found!");
+                        ChangeState(ProcessState.Ready);
+                        return;
+                    }
+                    _currentSession = _sessionBUS.PopulateImages(_currentSession);
+                    _currentSession.Checkout_time = DateTime.Now;
+                    SetCurrentSessionCheckinImage();
+                    lbCheckInTime.Text = _currentSession.Checkin_time?.ToString("dd/MM/yyyy\nHH:mm:ss");
+                    lbCheckOutTime.Text = _currentSession.Checkout_time?.ToString("dd/MM/yyyy\nHH:mm:ss");
+                    TimeSpan totalTime = _currentSession.Checkout_time.Value - _currentSession.Checkin_time.Value;
+                    lbTotalTime.Text = totalTime.ToString(@"hh\:mm\:ss");
+                }
+                else
+                {
+                    lbVehicalType.Text = "MOTORBIKE";
+                    lbVehicalPlate.Text = result.PlateNumber;
+                    pbPlateRecord.Image = result.Image;
+                    _currentSession = sessions.Find(s => s.License_plate == result.PlateNumber);
+                    if (_currentSession == null)
+                    {
+                        MessageHelper.ShowError("Session not found!");
+                        ChangeState(ProcessState.Ready);
+                        return;
+                    }
+                    _currentSession = _sessionBUS.PopulateImages(_currentSession);
+                    _currentSession.Checkout_time = DateTime.Now;
+                    _currentPlateImage = result.Image;
+                    SetCurrentSessionCheckinImage();
+                    lbCheckInTime.Text = _currentSession.Checkin_time?.ToString("dd/MM/yyyy\nHH:mm:ss");
+                    lbCheckOutTime.Text = _currentSession.Checkout_time?.ToString("dd/MM/yyyy\nHH:mm:ss");
+                    TimeSpan totalTime = _currentSession.Checkout_time.Value - _currentSession.Checkin_time.Value;
+                    lbTotalTime.Text = totalTime.ToString(@"hh\:mm\:ss");
+                }
+            }
+            else
+            {
+                lbVehicalType.Text = "CAR";
+                if (result != null)
+                {
+                    List<Issue> issues = _cardBUS.GetAllValidIssues(card.Id);
+                    lbVehicalPlate.Text = result.PlateNumber;
+                    pbPlateRecord.Image = result.Image;
+                    _currentSession = sessions.Find(s => s.License_plate == result.PlateNumber);
+                    if (_currentSession == null)
+                    {
+                        MessageHelper.ShowError("Session not found!");
+                        ChangeState(ProcessState.Ready);
+                        return;
+                    }
+                    _currentSession = _sessionBUS.PopulateImages(_currentSession);
+                    _currentSession.Checkout_time = DateTime.Now;
+                    _currentPlateImage = result.Image;
+                    SetCurrentSessionCheckinImage();
+                    lbCheckInTime.Text = _currentSession.Checkin_time?.ToString("dd/MM/yyyy\nHH:mm:ss");
+                    lbCheckOutTime.Text = _currentSession.Checkout_time?.ToString("dd/MM/yyyy\nHH:mm:ss");
+                    TimeSpan totalTime = _currentSession.Checkout_time.Value - _currentSession.Checkin_time.Value;
+                    lbTotalTime.Text = totalTime.ToString(@"hh\:mm\:ss");
+                }
+                else
+                {
+                    lbVehicalPlate.Text = "";
+                    MessageHelper.ShowError("Cannot recognize license plate!, please try again!");
+                    ChangeState(ProcessState.Ready);
+                    return;
+                }
+            }
+
+            ChangeState(ProcessState.Done);
+        }
+
         private void ChangeState(ProcessState state)
         {
             lbProcessState.Text = state.ToString();
@@ -485,31 +609,31 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             };
             Card card = _cardBUS.GetAll(cardFilters)?.FirstOrDefault();
             if (!ValidateCard(card)) return;
-            card = _cardBUS.PopulateVehicleType(card);
-
             List<FilterCondition> sessionFilters = new List<FilterCondition>()
-            {
-                new FilterCondition(nameof(Session.Card_id), CompOp.Equals, card.Id),
-                new FilterCondition(nameof(Session.Checkout_time), CompOp.Equals, null)
-            };
-            _currentSession = _sessionBUS.GetAll(sessionFilters)?.FirstOrDefault();
-            if (_currentSession != null)
-            {
-                _currentSession = _sessionBUS.PopulateImages(_currentSession);
-                _currentSession.Card = _cardBUS.PopulateVehicleType(card); ;
-                if (_currentSession.Card.Vehicle_type_id != null)
                 {
-                    StartVisitorProcess();
-                }
-                else
-                {
+                    new FilterCondition(nameof(Session.Card_id), CompOp.Equals, card.Id),
+                    new FilterCondition(nameof(Session.Checkout_time), CompOp.Equals, null)
+                };
+            List<Session> sessions = _sessionBUS.GetAll(sessionFilters);
+            if (card.Type == CardType.VISITOR)
+            {
 
+                _currentSession = sessions?.FirstOrDefault();
+                if (_currentSession == null)
+                {
+                    MessageHelper.ShowError("Session check in not found!");
+                    return;
                 }
+                _currentSession = _sessionBUS.PopulateImages(_currentSession);
+                _currentSession.Card = _cardBUS.PopulateVehicleType(card);
+                StartVisitorProcess();
             }
             else
             {
-                MessageHelper.ShowError("Session check in not found!");
+
+                StartResidentProcess(card, sessions);
             }
+
 
         }
         private bool ValidateCard(Card card)
@@ -519,16 +643,20 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 MessageHelper.ShowError("Card not found!");
                 return false;
             }
-            if (_parkingLotType == ParkingLotType.TWO_WHEELER && card.Vehicle_type_id == VehicleTypeID.CAR)
+            if (card.Type == CardType.VISITOR)
             {
-                MessageHelper.ShowError("This line is for two-wheeler only so this card is not valid!");
-                return false;
-            }
-            if (_parkingLotType == ParkingLotType.FOUR_WHEELER
-                && (card.Vehicle_type_id == VehicleTypeID.MOTORBIKE || card.Vehicle_type_id == VehicleTypeID.BIKECYCLE))
-            {
-                MessageHelper.ShowError("This line is for four-wheeler only so this card is not valid!");
-                return false;
+
+                if (_parkingLotType == ParkingLotType.TWO_WHEELER && card.Vehicle_type_id == VehicleTypeID.CAR)
+                {
+                    MessageHelper.ShowError("This line is for two-wheeler only so this card is not valid!");
+                    return false;
+                }
+                if (_parkingLotType == ParkingLotType.FOUR_WHEELER
+                    && (card.Vehicle_type_id == VehicleTypeID.MOTORBIKE || card.Vehicle_type_id == VehicleTypeID.BIKECYCLE))
+                {
+                    MessageHelper.ShowError("This line is for four-wheeler only so this card is not valid!");
+                    return false;
+                }
             }
             return true;
         }
@@ -538,7 +666,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             if (_isGateClose && _processState == ProcessState.Done)
             {
                 _isGateClose = false;
-                Arduino.OpenBarrier(_serialPort,false);
+                Arduino.OpenBarrier(_serialPort, false);
                 btnOpenGate.Text = btnOpenGate.Text.Replace("OPEN", "CLOSE");
             }
             else if (!_isGateClose && _processState == ProcessState.Done)

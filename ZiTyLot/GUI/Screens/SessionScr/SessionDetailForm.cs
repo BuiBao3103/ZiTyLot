@@ -29,6 +29,8 @@ namespace ZiTyLot.GUI.Screens.SessionScr
             InitializeComponent();
             this.CenterToScreen();
 
+            btnLostCard.Visible = _session.Card.Type == CardType.VISITOR;
+
             gbInfomation.Text += " - " + sessionId;
             lbCheckInTime.Text = _session.Checkin_time?.ToString();
             lbCheckOutTime.Text = _session.Checkout_time?.ToString();
