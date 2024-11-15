@@ -589,7 +589,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             if (!ValidateCard(card)) return;
 
             card = _cardBUS.PopulateVehicleType(card);
-            if (card.Vehicle_type_id != null)
+            if (card.Type == CardType.VISITOR)
             {
                 List<FilterCondition> sessionFilters = new List<FilterCondition>()
                 {
@@ -638,16 +638,19 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 MessageHelper.ShowError("Card not found!");
                 return false;
             }
-            if (_parkingLotType == ParkingLotType.TWO_WHEELER && card.Vehicle_type_id == VehicleTypeID.CAR)
+            if (card.Type == CardType.VISITOR)
             {
-                MessageHelper.ShowError("This line is for two-wheeler only so this card is not valid!");
-                return false;
-            }
-            if (_parkingLotType == ParkingLotType.FOUR_WHEELER
-                && (card.Vehicle_type_id == VehicleTypeID.MOTORBIKE || card.Vehicle_type_id == VehicleTypeID.BIKECYCLE))
-            {
-                MessageHelper.ShowError("This line is for four-wheeler only so this card is not valid!");
-                return false;
+                if (_parkingLotType == ParkingLotType.TWO_WHEELER && card.Vehicle_type_id == VehicleTypeID.CAR)
+                {
+                    MessageHelper.ShowError("This line is for two-wheeler only so this card is not valid!");
+                    return false;
+                }
+                if (_parkingLotType == ParkingLotType.FOUR_WHEELER
+                    && (card.Vehicle_type_id == VehicleTypeID.MOTORBIKE || card.Vehicle_type_id == VehicleTypeID.BIKECYCLE))
+                {
+                    MessageHelper.ShowError("This line is for four-wheeler only so this card is not valid!");
+                    return false;
+                }
             }
             return true;
         }
