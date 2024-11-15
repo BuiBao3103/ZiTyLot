@@ -36,6 +36,9 @@
             this.uiTableLayoutPanel2 = new Sunny.UI.UITableLayoutPanel();
             this.uiPanel2 = new Sunny.UI.UIPanel();
             this.tableSlot = new System.Windows.Forms.DataGridView();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAction = new System.Windows.Forms.DataGridViewButtonColumn();
             this.uiPanel3 = new Sunny.UI.UIPanel();
             this.pnlInformation = new Sunny.UI.UITableLayoutPanel();
             this.uiPanel8 = new Sunny.UI.UIPanel();
@@ -66,9 +69,6 @@
             this.uiPanel5 = new Sunny.UI.UIPanel();
             this.uiPanel6 = new Sunny.UI.UIPanel();
             this.uiSymbolLabel1 = new Sunny.UI.UISymbolLabel();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAction = new System.Windows.Forms.DataGridViewButtonColumn();
             this.uiPanel1.SuspendLayout();
             this.uiTableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableSlot)).BeginInit();
@@ -196,6 +196,33 @@
             this.tableSlot.RowTemplate.Height = 40;
             this.tableSlot.Size = new System.Drawing.Size(444, 266);
             this.tableSlot.TabIndex = 3;
+            // 
+            // colID
+            // 
+            this.colID.HeaderText = "ID";
+            this.colID.MinimumWidth = 6;
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            this.colID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colID.Width = 150;
+            // 
+            // colStatus
+            // 
+            this.colStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.MinimumWidth = 6;
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
+            // 
+            // colAction
+            // 
+            this.colAction.HeaderText = "Action";
+            this.colAction.MinimumWidth = 6;
+            this.colAction.Name = "colAction";
+            this.colAction.ReadOnly = true;
+            this.colAction.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colAction.Text = "View";
+            this.colAction.Width = 90;
             // 
             // uiPanel3
             // 
@@ -753,33 +780,6 @@
             this.uiSymbolLabel1.Text = "Area details";
             this.uiSymbolLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // colID
-            // 
-            this.colID.HeaderText = "ID";
-            this.colID.MinimumWidth = 6;
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
-            this.colID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colID.Width = 150;
-            // 
-            // colStatus
-            // 
-            this.colStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colStatus.HeaderText = "Status";
-            this.colStatus.MinimumWidth = 6;
-            this.colStatus.Name = "colStatus";
-            this.colStatus.ReadOnly = true;
-            // 
-            // colAction
-            // 
-            this.colAction.HeaderText = "Action";
-            this.colAction.MinimumWidth = 6;
-            this.colAction.Name = "colAction";
-            this.colAction.ReadOnly = true;
-            this.colAction.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colAction.Text = "View";
-            this.colAction.Width = 90;
-            // 
             // AreaDetail4WForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -790,7 +790,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(939, 453);
             this.Name = "AreaDetail4WForm";
-            this.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "Area Details Form";
             this.Load += new System.EventHandler(this.AreaDetailForm_Load);
             this.uiPanel1.ResumeLayout(false);
