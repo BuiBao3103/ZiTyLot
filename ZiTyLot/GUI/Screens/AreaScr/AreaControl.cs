@@ -254,7 +254,7 @@ namespace ZiTyLot.GUI.Screens
             string inputSearch = tbSearch.Text.Trim();
             filters.Clear();
             if (!string.IsNullOrEmpty(inputSearch)){
-                filters.Add(new FilterCondition("Id", CompOp.Equals, inputSearch));
+                filters.Add(new FilterCondition("Id", CompOp.Like, inputSearch));
             }
             
             int inputCboxIndexVehicleType = cbVehicalType.SelectedIndex;

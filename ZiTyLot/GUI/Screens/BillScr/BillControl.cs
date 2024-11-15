@@ -178,10 +178,10 @@ namespace ZiTyLot.GUI.Screens
             switch (index)
             {
                 case 0:
-                    tableSearch.ColumnStyles[1].Width = 90;
+                    tableSearch.ColumnStyles[2].Width = 90;
                     break;
                 case 1:
-                    tableSearch.ColumnStyles[1].Width = 130;
+                    tableSearch.ColumnStyles[2].Width = 130;
                     break;
             }
             query();
@@ -220,10 +220,10 @@ namespace ZiTyLot.GUI.Screens
                 switch (inputCboxIndex)
                 {
                     case 0:
-                        filters.Add(new FilterCondition("id", CompOp.Equals, inputSearch));
+                        filters.Add(new FilterCondition("id", CompOp.Like, inputSearch));
                         break;
                     case 1:
-                        filters.Add(new FilterCondition("resident_id", CompOp.Equals, inputSearch));
+                        filters.Add(new FilterCondition("resident_id", CompOp.Like, inputSearch));
                         break;
                 }
             }

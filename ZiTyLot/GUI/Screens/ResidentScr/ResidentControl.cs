@@ -150,19 +150,19 @@ namespace ZiTyLot.GUI.Screens
             switch (index)
             {
                 case 0:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 65);
+                    tableSearch.ColumnStyles[2] = new ColumnStyle(SizeType.Absolute, 65);
                     break;
                 case 1:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 95);
+                    tableSearch.ColumnStyles[2] = new ColumnStyle(SizeType.Absolute, 95);
                     break;
                 case 2:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 95);
+                    tableSearch.ColumnStyles[2] = new ColumnStyle(SizeType.Absolute, 95);
                     break;
                 case 3:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 120);
+                    tableSearch.ColumnStyles[2] = new ColumnStyle(SizeType.Absolute, 120);
                     break;
                 case 4:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 140);
+                    tableSearch.ColumnStyles[2] = new ColumnStyle(SizeType.Absolute, 140);
                     break;
             }
             Query();

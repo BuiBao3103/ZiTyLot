@@ -168,16 +168,16 @@ namespace ZiTyLot.GUI.Screens
             switch (index)
             {
                 case 0:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 65);
+                    tableSearch.ColumnStyles[2] = new ColumnStyle(SizeType.Absolute, 65);
                     break;
                 case 1:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 120);
+                    tableSearch.ColumnStyles[2] = new ColumnStyle(SizeType.Absolute, 120);
                     break;
                 case 2:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 120);
+                    tableSearch.ColumnStyles[2] = new ColumnStyle(SizeType.Absolute, 120);
                     break;
                 case 3:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 90);
+                    tableSearch.ColumnStyles[2] = new ColumnStyle(SizeType.Absolute, 90);
                     break;
             }
             query();
@@ -218,7 +218,7 @@ namespace ZiTyLot.GUI.Screens
                 switch (inputCboxIndex)
                 {
                     case 0:
-                        filters.Add(new FilterCondition("Id", CompOp.Equals, inputSearch));
+                        filters.Add(new FilterCondition("Id", CompOp.Like, inputSearch));
                         break;
                     case 1:
                         filters.Add(new FilterCondition("Full_name", CompOp.Like, inputSearch));

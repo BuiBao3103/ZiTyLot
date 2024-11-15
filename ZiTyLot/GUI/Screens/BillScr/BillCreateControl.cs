@@ -174,16 +174,19 @@ namespace ZiTyLot.GUI.Screens.BillScr
             switch (index)
             {
                 case 0:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 65);
+                    tableSearch.ColumnStyles[2] = new ColumnStyle(SizeType.Absolute, 65);
                     break;
                 case 1:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 120);
+                    tableSearch.ColumnStyles[2] = new ColumnStyle(SizeType.Absolute, 95);
                     break;
                 case 2:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 140);
+                    tableSearch.ColumnStyles[2] = new ColumnStyle(SizeType.Absolute, 95);
                     break;
                 case 3:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 95);
+                    tableSearch.ColumnStyles[2] = new ColumnStyle(SizeType.Absolute, 120);
+                    break;
+                case 4:
+                    tableSearch.ColumnStyles[2] = new ColumnStyle(SizeType.Absolute, 140);
                     break;
             }
             Query();
@@ -192,8 +195,16 @@ namespace ZiTyLot.GUI.Screens.BillScr
         {
             await _debouncer.DebounceAsync(() =>
             {
-                Query();
-                return Task.CompletedTask;
+                if (tbSearch.Text.Length == 0)
+                {
+                    listBox.Visible = false;
+                    return Task.CompletedTask;
+                }
+                else
+                {
+                    Query();
+                    return Task.CompletedTask;
+                }
             }, 500);
         }
         private void Query()
@@ -211,7 +222,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
                 switch (inputCboxIndex)
                 {
                     case 0:
-                        _filters.Add(new FilterCondition(nameof(Resident.Id), CompOp.Equals, inputSearch));
+                        _filters.Add(new FilterCondition(nameof(Resident.Id), CompOp.Like, inputSearch));
                         break;
                     case 1:
                         _filters.Add(new FilterCondition(nameof(Resident.Full_name), CompOp.Like, inputSearch));
@@ -240,7 +251,8 @@ namespace ZiTyLot.GUI.Screens.BillScr
                 listBox.Items.Add(content);
             }
             listBox.BringToFront();
-            listBox.Height = 250;
+            listBox.Height = 200;
+            listBox.Width = tbSearch.Width;
             listBox.Visible = true;
         }
 
@@ -330,5 +342,18 @@ namespace ZiTyLot.GUI.Screens.BillScr
             return true;
         }
 
+        private void BillCreateControl_Resize(object sender, EventArgs e)
+        {
+            if(tbSearch.Text.Length == 0)
+            {
+                listBox.Visible = false;
+            }
+            else
+            {
+                var textBoxScreenPosition = tbSearch.PointToScreen(System.Drawing.Point.Empty);
+                var textBoxFormPosition = this.PointToClient(textBoxScreenPosition);
+                listBox.Location = new System.Drawing.Point(textBoxFormPosition.X, textBoxFormPosition.Y + tbSearch.Height + 2);
+            }
+        }
     }
 }

@@ -105,13 +105,13 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
             switch (index)
             {
                 case 0:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 65);
+                    tableSearch.ColumnStyles[2] = new ColumnStyle(SizeType.Absolute, 65);
                     break;
                 case 1:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 130);
+                    tableSearch.ColumnStyles[2] = new ColumnStyle(SizeType.Absolute, 130);
                     break;
                 case 2:
-                    tableSearch.ColumnStyles[1] = new ColumnStyle(SizeType.Absolute, 130);
+                    tableSearch.ColumnStyles[2] = new ColumnStyle(SizeType.Absolute, 130);
                     break;
             }
             Query();
