@@ -43,6 +43,8 @@
             this.pnlInformation = new Sunny.UI.UITableLayoutPanel();
             this.uiPanel4 = new Sunny.UI.UIPanel();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
+            this.uiPanel7 = new Sunny.UI.UIPanel();
+            this.tbID = new System.Windows.Forms.MaskedTextBox();
             this.pnlType = new Sunny.UI.UIPanel();
             this.uiGroupBox2 = new Sunny.UI.UIGroupBox();
             this.cbUserType = new Sunny.UI.UIComboBox();
@@ -53,8 +55,6 @@
             this.uiGroupBox4 = new Sunny.UI.UIGroupBox();
             this.tbTotalSlot = new Sunny.UI.UITextBox();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
-            this.uiPanel7 = new Sunny.UI.UIPanel();
-            this.tbID = new System.Windows.Forms.MaskedTextBox();
             this.uiTableLayoutPanel1.SuspendLayout();
             this.uiPanel2.SuspendLayout();
             this.uiTableLayoutPanel3.SuspendLayout();
@@ -66,13 +66,13 @@
             this.pnlInformation.SuspendLayout();
             this.uiPanel4.SuspendLayout();
             this.uiGroupBox1.SuspendLayout();
+            this.uiPanel7.SuspendLayout();
             this.pnlType.SuspendLayout();
             this.uiGroupBox2.SuspendLayout();
             this.pnlVehical.SuspendLayout();
             this.uiGroupBox3.SuspendLayout();
             this.pnlTotalSlot.SuspendLayout();
             this.uiGroupBox4.SuspendLayout();
-            this.uiPanel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // uiTableLayoutPanel1
@@ -344,6 +344,34 @@
             this.uiGroupBox1.Text = "ID";
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // uiPanel7
+            // 
+            this.uiPanel7.Controls.Add(this.tbID);
+            this.uiPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel7.FillColor = System.Drawing.Color.White;
+            this.uiPanel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiPanel7.Location = new System.Drawing.Point(8, 32);
+            this.uiPanel7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel7.MaximumSize = new System.Drawing.Size(0, 33);
+            this.uiPanel7.MinimumSize = new System.Drawing.Size(0, 34);
+            this.uiPanel7.Name = "uiPanel7";
+            this.uiPanel7.Padding = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.uiPanel7.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.uiPanel7.RectSize = 2;
+            this.uiPanel7.Size = new System.Drawing.Size(128, 34);
+            this.uiPanel7.TabIndex = 0;
+            this.uiPanel7.Text = null;
+            this.uiPanel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbID
+            // 
+            this.tbID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbID.Location = new System.Drawing.Point(10, 3);
+            this.tbID.Name = "tbID";
+            this.tbID.Size = new System.Drawing.Size(108, 26);
+            this.tbID.TabIndex = 0;
+            // 
             // pnlType
             // 
             this.pnlInformation.SetColumnSpan(this.pnlType, 2);
@@ -541,33 +569,6 @@
             this.mySqlCommand1.EnableCaching = false;
             this.mySqlCommand1.Transaction = null;
             // 
-            // uiPanel7
-            // 
-            this.uiPanel7.Controls.Add(this.tbID);
-            this.uiPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel7.FillColor = System.Drawing.Color.White;
-            this.uiPanel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel7.Location = new System.Drawing.Point(8, 32);
-            this.uiPanel7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel7.MaximumSize = new System.Drawing.Size(0, 33);
-            this.uiPanel7.MinimumSize = new System.Drawing.Size(0, 34);
-            this.uiPanel7.Name = "uiPanel7";
-            this.uiPanel7.Padding = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.uiPanel7.RectColor = System.Drawing.SystemColors.ControlDark;
-            this.uiPanel7.RectSize = 2;
-            this.uiPanel7.Size = new System.Drawing.Size(128, 34);
-            this.uiPanel7.TabIndex = 0;
-            this.uiPanel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tbID
-            // 
-            this.tbID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbID.Location = new System.Drawing.Point(10, 3);
-            this.tbID.Name = "tbID";
-            this.tbID.Size = new System.Drawing.Size(108, 26);
-            this.tbID.TabIndex = 0;
-            // 
             // AreaCreateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -578,7 +579,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(500, 355);
             this.Name = "AreaCreateForm";
-            this.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "Area Create Form";
             this.Load += new System.EventHandler(this.AreaCreateForm_Load);
             this.uiTableLayoutPanel1.ResumeLayout(false);
@@ -592,14 +593,14 @@
             this.pnlInformation.ResumeLayout(false);
             this.uiPanel4.ResumeLayout(false);
             this.uiGroupBox1.ResumeLayout(false);
+            this.uiPanel7.ResumeLayout(false);
+            this.uiPanel7.PerformLayout();
             this.pnlType.ResumeLayout(false);
             this.uiGroupBox2.ResumeLayout(false);
             this.pnlVehical.ResumeLayout(false);
             this.uiGroupBox3.ResumeLayout(false);
             this.pnlTotalSlot.ResumeLayout(false);
             this.uiGroupBox4.ResumeLayout(false);
-            this.uiPanel7.ResumeLayout(false);
-            this.uiPanel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
