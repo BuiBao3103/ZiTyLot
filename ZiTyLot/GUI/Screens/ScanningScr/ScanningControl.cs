@@ -8,41 +8,45 @@ namespace ZiTyLot.GUI.Screens
 {
     public partial class ScanningControl : UserControl
     {
+
         public ScanningControl()
         {
             InitializeComponent();
-
         }
 
         private void btnCarCheckIn_Click(object sender, EventArgs e)
         {
+            Home home = (Home)ParentForm;
             CheckInForm CheckInForm = new CheckInForm(ParkingLotType.FOUR_WHEELER);
-            this.Hide();
-            CheckInForm.Closed += (s, args) => this.Show();
+            home.Hide();
+            CheckInForm.Closed += (s, args) => home.Show();
             CheckInForm.Show();
         }
 
         private void btnCarCheckOut_Click(object sender, EventArgs e)
         {
+            Home home = (Home)ParentForm;
             CheckOutFrom CheckOutForm = new CheckOutFrom(ParkingLotType.FOUR_WHEELER);
-            this.Hide();
-            CheckOutForm.Closed += (s, args) => this.Show();
+            home.Hide();
+            CheckOutForm.Closed += (s, args) => home.Show();
             CheckOutForm.Show();
         }
 
         private void btnBikeCheckIn_Click(object sender, EventArgs e)
         {
+            Home home = (Home)ParentForm;
             CheckInForm CheckInForm = new CheckInForm(ParkingLotType.TWO_WHEELER);
-            this.Hide();
-            CheckInForm.Closed += (s, args) => this.Show();
+            home.Hide();
+            CheckInForm.Closed += (s, args) => home.Show();
             CheckInForm.Show();
         }
 
         private void btnBikeCheckOut_Click(object sender, EventArgs e)
         {
+            Home home = (Home)ParentForm;
             CheckOutFrom CheckOutForm = new CheckOutFrom(ParkingLotType.TWO_WHEELER);
-            this.Hide();
-            CheckOutForm.Closed += (s, args) => this.Show();
+            home.Hide();
+            CheckOutForm.Closed += (s, args) => home.Show();
             CheckOutForm.Show();
         }
 

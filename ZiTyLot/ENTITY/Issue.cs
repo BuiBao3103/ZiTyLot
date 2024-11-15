@@ -18,7 +18,6 @@ namespace ZiTyLot.ENTITY
         private int? vehicle_type_id;
         private string parking_lot_id;
         private string slot_id;
-
         //relationships
         private Bill bill = null;
         private VehicleType vehicle_type = null;

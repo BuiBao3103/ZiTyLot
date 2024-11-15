@@ -1,6 +1,11 @@
-﻿using System;
+﻿using NAudio.Wave;
+using System;
+using System.IO;
 using System.IO.Ports;
 using System.Media;
+using System.Speech.Synthesis;
+using System.Threading;
+using System.Threading.Tasks;
 using ZiTyLot.Constants;
 
 namespace ZiTyLot.Helper
@@ -26,26 +31,15 @@ namespace ZiTyLot.Helper
             serialPort.Close();
         }
 
-        public static void OpenBarrier(SerialPort serialPort)
-        {
+        public static async void OpenBarrier(SerialPort serialPort, bool isCheckin)
+        { 
             if (serialPort == null) return;
-            int random = new Random().Next(1, 5);
-            if (random == 1)
-            {
-                using (SoundPlayer player = new SoundPlayer("../../Resource/AmongUs.wav"))
-                {
-                    player.Play();
-                }
-            }
-            else
-            {
-                using (SoundPlayer player = new SoundPlayer("../../Resource/enter.wav"))
-                {
-                    player.Play();
-                }
-            }
-            System.Threading.Thread.Sleep(1000);
-           
+
+            string fileNameSource = isCheckin ? "checkin.mp3" : "checkout.mp3";
+
+            await PlaySoundAsync(isCheckin ? "checkin.mp3" : "checkout.mp3");
+
+
             serialPort.WriteLine(ArduinoAction.RED_OFF);
             serialPort.WriteLine(ArduinoAction.GREEN_ON);
             serialPort.WriteLine(ArduinoAction.BARIE_OPEN);
@@ -62,6 +56,42 @@ namespace ZiTyLot.Helper
         public static void DoAction(SerialPort serialPort, string action)
         {
             serialPort.WriteLine(action);
+        }
+
+        public static async Task PlaySoundAsync(string fileName)
+        {
+            string baseFilePath = @"../../Resource/sound/";
+            string filePath = Path.Combine(baseFilePath, fileName);
+
+            if (!File.Exists(filePath))
+            {
+                Console.WriteLine($"Sound file not found: {filePath}");
+                return;
+            }
+
+            try
+            {
+                using (var audioFile = new AudioFileReader(filePath))
+                using (var outputDevice = new WaveOutEvent())
+                {
+                    var tcs = new TaskCompletionSource<bool>();
+
+                    outputDevice.PlaybackStopped += (s, e) =>
+                    {
+                        tcs.SetResult(true);
+                    };
+
+                    outputDevice.Init(audioFile);
+                    outputDevice.Play();
+
+                    // Wait for playback to complete asynchronously
+                    await tcs.Task;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error playing sound: {ex.Message}");
+            }
         }
     }
 }

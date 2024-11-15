@@ -99,8 +99,33 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.4.7.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MySql.Data, Version=9.0.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.9.0.0\lib\net462\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.2.2.1\lib\net472\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Asio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Asio.2.2.1\lib\netstandard2.0\NAudio.Asio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Core.2.2.1\lib\netstandard2.0\NAudio.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Midi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Midi.2.2.1\lib\netstandard2.0\NAudio.Midi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Wasapi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Wasapi.2.2.1\lib\netstandard2.0\NAudio.Wasapi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinForms, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.WinForms.2.2.1\lib\net472\NAudio.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinMM, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.WinMM.2.2.1\lib\netstandard2.0\NAudio.WinMM.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -244,6 +269,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
       <Private>True</Private>
@@ -263,6 +292,9 @@
       <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
     </Reference>
     <Reference Include="System.Speech" />
     <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -951,6 +983,108 @@
     <Content Include="GUI\assets\ZityLot-Logo-120x60px.ico" />
     <Content Include="GUI\assets\scan.png" />
     <Content Include="GUI\assets\ZityLot-Logo-120x60px.png" />
+    <Content Include="Resource\sound\1000.mp3" />
+    <Content Include="Resource\sound\10000.mp3" />
+    <Content Include="Resource\sound\100000.mp3" />
+    <Content Include="Resource\sound\11000.mp3" />
+    <Content Include="Resource\sound\12000.mp3" />
+    <Content Include="Resource\sound\13000.mp3" />
+    <Content Include="Resource\sound\14000.mp3" />
+    <Content Include="Resource\sound\15000.mp3" />
+    <Content Include="Resource\sound\16000.mp3" />
+    <Content Include="Resource\sound\17000.mp3" />
+    <Content Include="Resource\sound\18000.mp3" />
+    <Content Include="Resource\sound\19000.mp3" />
+    <Content Include="Resource\sound\2000.mp3" />
+    <Content Include="Resource\sound\20000.mp3" />
+    <Content Include="Resource\sound\21000.mp3" />
+    <Content Include="Resource\sound\22000.mp3" />
+    <Content Include="Resource\sound\23000.mp3" />
+    <Content Include="Resource\sound\24000.mp3" />
+    <Content Include="Resource\sound\25000.mp3" />
+    <Content Include="Resource\sound\26000.mp3" />
+    <Content Include="Resource\sound\27000.mp3" />
+    <Content Include="Resource\sound\28000.mp3" />
+    <Content Include="Resource\sound\29000.mp3" />
+    <Content Include="Resource\sound\3000.mp3" />
+    <Content Include="Resource\sound\30000.mp3" />
+    <Content Include="Resource\sound\31000.mp3" />
+    <Content Include="Resource\sound\32000.mp3" />
+    <Content Include="Resource\sound\33000.mp3" />
+    <Content Include="Resource\sound\34000.mp3" />
+    <Content Include="Resource\sound\35000.mp3" />
+    <Content Include="Resource\sound\36000.mp3" />
+    <Content Include="Resource\sound\37000.mp3" />
+    <Content Include="Resource\sound\38000.mp3" />
+    <Content Include="Resource\sound\39000.mp3" />
+    <Content Include="Resource\sound\4000.mp3" />
+    <Content Include="Resource\sound\40000.mp3" />
+    <Content Include="Resource\sound\41000.mp3" />
+    <Content Include="Resource\sound\42000.mp3" />
+    <Content Include="Resource\sound\43000.mp3" />
+    <Content Include="Resource\sound\44000.mp3" />
+    <Content Include="Resource\sound\45000.mp3" />
+    <Content Include="Resource\sound\46000.mp3" />
+    <Content Include="Resource\sound\47000.mp3" />
+    <Content Include="Resource\sound\48000.mp3" />
+    <Content Include="Resource\sound\49000.mp3" />
+    <Content Include="Resource\sound\5000.mp3" />
+    <Content Include="Resource\sound\50000.mp3" />
+    <Content Include="Resource\sound\51000.mp3" />
+    <Content Include="Resource\sound\52000.mp3" />
+    <Content Include="Resource\sound\53000.mp3" />
+    <Content Include="Resource\sound\54000.mp3" />
+    <Content Include="Resource\sound\55000.mp3" />
+    <Content Include="Resource\sound\56000.mp3" />
+    <Content Include="Resource\sound\57000.mp3" />
+    <Content Include="Resource\sound\58000.mp3" />
+    <Content Include="Resource\sound\59000.mp3" />
+    <Content Include="Resource\sound\6000.mp3" />
+    <Content Include="Resource\sound\60000.mp3" />
+    <Content Include="Resource\sound\61000.mp3" />
+    <Content Include="Resource\sound\62000.mp3" />
+    <Content Include="Resource\sound\63000.mp3" />
+    <Content Include="Resource\sound\64000.mp3" />
+    <Content Include="Resource\sound\65000.mp3" />
+    <Content Include="Resource\sound\66000.mp3" />
+    <Content Include="Resource\sound\67000.mp3" />
+    <Content Include="Resource\sound\68000.mp3" />
+    <Content Include="Resource\sound\69000.mp3" />
+    <Content Include="Resource\sound\7000.mp3" />
+    <Content Include="Resource\sound\70000.mp3" />
+    <Content Include="Resource\sound\71000.mp3" />
+    <Content Include="Resource\sound\72000.mp3" />
+    <Content Include="Resource\sound\73000.mp3" />
+    <Content Include="Resource\sound\74000.mp3" />
+    <Content Include="Resource\sound\75000.mp3" />
+    <Content Include="Resource\sound\76000.mp3" />
+    <Content Include="Resource\sound\77000.mp3" />
+    <Content Include="Resource\sound\78000.mp3" />
+    <Content Include="Resource\sound\79000.mp3" />
+    <Content Include="Resource\sound\8000.mp3" />
+    <Content Include="Resource\sound\80000.mp3" />
+    <Content Include="Resource\sound\81000.mp3" />
+    <Content Include="Resource\sound\82000.mp3" />
+    <Content Include="Resource\sound\83000.mp3" />
+    <Content Include="Resource\sound\84000.mp3" />
+    <Content Include="Resource\sound\85000.mp3" />
+    <Content Include="Resource\sound\86000.mp3" />
+    <Content Include="Resource\sound\87000.mp3" />
+    <Content Include="Resource\sound\88000.mp3" />
+    <Content Include="Resource\sound\89000.mp3" />
+    <Content Include="Resource\sound\9000.mp3" />
+    <Content Include="Resource\sound\90000.mp3" />
+    <Content Include="Resource\sound\91000.mp3" />
+    <Content Include="Resource\sound\92000.mp3" />
+    <Content Include="Resource\sound\93000.mp3" />
+    <Content Include="Resource\sound\94000.mp3" />
+    <Content Include="Resource\sound\95000.mp3" />
+    <Content Include="Resource\sound\96000.mp3" />
+    <Content Include="Resource\sound\97000.mp3" />
+    <Content Include="Resource\sound\98000.mp3" />
+    <Content Include="Resource\sound\99000.mp3" />
+    <Content Include="Resource\sound\checkin.mp3" />
+    <Content Include="Resource\sound\checkout.mp3" />
     <None Include="Resources\Icon-24x24px_Logout-Active.png" />
     <None Include="Resources\Screenshot 2024-08-30 230542.png" />
     <None Include="Resources\Screenshot 2024-08-30 101445.png" />

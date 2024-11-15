@@ -132,7 +132,7 @@ namespace ZiTyLot.Helper
                 var detectionResult = JsonConvert.DeserializeObject<PlateDetectionResult>(detectionJson);
                 if (detectionResult?.predictions == null || !detectionResult.predictions.Any())
                 {
-                    throw new Exception("No license plate detected in the result");
+                    return null;
                 }
 
                 foreach (var prediction in detectionResult.predictions)
