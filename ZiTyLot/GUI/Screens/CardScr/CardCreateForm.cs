@@ -18,6 +18,7 @@ namespace ZiTyLot.GUI.Screens.CardScr
     public partial class CardCreateForm : Form
     {
         private readonly CardBUS cardBUS = new CardBUS();
+        private readonly VehicleTypeBUS vehicleTypeBUS = new VehicleTypeBUS();
 
         public event EventHandler CardInsertionEvent;
 
@@ -25,6 +26,14 @@ namespace ZiTyLot.GUI.Screens.CardScr
         {
             InitializeComponent();
             this.CenterToScreen();
+        }
+
+        private void LoadCbVehicleType()
+        {
+            List<VehicleType> vehicleTypes = vehicleTypeBUS.GetAll();
+            cbVehicalType.DataSource = vehicleTypes;
+            cbVehicalType.DisplayMember = nameof(VehicleType.Name);
+            cbVehicalType.ValueMember = nameof(VehicleType.Id);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -96,9 +105,47 @@ namespace ZiTyLot.GUI.Screens.CardScr
                     pnlMain.RowStyles[2] = new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100);
                     this.Height = 370;
                     this.MinimumSize = new Size(0, 370);
+                    LoadCbVehicleType();
                     break;
             }
         }
-        
+
+        private void uiSymbolButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void uiSymbolButton1_Click(object sender, EventArgs e)
+        {
+            if (!ValidateInput()) return;
+            try
+            {
+                var type = cbCardType.SelectedIndex == 0 ? CardType.RESIDENT : CardType.VISITOR;
+                Card card = new Card
+                {
+                    Rfid = tbRFID.Text.Trim(),
+                    Status = type == CardType.RESIDENT ? CardStatus.EMPTY : CardStatus.ACTIVE,
+                    Type = type,
+                    Vehicle_type_id = type == CardType.VISITOR ? (int?)cbVehicalType.SelectedValue : null
+                };
+                cardBUS.Add(card);
+                MessageHelper.ShowSuccess("Card added successfully!");
+                CardInsertionEvent?.Invoke(this, EventArgs.Empty);
+                this.Close();
+            }
+            catch (ValidationInputException ex)
+            {
+                MessageHelper.ShowWarning(ex.Message);
+            }
+            catch (BusinessException ex)
+            {
+                MessageHelper.ShowWarning(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageHelper.ShowError("Some errors occurred. Please try again later.");
+            }
+        }
     }
 }
