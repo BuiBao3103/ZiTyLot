@@ -50,8 +50,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
                 Font = new Font("Arial", 12)
             };
 
-            //listBox.MouseEnter += ListBox_MouseEnter;
-            //listBox.MouseLeave += ListBox_MouseLeave;
+           
 
             listBox.Click += (s, ev) =>
             {
@@ -75,27 +74,18 @@ namespace ZiTyLot.GUI.Screens.BillScr
             this.Controls.Add(listBox);
         }
 
-        //private void ListBox_MouseEnter(object sender, EventArgs e)
-        //{
-        //    if (sender is ListBox lb)
-        //    {
-        //        lb.BackColor = Color.LightGray;
-        //    }
-        //}
-
-        //private void ListBox_MouseLeave(object sender, EventArgs e)
-        //{
-        //    if (sender is ListBox lb)
-        //    {
-        //        lb.BackColor = SystemColors.Window; // Reset the color to the default
-        //    }
-        //}
+      
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
+            if (tbID.Text == "")
+            {
+                MessageHelper.ShowWarning("Please select a resident to add issue.");
+                return;
+            }
             if (_AddIssueForm == null || _AddIssueForm.IsDisposed)
             {
-                _AddIssueForm = new IssueDetailForm();
+                _AddIssueForm = new IssueDetailForm(_issues);
                 _AddIssueForm.IssueInsertionEvent += (s, ev) => AddRow(_AddIssueForm._newIssue);
                 _AddIssueForm.Show();
             }

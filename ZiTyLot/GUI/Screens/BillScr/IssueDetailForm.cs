@@ -20,17 +20,17 @@ namespace ZiTyLot.GUI.Screens.BillScr
         private List<VehicleType> _vehicleTypes;
         private List<ParkingLot> _parkingLots;
         private List<Slot> _slots;
-
+        private List<Issue> _currentIssues;
         private VehicleType _selectedVehicleType;
 
         public event EventHandler IssueInsertionEvent;
-        public IssueDetailForm()
+        public IssueDetailForm(List<Issue> currentIssues)
         {
             _vehicleTypeBUS = new VehicleTypeBUS();
             _residentFeeBUS = new ResidentFeeBUS();
             _parkingLotBUS = new ParkingLotBUS();
             _slotBUS = new SlotBUS();
-
+            _currentIssues = currentIssues;
             InitializeComponent();
             InitForm();
             this.CenterToScreen();
@@ -49,6 +49,15 @@ namespace ZiTyLot.GUI.Screens.BillScr
                 new FilterCondition(nameof(Slot.Status),CompOp.Equals,SlotStatus.EMPTY)
             };
             _slots = _slotBUS.GetAll();
+            foreach (Issue issue in _currentIssues)
+            {
+                if (issue.Slot_id != null)
+                {
+                    Slot slot = _slots.Find(x => x.Id == issue.Slot_id);
+                    _slots.Remove(slot);
+                }
+            }
+
             foreach (var vehicleType in _vehicleTypes)
             {
                 cbVehicleType.Items.Add(vehicleType.Name);
@@ -77,14 +86,14 @@ namespace ZiTyLot.GUI.Screens.BillScr
 
         private bool validateForm()
         {
-          
+
             if (_selectedVehicleType.Has_vehicle_plate && string.IsNullOrEmpty(tbPlate.Text))
             {
                 MessageHelper.ShowWarning("Plate is required");
                 tbPlate.Focus();
                 return false;
             }
-            if(cbMonth.SelectedIndex == -1)
+            if (cbMonth.SelectedIndex == -1)
             {
                 MessageHelper.ShowWarning("Month is required");
                 return false;
@@ -148,7 +157,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
         private void cbArea_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbArea.SelectedIndex == -1) return;
-              
+
             string selectedParkingLot = cbArea.SelectedItem.ToString();
             cbSlot.Items.Clear();
             ParkingLot parkingLot = _parkingLots.Find(x => x.Id == selectedParkingLot);
