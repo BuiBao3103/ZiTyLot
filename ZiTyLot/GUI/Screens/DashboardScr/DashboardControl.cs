@@ -160,10 +160,10 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
             {
                 this.chartSessionOverview.Series[0].Points.AddXY(i + 1, sessionStatistic.CountMotorbike);
                 this.chartSessionOverview.Series[1].Points.AddXY(i + 1, sessionStatistic.CountCar);
-                this.chartSessionOverview.Series[2].Points.AddXY(i + 1, sessionStatistic.CountBikecycle);
+                this.chartSessionOverview.Series[2].Points.AddXY(i + 1, sessionStatistic.CountBicycle);
                 this.chartSessionOverview.Series[0].Points[i].Label = sessionStatistic.CountMotorbike.ToString();
                 this.chartSessionOverview.Series[1].Points[i].Label = sessionStatistic.CountCar.ToString();
-                this.chartSessionOverview.Series[2].Points[i].Label = sessionStatistic.CountBikecycle.ToString();
+                this.chartSessionOverview.Series[2].Points[i].Label = sessionStatistic.CountBicycle.ToString();
                 this.chartSessionOverview.Series[1].Points[i].AxisLabel = sessionStatistic.Period;
             }
         }
@@ -171,12 +171,12 @@ namespace ZiTyLot.GUI.Screens.DashboardScr
         public void LoadSlotStatistic()
         {
             _slotStatistic = _statisticBUS.GetSlotStatistics();
-            int current2Wheels = _slotStatistic.CurrentMotorbike + _slotStatistic.CurrentBikecycle;
+            int current2Wheels = _slotStatistic.CurrentMotorbike + _slotStatistic.CurrentBicycle;
             int current4Wheels = _slotStatistic.CurrentCar;
-            int currentBikecycle = _slotStatistic.CurrentBikecycle;
+            int currentBicycle = _slotStatistic.CurrentBicycle;
             int total2Wheels = _slotStatistic.Total2Wheels;
             int total4Wheels = _slotStatistic.Total4Wheels;
-            lbTotal2Wheels.Text = $"{current2Wheels}/{total2Wheels} slots ({currentBikecycle} bikecycles)";
+            lbTotal2Wheels.Text = $"{current2Wheels}/{total2Wheels} slots ({currentBicycle} bicycles)";
             lbTotal4Wheels.Text = $"{current4Wheels}/{total4Wheels} slots";
         }
     }
