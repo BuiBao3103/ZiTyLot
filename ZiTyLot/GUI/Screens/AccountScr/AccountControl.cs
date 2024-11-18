@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using ZiTyLot.Constants;
 using ZiTyLot.GUI.Screens.PriceScr;
+using ZiTyLot.GUI.Utils;
 
 namespace ZiTyLot.GUI.Screens
 {
@@ -100,7 +101,25 @@ namespace ZiTyLot.GUI.Screens
                 }
                 else if (e.ColumnIndex == tableAccount.Columns["colDelete"].Index)
                 {
-                    MessageBox.Show("Delete button clicked for row " + e.RowIndex);
+                    DeleteAccount(accountId);
+                }
+            }
+        }
+
+        private void DeleteAccount(int accountId)
+        {
+            DialogResult result = MessageHelper.ShowConfirm("Are you sure you want to delete this account?");
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    accountBUS.Delete(accountId);
+                    filters.Clear();
+                    ChangePage(1);
+                }
+                catch (Exception ex)
+                {
+                    MessageHelper.ShowWarning("An unexpected error occurred. Please try again later.");
                 }
             }
         }

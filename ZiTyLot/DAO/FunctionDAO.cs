@@ -20,6 +20,8 @@ namespace ZiTyLot.DAO
         {
             try
             {
+                if (filters == null) filters = new List<FilterCondition>();
+                filters.Add(new FilterCondition("deleted_at", CompOp.Equals, null));
                 return daoFactory.GetAll(filters);
             }
             catch (Exception ex)
@@ -32,8 +34,9 @@ namespace ZiTyLot.DAO
         {
             try
             {
+                if (filters == null) filters = new List<FilterCondition>();
+                filters.Add(new FilterCondition("deleted_at", CompOp.Equals, null));
                 return daoFactory.GetAllPagination(pageable, filters);
-
             }
             catch (Exception ex)
             {

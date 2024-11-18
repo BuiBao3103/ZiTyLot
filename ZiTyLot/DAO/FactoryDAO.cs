@@ -506,7 +506,7 @@ namespace ZiTyLot.DAO
                     connection.Open(); // Open the connection
 
                     // Define the SQL query to soft delete the record by ID
-                    var query = $"UPDATE {tableName} SET delete_at = NOW() WHERE Id = @Id";
+                    var query = $"UPDATE {tableName} SET deleted_at = NOW() WHERE Id = @Id";
 
                     // Create a MySqlCommand with the query
                     using (var command = new MySqlCommand(query, connection))

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sprache;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Text;
@@ -11,6 +12,7 @@ using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens.CardScr;
 using ZiTyLot.GUI.Screens.PriceScr;
 using ZiTyLot.GUI.Screens.RoleScr;
+using ZiTyLot.GUI.Utils;
 using ZiTyLot.Helper;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -98,7 +100,41 @@ namespace ZiTyLot.GUI.Screens
                 }
                 else if (e.ColumnIndex == tableRole.Columns["colDelete"].Index)
                 {
-                    MessageBox.Show("Delete button clicked for row " + e.RowIndex);
+                    DeleteRole(roleId);
+                }
+            }
+        }
+
+        private void DeleteRole(int roleId)
+        {
+            DialogResult result = MessageHelper.ShowConfirm("Are you sure you want to delete this role?");
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    Role role = roleBUS.GetById(roleId);
+                    role = roleBUS.PopulateAccounts(role);
+                    if (role.Accounts != null && role.Accounts.Count != 0)
+                    {
+                        string str = "This role is used by the accounts:";
+                        foreach (Account account in role.Accounts)
+                        {
+                            str += $" {account.Username},";
+                        }
+                        str = str.Remove(str.Length - 1);
+                        MessageHelper.ShowWarning(str);
+                        return;
+                    }
+                    role.Name = "-1";
+                    roleBUS.Update(role);
+                    roleBUS.Delete(roleId);
+                    filters.Clear();
+                    roleList = roleBUS.GetAll(filters);
+                    LoadDataToTable();
+                }
+                catch (Exception ex)
+                {
+                    MessageHelper.ShowWarning("An unexpected error occurred. Please try again later.");
                 }
             }
         }
