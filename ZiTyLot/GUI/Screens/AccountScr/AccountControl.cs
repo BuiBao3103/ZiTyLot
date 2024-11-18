@@ -18,9 +18,11 @@ namespace ZiTyLot.GUI.Screens
     {
         private readonly Debouncer _debouncer = new Debouncer();
         private readonly AccountBUS accountBUS = new AccountBUS();
+        private readonly RoleBUS roleBUS = new RoleBUS();
         private readonly Pageable pageable = new Pageable();
         private readonly List<FilterCondition> filters = new List<FilterCondition>();
         private Page<Account> page;
+        private List<Role> _roles;
 
         private AccountCreateForm _accountCreateForm;
         private AccountDetailForm _accountDetailForm;
@@ -185,7 +187,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void LoadPageAndPageable()
         {
-
+            _roles = roleBUS.GetAll();
             if (page == null || pageable == null) return;
             //update page number
             tbCurrentpage.Text = pageable.PageNumber.ToString();
@@ -194,7 +196,8 @@ namespace ZiTyLot.GUI.Screens
             tableAccount.Rows.Clear();
             foreach (Account account in page.Content)
             {
-                tableAccount.Rows.Add(account.Id, account.Full_name, account.Username, account.Email, account.Role);
+                string roleName = _roles.Find(role => role.Id == account.Role_id).Name;
+                tableAccount.Rows.Add(account.Id, account.Full_name, account.Username, account.Email, roleName);
             }
             //update button
             btnPrevious.Enabled = pageable.PageNumber > 1;
