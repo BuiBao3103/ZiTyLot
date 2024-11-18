@@ -103,7 +103,14 @@ namespace ZiTyLot.GUI.Screens
                 }
                 else if (e.ColumnIndex == tableResident.Columns["colDelete"].Index)
                 {
-                    MessageBox.Show("Delete button clicked for row " + e.RowIndex);
+                    var confirmResult = MessageBox.Show("Do you really want to delete Resident?",
+                        "Confirm delete",
+                        MessageBoxButtons.YesNo);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        residentBUS.Delete(residentId);
+                        ChangePage(1);
+                    }
                 }
             }
         }
@@ -200,7 +207,8 @@ namespace ZiTyLot.GUI.Screens
             tableResident.Rows.Clear();
             foreach (Resident resident in page.Content)
             {
-                tableResident.Rows.Add(resident.Id, resident.Full_name, resident.Apartment_id, resident.Email, resident.Phone);
+                 tableResident.Rows.Add(resident.Id, resident.Full_name, resident.Apartment_id, resident.Email, resident.Phone);
+              
             }
 
             btnPrevious.Enabled = pageable.PageNumber > 1;
@@ -212,6 +220,7 @@ namespace ZiTyLot.GUI.Screens
             pageable.PageNumber = pageNumber;
             pageable.SortBy = nameof(Resident.Created_at);
             pageable.SortOrder = SortOrderPageable.Descending;
+            filters.Add(new FilterCondition("Deleted_at", CompOp.Equals, null));
             page = residentBUS.GetAllPagination(pageable, filters);
             LoadPageAndPageable();
         }
