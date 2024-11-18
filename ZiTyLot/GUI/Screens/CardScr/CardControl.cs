@@ -103,7 +103,7 @@ namespace ZiTyLot.GUI.Screens
                             Card card = cardBUS.GetById(cardId);
                             if (card.Status == CardStatus.EMPTY)
                             {
-                                card.Rfid = "-1";
+                                card.Rfid = Guid.NewGuid().ToString();
                                 cardBUS.Update(card);
                                 cardBUS.Delete(cardId);
                                 changePage(1);
