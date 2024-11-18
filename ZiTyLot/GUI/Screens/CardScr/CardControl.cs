@@ -98,17 +98,25 @@ namespace ZiTyLot.GUI.Screens
                         , MessageBoxButtons.YesNo);
                     if (confirmResult == DialogResult.Yes)
                     {
-                        Card card = cardBUS.GetById(cardId);
-                        if (card.Status == CardStatus.EMPTY)
-                        {                        
-                            card.Rfid = "-1";
-                            cardBUS.Update(card);
-                            cardBUS.Delete(cardId);
-                            changePage(1);
-                        }
-                        else
+                        try
                         {
-                            MessageBox.Show("Allowed delete card must has status EMPTY!");
+                            Card card = cardBUS.GetById(cardId);
+                            if (card.Status == CardStatus.EMPTY)
+                            {
+                                card.Rfid = "-1";
+                                cardBUS.Update(card);
+                                cardBUS.Delete(cardId);
+                                changePage(1);
+                            }
+                            else
+                            {
+                                MessageHelper.ShowWarning("Allowed delete card must has status EMPTY!");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                            MessageHelper.ShowError("An unexpected error occurred. Please try again later.");
                         }
                     }
                 }

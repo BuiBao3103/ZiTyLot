@@ -11,6 +11,7 @@ using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens.AreaScr;
 using ZiTyLot.GUI.Screens.PriceScr;
 using ZiTyLot.GUI.Screens.ResidentScr;
+using ZiTyLot.GUI.Utils;
 using ZiTyLot.Helper;
 
 namespace ZiTyLot.GUI.Screens
@@ -108,8 +109,16 @@ namespace ZiTyLot.GUI.Screens
                         MessageBoxButtons.YesNo);
                     if (confirmResult == DialogResult.Yes)
                     {
-                        residentBUS.Delete(residentId);
-                        ChangePage(1);
+                        try
+                        {
+                            residentBUS.Delete(residentId);
+                            ChangePage(1);
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                            MessageHelper.ShowError("An unexpected error occurred. Please try again later.");
+                        }
                     }
                 }
             }
