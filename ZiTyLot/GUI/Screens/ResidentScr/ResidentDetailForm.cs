@@ -39,14 +39,12 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
                 foreach (Issue issue in _resident.Bills[i].Issues)
                 {
                     VehicleType vehicleType = _issueBUS.PopulateVehicleType(issue).Vehicle_type;
-                    tableIssue.Rows.Add(issue.Id, issue.License_plate
-                    , vehicleType.Name
-                    , issue.Start_date, issue.End_date);
+                    tableIssue.Rows.Add(issue.Id, issue.License_plate, vehicleType.Name, issue.Start_date, issue.End_date, issue.Parking_lot_id, issue.Slot_id);
                 }
             }
 
             _resident = _residentBUS.PopulateCard(_resident);
-            
+
             LoadCardUI();
         }
         private void LoadCardUI()
@@ -144,7 +142,7 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
                 tbCodeRFID.Focus();
                 return;
             }
-            if(!InputValidator.ValidateRfid(tbCodeRFID.Text))
+            if (!InputValidator.ValidateRfid(tbCodeRFID.Text))
             {
                 MessageHelper.ShowWarning("RFID code is invalid");
                 tbCodeRFID.Focus();
