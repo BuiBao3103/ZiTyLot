@@ -51,7 +51,6 @@ namespace ZiTyLot.BUS
         {
             try
             {
-                filters.Add(new FilterCondition("Deleted_at", CompOp.Equals, null));
                 return imageDAO.GetAll(filters);
             }
             catch (Exception ex)
@@ -64,7 +63,6 @@ namespace ZiTyLot.BUS
         {
             try
             {
-                filters.Add(new FilterCondition("Deleted_at", CompOp.Equals, null));
                 return imageDAO.GetAllPagination(pageable, filters);
             }
             catch (Exception ex)

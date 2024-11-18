@@ -71,7 +71,6 @@ namespace ZiTyLot.BUS
         {
             try
             {
-                filters.Add(new FilterCondition("Deleted_at", CompOp.Equals, null));
                 return roleDAO.GetAll(filters);
             }
             catch (Exception ex)
@@ -84,7 +83,6 @@ namespace ZiTyLot.BUS
         {
             try
             {
-                filters.Add(new FilterCondition("Deleted_at", CompOp.Equals, null));
                 return roleDAO.GetAllPagination(pageable, filters);
             }
             catch (Exception ex)
