@@ -90,6 +90,7 @@ namespace ZiTyLot.BUS
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex);
                 throw new Exception(ex.Message);
             }
         }
