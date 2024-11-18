@@ -73,6 +73,7 @@ namespace ZiTyLot.BUS
         {
             try
             {
+                filters.Add(new FilterCondition("Deleted_at", CompOp.Equals, null));
                 return cardDAO.GetAll(filters);
             }
             catch (Exception ex)
@@ -85,6 +86,7 @@ namespace ZiTyLot.BUS
         {
             try
             {
+                filters.Add(new FilterCondition("Deleted_at", CompOp.Equals, null));
                 return cardDAO.GetAllPagination(pageable, filters);
             }
             catch (Exception ex)

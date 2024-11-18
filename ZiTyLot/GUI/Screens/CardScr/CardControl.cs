@@ -90,9 +90,27 @@ namespace ZiTyLot.GUI.Screens
         {
             if (e.RowIndex >= 0)
             {
+                int cardId = (int)tableCard.Rows[e.RowIndex].Cells[0].Value;
                 if (e.ColumnIndex == tableCard.Columns["colDelete"].Index)
                 {
-                    MessageBox.Show("Delete button clicked");
+                    var confirmResult = MessageBox.Show("Do you really want to delete Card"
+                        , "Confirm delete"
+                        , MessageBoxButtons.YesNo);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        Card card = cardBUS.GetById(cardId);
+                        if (card.Status == CardStatus.EMPTY)
+                        {                        
+                            card.Rfid = "-1";
+                            cardBUS.Update(card);
+                            cardBUS.Delete(cardId);
+                            changePage(1);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Allowed delete card must has status EMPTY!");
+                        }
+                    }
                 }
             }
         }

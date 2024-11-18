@@ -220,7 +220,6 @@ namespace ZiTyLot.GUI.Screens
             pageable.PageNumber = pageNumber;
             pageable.SortBy = nameof(Resident.Created_at);
             pageable.SortOrder = SortOrderPageable.Descending;
-            filters.Add(new FilterCondition("Deleted_at", CompOp.Equals, null));
             page = residentBUS.GetAllPagination(pageable, filters);
             LoadPageAndPageable();
         }

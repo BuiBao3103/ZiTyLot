@@ -50,6 +50,7 @@ namespace ZiTyLot.BUS
         {
             try
             {
+                filters.Add(new FilterCondition("Deleted_at", CompOp.Equals, null));
                 return lostHistoryDAO.GetAll(filters);
             }
             catch (Exception ex)
@@ -62,6 +63,7 @@ namespace ZiTyLot.BUS
         {
             try
             {
+                filters.Add(new FilterCondition("Deleted_at", CompOp.Equals, null));
                 return lostHistoryDAO.GetAllPagination(pageable, filters);
             }
             catch (Exception ex)
