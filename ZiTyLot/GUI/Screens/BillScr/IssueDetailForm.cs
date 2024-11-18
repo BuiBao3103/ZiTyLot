@@ -1,20 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.Utils;
+using ZiTyLot.Helper;
 
 namespace ZiTyLot.GUI.Screens.BillScr
 {
     public partial class IssueDetailForm : Form
     {
+        private readonly Debouncer _debouncer = new Debouncer();
         public Issue _newIssue;
-        private readonly ResidentFeeBUS _residentFeeBUS;
-        private readonly VehicleTypeBUS _vehicleTypeBUS;
-        private readonly ParkingLotBUS _parkingLotBUS;
-        private readonly SlotBUS _slotBUS;
+        private readonly ResidentFeeBUS _residentFeeBUS = new ResidentFeeBUS();
+        private readonly VehicleTypeBUS _vehicleTypeBUS = new VehicleTypeBUS();
+        private readonly ParkingLotBUS _parkingLotBUS = new ParkingLotBUS();
+        private readonly SlotBUS _slotBUS = new SlotBUS();
 
         private List<ResidentFee> _residentFees;
         private List<VehicleType> _vehicleTypes;
@@ -26,10 +31,6 @@ namespace ZiTyLot.GUI.Screens.BillScr
         public event EventHandler IssueInsertionEvent;
         public IssueDetailForm(List<Issue> currentIssues)
         {
-            _vehicleTypeBUS = new VehicleTypeBUS();
-            _residentFeeBUS = new ResidentFeeBUS();
-            _parkingLotBUS = new ParkingLotBUS();
-            _slotBUS = new SlotBUS();
             _currentIssues = currentIssues;
             InitializeComponent();
             InitForm();
@@ -138,6 +139,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
                 }
             }
             cbArea.SelectedIndex = 0;
+            SearchPlate();
 
         }
 
@@ -191,6 +193,42 @@ namespace ZiTyLot.GUI.Screens.BillScr
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private async void tbPlate_TextChanged(object sender, EventArgs e)
+        {
+            await _debouncer.DebounceAsync(() =>
+            {
+                SearchPlate();
+                return Task.CompletedTask;
+            }, 500);
+        }
+
+        private void SearchPlate()
+        {
+            List<FilterCondition> filters = new List<FilterCondition>()
+            {
+                new FilterCondition(nameof(Issue.License_plate), CompOp.Equals, tbPlate.Text),
+                new FilterCondition(nameof(Issue.End_date), CompOp.GreaterThan, DateTime.Now),
+                new FilterCondition(nameof(Issue.Vehicle_type_id), CompOp.Equals, _selectedVehicleType.Id)
+            };
+            List<Issue> issues = new IssueBUS().GetAll(filters);
+            if (issues.Count == 0)
+            {
+                cbArea.Enabled = true;
+                cbSlot.Enabled = true;
+                cbArea.SelectedIndex = 0;
+                dtpFromDate.Value = DateTime.Now;
+                cbMonth.SelectedIndex = cbMonth.SelectedIndex;
+                return;
+            }
+            Issue issue = issues[0];
+            dtpFromDate.Value = issue.End_date;
+            cbMonth.SelectedIndex = cbMonth.SelectedIndex;
+            cbArea.Text = issue.Parking_lot_id;
+            cbArea.Enabled = false;
+            cbSlot.Text = issue.Slot_id;
+            cbSlot.Enabled = false;
         }
     }
 }
