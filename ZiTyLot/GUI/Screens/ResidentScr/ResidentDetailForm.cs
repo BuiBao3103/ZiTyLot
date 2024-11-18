@@ -14,6 +14,7 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
         private readonly IssueBUS _issueBUS = new IssueBUS();
         private readonly BillBUS _billBus = new BillBUS();
         private readonly CardBUS _cardBUS = new CardBUS();
+        private readonly LostHistoryBUS _lostHistoryBUS = new LostHistoryBUS();
         public readonly Resident _resident;
 
         private bool _processLostCard = false;
@@ -152,9 +153,24 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
             {
                 if (_processLostCard)
                 {
-                    //TODO: Process lost card
+                    //update card status to LOST
+                    _resident.Card.Status = CardStatus.LOST;
+                    _cardBUS.Update(_resident.Card);
+                    //create lost history
+                    LostHistory lostHistory = new LostHistory
+                    {
+                        Card_id = _resident.Card.Id,
+                        Time_loss = DateTime.Now,
+                        Owner_name = _resident.Full_name,
+                        License_plate = "",
+                        Is_found = false
+                    };
+                    _lostHistoryBUS.Add(lostHistory);
+                    //issue new card
+                    Card cardIssue = _cardBUS.IssueCard(tbCodeRFID.Text, _resident.Id);
+                    _resident.Card = cardIssue;
+                    MessageHelper.ShowInfo("Lost card successfully");
 
-                    //_resident.Card = ...
 
                     LoadCardUI();
                     btnCancelLostCard.Visible = false;
