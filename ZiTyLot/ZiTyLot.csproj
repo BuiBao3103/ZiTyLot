@@ -418,12 +418,6 @@
     <Compile Include="GUI\CustomContextMenuStrip.Designer.cs">
       <DependentUpon>CustomContextMenuStrip.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Login2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Login2.Designer.cs">
-      <DependentUpon>Login2.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\ProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -506,12 +500,6 @@
     <Compile Include="GUI\CustomDateTimePicker.Designer.cs">
       <DependentUpon>CustomDateTimePicker.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ExcelExample.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\ExcelExample.Designer.cs">
-      <DependentUpon>ExcelExample.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -523,18 +511,6 @@
     </Compile>
     <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Panel2.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Panel2.Designer.cs">
-      <DependentUpon>Panel2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\ArduinoRFIDReader.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\ArduinoRFIDReader.Designer.cs">
-      <DependentUpon>ArduinoRFIDReader.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\AccountScr\AccountCreateForm.cs">
       <SubType>Form</SubType>
@@ -719,23 +695,11 @@
     <EmbeddedResource Include="GUI\CustomDateTimePicker.resx">
       <DependentUpon>CustomDateTimePicker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ExcelExample.resx">
-      <DependentUpon>ExcelExample.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Login2.resx">
-      <DependentUpon>Login2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Panel2.resx">
-      <DependentUpon>Panel2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ArduinoRFIDReader.resx">
-      <DependentUpon>ArduinoRFIDReader.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ProfileForm.resx">
       <DependentUpon>ProfileForm.cs</DependentUpon>

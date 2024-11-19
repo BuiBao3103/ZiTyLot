@@ -8,7 +8,7 @@ namespace ZiTyLot.GUI
 {
     public partial class Login : Form
     {
-        AuthManager authManager = new AuthManager();
+        private readonly AuthManager authManager = new AuthManager();
         public Login()
         {
             this.MaximizeBox = false;
