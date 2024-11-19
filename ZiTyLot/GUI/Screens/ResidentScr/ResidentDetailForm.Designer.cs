@@ -56,11 +56,6 @@
             this.uiPanel7 = new Sunny.UI.UIPanel();
             this.uiPanel9 = new Sunny.UI.UIPanel();
             this.tableIssue = new System.Windows.Forms.DataGridView();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPlate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVehical = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpCard = new System.Windows.Forms.TabPage();
             this.uiPanel8 = new Sunny.UI.UIPanel();
             this.uiTableLayoutPanel3 = new Sunny.UI.UITableLayoutPanel();
@@ -87,6 +82,13 @@
             this.uiSymbolLabel1 = new Sunny.UI.UISymbolLabel();
             this.tbRFID = new Sunny.UI.UITextBox();
             this.uiTextBox1 = new Sunny.UI.UITextBox();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPlate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVehical = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Area = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Slot = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uiTableLayoutPanel1.SuspendLayout();
             this.uiTabControlMenu1.SuspendLayout();
             this.tpProfile.SuspendLayout();
@@ -573,7 +575,9 @@
             this.colPlate,
             this.colVehical,
             this.colStartDate,
-            this.colEndDate});
+            this.colEndDate,
+            this.Area,
+            this.Slot});
             this.tableIssue.Cursor = System.Windows.Forms.Cursors.Default;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -596,47 +600,6 @@
             this.tableIssue.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.tableIssue.Size = new System.Drawing.Size(625, 479);
             this.tableIssue.TabIndex = 3;
-            // 
-            // colId
-            // 
-            this.colId.HeaderText = "ID";
-            this.colId.MinimumWidth = 6;
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colId.Width = 50;
-            // 
-            // colPlate
-            // 
-            this.colPlate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colPlate.HeaderText = "Plate";
-            this.colPlate.MinimumWidth = 6;
-            this.colPlate.Name = "colPlate";
-            this.colPlate.ReadOnly = true;
-            // 
-            // colVehical
-            // 
-            this.colVehical.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colVehical.HeaderText = "Vehical";
-            this.colVehical.MinimumWidth = 6;
-            this.colVehical.Name = "colVehical";
-            this.colVehical.ReadOnly = true;
-            // 
-            // colStartDate
-            // 
-            this.colStartDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colStartDate.HeaderText = "Start_date";
-            this.colStartDate.MinimumWidth = 6;
-            this.colStartDate.Name = "colStartDate";
-            this.colStartDate.ReadOnly = true;
-            // 
-            // colEndDate
-            // 
-            this.colEndDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colEndDate.HeaderText = "End_date";
-            this.colEndDate.MinimumWidth = 6;
-            this.colEndDate.Name = "colEndDate";
-            this.colEndDate.ReadOnly = true;
             // 
             // tpCard
             // 
@@ -1135,6 +1098,63 @@
             this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiTextBox1.Watermark = "";
             // 
+            // colId
+            // 
+            this.colId.HeaderText = "ID";
+            this.colId.MinimumWidth = 6;
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colId.Width = 50;
+            // 
+            // colPlate
+            // 
+            this.colPlate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colPlate.HeaderText = "Plate";
+            this.colPlate.MinimumWidth = 6;
+            this.colPlate.Name = "colPlate";
+            this.colPlate.ReadOnly = true;
+            // 
+            // colVehical
+            // 
+            this.colVehical.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colVehical.HeaderText = "Vehical";
+            this.colVehical.MinimumWidth = 6;
+            this.colVehical.Name = "colVehical";
+            this.colVehical.ReadOnly = true;
+            // 
+            // colStartDate
+            // 
+            this.colStartDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colStartDate.HeaderText = "Start_date";
+            this.colStartDate.MinimumWidth = 6;
+            this.colStartDate.Name = "colStartDate";
+            this.colStartDate.ReadOnly = true;
+            // 
+            // colEndDate
+            // 
+            this.colEndDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colEndDate.HeaderText = "End_date";
+            this.colEndDate.MinimumWidth = 6;
+            this.colEndDate.Name = "colEndDate";
+            this.colEndDate.ReadOnly = true;
+            // 
+            // Area
+            // 
+            this.Area.HeaderText = "Area";
+            this.Area.MinimumWidth = 6;
+            this.Area.Name = "Area";
+            this.Area.ReadOnly = true;
+            this.Area.Width = 125;
+            // 
+            // Slot
+            // 
+            this.Slot.HeaderText = "Slot";
+            this.Slot.MinimumWidth = 6;
+            this.Slot.Name = "Slot";
+            this.Slot.ReadOnly = true;
+            this.Slot.Width = 125;
+            // 
             // ResidentDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1215,11 +1235,6 @@
         private System.Windows.Forms.Panel panel3;
         private Sunny.UI.UISymbolButton btnSaveProfile;
         private Sunny.UI.UIPanel uiPanel8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPlate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colVehical;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStartDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEndDate;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel3;
         private Sunny.UI.UIGroupBox uiGroupBox5;
         private Sunny.UI.UITextBox tbStatus;
@@ -1243,5 +1258,12 @@
         private Sunny.UI.UISymbolButton btnSaveCard;
         private System.Windows.Forms.Panel panel5;
         private Sunny.UI.UISymbolButton btnCancelLostCard;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPlate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colVehical;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEndDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Area;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Slot;
     }
 }

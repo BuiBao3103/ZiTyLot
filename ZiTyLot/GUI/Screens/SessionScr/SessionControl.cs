@@ -1,9 +1,12 @@
 ﻿using MySqlX.XDevAPI.Relational;
+using Sprache;
+using Sunny.UI;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -235,7 +238,11 @@ namespace ZiTyLot.GUI.Screens
             tableSession.Rows.Clear();
             foreach (Session session in page.Content)
             {
-                tableSession.Rows.Add(session.Id, session.Type, session.License_plate, session.Checkin_time, session.Checkout_time, "", session.Fee);
+                string duration = "";
+                if (session.Checkout_time != null && session.Checkin_time != null)
+                    //format duration
+                    duration = (session.Checkout_time - session.Checkin_time)?.ToString(@"dd\.hh\:mm\:ss");
+                tableSession.Rows.Add(session.Id, session.Type, session.License_plate, session.Checkin_time, session.Checkout_time, duration, session.Fee);
             }
             btnPrevious.Enabled = pageable.PageNumber > 1;
             btnNext.Enabled = pageable.PageNumber < page.TotalPages;
@@ -244,7 +251,7 @@ namespace ZiTyLot.GUI.Screens
         public void ChangePage(int pageNumber)
         {
             pageable.PageNumber = pageNumber;
-            pageable.SortBy =nameof(Session.Created_at);
+            pageable.SortBy = nameof(Session.Created_at);
             pageable.SortOrder = SortOrderPageable.Descending;
             page = sessionBUS.GetAllPagination(pageable, filters);
             LoadPageAndPageable();
@@ -278,6 +285,24 @@ namespace ZiTyLot.GUI.Screens
                     case 2:
                         filters.Add(new FilterCondition("type", CompOp.Like, SessionType.VISITOR));
                         break;
+                }
+            }
+            if (!string.IsNullOrEmpty(tbTimeIn.Text))
+            {
+                if (DateTime.TryParseExact(tbTimeIn.Text.Split(" - ")[0], "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime startTime)
+                    && DateTime.TryParseExact(tbTimeIn.Text.Split(" - ")[1], "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime endTime))
+                {
+                    filters.Add(new FilterCondition(nameof(Session.Checkin_time), CompOp.GreaterThanOrEqual, startTime));
+                    filters.Add(new FilterCondition(nameof(Session.Checkout_time), CompOp.LessThanOrEqual, endTime));
+                }
+            }
+            if (!string.IsNullOrEmpty(tbTimeOut.Text))
+            {
+                if (DateTime.TryParseExact(tbTimeOut.Text.Split(" - ")[0], "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime startTime)
+                     && DateTime.TryParseExact(tbTimeOut.Text.Split(" - ")[1], "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime endTime))
+                {
+                    filters.Add(new FilterCondition(nameof(Session.Checkout_time), CompOp.GreaterThanOrEqual, startTime));
+                    filters.Add(new FilterCondition(nameof(Session.Checkout_time), CompOp.LessThanOrEqual, endTime));
                 }
             }
             ChangePage(1);
@@ -344,6 +369,8 @@ namespace ZiTyLot.GUI.Screens
             cbFilter.SelectedIndex = 0;
             cbVehicalType.SelectedIndex = 0;
             tbSearch.Text = string.Empty;
+            tbTimeIn.Text = string.Empty;
+            tbTimeOut.Text = string.Empty;
             filters.Clear();
             ChangePage(1);
         }

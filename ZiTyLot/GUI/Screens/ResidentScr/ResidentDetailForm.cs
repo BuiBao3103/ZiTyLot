@@ -14,6 +14,7 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
         private readonly IssueBUS _issueBUS = new IssueBUS();
         private readonly BillBUS _billBus = new BillBUS();
         private readonly CardBUS _cardBUS = new CardBUS();
+        private readonly LostHistoryBUS _lostHistoryBUS = new LostHistoryBUS();
         public readonly Resident _resident;
 
         private bool _processLostCard = false;
@@ -39,14 +40,12 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
                 foreach (Issue issue in _resident.Bills[i].Issues)
                 {
                     VehicleType vehicleType = _issueBUS.PopulateVehicleType(issue).Vehicle_type;
-                    tableIssue.Rows.Add(issue.Id, issue.License_plate
-                    , vehicleType.Name
-                    , issue.Start_date, issue.End_date);
+                    tableIssue.Rows.Add(issue.Id, issue.License_plate, vehicleType.Name, issue.Start_date, issue.End_date, issue.Parking_lot_id, issue.Slot_id);
                 }
             }
 
             _resident = _residentBUS.PopulateCard(_resident);
-            
+
             LoadCardUI();
         }
         private void LoadCardUI()
@@ -144,7 +143,7 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
                 tbCodeRFID.Focus();
                 return;
             }
-            if(!InputValidator.ValidateRfid(tbCodeRFID.Text))
+            if (!InputValidator.ValidateRfid(tbCodeRFID.Text))
             {
                 MessageHelper.ShowWarning("RFID code is invalid");
                 tbCodeRFID.Focus();
@@ -154,9 +153,24 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
             {
                 if (_processLostCard)
                 {
-                    //TODO: Process lost card
+                    //update card status to LOST
+                    _resident.Card.Status = CardStatus.LOST;
+                    _cardBUS.Update(_resident.Card);
+                    //create lost history
+                    LostHistory lostHistory = new LostHistory
+                    {
+                        Card_id = _resident.Card.Id,
+                        Time_loss = DateTime.Now,
+                        Owner_name = _resident.Full_name,
+                        License_plate = "",
+                        Is_found = false
+                    };
+                    _lostHistoryBUS.Add(lostHistory);
+                    //issue new card
+                    Card cardIssue = _cardBUS.IssueCard(tbCodeRFID.Text, _resident.Id);
+                    _resident.Card = cardIssue;
+                    MessageHelper.ShowInfo("Lost card successfully");
 
-                    //_resident.Card = ...
 
                     LoadCardUI();
                     btnCancelLostCard.Visible = false;

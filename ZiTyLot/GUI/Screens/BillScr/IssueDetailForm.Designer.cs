@@ -716,6 +716,7 @@
             this.tbPlate.Watermark = "License plate";
             this.tbPlate.WatermarkActiveColor = System.Drawing.Color.DarkGray;
             this.tbPlate.WatermarkColor = System.Drawing.Color.LightGray;
+            this.tbPlate.TextChanged += new System.EventHandler(this.tbPlate_TextChanged);
             this.tbPlate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPlate_KeyPress);
             // 
             // IssueDetailForm

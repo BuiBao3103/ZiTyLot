@@ -24,9 +24,12 @@ namespace ZiTyLot.GUI.Screens
     {
         private readonly Debouncer _debouncer = new Debouncer();
         private readonly CardBUS cardBUS = new CardBUS();
+        private readonly VehicleTypeBUS vehicleTypeBUS = new VehicleTypeBUS();
         private readonly Pageable pageable = new Pageable();
         private readonly List<FilterCondition> filters = new List<FilterCondition>();
         private Page<Card> page;
+
+        private readonly List<VehicleType> _vehicleTypes;
 
         private CardCreateForm _CardCreateForm;
         public CardControl()
@@ -35,9 +38,10 @@ namespace ZiTyLot.GUI.Screens
             cbNumberofitem.SelectedIndexChanged -= cbNumberofitem_SelectedIndexChanged;
             cbNumberofitem.Items.AddRange(pageable.PageNumbersInit.Select(pageNumber => pageNumber + " items").ToArray());
             cbNumberofitem.SelectedIndex = 0;
-            cbNumberofitem.SelectedIndexChanged += cbNumberofitem_SelectedIndexChanged; 
+            cbNumberofitem.SelectedIndexChanged += cbNumberofitem_SelectedIndexChanged;
             menuFunction.ExportClick += menuBtnExport_Click;
             menuFunction.ImportClick += menuBtnImport_Click;
+            _vehicleTypes = vehicleTypeBUS.GetAll();
 
         }
 
@@ -118,7 +122,8 @@ namespace ZiTyLot.GUI.Screens
             tableCard.Rows.Clear();
             foreach (Card card in page.Content)
             {
-                tableCard.Rows.Add(card.Id, card.Rfid, card.Type, card.Vehicle_type, card.Status);
+                card.Vehicle_type = _vehicleTypes.Find(vt => vt.Id == card.Vehicle_type_id);
+                tableCard.Rows.Add(card.Id, card.Rfid, card.Type, card.Vehicle_type?.Name, card.Status);
             }
             //update button
             btnPrevious.Enabled = pageable.PageNumber > 1;
@@ -196,7 +201,7 @@ namespace ZiTyLot.GUI.Screens
             }
             else
             {
-                if (_CardCreateForm.WindowState == FormWindowState.Minimized) 
+                if (_CardCreateForm.WindowState == FormWindowState.Minimized)
                     _CardCreateForm.WindowState = FormWindowState.Normal;
                 _CardCreateForm.BringToFront();
             }
@@ -335,7 +340,7 @@ namespace ZiTyLot.GUI.Screens
 
                         if (result == DialogResult.Yes)
                         {
-                           Process.Start(selectedFileName);
+                            Process.Start(selectedFileName);
                         }
                     }
                     catch (Exception ex)
@@ -376,25 +381,25 @@ namespace ZiTyLot.GUI.Screens
         {
             try
             {
-                    using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                {
+                    saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+                    saveFileDialog.Title = "Save an Excel File";
+
+                    saveFileDialog.FileName = "Card-data-" + DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
+
+                    if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
                     {
-                        saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
-                        saveFileDialog.Title = "Save an Excel File";
+                        string filePath = saveFileDialog.FileName;
+                        cardBUS.ExportCardsToExcel(filePath);
+                        DialogResult result = MessageHelper.ShowConfirm("Export successful: " + filePath + "\nDo you want to open the file?");
 
-                        saveFileDialog.FileName = "Card-data-" + DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
-                 
-                        if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
+                        if (result == DialogResult.Yes)
                         {
-                            string filePath = saveFileDialog.FileName;
-                            cardBUS.ExportCardsToExcel(filePath);
-                            DialogResult result = MessageHelper.ShowConfirm("Export successful: " + filePath + "\nDo you want to open the file?");
-
-                            if (result == DialogResult.Yes)
-                            {
-                                Process.Start(filePath);
-                            }
+                            Process.Start(filePath);
                         }
                     }
+                }
             }
             catch (Exception ex)
             {

@@ -862,6 +862,7 @@ namespace ZiTyLot.GUI.Screens
             this.tbTimeOut.TabIndex = 1;
             this.tbTimeOut.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbTimeOut.Watermark = "";
+            this.tbTimeOut.Enabled = false;
             // 
             // btnTimeOut
             // 
@@ -1040,6 +1041,7 @@ namespace ZiTyLot.GUI.Screens
             this.tbTimeIn.TabIndex = 1;
             this.tbTimeIn.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbTimeIn.Watermark = "";
+            this.tbTimeIn.Enabled = false;
             // 
             // btnTimeIn
             // 
