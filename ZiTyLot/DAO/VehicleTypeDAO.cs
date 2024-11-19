@@ -30,11 +30,15 @@ namespace ZiTyLot.DAO
 
         public List<VehicleType> GetAll(List<FilterCondition> filters = null)
         {
+            if (filters == null) filters = new List<FilterCondition>();
+            filters.Add(new FilterCondition("deleted_at", CompOp.Equals, null));
             return factoryDAO.GetAll(filters);
         }
 
         public Page<VehicleType> GetAllPagination(Pageable pageable, List<FilterCondition> filters = null)
         {
+            if (filters == null) filters = new List<FilterCondition>();
+            filters.Add(new FilterCondition("deleted_at", CompOp.Equals, null));
             return factoryDAO.GetAllPagination(pageable, filters);
         }
 
