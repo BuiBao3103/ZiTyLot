@@ -83,7 +83,7 @@ namespace ZiTyLot.DAO
         {
             try
             {
-                daoFactory.Delete(id);
+                daoFactory.SoftDelete(id);
             }
             catch (Exception ex)
             {

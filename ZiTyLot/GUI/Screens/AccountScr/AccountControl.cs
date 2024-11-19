@@ -19,9 +19,11 @@ namespace ZiTyLot.GUI.Screens
     {
         private readonly Debouncer _debouncer = new Debouncer();
         private readonly AccountBUS accountBUS = new AccountBUS();
+        private readonly RoleBUS roleBUS = new RoleBUS();
         private readonly Pageable pageable = new Pageable();
         private readonly List<FilterCondition> filters = new List<FilterCondition>();
         private Page<Account> page;
+        private List<Role> _roles;
 
         private AccountCreateForm _accountCreateForm;
         private AccountDetailForm _accountDetailForm;
@@ -37,12 +39,12 @@ namespace ZiTyLot.GUI.Screens
         private void AccountScreen_Load(object sender, EventArgs e)
         {
             pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
-            pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
+            tableAccount.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, tableAccount.Width, tableAccount.Height, 10, 10));
             pnlPagination.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlPagination.Width, pnlPagination.Height, 10, 10));
             this.tableAccount.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
             this.tableAccount.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
             this.tableAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
-            pnlBottom.AutoScrollMinSize = new Size(0, pnlBottom.Height - 40);
+            
         }
         // Paint the header cell
         private void table_Paint(object sender, PaintEventArgs e)
@@ -156,7 +158,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void BottomPnl_Resize(object sender, EventArgs e)
         {
-            pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
+            tableAccount.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, tableAccount.Width, tableAccount.Height, 10, 10));
         }
 
         private void btnAdd_Click(object sender, EventArgs e) => ShowAccountCreateForm();
@@ -204,7 +206,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void LoadPageAndPageable()
         {
-
+            _roles = roleBUS.GetAll();
             if (page == null || pageable == null) return;
             //update page number
             tbCurrentpage.Text = pageable.PageNumber.ToString();
@@ -213,7 +215,8 @@ namespace ZiTyLot.GUI.Screens
             tableAccount.Rows.Clear();
             foreach (Account account in page.Content)
             {
-                tableAccount.Rows.Add(account.Id, account.Full_name, account.Username, account.Email, account.Role);
+                string roleName = _roles.Find(role => role.Id == account.Role_id).Name;
+                tableAccount.Rows.Add(account.Id, account.Full_name, account.Username, account.Email, roleName);
             }
             //update button
             btnPrevious.Enabled = pageable.PageNumber > 1;

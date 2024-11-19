@@ -180,7 +180,8 @@ namespace ZiTyLot.BUS
             {
                 List<FilterCondition> filters = new List<FilterCondition>
                 {
-                    new FilterCondition("parking_lot_id", CompOp.Equals, parkingLot.Id)
+                    new FilterCondition(nameof(ParkingLot.Deleted_at), CompOp.Equals, null),
+                    new FilterCondition(nameof(Issue.Parking_lot_id), CompOp.Equals, parkingLot.Id)
                 };
                 List<Issue> issues = issueDAO.GetAll(filters);
                 parkingLot.Issues = issues;

@@ -554,8 +554,11 @@ namespace ZiTyLot.DAO
         private void AddFilterConditionParameters(MySqlCommand command, FilterCondition filter)
         {
             if (filter.Value == null) return;
-            //if filter value is enum, add '' to convert it to string
-            // Add the filter condition parameter to the command
+            if (filter.Value.GetType() == typeof(DateTime))
+            {
+                command.Parameters.AddWithValue($"@{filter.Column}", filter.Value);
+                return;
+            }
             var parameterValue = filter.Operator == CompOp.Like ? $"%{filter.Value}%" : filter.Value.ToString();
             command.Parameters.AddWithValue($"@{filter.Column}", parameterValue);
         }

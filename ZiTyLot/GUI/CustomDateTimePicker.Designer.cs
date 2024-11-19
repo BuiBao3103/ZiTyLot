@@ -77,10 +77,10 @@
             this.uiPanel3.FillColor = System.Drawing.Color.White;
             this.uiPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.uiPanel3.Location = new System.Drawing.Point(5, 59);
-            this.uiPanel3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.uiPanel3.Margin = new System.Windows.Forms.Padding(5);
             this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel3.Name = "uiPanel3";
-            this.uiPanel3.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.uiPanel3.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel3.Radius = 0;
             this.uiPanel3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel3.Size = new System.Drawing.Size(232, 167);
@@ -220,7 +220,7 @@
             this.uiTableLayoutPanel3.Name = "uiTableLayoutPanel3";
             this.uiTableLayoutPanel3.RowCount = 1;
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 171F));
+            this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 172F));
             this.uiTableLayoutPanel3.Size = new System.Drawing.Size(239, 172);
             this.uiTableLayoutPanel3.TabIndex = 21;
             this.uiTableLayoutPanel3.TagString = null;
@@ -468,7 +468,7 @@
             this.uiTableLayoutPanel2.Name = "uiTableLayoutPanel2";
             this.uiTableLayoutPanel2.RowCount = 1;
             this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 171F));
+            this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 172F));
             this.uiTableLayoutPanel2.Size = new System.Drawing.Size(240, 172);
             this.uiTableLayoutPanel2.TabIndex = 25;
             this.uiTableLayoutPanel2.TagString = null;
@@ -682,10 +682,10 @@
             this.uiPanel5.FillColor = System.Drawing.Color.White;
             this.uiPanel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.uiPanel5.Location = new System.Drawing.Point(251, 59);
-            this.uiPanel5.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.uiPanel5.Margin = new System.Windows.Forms.Padding(5);
             this.uiPanel5.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel5.Name = "uiPanel5";
-            this.uiPanel5.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.uiPanel5.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel5.Radius = 0;
             this.uiPanel5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel5.Size = new System.Drawing.Size(231, 167);

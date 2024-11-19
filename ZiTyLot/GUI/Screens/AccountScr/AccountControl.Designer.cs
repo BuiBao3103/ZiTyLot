@@ -31,9 +31,10 @@ namespace ZiTyLot.GUI.Screens
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.tableTop = new Sunny.UI.UITableLayoutPanel();
             this.btnAdd = new Sunny.UI.UISymbolButton();
@@ -134,11 +135,11 @@ namespace ZiTyLot.GUI.Screens
             this.btnAdd.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Radius = 10;
-            this.btnAdd.RectColor = System.Drawing.Color.White;
+            this.btnAdd.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnAdd.RectDisableColor = System.Drawing.Color.White;
-            this.btnAdd.RectHoverColor = System.Drawing.Color.White;
-            this.btnAdd.RectPressColor = System.Drawing.Color.White;
-            this.btnAdd.RectSelectedColor = System.Drawing.Color.White;
+            this.btnAdd.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnAdd.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnAdd.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnAdd.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnAdd.Size = new System.Drawing.Size(232, 46);
             this.btnAdd.Symbol = 61694;
@@ -175,7 +176,7 @@ namespace ZiTyLot.GUI.Screens
             this.pnlSearch.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlSearch.Name = "pnlSearch";
             this.pnlSearch.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlSearch.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.pnlSearch.RectColor = System.Drawing.SystemColors.ControlLight;
             this.pnlSearch.RectSize = 2;
             this.pnlSearch.Size = new System.Drawing.Size(400, 46);
             this.pnlSearch.TabIndex = 2;
@@ -214,7 +215,8 @@ namespace ZiTyLot.GUI.Screens
             this.tbSearch.Padding = new System.Windows.Forms.Padding(5);
             this.tbSearch.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.tbSearch.ShowText = false;
-            this.tbSearch.Size = new System.Drawing.Size(293, 36);
+
+            this.tbSearch.Size = new System.Drawing.Size(293, 28);
             this.tbSearch.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.tbSearch.SymbolOffset = new System.Drawing.Point(0, -1);
             this.tbSearch.SymbolSize = 26;
@@ -222,9 +224,9 @@ namespace ZiTyLot.GUI.Screens
             this.tbSearch.Tag = "";
             this.tbSearch.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbSearch.Watermark = "Search an account by its";
-            this.tbSearch.WatermarkActiveColor = System.Drawing.SystemColors.ControlDark;
-            this.tbSearch.WatermarkColor = System.Drawing.SystemColors.ControlDark;
-            this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
+
+            this.tbSearch.WatermarkActiveColor = System.Drawing.Color.DarkGray;
+            this.tbSearch.WatermarkColor = System.Drawing.Color.LightGray;
             // 
             // uiSymbolLabel1
             // 
@@ -234,7 +236,8 @@ namespace ZiTyLot.GUI.Screens
             this.uiSymbolLabel1.Margin = new System.Windows.Forms.Padding(1);
             this.uiSymbolLabel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiSymbolLabel1.Name = "uiSymbolLabel1";
-            this.uiSymbolLabel1.Size = new System.Drawing.Size(30, 34);
+
+            this.uiSymbolLabel1.Size = new System.Drawing.Size(30, 26);
             this.uiSymbolLabel1.Symbol = 61442;
             this.uiSymbolLabel1.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiSymbolLabel1.SymbolSize = 26;
@@ -307,28 +310,30 @@ namespace ZiTyLot.GUI.Screens
             this.tableAccount.AllowUserToDeleteRows = false;
             this.tableAccount.AllowUserToResizeColumns = false;
             this.tableAccount.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.tableAccount.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
+            this.tableAccount.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.tableAccount.BackgroundColor = System.Drawing.Color.White;
             this.tableAccount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tableAccount.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.tableAccount.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableAccount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.tableAccount.ColumnHeadersHeight = 34;
+
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableAccount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.tableAccount.ColumnHeadersHeight = 40;
             this.tableAccount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
             this.colFullname,
@@ -338,15 +343,16 @@ namespace ZiTyLot.GUI.Screens
             this.colView,
             this.colDelete});
             this.tableAccount.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableAccount.DefaultCellStyle = dataGridViewCellStyle3;
+
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(114)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableAccount.DefaultCellStyle = dataGridViewCellStyle15;
             this.tableAccount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableAccount.GridColor = System.Drawing.Color.White;
             this.tableAccount.Location = new System.Drawing.Point(13, 12);
@@ -367,7 +373,6 @@ namespace ZiTyLot.GUI.Screens
             this.colId.Name = "colId";
             this.colId.ReadOnly = true;
             this.colId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colId.Width = 50;
             // 
             // colFullname
             // 
@@ -396,11 +401,11 @@ namespace ZiTyLot.GUI.Screens
             // 
             // colRole
             // 
-            this.colRole.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colRole.HeaderText = "Role";
             this.colRole.MinimumWidth = 6;
             this.colRole.Name = "colRole";
             this.colRole.ReadOnly = true;
+            this.colRole.Width = 200;
             // 
             // colView
             // 
@@ -811,6 +816,9 @@ namespace ZiTyLot.GUI.Screens
         private Panel pnlPrevious;
         private Sunny.UI.UISymbolButton btnPrevious;
         private Panel separtorBottom;
+        private Sunny.UI.UISymbolButton btnAdd;
+        private Sunny.UI.UISymbolLabel uiSymbolLabel1;
+        private Sunny.UI.UITextBox tbSearch;
         private DataGridViewTextBoxColumn colId;
         private DataGridViewTextBoxColumn colFullname;
         private DataGridViewTextBoxColumn colUsername;
@@ -818,8 +826,5 @@ namespace ZiTyLot.GUI.Screens
         private DataGridViewTextBoxColumn colRole;
         private DataGridViewButtonColumn colView;
         private DataGridViewButtonColumn colDelete;
-        private Sunny.UI.UISymbolButton btnAdd;
-        private Sunny.UI.UISymbolLabel uiSymbolLabel1;
-        private Sunny.UI.UITextBox tbSearch;
     }
 }

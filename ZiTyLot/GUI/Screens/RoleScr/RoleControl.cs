@@ -2,19 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Text;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
-using ZiTyLot.GUI.Screens.CardScr;
-using ZiTyLot.GUI.Screens.PriceScr;
 using ZiTyLot.GUI.Screens.RoleScr;
 using ZiTyLot.GUI.Utils;
 using ZiTyLot.Helper;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ZiTyLot.GUI.Screens
 {

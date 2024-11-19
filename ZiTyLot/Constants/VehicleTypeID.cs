@@ -4,6 +4,6 @@
     {
         public const int CAR = 1;
         public const int MOTORBIKE = 2;
-        public const int BIKECYCLE = 3;
+        public const int BICYCLE = 3;
     }
 }

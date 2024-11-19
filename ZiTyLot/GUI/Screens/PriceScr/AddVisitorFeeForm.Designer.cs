@@ -137,13 +137,12 @@
             this.pnlMain.Controls.Add(this.uiPanel1, 0, 0);
             this.pnlMain.Controls.Add(this.uiPanel2, 0, 1);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(13, 12);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlMain.Location = new System.Drawing.Point(10, 10);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.RowCount = 2;
-            this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.pnlMain.Size = new System.Drawing.Size(753, 602);
+            this.pnlMain.Size = new System.Drawing.Size(564, 489);
             this.pnlMain.TabIndex = 2;
             this.pnlMain.TagString = null;
             // 
@@ -154,8 +153,8 @@
             this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel1.FillColor = System.Drawing.Color.White;
             this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel1.Location = new System.Drawing.Point(5, 6);
-            this.uiPanel1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.uiPanel1.Location = new System.Drawing.Point(4, 5);
+            this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel1.Name = "uiPanel1";
             this.uiPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
@@ -163,7 +162,7 @@
             this.uiPanel1.RectColor = System.Drawing.SystemColors.ControlLight;
             this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom;
             this.uiPanel1.RectSize = 2;
-            this.uiPanel1.Size = new System.Drawing.Size(743, 54);
+            this.uiPanel1.Size = new System.Drawing.Size(556, 50);
             this.uiPanel1.TabIndex = 17;
             this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -183,7 +182,7 @@
             this.uiPanel3.RectColor = System.Drawing.SystemColors.ControlLight;
             this.uiPanel3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel3.RectSize = 2;
-            this.uiPanel3.Size = new System.Drawing.Size(743, 52);
+            this.uiPanel3.Size = new System.Drawing.Size(556, 48);
             this.uiPanel3.TabIndex = 5;
             this.uiPanel3.Text = null;
             this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -196,7 +195,7 @@
             this.lbVehicleType.Location = new System.Drawing.Point(0, 2);
             this.lbVehicleType.Margin = new System.Windows.Forms.Padding(0);
             this.lbVehicleType.Name = "lbVehicleType";
-            this.lbVehicleType.Size = new System.Drawing.Size(743, 40);
+            this.lbVehicleType.Size = new System.Drawing.Size(556, 36);
             this.lbVehicleType.TabIndex = 3;
             this.lbVehicleType.Text = "{vehical_type} pricing";
             this.lbVehicleType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -208,13 +207,13 @@
             this.uiPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel2.FillColor = System.Drawing.Color.White;
             this.uiPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel2.Location = new System.Drawing.Point(5, 72);
-            this.uiPanel2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.uiPanel2.Location = new System.Drawing.Point(4, 65);
+            this.uiPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel2.Name = "uiPanel2";
             this.uiPanel2.RectColor = System.Drawing.Color.White;
             this.uiPanel2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel2.Size = new System.Drawing.Size(743, 524);
+            this.uiPanel2.Size = new System.Drawing.Size(556, 419);
             this.uiPanel2.TabIndex = 3;
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -235,7 +234,7 @@
             this.pnlTab.Name = "pnlTab";
             this.pnlTab.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.pnlTab.SelectedIndex = 0;
-            this.pnlTab.Size = new System.Drawing.Size(743, 524);
+            this.pnlTab.Size = new System.Drawing.Size(556, 419);
             this.pnlTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.pnlTab.TabBackColor = System.Drawing.Color.White;
             this.pnlTab.TabIndex = 1;
@@ -251,7 +250,7 @@
             this.tpTurn.Controls.Add(this.uiPanel4);
             this.tpTurn.Location = new System.Drawing.Point(0, 40);
             this.tpTurn.Name = "tpTurn";
-            this.tpTurn.Size = new System.Drawing.Size(743, 484);
+            this.tpTurn.Size = new System.Drawing.Size(556, 379);
             this.tpTurn.TabIndex = 0;
             this.tpTurn.Text = "Per turn";
             // 
@@ -270,7 +269,7 @@
             this.uiPanel4.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.uiPanel4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel4.RectSize = 2;
-            this.uiPanel4.Size = new System.Drawing.Size(743, 484);
+            this.uiPanel4.Size = new System.Drawing.Size(556, 379);
             this.uiPanel4.TabIndex = 0;
             this.uiPanel4.Text = null;
             this.uiPanel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -288,7 +287,7 @@
             this.uiPanel5.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel5.Name = "uiPanel5";
             this.uiPanel5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel5.Size = new System.Drawing.Size(743, 479);
+            this.uiPanel5.Size = new System.Drawing.Size(556, 374);
             this.uiPanel5.TabIndex = 0;
             this.uiPanel5.Text = null;
             this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -300,7 +299,7 @@
             this.pnlButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlButton.FillColor = System.Drawing.Color.White;
             this.pnlButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlButton.Location = new System.Drawing.Point(0, 425);
+            this.pnlButton.Location = new System.Drawing.Point(0, 320);
             this.pnlButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlButton.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlButton.Name = "pnlButton";
@@ -309,7 +308,7 @@
             this.pnlButton.RectColor = System.Drawing.SystemColors.ControlLight;
             this.pnlButton.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
             this.pnlButton.RectSize = 2;
-            this.pnlButton.Size = new System.Drawing.Size(743, 54);
+            this.pnlButton.Size = new System.Drawing.Size(556, 54);
             this.pnlButton.TabIndex = 17;
             this.pnlButton.Text = null;
             this.pnlButton.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -318,7 +317,7 @@
             // 
             this.panel2.Controls.Add(this.uiSymbolButton2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(493, 13);
+            this.panel2.Location = new System.Drawing.Point(306, 13);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(120, 38);
             this.panel2.TabIndex = 10;
@@ -354,7 +353,7 @@
             // 
             this.panel3.Controls.Add(this.btnConfirmPT);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(613, 13);
+            this.panel3.Location = new System.Drawing.Point(426, 13);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.panel3.Size = new System.Drawing.Size(130, 38);
@@ -368,23 +367,22 @@
             this.btnConfirmPT.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
             this.btnConfirmPT.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
             this.btnConfirmPT.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmPT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfirmPT.Location = new System.Drawing.Point(10, 0);
             this.btnConfirmPT.Margin = new System.Windows.Forms.Padding(0);
             this.btnConfirmPT.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnConfirmPT.Name = "btnConfirmPT";
             this.btnConfirmPT.Padding = new System.Windows.Forms.Padding(14, 0, 12, 0);
             this.btnConfirmPT.Radius = 10;
-            this.btnConfirmPT.RectColor = System.Drawing.Color.White;
+            this.btnConfirmPT.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConfirmPT.RectDisableColor = System.Drawing.Color.White;
-            this.btnConfirmPT.RectHoverColor = System.Drawing.Color.White;
-            this.btnConfirmPT.RectPressColor = System.Drawing.Color.White;
-            this.btnConfirmPT.RectSelectedColor = System.Drawing.Color.White;
+            this.btnConfirmPT.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConfirmPT.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConfirmPT.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConfirmPT.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnConfirmPT.Size = new System.Drawing.Size(120, 38);
-            this.btnConfirmPT.Symbol = 0;
+            this.btnConfirmPT.Symbol = 61694;
             this.btnConfirmPT.TabIndex = 3;
-            this.btnConfirmPT.Text = "Confirm";
+            this.btnConfirmPT.Text = "Create";
             this.btnConfirmPT.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmPT.Click += new System.EventHandler(this.btnConfirmPT_Click);
             // 
@@ -399,7 +397,7 @@
             this.uiPanel6.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel6.Name = "uiPanel6";
             this.uiPanel6.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel6.Size = new System.Drawing.Size(743, 80);
+            this.uiPanel6.Size = new System.Drawing.Size(556, 80);
             this.uiPanel6.TabIndex = 3;
             this.uiPanel6.Text = null;
             this.uiPanel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -410,14 +408,14 @@
             this.uiGroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox2.FillColor = System.Drawing.Color.White;
             this.uiGroupBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox2.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox2.Name = "uiGroupBox2";
             this.uiGroupBox2.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox2.Size = new System.Drawing.Size(743, 80);
+            this.uiGroupBox2.Size = new System.Drawing.Size(556, 80);
             this.uiGroupBox2.TabIndex = 0;
             this.uiGroupBox2.Text = "Night fee per turn";
             this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -433,13 +431,15 @@
             this.tbNightFeePT.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbNightFeePT.Name = "tbNightFeePT";
             this.tbNightFeePT.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbNightFeePT.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbNightFeePT.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbNightFeePT.RectSize = 2;
             this.tbNightFeePT.ShowText = false;
-            this.tbNightFeePT.Size = new System.Drawing.Size(727, 34);
+            this.tbNightFeePT.Size = new System.Drawing.Size(540, 34);
             this.tbNightFeePT.TabIndex = 0;
             this.tbNightFeePT.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tbNightFeePT.Watermark = "";
+            this.tbNightFeePT.Watermark = "50,000 VNĐ";
+            this.tbNightFeePT.WatermarkActiveColor = System.Drawing.Color.DarkGray;
+            this.tbNightFeePT.WatermarkColor = System.Drawing.Color.LightGray;
             this.tbNightFeePT.TextChanged += new System.EventHandler(this.tbNightFeePT_TextChanged);
             this.tbNightFeePT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNightFeePT_KeyPress);
             // 
@@ -454,7 +454,7 @@
             this.pnlFullname.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlFullname.Name = "pnlFullname";
             this.pnlFullname.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlFullname.Size = new System.Drawing.Size(743, 80);
+            this.pnlFullname.Size = new System.Drawing.Size(556, 80);
             this.pnlFullname.TabIndex = 2;
             this.pnlFullname.Text = null;
             this.pnlFullname.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -465,14 +465,14 @@
             this.uiGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox1.FillColor = System.Drawing.Color.White;
             this.uiGroupBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox1.Name = "uiGroupBox1";
             this.uiGroupBox1.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox1.Size = new System.Drawing.Size(743, 80);
+            this.uiGroupBox1.Size = new System.Drawing.Size(556, 80);
             this.uiGroupBox1.TabIndex = 0;
             this.uiGroupBox1.Text = "Day fee per turn";
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -488,13 +488,15 @@
             this.tbDayFeePT.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbDayFeePT.Name = "tbDayFeePT";
             this.tbDayFeePT.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbDayFeePT.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbDayFeePT.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbDayFeePT.RectSize = 2;
             this.tbDayFeePT.ShowText = false;
-            this.tbDayFeePT.Size = new System.Drawing.Size(727, 34);
+            this.tbDayFeePT.Size = new System.Drawing.Size(540, 34);
             this.tbDayFeePT.TabIndex = 0;
             this.tbDayFeePT.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tbDayFeePT.Watermark = "";
+            this.tbDayFeePT.Watermark = "50,000 VNĐ";
+            this.tbDayFeePT.WatermarkActiveColor = System.Drawing.Color.DarkGray;
+            this.tbDayFeePT.WatermarkColor = System.Drawing.Color.LightGray;
             this.tbDayFeePT.TextChanged += new System.EventHandler(this.tbDayFeePT_TextChanged);
             this.tbDayFeePT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDayFeePT_KeyPress);
             // 
@@ -504,7 +506,7 @@
             this.tpHourTurn.Controls.Add(this.uiPanel7);
             this.tpHourTurn.Location = new System.Drawing.Point(0, 40);
             this.tpHourTurn.Name = "tpHourTurn";
-            this.tpHourTurn.Size = new System.Drawing.Size(556, 385);
+            this.tpHourTurn.Size = new System.Drawing.Size(556, 379);
             this.tpHourTurn.TabIndex = 1;
             this.tpHourTurn.Text = "Per hour turn";
             // 
@@ -523,7 +525,7 @@
             this.uiPanel7.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.uiPanel7.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel7.RectSize = 2;
-            this.uiPanel7.Size = new System.Drawing.Size(556, 385);
+            this.uiPanel7.Size = new System.Drawing.Size(556, 379);
             this.uiPanel7.TabIndex = 1;
             this.uiPanel7.Text = null;
             this.uiPanel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -542,7 +544,7 @@
             this.uiPanel8.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel8.Name = "uiPanel8";
             this.uiPanel8.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel8.Size = new System.Drawing.Size(556, 380);
+            this.uiPanel8.Size = new System.Drawing.Size(556, 374);
             this.uiPanel8.TabIndex = 0;
             this.uiPanel8.Text = null;
             this.uiPanel8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -569,7 +571,7 @@
             this.uiGroupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox5.FillColor = System.Drawing.Color.White;
             this.uiGroupBox5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox5.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox5.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox5.MinimumSize = new System.Drawing.Size(1, 1);
@@ -592,13 +594,15 @@
             this.tbHourPHT.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbHourPHT.Name = "tbHourPHT";
             this.tbHourPHT.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbHourPHT.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbHourPHT.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbHourPHT.RectSize = 2;
             this.tbHourPHT.ShowText = false;
             this.tbHourPHT.Size = new System.Drawing.Size(540, 34);
             this.tbHourPHT.TabIndex = 0;
             this.tbHourPHT.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tbHourPHT.Watermark = "";
+            this.tbHourPHT.Watermark = "5 hours";
+            this.tbHourPHT.WatermarkActiveColor = System.Drawing.Color.DarkGray;
+            this.tbHourPHT.WatermarkColor = System.Drawing.Color.LightGray;
             this.tbHourPHT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbHourPHT_KeyPress);
             // 
             // uiPanel9
@@ -608,7 +612,7 @@
             this.uiPanel9.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.uiPanel9.FillColor = System.Drawing.Color.White;
             this.uiPanel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel9.Location = new System.Drawing.Point(0, 326);
+            this.uiPanel9.Location = new System.Drawing.Point(0, 320);
             this.uiPanel9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel9.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel9.Name = "uiPanel9";
@@ -676,23 +680,22 @@
             this.btnConfirmPHT.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
             this.btnConfirmPHT.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
             this.btnConfirmPHT.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmPHT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfirmPHT.Location = new System.Drawing.Point(10, 0);
             this.btnConfirmPHT.Margin = new System.Windows.Forms.Padding(0);
             this.btnConfirmPHT.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnConfirmPHT.Name = "btnConfirmPHT";
             this.btnConfirmPHT.Padding = new System.Windows.Forms.Padding(14, 0, 12, 0);
             this.btnConfirmPHT.Radius = 10;
-            this.btnConfirmPHT.RectColor = System.Drawing.Color.White;
+            this.btnConfirmPHT.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConfirmPHT.RectDisableColor = System.Drawing.Color.White;
-            this.btnConfirmPHT.RectHoverColor = System.Drawing.Color.White;
-            this.btnConfirmPHT.RectPressColor = System.Drawing.Color.White;
-            this.btnConfirmPHT.RectSelectedColor = System.Drawing.Color.White;
+            this.btnConfirmPHT.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConfirmPHT.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConfirmPHT.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConfirmPHT.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnConfirmPHT.Size = new System.Drawing.Size(120, 38);
-            this.btnConfirmPHT.Symbol = 0;
+            this.btnConfirmPHT.Symbol = 61694;
             this.btnConfirmPHT.TabIndex = 3;
-            this.btnConfirmPHT.Text = "Confirm";
+            this.btnConfirmPHT.Text = "Create";
             this.btnConfirmPHT.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmPHT.Click += new System.EventHandler(this.btnConfirmPHT_Click);
             // 
@@ -718,7 +721,7 @@
             this.uiGroupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox3.FillColor = System.Drawing.Color.White;
             this.uiGroupBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox3.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox3.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox3.MinimumSize = new System.Drawing.Size(1, 1);
@@ -741,13 +744,15 @@
             this.tbNightFeePHT.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbNightFeePHT.Name = "tbNightFeePHT";
             this.tbNightFeePHT.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbNightFeePHT.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbNightFeePHT.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbNightFeePHT.RectSize = 2;
             this.tbNightFeePHT.ShowText = false;
             this.tbNightFeePHT.Size = new System.Drawing.Size(540, 34);
             this.tbNightFeePHT.TabIndex = 0;
             this.tbNightFeePHT.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tbNightFeePHT.Watermark = "";
+            this.tbNightFeePHT.Watermark = "50,000 VNĐ";
+            this.tbNightFeePHT.WatermarkActiveColor = System.Drawing.Color.DarkGray;
+            this.tbNightFeePHT.WatermarkColor = System.Drawing.Color.LightGray;
             this.tbNightFeePHT.TextChanged += new System.EventHandler(this.tbNightFeePHT_TextChanged);
             this.tbNightFeePHT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNightFeePHT_KeyPress);
             // 
@@ -773,7 +778,7 @@
             this.uiGroupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox4.FillColor = System.Drawing.Color.White;
             this.uiGroupBox4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox4.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox4.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox4.MinimumSize = new System.Drawing.Size(1, 1);
@@ -796,13 +801,15 @@
             this.tbDayFeePHT.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbDayFeePHT.Name = "tbDayFeePHT";
             this.tbDayFeePHT.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbDayFeePHT.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbDayFeePHT.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbDayFeePHT.RectSize = 2;
             this.tbDayFeePHT.ShowText = false;
             this.tbDayFeePHT.Size = new System.Drawing.Size(540, 34);
             this.tbDayFeePHT.TabIndex = 0;
             this.tbDayFeePHT.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tbDayFeePHT.Watermark = "";
+            this.tbDayFeePHT.Watermark = "50,000 VNĐ";
+            this.tbDayFeePHT.WatermarkActiveColor = System.Drawing.Color.DarkGray;
+            this.tbDayFeePHT.WatermarkColor = System.Drawing.Color.LightGray;
             this.tbDayFeePHT.TextChanged += new System.EventHandler(this.tbDayFeePHT_TextChanged);
             this.tbDayFeePHT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDayFeePHT_KeyPress);
             // 
@@ -812,7 +819,7 @@
             this.tpMNHour.Controls.Add(this.uiPanel13);
             this.tpMNHour.Location = new System.Drawing.Point(0, 40);
             this.tpMNHour.Name = "tpMNHour";
-            this.tpMNHour.Size = new System.Drawing.Size(556, 385);
+            this.tpMNHour.Size = new System.Drawing.Size(556, 379);
             this.tpMNHour.TabIndex = 2;
             this.tpMNHour.Text = "Per first and later hour";
             // 
@@ -831,7 +838,7 @@
             this.uiPanel13.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.uiPanel13.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel13.RectSize = 2;
-            this.uiPanel13.Size = new System.Drawing.Size(556, 385);
+            this.uiPanel13.Size = new System.Drawing.Size(556, 379);
             this.uiPanel13.TabIndex = 2;
             this.uiPanel13.Text = null;
             this.uiPanel13.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -851,7 +858,7 @@
             this.uiPanel14.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel14.Name = "uiPanel14";
             this.uiPanel14.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel14.Size = new System.Drawing.Size(556, 380);
+            this.uiPanel14.Size = new System.Drawing.Size(556, 374);
             this.uiPanel14.TabIndex = 0;
             this.uiPanel14.Text = null;
             this.uiPanel14.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -878,7 +885,7 @@
             this.uiGroupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox9.FillColor = System.Drawing.Color.White;
             this.uiGroupBox9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox9.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox9.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox9.MinimumSize = new System.Drawing.Size(1, 1);
@@ -901,13 +908,15 @@
             this.tbHourNextPeriod.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbHourNextPeriod.Name = "tbHourNextPeriod";
             this.tbHourNextPeriod.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbHourNextPeriod.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbHourNextPeriod.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbHourNextPeriod.RectSize = 2;
             this.tbHourNextPeriod.ShowText = false;
             this.tbHourNextPeriod.Size = new System.Drawing.Size(540, 34);
             this.tbHourNextPeriod.TabIndex = 0;
             this.tbHourNextPeriod.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tbHourNextPeriod.Watermark = "";
+            this.tbHourNextPeriod.Watermark = "5 hours";
+            this.tbHourNextPeriod.WatermarkActiveColor = System.Drawing.Color.DarkGray;
+            this.tbHourNextPeriod.WatermarkColor = System.Drawing.Color.LightGray;
             this.tbHourNextPeriod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbHourNextPeriod_KeyPress);
             // 
             // uiPanel15
@@ -932,7 +941,7 @@
             this.uiGroupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox6.FillColor = System.Drawing.Color.White;
             this.uiGroupBox6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox6.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox6.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox6.MinimumSize = new System.Drawing.Size(1, 1);
@@ -955,13 +964,15 @@
             this.tbFeeNextPeriod.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbFeeNextPeriod.Name = "tbFeeNextPeriod";
             this.tbFeeNextPeriod.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbFeeNextPeriod.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbFeeNextPeriod.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbFeeNextPeriod.RectSize = 2;
             this.tbFeeNextPeriod.ShowText = false;
             this.tbFeeNextPeriod.Size = new System.Drawing.Size(540, 34);
             this.tbFeeNextPeriod.TabIndex = 0;
             this.tbFeeNextPeriod.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tbFeeNextPeriod.Watermark = "";
+            this.tbFeeNextPeriod.Watermark = "50,000 VNĐ";
+            this.tbFeeNextPeriod.WatermarkActiveColor = System.Drawing.Color.DarkGray;
+            this.tbFeeNextPeriod.WatermarkColor = System.Drawing.Color.LightGray;
             this.tbFeeNextPeriod.TextChanged += new System.EventHandler(this.tbFeeNextPeriod_TextChanged);
             this.tbFeeNextPeriod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFeeNextPeriod_KeyPress);
             // 
@@ -972,7 +983,7 @@
             this.uiPanel16.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.uiPanel16.FillColor = System.Drawing.Color.White;
             this.uiPanel16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel16.Location = new System.Drawing.Point(0, 326);
+            this.uiPanel16.Location = new System.Drawing.Point(0, 320);
             this.uiPanel16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel16.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel16.Name = "uiPanel16";
@@ -1040,23 +1051,22 @@
             this.btnConfirmPeriod.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
             this.btnConfirmPeriod.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
             this.btnConfirmPeriod.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmPeriod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfirmPeriod.Location = new System.Drawing.Point(10, 0);
             this.btnConfirmPeriod.Margin = new System.Windows.Forms.Padding(0);
             this.btnConfirmPeriod.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnConfirmPeriod.Name = "btnConfirmPeriod";
             this.btnConfirmPeriod.Padding = new System.Windows.Forms.Padding(14, 0, 12, 0);
             this.btnConfirmPeriod.Radius = 10;
-            this.btnConfirmPeriod.RectColor = System.Drawing.Color.White;
+            this.btnConfirmPeriod.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConfirmPeriod.RectDisableColor = System.Drawing.Color.White;
-            this.btnConfirmPeriod.RectHoverColor = System.Drawing.Color.White;
-            this.btnConfirmPeriod.RectPressColor = System.Drawing.Color.White;
-            this.btnConfirmPeriod.RectSelectedColor = System.Drawing.Color.White;
+            this.btnConfirmPeriod.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConfirmPeriod.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConfirmPeriod.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConfirmPeriod.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnConfirmPeriod.Size = new System.Drawing.Size(120, 38);
-            this.btnConfirmPeriod.Symbol = 0;
+            this.btnConfirmPeriod.Symbol = 61694;
             this.btnConfirmPeriod.TabIndex = 3;
-            this.btnConfirmPeriod.Text = "Confirm";
+            this.btnConfirmPeriod.Text = "Create";
             this.btnConfirmPeriod.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmPeriod.Click += new System.EventHandler(this.btnConfirmPeriod_Click);
             // 
@@ -1082,7 +1092,7 @@
             this.uiGroupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox7.FillColor = System.Drawing.Color.White;
             this.uiGroupBox7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox7.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox7.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox7.MinimumSize = new System.Drawing.Size(1, 1);
@@ -1105,13 +1115,15 @@
             this.tbHourFirstPeriod.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbHourFirstPeriod.Name = "tbHourFirstPeriod";
             this.tbHourFirstPeriod.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbHourFirstPeriod.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbHourFirstPeriod.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbHourFirstPeriod.RectSize = 2;
             this.tbHourFirstPeriod.ShowText = false;
             this.tbHourFirstPeriod.Size = new System.Drawing.Size(540, 34);
             this.tbHourFirstPeriod.TabIndex = 0;
             this.tbHourFirstPeriod.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tbHourFirstPeriod.Watermark = "";
+            this.tbHourFirstPeriod.Watermark = "5 hours";
+            this.tbHourFirstPeriod.WatermarkActiveColor = System.Drawing.Color.DarkGray;
+            this.tbHourFirstPeriod.WatermarkColor = System.Drawing.Color.LightGray;
             this.tbHourFirstPeriod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbHourFirstPeriod_KeyPress);
             // 
             // uiPanel18
@@ -1136,7 +1148,7 @@
             this.uiGroupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox8.FillColor = System.Drawing.Color.White;
             this.uiGroupBox8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox8.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox8.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox8.MinimumSize = new System.Drawing.Size(1, 1);
@@ -1159,28 +1171,29 @@
             this.tbFeeFirstPeriod.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbFeeFirstPeriod.Name = "tbFeeFirstPeriod";
             this.tbFeeFirstPeriod.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbFeeFirstPeriod.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbFeeFirstPeriod.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbFeeFirstPeriod.RectSize = 2;
             this.tbFeeFirstPeriod.ShowText = false;
             this.tbFeeFirstPeriod.Size = new System.Drawing.Size(540, 34);
             this.tbFeeFirstPeriod.TabIndex = 0;
             this.tbFeeFirstPeriod.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tbFeeFirstPeriod.Watermark = "";
+            this.tbFeeFirstPeriod.Watermark = "50,000 VNĐ";
+            this.tbFeeFirstPeriod.WatermarkActiveColor = System.Drawing.Color.DarkGray;
+            this.tbFeeFirstPeriod.WatermarkColor = System.Drawing.Color.LightGray;
             this.tbFeeFirstPeriod.TextChanged += new System.EventHandler(this.tbFeeFirstPeriod_TextChanged);
             this.tbFeeFirstPeriod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFeeFirstPeriod_KeyPress);
             // 
             // AddVisitorFeeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(779, 626);
+            this.ClientSize = new System.Drawing.Size(584, 509);
             this.Controls.Add(this.pnlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MinimumSize = new System.Drawing.Size(794, 664);
+            this.MinimumSize = new System.Drawing.Size(600, 547);
             this.Name = "AddVisitorFeeForm";
-            this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.Text = "Visitor Fee Create Form";
             this.Load += new System.EventHandler(this.PriceDetailForm_Load);
             this.pnlMain.ResumeLayout(false);

@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlTab = new Sunny.UI.UITabControl();
             this.tpRevenue = new System.Windows.Forms.TabPage();
@@ -59,8 +59,6 @@
             this.uiPanel15 = new Sunny.UI.UIPanel();
             this.pnlBtnDuration = new System.Windows.Forms.Panel();
             this.btnDuration = new Sunny.UI.UISymbolButton();
-            this.uiPanel25 = new Sunny.UI.UIPanel();
-            this.cbQuickFilter = new Sunny.UI.UIComboBox();
             this.uiLabel10 = new Sunny.UI.UILabel();
             this.uiPanel11 = new Sunny.UI.UIPanel();
             this.uiTableLayoutPanel4 = new Sunny.UI.UITableLayoutPanel();
@@ -90,8 +88,6 @@
             this.uiPanel30 = new Sunny.UI.UIPanel();
             this.pnlBtnSessionDuration = new System.Windows.Forms.Panel();
             this.btnSessionDuration = new Sunny.UI.UISymbolButton();
-            this.uiPanel32 = new Sunny.UI.UIPanel();
-            this.cbSessionQuickFilter = new Sunny.UI.UIComboBox();
             this.uiLabel5 = new Sunny.UI.UILabel();
             this.uiPanel36 = new Sunny.UI.UIPanel();
             this.uiTableLayoutPanel11 = new Sunny.UI.UITableLayoutPanel();
@@ -124,7 +120,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartOverview)).BeginInit();
             this.uiPanel15.SuspendLayout();
             this.pnlBtnDuration.SuspendLayout();
-            this.uiPanel25.SuspendLayout();
             this.uiPanel11.SuspendLayout();
             this.uiTableLayoutPanel4.SuspendLayout();
             this.uiPanel8.SuspendLayout();
@@ -142,7 +137,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartSessionOverview)).BeginInit();
             this.uiPanel30.SuspendLayout();
             this.pnlBtnSessionDuration.SuspendLayout();
-            this.uiPanel32.SuspendLayout();
             this.uiPanel36.SuspendLayout();
             this.uiTableLayoutPanel11.SuspendLayout();
             this.uiPanel39.SuspendLayout();
@@ -347,22 +341,22 @@
             // 
             // chartCorrelate
             // 
-            chartArea1.AxisX.IsLabelAutoFit = false;
-            chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.AxisX.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.AxisY.IsLabelAutoFit = false;
-            chartArea1.AxisY.LabelStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.AxisY.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.Name = "ChartArea1";
-            this.chartCorrelate.ChartAreas.Add(chartArea1);
+            chartArea4.AxisX.IsLabelAutoFit = false;
+            chartArea4.AxisX.LabelStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea4.AxisX.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea4.AxisY.IsLabelAutoFit = false;
+            chartArea4.AxisY.LabelStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea4.AxisY.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea4.Name = "ChartArea1";
+            this.chartCorrelate.ChartAreas.Add(chartArea4);
             this.chartCorrelate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartCorrelate.Location = new System.Drawing.Point(10, 10);
             this.chartCorrelate.Name = "chartCorrelate";
             this.chartCorrelate.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Name = "Total";
-            this.chartCorrelate.Series.Add(series1);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series8.Name = "Total";
+            this.chartCorrelate.Series.Add(series8);
             this.chartCorrelate.Size = new System.Drawing.Size(258, 412);
             this.chartCorrelate.TabIndex = 0;
             this.chartCorrelate.Text = "chart2";
@@ -427,41 +421,41 @@
             // 
             // chartOverview
             // 
-            chartArea2.AxisX.IsLabelAutoFit = false;
-            chartArea2.AxisX.LabelStyle.Angle = -45;
-            chartArea2.AxisX.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea2.AxisX.Title = "Period";
-            chartArea2.AxisX.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea2.AxisX.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            chartArea2.AxisY.IsLabelAutoFit = false;
-            chartArea2.AxisY.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea2.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            chartArea2.AxisY.Title = "kVNĐ";
-            chartArea2.AxisY.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea2.AxisY.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            chartArea2.Name = "ChartArea1";
-            this.chartOverview.ChartAreas.Add(chartArea2);
+            chartArea5.AxisX.IsLabelAutoFit = false;
+            chartArea5.AxisX.LabelStyle.Angle = -45;
+            chartArea5.AxisX.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea5.AxisX.Title = "Period";
+            chartArea5.AxisX.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea5.AxisX.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            chartArea5.AxisY.IsLabelAutoFit = false;
+            chartArea5.AxisY.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea5.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea5.AxisY.Title = "kVNĐ";
+            chartArea5.AxisY.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea5.AxisY.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            chartArea5.Name = "ChartArea1";
+            this.chartOverview.ChartAreas.Add(chartArea5);
             this.chartOverview.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chartOverview.Legends.Add(legend1);
+            legend3.Name = "Legend1";
+            this.chartOverview.Legends.Add(legend3);
             this.chartOverview.Location = new System.Drawing.Point(0, 0);
             this.chartOverview.Name = "chartOverview";
             this.chartOverview.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series2.ChartArea = "ChartArea1";
-            series2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series2.Legend = "Legend1";
-            series2.Name = "Total";
-            series3.ChartArea = "ChartArea1";
-            series3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series3.Legend = "Legend1";
-            series3.Name = "Resident";
-            series4.ChartArea = "ChartArea1";
-            series4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series4.Legend = "Legend1";
-            series4.Name = "Visitor";
-            this.chartOverview.Series.Add(series2);
-            this.chartOverview.Series.Add(series3);
-            this.chartOverview.Series.Add(series4);
+            series9.ChartArea = "ChartArea1";
+            series9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series9.Legend = "Legend1";
+            series9.Name = "Total";
+            series10.ChartArea = "ChartArea1";
+            series10.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series10.Legend = "Legend1";
+            series10.Name = "Resident";
+            series11.ChartArea = "ChartArea1";
+            series11.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series11.Legend = "Legend1";
+            series11.Name = "Visitor";
+            this.chartOverview.Series.Add(series9);
+            this.chartOverview.Series.Add(series10);
+            this.chartOverview.Series.Add(series11);
             this.chartOverview.Size = new System.Drawing.Size(590, 432);
             this.chartOverview.TabIndex = 0;
             // 
@@ -469,7 +463,6 @@
             // 
             this.uiTableLayoutPanel5.SetColumnSpan(this.uiPanel15, 2);
             this.uiPanel15.Controls.Add(this.pnlBtnDuration);
-            this.uiPanel15.Controls.Add(this.uiPanel25);
             this.uiPanel15.Controls.Add(this.uiLabel10);
             this.uiPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel15.FillColor = System.Drawing.Color.White;
@@ -490,9 +483,8 @@
             // 
             this.pnlBtnDuration.Controls.Add(this.btnDuration);
             this.pnlBtnDuration.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlBtnDuration.Location = new System.Drawing.Point(306, 0);
+            this.pnlBtnDuration.Location = new System.Drawing.Point(456, 0);
             this.pnlBtnDuration.Name = "pnlBtnDuration";
-            this.pnlBtnDuration.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.pnlBtnDuration.Size = new System.Drawing.Size(134, 30);
             this.pnlBtnDuration.TabIndex = 28;
             // 
@@ -518,7 +510,7 @@
             this.btnDuration.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDuration.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDuration.RectSize = 2;
-            this.btnDuration.Size = new System.Drawing.Size(124, 30);
+            this.btnDuration.Size = new System.Drawing.Size(134, 30);
             this.btnDuration.Symbol = 361560;
             this.btnDuration.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDuration.TabIndex = 3;
@@ -526,65 +518,6 @@
             this.btnDuration.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDuration.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDuration.Click += new System.EventHandler(this.btnDuration_Click);
-            // 
-            // uiPanel25
-            // 
-            this.uiPanel25.Controls.Add(this.cbQuickFilter);
-            this.uiPanel25.Dock = System.Windows.Forms.DockStyle.Right;
-            this.uiPanel25.FillColor = System.Drawing.Color.White;
-            this.uiPanel25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel25.Location = new System.Drawing.Point(440, 0);
-            this.uiPanel25.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel25.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel25.Name = "uiPanel25";
-            this.uiPanel25.Padding = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.uiPanel25.RectColor = System.Drawing.SystemColors.ControlLight;
-            this.uiPanel25.RectSize = 2;
-            this.uiPanel25.Size = new System.Drawing.Size(150, 30);
-            this.uiPanel25.TabIndex = 6;
-            this.uiPanel25.Text = null;
-            this.uiPanel25.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cbQuickFilter
-            // 
-            this.cbQuickFilter.DataSource = null;
-            this.cbQuickFilter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbQuickFilter.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
-            this.cbQuickFilter.FillColor = System.Drawing.Color.White;
-            this.cbQuickFilter.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
-            this.cbQuickFilter.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbQuickFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.cbQuickFilter.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cbQuickFilter.ItemRectColor = System.Drawing.Color.White;
-            this.cbQuickFilter.Items.AddRange(new object[] {
-            "Last 7 days",
-            "This week",
-            "This month",
-            "Last 3 month",
-            "Last 6 month",
-            "This year",
-            "Last year",
-            "Last 3 year"});
-            this.cbQuickFilter.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cbQuickFilter.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cbQuickFilter.Location = new System.Drawing.Point(5, 3);
-            this.cbQuickFilter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cbQuickFilter.MinimumSize = new System.Drawing.Size(63, 0);
-            this.cbQuickFilter.Name = "cbQuickFilter";
-            this.cbQuickFilter.Padding = new System.Windows.Forms.Padding(5, 0, 30, 2);
-            this.cbQuickFilter.Radius = 0;
-            this.cbQuickFilter.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
-            this.cbQuickFilter.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.cbQuickFilter.ScrollBarBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
-            this.cbQuickFilter.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
-            this.cbQuickFilter.ScrollBarStyleInherited = false;
-            this.cbQuickFilter.Size = new System.Drawing.Size(140, 24);
-            this.cbQuickFilter.Style = Sunny.UI.UIStyle.Custom;
-            this.cbQuickFilter.SymbolSize = 24;
-            this.cbQuickFilter.TabIndex = 0;
-            this.cbQuickFilter.Text = "This month";
-            this.cbQuickFilter.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cbQuickFilter.Watermark = "";
             // 
             // uiLabel10
             // 
@@ -988,47 +921,47 @@
             // chartSessionOverview
             // 
             this.chartSessionOverview.BorderlineWidth = 0;
-            chartArea3.AxisX.IsLabelAutoFit = false;
-            chartArea3.AxisX.LabelStyle.Angle = -45;
-            chartArea3.AxisX.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea3.AxisX.Title = "Period";
-            chartArea3.AxisX.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea3.AxisX.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            chartArea3.AxisY.IsLabelAutoFit = false;
-            chartArea3.AxisY.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea3.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            chartArea3.AxisY.Title = "Vehicals";
-            chartArea3.AxisY.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea3.AxisY.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            chartArea3.Name = "ChartArea1";
-            this.chartSessionOverview.ChartAreas.Add(chartArea3);
+            chartArea6.AxisX.IsLabelAutoFit = false;
+            chartArea6.AxisX.LabelStyle.Angle = -45;
+            chartArea6.AxisX.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea6.AxisX.Title = "Period";
+            chartArea6.AxisX.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea6.AxisX.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            chartArea6.AxisY.IsLabelAutoFit = false;
+            chartArea6.AxisY.LabelStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea6.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea6.AxisY.Title = "Vehicals";
+            chartArea6.AxisY.TitleFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea6.AxisY.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            chartArea6.Name = "ChartArea1";
+            this.chartSessionOverview.ChartAreas.Add(chartArea6);
             this.chartSessionOverview.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chartSessionOverview.Legends.Add(legend2);
+            legend4.Name = "Legend1";
+            this.chartSessionOverview.Legends.Add(legend4);
             this.chartSessionOverview.Location = new System.Drawing.Point(0, 0);
             this.chartSessionOverview.Name = "chartSessionOverview";
             this.chartSessionOverview.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series5.BorderWidth = 3;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series5.Legend = "Legend1";
-            series5.Name = "Motorbike";
-            series6.BorderWidth = 3;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series6.Legend = "Legend1";
-            series6.Name = "Car";
-            series7.BorderWidth = 3;
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series7.Legend = "Legend1";
-            series7.Name = "Bicycle";
-            this.chartSessionOverview.Series.Add(series5);
-            this.chartSessionOverview.Series.Add(series6);
-            this.chartSessionOverview.Series.Add(series7);
+            series12.BorderWidth = 3;
+            series12.ChartArea = "ChartArea1";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series12.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series12.Legend = "Legend1";
+            series12.Name = "Motorbike";
+            series13.BorderWidth = 3;
+            series13.ChartArea = "ChartArea1";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series13.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series13.Legend = "Legend1";
+            series13.Name = "Car";
+            series14.BorderWidth = 3;
+            series14.ChartArea = "ChartArea1";
+            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series14.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series14.Legend = "Legend1";
+            series14.Name = "Bicycle";
+            this.chartSessionOverview.Series.Add(series12);
+            this.chartSessionOverview.Series.Add(series13);
+            this.chartSessionOverview.Series.Add(series14);
             this.chartSessionOverview.Size = new System.Drawing.Size(904, 432);
             this.chartSessionOverview.TabIndex = 0;
             // 
@@ -1036,7 +969,6 @@
             // 
             this.uiTableLayoutPanel9.SetColumnSpan(this.uiPanel30, 2);
             this.uiPanel30.Controls.Add(this.pnlBtnSessionDuration);
-            this.uiPanel30.Controls.Add(this.uiPanel32);
             this.uiPanel30.Controls.Add(this.uiLabel5);
             this.uiPanel30.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel30.FillColor = System.Drawing.Color.White;
@@ -1057,9 +989,8 @@
             // 
             this.pnlBtnSessionDuration.Controls.Add(this.btnSessionDuration);
             this.pnlBtnSessionDuration.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlBtnSessionDuration.Location = new System.Drawing.Point(620, 0);
+            this.pnlBtnSessionDuration.Location = new System.Drawing.Point(770, 0);
             this.pnlBtnSessionDuration.Name = "pnlBtnSessionDuration";
-            this.pnlBtnSessionDuration.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.pnlBtnSessionDuration.Size = new System.Drawing.Size(134, 30);
             this.pnlBtnSessionDuration.TabIndex = 28;
             // 
@@ -1085,7 +1016,7 @@
             this.btnSessionDuration.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnSessionDuration.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnSessionDuration.RectSize = 2;
-            this.btnSessionDuration.Size = new System.Drawing.Size(124, 30);
+            this.btnSessionDuration.Size = new System.Drawing.Size(134, 30);
             this.btnSessionDuration.Symbol = 361560;
             this.btnSessionDuration.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnSessionDuration.TabIndex = 3;
@@ -1093,64 +1024,6 @@
             this.btnSessionDuration.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSessionDuration.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSessionDuration.Click += new System.EventHandler(this.btnSessionDuration_Click);
-            // 
-            // uiPanel32
-            // 
-            this.uiPanel32.Controls.Add(this.cbSessionQuickFilter);
-            this.uiPanel32.Dock = System.Windows.Forms.DockStyle.Right;
-            this.uiPanel32.FillColor = System.Drawing.Color.White;
-            this.uiPanel32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel32.Location = new System.Drawing.Point(754, 0);
-            this.uiPanel32.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel32.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel32.Name = "uiPanel32";
-            this.uiPanel32.Padding = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.uiPanel32.RectColor = System.Drawing.SystemColors.ControlLight;
-            this.uiPanel32.RectSize = 2;
-            this.uiPanel32.Size = new System.Drawing.Size(150, 30);
-            this.uiPanel32.TabIndex = 6;
-            this.uiPanel32.Text = null;
-            this.uiPanel32.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cbSessionQuickFilter
-            // 
-            this.cbSessionQuickFilter.DataSource = null;
-            this.cbSessionQuickFilter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbSessionQuickFilter.FillColor = System.Drawing.Color.White;
-            this.cbSessionQuickFilter.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
-            this.cbSessionQuickFilter.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSessionQuickFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.cbSessionQuickFilter.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cbSessionQuickFilter.ItemRectColor = System.Drawing.Color.White;
-            this.cbSessionQuickFilter.Items.AddRange(new object[] {
-            "Last 7 days",
-            "This month",
-            "This week",
-            "Last 3 month",
-            "Last 6 month",
-            "This year",
-            "Last year",
-            "Last 3 year"});
-            this.cbSessionQuickFilter.ItemSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cbSessionQuickFilter.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cbSessionQuickFilter.Location = new System.Drawing.Point(5, 3);
-            this.cbSessionQuickFilter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cbSessionQuickFilter.MinimumSize = new System.Drawing.Size(63, 0);
-            this.cbSessionQuickFilter.Name = "cbSessionQuickFilter";
-            this.cbSessionQuickFilter.Padding = new System.Windows.Forms.Padding(5, 0, 30, 2);
-            this.cbSessionQuickFilter.Radius = 0;
-            this.cbSessionQuickFilter.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
-            this.cbSessionQuickFilter.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.cbSessionQuickFilter.ScrollBarBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
-            this.cbSessionQuickFilter.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
-            this.cbSessionQuickFilter.ScrollBarStyleInherited = false;
-            this.cbSessionQuickFilter.Size = new System.Drawing.Size(140, 24);
-            this.cbSessionQuickFilter.Style = Sunny.UI.UIStyle.Custom;
-            this.cbSessionQuickFilter.SymbolSize = 24;
-            this.cbSessionQuickFilter.TabIndex = 0;
-            this.cbSessionQuickFilter.Text = "This month";
-            this.cbSessionQuickFilter.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cbSessionQuickFilter.Watermark = "";
             // 
             // uiLabel5
             // 
@@ -1400,7 +1273,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartOverview)).EndInit();
             this.uiPanel15.ResumeLayout(false);
             this.pnlBtnDuration.ResumeLayout(false);
-            this.uiPanel25.ResumeLayout(false);
             this.uiPanel11.ResumeLayout(false);
             this.uiTableLayoutPanel4.ResumeLayout(false);
             this.uiPanel8.ResumeLayout(false);
@@ -1418,7 +1290,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartSessionOverview)).EndInit();
             this.uiPanel30.ResumeLayout(false);
             this.pnlBtnSessionDuration.ResumeLayout(false);
-            this.uiPanel32.ResumeLayout(false);
             this.uiPanel36.ResumeLayout(false);
             this.uiTableLayoutPanel11.ResumeLayout(false);
             this.uiPanel39.ResumeLayout(false);
@@ -1466,8 +1337,6 @@
         private Sunny.UI.UIPanel uiPanel24;
         private Sunny.UI.UIPanel uiPanel22;
         private Sunny.UI.UILabel lbTotalRevenue;
-        private Sunny.UI.UIPanel uiPanel25;
-        private Sunny.UI.UIComboBox cbQuickFilter;
         private System.Windows.Forms.Panel pnlBtnDuration;
         private Sunny.UI.UISymbolButton btnDuration;
         private CustomDurationPicker pickerDuration;
@@ -1481,8 +1350,6 @@
         private Sunny.UI.UIPanel uiPanel30;
         private System.Windows.Forms.Panel pnlBtnSessionDuration;
         private Sunny.UI.UISymbolButton btnSessionDuration;
-        private Sunny.UI.UIPanel uiPanel32;
-        private Sunny.UI.UIComboBox cbSessionQuickFilter;
         private Sunny.UI.UILabel uiLabel5;
         private Sunny.UI.UIPanel uiPanel36;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel11;

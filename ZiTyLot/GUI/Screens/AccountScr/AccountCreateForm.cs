@@ -154,5 +154,40 @@ namespace ZiTyLot.GUI.Screens.AccountScr
                 listAccess.DisplayMember = nameof(Function.Name);
             }
         }
+
+        private void uiGroupBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uiGroupBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uiGroupBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uiGroupBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uiGroupBox6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uiGroupBox7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uiGroupBox8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

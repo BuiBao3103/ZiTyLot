@@ -11,6 +11,7 @@ using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens.AreaScr;
 using ZiTyLot.GUI.Screens.PriceScr;
 using ZiTyLot.GUI.Screens.ResidentScr;
+using ZiTyLot.GUI.Utils;
 using ZiTyLot.Helper;
 
 namespace ZiTyLot.GUI.Screens
@@ -103,7 +104,22 @@ namespace ZiTyLot.GUI.Screens
                 }
                 else if (e.ColumnIndex == tableResident.Columns["colDelete"].Index)
                 {
-                    MessageBox.Show("Delete button clicked for row " + e.RowIndex);
+                    var confirmResult = MessageBox.Show("Do you really want to delete Resident?",
+                        "Confirm delete",
+                        MessageBoxButtons.YesNo);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            residentBUS.Delete(residentId);
+                            ChangePage(1);
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                            MessageHelper.ShowError("An unexpected error occurred. Please try again later.");
+                        }
+                    }
                 }
             }
         }
@@ -200,7 +216,8 @@ namespace ZiTyLot.GUI.Screens
             tableResident.Rows.Clear();
             foreach (Resident resident in page.Content)
             {
-                tableResident.Rows.Add(resident.Id, resident.Full_name, resident.Apartment_id, resident.Email, resident.Phone);
+                 tableResident.Rows.Add(resident.Id, resident.Full_name, resident.Apartment_id, resident.Email, resident.Phone);
+              
             }
 
             btnPrevious.Enabled = pageable.PageNumber > 1;

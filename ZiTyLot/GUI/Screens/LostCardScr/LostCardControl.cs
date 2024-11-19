@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
+using ZiTyLot.Constants.Enum;
 using ZiTyLot.ENTITY;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens.SessionScr;
@@ -76,7 +77,10 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
                     {
                         LostHistory lostHistory = _lostHistoryBUS.GetById(id);
                         Card card = _lostHistoryBUS.PopulateCard(lostHistory).Card;
-                        card.Status = Constants.Enum.CardStatus.EMPTY;
+                        if (card.Type == CardType.RESIDENT)
+                            card.Status = CardStatus.EMPTY;
+                        else
+                            card.Status = CardStatus.ACTIVE;
                         _cardBUS.Update(card);
                         lostHistory.Is_found = true;
                         _lostHistoryBUS.Update(lostHistory);
@@ -192,8 +196,9 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
             foreach (LostHistory lostHistory in _page.Content)
             {
                 string status = lostHistory.Is_found ? "Found" : "Lost";
-                String type = _lostHistoryBUS.PopulateCard(lostHistory).Card.Type.ToString();
-                tableLostCard.Rows.Add(lostHistory.Id, lostHistory.Owner_identification_card, lostHistory.Owner_name,"", type, status);
+                Card card = _lostHistoryBUS.PopulateCard(lostHistory).Card;
+                string type = card.Type.ToString();
+                tableLostCard.Rows.Add(lostHistory.Id, card.Rfid, lostHistory.Owner_name, lostHistory.Owner_identification_card, type, status);
             }
 
             btnPrevious.Enabled = _pageable.PageNumber > 1;
@@ -227,15 +232,6 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
                         break;
                 }
             }
-            int userTypeCbIndex = cbUserType.SelectedIndex;
-            //if (userTypeCbIndex == 1)
-            //{
-            //    _filters.Add(new FilterCondition(nameof(LostHistory.User_type), CompOp.Equals, "1"));
-            //}
-            //else if (userTypeCbIndex == 2)
-            //{
-            //    _filters.Add(new FilterCondition(nameof(LostHistory.User_type), CompOp.Equals, "0"));
-            //}
             int statusCbIndex = cbStatus.SelectedIndex;
             if (statusCbIndex == 1)
             {
@@ -265,7 +261,6 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
         private void btnClear_Click(object sender, EventArgs e)
         {
             tbSearch.Text = "";
-            cbUserType.SelectedIndex = 0;
             cbStatus.SelectedIndex = 0;
             _filters.Clear();
             ChangePage(1);
