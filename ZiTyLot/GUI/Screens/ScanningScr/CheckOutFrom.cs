@@ -328,22 +328,6 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                     ChangeState(ProcessState.Ready);
                 }
             }
-            if (e.KeyChar == (char)Keys.D1)
-            {
-                RfidReader_RFIDScanned(null, "0000521238");
-            }
-            if (e.KeyChar == (char)Keys.D2)
-            {
-                RfidReader_RFIDScanned(null, "0000519409");
-            }
-            if (e.KeyChar == (char)Keys.D3)
-            {
-                RfidReader_RFIDScanned(null, "0000521233");
-            }
-            if (e.KeyChar == (char)Keys.D4)
-            {
-                RfidReader_RFIDScanned(null, "0002825150");
-            }
         }
         private void UpdateSession()
         {

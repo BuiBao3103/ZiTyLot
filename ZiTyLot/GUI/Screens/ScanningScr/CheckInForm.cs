@@ -345,22 +345,6 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                     ChangeState(ProcessState.Ready);
                 }
             }
-            if (e.KeyChar == (char)Keys.D1)
-            {
-                RfidReader_RFIDScanned(null, "0000521238");
-            }
-            if (e.KeyChar == (char)Keys.D2)
-            {
-                RfidReader_RFIDScanned(null, "0000519409");
-            }
-            if (e.KeyChar == (char)Keys.D3)
-            {
-                RfidReader_RFIDScanned(null, "0000521233");
-            }
-            if (e.KeyChar == (char)Keys.D4)
-            {
-                RfidReader_RFIDScanned(null, "0002825150");
-            }
 
         }
         private void AddNewSession()
@@ -570,6 +554,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         }
         private void RfidReader_RFIDScanned(object sender, string rfidCode)
         {
+            Debug.WriteLine(rfidCode);
             if (_processState == ProcessState.Preparing)
             {
                 MessageHelper.ShowError("Please configure all devices before scanning!");
@@ -585,7 +570,6 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 new FilterCondition(nameof(Card.Rfid), CompOp.Equals, rfidCode)
             };
             Card card = _cardBUS.GetAll(filters)?.FirstOrDefault();
-
             if (!ValidateCard(card)) return;
 
             card = _cardBUS.PopulateVehicleType(card);

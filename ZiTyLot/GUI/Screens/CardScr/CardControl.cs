@@ -41,6 +41,7 @@ namespace ZiTyLot.GUI.Screens
             cbNumberofitem.SelectedIndexChanged += cbNumberofitem_SelectedIndexChanged;
             menuFunction.ExportClick += menuBtnExport_Click;
             menuFunction.ImportClick += menuBtnImport_Click;
+            menuFunction.DownloadClick += menuBtnDownload_Click;
             _vehicleTypes = vehicleTypeBUS.GetAll();
 
         }
