@@ -385,11 +385,11 @@
             this.btnDateConfirm.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnDateConfirm.Name = "btnDateConfirm";
             this.btnDateConfirm.Radius = 10;
-            this.btnDateConfirm.RectColor = System.Drawing.Color.White;
+            this.btnDateConfirm.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDateConfirm.RectDisableColor = System.Drawing.Color.White;
-            this.btnDateConfirm.RectHoverColor = System.Drawing.Color.White;
-            this.btnDateConfirm.RectPressColor = System.Drawing.Color.White;
-            this.btnDateConfirm.RectSelectedColor = System.Drawing.Color.White;
+            this.btnDateConfirm.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnDateConfirm.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnDateConfirm.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnDateConfirm.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnDateConfirm.Size = new System.Drawing.Size(120, 38);
             this.btnDateConfirm.Symbol = 0;

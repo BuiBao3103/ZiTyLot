@@ -163,7 +163,7 @@
             this.pnlBottom.Margin = new System.Windows.Forms.Padding(0);
             this.pnlBottom.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.pnlBottom.Padding = new System.Windows.Forms.Padding(10);
             this.pnlBottom.Radius = 10;
             this.pnlBottom.RectColor = System.Drawing.Color.White;
             this.pnlBottom.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
@@ -452,7 +452,7 @@
             // 
             this.uiLabel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiLabel12.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.uiLabel12.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel12.ForeColor = System.Drawing.Color.DarkGray;
             this.uiLabel12.Location = new System.Drawing.Point(3, 78);
             this.uiLabel12.Name = "uiLabel12";
             this.uiLabel12.Size = new System.Drawing.Size(112, 39);
@@ -476,7 +476,7 @@
             // 
             this.uiLabel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiLabel8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.uiLabel8.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel8.ForeColor = System.Drawing.Color.DarkGray;
             this.uiLabel8.Location = new System.Drawing.Point(3, 39);
             this.uiLabel8.Name = "uiLabel8";
             this.uiLabel8.Size = new System.Drawing.Size(112, 39);
@@ -500,7 +500,7 @@
             // 
             this.uiLabel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiLabel4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.uiLabel4.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel4.ForeColor = System.Drawing.Color.DarkGray;
             this.uiLabel4.Location = new System.Drawing.Point(3, 0);
             this.uiLabel4.Name = "uiLabel4";
             this.uiLabel4.Size = new System.Drawing.Size(112, 39);
@@ -798,7 +798,7 @@
             // 
             this.uiLabel31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiLabel31.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.uiLabel31.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel31.ForeColor = System.Drawing.Color.DarkGray;
             this.uiLabel31.Location = new System.Drawing.Point(3, 41);
             this.uiLabel31.Name = "uiLabel31";
             this.uiLabel31.Size = new System.Drawing.Size(96, 42);
@@ -821,7 +821,7 @@
             // 
             this.uiLabel33.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiLabel33.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.uiLabel33.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel33.ForeColor = System.Drawing.Color.DarkGray;
             this.uiLabel33.Location = new System.Drawing.Point(3, 0);
             this.uiLabel33.Name = "uiLabel33";
             this.uiLabel33.Size = new System.Drawing.Size(96, 41);
@@ -907,7 +907,7 @@
             // 
             this.uiLabel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiLabel15.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.uiLabel15.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel15.ForeColor = System.Drawing.Color.DarkGray;
             this.uiLabel15.Location = new System.Drawing.Point(3, 259);
             this.uiLabel15.Name = "uiLabel15";
             this.uiLabel15.Size = new System.Drawing.Size(96, 44);
@@ -930,7 +930,7 @@
             // 
             this.uiLabel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiLabel13.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.uiLabel13.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel13.ForeColor = System.Drawing.Color.DarkGray;
             this.uiLabel13.Location = new System.Drawing.Point(3, 222);
             this.uiLabel13.Name = "uiLabel13";
             this.uiLabel13.Size = new System.Drawing.Size(96, 37);
@@ -953,7 +953,7 @@
             // 
             this.uiLabel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiLabel11.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.uiLabel11.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel11.ForeColor = System.Drawing.Color.DarkGray;
             this.uiLabel11.Location = new System.Drawing.Point(3, 185);
             this.uiLabel11.Name = "uiLabel11";
             this.uiLabel11.Size = new System.Drawing.Size(96, 37);
@@ -976,7 +976,7 @@
             // 
             this.uiLabel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiLabel9.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.uiLabel9.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel9.ForeColor = System.Drawing.Color.DarkGray;
             this.uiLabel9.Location = new System.Drawing.Point(3, 148);
             this.uiLabel9.Name = "uiLabel9";
             this.uiLabel9.Size = new System.Drawing.Size(96, 37);
@@ -999,7 +999,7 @@
             // 
             this.uiLabel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiLabel7.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.uiLabel7.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel7.ForeColor = System.Drawing.Color.DarkGray;
             this.uiLabel7.Location = new System.Drawing.Point(3, 111);
             this.uiLabel7.Name = "uiLabel7";
             this.uiLabel7.Size = new System.Drawing.Size(96, 37);
@@ -1022,7 +1022,7 @@
             // 
             this.uiLabel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiLabel5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.uiLabel5.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel5.ForeColor = System.Drawing.Color.DarkGray;
             this.uiLabel5.Location = new System.Drawing.Point(3, 74);
             this.uiLabel5.Name = "uiLabel5";
             this.uiLabel5.Size = new System.Drawing.Size(96, 37);
@@ -1056,7 +1056,7 @@
             // 
             this.uiLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiLabel3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.uiLabel3.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel3.ForeColor = System.Drawing.Color.DarkGray;
             this.uiLabel3.Location = new System.Drawing.Point(3, 37);
             this.uiLabel3.Name = "uiLabel3";
             this.uiLabel3.Size = new System.Drawing.Size(96, 37);
@@ -1079,7 +1079,7 @@
             // 
             this.uiLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiLabel2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.uiLabel2.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel2.ForeColor = System.Drawing.Color.DarkGray;
             this.uiLabel2.Location = new System.Drawing.Point(3, 0);
             this.uiLabel2.Name = "uiLabel2";
             this.uiLabel2.Size = new System.Drawing.Size(96, 37);
@@ -1213,7 +1213,7 @@
             // 
             this.uiLabel22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiLabel22.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.uiLabel22.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel22.ForeColor = System.Drawing.Color.DarkGray;
             this.uiLabel22.Location = new System.Drawing.Point(3, 78);
             this.uiLabel22.Name = "uiLabel22";
             this.uiLabel22.Size = new System.Drawing.Size(91, 39);
@@ -1249,7 +1249,7 @@
             // 
             this.uiLabel35.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiLabel35.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.uiLabel35.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel35.ForeColor = System.Drawing.Color.DarkGray;
             this.uiLabel35.Location = new System.Drawing.Point(3, 39);
             this.uiLabel35.Name = "uiLabel35";
             this.uiLabel35.Size = new System.Drawing.Size(91, 39);
@@ -1273,7 +1273,7 @@
             // 
             this.uiLabel37.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiLabel37.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.uiLabel37.ForeColor = System.Drawing.Color.Gray;
+            this.uiLabel37.ForeColor = System.Drawing.Color.DarkGray;
             this.uiLabel37.Location = new System.Drawing.Point(3, 0);
             this.uiLabel37.Name = "uiLabel37";
             this.uiLabel37.Size = new System.Drawing.Size(91, 39);
@@ -1359,7 +1359,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1365, 766);
             this.Name = "CheckOutFrom";
-            this.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "Bike Check Out From";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CheckOutFrom_FormClosing);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckOutFrom_KeyPress);
