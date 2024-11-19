@@ -24,7 +24,7 @@ namespace ZiTyLot.DAO
 
         public void Delete(object id)
         {
-            factoryDAO.Delete(id);
+            factoryDAO.SoftDelete(id);
         }
 
         public List<Card> GetAll(List<FilterCondition> filters = null)

@@ -49,6 +49,7 @@ namespace ZiTyLot.BUS
         {
             try
             {
+                
                 return functionDao.GetAll(filters);
             }
             catch (Exception ex)

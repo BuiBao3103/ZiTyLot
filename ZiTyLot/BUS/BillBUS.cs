@@ -96,6 +96,7 @@ namespace ZiTyLot.BUS
         {
             try
             {
+               
                 return billDao.GetAllPagination(pageable, filters);
             }
             catch (Exception ex)

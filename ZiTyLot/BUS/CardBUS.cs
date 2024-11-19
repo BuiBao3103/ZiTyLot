@@ -73,6 +73,7 @@ namespace ZiTyLot.BUS
         {
             try
             {
+               
                 return cardDAO.GetAll(filters);
             }
             catch (Exception ex)
@@ -85,6 +86,7 @@ namespace ZiTyLot.BUS
         {
             try
             {
+               
                 return cardDAO.GetAllPagination(pageable, filters);
             }
             catch (Exception ex)
