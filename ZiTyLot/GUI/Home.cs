@@ -58,6 +58,10 @@ namespace ZiTyLot.GUI
             InitializeFormSettings();
             InitializeMenuIcons();
             previousWidth = this.Width;
+            if(AuthManager.IsAuthenticated == true)
+            {
+                lbName.Text = AuthManager.CurrentAccount.Full_name;
+            }
         }
 
         private void InitializeGraphics()

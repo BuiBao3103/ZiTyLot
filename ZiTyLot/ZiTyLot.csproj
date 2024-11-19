@@ -871,6 +871,7 @@
     <Content Include="GUI\assets\animation\textbox_user_8.jpg" />
     <Content Include="GUI\assets\animation\textbox_user_9.jpg" />
     <Content Include="GUI\assets\animation\textbox_user_Clicked.JPG" />
+    <Content Include="GUI\assets\avt.jpg" />
     <Content Include="GUI\assets\hero-image.jpg" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Active-Active.png" />
     <Content Include="GUI\assets\Icon-18x18px\Icon-18x18px_Active.png" />
