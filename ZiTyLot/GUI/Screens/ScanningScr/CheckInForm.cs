@@ -421,7 +421,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             lbFullname.Text = "";
             lbApartment.Text = "";
 
-            if (card.Vehicle_type.Id == VehicleTypeID.BIKECYCLE)
+            if (card.Vehicle_type.Id == VehicleTypeID.BICYCLE)
             {
                 lbVehicalPlate.Text = "";
             }
@@ -493,8 +493,8 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 if (result == null)
                 {
                     lbVehicalPlate.Text = "";
-                    lbVehicalType.Text = "BIKECYCLE";
-                    if (issues.Find(i => i.Vehicle_type_id == VehicleTypeID.BIKECYCLE) == null)
+                    lbVehicalType.Text = "BICYCLE";
+                    if (issues.Find(i => i.Vehicle_type_id == VehicleTypeID.BICYCLE) == null)
                     {
                         MessageHelper.ShowError("The resident card hasn't registered a bicycle, or the registration has expired!");
                         ChangeState(ProcessState.Ready);
@@ -646,7 +646,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                     return false;
                 }
                 if (_parkingLotType == ParkingLotType.FOUR_WHEELER
-                    && (card.Vehicle_type_id == VehicleTypeID.MOTORBIKE || card.Vehicle_type_id == VehicleTypeID.BIKECYCLE))
+                    && (card.Vehicle_type_id == VehicleTypeID.MOTORBIKE || card.Vehicle_type_id == VehicleTypeID.BICYCLE))
                 {
                     MessageHelper.ShowError("This line is for four-wheeler only so this card is not valid!");
                     return false;

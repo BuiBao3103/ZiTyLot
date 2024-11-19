@@ -506,7 +506,7 @@ namespace ZiTyLot.DAO
                     connection.Open(); // Open the connection
 
                     // Define the SQL query to soft delete the record by ID
-                    var query = $"UPDATE {tableName} SET delete_at = NOW() WHERE Id = @Id";
+                    var query = $"UPDATE {tableName} SET deleted_at = NOW() WHERE Id = @Id";
 
                     // Create a MySqlCommand with the query
                     using (var command = new MySqlCommand(query, connection))
@@ -554,8 +554,11 @@ namespace ZiTyLot.DAO
         private void AddFilterConditionParameters(MySqlCommand command, FilterCondition filter)
         {
             if (filter.Value == null) return;
-            //if filter value is enum, add '' to convert it to string
-            // Add the filter condition parameter to the command
+            if (filter.Value.GetType() == typeof(DateTime))
+            {
+                command.Parameters.AddWithValue($"@{filter.Column}", filter.Value);
+                return;
+            }
             var parameterValue = filter.Operator == CompOp.Like ? $"%{filter.Value}%" : filter.Value.ToString();
             command.Parameters.AddWithValue($"@{filter.Column}", parameterValue);
         }

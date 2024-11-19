@@ -101,7 +101,7 @@
             this.uiTableLayoutPanel1.Controls.Add(this.uiPanel3, 0, 1);
             this.uiTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTableLayoutPanel1.Location = new System.Drawing.Point(13, 12);
-            this.uiTableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiTableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.uiTableLayoutPanel1.Name = "uiTableLayoutPanel1";
             this.uiTableLayoutPanel1.RowCount = 6;
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
@@ -713,6 +713,7 @@
             this.tbPlate.TabIndex = 0;
             this.tbPlate.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbPlate.Watermark = "";
+            this.tbPlate.TextChanged += new System.EventHandler(this.tbPlate_TextChanged);
             this.tbPlate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPlate_KeyPress);
             // 
             // IssueDetailForm
@@ -723,7 +724,7 @@
             this.ClientSize = new System.Drawing.Size(779, 567);
             this.Controls.Add(this.uiTableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(794, 603);
             this.Name = "IssueDetailForm";
             this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);

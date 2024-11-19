@@ -41,7 +41,7 @@ namespace ZiTyLot.GUI.Screens
             pnlTop.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlTop.Width, pnlTop.Height, 10, 10));
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
             pnlTop.Height = 54;
-            
+
             this.tableArea.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
             this.tableArea.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
             this.tableArea.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
@@ -105,11 +105,39 @@ namespace ZiTyLot.GUI.Screens
                     {
                         ShowArea4WDetailForm(areaId);
                     }
-                    
+
                 }
                 else if (e.ColumnIndex == tableArea.Columns["colDelete"].Index)
                 {
-                    MessageBox.Show("Delete button clicked for row " + e.RowIndex);
+                    ParkingLot parkingLot = parkingLotBUS.GetById(areaId);
+                    if (parkingLot.User_type == ParkingLotUserType.RESIDENT && parkingLot.Parking_lot_type == ParkingLotType.TWO_WHEELER)
+                    {
+                        parkingLot = parkingLotBUS.PopulateIssues(parkingLot);
+                        if (parkingLot.Issues.Count > 0)
+                        {
+                            MessageHelper.ShowWarning("Cannot delete this area because it has unresolved issues");
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        parkingLot = parkingLotBUS.PopulateSlots(parkingLot);
+                        foreach (Slot slot in parkingLot.Slots)
+                        {
+                            if (slot.Status == SlotStatus.IN_USE)
+                            {
+                                MessageHelper.ShowWarning("Cannot delete this area because it has occupied slots");
+                                return;
+                            }
+                        }
+                    }
+                    DialogResult result = MessageHelper.ShowConfirm($"Are you sure you want to delete area {areaId}?");
+                    if (result == DialogResult.Yes)
+                    {
+                        parkingLotBUS.Delete(areaId);
+                        filters.Clear();
+                        ChangePage(1);
+                    }
                 }
             }
         }
@@ -204,7 +232,7 @@ namespace ZiTyLot.GUI.Screens
 
         private void showAreaCreateForm()
         {
-            if (_areaCreateForm == null || _areaCreateForm.IsDisposed )
+            if (_areaCreateForm == null || _areaCreateForm.IsDisposed)
             {
                 _areaCreateForm = new AreaCreateForm();
                 _areaCreateForm.AreaInsertionEvent += (s, args) =>
@@ -219,7 +247,7 @@ namespace ZiTyLot.GUI.Screens
                 if (_areaCreateForm.WindowState == FormWindowState.Minimized)
                     _areaCreateForm.WindowState = FormWindowState.Normal;
                 _areaCreateForm.BringToFront();
-            }    
+            }
         }
 
         private void LoadPageAndPageable()
@@ -253,10 +281,11 @@ namespace ZiTyLot.GUI.Screens
         {
             string inputSearch = tbSearch.Text.Trim();
             filters.Clear();
-            if (!string.IsNullOrEmpty(inputSearch)){
+            if (!string.IsNullOrEmpty(inputSearch))
+            {
                 filters.Add(new FilterCondition("Id", CompOp.Like, inputSearch));
             }
-            
+
             int inputCboxIndexVehicleType = cbVehicalType.SelectedIndex;
             if (inputCboxIndexVehicleType != 0)
             {

@@ -11,6 +11,6 @@ namespace ZiTyLot.ENTITY
         public string Period { get; set; }
         public int CountCar { get; set; }
         public int CountMotorbike { get; set; }
-        public int CountBikecycle { get; set; }
+        public int CountBicycle { get; set; }
     }
 }

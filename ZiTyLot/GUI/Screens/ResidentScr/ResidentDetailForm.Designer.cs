@@ -56,16 +56,12 @@
             this.uiPanel7 = new Sunny.UI.UIPanel();
             this.uiPanel9 = new Sunny.UI.UIPanel();
             this.tableIssue = new System.Windows.Forms.DataGridView();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPlate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVehical = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpCard = new System.Windows.Forms.TabPage();
             this.uiPanel8 = new Sunny.UI.UIPanel();
             this.uiTableLayoutPanel3 = new Sunny.UI.UITableLayoutPanel();
             this.uiPanel3 = new Sunny.UI.UIPanel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnCancelLostCard = new Sunny.UI.UISymbolButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSaveCard = new Sunny.UI.UISymbolButton();
             this.uiTableLayoutPanel4 = new Sunny.UI.UITableLayoutPanel();
@@ -84,9 +80,15 @@
             this.btnLostCard = new Sunny.UI.UISymbolButton();
             this.uiPanel1 = new Sunny.UI.UIPanel();
             this.uiSymbolLabel1 = new Sunny.UI.UISymbolLabel();
-            this.btnCancelLostCard = new Sunny.UI.UISymbolButton();
             this.tbRFID = new Sunny.UI.UITextBox();
             this.uiTextBox1 = new Sunny.UI.UITextBox();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPlate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVehical = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Area = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Slot = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uiTableLayoutPanel1.SuspendLayout();
             this.uiTabControlMenu1.SuspendLayout();
             this.tpProfile.SuspendLayout();
@@ -110,6 +112,7 @@
             this.uiPanel8.SuspendLayout();
             this.uiTableLayoutPanel3.SuspendLayout();
             this.uiPanel3.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.uiTableLayoutPanel4.SuspendLayout();
             this.uiGroupBox7.SuspendLayout();
@@ -498,7 +501,7 @@
             this.tpIssue.Location = new System.Drawing.Point(151, 0);
             this.tpIssue.Margin = new System.Windows.Forms.Padding(4);
             this.tpIssue.Name = "tpIssue";
-            this.tpIssue.Size = new System.Drawing.Size(895, 600);
+            this.tpIssue.Size = new System.Drawing.Size(901, 604);
             this.tpIssue.TabIndex = 1;
             this.tpIssue.Text = "Issue";
             // 
@@ -517,7 +520,7 @@
             this.uiPanel7.RectColor = System.Drawing.SystemColors.ControlLight;
             this.uiPanel7.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
             this.uiPanel7.RectSize = 2;
-            this.uiPanel7.Size = new System.Drawing.Size(895, 600);
+            this.uiPanel7.Size = new System.Drawing.Size(901, 604);
             this.uiPanel7.TabIndex = 1;
             this.uiPanel7.Text = null;
             this.uiPanel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -537,7 +540,7 @@
             this.uiPanel9.RectColor = System.Drawing.SystemColors.ControlLight;
             this.uiPanel9.RectSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.uiPanel9.Size = new System.Drawing.Size(882, 588);
+            this.uiPanel9.Size = new System.Drawing.Size(888, 592);
             this.uiPanel9.TabIndex = 0;
             this.uiPanel9.Text = "uiPanel9";
             this.uiPanel9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -575,7 +578,9 @@
             this.colPlate,
             this.colVehical,
             this.colStartDate,
-            this.colEndDate});
+            this.colEndDate,
+            this.Area,
+            this.Slot});
             this.tableIssue.Cursor = System.Windows.Forms.Cursors.Default;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -596,49 +601,8 @@
             this.tableIssue.RowHeadersWidth = 30;
             this.tableIssue.RowTemplate.Height = 40;
             this.tableIssue.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableIssue.Size = new System.Drawing.Size(880, 586);
+            this.tableIssue.Size = new System.Drawing.Size(886, 590);
             this.tableIssue.TabIndex = 3;
-            // 
-            // colId
-            // 
-            this.colId.HeaderText = "ID";
-            this.colId.MinimumWidth = 6;
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colId.Width = 50;
-            // 
-            // colPlate
-            // 
-            this.colPlate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colPlate.HeaderText = "Plate";
-            this.colPlate.MinimumWidth = 6;
-            this.colPlate.Name = "colPlate";
-            this.colPlate.ReadOnly = true;
-            // 
-            // colVehical
-            // 
-            this.colVehical.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colVehical.HeaderText = "Vehical";
-            this.colVehical.MinimumWidth = 6;
-            this.colVehical.Name = "colVehical";
-            this.colVehical.ReadOnly = true;
-            // 
-            // colStartDate
-            // 
-            this.colStartDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colStartDate.HeaderText = "Start_date";
-            this.colStartDate.MinimumWidth = 6;
-            this.colStartDate.Name = "colStartDate";
-            this.colStartDate.ReadOnly = true;
-            // 
-            // colEndDate
-            // 
-            this.colEndDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colEndDate.HeaderText = "End_date";
-            this.colEndDate.MinimumWidth = 6;
-            this.colEndDate.Name = "colEndDate";
-            this.colEndDate.ReadOnly = true;
             // 
             // tpCard
             // 
@@ -718,13 +682,41 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.btnCancelLostCard);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(570, 4);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panel5.Size = new System.Drawing.Size(160, 38);
             this.panel5.TabIndex = 12;
-            this.panel5.Controls.Add(this.btnCancelLostCard);
+            // 
+            // btnCancelLostCard
+            // 
+            this.btnCancelLostCard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelLostCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCancelLostCard.FillColor = System.Drawing.Color.White;
+            this.btnCancelLostCard.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnCancelLostCard.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnCancelLostCard.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelLostCard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCancelLostCard.Location = new System.Drawing.Point(10, 0);
+            this.btnCancelLostCard.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCancelLostCard.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnCancelLostCard.Name = "btnCancelLostCard";
+            this.btnCancelLostCard.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCancelLostCard.RectDisableColor = System.Drawing.Color.White;
+            this.btnCancelLostCard.RectHoverColor = System.Drawing.Color.White;
+            this.btnCancelLostCard.RectPressColor = System.Drawing.Color.White;
+            this.btnCancelLostCard.RectSelectedColor = System.Drawing.Color.White;
+            this.btnCancelLostCard.RectSize = 2;
+            this.btnCancelLostCard.Size = new System.Drawing.Size(140, 38);
+            this.btnCancelLostCard.Symbol = 61453;
+            this.btnCancelLostCard.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCancelLostCard.TabIndex = 3;
+            this.btnCancelLostCard.Text = "Cancel";
+            this.btnCancelLostCard.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelLostCard.Visible = false;
+            this.btnCancelLostCard.Click += new System.EventHandler(this.btnCancelLostCard_Click);
             // 
             // panel1
             // 
@@ -1070,34 +1062,6 @@
             this.uiSymbolLabel1.Text = "Resident details";
             this.uiSymbolLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnCancelLostCard
-            // 
-            this.btnCancelLostCard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelLostCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancelLostCard.FillColor = System.Drawing.Color.White;
-            this.btnCancelLostCard.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.btnCancelLostCard.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnCancelLostCard.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelLostCard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCancelLostCard.Location = new System.Drawing.Point(10, 0);
-            this.btnCancelLostCard.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCancelLostCard.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnCancelLostCard.Name = "btnCancelLostCard";
-            this.btnCancelLostCard.RectColor = System.Drawing.SystemColors.ControlLight;
-            this.btnCancelLostCard.RectDisableColor = System.Drawing.Color.White;
-            this.btnCancelLostCard.RectHoverColor = System.Drawing.Color.White;
-            this.btnCancelLostCard.RectPressColor = System.Drawing.Color.White;
-            this.btnCancelLostCard.RectSelectedColor = System.Drawing.Color.White;
-            this.btnCancelLostCard.RectSize = 2;
-            this.btnCancelLostCard.Size = new System.Drawing.Size(140, 38);
-            this.btnCancelLostCard.Symbol = 61453;
-            this.btnCancelLostCard.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCancelLostCard.TabIndex = 3;
-            this.btnCancelLostCard.Text = "Cancel";
-            this.btnCancelLostCard.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelLostCard.Visible = false;
-            this.btnCancelLostCard.Click += new System.EventHandler(this.btnCancelLostCard_Click);
-            // 
             // tbRFID
             // 
             this.tbRFID.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -1138,6 +1102,63 @@
             this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiTextBox1.Watermark = "";
             // 
+            // colId
+            // 
+            this.colId.HeaderText = "ID";
+            this.colId.MinimumWidth = 6;
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colId.Width = 50;
+            // 
+            // colPlate
+            // 
+            this.colPlate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colPlate.HeaderText = "Plate";
+            this.colPlate.MinimumWidth = 6;
+            this.colPlate.Name = "colPlate";
+            this.colPlate.ReadOnly = true;
+            // 
+            // colVehical
+            // 
+            this.colVehical.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colVehical.HeaderText = "Vehical";
+            this.colVehical.MinimumWidth = 6;
+            this.colVehical.Name = "colVehical";
+            this.colVehical.ReadOnly = true;
+            // 
+            // colStartDate
+            // 
+            this.colStartDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colStartDate.HeaderText = "Start_date";
+            this.colStartDate.MinimumWidth = 6;
+            this.colStartDate.Name = "colStartDate";
+            this.colStartDate.ReadOnly = true;
+            // 
+            // colEndDate
+            // 
+            this.colEndDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colEndDate.HeaderText = "End_date";
+            this.colEndDate.MinimumWidth = 6;
+            this.colEndDate.Name = "colEndDate";
+            this.colEndDate.ReadOnly = true;
+            // 
+            // Area
+            // 
+            this.Area.HeaderText = "Area";
+            this.Area.MinimumWidth = 6;
+            this.Area.Name = "Area";
+            this.Area.ReadOnly = true;
+            this.Area.Width = 125;
+            // 
+            // Slot
+            // 
+            this.Slot.HeaderText = "Slot";
+            this.Slot.MinimumWidth = 6;
+            this.Slot.Name = "Slot";
+            this.Slot.ReadOnly = true;
+            this.Slot.Width = 125;
+            // 
             // ResidentDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1173,6 +1194,7 @@
             this.uiPanel8.ResumeLayout(false);
             this.uiTableLayoutPanel3.ResumeLayout(false);
             this.uiPanel3.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.uiTableLayoutPanel4.ResumeLayout(false);
             this.uiGroupBox7.ResumeLayout(false);
@@ -1216,11 +1238,6 @@
         private System.Windows.Forms.Panel panel3;
         private Sunny.UI.UISymbolButton btnSaveProfile;
         private Sunny.UI.UIPanel uiPanel8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPlate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colVehical;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStartDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEndDate;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel3;
         private Sunny.UI.UIGroupBox uiGroupBox5;
         private Sunny.UI.UITextBox tbStatus;
@@ -1244,5 +1261,12 @@
         private Sunny.UI.UISymbolButton btnSaveCard;
         private System.Windows.Forms.Panel panel5;
         private Sunny.UI.UISymbolButton btnCancelLostCard;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPlate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colVehical;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEndDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Area;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Slot;
     }
 }
