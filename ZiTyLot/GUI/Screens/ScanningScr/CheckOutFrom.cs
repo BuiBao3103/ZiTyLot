@@ -409,7 +409,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
             lbTotalPrice.Text = _currentSession.Fee?.ToString("C0", new System.Globalization.CultureInfo("vi-VN"));
 
 
-            if (_currentSession.Card.Vehicle_type.Id == VehicleTypeID.BIKECYCLE)
+            if (_currentSession.Card.Vehicle_type.Id == VehicleTypeID.BICYCLE)
             {
                 lbVehicalPlate.Text = "";
             }
@@ -502,7 +502,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 if (result == null)
                 {
                     lbVehicalPlate.Text = "";
-                    lbVehicalType.Text = "BIKECYCLE";
+                    lbVehicalType.Text = "BICYCLE";
                     _currentSession = sessions.Find(s => s.License_plate == null);
                     if (_currentSession == null)
                     {
@@ -652,7 +652,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                     return false;
                 }
                 if (_parkingLotType == ParkingLotType.FOUR_WHEELER
-                    && (card.Vehicle_type_id == VehicleTypeID.MOTORBIKE || card.Vehicle_type_id == VehicleTypeID.BIKECYCLE))
+                    && (card.Vehicle_type_id == VehicleTypeID.MOTORBIKE || card.Vehicle_type_id == VehicleTypeID.BICYCLE))
                 {
                     MessageHelper.ShowError("This line is for four-wheeler only so this card is not valid!");
                     return false;

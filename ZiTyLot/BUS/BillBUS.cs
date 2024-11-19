@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ZiTyLot.Constants.Enum;
 using ZiTyLot.DAO;
 using ZiTyLot.ENTITY;
 using ZiTyLot.Helper;
@@ -8,17 +9,14 @@ namespace ZiTyLot.BUS
 {
     public class BillBUS : IBUS<Bill>
     {
-        private readonly BillDAO billDao;
-        private readonly ResidentDAO residentDAO;
-        private readonly AccountDAO accountDAO;
-        private readonly IssueDAO issueDAO;
+        private readonly BillDAO billDao = new BillDAO();
+        private readonly ResidentDAO residentDAO= new ResidentDAO();
+        private readonly AccountDAO accountDAO = new AccountDAO();
+        private readonly IssueDAO issueDAO = new IssueDAO();
+        private readonly SlotDAO slotDAO = new SlotDAO();
 
         public BillBUS()
         {
-            this.billDao = new BillDAO();
-            this.residentDAO = new ResidentDAO();
-            this.accountDAO = new AccountDAO();
-            this.issueDAO = new IssueDAO();
         }
 
         public Bill Create(Bill newBill, List<Issue> issues)
@@ -34,7 +32,16 @@ namespace ZiTyLot.BUS
                     issueDAO.Add(issue);
                 }
 
-                //UPDATE STATUS OF SLOT
+                foreach (Issue issue in issues)
+                {
+                    if (issue.Slot_id != "")
+                    {
+                        Slot slot = slotDAO.GetById(issue.Slot_id);
+                        slot.Status = SlotStatus.IN_USE;
+                        slotDAO.Update(slot);
+                    }
+                }
+
                 return newBill;
             }
             catch (Exception ex)

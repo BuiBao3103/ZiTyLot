@@ -11,8 +11,8 @@ namespace ZiTyLot.DAO
     public class StatisticDAO
     {
         private const int CAR_ID = 1;
-        private const int BIKECYCLE_ID = 2;
-        private const int MOTORBIKE_ID = 3;
+        private const int MOTORBIKE_ID = 2;
+        private const int BICYCLE_ID = 3;
 
         public List<RevenueStatistic> GetRevenueStatistics(DateTime startDate, DateTime endDate, string groupingType)
         {
@@ -67,13 +67,13 @@ namespace ZiTyLot.DAO
 
             var carData = GetVehicleData(startDate, endDate, groupingType, CAR_ID);
             var motorbikeData = GetVehicleData(startDate, endDate, groupingType, MOTORBIKE_ID);
-            var bikecycleData = GetVehicleData(startDate, endDate, groupingType, BIKECYCLE_ID);
+            var bicycleData = GetVehicleData(startDate, endDate, groupingType, BICYCLE_ID);
 
             List<SessionStatistic> result = new List<SessionStatistic>();
             foreach (var car in carData)
             {
                 var motorbike = motorbikeData.Find(v => v.Period == car.Period);
-                var bikecycle = bikecycleData.Find(v => v.Period == car.Period);
+                var bicycle = bicycleData.Find(v => v.Period == car.Period);
                 if (motorbike == null)
                 {
                     motorbike = new SessionStatistic
@@ -81,17 +81,17 @@ namespace ZiTyLot.DAO
                         Period = car.Period,
                         CountMotorbike = 0,
                         CountCar = 0,
-                        CountBikecycle = 0
+                        CountBicycle = 0
                     };
                 }
-                if (bikecycle == null)
+                if (bicycle == null)
                 {
-                    bikecycle = new SessionStatistic
+                    bicycle = new SessionStatistic
                     {
                         Period = car.Period,
                         CountMotorbike = 0,
                         CountCar = 0,
-                        CountBikecycle = 0
+                        CountBicycle = 0
                     };
                 }
                 result.Add(new SessionStatistic
@@ -99,22 +99,22 @@ namespace ZiTyLot.DAO
                     Period = car.Period,
                     CountCar = car.CountCar,
                     CountMotorbike = motorbike.CountMotorbike,
-                    CountBikecycle = bikecycle.CountBikecycle
+                    CountBicycle = bicycle.CountBicycle
                 });
                 motorbikeData.Remove(motorbike);
-                bikecycleData.Remove(bikecycle);
+                bicycleData.Remove(bicycle);
             }
             foreach (var motorbike in motorbikeData)
             {
-                var bikecycle = bikecycleData.Find(v => v.Period == motorbike.Period);
-                if (bikecycle == null)
+                var bicycle = bicycleData.Find(v => v.Period == motorbike.Period);
+                if (bicycle == null)
                 {
-                    bikecycle = new SessionStatistic
+                    bicycle = new SessionStatistic
                     {
                         Period = motorbike.Period,
                         CountMotorbike = 0,
                         CountCar = 0,
-                        CountBikecycle = 0
+                        CountBicycle = 0
                     };
                 }
                 result.Add(new SessionStatistic
@@ -122,18 +122,18 @@ namespace ZiTyLot.DAO
                     Period = motorbike.Period,
                     CountCar = 0,
                     CountMotorbike = motorbike.CountMotorbike,
-                    CountBikecycle = bikecycle.CountBikecycle
+                    CountBicycle = bicycle.CountBicycle
                 });
-                bikecycleData.Remove(bikecycle);
+                bicycleData.Remove(bicycle);
             }
-            foreach (var bikecycle in bikecycleData)
+            foreach (var bicycle in bicycleData)
             {
                 result.Add(new SessionStatistic
                 {
-                    Period = bikecycle.Period,
+                    Period = bicycle.Period,
                     CountCar = 0,
                     CountMotorbike = 0,
-                    CountBikecycle = bikecycle.CountBikecycle
+                    CountBicycle = bicycle.CountBicycle
                 });
             }
             result.Sort((a, b) => DateTime.ParseExact(a.Period, periodFormat, CultureInfo.InvariantCulture)
@@ -155,7 +155,7 @@ namespace ZiTyLot.DAO
             string currentSlot = @"
                 SELECT 
                     Count(CASE WHEN c.vehicle_type_id = @carId THEN 1 END) AS current_car,
-                    Count(CASE WHEN c.vehicle_type_id = @bikecycleId THEN 1 END) AS current_bikecycle,
+                    Count(CASE WHEN c.vehicle_type_id = @bicycleId THEN 1 END) AS current_bicycle,
                     Count(CASE WHEN c.vehicle_type_id = @motorbikeId THEN 1 END) AS current_motorbike
                 FROM 
                     sessions s join cards c on s.card_id = c.id
@@ -179,14 +179,14 @@ namespace ZiTyLot.DAO
                 using (var currentSlotsCommand = new MySqlCommand(currentSlot, connection))
                 {
                     currentSlotsCommand.Parameters.AddWithValue("@carId", CAR_ID);
-                    currentSlotsCommand.Parameters.AddWithValue("@bikecycleId", BIKECYCLE_ID);
+                    currentSlotsCommand.Parameters.AddWithValue("@bicycleId", BICYCLE_ID);
                     currentSlotsCommand.Parameters.AddWithValue("@motorbikeId", MOTORBIKE_ID);
                     using (var currentSlotsReader = currentSlotsCommand.ExecuteReader())
                     {
                         while (currentSlotsReader.Read())
                         {
                             result.CurrentCar = currentSlotsReader.GetInt32("current_car");
-                            result.CurrentBikecycle = currentSlotsReader.GetInt32("current_bikecycle");
+                            result.CurrentBicycle = currentSlotsReader.GetInt32("current_bicycle");
                             result.CurrentMotorbike = currentSlotsReader.GetInt32("current_motorbike");
                         }
                     }
@@ -348,7 +348,7 @@ namespace ZiTyLot.DAO
                             result.Add(new SessionStatistic
                             {
                                 Period = periodString,
-                                CountBikecycle = vehicle_id == BIKECYCLE_ID ? vehicle_count : 0,
+                                CountBicycle = vehicle_id == BICYCLE_ID ? vehicle_count : 0,
                                 CountCar = vehicle_id == CAR_ID ? vehicle_count : 0,
                                 CountMotorbike = vehicle_id == MOTORBIKE_ID ? vehicle_count : 0
                             });

@@ -75,11 +75,11 @@
             this.uiTableLayoutPanel2.Controls.Add(this.uiGroupBox3, 0, 0);
             this.uiTableLayoutPanel2.Controls.Add(this.uiTableLayoutPanel3, 1, 0);
             this.uiTableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiTableLayoutPanel2.Location = new System.Drawing.Point(3, 147);
+            this.uiTableLayoutPanel2.Location = new System.Drawing.Point(3, 153);
             this.uiTableLayoutPanel2.Name = "uiTableLayoutPanel2";
             this.uiTableLayoutPanel2.RowCount = 1;
             this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel2.Size = new System.Drawing.Size(558, 207);
+            this.uiTableLayoutPanel2.Size = new System.Drawing.Size(558, 201);
             this.uiTableLayoutPanel2.TabIndex = 4;
             this.uiTableLayoutPanel2.TagString = null;
             // 
@@ -89,14 +89,14 @@
             this.uiGroupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox5.FillColor = System.Drawing.Color.White;
             this.uiGroupBox5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox5.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox5.Location = new System.Drawing.Point(352, 5);
             this.uiGroupBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox5.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox5.Name = "uiGroupBox5";
             this.uiGroupBox5.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox5.RectColor = System.Drawing.Color.White;
-            this.uiGroupBox5.Size = new System.Drawing.Size(202, 197);
+            this.uiGroupBox5.Size = new System.Drawing.Size(202, 191);
             this.uiGroupBox5.TabIndex = 5;
             this.uiGroupBox5.Text = "This role can do";
             this.uiGroupBox5.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -114,12 +114,12 @@
             this.listDo.MinimumSize = new System.Drawing.Size(1, 1);
             this.listDo.Name = "listDo";
             this.listDo.Padding = new System.Windows.Forms.Padding(2);
-            this.listDo.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.listDo.RectColor = System.Drawing.SystemColors.ControlLight;
             this.listDo.RectSize = 2;
             this.listDo.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.listDo.ScrollBarStyleInherited = false;
             this.listDo.ShowText = false;
-            this.listDo.Size = new System.Drawing.Size(186, 161);
+            this.listDo.Size = new System.Drawing.Size(186, 155);
             this.listDo.TabIndex = 1;
             this.listDo.Text = "uiListBox2";
             // 
@@ -129,14 +129,14 @@
             this.uiGroupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox3.FillColor = System.Drawing.Color.White;
             this.uiGroupBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox3.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox3.Location = new System.Drawing.Point(4, 5);
             this.uiGroupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox3.Name = "uiGroupBox3";
             this.uiGroupBox3.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox3.RectColor = System.Drawing.Color.White;
-            this.uiGroupBox3.Size = new System.Drawing.Size(200, 197);
+            this.uiGroupBox3.Size = new System.Drawing.Size(200, 191);
             this.uiGroupBox3.TabIndex = 3;
             this.uiGroupBox3.Text = "Function";
             this.uiGroupBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -154,12 +154,12 @@
             this.listFunction.MinimumSize = new System.Drawing.Size(1, 1);
             this.listFunction.Name = "listFunction";
             this.listFunction.Padding = new System.Windows.Forms.Padding(2);
-            this.listFunction.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.listFunction.RectColor = System.Drawing.SystemColors.ControlLight;
             this.listFunction.RectSize = 2;
             this.listFunction.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.listFunction.ScrollBarStyleInherited = false;
             this.listFunction.ShowText = false;
-            this.listFunction.Size = new System.Drawing.Size(184, 161);
+            this.listFunction.Size = new System.Drawing.Size(184, 155);
             this.listFunction.TabIndex = 0;
             this.listFunction.Text = "uiListBox1";
             // 
@@ -176,7 +176,7 @@
             this.uiTableLayoutPanel3.RowCount = 2;
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(134, 201);
+            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(134, 195);
             this.uiTableLayoutPanel3.TabIndex = 6;
             this.uiTableLayoutPanel3.TagString = null;
             // 
@@ -186,13 +186,13 @@
             this.uiPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel2.FillColor = System.Drawing.Color.White;
             this.uiPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel2.Location = new System.Drawing.Point(4, 105);
+            this.uiPanel2.Location = new System.Drawing.Point(4, 102);
             this.uiPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel2.Name = "uiPanel2";
             this.uiPanel2.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel2.Size = new System.Drawing.Size(126, 91);
+            this.uiPanel2.Size = new System.Drawing.Size(126, 88);
             this.uiPanel2.TabIndex = 1;
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -237,7 +237,7 @@
             this.uiPanel1.Name = "uiPanel1";
             this.uiPanel1.Padding = new System.Windows.Forms.Padding(5);
             this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel1.Size = new System.Drawing.Size(126, 90);
+            this.uiPanel1.Size = new System.Drawing.Size(126, 87);
             this.uiPanel1.TabIndex = 0;
             this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -253,7 +253,7 @@
             this.btnAdd.FillSelectedColor = System.Drawing.Color.White;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnAdd.ForeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnAdd.Location = new System.Drawing.Point(5, 50);
+            this.btnAdd.Location = new System.Drawing.Point(5, 47);
             this.btnAdd.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.RectColor = System.Drawing.SystemColors.ControlLight;
@@ -276,8 +276,8 @@
             this.uiGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox1.FillColor = System.Drawing.Color.White;
             this.uiGroupBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.uiGroupBox1.Location = new System.Drawing.Point(4, 59);
+            this.uiGroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.uiGroupBox1.Location = new System.Drawing.Point(4, 65);
             this.uiGroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox1.Name = "uiGroupBox1";
@@ -299,7 +299,7 @@
             this.tbName.MinimumSize = new System.Drawing.Size(1, 40);
             this.tbName.Name = "tbName";
             this.tbName.Padding = new System.Windows.Forms.Padding(10, 0, 5, 2);
-            this.tbName.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbName.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbName.RectSize = 2;
             this.tbName.ShowText = false;
             this.tbName.Size = new System.Drawing.Size(540, 40);
@@ -319,7 +319,7 @@
             this.uiTableLayoutPanel1.Location = new System.Drawing.Point(10, 10);
             this.uiTableLayoutPanel1.Name = "uiTableLayoutPanel1";
             this.uiTableLayoutPanel1.RowCount = 4;
-            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
@@ -407,11 +407,11 @@
             this.btnSave.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnSave.Name = "btnSave";
             this.btnSave.Radius = 10;
-            this.btnSave.RectColor = System.Drawing.Color.White;
+            this.btnSave.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnSave.RectDisableColor = System.Drawing.Color.White;
-            this.btnSave.RectHoverColor = System.Drawing.Color.White;
-            this.btnSave.RectPressColor = System.Drawing.Color.White;
-            this.btnSave.RectSelectedColor = System.Drawing.Color.White;
+            this.btnSave.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnSave.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnSave.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnSave.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnSave.Size = new System.Drawing.Size(120, 38);
             this.btnSave.Symbol = 557715;
@@ -436,7 +436,7 @@
             this.uiPanel4.RectColor = System.Drawing.SystemColors.ControlLight;
             this.uiPanel4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom;
             this.uiPanel4.RectSize = 2;
-            this.uiPanel4.Size = new System.Drawing.Size(556, 44);
+            this.uiPanel4.Size = new System.Drawing.Size(556, 50);
             this.uiPanel4.TabIndex = 18;
             this.uiPanel4.Text = null;
             this.uiPanel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -456,7 +456,7 @@
             this.uiPanel5.RectColor = System.Drawing.SystemColors.ControlLight;
             this.uiPanel5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel5.RectSize = 2;
-            this.uiPanel5.Size = new System.Drawing.Size(556, 42);
+            this.uiPanel5.Size = new System.Drawing.Size(556, 48);
             this.uiPanel5.TabIndex = 5;
             this.uiPanel5.Text = null;
             this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -469,7 +469,7 @@
             this.uiSymbolLabel1.Location = new System.Drawing.Point(0, 2);
             this.uiSymbolLabel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiSymbolLabel1.Name = "uiSymbolLabel1";
-            this.uiSymbolLabel1.Size = new System.Drawing.Size(556, 30);
+            this.uiSymbolLabel1.Size = new System.Drawing.Size(556, 36);
             this.uiSymbolLabel1.Symbol = 61459;
             this.uiSymbolLabel1.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.uiSymbolLabel1.SymbolOffset = new System.Drawing.Point(0, 1);
