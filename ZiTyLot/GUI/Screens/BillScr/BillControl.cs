@@ -39,26 +39,12 @@ namespace ZiTyLot.GUI.Screens
             pnlBottom.Region = Region.FromHrgn(RoundedBorder.CreateRoundRectRgn(0, 0, pnlBottom.Width, pnlBottom.Height, 10, 10));
 
 
-            this.tableBill.Paint += new System.Windows.Forms.PaintEventHandler(this.table_Paint);
             this.tableBill.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.table_CellPainting);
             this.tableBill.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
         }
-
-        // Paint the header cell
-        private void table_Paint(object sender, PaintEventArgs e)
-        {
-            Rectangle firstHeaderCellRect = this.tableBill.GetCellDisplayRectangle(this.tableBill.Columns["colView"].Index, -1, true);
-            Rectangle lastHeaderCellRect = this.tableBill.GetCellDisplayRectangle(this.tableBill.Columns["colDelete"].Index, -1, true);
-            Rectangle mergedHeaderRect = new Rectangle(firstHeaderCellRect.X, firstHeaderCellRect.Y, lastHeaderCellRect.X + lastHeaderCellRect.Width - firstHeaderCellRect.X, firstHeaderCellRect.Height);
-            e.Graphics.FillRectangle(new SolidBrush(Color.White), mergedHeaderRect);
-            TextRenderer.DrawText(e.Graphics, "Action", this.tableBill.ColumnHeadersDefaultCellStyle.Font,
-                mergedHeaderRect, this.tableBill.ColumnHeadersDefaultCellStyle.ForeColor,
-                TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
-        }
         private void table_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if ((e.ColumnIndex == tableBill.Columns["colView"].Index ||
-                 e.ColumnIndex == tableBill.Columns["colDelete"].Index) && e.RowIndex >= 0)
+            if (e.ColumnIndex == tableBill.Columns["colView"].Index && e.RowIndex >= 0)
             {
                 if (e.RowIndex % 2 == 0)
                 {
@@ -69,14 +55,7 @@ namespace ZiTyLot.GUI.Screens
                     e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
                 }
                 System.Drawing.Image icon = null;
-                if (e.ColumnIndex == tableBill.Columns["colView"].Index)
-                {
-                    icon = Properties.Resources.Icon_18x18px_View;
-                }
-                else if (e.ColumnIndex == tableBill.Columns["colDelete"].Index)
-                {
-                    icon = Properties.Resources.Icon_18x18px_Remove;
-                }
+                icon = Properties.Resources.Icon_18x18px_View;
                 int iconWidth = 16;
                 int iconHeight = 16;
                 int x = e.CellBounds.Left + (e.CellBounds.Width - iconWidth) / 2;
@@ -101,10 +80,6 @@ namespace ZiTyLot.GUI.Screens
                     BillDetailControl billDetailControl = new BillDetailControl(id);
                     home.LoadForm(billDetailControl);
 
-                }
-                else if (e.ColumnIndex == tableBill.Columns["colDelete"].Index)
-                {
-                    MessageBox.Show("Delete button clicked for row " + e.RowIndex);
                 }
             }
         }

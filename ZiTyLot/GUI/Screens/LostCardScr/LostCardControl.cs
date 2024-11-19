@@ -232,15 +232,6 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
                         break;
                 }
             }
-            int userTypeCbIndex = cbUserType.SelectedIndex;
-            //if (userTypeCbIndex == 1)
-            //{
-            //    _filters.Add(new FilterCondition(nameof(LostHistory.User_type), CompOp.Equals, "1"));
-            //}
-            //else if (userTypeCbIndex == 2)
-            //{
-            //    _filters.Add(new FilterCondition(nameof(LostHistory.User_type), CompOp.Equals, "0"));
-            //}
             int statusCbIndex = cbStatus.SelectedIndex;
             if (statusCbIndex == 1)
             {
@@ -270,7 +261,6 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
         private void btnClear_Click(object sender, EventArgs e)
         {
             tbSearch.Text = "";
-            cbUserType.SelectedIndex = 0;
             cbStatus.SelectedIndex = 0;
             _filters.Clear();
             ChangePage(1);

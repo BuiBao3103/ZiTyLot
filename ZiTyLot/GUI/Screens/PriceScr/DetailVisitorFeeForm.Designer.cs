@@ -38,11 +38,6 @@
             this.tpTurn = new System.Windows.Forms.TabPage();
             this.uiPanel4 = new Sunny.UI.UIPanel();
             this.uiPanel5 = new Sunny.UI.UIPanel();
-            this.pnlButton = new Sunny.UI.UIPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnCancelPT = new Sunny.UI.UISymbolButton();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnConfirmPT = new Sunny.UI.UISymbolButton();
             this.uiPanel6 = new Sunny.UI.UIPanel();
             this.uiGroupBox2 = new Sunny.UI.UIGroupBox();
             this.tbNightFeePT = new Sunny.UI.UITextBox();
@@ -86,6 +81,11 @@
             this.uiPanel18 = new Sunny.UI.UIPanel();
             this.uiGroupBox8 = new Sunny.UI.UIGroupBox();
             this.tbFeeFirstPeriod = new Sunny.UI.UITextBox();
+            this.pnlButton = new Sunny.UI.UIPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.uiSymbolButton2 = new Sunny.UI.UISymbolButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnConfirmPT = new Sunny.UI.UISymbolButton();
             this.pnlMain.SuspendLayout();
             this.uiPanel1.SuspendLayout();
             this.uiPanel3.SuspendLayout();
@@ -94,9 +94,6 @@
             this.tpTurn.SuspendLayout();
             this.uiPanel4.SuspendLayout();
             this.uiPanel5.SuspendLayout();
-            this.pnlButton.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.uiPanel6.SuspendLayout();
             this.uiGroupBox2.SuspendLayout();
             this.pnlFullname.SuspendLayout();
@@ -127,6 +124,9 @@
             this.uiGroupBox7.SuspendLayout();
             this.uiPanel18.SuspendLayout();
             this.uiGroupBox8.SuspendLayout();
+            this.pnlButton.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -137,13 +137,12 @@
             this.pnlMain.Controls.Add(this.uiPanel1, 0, 0);
             this.pnlMain.Controls.Add(this.uiPanel2, 0, 1);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(13, 12);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlMain.Location = new System.Drawing.Point(10, 10);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.RowCount = 2;
-            this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.pnlMain.Size = new System.Drawing.Size(753, 605);
+            this.pnlMain.Size = new System.Drawing.Size(564, 491);
             this.pnlMain.TabIndex = 2;
             this.pnlMain.TagString = null;
             // 
@@ -154,8 +153,8 @@
             this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel1.FillColor = System.Drawing.Color.White;
             this.uiPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel1.Location = new System.Drawing.Point(5, 6);
-            this.uiPanel1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.uiPanel1.Location = new System.Drawing.Point(4, 5);
+            this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel1.Name = "uiPanel1";
             this.uiPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
@@ -163,7 +162,7 @@
             this.uiPanel1.RectColor = System.Drawing.SystemColors.ControlLight;
             this.uiPanel1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom;
             this.uiPanel1.RectSize = 2;
-            this.uiPanel1.Size = new System.Drawing.Size(743, 54);
+            this.uiPanel1.Size = new System.Drawing.Size(556, 50);
             this.uiPanel1.TabIndex = 17;
             this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -183,7 +182,7 @@
             this.uiPanel3.RectColor = System.Drawing.SystemColors.ControlLight;
             this.uiPanel3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel3.RectSize = 2;
-            this.uiPanel3.Size = new System.Drawing.Size(743, 52);
+            this.uiPanel3.Size = new System.Drawing.Size(556, 48);
             this.uiPanel3.TabIndex = 5;
             this.uiPanel3.Text = null;
             this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -196,7 +195,7 @@
             this.lbVehicleType.Location = new System.Drawing.Point(0, 2);
             this.lbVehicleType.Margin = new System.Windows.Forms.Padding(0);
             this.lbVehicleType.Name = "lbVehicleType";
-            this.lbVehicleType.Size = new System.Drawing.Size(743, 40);
+            this.lbVehicleType.Size = new System.Drawing.Size(556, 36);
             this.lbVehicleType.TabIndex = 3;
             this.lbVehicleType.Text = "{vehical_type} pricing";
             this.lbVehicleType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -208,13 +207,13 @@
             this.uiPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiPanel2.FillColor = System.Drawing.Color.White;
             this.uiPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel2.Location = new System.Drawing.Point(5, 72);
-            this.uiPanel2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.uiPanel2.Location = new System.Drawing.Point(4, 65);
+            this.uiPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel2.Name = "uiPanel2";
             this.uiPanel2.RectColor = System.Drawing.Color.White;
             this.uiPanel2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel2.Size = new System.Drawing.Size(743, 527);
+            this.uiPanel2.Size = new System.Drawing.Size(556, 421);
             this.uiPanel2.TabIndex = 3;
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -235,7 +234,7 @@
             this.pnlTab.Name = "pnlTab";
             this.pnlTab.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.pnlTab.SelectedIndex = 0;
-            this.pnlTab.Size = new System.Drawing.Size(743, 527);
+            this.pnlTab.Size = new System.Drawing.Size(556, 421);
             this.pnlTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.pnlTab.TabBackColor = System.Drawing.Color.White;
             this.pnlTab.TabIndex = 1;
@@ -251,7 +250,7 @@
             this.tpTurn.Controls.Add(this.uiPanel4);
             this.tpTurn.Location = new System.Drawing.Point(0, 40);
             this.tpTurn.Name = "tpTurn";
-            this.tpTurn.Size = new System.Drawing.Size(743, 487);
+            this.tpTurn.Size = new System.Drawing.Size(556, 381);
             this.tpTurn.TabIndex = 0;
             this.tpTurn.Text = "Per turn";
             // 
@@ -270,7 +269,7 @@
             this.uiPanel4.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.uiPanel4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel4.RectSize = 2;
-            this.uiPanel4.Size = new System.Drawing.Size(743, 487);
+            this.uiPanel4.Size = new System.Drawing.Size(556, 381);
             this.uiPanel4.TabIndex = 0;
             this.uiPanel4.Text = null;
             this.uiPanel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -288,105 +287,10 @@
             this.uiPanel5.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel5.Name = "uiPanel5";
             this.uiPanel5.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel5.Size = new System.Drawing.Size(743, 482);
+            this.uiPanel5.Size = new System.Drawing.Size(556, 376);
             this.uiPanel5.TabIndex = 0;
             this.uiPanel5.Text = null;
             this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnlButton
-            // 
-            this.pnlButton.Controls.Add(this.panel2);
-            this.pnlButton.Controls.Add(this.panel3);
-            this.pnlButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlButton.FillColor = System.Drawing.Color.White;
-            this.pnlButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pnlButton.Location = new System.Drawing.Point(0, 428);
-            this.pnlButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pnlButton.MinimumSize = new System.Drawing.Size(1, 1);
-            this.pnlButton.Name = "pnlButton";
-            this.pnlButton.Padding = new System.Windows.Forms.Padding(0, 13, 0, 3);
-            this.pnlButton.Radius = 0;
-            this.pnlButton.RectColor = System.Drawing.SystemColors.ControlLight;
-            this.pnlButton.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
-            this.pnlButton.RectSize = 2;
-            this.pnlButton.Size = new System.Drawing.Size(743, 54);
-            this.pnlButton.TabIndex = 17;
-            this.pnlButton.Text = null;
-            this.pnlButton.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnCancelPT);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(493, 13);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(120, 38);
-            this.panel2.TabIndex = 10;
-            // 
-            // btnCancelPT
-            // 
-            this.btnCancelPT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelPT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancelPT.FillColor = System.Drawing.Color.White;
-            this.btnCancelPT.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.btnCancelPT.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnCancelPT.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelPT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCancelPT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelPT.Location = new System.Drawing.Point(0, 0);
-            this.btnCancelPT.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCancelPT.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnCancelPT.Name = "btnCancelPT";
-            this.btnCancelPT.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCancelPT.RectDisableColor = System.Drawing.Color.White;
-            this.btnCancelPT.RectHoverColor = System.Drawing.Color.White;
-            this.btnCancelPT.RectPressColor = System.Drawing.Color.White;
-            this.btnCancelPT.RectSelectedColor = System.Drawing.Color.White;
-            this.btnCancelPT.RectSize = 2;
-            this.btnCancelPT.Size = new System.Drawing.Size(120, 38);
-            this.btnCancelPT.Symbol = 0;
-            this.btnCancelPT.TabIndex = 3;
-            this.btnCancelPT.Text = "Cancel";
-            this.btnCancelPT.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelPT.Click += new System.EventHandler(this.btnCancelPT_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnConfirmPT);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(613, 13);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(130, 38);
-            this.panel3.TabIndex = 9;
-            // 
-            // btnConfirmPT
-            // 
-            this.btnConfirmPT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmPT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnConfirmPT.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnConfirmPT.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
-            this.btnConfirmPT.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
-            this.btnConfirmPT.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmPT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirmPT.Location = new System.Drawing.Point(10, 0);
-            this.btnConfirmPT.Margin = new System.Windows.Forms.Padding(0);
-            this.btnConfirmPT.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnConfirmPT.Name = "btnConfirmPT";
-            this.btnConfirmPT.Padding = new System.Windows.Forms.Padding(14, 0, 12, 0);
-            this.btnConfirmPT.Radius = 10;
-            this.btnConfirmPT.RectColor = System.Drawing.Color.White;
-            this.btnConfirmPT.RectDisableColor = System.Drawing.Color.White;
-            this.btnConfirmPT.RectHoverColor = System.Drawing.Color.White;
-            this.btnConfirmPT.RectPressColor = System.Drawing.Color.White;
-            this.btnConfirmPT.RectSelectedColor = System.Drawing.Color.White;
-            this.btnConfirmPT.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.btnConfirmPT.Size = new System.Drawing.Size(120, 38);
-            this.btnConfirmPT.Symbol = 0;
-            this.btnConfirmPT.TabIndex = 3;
-            this.btnConfirmPT.Text = "Confirm";
-            this.btnConfirmPT.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmPT.Click += new System.EventHandler(this.btnConfirmPT_Click);
             // 
             // uiPanel6
             // 
@@ -399,7 +303,7 @@
             this.uiPanel6.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel6.Name = "uiPanel6";
             this.uiPanel6.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel6.Size = new System.Drawing.Size(743, 70);
+            this.uiPanel6.Size = new System.Drawing.Size(556, 70);
             this.uiPanel6.TabIndex = 3;
             this.uiPanel6.Text = null;
             this.uiPanel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -410,14 +314,14 @@
             this.uiGroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox2.FillColor = System.Drawing.Color.White;
             this.uiGroupBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox2.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox2.Name = "uiGroupBox2";
             this.uiGroupBox2.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox2.Size = new System.Drawing.Size(743, 70);
+            this.uiGroupBox2.Size = new System.Drawing.Size(556, 70);
             this.uiGroupBox2.TabIndex = 0;
             this.uiGroupBox2.Text = "Night fee per turn";
             this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -433,10 +337,10 @@
             this.tbNightFeePT.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbNightFeePT.Name = "tbNightFeePT";
             this.tbNightFeePT.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbNightFeePT.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbNightFeePT.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbNightFeePT.RectSize = 2;
             this.tbNightFeePT.ShowText = false;
-            this.tbNightFeePT.Size = new System.Drawing.Size(727, 34);
+            this.tbNightFeePT.Size = new System.Drawing.Size(540, 34);
             this.tbNightFeePT.TabIndex = 0;
             this.tbNightFeePT.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbNightFeePT.Watermark = "";
@@ -454,7 +358,7 @@
             this.pnlFullname.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlFullname.Name = "pnlFullname";
             this.pnlFullname.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.pnlFullname.Size = new System.Drawing.Size(743, 80);
+            this.pnlFullname.Size = new System.Drawing.Size(556, 80);
             this.pnlFullname.TabIndex = 2;
             this.pnlFullname.Text = null;
             this.pnlFullname.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -465,14 +369,14 @@
             this.uiGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox1.FillColor = System.Drawing.Color.White;
             this.uiGroupBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox1.Name = "uiGroupBox1";
             this.uiGroupBox1.Padding = new System.Windows.Forms.Padding(8, 32, 8, 4);
             this.uiGroupBox1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiGroupBox1.Size = new System.Drawing.Size(743, 80);
+            this.uiGroupBox1.Size = new System.Drawing.Size(556, 80);
             this.uiGroupBox1.TabIndex = 0;
             this.uiGroupBox1.Text = "Day fee per turn";
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -488,10 +392,10 @@
             this.tbDayFeePT.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbDayFeePT.Name = "tbDayFeePT";
             this.tbDayFeePT.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbDayFeePT.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbDayFeePT.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbDayFeePT.RectSize = 2;
             this.tbDayFeePT.ShowText = false;
-            this.tbDayFeePT.Size = new System.Drawing.Size(727, 34);
+            this.tbDayFeePT.Size = new System.Drawing.Size(540, 34);
             this.tbDayFeePT.TabIndex = 0;
             this.tbDayFeePT.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbDayFeePT.Watermark = "";
@@ -504,7 +408,7 @@
             this.tpHourTurn.Controls.Add(this.uiPanel7);
             this.tpHourTurn.Location = new System.Drawing.Point(0, 40);
             this.tpHourTurn.Name = "tpHourTurn";
-            this.tpHourTurn.Size = new System.Drawing.Size(556, 387);
+            this.tpHourTurn.Size = new System.Drawing.Size(556, 381);
             this.tpHourTurn.TabIndex = 1;
             this.tpHourTurn.Text = "Per hour turn";
             // 
@@ -523,7 +427,7 @@
             this.uiPanel7.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.uiPanel7.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel7.RectSize = 2;
-            this.uiPanel7.Size = new System.Drawing.Size(556, 387);
+            this.uiPanel7.Size = new System.Drawing.Size(556, 381);
             this.uiPanel7.TabIndex = 1;
             this.uiPanel7.Text = null;
             this.uiPanel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -542,7 +446,7 @@
             this.uiPanel8.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel8.Name = "uiPanel8";
             this.uiPanel8.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel8.Size = new System.Drawing.Size(556, 382);
+            this.uiPanel8.Size = new System.Drawing.Size(556, 376);
             this.uiPanel8.TabIndex = 0;
             this.uiPanel8.Text = null;
             this.uiPanel8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -569,7 +473,7 @@
             this.uiGroupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox5.FillColor = System.Drawing.Color.White;
             this.uiGroupBox5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox5.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox5.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox5.MinimumSize = new System.Drawing.Size(1, 1);
@@ -592,7 +496,7 @@
             this.tbHourPHT.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbHourPHT.Name = "tbHourPHT";
             this.tbHourPHT.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbHourPHT.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbHourPHT.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbHourPHT.RectSize = 2;
             this.tbHourPHT.ShowText = false;
             this.tbHourPHT.Size = new System.Drawing.Size(540, 34);
@@ -608,7 +512,7 @@
             this.uiPanel9.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.uiPanel9.FillColor = System.Drawing.Color.White;
             this.uiPanel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel9.Location = new System.Drawing.Point(0, 328);
+            this.uiPanel9.Location = new System.Drawing.Point(0, 322);
             this.uiPanel9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel9.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel9.Name = "uiPanel9";
@@ -640,19 +544,19 @@
             this.btnCancelPHT.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
             this.btnCancelPHT.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelPHT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCancelPHT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelPHT.Location = new System.Drawing.Point(0, 0);
             this.btnCancelPHT.Margin = new System.Windows.Forms.Padding(0);
             this.btnCancelPHT.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnCancelPHT.Name = "btnCancelPHT";
-            this.btnCancelPHT.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCancelPHT.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnCancelPHT.RectDisableColor = System.Drawing.Color.White;
             this.btnCancelPHT.RectHoverColor = System.Drawing.Color.White;
             this.btnCancelPHT.RectPressColor = System.Drawing.Color.White;
             this.btnCancelPHT.RectSelectedColor = System.Drawing.Color.White;
             this.btnCancelPHT.RectSize = 2;
             this.btnCancelPHT.Size = new System.Drawing.Size(120, 38);
-            this.btnCancelPHT.Symbol = 0;
+            this.btnCancelPHT.Symbol = 61453;
+            this.btnCancelPHT.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCancelPHT.TabIndex = 3;
             this.btnCancelPHT.Text = "Cancel";
             this.btnCancelPHT.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -676,23 +580,22 @@
             this.btnConfirmPHT.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
             this.btnConfirmPHT.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
             this.btnConfirmPHT.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmPHT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfirmPHT.Location = new System.Drawing.Point(10, 0);
             this.btnConfirmPHT.Margin = new System.Windows.Forms.Padding(0);
             this.btnConfirmPHT.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnConfirmPHT.Name = "btnConfirmPHT";
             this.btnConfirmPHT.Padding = new System.Windows.Forms.Padding(14, 0, 12, 0);
             this.btnConfirmPHT.Radius = 10;
-            this.btnConfirmPHT.RectColor = System.Drawing.Color.White;
+            this.btnConfirmPHT.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConfirmPHT.RectDisableColor = System.Drawing.Color.White;
-            this.btnConfirmPHT.RectHoverColor = System.Drawing.Color.White;
-            this.btnConfirmPHT.RectPressColor = System.Drawing.Color.White;
-            this.btnConfirmPHT.RectSelectedColor = System.Drawing.Color.White;
+            this.btnConfirmPHT.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConfirmPHT.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConfirmPHT.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConfirmPHT.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnConfirmPHT.Size = new System.Drawing.Size(120, 38);
-            this.btnConfirmPHT.Symbol = 0;
+            this.btnConfirmPHT.Symbol = 557715;
             this.btnConfirmPHT.TabIndex = 3;
-            this.btnConfirmPHT.Text = "Confirm";
+            this.btnConfirmPHT.Text = "Save";
             this.btnConfirmPHT.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmPHT.Click += new System.EventHandler(this.btnConfirmPHT_Click);
             // 
@@ -718,7 +621,7 @@
             this.uiGroupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox3.FillColor = System.Drawing.Color.White;
             this.uiGroupBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox3.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox3.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox3.MinimumSize = new System.Drawing.Size(1, 1);
@@ -741,7 +644,7 @@
             this.tbNightFeePHT.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbNightFeePHT.Name = "tbNightFeePHT";
             this.tbNightFeePHT.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbNightFeePHT.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbNightFeePHT.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbNightFeePHT.RectSize = 2;
             this.tbNightFeePHT.ShowText = false;
             this.tbNightFeePHT.Size = new System.Drawing.Size(540, 34);
@@ -773,7 +676,7 @@
             this.uiGroupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox4.FillColor = System.Drawing.Color.White;
             this.uiGroupBox4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox4.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox4.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox4.MinimumSize = new System.Drawing.Size(1, 1);
@@ -796,7 +699,7 @@
             this.tbDayFeePHT.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbDayFeePHT.Name = "tbDayFeePHT";
             this.tbDayFeePHT.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbDayFeePHT.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbDayFeePHT.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbDayFeePHT.RectSize = 2;
             this.tbDayFeePHT.ShowText = false;
             this.tbDayFeePHT.Size = new System.Drawing.Size(540, 34);
@@ -812,7 +715,7 @@
             this.tpMNHour.Controls.Add(this.uiPanel13);
             this.tpMNHour.Location = new System.Drawing.Point(0, 40);
             this.tpMNHour.Name = "tpMNHour";
-            this.tpMNHour.Size = new System.Drawing.Size(556, 387);
+            this.tpMNHour.Size = new System.Drawing.Size(556, 381);
             this.tpMNHour.TabIndex = 2;
             this.tpMNHour.Text = "Per first and later hour";
             // 
@@ -831,7 +734,7 @@
             this.uiPanel13.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.uiPanel13.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiPanel13.RectSize = 2;
-            this.uiPanel13.Size = new System.Drawing.Size(556, 387);
+            this.uiPanel13.Size = new System.Drawing.Size(556, 381);
             this.uiPanel13.TabIndex = 2;
             this.uiPanel13.Text = null;
             this.uiPanel13.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -851,7 +754,7 @@
             this.uiPanel14.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel14.Name = "uiPanel14";
             this.uiPanel14.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.uiPanel14.Size = new System.Drawing.Size(556, 382);
+            this.uiPanel14.Size = new System.Drawing.Size(556, 376);
             this.uiPanel14.TabIndex = 0;
             this.uiPanel14.Text = null;
             this.uiPanel14.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -878,7 +781,7 @@
             this.uiGroupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox9.FillColor = System.Drawing.Color.White;
             this.uiGroupBox9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox9.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox9.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox9.MinimumSize = new System.Drawing.Size(1, 1);
@@ -901,7 +804,7 @@
             this.tbHourNextPeriod.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbHourNextPeriod.Name = "tbHourNextPeriod";
             this.tbHourNextPeriod.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbHourNextPeriod.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbHourNextPeriod.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbHourNextPeriod.RectSize = 2;
             this.tbHourNextPeriod.ShowText = false;
             this.tbHourNextPeriod.Size = new System.Drawing.Size(540, 34);
@@ -932,7 +835,7 @@
             this.uiGroupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox6.FillColor = System.Drawing.Color.White;
             this.uiGroupBox6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox6.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox6.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox6.MinimumSize = new System.Drawing.Size(1, 1);
@@ -955,7 +858,7 @@
             this.tbFeeNextPeriod.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbFeeNextPeriod.Name = "tbFeeNextPeriod";
             this.tbFeeNextPeriod.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbFeeNextPeriod.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbFeeNextPeriod.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbFeeNextPeriod.RectSize = 2;
             this.tbFeeNextPeriod.ShowText = false;
             this.tbFeeNextPeriod.Size = new System.Drawing.Size(540, 34);
@@ -972,7 +875,7 @@
             this.uiPanel16.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.uiPanel16.FillColor = System.Drawing.Color.White;
             this.uiPanel16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiPanel16.Location = new System.Drawing.Point(0, 328);
+            this.uiPanel16.Location = new System.Drawing.Point(0, 322);
             this.uiPanel16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel16.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel16.Name = "uiPanel16";
@@ -1004,19 +907,19 @@
             this.btnCancelPeriod.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
             this.btnCancelPeriod.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelPeriod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
-            this.btnCancelPeriod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelPeriod.Location = new System.Drawing.Point(0, 0);
             this.btnCancelPeriod.Margin = new System.Windows.Forms.Padding(0);
             this.btnCancelPeriod.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnCancelPeriod.Name = "btnCancelPeriod";
-            this.btnCancelPeriod.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnCancelPeriod.RectColor = System.Drawing.SystemColors.ControlLight;
             this.btnCancelPeriod.RectDisableColor = System.Drawing.Color.White;
             this.btnCancelPeriod.RectHoverColor = System.Drawing.Color.White;
             this.btnCancelPeriod.RectPressColor = System.Drawing.Color.White;
             this.btnCancelPeriod.RectSelectedColor = System.Drawing.Color.White;
             this.btnCancelPeriod.RectSize = 2;
             this.btnCancelPeriod.Size = new System.Drawing.Size(120, 38);
-            this.btnCancelPeriod.Symbol = 0;
+            this.btnCancelPeriod.Symbol = 61453;
+            this.btnCancelPeriod.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnCancelPeriod.TabIndex = 3;
             this.btnCancelPeriod.Text = "Cancel";
             this.btnCancelPeriod.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1040,23 +943,22 @@
             this.btnConfirmPeriod.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
             this.btnConfirmPeriod.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
             this.btnConfirmPeriod.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmPeriod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfirmPeriod.Location = new System.Drawing.Point(10, 0);
             this.btnConfirmPeriod.Margin = new System.Windows.Forms.Padding(0);
             this.btnConfirmPeriod.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnConfirmPeriod.Name = "btnConfirmPeriod";
             this.btnConfirmPeriod.Padding = new System.Windows.Forms.Padding(14, 0, 12, 0);
             this.btnConfirmPeriod.Radius = 10;
-            this.btnConfirmPeriod.RectColor = System.Drawing.Color.White;
+            this.btnConfirmPeriod.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConfirmPeriod.RectDisableColor = System.Drawing.Color.White;
-            this.btnConfirmPeriod.RectHoverColor = System.Drawing.Color.White;
-            this.btnConfirmPeriod.RectPressColor = System.Drawing.Color.White;
-            this.btnConfirmPeriod.RectSelectedColor = System.Drawing.Color.White;
+            this.btnConfirmPeriod.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConfirmPeriod.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConfirmPeriod.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConfirmPeriod.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnConfirmPeriod.Size = new System.Drawing.Size(120, 38);
-            this.btnConfirmPeriod.Symbol = 0;
+            this.btnConfirmPeriod.Symbol = 557715;
             this.btnConfirmPeriod.TabIndex = 3;
-            this.btnConfirmPeriod.Text = "Confirm";
+            this.btnConfirmPeriod.Text = "Save";
             this.btnConfirmPeriod.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmPeriod.Click += new System.EventHandler(this.btnConfirmPeriod_Click);
             // 
@@ -1082,7 +984,7 @@
             this.uiGroupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox7.FillColor = System.Drawing.Color.White;
             this.uiGroupBox7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox7.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox7.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox7.MinimumSize = new System.Drawing.Size(1, 1);
@@ -1105,7 +1007,7 @@
             this.tbHourFirstPeriod.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbHourFirstPeriod.Name = "tbHourFirstPeriod";
             this.tbHourFirstPeriod.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbHourFirstPeriod.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbHourFirstPeriod.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbHourFirstPeriod.RectSize = 2;
             this.tbHourFirstPeriod.ShowText = false;
             this.tbHourFirstPeriod.Size = new System.Drawing.Size(540, 34);
@@ -1136,7 +1038,7 @@
             this.uiGroupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox8.FillColor = System.Drawing.Color.White;
             this.uiGroupBox8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox8.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox8.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox8.MinimumSize = new System.Drawing.Size(1, 1);
@@ -1159,7 +1061,7 @@
             this.tbFeeFirstPeriod.MinimumSize = new System.Drawing.Size(0, 34);
             this.tbFeeFirstPeriod.Name = "tbFeeFirstPeriod";
             this.tbFeeFirstPeriod.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.tbFeeFirstPeriod.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbFeeFirstPeriod.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbFeeFirstPeriod.RectSize = 2;
             this.tbFeeFirstPeriod.ShowText = false;
             this.tbFeeFirstPeriod.Size = new System.Drawing.Size(540, 34);
@@ -1169,18 +1071,110 @@
             this.tbFeeFirstPeriod.TextChanged += new System.EventHandler(this.tbFeeFirstPeriod_TextChanged);
             this.tbFeeFirstPeriod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFeeFirstPeriod_KeyPress);
             // 
+            // pnlButton
+            // 
+            this.pnlButton.Controls.Add(this.panel2);
+            this.pnlButton.Controls.Add(this.panel3);
+            this.pnlButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlButton.FillColor = System.Drawing.Color.White;
+            this.pnlButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.pnlButton.Location = new System.Drawing.Point(0, 322);
+            this.pnlButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlButton.MinimumSize = new System.Drawing.Size(1, 1);
+            this.pnlButton.Name = "pnlButton";
+            this.pnlButton.Padding = new System.Windows.Forms.Padding(0, 13, 0, 3);
+            this.pnlButton.Radius = 0;
+            this.pnlButton.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.pnlButton.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
+            this.pnlButton.RectSize = 2;
+            this.pnlButton.Size = new System.Drawing.Size(556, 54);
+            this.pnlButton.TabIndex = 18;
+            this.pnlButton.Text = null;
+            this.pnlButton.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.uiSymbolButton2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(306, 13);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(120, 38);
+            this.panel2.TabIndex = 10;
+            // 
+            // uiSymbolButton2
+            // 
+            this.uiSymbolButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiSymbolButton2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiSymbolButton2.FillColor = System.Drawing.Color.White;
+            this.uiSymbolButton2.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.uiSymbolButton2.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.uiSymbolButton2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiSymbolButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiSymbolButton2.Location = new System.Drawing.Point(0, 0);
+            this.uiSymbolButton2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.uiSymbolButton2.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiSymbolButton2.Name = "uiSymbolButton2";
+            this.uiSymbolButton2.RectColor = System.Drawing.SystemColors.ControlLight;
+            this.uiSymbolButton2.RectDisableColor = System.Drawing.Color.White;
+            this.uiSymbolButton2.RectHoverColor = System.Drawing.Color.White;
+            this.uiSymbolButton2.RectPressColor = System.Drawing.Color.White;
+            this.uiSymbolButton2.RectSelectedColor = System.Drawing.Color.White;
+            this.uiSymbolButton2.RectSize = 2;
+            this.uiSymbolButton2.Size = new System.Drawing.Size(120, 38);
+            this.uiSymbolButton2.Symbol = 61453;
+            this.uiSymbolButton2.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.uiSymbolButton2.TabIndex = 5;
+            this.uiSymbolButton2.Text = "Cancel";
+            this.uiSymbolButton2.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnConfirmPT);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(426, 13);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.panel3.Size = new System.Drawing.Size(130, 38);
+            this.panel3.TabIndex = 9;
+            // 
+            // btnConfirmPT
+            // 
+            this.btnConfirmPT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirmPT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnConfirmPT.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConfirmPT.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(91)))), ((int)(((byte)(17)))));
+            this.btnConfirmPT.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(153)))), ((int)(((byte)(104)))));
+            this.btnConfirmPT.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmPT.Location = new System.Drawing.Point(10, 0);
+            this.btnConfirmPT.Margin = new System.Windows.Forms.Padding(0);
+            this.btnConfirmPT.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnConfirmPT.Name = "btnConfirmPT";
+            this.btnConfirmPT.Padding = new System.Windows.Forms.Padding(14, 0, 12, 0);
+            this.btnConfirmPT.Radius = 10;
+            this.btnConfirmPT.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConfirmPT.RectDisableColor = System.Drawing.Color.White;
+            this.btnConfirmPT.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConfirmPT.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConfirmPT.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConfirmPT.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.btnConfirmPT.Size = new System.Drawing.Size(120, 38);
+            this.btnConfirmPT.Symbol = 557715;
+            this.btnConfirmPT.TabIndex = 3;
+            this.btnConfirmPT.Text = "Save";
+            this.btnConfirmPT.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmPT.Click += new System.EventHandler(this.btnConfirmPT_Click);
+            // 
             // DetailVisitorFeeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(779, 629);
+            this.ClientSize = new System.Drawing.Size(584, 511);
             this.Controls.Add(this.pnlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MinimumSize = new System.Drawing.Size(794, 664);
+            this.MinimumSize = new System.Drawing.Size(600, 547);
             this.Name = "DetailVisitorFeeForm";
-            this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.Text = "Visitor Fee Detail Form";
             this.Load += new System.EventHandler(this.PriceDetailForm_Load);
             this.pnlMain.ResumeLayout(false);
@@ -1191,9 +1185,6 @@
             this.tpTurn.ResumeLayout(false);
             this.uiPanel4.ResumeLayout(false);
             this.uiPanel5.ResumeLayout(false);
-            this.pnlButton.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.uiPanel6.ResumeLayout(false);
             this.uiGroupBox2.ResumeLayout(false);
             this.pnlFullname.ResumeLayout(false);
@@ -1224,6 +1215,9 @@
             this.uiGroupBox7.ResumeLayout(false);
             this.uiPanel18.ResumeLayout(false);
             this.uiGroupBox8.ResumeLayout(false);
+            this.pnlButton.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1247,11 +1241,6 @@
         private Sunny.UI.UIPanel pnlFullname;
         private Sunny.UI.UIGroupBox uiGroupBox1;
         private Sunny.UI.UITextBox tbDayFeePT;
-        private Sunny.UI.UIPanel pnlButton;
-        private System.Windows.Forms.Panel panel2;
-        private Sunny.UI.UISymbolButton btnCancelPT;
-        private System.Windows.Forms.Panel panel3;
-        private Sunny.UI.UISymbolButton btnConfirmPT;
         private Sunny.UI.UIPanel uiPanel7;
         private Sunny.UI.UIPanel uiPanel8;
         private Sunny.UI.UIPanel uiPanel9;
@@ -1287,5 +1276,10 @@
         private Sunny.UI.UIPanel uiPanel18;
         private Sunny.UI.UIGroupBox uiGroupBox8;
         private Sunny.UI.UITextBox tbFeeFirstPeriod;
+        private Sunny.UI.UIPanel pnlButton;
+        private System.Windows.Forms.Panel panel2;
+        private Sunny.UI.UISymbolButton uiSymbolButton2;
+        private System.Windows.Forms.Panel panel3;
+        private Sunny.UI.UISymbolButton btnConfirmPT;
     }
 }

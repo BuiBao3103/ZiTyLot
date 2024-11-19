@@ -376,11 +376,11 @@
             this.btnPlus.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Radius = 10;
-            this.btnPlus.RectColor = System.Drawing.Color.White;
+            this.btnPlus.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnPlus.RectDisableColor = System.Drawing.Color.White;
-            this.btnPlus.RectHoverColor = System.Drawing.Color.White;
-            this.btnPlus.RectPressColor = System.Drawing.Color.White;
-            this.btnPlus.RectSelectedColor = System.Drawing.Color.White;
+            this.btnPlus.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnPlus.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnPlus.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnPlus.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnPlus.Size = new System.Drawing.Size(150, 38);
             this.btnPlus.Symbol = 61694;
@@ -536,7 +536,7 @@
             this.uiGroupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox5.FillColor = System.Drawing.Color.White;
             this.uiGroupBox5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox5.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox5.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox5.MinimumSize = new System.Drawing.Size(1, 1);
@@ -561,7 +561,7 @@
             this.tbID.MinimumSize = new System.Drawing.Size(1, 34);
             this.tbID.Name = "tbID";
             this.tbID.Padding = new System.Windows.Forms.Padding(5);
-            this.tbID.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbID.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbID.RectSize = 2;
             this.tbID.ShowText = false;
             this.tbID.Size = new System.Drawing.Size(111, 34);
@@ -591,7 +591,7 @@
             this.uiGroupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox4.FillColor = System.Drawing.Color.White;
             this.uiGroupBox4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox4.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox4.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox4.MinimumSize = new System.Drawing.Size(1, 1);
@@ -616,7 +616,7 @@
             this.tbPhone.MinimumSize = new System.Drawing.Size(1, 34);
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.Padding = new System.Windows.Forms.Padding(5);
-            this.tbPhone.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbPhone.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbPhone.RectSize = 2;
             this.tbPhone.ShowText = false;
             this.tbPhone.Size = new System.Drawing.Size(276, 34);
@@ -646,7 +646,7 @@
             this.uiGroupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox3.FillColor = System.Drawing.Color.White;
             this.uiGroupBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox3.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox3.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox3.MinimumSize = new System.Drawing.Size(1, 1);
@@ -671,7 +671,7 @@
             this.tbEmail.MinimumSize = new System.Drawing.Size(1, 34);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Padding = new System.Windows.Forms.Padding(5);
-            this.tbEmail.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbEmail.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbEmail.RectSize = 2;
             this.tbEmail.ShowText = false;
             this.tbEmail.Size = new System.Drawing.Size(371, 34);
@@ -701,7 +701,7 @@
             this.uiGroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox2.FillColor = System.Drawing.Color.White;
             this.uiGroupBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox2.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox2.MinimumSize = new System.Drawing.Size(1, 1);
@@ -726,7 +726,7 @@
             this.tbApartment.MinimumSize = new System.Drawing.Size(1, 34);
             this.tbApartment.Name = "tbApartment";
             this.tbApartment.Padding = new System.Windows.Forms.Padding(5);
-            this.tbApartment.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbApartment.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbApartment.RectSize = 2;
             this.tbApartment.ShowText = false;
             this.tbApartment.Size = new System.Drawing.Size(176, 34);
@@ -756,7 +756,7 @@
             this.uiGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox1.FillColor = System.Drawing.Color.White;
             this.uiGroupBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.uiGroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox1.MinimumSize = new System.Drawing.Size(1, 1);
@@ -781,7 +781,7 @@
             this.tbFullname.MinimumSize = new System.Drawing.Size(1, 34);
             this.tbFullname.Name = "tbFullname";
             this.tbFullname.Padding = new System.Windows.Forms.Padding(5);
-            this.tbFullname.RectColor = System.Drawing.SystemColors.ControlDark;
+            this.tbFullname.RectColor = System.Drawing.SystemColors.ControlLight;
             this.tbFullname.RectSize = 2;
             this.tbFullname.ShowText = false;
             this.tbFullname.Size = new System.Drawing.Size(274, 34);
@@ -852,7 +852,7 @@
             this.pnlSearch.MinimumSize = new System.Drawing.Size(1, 1);
             this.pnlSearch.Name = "pnlSearch";
             this.pnlSearch.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlSearch.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.pnlSearch.RectColor = System.Drawing.SystemColors.ControlLight;
             this.pnlSearch.RectSize = 2;
             this.pnlSearch.Size = new System.Drawing.Size(400, 38);
             this.pnlSearch.TabIndex = 3;
@@ -949,8 +949,8 @@
             this.tbSearch.TabIndex = 0;
             this.tbSearch.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbSearch.Watermark = "Search a resident by their";
-            this.tbSearch.WatermarkActiveColor = System.Drawing.SystemColors.ControlDark;
-            this.tbSearch.WatermarkColor = System.Drawing.SystemColors.ControlDark;
+            this.tbSearch.WatermarkActiveColor = System.Drawing.Color.DarkGray;
+            this.tbSearch.WatermarkColor = System.Drawing.Color.LightGray;
             this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
             // 
             // uiLabel1
@@ -1070,11 +1070,11 @@
             this.btnConfirm.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Radius = 10;
-            this.btnConfirm.RectColor = System.Drawing.Color.White;
+            this.btnConfirm.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConfirm.RectDisableColor = System.Drawing.Color.White;
-            this.btnConfirm.RectHoverColor = System.Drawing.Color.White;
-            this.btnConfirm.RectPressColor = System.Drawing.Color.White;
-            this.btnConfirm.RectSelectedColor = System.Drawing.Color.White;
+            this.btnConfirm.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConfirm.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
+            this.btnConfirm.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnConfirm.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.btnConfirm.Size = new System.Drawing.Size(130, 38);
             this.btnConfirm.Symbol = 61694;

@@ -43,6 +43,8 @@ namespace ZiTyLot.GUI.Screens
             tbSearch.TextChanged += tbSearch_TextChanged;
             customDateTimePicker.DateTimeConfirmed += CustomDateTimePicker_DateTimeConfirmed_In;
             customDateTimePicker1.DateTimeConfirmed += CustomDateTimePicker_DateTimeConfirmed_Out;
+            customDateTimePicker.BringToFront();
+            customDateTimePicker1.BringToFront();
 
         }
         private void CustomDateTimePicker_DateTimeConfirmed_In(object sender, string combinedDateTime)
@@ -161,6 +163,7 @@ namespace ZiTyLot.GUI.Screens
             {
                 if (customDateTimePicker1.Visible == false)
                 {
+                    
                     customDateTimePicker.Visible = true;
                 }
                 else

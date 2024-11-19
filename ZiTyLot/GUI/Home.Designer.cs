@@ -156,7 +156,7 @@
             this.btnMore.RectSize = 2;
             this.btnMore.Size = new System.Drawing.Size(34, 34);
             this.btnMore.Symbol = 61459;
-            this.btnMore.SymbolColor = System.Drawing.SystemColors.ControlDark;
+            this.btnMore.SymbolColor = System.Drawing.Color.DarkGray;
             this.btnMore.SymbolHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
             this.btnMore.SymbolOffset = new System.Drawing.Point(0, 1);
             this.btnMore.SymbolPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(54)))));
