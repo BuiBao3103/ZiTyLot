@@ -1,7 +1,7 @@
 ﻿using System;
 using ZiTyLot.Constants.Enum;
 
-namespace ZiTyLot.ENTITY
+namespace ZiTyLot.DTOS
 {
     public class Image
     {

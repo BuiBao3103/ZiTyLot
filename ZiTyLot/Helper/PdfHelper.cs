@@ -3,7 +3,7 @@ using iTextSharp.text.pdf;
 using System;
 using System.IO;
 using System.Collections.Generic;
-using ZiTyLot.ENTITY;
+using ZiTyLot.DTOS;
 using Font = iTextSharp.text.Font;
 using System.Diagnostics;
 using System.Windows.Forms;

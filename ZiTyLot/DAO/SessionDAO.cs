@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZiTyLot.Constants;
-using ZiTyLot.ENTITY;
+using ZiTyLot.DTOS;
 using ZiTyLot.Helper;
 
 namespace ZiTyLot.DAO

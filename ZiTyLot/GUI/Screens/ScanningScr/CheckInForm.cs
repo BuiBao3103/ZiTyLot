@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.Constants;
 using ZiTyLot.Constants.Enum;
-using ZiTyLot.ENTITY;
+using ZiTyLot.DTOS;
 using ZiTyLot.GUI.Utils;
 using ZiTyLot.Helper;
 
@@ -365,16 +365,16 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
         }
         private void AddNewSession()
         {
-            List<ENTITY.Image> images = new List<ENTITY.Image>();
+            List<DTOS.Image> images = new List<DTOS.Image>();
 
-            ENTITY.Image frontImage = new ENTITY.Image()
+            DTOS.Image frontImage = new DTOS.Image()
             {
                 Url = ImageHelper.SaveImage(_currentFrontImage),
                 Type = ImageType.BEFORE_CHECKIN
             };
             images.Add(frontImage);
 
-            ENTITY.Image backImage = new ENTITY.Image()
+            DTOS.Image backImage = new DTOS.Image()
             {
                 Url = ImageHelper.SaveImage(_currentBackImage),
                 Type = ImageType.AFTER_CHECKIN
@@ -383,7 +383,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
 
             if (_currentPlateImage != null)
             {
-                ENTITY.Image plateImage = new ENTITY.Image()
+                DTOS.Image plateImage = new DTOS.Image()
                 {
                     Url = ImageHelper.SaveImage(_currentPlateImage),
                     Type = ImageType.LICENSE_PLATE_CHECKIN

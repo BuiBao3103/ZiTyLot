@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
-using ZiTyLot.ENTITY;
+using ZiTyLot.DTOS;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Utils;
 

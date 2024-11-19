@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.Constants.Enum;
-using ZiTyLot.ENTITY;
+using ZiTyLot.DTOS;
 using ZiTyLot.GUI.Utils;
 using ZiTyLot.Helper;
 

@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
-using ZiTyLot.ENTITY;
+using ZiTyLot.DTOS;
 
 namespace ZiTyLot.GUI.Screens.BillScr
 {

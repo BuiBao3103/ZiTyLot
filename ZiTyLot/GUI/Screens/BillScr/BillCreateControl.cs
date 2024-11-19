@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.BUS;
-using ZiTyLot.ENTITY;
+using ZiTyLot.DTOS;
 using System.Collections.Generic;
 using ZiTyLot.Helper;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;

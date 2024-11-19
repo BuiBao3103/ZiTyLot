@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using ZiTyLot.Constants.Enum;
 using ZiTyLot.DAO;
-using ZiTyLot.ENTITY;
+using ZiTyLot.DTOS;
 using ZiTyLot.GUI.Utils;
 using ZiTyLot.Helper;
 

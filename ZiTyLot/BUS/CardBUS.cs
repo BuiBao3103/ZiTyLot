@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ZiTyLot.Constants.Enum;
 using ZiTyLot.DAO;
-using ZiTyLot.ENTITY;
+using ZiTyLot.DTOS;
 using ZiTyLot.GUI.Utils;
 using ZiTyLot.Helper;
 

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ZiTyLot.ENTITY;
+using ZiTyLot.DTOS;
 
 namespace ZiTyLot.GUI.Screens.PriceScr
 {

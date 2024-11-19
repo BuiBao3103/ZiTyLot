@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using ZiTyLot.Constants.Enum;
 
-namespace ZiTyLot.ENTITY
+namespace ZiTyLot.DTOS
 {
     public class Slot
     {

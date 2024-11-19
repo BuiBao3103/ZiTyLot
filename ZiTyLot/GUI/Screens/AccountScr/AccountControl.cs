@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
-using ZiTyLot.ENTITY;
+using ZiTyLot.DTOS;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.Helper;
 using ZiTyLot.GUI.Screens.AccountScr;

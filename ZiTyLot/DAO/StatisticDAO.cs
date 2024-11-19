@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Runtime.InteropServices.ComTypes;
 using ZiTyLot.Config;
-using ZiTyLot.ENTITY;
+using ZiTyLot.DTOS;
 
 namespace ZiTyLot.DAO
 {

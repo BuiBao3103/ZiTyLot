@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using ZiTyLot.BUS;
 using ZiTyLot.Constants;
 using ZiTyLot.Constants.Enum;
-using ZiTyLot.ENTITY;
+using ZiTyLot.DTOS;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens.AreaScr;
 using ZiTyLot.GUI.Screens.PriceScr;

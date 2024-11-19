@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ZiTyLot.ENTITY
+namespace ZiTyLot.DTOS
 {
     public class LostHistory
     {

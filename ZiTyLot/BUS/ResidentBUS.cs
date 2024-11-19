@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ZiTyLot.DAO;
-using ZiTyLot.ENTITY;
+using ZiTyLot.DTOS;
 using ZiTyLot.Helper;
 
 namespace ZiTyLot.BUS

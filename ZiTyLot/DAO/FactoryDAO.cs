@@ -567,7 +567,7 @@ namespace ZiTyLot.DAO
         {
             // Determine if the property should be skipped based on its type
             return (typeof(System.Collections.IEnumerable).IsAssignableFrom(prop.PropertyType) && prop.PropertyType != typeof(string)) ||
-                   prop.PropertyType.Namespace == "ZiTyLot.ENTITY";
+                   prop.PropertyType.Namespace == "ZiTyLot.DTOS";
         }
 
         private void SetPropertyValue(T item, System.Reflection.PropertyInfo prop, object value)
