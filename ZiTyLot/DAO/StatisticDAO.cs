@@ -237,7 +237,7 @@ namespace ZiTyLot.DAO
                     FROM 
                         bills
                     WHERE 
-                        created_at BETWEEN @startDate AND @endDate
+                        created_at BETWEEN @startDate AND DATE_ADD(@endDate, INTERVAL 1 DAY)
                     GROUP BY 
                         period
                     ORDER BY 
@@ -281,7 +281,7 @@ namespace ZiTyLot.DAO
                     FROM 
                         sessions
                     WHERE 
-                        checkout_time BETWEEN @startDate AND @endDate AND type = 'VISITOR'
+                        checkout_time BETWEEN @startDate AND DATE_ADD(@endDate, INTERVAL 1 DAY) AND type = 'VISITOR'
                     GROUP BY 
                         period
                     ORDER BY 
@@ -325,7 +325,7 @@ namespace ZiTyLot.DAO
                     FROM 
                         sessions s JOIN cards c ON s.card_id = c.id
                     WHERE 
-                        s.checkout_time BETWEEN @startDate AND @endDate AND s.type = 'VISITOR' AND c.vehicle_type_id = @vehicleTypeId
+                        s.checkout_time BETWEEN @startDate AND DATE_ADD(@endDate, INTERVAL 1 DAY) AND s.type = 'VISITOR' AND c.vehicle_type_id = @vehicleTypeId
                     GROUP BY 
                         period
                     ORDER BY 
