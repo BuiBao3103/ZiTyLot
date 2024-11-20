@@ -34,7 +34,7 @@ namespace ZiTyLot.BUS
 
                 foreach (Issue issue in issues)
                 {
-                    if (issue.Slot_id != "")
+                    if (issue.Slot_id != null)
                     {
                         Slot slot = slotDAO.GetById(issue.Slot_id);
                         slot.Status = SlotStatus.IN_USE;

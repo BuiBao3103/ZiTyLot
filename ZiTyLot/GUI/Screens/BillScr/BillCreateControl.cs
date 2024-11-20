@@ -50,7 +50,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
                 Font = new Font("Arial", 12)
             };
 
-           
+
 
             listBox.Click += (s, ev) =>
             {
@@ -74,7 +74,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
             this.Controls.Add(listBox);
         }
 
-      
+
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
@@ -265,7 +265,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
                     Issue_quantity = _issues.Count,
                     Total_fee = _issues.Sum(x => x.Fee),
                     Resident_id = _residentSelected.Id,
-                    Account_id = 1,
+                    Account_id = AuthManager.IsAuthenticated ? AuthManager.CurrentAccount.Id : 1,
                 };
 
                 newBill = _billBUS.Create(newBill, _issues);
@@ -314,7 +314,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
                 Console.WriteLine(ex.Message);
                 MessageHelper.ShowError("Some error occurred while creating bill. Please try again later.");
             }
-           
+
         }
 
         private bool validate()
@@ -334,7 +334,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
 
         private void BillCreateControl_Resize(object sender, EventArgs e)
         {
-            if(tbSearch.Text.Length == 0)
+            if (tbSearch.Text.Length == 0)
             {
                 listBox.Visible = false;
             }
