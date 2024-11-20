@@ -254,6 +254,10 @@ namespace ZiTyLot.BUS
                 throw new ValidationInputException("RFID is not existed");
             }
             Card card = cards[0];
+            if (card.Type == CardType.VISITOR)
+            {
+                throw new ValidationInputException("Card is visitor card");
+            }
             if (card.Status != CardStatus.EMPTY)
             {
                 throw new ValidationInputException("Card is not empty");

@@ -25,6 +25,7 @@ namespace ZiTyLot.BUS
             Validate(item);
             try
             {
+                item.Created_at = DateTime.Now;
                 lostHistoryDAO.Add(item);
             }
             catch (Exception ex)

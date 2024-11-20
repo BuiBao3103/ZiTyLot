@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
 using ZiTyLot.BUS;
+using ZiTyLot.Constants;
 using ZiTyLot.Constants.Enum;
 using ZiTyLot.DTOS;
 using ZiTyLot.GUI.component_extensions;
@@ -208,6 +209,8 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
         public void ChangePage(int pageNumber)
         {
             _pageable.PageNumber = pageNumber;
+            _pageable.SortBy = nameof(LostHistory.Created_at);
+            _pageable.SortOrder = SortOrderPageable.Descending;
             _page = _lostHistoryBUS.GetAllPagination(_pageable, _filters);
             LoadPageAndPageable();
         }

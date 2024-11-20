@@ -153,8 +153,11 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
             {
                 if (_processLostCard)
                 {
+                    //issue new card
+                    Card newCard = _cardBUS.IssueCard(tbCodeRFID.Text, _resident.Id);
                     //update card status to LOST
                     _resident.Card.Status = CardStatus.LOST;
+                    _resident.Card.Resident_id = null;
                     _cardBUS.Update(_resident.Card);
                     //create lost history
                     LostHistory lostHistory = new LostHistory
@@ -166,9 +169,8 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
                         Is_found = false
                     };
                     _lostHistoryBUS.Add(lostHistory);
-                    //issue new card
-                    Card cardIssue = _cardBUS.IssueCard(tbCodeRFID.Text, _resident.Id);
-                    _resident.Card = cardIssue;
+
+                    _resident.Card = newCard;
                     MessageHelper.ShowInfo("Lost card successfully");
 
 
@@ -197,6 +199,7 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
 
         private void btnSaveProfile_Click(object sender, EventArgs e)
         {
+            btnSaveCard.Enabled = false;
             if (!ValidateInput()) return;
             try
             {
@@ -222,6 +225,11 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
             {
                 MessageHelper.ShowWarning("An unexpected error occurred. Please try again later.");
             }
+            finally
+            {
+                btnSaveCard.Enabled = true;
+            }
+
         }
 
         private bool ValidateInput()
@@ -273,6 +281,7 @@ namespace ZiTyLot.GUI.Screens.ResidentScr
             btnSaveCard.Enabled = false;
             tbCodeRFID.Text = _resident.Card.Rfid;
             tbCodeRFID.Enabled = false;
+            LoadCardUI();
             _processLostCard = false;
         }
     }
