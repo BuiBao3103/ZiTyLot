@@ -15,6 +15,7 @@ namespace ZiTyLot.GUI
             InitializeComponent();
             this.CenterToScreen();
             this.ActiveControl = inputUsername;
+            this.KeyPreview= true;
         }
 
         private void cbHienMatKhau_CheckedChanged(object sender, EventArgs e)
@@ -43,6 +44,14 @@ namespace ZiTyLot.GUI
             catch (Exception ex)
             {
                 MessageHelper.ShowError(ex.Message);
+            }
+        }
+
+        private void Login_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnSignin_Click(sender,e);
             }
         }
     }

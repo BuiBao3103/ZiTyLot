@@ -378,6 +378,7 @@
             this.MinimumSize = new System.Drawing.Size(1061, 601);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Login_KeyPress);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.uiPanel5.ResumeLayout(false);
