@@ -622,6 +622,22 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                 MessageHelper.ShowError("Card not found!");
                 return false;
             }
+            if (card.Type == CardType.RESIDENT && card.Status == CardStatus.EMPTY)
+            {
+                MessageHelper.ShowError("This resident card is empty!");
+                return false;
+            }
+            if(card.Type == CardType.RESIDENT && card.Status == CardStatus.LOST)
+            {
+                MessageHelper.ShowError("This resident card is lost!");
+                return false;
+            }
+            if (card.Type == CardType.RESIDENT && card.Status == CardStatus.BLOCKED)
+            {
+                MessageHelper.ShowError("This resident card is blocked!");
+                return false;
+            }
+
             if (card.Type == CardType.VISITOR)
             {
                 if (_parkingLotType == ParkingLotType.TWO_WHEELER && card.Vehicle_type_id == VehicleTypeID.CAR)
@@ -636,6 +652,7 @@ namespace ZiTyLot.GUI.Screens.ScanningScr
                     return false;
                 }
             }
+
             return true;
         }
 

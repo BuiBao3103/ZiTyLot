@@ -14,6 +14,7 @@ using ZiTyLot.Constants.Enum;
 using ZiTyLot.DTOS;
 using ZiTyLot.GUI.component_extensions;
 using ZiTyLot.GUI.Screens.SessionScr;
+using ZiTyLot.GUI.Utils;
 using ZiTyLot.Helper;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -77,6 +78,11 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
                     if (confirmResult == DialogResult.Yes)
                     {
                         LostHistory lostHistory = _lostHistoryBUS.GetById(id);
+                        if (lostHistory.Is_found == true)
+                        {
+                            MessageHelper.ShowError("This card has been restored before!");
+                            return;
+                        }
                         Card card = _lostHistoryBUS.PopulateCard(lostHistory).Card;
                         if (card.Type == CardType.RESIDENT)
                             card.Status = CardStatus.EMPTY;
@@ -86,7 +92,7 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
                         lostHistory.Is_found = true;
                         _lostHistoryBUS.Update(lostHistory);
                         ChangePage(1);
-                        System.Windows.Forms.MessageBox.Show("Restore success!");
+                        MessageHelper.ShowSuccess("Restore card successfully!");
                     }
                 }
             }
@@ -199,7 +205,7 @@ namespace ZiTyLot.GUI.Screens.LostCardScr
                 string status = lostHistory.Is_found ? "Found" : "Lost";
                 Card card = _lostHistoryBUS.PopulateCard(lostHistory).Card;
                 string type = card.Type.ToString();
-                tableLostCard.Rows.Add(lostHistory.Id, card.Rfid, lostHistory.Owner_name, lostHistory.Owner_identification_card, type, status);
+                tableLostCard.Rows.Add(lostHistory.Id, card.Rfid, lostHistory.Time_loss.ToString(@"dd/MM/yyyy HH:mm:ss"),lostHistory.Owner_name, lostHistory.Owner_identification_card, type, status);
             }
 
             btnPrevious.Enabled = _pageable.PageNumber > 1;

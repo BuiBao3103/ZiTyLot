@@ -27,7 +27,7 @@ namespace ZiTyLot.GUI.Screens.BillScr
         private readonly List<Issue> _issues;
 
         int rows = 0;
-        private ListBox listBox;
+        private ListBox listBox= new ListBox();
 
         public event EventHandler billInsertionEvent;
         public BillCreateControl()
